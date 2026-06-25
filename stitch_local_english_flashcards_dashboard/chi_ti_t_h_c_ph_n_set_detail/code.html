@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Set Detail - Local English Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#712ae2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary": "#7e3000",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface": "#f8f9fa",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a44100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#3525cd",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-word": ["Inter"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "translation-text": ["Be Vietnam Pro"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-word": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "translation-text": ["20px", { "lineHeight": "30px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md h-screen flex overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface border-r border-surface-variant p-md gap-sm z-40">
+<div class="px-md py-lg mb-md">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Local English</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Modern Academic</p>
+</div>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Active Nav Item -->
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-xl font-semibold scale-98 duration-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-body-md text-body-md">My Sets</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">event_repeat</span>
+<span class="font-body-md text-body-md">Review Today</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-body-md text-body-md">Practice Test</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="font-body-md text-body-md">Match Game</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-body-md text-body-md">Progress</span>
+</a>
+<div class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64 w-full h-full overflow-y-auto">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-lg py-md sticky top-0 z-50 bg-surface-bright border-b border-surface-variant">
+<div class="flex items-center gap-md md:hidden">
+<span class="material-symbols-outlined text-on-surface cursor-pointer">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Local English</span>
+</div>
+<div class="flex-1 md:hidden"></div>
+<div class="flex items-center justify-end w-full md:w-auto gap-md">
+<button class="p-sm rounded-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">local_fire_department</span>
+</button>
+<button class="p-sm rounded-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas Container -->
+<main class="w-full max-w-[1024px] mx-auto p-container-margin md:p-2xl flex flex-col gap-2xl">
+<!-- Header Section: Info & Modes -->
+<section class="flex flex-col gap-lg">
+<!-- Title & Actions -->
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-md">
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="px-sm py-xs bg-surface-container-high text-on-surface rounded-full font-label-caps text-label-caps">TOEIC</span>
+<span class="px-sm py-xs bg-surface-container-high text-on-surface rounded-full font-label-caps text-label-caps">Business</span>
+<span class="px-sm py-xs bg-surface-container-high text-on-surface rounded-full font-label-caps text-label-caps">Unit 1</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">
+                            TOEIC Unit 1 - Business Vocabulary
+                        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            Essential vocabulary for workplace environments, corporate meetings, and professional communication.
+                        </p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-xs mt-md">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Tiến độ</span>
+<span class="font-label-caps text-label-caps text-primary-container">45 / 100 Từ</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[45%]"></div>
+</div>
+</div>
+<!-- Study Modes (Bento Grid Style) -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-md mt-xl">
+<button class="flex flex-col items-center justify-center gap-sm p-lg bg-surface-container-lowest border border-surface-variant rounded-xl hover:border-primary-container hover:shadow-[0_4px_12px_rgba(79,70,229,0.05)] transition-all group">
+<span class="material-symbols-outlined text-primary-container text-3xl group-hover:scale-110 transition-transform">style</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Thẻ ghi nhớ</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-lg bg-surface-container-lowest border border-surface-variant rounded-xl hover:border-primary-container hover:shadow-[0_4px_12px_rgba(79,70,229,0.05)] transition-all group">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:scale-110 transition-transform">school</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Học</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-lg bg-surface-container-lowest border border-surface-variant rounded-xl hover:border-primary-container hover:shadow-[0_4px_12px_rgba(79,70,229,0.05)] transition-all group">
+<span class="material-symbols-outlined text-outline text-3xl group-hover:scale-110 transition-transform">edit_document</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Viết</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-lg bg-surface-container-lowest border border-surface-variant rounded-xl hover:border-primary-container hover:shadow-[0_4px_12px_rgba(79,70,229,0.05)] transition-all group">
+<span class="material-symbols-outlined text-outline text-3xl group-hover:scale-110 transition-transform">keyboard</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Chính tả</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-lg bg-surface-container-lowest border border-surface-variant rounded-xl hover:border-primary-container hover:shadow-[0_4px_12px_rgba(79,70,229,0.05)] transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl group-hover:scale-110 transition-transform">quiz</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Kiểm tra</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-sm p-lg bg-surface-container-lowest border border-surface-variant rounded-xl hover:border-primary-container hover:shadow-[0_4px_12px_rgba(79,70,229,0.05)] transition-all group">
+<span class="material-symbols-outlined text-tertiary-container text-3xl group-hover:scale-110 transition-transform">extension</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Ghép thẻ</span>
+</button>
+</div>
+</section>
+<!-- Vocabulary List Section -->
+<section class="flex flex-col gap-md">
+<div class="flex justify-between items-center border-b border-surface-variant pb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Thuật ngữ trong học phần này (100)</h2>
+<div class="flex gap-sm">
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">sort</span>
+</button>
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col bg-surface-container-lowest rounded-xl border border-surface-variant overflow-hidden">
+<!-- Table Header (Hidden on mobile) -->
+<div class="hidden md:flex items-center px-lg py-sm bg-surface-container-low border-b border-surface-variant font-label-caps text-label-caps text-on-surface-variant uppercase">
+<div class="flex-1">Thuật ngữ</div>
+<div class="flex-1">Định nghĩa</div>
+<div class="w-32 text-center">Trạng thái</div>
+<div class="w-24 text-right">Thao tác</div>
+</div>
+<!-- Row 1 -->
+<div class="flex flex-col md:flex-row items-start md:items-center px-lg py-md border-b border-surface-variant hover:bg-surface-container-low transition-colors gap-md md:gap-0">
+<div class="flex-1 flex flex-col gap-xs w-full">
+<div class="flex items-center gap-sm">
+<span class="font-translation-text text-translation-text text-on-surface">Accommodate</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container rounded text-on-surface-variant">verb</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">/əˈkɒmədeɪt/</span>
+</div>
+<div class="flex-1 font-body-md text-body-md text-on-surface w-full">
+                            Cung cấp chỗ ở, đáp ứng nhu cầu
+                        </div>
+<div class="w-full md:w-32 flex md:justify-center">
+<span class="px-sm py-xs bg-primary-container text-on-primary-container rounded-full font-label-caps text-label-caps">Thành thạo</span>
+</div>
+<div class="w-full md:w-24 flex justify-end gap-sm text-on-surface-variant">
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">volume_up</span></button>
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col md:flex-row items-start md:items-center px-lg py-md border-b border-surface-variant hover:bg-surface-container-low transition-colors gap-md md:gap-0">
+<div class="flex-1 flex flex-col gap-xs w-full">
+<div class="flex items-center gap-sm">
+<span class="font-translation-text text-translation-text text-on-surface">Negotiate</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container rounded text-on-surface-variant">verb</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">/nɪˈɡəʊʃieɪt/</span>
+</div>
+<div class="flex-1 font-body-md text-body-md text-on-surface w-full">
+                            Đàm phán, thương lượng
+                        </div>
+<div class="w-full md:w-32 flex md:justify-center">
+<span class="px-sm py-xs bg-tertiary-container text-on-tertiary-container rounded-full font-label-caps text-label-caps">Đang học</span>
+</div>
+<div class="w-full md:w-24 flex justify-end gap-sm text-on-surface-variant">
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">volume_up</span></button>
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col md:flex-row items-start md:items-center px-lg py-md border-b border-surface-variant hover:bg-surface-container-low transition-colors gap-md md:gap-0">
+<div class="flex-1 flex flex-col gap-xs w-full">
+<div class="flex items-center gap-sm">
+<span class="font-translation-text text-translation-text text-on-surface">Revenue</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container rounded text-on-surface-variant">noun</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">/ˈrevənuː/</span>
+</div>
+<div class="flex-1 font-body-md text-body-md text-on-surface w-full">
+                            Doanh thu, thu nhập
+                        </div>
+<div class="w-full md:w-32 flex md:justify-center">
+<span class="px-sm py-xs bg-surface-container-high text-on-surface-variant rounded-full font-label-caps text-label-caps">Mới</span>
+</div>
+<div class="w-full md:w-24 flex justify-end gap-sm text-on-surface-variant">
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">volume_up</span></button>
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex flex-col md:flex-row items-start md:items-center px-lg py-md hover:bg-surface-container-low transition-colors gap-md md:gap-0">
+<div class="flex-1 flex flex-col gap-xs w-full">
+<div class="flex items-center gap-sm">
+<span class="font-translation-text text-translation-text text-on-surface">Implement</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container rounded text-on-surface-variant">verb</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">/ˈɪmplɪment/</span>
+</div>
+<div class="flex-1 font-body-md text-body-md text-on-surface w-full">
+                            Thực hiện, tiến hành
+                        </div>
+<div class="w-full md:w-32 flex md:justify-center">
+<span class="px-sm py-xs bg-surface-container-high text-on-surface-variant rounded-full font-label-caps text-label-caps">Mới</span>
+</div>
+<div class="w-full md:w-24 flex justify-end gap-sm text-on-surface-variant">
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">volume_up</span></button>
+<button class="p-xs hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-md">
+<button class="font-label-caps text-label-caps text-primary-container border border-primary-container rounded-lg px-lg py-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">
+                        Tải thêm từ
+                    </button>
+</div>
+</section>
+</main>
+</div>
+</body></html>

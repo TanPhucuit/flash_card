@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trò chơi - Nối từ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "primary": "#4648d4",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-primary": "#c0c1ff",
+                        "surface-container": "#e5eeff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed": "#ffdad7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "tertiary": "#b61722",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline-variant": "#c7c4d7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#6063ee",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#464554",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-container": "#00714d",
+                        "surface-tint": "#494bd6",
+                        "tertiary-container": "#da3437",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed": "#410004",
+                        "outline": "#767586",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "surface-container-high": "#dce9ff",
+                        "secondary": "#006c49",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-fixed": "#07006c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "2.75rem",
+                        "section-gap": "1.5rem",
+                        "container-margin": "1rem",
+                        "inline-padding": "1rem",
+                        "stack-gap": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-flashcard": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-flashcard": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+            20%, 40%, 60%, 80% { transform: translateX(4px); }
+        }
+        .shake {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        .tile-active {
+            @apply border-primary bg-surface-container-highest text-primary scale-95 shadow-inner;
+        }
+        .tile-correct {
+            @apply border-secondary-container bg-secondary-container/20 text-on-secondary-fixed opacity-50 scale-95;
+            transition: all 0.3s ease;
+        }
+        .tile-wrong {
+            @apply border-error bg-error-container text-on-error-container shake;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md h-screen flex flex-col overflow-hidden">
+<!-- Top App Bar -->
+<header class="bg-surface docked full-width top-0 sticky z-40 flex justify-between items-center h-16 px-4 w-full">
+<button class="text-on-surface-variant hover:opacity-80 active:scale-90 transition-all p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md font-bold text-primary">Nối từ</h1>
+<button class="text-on-surface-variant hover:opacity-80 active:scale-90 transition-all p-2 rounded-full invisible">
+<span class="material-symbols-outlined">info</span>
+</button>
+</header>
+<!-- Game Canvas -->
+<main class="flex-1 overflow-y-auto px-container-margin py-stack-gap flex flex-col relative">
+<!-- Stats Bar -->
+<div class="flex justify-between items-center bg-surface-container-lowest rounded-xl p-4 shadow-sm mb-section-gap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">timer</span>
+<span class="font-label-lg text-on-surface">01:45</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-primary">Điểm: 120</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Game Grid -->
+<div class="grid grid-cols-2 gap-stack-gap flex-1 content-start">
+<!-- Left Column: English -->
+<div class="flex flex-col gap-stack-gap">
+<button class="h-20 bg-surface-container-lowest rounded-xl shadow-sm border-2 border-transparent flex items-center justify-center font-body-lg text-on-surface active:scale-95 transition-transform">
+                    abandon
+                </button>
+<button class="h-20 tile-active rounded-xl shadow-sm border-2 flex items-center justify-center font-body-lg transition-transform">
+                    benefit
+                </button>
+<button class="h-20 tile-correct rounded-xl shadow-sm border-2 flex items-center justify-center font-body-lg pointer-events-none">
+                    challenge
+                </button>
+<button class="h-20 bg-surface-container-lowest rounded-xl shadow-sm border-2 border-transparent flex items-center justify-center font-body-lg text-on-surface active:scale-95 transition-transform">
+                    determine
+                </button>
+<button class="h-20 bg-surface-container-lowest rounded-xl shadow-sm border-2 border-transparent flex items-center justify-center font-body-lg text-on-surface active:scale-95 transition-transform">
+                    efficient
+                </button>
+</div>
+<!-- Right Column: Vietnamese -->
+<div class="flex flex-col gap-stack-gap">
+<button class="h-20 tile-wrong rounded-xl shadow-sm border-2 flex items-center justify-center font-body-lg transition-transform">
+                    xác định
+                </button>
+<button class="h-20 bg-surface-container-lowest rounded-xl shadow-sm border-2 border-transparent flex items-center justify-center font-body-lg text-on-surface active:scale-95 transition-transform">
+                    từ bỏ
+                </button>
+<button class="h-20 bg-surface-container-lowest rounded-xl shadow-sm border-2 border-transparent flex items-center justify-center font-body-lg text-on-surface active:scale-95 transition-transform">
+                    hiệu quả
+                </button>
+<button class="h-20 bg-surface-container-lowest rounded-xl shadow-sm border-2 border-transparent flex items-center justify-center font-body-lg text-on-surface active:scale-95 transition-transform">
+                    lợi ích
+                </button>
+<button class="h-20 tile-correct rounded-xl shadow-sm border-2 flex items-center justify-center font-body-lg pointer-events-none">
+                    thử thách
+                </button>
+</div>
+</div>
+<!-- Completion Modal (Hidden by default, shown for demonstration) -->
+<div class="absolute inset-0 bg-on-surface/40 backdrop-blur-sm z-50 flex items-center justify-center p-container-margin hidden">
+<div class="bg-surface-container-lowest rounded-2xl w-full max-w-sm p-6 shadow-lg flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<h2 class="font-headline-lg text-on-surface mb-2">Hoàn thành!</h2>
+<p class="font-body-md text-on-surface-variant mb-6">Bạn đã ghép đúng tất cả các từ.</p>
+<div class="w-full bg-surface-container rounded-xl p-4 mb-6 flex justify-around">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-outline mb-1">Thời gian</span>
+<span class="font-headline-md text-primary">02:15</span>
+</div>
+<div class="w-px bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-outline mb-1">Điểm số</span>
+<span class="font-headline-md text-primary">450</span>
+</div>
+</div>
+<div class="w-full flex flex-col gap-3">
+<button class="w-full bg-primary text-on-primary font-label-lg h-12 rounded-full flex items-center justify-center active:scale-95 transition-transform shadow-md">
+                        Chơi lại
+                    </button>
+<button class="w-full bg-surface-container-high text-on-surface font-label-lg h-12 rounded-full flex items-center justify-center active:scale-95 transition-transform">
+                        Về trang chủ
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 w-full z-50 h-14 bg-surface shadow-[0_-4px_15px_rgba(0,0,0,0.06)] flex justify-around items-center px-4 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-full" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-[10px]">Trang chủ</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-full" href="#">
+<span class="material-symbols-outlined mb-1">style</span>
+<span class="font-label-sm text-[10px]">Bộ từ</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-full" href="#">
+<span class="material-symbols-outlined mb-1">psychology</span>
+<span class="font-label-sm text-[10px]">Ôn tập</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-fixed/30 rounded-xl px-3 py-1 active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="font-label-sm text-[10px]">Trò chơi</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-full" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-label-sm text-[10px]">Cài đặt</span>
+</a>
+</nav>
+<!-- Padding for bottom nav -->
+<div class="h-14 md:hidden"></div>
+</body></html>

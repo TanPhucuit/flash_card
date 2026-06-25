@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spell Mode - App Học Tập</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "primary": "#4648d4",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-primary": "#c0c1ff",
+                        "surface-container": "#e5eeff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed": "#ffdad7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "tertiary": "#b61722",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline-variant": "#c7c4d7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#6063ee",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#464554",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-container": "#00714d",
+                        "surface-tint": "#494bd6",
+                        "tertiary-container": "#da3437",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed": "#410004",
+                        "outline": "#767586",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "surface-container-high": "#dce9ff",
+                        "secondary": "#006c49",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-fixed": "#07006c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "2.75rem",
+                        "section-gap": "1.5rem",
+                        "container-margin": "1rem",
+                        "inline-padding": "1rem",
+                        "stack-gap": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-flashcard": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-flashcard": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased md:max-w-md md:mx-auto md:shadow-2xl md:border md:border-outline-variant">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-40 bg-surface flex justify-between items-center h-16 px-4 w-full">
+<button aria-label="Go back" class="text-primary hover:opacity-80 active:scale-90 transition-all p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary flex-1 text-center">Ứng dụng Học tập</h1>
+<button aria-label="Search" class="text-on-surface-variant hover:opacity-80 active:scale-90 transition-all p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-container-margin py-section-gap gap-section-gap overflow-y-auto pb-24">
+<!-- Header Text -->
+<div class="text-center space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Nghe và nhập từ</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Lắng nghe kỹ và gõ lại từ vựng bạn nghe được.</p>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3 rounded-full transition-all duration-300"></div>
+</div>
+<!-- Audio Central Focus -->
+<div class="flex flex-col items-center justify-center flex-1 min-h-[200px] gap-stack-gap">
+<!-- Ripple Effect Container -->
+<div class="relative w-32 h-32 flex items-center justify-center">
+<!-- Decorative animated ripples -->
+<div class="absolute inset-0 bg-primary-fixed rounded-full opacity-50 animate-ping" style="animation-duration: 3s;"></div>
+<div class="absolute inset-2 bg-primary-container rounded-full opacity-30 animate-pulse"></div>
+<!-- Main Audio Button -->
+<button class="relative z-10 w-24 h-24 bg-primary text-on-primary rounded-full shadow-[0_8px_20px_rgba(70,72,212,0.3)] flex items-center justify-center hover:bg-on-primary-fixed-variant active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-primary-fixed">
+<span class="material-symbols-outlined text-4xl" data-icon="volume_up" data-weight="fill" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</button>
+</div>
+<!-- Audio Controls -->
+<div class="flex gap-4 mt-4">
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-colors active:scale-95 p-2 rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="slow_motion_video">slow_motion_video</span>
+<span class="font-label-sm text-label-sm">Chậm</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-primary transition-colors active:scale-95 p-2 rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="replay">replay</span>
+<span class="font-label-sm text-label-sm">Nghe lại</span>
+</button>
+</div>
+</div>
+<!-- Input Area -->
+<div class="w-full flex flex-col gap-stack-gap bg-surface-container-lowest p-4 rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-outline-variant/30">
+<input autofocus="" class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-lg text-body-lg text-on-background placeholder:text-outline focus:ring-2 focus:ring-primary focus:bg-surface-bright transition-all" placeholder="Nhập từ bạn nghe được..." type="text"/>
+<button class="w-full h-12 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg shadow-md hover:bg-on-primary-fixed-variant active:scale-95 transition-all duration-200 mt-2 flex items-center justify-center gap-2">
+                Kiểm tra
+                <span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+<!-- Pronunciation Tip Card -->
+<div class="bg-surface-container rounded-xl p-4 flex gap-3 items-start border border-primary-fixed-dim/50">
+<div class="bg-primary-fixed text-primary p-2 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-background mb-1">Mẹo phát âm</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Chú ý âm đuôi (ending sounds) của từ. Hãy thử nút 'Chậm' nếu bạn chưa nghe rõ.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden here as it's a focused task, but included for completeness if needed later, though guidelines suggest suppressing for task-focused. Suppressing for this specific "Spell Mode" task to focus on canvas.) -->
+<!-- Navigation omitted deliberately as per "Task-Focused" rule in Source of Truth to prioritize the content canvas for this spelling task. -->
+</body></html>

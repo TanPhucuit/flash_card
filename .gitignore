@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.env*.local
+config.local.json
+.local-test/
+*.secret.json
+npm-debug.log*
+next-dev-*.log
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

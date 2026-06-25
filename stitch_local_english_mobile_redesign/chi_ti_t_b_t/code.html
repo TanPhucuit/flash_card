@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TOEIC Unit 1 - Set Detail</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "primary": "#4648d4",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-primary": "#c0c1ff",
+                        "surface-container": "#e5eeff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed": "#ffdad7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "tertiary": "#b61722",
+                        "on-primary-container": "#fffbff",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#6cf8bb",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline-variant": "#c7c4d7",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#6063ee",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#464554",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-container": "#00714d",
+                        "surface-tint": "#494bd6",
+                        "tertiary-container": "#da3437",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed": "#410004",
+                        "outline": "#767586",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "surface-container-high": "#dce9ff",
+                        "secondary": "#006c49",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-fixed": "#07006c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "2.75rem",
+                        "section-gap": "1.5rem",
+                        "container-margin": "1rem",
+                        "inline-padding": "1rem",
+                        "stack-gap": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-flashcard": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-flashcard": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col relative w-full max-w-md mx-auto md:max-w-full overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="fixed w-full max-w-md md:max-w-full top-0 z-40 bg-surface dark:bg-on-background flex justify-between items-center h-16 px-4">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 active:scale-90 transition-all flex items-center justify-center w-10 h-10 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">TOEIC Unit 1</h1>
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 active:scale-90 transition-all flex items-center justify-center w-10 h-10 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full pt-20 pb-24 px-container-margin flex flex-col gap-section-gap">
+<!-- Set Stats Bento Card -->
+<section class="bg-surface-container-lowest rounded-xl p-inline-padding shadow-[0_4px_15px_rgba(0,0,0,0.06)] border border-surface-variant flex flex-col gap-stack-gap relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary-fixed/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex justify-between items-end relative z-10">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary mb-1">50 Cards</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">40% Mastery</h2>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary border-4 border-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined" data-icon="school" data-weight="fill">school</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-high rounded-full h-2.5 mt-2 relative z-10 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full w-[40%] transition-all duration-500 ease-out"></div>
+</div>
+<!-- Tags -->
+<div class="flex flex-wrap gap-2 mt-2 relative z-10">
+<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full">TOEIC</span>
+<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full">Business</span>
+<span class="bg-surface-container text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full">Beginner</span>
+</div>
+</section>
+<!-- Study Modes Grid -->
+<section class="flex flex-col gap-stack-gap">
+<h3 class="font-headline-md text-headline-md text-on-surface px-1">Study Modes</h3>
+<div class="grid grid-cols-2 gap-3">
+<!-- Mode 1 -->
+<button class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant flex items-center gap-3 hover:bg-surface-bright active:scale-95 transition-all text-left">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Flashcard</span>
+</button>
+<!-- Mode 2 -->
+<button class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant flex items-center gap-3 hover:bg-surface-bright active:scale-95 transition-all text-left">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Learn</span>
+</button>
+<!-- Mode 3 -->
+<button class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant flex items-center gap-3 hover:bg-surface-bright active:scale-95 transition-all text-left">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Write</span>
+</button>
+<!-- Mode 4 -->
+<button class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant flex items-center gap-3 hover:bg-surface-bright active:scale-95 transition-all text-left">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="keyboard_voice">keyboard_voice</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Spell</span>
+</button>
+<!-- Mode 5 -->
+<button class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant flex items-center gap-3 hover:bg-surface-bright active:scale-95 transition-all text-left">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Test</span>
+</button>
+<!-- Mode 6 -->
+<button class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant flex items-center gap-3 hover:bg-surface-bright active:scale-95 transition-all text-left">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">Match</span>
+</button>
+</div>
+</section>
+<!-- Vocabulary Stacked List -->
+<section class="flex flex-col gap-stack-gap">
+<div class="flex justify-between items-center px-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Vocabulary</h3>
+<span class="font-body-md text-body-md text-on-surface-variant">50 terms</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1 (Collapsed State) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] p-4 border border-outline-variant/30 flex flex-col">
+<div class="flex justify-between items-start w-full">
+<div class="flex flex-col">
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-0.5">abandon</h4>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface-variant">/əˈbændən/</span>
+<button class="text-primary hover:bg-surface-container rounded-full p-1 -ml-1 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-0.5 rounded-full">Đã thuộc</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<div class="mt-2 w-full">
+<p class="font-body-lg text-body-lg text-on-surface">Từ bỏ, ruồng bỏ</p>
+</div>
+<!-- Collapsible Trigger -->
+<button class="w-full flex justify-center mt-3 pt-2 border-t border-surface-container hover:bg-surface-bright transition-colors rounded-b-lg">
+<span class="material-symbols-outlined text-outline-variant" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<!-- Card 2 (Expanded State Example) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] p-4 border border-primary/20 flex flex-col">
+<div class="flex justify-between items-start w-full">
+<div class="flex flex-col">
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-0.5">ability</h4>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface-variant">/əˈbɪləti/</span>
+<button class="text-primary hover:bg-surface-container rounded-full p-1 -ml-1 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-2.5 py-0.5 rounded-full">Đang học</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<div class="mt-2 w-full">
+<p class="font-body-lg text-body-lg text-on-surface">Khả năng, năng lực</p>
+</div>
+<!-- Expanded Details Content -->
+<div class="mt-4 p-3 bg-surface rounded-lg border border-surface-variant flex flex-col gap-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Example</span>
+<p class="font-body-md text-body-md text-on-surface italic">He has the ability to do the work.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Anh ấy có khả năng làm công việc đó.</p>
+</div>
+</div>
+<!-- Collapsible Trigger (Up) -->
+<button class="w-full flex justify-center mt-3 pt-2 border-t border-surface-container hover:bg-surface-bright transition-colors rounded-b-lg">
+<span class="material-symbols-outlined text-outline-variant" data-icon="expand_less">expand_less</span>
+</button>
+</div>
+<!-- Card 3 (Collapsed State) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_15px_rgba(0,0,0,0.06)] p-4 border border-outline-variant/30 flex flex-col">
+<div class="flex justify-between items-start w-full">
+<div class="flex flex-col">
+<h4 class="font-headline-lg text-headline-lg text-on-surface mb-0.5">abroad</h4>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface-variant">/əˈbrɔːd/</span>
+<button class="text-primary hover:bg-surface-container rounded-full p-1 -ml-1 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" data-icon="volume_up">volume_up</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full border border-outline-variant/30">Chưa học</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+</div>
+</div>
+<div class="mt-2 w-full">
+<p class="font-body-lg text-body-lg text-on-surface">Ở nước ngoài</p>
+</div>
+<!-- Collapsible Trigger -->
+<button class="w-full flex justify-center mt-3 pt-2 border-t border-surface-container hover:bg-surface-bright transition-colors rounded-b-lg">
+<span class="material-symbols-outlined text-outline-variant" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed max-w-md md:max-w-full bottom-0 w-full z-50 h-14 bg-surface dark:bg-on-background shadow-[0_-4px_15px_rgba(0,0,0,0.06)] flex justify-around items-center px-4">
+<!-- Trang chủ -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-0.5">Trang chủ</span>
+</button>
+<!-- Bộ từ (ACTIVE for Set Detail) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed bg-primary-fixed/30 dark:bg-primary-container rounded-xl px-3 py-1 hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-12">
+<span class="material-symbols-outlined text-[24px]" data-icon="style" data-weight="fill">style</span>
+<span class="font-label-sm text-label-sm mt-0.5">Bộ từ</span>
+</button>
+<!-- Ôn tập -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined text-[24px]" data-icon="psychology">psychology</span>
+<span class="font-label-sm text-label-sm mt-0.5">Ôn tập</span>
+</button>
+<!-- Trò chơi -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined text-[24px]" data-icon="sports_esports">sports_esports</span>
+<span class="font-label-sm text-label-sm mt-0.5">Trò chơi</span>
+</button>
+<!-- Cài đặt -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200 w-16 h-12 rounded-xl">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+<span class="font-label-sm text-label-sm mt-0.5">Cài đặt</span>
+</button>
+</nav>
+</body></html>

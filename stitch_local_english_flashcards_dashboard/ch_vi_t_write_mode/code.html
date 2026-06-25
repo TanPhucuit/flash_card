@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Write Mode - Local English Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#712ae2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary": "#7e3000",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface": "#f8f9fa",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a44100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#3525cd",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-word": ["Inter"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "translation-text": ["Be Vietnam Pro"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-word": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "translation-text": ["20px", { "lineHeight": "30px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F9FAFB; /* Level 0 */
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.1), 0 2px 4px -1px rgba(79, 70, 229, 0.06);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05);
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- SideNavBar (Suppressed due to Task-Focused intent, but keeping structure if needed for context, instead using a dedicated sidebar for missed words) -->
+<div class="flex-1 flex flex-col h-full bg-surface-bright relative z-0">
+<!-- TopAppBar Contextual Header -->
+<header class="flex justify-between items-center w-full px-lg py-md sticky top-0 z-50 bg-surface-bright">
+<div class="flex items-center gap-sm">
+<button class="p-sm rounded-full hover:bg-surface-container transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                    Write Mode
+                </div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs">
+<span class="text-on-surface-variant font-label-caps text-label-caps">Tiến độ:</span>
+<div class="w-32 h-2 bg-primary-fixed rounded-full overflow-hidden">
+<div class="w-1/3 h-full bg-primary-container"></div>
+</div>
+<span class="font-label-caps text-label-caps text-primary-container">33%</span>
+</div>
+<button class="p-sm rounded-full hover:bg-surface-container transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas & Sidebar Layout -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center p-2xl relative">
+<!-- Feedback Overlay (Hidden by default, shown for correct/incorrect) -->
+<!-- <div class="absolute top-12 left-1/2 transform -translate-x-1/2 bg-error-container text-on-error-container px-lg py-sm rounded-lg flex items-center gap-sm shadow-md z-10 transition-opacity">
+                    <span class="material-symbols-outlined">cancel</span>
+                    <span class="font-body-md text-body-md font-medium">Incorrect. The correct answer is "abandon".</span>
+                </div> -->
+<!-- Flashcard Context -->
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-2xl ambient-shadow p-xl flex flex-col items-center text-center gap-lg">
+<div class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+                        Dịch sang tiếng Anh
+                    </div>
+<h1 class="font-display-word text-display-word text-on-surface">
+                        từ bỏ
+                    </h1>
+<div class="w-full mt-xl">
+<div class="relative">
+<input autofocus="" class="w-full bg-surface text-center font-headline-lg text-headline-lg text-on-surface border border-surface-variant rounded-xl py-md px-lg focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all placeholder:text-outline-variant" placeholder="Nhập từ tiếng Anh..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md w-full justify-center mt-lg">
+<button class="px-lg py-sm rounded-lg bg-surface text-primary border border-surface-variant hover:bg-surface-container-low transition-all font-body-md text-body-md font-medium flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                            Gợi ý
+                        </button>
+<button class="px-lg py-sm rounded-lg bg-surface text-on-surface-variant border border-surface-variant hover:bg-surface-container-low transition-all font-body-md text-body-md font-medium flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+                            Xem đáp án
+                        </button>
+</div>
+<button class="w-full mt-xl py-md rounded-xl bg-primary-container text-on-primary-container font-headline-md text-headline-md hover:opacity-90 active:scale-[0.98] transition-all shadow-sm">
+                        Kiểm tra
+                    </button>
+</div>
+</main>
+<!-- Sidebar: Recently Missed Words -->
+<aside class="w-80 bg-surface border-l border-surface-variant flex flex-col hidden lg:flex">
+<div class="p-lg border-b border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-error">history</span>
+                        Từ vừa sai
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">
+                        Ôn tập lại các từ bạn chưa nắm vững.
+                    </p>
+</div>
+<div class="flex-1 overflow-y-auto p-md flex flex-col gap-sm">
+<!-- Missed Word Item 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-surface-variant card-shadow flex justify-between items-center group cursor-pointer hover:border-primary-container transition-colors">
+<div>
+<div class="font-body-lg text-body-lg text-on-surface font-semibold">abandon</div>
+<div class="font-body-md text-body-md text-on-surface-variant">từ bỏ</div>
+</div>
+<button class="text-outline-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+<!-- Missed Word Item 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-surface-variant card-shadow flex justify-between items-center group cursor-pointer hover:border-primary-container transition-colors">
+<div>
+<div class="font-body-lg text-body-lg text-on-surface font-semibold">reluctant</div>
+<div class="font-body-md text-body-md text-on-surface-variant">miễn cưỡng</div>
+</div>
+<button class="text-outline-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+<!-- Missed Word Item 3 -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-surface-variant card-shadow flex justify-between items-center group cursor-pointer hover:border-primary-container transition-colors">
+<div>
+<div class="font-body-lg text-body-lg text-on-surface font-semibold">perceive</div>
+<div class="font-body-md text-body-md text-on-surface-variant">nhận thức</div>
+</div>
+<button class="text-outline-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">volume_up</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

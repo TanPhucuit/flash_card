@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tạo Học Phần - Local English</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-high": "#e7e8e9",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "surface-bright": "#f8f9fa",
+                    "secondary-fixed-dim": "#d2bbff",
+                    "secondary": "#712ae2",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "on-surface": "#191c1d",
+                    "surface-container-low": "#f3f4f5",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary-fixed": "#e2dfff",
+                    "tertiary": "#7e3000",
+                    "on-tertiary-fixed": "#351000",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#7b2f00",
+                    "surface": "#f8f9fa",
+                    "outline": "#777587",
+                    "on-secondary-fixed": "#25005a",
+                    "secondary-fixed": "#eaddff",
+                    "background": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-secondary-container": "#fffbff",
+                    "on-primary-fixed": "#0f0069",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#ffd2be",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d9dadb",
+                    "inverse-primary": "#c3c0ff",
+                    "secondary-container": "#8a4cfc",
+                    "on-surface-variant": "#464555",
+                    "on-background": "#191c1d",
+                    "primary-container": "#4f46e5",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#a44100",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#dad7ff",
+                    "inverse-surface": "#2e3132",
+                    "primary": "#3525cd",
+                    "on-secondary-fixed-variant": "#5a00c6",
+                    "surface-tint": "#4d44e3",
+                    "outline-variant": "#c7c4d8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "2xl": "1rem"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "md": "16px",
+                    "2xl": "48px",
+                    "container-margin": "20px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-word": ["Inter"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "translation-text": ["Be Vietnam Pro"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "display-word": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "translation-text": ["20px", {"lineHeight": "30px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: #c7c4d8; border-radius: 4px; }
+        
+        /* Input base styling aligned with guidance */
+        .input-base {
+            @apply w-full bg-surface-container-lowest border border-surface-variant rounded-lg px-md py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all placeholder:text-outline-variant;
+        }
+        .input-minimal {
+            @apply w-full bg-transparent border-b border-surface-variant py-xs font-body-md text-body-md text-on-surface focus:outline-none focus:border-b-2 focus:border-secondary transition-all placeholder:text-outline-variant;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-hidden flex">
+<!-- JSON Component: SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface border-r border-surface-variant p-md gap-sm z-40">
+<!-- Brand Header -->
+<div class="px-md py-lg mb-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Local English</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Modern Academic</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<!-- Active State: My Sets (since we are creating a set) -->
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-xl font-semibold transform scale-98 duration-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-body-md text-body-md">My Sets</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">event_repeat</span>
+<span class="font-body-md text-body-md">Review Today</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-body-md text-body-md">Practice Test</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="font-body-md text-body-md">Match Game</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-body-md text-body-md">Progress</span>
+</a>
+</div>
+<!-- Settings -->
+<div class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 h-screen overflow-y-auto bg-background relative">
+<!-- Header Actions (Sticky) -->
+<header class="sticky top-0 z-30 bg-surface/80 backdrop-blur-md border-b border-surface-variant px-container-margin md:px-xl py-md flex justify-between items-center">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">Tạo học phần mới</h2>
+</div>
+<button class="bg-primary text-on-primary font-body-md text-body-md font-semibold px-lg py-sm rounded-lg shadow-sm hover:shadow-md active:scale-95 transition-all flex items-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                Lưu học phần
+            </button>
+</header>
+<div class="max-w-5xl mx-auto px-container-margin md:px-xl py-xl space-y-xl pb-2xl">
+<!-- Set Meta Info Form -->
+<section class="bg-surface-container-lowest rounded-2xl p-lg md:p-xl border border-surface-variant shadow-[0_4px_12px_rgba(0,0,0,0.02)] space-y-md">
+<div>
+<input class="w-full bg-transparent border-b-2 border-surface-variant py-sm font-headline-md text-headline-md text-on-surface focus:outline-none focus:border-secondary transition-colors placeholder:text-outline-variant placeholder:font-normal" placeholder="Nhập tiêu đề (VD: Sinh học chương 1, Từ vựng IELTS)" type="text"/>
+</div>
+<div class="pt-sm">
+<textarea class="w-full bg-transparent border-b border-surface-variant py-sm font-body-md text-body-md text-on-surface focus:outline-none focus:border-secondary transition-colors placeholder:text-outline-variant resize-none" placeholder="Thêm mô tả (tùy chọn)..." rows="2"></textarea>
+</div>
+<!-- Tags Area -->
+<div class="pt-sm flex items-center gap-sm flex-wrap">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">sell</span> Nhãn
+                    </span>
+<div class="flex gap-sm flex-wrap">
+<span class="bg-surface-container-low px-sm py-xs rounded-md font-body-md text-body-md text-on-surface-variant flex items-center gap-xs cursor-pointer hover:bg-surface-variant transition-colors">
+                            IELTS <span class="material-symbols-outlined text-[14px]">close</span>
+</span>
+<button class="text-secondary font-body-md text-body-md flex items-center gap-xs hover:underline">
+<span class="material-symbols-outlined text-[18px]">add</span> Thêm nhãn
+                        </button>
+</div>
+</div>
+</section>
+<!-- Bulk Import & Tools Header -->
+<div class="flex justify-between items-end border-b border-surface-variant pb-sm">
+<h3 class="font-translation-text text-translation-text text-on-surface">Danh sách thẻ</h3>
+<button class="flex items-center gap-xs text-secondary font-body-md text-body-md hover:bg-secondary/10 px-sm py-xs rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+                    Nhập dữ liệu nhanh
+                </button>
+</div>
+<!-- Cards Container -->
+<div class="space-y-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-lg border border-surface-variant shadow-[0_12px_24px_rgba(0,0,0,0.03)] relative group transition-all focus-within:ring-2 focus-within:ring-primary/20">
+<!-- Card Header -->
+<div class="flex justify-between items-center mb-md pb-sm border-b border-surface-variant/50">
+<span class="font-headline-md text-headline-md text-outline-variant">1</span>
+<div class="flex gap-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-secondary transition-colors p-xs rounded hover:bg-surface-variant"><span class="material-symbols-outlined">drag_indicator</span></button>
+<button class="text-on-surface-variant hover:text-error transition-colors p-xs rounded hover:bg-error-container"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left: Text Inputs (Span 9) -->
+<div class="md:col-span-9 space-y-md">
+<!-- Row 1: Word, POS, Level -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-sm">
+<div class="md:col-span-6 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Thuật ngữ</label>
+<input class="input-base font-medium" placeholder="Ví dụ: Paradigm" type="text"/>
+</div>
+<div class="md:col-span-3 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Từ loại</label>
+<select class="input-base appearance-none cursor-pointer">
+<option disabled="" selected="" value="">-</option>
+<option>Noun</option>
+<option>Verb</option>
+<option>Adjective</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-outline-variant pointer-events-none">arrow_drop_down</span>
+</div>
+<div class="md:col-span-3 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Cấp độ</label>
+<select class="input-base appearance-none cursor-pointer">
+<option disabled="" selected="" value="">-</option>
+<option>B2</option>
+<option>C1</option>
+<option>C2</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-outline-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- Row 2: Meaning & IPA -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Ý nghĩa</label>
+<input class="input-base font-translation-text" placeholder="Mô hình, kiểu mẫu" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Phiên âm (IPA)</label>
+<input class="input-base text-outline" placeholder="/ˈpærədaɪm/" type="text"/>
+</div>
+</div>
+<!-- Row 3: Definition -->
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Định nghĩa (Tiếng Anh)</label>
+<textarea class="input-base resize-none" placeholder="A typical example or pattern of something..." rows="2"></textarea>
+</div>
+<!-- Row 4: Example & Trans -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Ví dụ</label>
+<textarea class="input-base resize-none" placeholder="The war was a paradigm of destructive..." rows="2"></textarea>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Dịch ví dụ</label>
+<textarea class="input-base resize-none font-translation-text" placeholder="Cuộc chiến là một mô hình của sự hủy diệt..." rows="2"></textarea>
+</div>
+</div>
+<!-- Row 5: Synonyms/Antonyms (Minimal) -->
+<div>
+<input class="input-minimal" placeholder="+ Thêm từ đồng nghĩa / trái nghĩa (phân cách bằng dấu phẩy)" type="text"/>
+</div>
+</div>
+<!-- Right: Image Area (Span 3) -->
+<div class="md:col-span-3 h-full min-h-[160px] md:min-h-full">
+<label class="w-full h-full min-h-[160px] rounded-xl border-2 border-dashed border-outline-variant bg-surface-bright hover:bg-surface-container hover:border-secondary flex flex-col items-center justify-center cursor-pointer transition-all group/img">
+<span class="material-symbols-outlined text-outline-variant group-hover/img:text-secondary text-4xl mb-xs transition-colors">add_photo_alternate</span>
+<span class="font-label-caps text-label-caps text-outline-variant group-hover/img:text-secondary transition-colors">Thêm ảnh</span>
+<input accept="image/*" class="hidden" type="file"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Card 2 (Empty state for demonstration) -->
+<div class="bg-surface-container-lowest rounded-2xl p-lg border border-surface-variant shadow-[0_4px_12px_rgba(0,0,0,0.02)] relative group transition-all hover:shadow-[0_12px_24px_rgba(0,0,0,0.03)] focus-within:ring-2 focus-within:ring-primary/20">
+<div class="flex justify-between items-center mb-md pb-sm border-b border-surface-variant/50">
+<span class="font-headline-md text-headline-md text-outline-variant">2</span>
+<div class="flex gap-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-secondary transition-colors p-xs rounded hover:bg-surface-variant"><span class="material-symbols-outlined">drag_indicator</span></button>
+<button class="text-on-surface-variant hover:text-error transition-colors p-xs rounded hover:bg-error-container"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-9 space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-sm">
+<div class="md:col-span-6 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Thuật ngữ</label>
+<input class="input-base font-medium" placeholder="" type="text"/>
+</div>
+<div class="md:col-span-3 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Từ loại</label>
+<select class="input-base appearance-none cursor-pointer">
+<option selected="" value="">-</option>
+<option>Noun</option>
+<option>Verb</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-outline-variant pointer-events-none">arrow_drop_down</span>
+</div>
+<div class="md:col-span-3 relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Cấp độ</label>
+<select class="input-base appearance-none cursor-pointer">
+<option selected="" value="">-</option>
+<option>B2</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 text-outline-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Ý nghĩa</label>
+<input class="input-base font-translation-text" placeholder="" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant absolute -top-2 left-2 bg-surface-container-lowest px-1">Phiên âm (IPA)</label>
+<input class="input-base text-outline" placeholder="" type="text"/>
+</div>
+</div>
+<!-- Condensed view for empty secondary fields -->
+<div class="relative">
+<input class="input-minimal" placeholder="+ Thêm định nghĩa, ví dụ, từ đồng nghĩa..." type="text"/>
+</div>
+</div>
+<div class="md:col-span-3 h-[120px] md:h-full">
+<label class="w-full h-full rounded-xl border-2 border-dashed border-outline-variant bg-surface-bright hover:bg-surface-container hover:border-secondary flex flex-col items-center justify-center cursor-pointer transition-all group/img">
+<span class="material-symbols-outlined text-outline-variant group-hover/img:text-secondary text-3xl mb-xs transition-colors">add_photo_alternate</span>
+<input accept="image/*" class="hidden" type="file"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Card Button Action -->
+<div class="pt-md pb-xl">
+<button class="w-full py-lg border-2 border-dashed border-primary-fixed-dim bg-surface hover:bg-primary-fixed/30 rounded-2xl flex flex-col items-center justify-center gap-xs text-primary transition-all group">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add_circle</span>
+<span class="font-headline-md text-headline-md">Thêm thẻ mới</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

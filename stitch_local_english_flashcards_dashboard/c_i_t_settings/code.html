@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - Local English Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#712ae2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary": "#7e3000",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface": "#f8f9fa",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a44100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#3525cd",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "48px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "lg": "24px"
+                    },
+                    fontFamily: {
+                        "display-word": ["Inter"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "translation-text": ["Be Vietnam Pro"],
+                        "label-caps": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-word": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "translation-text": ["20px", { lineHeight: "30px", fontWeight: "500" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Toggle Switch Custom CSS */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #4f46e5;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #4f46e5;
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: #e2e8f0;
+            transition: all 0.3s;
+        }
+        .toggle-label {
+            width: 3rem;
+            height: 1.5rem;
+            background-color: #e2e8f0;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+        .toggle-dot {
+            top: 0.125rem;
+            left: 0.125rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .toggle-checkbox:checked ~ .toggle-dot {
+            transform: translateX(1.5rem);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface border-r border-surface-variant p-md gap-sm z-40">
+<div class="mb-xl px-sm">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Local English</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Modern Academic</p>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="font-body-md text-body-md">My Sets</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">event_repeat</span>
+<span class="font-body-md text-body-md">Review Today</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-body-md text-body-md">Practice Test</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="font-body-md text-body-md">Match Game</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-body-md text-body-md">Progress</span>
+</a>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm bg-primary-container text-on-primary-container rounded-xl font-semibold scale-98 duration-100 transition-all" href="#">
+<span class="material-symbols-outlined fill">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-lg py-md sticky top-0 z-50 bg-surface-bright border-b border-surface-variant">
+<div class="flex items-center gap-sm md:hidden">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Local English</h1>
+</div>
+<div class="hidden md:block">
+<!-- Empty spacer for desktop flex-between alignment if needed, or breadcrumbs -->
+</div>
+<div class="flex items-center gap-md">
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">local_fire_department</span>
+</button>
+<button class="p-sm text-on-surface-variant hover:bg-surface-container rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Settings Canvas -->
+<div class="flex-1 p-container-margin md:p-2xl max-w-4xl mx-auto w-full">
+<div class="mb-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Settings</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Manage your study environment and local data.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Preferences Section (Bento style card) -->
+<section class="md:col-span-7 bg-surface rounded-2xl border border-surface-variant p-lg shadow-sm">
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary">tune</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Preferences</h3>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Toggle: Giao diện -->
+<div class="flex items-center justify-between py-sm border-b border-surface-variant/50">
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Giao diện (Light/Dark)</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Choose your visual theme.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle_theme" name="toggle_theme" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" for="toggle_theme"></label>
+<div class="toggle-dot absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none pointer-events-none"></div>
+</div>
+</div>
+<!-- Toggle: Nhắc nhở -->
+<div class="flex items-center justify-between py-sm border-b border-surface-variant/50">
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Nhắc nhở (Reminders)</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Daily study notifications.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle_reminders" name="toggle_reminders" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle_reminders"></label>
+<div class="toggle-dot absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none pointer-events-none" style="transform: translateX(1.5rem);"></div>
+</div>
+</div>
+<!-- Select: Voice -->
+<div class="py-sm pt-md">
+<label class="block font-body-lg text-body-lg text-on-surface font-semibold mb-xs" for="voice_select">Chọn giọng nói (Voice Selector)</label>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Select the pronunciation accent.</p>
+<div class="relative">
+<select class="block w-full pl-md pr-xl py-sm text-body-md border border-surface-variant rounded-lg bg-surface-bright text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary appearance-none" id="voice_select">
+<option value="us_f">US English (Female) - Default</option>
+<option value="us_m">US English (Male)</option>
+<option value="uk_f">UK English (Female)</option>
+<option value="uk_m">UK English (Male)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-md text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Management Section -->
+<section class="md:col-span-5 flex flex-col gap-lg">
+<!-- Local Storage Info Card -->
+<div class="bg-primary-container/10 border border-primary-fixed-dim rounded-2xl p-lg relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary">sd_card</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Lưu trữ cục bộ</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">All your flashcards and progress are stored locally on this device. We do not sync to the cloud to ensure privacy and offline availability.</p>
+<div class="bg-surface-bright rounded-lg p-sm border border-surface-variant flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface font-medium">Storage Used</span>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed-dim/30 px-sm py-xs rounded">12.4 MB</span>
+</div>
+</div>
+</div>
+<!-- Data Actions -->
+<div class="bg-surface rounded-2xl border border-surface-variant p-lg shadow-sm">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-on-surface">database</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Data Management</h3>
+</div>
+<div class="flex flex-col gap-sm">
+<button class="w-full flex items-center justify-between px-md py-sm rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-bright transition-colors group">
+<div class="flex items-center gap-sm text-on-surface group-hover:text-primary">
+<span class="material-symbols-outlined">download</span>
+<span class="font-body-md text-body-md font-medium">Xuất dữ liệu (Export)</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between px-md py-sm rounded-lg border border-surface-variant hover:border-primary hover:bg-surface-bright transition-colors group">
+<div class="flex items-center gap-sm text-on-surface group-hover:text-primary">
+<span class="material-symbols-outlined">upload</span>
+<span class="font-body-md text-body-md font-medium">Nhập bản sao lưu (Import)</span>
+</div>
+</button>
+<div class="h-px bg-surface-variant my-xs w-full"></div>
+<button class="w-full flex items-center justify-between px-md py-sm rounded-lg border border-error/30 hover:border-error hover:bg-error-container/20 transition-colors group">
+<div class="flex items-center gap-sm text-error">
+<span class="material-symbols-outlined">delete_forever</span>
+<span class="font-body-md text-body-md font-medium">Xóa dữ liệu (Reset)</span>
+</div>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Mobile) - Mock implementation based on standard patterns -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-bright border-t border-surface-variant flex justify-around items-center py-sm z-50 pb-safe">
+<a class="flex flex-col items-center gap-xs p-sm text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center gap-xs p-sm text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="font-label-caps text-label-caps">Sets</span>
+</a>
+<a class="flex flex-col items-center gap-xs p-sm text-primary font-bold" href="#">
+<span class="material-symbols-outlined fill">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<!-- Safe area padding for mobile bottom nav -->
+<style>
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        @media (max-width: 767px) {
+            main {
+                padding-bottom: 80px; /* Make room for bottom nav */
+            }
+        }
+    </style>
+<script>
+        // Simple toggle interactivity for demonstration
+        document.getElementById('toggle_theme').addEventListener('change', function(e) {
+            const label = this.nextElementSibling;
+            const dot = label.nextElementSibling;
+            if(this.checked) {
+                label.style.backgroundColor = '#4f46e5';
+                dot.style.transform = 'translateX(1.5rem)';
+            } else {
+                label.style.backgroundColor = '#e2e8f0';
+                dot.style.transform = 'translateX(0)';
+            }
+        });
+
+        document.getElementById('toggle_reminders').addEventListener('change', function(e) {
+            const label = this.nextElementSibling;
+            const dot = label.nextElementSibling;
+            if(this.checked) {
+                label.style.backgroundColor = '#4f46e5';
+                dot.style.transform = 'translateX(1.5rem)';
+            } else {
+                label.style.backgroundColor = '#e2e8f0';
+                dot.style.transform = 'translateX(0)';
+            }
+        });
+    </script>
+</body></html>

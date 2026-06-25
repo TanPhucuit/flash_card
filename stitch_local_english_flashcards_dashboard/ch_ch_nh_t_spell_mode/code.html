@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spell Mode - Local English Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-variant": "#e1e3e4",
+                "surface-container-high": "#e7e8e9",
+                "tertiary-fixed-dim": "#ffb695",
+                "on-secondary": "#ffffff",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#c3c0ff",
+                "surface-bright": "#f8f9fa",
+                "secondary-fixed-dim": "#d2bbff",
+                "secondary": "#712ae2",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#ffdbcc",
+                "on-primary-fixed-variant": "#3323cc",
+                "on-surface": "#191c1d",
+                "surface-container-low": "#f3f4f5",
+                "surface-container-highest": "#e1e3e4",
+                "primary-fixed": "#e2dfff",
+                "tertiary": "#7e3000",
+                "on-tertiary-fixed": "#351000",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed-variant": "#7b2f00",
+                "surface": "#f8f9fa",
+                "outline": "#777587",
+                "on-secondary-fixed": "#25005a",
+                "secondary-fixed": "#eaddff",
+                "background": "#f8f9fa",
+                "surface-container": "#edeeef",
+                "on-secondary-container": "#fffbff",
+                "on-primary-fixed": "#0f0069",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#ffd2be",
+                "error-container": "#ffdad6",
+                "surface-dim": "#d9dadb",
+                "inverse-primary": "#c3c0ff",
+                "secondary-container": "#8a4cfc",
+                "on-surface-variant": "#464555",
+                "on-background": "#191c1d",
+                "primary-container": "#4f46e5",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#a44100",
+                "inverse-on-surface": "#f0f1f2",
+                "on-error-container": "#93000a",
+                "on-primary-container": "#dad7ff",
+                "inverse-surface": "#2e3132",
+                "primary": "#3525cd",
+                "on-secondary-fixed-variant": "#5a00c6",
+                "surface-tint": "#4d44e3",
+                "outline-variant": "#c7c4d8"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xl": "32px",
+                "md": "16px",
+                "2xl": "48px",
+                "container-margin": "20px",
+                "gutter": "16px",
+                "sm": "8px",
+                "xs": "4px",
+                "base": "4px",
+                "lg": "24px"
+        },
+        "fontFamily": {
+                "display-word": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Be Vietnam Pro"
+                ],
+                "headline-lg-mobile": [
+                        "Be Vietnam Pro"
+                ],
+                "headline-md": [
+                        "Be Vietnam Pro"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "translation-text": [
+                        "Be Vietnam Pro"
+                ],
+                "label-caps": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "display-word": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "translation-text": [
+                        "20px",
+                        {
+                                "lineHeight": "30px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    .ambient-shadow-1 { box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.05); }
+    .ambient-shadow-2 { box-shadow: 0 12px 12px -6px rgba(79, 70, 229, 0.1); }
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-lg py-md sticky top-0 z-50 bg-surface-bright dark:bg-surface-dim border-b border-surface-variant dark:border-outline-variant flat no shadows">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">menu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Local English Flashcards</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors rounded-full p-sm cursor-pointer">local_fire_department</span>
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors rounded-full p-sm cursor-pointer">account_circle</span>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full p-md gap-sm w-64 fixed left-0 top-0 mt-[73px] bg-surface dark:bg-inverse-surface border-r border-surface-variant dark:border-outline-variant flat no shadows z-40">
+<div class="flex items-center gap-md mb-md p-sm">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="A clean, minimalist 3D avatar of a student wearing modern glasses, soft studio lighting, soft blue and gray color palette, high resolution, suitable for a modern academic app profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY74gi2O3Po6ddpgVmnPTfDxYy7aL3zExpF-kj5iNoZJ661GGFI3d5e8jqGp7LlhwwqIrFsgTYkdR8j-xFuHP_a3fruv-Ni6aTBYycftJ7sS7Cabep0T4xM9fDWLVAXlKhtKTnCH6GSnUrQuDIbB_0Vd-fhPESFuy5DpWt0SVHjZ6lfvpwU7Mi-NqkD_oudtgBc6vRBKz3gDz-PBuIfRSbFtmbOcLn2-0c1G4ErZga8f7hFCJELtwKCYlqIDQz7JCuyU4dkllH-Qo"/>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim text-lg leading-tight">Local English</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Modern Academic</div>
+</div>
+</div>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="font-body-md text-body-md">My Sets</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">event_repeat</span>
+<span class="font-body-md text-body-md">Review Today</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary font-semibold hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all transform scale-98 duration-100" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-body-md text-body-md">Practice Test</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="font-body-md text-body-md">Match Game</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-body-md text-body-md">Progress</span>
+</a>
+<a class="flex items-center gap-md p-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-container-margin md:p-xl flex flex-col items-center justify-center relative overflow-y-auto">
+<div class="w-full max-w-2xl flex flex-col gap-xl">
+<!-- Progress Header -->
+<div class="flex justify-between items-center w-full">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Spell Mode</span>
+<div class="flex items-center gap-sm w-1/2">
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-1/3 rounded-full"></div>
+</div>
+<span class="font-label-caps text-label-caps text-primary">3/10</span>
+</div>
+</div>
+<!-- Main Spell Card -->
+<div class="bg-surface-bright rounded-[48px] p-2xl ambient-shadow-2 flex flex-col items-center text-center gap-lg border border-surface-container-lowest">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Nghe và nhập từ bạn nghe được</h2>
+<!-- Audio Controls -->
+<div class="flex items-center justify-center gap-md">
+<button class="bg-primary-container text-on-primary-container w-20 h-20 rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors duration-200 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="bg-surface-container text-on-surface-variant w-12 h-12 rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors duration-200 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">speed</span>
+</button>
+</div>
+<!-- Input Area -->
+<div class="w-full max-w-md mt-sm">
+<input autofocus="" class="w-full text-center font-display-word text-display-word md:text-[32px] md:leading-[40px] bg-transparent border-b-2 border-surface-variant focus:border-secondary focus:ring-0 px-md py-sm transition-colors duration-200 placeholder-surface-dim outline-none" placeholder="Gõ từ vào đây..." type="text"/>
+</div>
+<!-- Reveal / Hint Area (Hidden by default, shown for structure) -->
+<div class="w-full bg-surface-container-low rounded-xl p-md mt-md border border-surface-variant text-left">
+<div class="flex items-center gap-xs mb-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Mẹo phát âm</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Nguyên âm giữa đọc kéo dài, trọng âm rơi vào âm tiết đầu tiên.
+                    </p>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex justify-between items-center w-full mt-sm">
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider hover:text-on-surface transition-colors">Bỏ qua</button>
+<button class="bg-primary text-on-primary px-xl py-md rounded-full font-headline-md text-[18px] leading-[28px] font-semibold hover:bg-primary-fixed-variant transition-colors duration-200 active:scale-95 ambient-shadow-2">
+                    Kiểm tra
+                </button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local English Storage Bridge</title>
+  </head>
+  <body>
+    <script>
+      const keys = ["localEnglishFlashcards:v1", "localEnglishFlashcards:v1:backup"];
+      const payload = {
+        type: "local-english-storage-bridge",
+        origin: window.location.origin,
+        values: Object.fromEntries(keys.map((key) => [key, localStorage.getItem(key)])),
+      };
+      window.parent.postMessage(payload, "*");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Local English Flashcards - Study Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#712ae2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary": "#7e3000",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface": "#f8f9fa",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a44100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#3525cd",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-word": ["Inter"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "translation-text": ["Be Vietnam Pro"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-word": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "translation-text": ["20px", { "lineHeight": "30px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F9FAFB; /* Level 0 */
+        }
+        
+        .flashcard-container {
+            perspective: 1000px;
+        }
+
+        .flashcard {
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 12px 24px -12px rgba(79, 70, 229, 0.1); /* Level 2 */
+        }
+
+        .flashcard.flipped {
+            transform: rotateX(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flashcard-back {
+            transform: rotateX(180deg);
+        }
+        
+        /* Utility for ambient active shadow */
+        .shadow-ambient-active {
+            box-shadow: 0 12px 24px -12px rgba(79, 70, 229, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface h-screen flex flex-col overflow-hidden">
+<!-- TopNavBar (Suppressed due to Focus Mode constraint, but keeping a minimal back action header) -->
+<header class="w-full flex justify-between items-center px-lg py-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-body-md">Exit</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-xs">IELTS Core Vocabulary</span>
+<!-- Progress Bar -->
+<div class="w-64 h-2 bg-primary-fixed rounded-full overflow-hidden flex items-center">
+<div class="h-full bg-primary-container rounded-full" style="width: 24%"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-xs">12 / 50</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col items-center justify-center p-md md:p-2xl relative">
+<!-- Flashcard Area -->
+<div class="w-full max-w-3xl aspect-[4/3] md:aspect-[16/9] flashcard-container relative z-10 cursor-pointer" onclick="document.getElementById('flashcard').classList.toggle('flipped')">
+<div class="flashcard w-full h-full rounded-2xl bg-surface-container-lowest border border-surface-variant relative shadow-ambient-active" id="flashcard">
+<!-- Front -->
+<div class="flashcard-front rounded-2xl flex flex-col items-center justify-center p-xl bg-surface-container-lowest">
+<div class="absolute top-md right-md flex gap-sm">
+<button class="text-surface-variant hover:text-tertiary-container transition-colors" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined">star</span>
+</button>
+</div>
+<h2 class="font-display-word text-display-word text-on-surface mb-sm">abandon</h2>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="font-body-lg text-body-lg">/əˈbændən/</span>
+<button class="w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center transition-colors text-primary" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</button>
+</div>
+<div class="absolute bottom-lg text-on-surface-variant flex items-center gap-xs font-body-md text-body-md opacity-50">
+<span class="material-symbols-outlined text-[16px]">touch_app</span> Tap to flip
+                    </div>
+</div>
+<!-- Back -->
+<div class="flashcard-back rounded-2xl flex flex-col items-start justify-center p-2xl bg-surface-container-lowest">
+<div class="absolute top-md right-md flex gap-sm">
+<button class="text-surface-variant hover:text-tertiary-container transition-colors" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined">star</span>
+</button>
+</div>
+<div class="w-full h-full flex flex-col justify-center max-w-2xl mx-auto">
+<div class="mb-lg">
+<div class="inline-block px-sm py-xs bg-secondary-fixed text-on-secondary-fixed rounded-md font-label-caps text-label-caps uppercase mb-sm">Verb</div>
+<h2 class="font-translation-text text-translation-text text-primary-container mb-xs">từ bỏ</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic border-l-4 border-surface-variant pl-md py-xs">to leave a place, thing, or person, usually forever</p>
+</div>
+<div class="mt-md pt-md border-t border-surface-variant w-full">
+<p class="font-body-md text-body-md text-on-surface mb-xs">We had to <strong class="text-primary font-semibold">abandon</strong> the car.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Chúng tôi đã phải <strong class="text-on-surface">từ bỏ</strong> chiếc xe.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Controls Area -->
+<div class="mt-xl w-full max-w-3xl flex flex-col gap-md items-center z-20">
+<!-- Primary Action Row -->
+<div class="flex items-center justify-center gap-md w-full">
+<button class="flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-lowest border border-surface-variant text-on-surface-variant hover:text-primary hover:border-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined">navigate_before</span>
+</button>
+<button class="flex-1 py-md px-lg rounded-xl bg-error-container text-on-error-container font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all text-center">
+                    Chưa thuộc
+                </button>
+<button class="flex-1 py-md px-lg rounded-xl bg-primary-container text-on-primary font-headline-md text-headline-md hover:opacity-90 active:scale-95 transition-all text-center shadow-ambient-active">
+                    Đã thuộc
+                </button>
+<button class="flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-lowest border border-surface-variant text-on-surface-variant hover:text-primary hover:border-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined">navigate_next</span>
+</button>
+</div>
+<!-- Secondary Actions & Keyboard Hints -->
+<div class="flex items-center justify-between w-full mt-sm px-md text-on-surface-variant font-label-caps text-label-caps uppercase opacity-70 hidden md:flex">
+<span><kbd class="border border-outline-variant rounded px-xs py-[2px] mx-[2px] bg-surface">←</kbd> Prev</span>
+<span><kbd class="border border-outline-variant rounded px-xs py-[2px] mx-[2px] bg-surface">1</kbd> Don't Know</span>
+<span><kbd class="border border-outline-variant rounded px-xl py-[2px] mx-[2px] bg-surface">Space</kbd> Flip</span>
+<span><kbd class="border border-outline-variant rounded px-xs py-[2px] mx-[2px] bg-surface">2</kbd> Know</span>
+<span>Next <kbd class="border border-outline-variant rounded px-xs py-[2px] mx-[2px] bg-surface">→</kbd></span>
+</div>
+</div>
+</main>
+<script>
+        // Simple keyboard shortcut implementation for demo
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space') {
+                event.preventDefault();
+                document.getElementById('flashcard').classList.toggle('flipped');
+            }
+        });
+    </script>
+</body></html>

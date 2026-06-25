@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learn Mode - Local English Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Be+Vietnam+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#712ae2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary": "#7e3000",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface": "#f8f9fa",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a44100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#3525cd",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "lg": "24px"
+                    },
+                    fontFamily: {
+                        "display-word": ["Inter"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "translation-text": ["Be Vietnam Pro"],
+                        "label-caps": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-word": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "translation-text": ["20px", { lineHeight: "30px", fontWeight: "500" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Ambient Shadow for Active Card (Level 2) */
+        .ambient-shadow-primary {
+            box-shadow: 0 12px 24px -4px rgba(53, 37, 205, 0.1);
+        }
+        .flashcard-option:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex selection:bg-primary selection:text-on-primary">
+<!-- Global Side Navigation (from JSON) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface border-r border-surface-variant p-md gap-sm z-40">
+<!-- Brand Header -->
+<div class="flex items-center gap-sm px-sm py-md mb-md">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-primary">Local English</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Modern Academic</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span>My Sets</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md bg-primary-container text-on-primary-container font-semibold transition-all" href="#" style="transform: scale(0.98);">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_repeat</span>
+<span>Review Today</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span>Practice Test</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span>Match Game</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span>Progress</span>
+</a>
+</div>
+<!-- Footer Link -->
+<div class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-xl font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 min-h-screen flex flex-col relative">
+<!-- Top Contextual Header (Study Session) -->
+<header class="w-full h-20 flex items-center justify-between px-xl border-b border-surface-variant bg-surface-bright sticky top-0 z-30">
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface leading-tight">Daily Review Session</h1>
+<span class="font-body-md text-body-md text-on-surface-variant">Essential Verbs Deck</span>
+</div>
+</div>
+<!-- Mobile Toggle / Minimal Action -->
+<button class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</header>
+<!-- Study Layout Grid -->
+<div class="flex-1 p-xl flex flex-col lg:flex-row gap-xl max-w-[1400px] mx-auto w-full items-start justify-center">
+<!-- Left: Main Flashcard/Question Canvas -->
+<div class="flex-1 w-full max-w-3xl flex flex-col items-center justify-center mt-lg">
+<!-- The Active Flashcard -->
+<div class="w-full bg-surface-bright rounded-[32px] p-2xl ambient-shadow-primary border border-surface-variant/50 relative overflow-hidden flex flex-col items-center justify-center min-h-[400px]">
+<!-- Subtle Decorative element indicating study focus -->
+<div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary-fixed to-primary"></div>
+<span class="font-label-caps text-label-caps text-primary mb-xl uppercase tracking-widest bg-primary-fixed px-3 py-1 rounded-full">Question 12 of 20</span>
+<h2 class="font-display-word text-display-word text-on-surface text-center mb-2xl">
+                        What does '<span class="text-primary font-bold">abandon</span>' mean?
+                    </h2>
+<!-- Multiple Choice Options Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md w-full mt-xl">
+<button class="flashcard-option group w-full p-lg rounded-xl border-2 border-surface-container-high bg-surface flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-translation-text text-translation-text text-on-surface group-hover:text-primary transition-colors">từ bỏ</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity">Select</span>
+</button>
+<button class="flashcard-option group w-full p-lg rounded-xl border-2 border-surface-container-high bg-surface flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-translation-text text-translation-text text-on-surface group-hover:text-primary transition-colors">hóa đơn</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity">Select</span>
+</button>
+<button class="flashcard-option group w-full p-lg rounded-xl border-2 border-surface-container-high bg-surface flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-translation-text text-translation-text text-on-surface group-hover:text-primary transition-colors">lợi ích</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity">Select</span>
+</button>
+<button class="flashcard-option group w-full p-lg rounded-xl border-2 border-surface-container-high bg-surface flex flex-col items-center justify-center gap-2 hover:border-primary hover:bg-surface-container transition-all cursor-pointer">
+<span class="font-translation-text text-translation-text text-on-surface group-hover:text-primary transition-colors">khách hàng</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase hidden group-hover:block opacity-0 group-hover:opacity-100 transition-opacity">Select</span>
+</button>
+</div>
+</div>
+<!-- Action Under Card -->
+<div class="mt-xl">
+<button class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface underline decoration-surface-variant hover:decoration-on-surface transition-all py-2 px-4 rounded-lg hover:bg-surface-container">
+                        Tôi không biết (I don't know)
+                    </button>
+</div>
+</div>
+<!-- Right: Session Stats Sidebar (Requested Bento Style) -->
+<aside class="w-full lg:w-80 flex flex-col gap-md lg:sticky lg:top-[120px]">
+<!-- Progress Bento Box -->
+<div class="bg-surface-bright rounded-2xl p-lg border border-surface-variant shadow-sm flex flex-col gap-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[20px]">Session Progress</h3>
+<span class="font-label-caps text-label-caps text-primary font-bold">60%</span>
+</div>
+<!-- 2-tone Progress Bar -->
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 60%;"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">12 of 20 words reviewed</p>
+</div>
+<!-- Metrics Grid Bento Box -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Accuracy -->
+<div class="bg-surface-bright rounded-2xl p-lg border border-surface-variant shadow-sm flex flex-col items-center justify-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">target</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface text-[28px]">92%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Accuracy</span>
+</div>
+<!-- Streak -->
+<div class="bg-surface-bright rounded-2xl p-lg border border-surface-variant shadow-sm flex flex-col items-center justify-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-on-surface text-[28px]">14</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Day Streak</span>
+</div>
+</div>
+<!-- Status Counts Bento Box -->
+<div class="bg-surface-bright rounded-2xl p-lg border border-surface-variant shadow-sm flex flex-col gap-md">
+<h3 class="font-headline-md text-headline-md text-on-surface text-[18px] mb-sm">Word Status</h3>
+<div class="flex flex-col gap-sm">
+<!-- Mới (New) -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface-container-lowest border border-surface-container-high">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<span class="font-body-md text-body-md text-on-surface">Mới (New)</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-on-surface-variant">4</span>
+</div>
+<!-- Đang học (Learning) -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface-container-lowest border border-surface-container-high">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="font-body-md text-body-md text-on-surface">Đang học</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-tertiary">12</span>
+</div>
+<!-- Thành thạo (Mastered) -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface-container-lowest border border-surface-container-high">
+<div class="flex items-center gap-sm">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="font-body-md text-body-md text-on-surface">Thành thạo</span>
+</div>
+<span class="font-body-md text-body-md font-bold text-secondary">108</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

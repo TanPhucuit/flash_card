@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Match Game - Local English Flashcards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Be+Vietnam+Pro:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "surface-bright": "#f8f9fa",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "secondary": "#712ae2",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-surface": "#191c1d",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary": "#7e3000",
+                        "on-tertiary-fixed": "#351000",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface": "#f8f9fa",
+                        "outline": "#777587",
+                        "on-secondary-fixed": "#25005a",
+                        "secondary-fixed": "#eaddff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#ffd2be",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadb",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary-container": "#8a4cfc",
+                        "on-surface-variant": "#464555",
+                        "on-background": "#191c1d",
+                        "primary-container": "#4f46e5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a44100",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#3525cd",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        xl: "32px",
+                        md: "16px",
+                        "2xl": "48px",
+                        "container-margin": "20px",
+                        gutter: "16px",
+                        sm: "8px",
+                        xs: "4px",
+                        base: "4px",
+                        lg: "24px"
+                    },
+                    fontFamily: {
+                        "display-word": ["Inter"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "translation-text": ["Be Vietnam Pro"],
+                        "label-caps": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-word": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "translation-text": ["20px", { lineHeight: "30px", fontWeight: "500" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .match-tile {
+            transition: all 0.2s ease-in-out;
+        }
+        .match-tile.selected {
+            border-color: #4f46e5;
+            background-color: #e2dfff;
+            transform: scale(0.98);
+            box-shadow: 0 12px 24px -8px rgba(79, 70, 229, 0.15);
+        }
+        .match-tile.matched {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col md:flex-row overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-inverse-surface border-r border-surface-variant dark:border-outline-variant p-md gap-sm z-40">
+<div class="mb-lg px-sm">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Local English</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-xs">Modern Academic</p>
+</div>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+<span class="font-body-md text-body-md">My Sets</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="event_repeat">event_repeat</span>
+<span class="font-body-md text-body-md">Review Today</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-body-md text-body-md">Practice Test</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary font-semibold transition-all group scale-98 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="extension" style="font-variation-settings: 'FILL' 1;">extension</span>
+<span class="font-body-md text-body-md">Match Game</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-body-md text-body-md">Progress</span>
+</a>
+<div class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-64 h-screen relative overflow-y-auto">
+<!-- TopAppBar (Mobile & Desktop) -->
+<header class="flex justify-between items-center w-full px-lg py-md sticky top-0 z-50 bg-surface-bright dark:bg-surface-dim border-b border-surface-variant dark:border-outline-variant">
+<div class="flex items-center gap-md md:hidden">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Local English Flashcards</span>
+</div>
+<div class="hidden md:flex flex-1 justify-center">
+<!-- Game Stats Header -->
+<div class="flex items-center gap-xl bg-surface-container px-lg py-sm rounded-full border border-surface-variant shadow-sm">
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SCORE</span>
+<span class="font-headline-md text-headline-md text-primary font-bold" id="score-display">0</span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TIME</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold font-mono" id="timer-display">00:00</span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">BEST</span>
+<span class="font-body-lg text-body-lg text-secondary font-semibold font-mono">00:18</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-sm text-primary dark:text-primary-fixed-dim">
+<button class="p-sm rounded-full hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Mobile Game Stats Header (Visible only on small screens) -->
+<div class="md:hidden flex justify-between items-center px-container-margin py-md bg-surface-container border-b border-surface-variant">
+<div class="flex flex-col items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SCORE</span>
+<span class="font-headline-md-mobile text-headline-lg-mobile text-primary font-bold">0</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TIME</span>
+<span class="font-headline-md-mobile text-headline-lg-mobile text-on-surface font-bold font-mono">00:00</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">BEST</span>
+<span class="font-body-md text-body-md text-secondary font-semibold font-mono">00:18</span>
+</div>
+</div>
+<!-- Game Canvas -->
+<div class="flex-1 flex items-center justify-center p-container-margin md:p-2xl bg-surface-container-lowest">
+<div class="w-full max-w-4xl">
+<!-- Match Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-md md:gap-lg" id="match-grid">
+<!-- Tile 1 -->
+<button class="match-tile w-full aspect-video md:aspect-square bg-surface-bright border-2 border-surface-variant rounded-xl flex items-center justify-center p-md cursor-pointer hover:border-primary-fixed hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-bright" data-type="en" data-word="abandon">
+<span class="font-headline-md text-headline-md text-on-surface text-center break-words w-full">abandon</span>
+</button>
+<!-- Tile 2 -->
+<button class="match-tile w-full aspect-video md:aspect-square bg-surface-bright border-2 border-surface-variant rounded-xl flex items-center justify-center p-md cursor-pointer hover:border-primary-fixed hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-bright" data-type="vi" data-word="achieve">
+<span class="font-translation-text text-translation-text text-on-surface text-center break-words w-full">đạt được</span>
+</button>
+<!-- Tile 3 -->
+<button class="match-tile w-full aspect-video md:aspect-square bg-surface-bright border-2 border-surface-variant rounded-xl flex items-center justify-center p-md cursor-pointer hover:border-primary-fixed hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-bright" data-type="en" data-word="accurate">
+<span class="font-headline-md text-headline-md text-on-surface text-center break-words w-full">accurate</span>
+</button>
+<!-- Tile 4 -->
+<button class="match-tile w-full aspect-video md:aspect-square bg-surface-bright border-2 border-surface-variant rounded-xl flex items-center justify-center p-md cursor-pointer hover:border-primary-fixed hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-bright" data-type="vi" data-word="abandon">
+<span class="font-translation-text text-translation-text text-on-surface text-center break-words w-full">từ bỏ</span>
+</button>
+<!-- Tile 5 -->
+<button class="match-tile w-full aspect-video md:aspect-square bg-surface-bright border-2 border-surface-variant rounded-xl flex items-center justify-center p-md cursor-pointer hover:border-primary-fixed hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-bright" data-type="en" data-word="achieve">
+<span class="font-headline-md text-headline-md text-on-surface text-center break-words w-full">achieve</span>
+</button>
+<!-- Tile 6 -->
+<button class="match-tile w-full aspect-video md:aspect-square bg-surface-bright border-2 border-surface-variant rounded-xl flex items-center justify-center p-md cursor-pointer hover:border-primary-fixed hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-bright" data-type="vi" data-word="accurate">
+<span class="font-translation-text text-translation-text text-on-surface text-center break-words w-full">chính xác</span>
+</button>
+</div>
+<!-- Controls Bottom -->
+<div class="mt-2xl flex justify-center">
+<button class="bg-surface-variant text-on-surface-variant font-label-caps text-label-caps py-sm px-lg rounded-full hover:bg-surface-container-high transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+                        RESTART
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden flex justify-around items-center w-full px-sm py-sm bg-surface dark:bg-inverse-surface border-t border-surface-variant dark:border-outline-variant fixed bottom-0 z-50 pb-safe">
+<a class="flex flex-col items-center p-xs text-on-surface-variant dark:text-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-[10px] leading-tight font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center p-xs text-on-surface-variant dark:text-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="library_books">library_books</span>
+<span class="font-label-caps text-[10px] leading-tight font-medium">Sets</span>
+</a>
+<a class="flex flex-col items-center p-xs text-primary dark:text-primary-fixed-dim" href="#">
+<div class="bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full p-xs mb-1">
+<span class="material-symbols-outlined block" data-icon="extension" style="font-variation-settings: 'FILL' 1;">extension</span>
+</div>
+<span class="font-label-caps text-[10px] leading-tight font-bold">Play</span>
+</a>
+<a class="flex flex-col items-center p-xs text-on-surface-variant dark:text-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-caps text-[10px] leading-tight font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center p-xs text-on-surface-variant dark:text-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-label-caps text-[10px] leading-tight font-medium">Settings</span>
+</a>
+</nav>
+<script>
+        // Simple logic for matching interaction demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const tiles = document.querySelectorAll('.match-tile');
+            let selectedTile = null;
+
+            tiles.forEach(tile => {
+                tile.addEventListener('click', () => {
+                    // Ignore if already matched or currently selected
+                    if (tile.classList.contains('matched') || tile === selectedTile) return;
+
+                    tile.classList.add('selected');
+
+                    if (!selectedTile) {
+                        // First selection
+                        selectedTile = tile;
+                    } else {
+                        // Second selection
+                        const word1 = selectedTile.dataset.word;
+                        const type1 = selectedTile.dataset.type;
+                        const word2 = tile.dataset.word;
+                        const type2 = tile.dataset.type;
+
+                        if (word1 === word2 && type1 !== type2) {
+                            // Match!
+                            setTimeout(() => {
+                                selectedTile.classList.remove('selected');
+                                tile.classList.remove('selected');
+                                selectedTile.classList.add('matched');
+                                tile.classList.add('matched');
+                                selectedTile = null;
+                            }, 300);
+                        } else {
+                            // No match
+                            const tempSelected = selectedTile;
+                            selectedTile = null;
+                            setTimeout(() => {
+                                tempSelected.classList.remove('selected');
+                                tile.classList.remove('selected');
+                                
+                                // Optional: add a tiny shake animation here via CSS class
+                                tempSelected.classList.add('border-error');
+                                tile.classList.add('border-error');
+                                setTimeout(() => {
+                                    tempSelected.classList.remove('border-error');
+                                    tile.classList.remove('border-error');
+                                }, 200);
+
+                            }, 500);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>
