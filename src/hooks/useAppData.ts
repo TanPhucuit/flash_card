@@ -1,15 +1,56 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AppData, VocabularySet } from "../types";
 import { loadAppData, saveAppData } from "../utils/storage";
+import { loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
 
 export function useAppData() {
   const [data, setReactData] = useState<AppData>(() => loadAppData());
   const dataRef = useRef(data);
+  const cloudSaveTimer = useRef<number | undefined>(undefined);
+  const [syncState, setSyncState] = useState<"idle" | "loading" | "saving" | "error">("idle");
+  const [syncError, setSyncError] = useState("");
 
   useEffect(() => {
     dataRef.current = data;
     document.documentElement.classList.toggle("dark", data.settings.theme === "dark");
   }, [data]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setSyncState("loading");
+    loadFromGoogleSheet(controller.signal)
+      .then((cloudData) => {
+        dataRef.current = cloudData;
+        saveAppData(cloudData);
+        setReactData(cloudData);
+        setSyncState("idle");
+        setSyncError("");
+      })
+      .catch((error) => {
+        if (controller.signal.aborted) return;
+        console.warn("Google Sheet sync load failed. Using browser cache.", error);
+        setSyncState("error");
+        setSyncError("Không tải được dữ liệu Google Sheet, đang dùng dữ liệu cache trên trình duyệt.");
+      });
+    return () => controller.abort();
+  }, []);
+
+  const scheduleCloudSave = useCallback((next: AppData) => {
+    if (cloudSaveTimer.current) window.clearTimeout(cloudSaveTimer.current);
+    cloudSaveTimer.current = window.setTimeout(() => {
+      setSyncState("saving");
+      saveToGoogleSheet(next)
+        .then(() => {
+          setSyncState("idle");
+          setSyncError("");
+        })
+        .catch((error) => {
+          console.error("Google Sheet sync save failed.", error);
+          setSyncState("error");
+          setSyncError("Không lưu được dữ liệu lên Google Sheet. Dữ liệu vẫn còn trong trình duyệt.");
+        });
+    }, 700);
+  }, []);
 
   const setData = useCallback<Dispatch<SetStateAction<AppData>>>((nextOrUpdater) => {
     const current = dataRef.current;
@@ -22,7 +63,8 @@ export function useAppData() {
       alert("Không thể lưu dữ liệu vào trình duyệt. Có thể localStorage đã đầy hoặc bị chặn. Hãy Export JSON để sao lưu ngay.");
     }
     setReactData(next);
-  }, []);
+    scheduleCloudSave(next);
+  }, [scheduleCloudSave]);
 
   const api = useMemo(() => ({
     upsertSet(set: VocabularySet) {
@@ -71,7 +113,7 @@ export function useAppData() {
         return { ...current, matchBestTimes: { ...current.matchBestTimes, [setId]: seconds } };
       });
     },
-  }), []);
+  }), [setData]);
 
-  return { data, setData, ...api };
+  return { data, setData, syncState, syncError, ...api };
 }

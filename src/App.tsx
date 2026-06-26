@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/ui";
 import { useAppData } from "./hooks/useAppData";
@@ -14,12 +15,24 @@ import {
   SpellPage,
   TestPage,
   WritePage,
+  MobileAddOnlyPage,
 } from "./pages/AppPages";
 
 export type DataApi = ReturnType<typeof useAppData>;
 
 export default function App() {
   const api = useAppData();
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 767px)").matches);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const onChange = () => setIsMobile(media.matches);
+    onChange();
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  if (isMobile) return <MobileAddOnlyPage api={api} />;
 
   return (
     <AppLayout>

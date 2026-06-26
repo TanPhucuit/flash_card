@@ -1,11 +1,18 @@
 import { AppData, AppSettings } from "../types";
-import { initialData } from "../data/sampleData";
 
 export const STORAGE_KEY = "localEnglishFlashcards:v1";
 export const STORAGE_BACKUP_KEY = "localEnglishFlashcards:v1:backup";
 
-function cloneInitialData(): AppData {
-  return JSON.parse(JSON.stringify(initialData)) as AppData;
+function emptyAppData(): AppData {
+  return {
+    sets: [],
+    results: [],
+    matchBestTimes: {},
+    settings: {
+      theme: "light",
+      voiceURI: "",
+    },
+  };
 }
 
 function normalizeAppData(parsed: Partial<AppData>): AppData {
@@ -44,7 +51,7 @@ export function loadAppData(): AppData {
     console.error("Cannot read backup app data.", error);
   }
 
-  return cloneInitialData();
+  return emptyAppData();
 }
 
 export function saveAppData(data: AppData) {

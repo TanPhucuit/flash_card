@@ -5,6 +5,7 @@ out
 config.local.json
 .local-test/
 *.secret.json
+google-service-account.json
 npm-debug.log*
 next-dev-*.log
 yarn-debug.log*

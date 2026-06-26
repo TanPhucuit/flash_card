@@ -76,6 +76,137 @@ function SetCard({ set, onDelete }: { set: VocabularySet; onDelete: () => void }
   );
 }
 
+export function MobileAddOnlyPage({ api }: PageProps) {
+  const [form, setForm] = useState({
+    word: "",
+    ipa: "",
+    meaningVi: "",
+    definitionEn: "",
+    exampleEn: "",
+    exampleVi: "",
+    partOfSpeech: "phrase",
+    level: "IELTS",
+  });
+  const [message, setMessage] = useState("");
+
+  const mobileSets = useMemo(
+    () => api.data.sets
+      .filter((set) => set.tags.includes("Mobile"))
+      .sort((a, b) => a.createdAt.localeCompare(b.createdAt)),
+    [api.data.sets],
+  );
+  const activeSet = mobileSets.find((set) => set.cards.length < 30) ?? mobileSets[mobileSets.length - 1];
+  const nextSetNumber = mobileSets.length + (activeSet && activeSet.cards.length < 30 ? 0 : 1);
+  const activeCount = activeSet && activeSet.cards.length < 30 ? activeSet.cards.length : 0;
+
+  function updateField(field: keyof typeof form, value: string) {
+    setForm((current) => ({ ...current, [field]: value }));
+  }
+
+  function addWord(event: FormEvent) {
+    event.preventDefault();
+    const word = form.word.trim();
+    const meaningVi = form.meaningVi.trim();
+    if (!word || !meaningVi) {
+      setMessage("Cần nhập từ tiếng Anh và nghĩa tiếng Việt.");
+      return;
+    }
+
+    const now = new Date().toISOString();
+    const targetSet = activeSet && activeSet.cards.length < 30
+      ? activeSet
+      : {
+          id: `mobile-set-${nextSetNumber}`,
+          title: `Mobile Set ${nextSetNumber}`,
+          description: "Bộ từ được thêm nhanh từ giao diện điện thoại.",
+          tags: ["Mobile"],
+          cards: [],
+          createdAt: now,
+          updatedAt: now,
+        } satisfies VocabularySet;
+
+    const card: VocabularyCard = {
+      id: crypto.randomUUID(),
+      word,
+      ipa: form.ipa.trim(),
+      meaningVi,
+      definitionEn: form.definitionEn.trim(),
+      exampleEn: form.exampleEn.trim(),
+      exampleVi: form.exampleVi.trim(),
+      partOfSpeech: form.partOfSpeech.trim() || "phrase",
+      level: form.level.trim() || "IELTS",
+      synonyms: [],
+      antonyms: [],
+      status: "new",
+      mistakeCount: 0,
+      correctCount: 0,
+      starred: false,
+    };
+
+    const savedSet: VocabularySet = {
+      ...targetSet,
+      cards: [...targetSet.cards, card],
+      updatedAt: now,
+    };
+    api.upsertSet(savedSet);
+    setForm({ word: "", ipa: "", meaningVi: "", definitionEn: "", exampleEn: "", exampleVi: "", partOfSpeech: "phrase", level: "IELTS" });
+    setMessage(`Đã thêm "${word}" vào ${savedSet.title} (${savedSet.cards.length}/30).`);
+  }
+
+  return (
+    <main className="min-h-screen bg-[#f8f9fa] px-container-margin py-lg text-on-background">
+      <div className="mx-auto max-w-md">
+        <header className="sticky top-0 z-10 -mx-container-margin mb-lg border-b border-surface-variant bg-surface-bright/95 px-container-margin py-md backdrop-blur">
+          <div className="text-sm font-semibold text-on-surface-variant">Local English Mobile</div>
+          <h1 className="font-headline-md text-2xl font-bold text-primary">Thêm từ nhanh</h1>
+          <div className="mt-xs text-sm text-on-surface-variant">
+            {activeSet && activeSet.cards.length < 30 ? `${activeSet.title}: ${activeCount}/30` : `Sẽ tạo Mobile Set ${nextSetNumber}`}
+          </div>
+          <div className="mt-xs text-xs text-on-surface-variant">
+            Sync: {api.syncState === "idle" ? "ready" : api.syncState}
+          </div>
+        </header>
+
+        <form onSubmit={addWord} className="space-y-md rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1">
+          <label className="block">
+            <span className="font-semibold">Word</span>
+            <Input autoFocus value={form.word} onChange={(event) => updateField("word", event.target.value)} placeholder="abandon" />
+          </label>
+          <label className="block">
+            <span className="font-semibold">Meaning VI</span>
+            <Input value={form.meaningVi} onChange={(event) => updateField("meaningVi", event.target.value)} placeholder="từ bỏ" />
+          </label>
+          <label className="block">
+            <span className="font-semibold">Definition EN</span>
+            <Textarea rows={3} value={form.definitionEn} onChange={(event) => updateField("definitionEn", event.target.value)} placeholder="English definition..." />
+          </label>
+          <div className="grid grid-cols-2 gap-sm">
+            <label className="block">
+              <span className="font-semibold">IPA</span>
+              <Input value={form.ipa} onChange={(event) => updateField("ipa", event.target.value)} placeholder="/.../" />
+            </label>
+            <label className="block">
+              <span className="font-semibold">Level</span>
+              <Input value={form.level} onChange={(event) => updateField("level", event.target.value)} />
+            </label>
+          </div>
+          <label className="block">
+            <span className="font-semibold">Example EN</span>
+            <Textarea rows={2} value={form.exampleEn} onChange={(event) => updateField("exampleEn", event.target.value)} />
+          </label>
+          <label className="block">
+            <span className="font-semibold">Example VI</span>
+            <Textarea rows={2} value={form.exampleVi} onChange={(event) => updateField("exampleVi", event.target.value)} />
+          </label>
+          {message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary">{message}</div> : null}
+          {api.syncError ? <div className="rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div> : null}
+          <Button type="submit" className="w-full py-md text-lg"><Icon name="add" /> Thêm từ</Button>
+        </form>
+      </div>
+    </main>
+  );
+}
+
 export function DashboardPage({ api }: PageProps) {
   const navigate = useNavigate();
   const cards = api.data.sets.flatMap((set) => set.cards);
@@ -214,7 +345,7 @@ export function CreateEditSetPage({ api }: PageProps) {
 
   return (
     <form onSubmit={save}>
-      <PageTitle title={existing ? "Chỉnh sửa học phần" : "Tạo học phần"} subtitle="Nhập từ vựng, ví dụ và metadata. Dữ liệu sẽ được lưu vào localStorage." action={<Button type="submit"><Icon name="save" /> Save Set</Button>} />
+      <PageTitle title={existing ? "Chỉnh sửa học phần" : "Tạo học phần"} subtitle="Nhập từ vựng, ví dụ và metadata. Dữ liệu sẽ sync lên Google Sheet và lưu cache trên trình duyệt." action={<Button type="submit"><Icon name="save" /> Save Set</Button>} />
       <div className="grid gap-lg lg:grid-cols-[0.85fr_1.15fr]">
         <Card className="space-y-md">
           <label className="block"><span className="font-semibold">Title</span><Input value={set.title} onChange={(event) => setSet({ ...set, title: event.target.value })} /></label>
