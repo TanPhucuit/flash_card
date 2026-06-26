@@ -79,15 +79,10 @@ function SetCard({ set, onDelete }: { set: VocabularySet; onDelete: () => void }
 export function MobileAddOnlyPage({ api }: PageProps) {
   const [form, setForm] = useState({
     word: "",
-    ipa: "",
     meaningVi: "",
-    definitionEn: "",
-    exampleEn: "",
-    exampleVi: "",
-    partOfSpeech: "phrase",
-    level: "IELTS",
   });
   const [message, setMessage] = useState("");
+  const [logs, setLogs] = useState<string[]>([]);
 
   const mobileSets = useMemo(
     () => api.data.sets
@@ -128,13 +123,13 @@ export function MobileAddOnlyPage({ api }: PageProps) {
     const card: VocabularyCard = {
       id: crypto.randomUUID(),
       word,
-      ipa: form.ipa.trim(),
+      ipa: "",
       meaningVi,
-      definitionEn: form.definitionEn.trim(),
-      exampleEn: form.exampleEn.trim(),
-      exampleVi: form.exampleVi.trim(),
-      partOfSpeech: form.partOfSpeech.trim() || "phrase",
-      level: form.level.trim() || "IELTS",
+      definitionEn: "",
+      exampleEn: "",
+      exampleVi: "",
+      partOfSpeech: "word",
+      level: "Mobile",
       synonyms: [],
       antonyms: [],
       status: "new",
@@ -149,8 +144,10 @@ export function MobileAddOnlyPage({ api }: PageProps) {
       updatedAt: now,
     };
     api.upsertSet(savedSet);
-    setForm({ word: "", ipa: "", meaningVi: "", definitionEn: "", exampleEn: "", exampleVi: "", partOfSpeech: "phrase", level: "IELTS" });
-    setMessage(`Đã thêm "${word}" vào ${savedSet.title} (${savedSet.cards.length}/30).`);
+    setForm({ word: "", meaningVi: "" });
+    const successLog = `${new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })} - Đã thêm "${word}" = "${meaningVi}" vào ${savedSet.title} (${savedSet.cards.length}/30).`;
+    setMessage(successLog);
+    setLogs((current) => [successLog, ...current].slice(0, 8));
   }
 
   return (
@@ -176,32 +173,24 @@ export function MobileAddOnlyPage({ api }: PageProps) {
             <span className="font-semibold">Meaning VI</span>
             <Input value={form.meaningVi} onChange={(event) => updateField("meaningVi", event.target.value)} placeholder="từ bỏ" />
           </label>
-          <label className="block">
-            <span className="font-semibold">Definition EN</span>
-            <Textarea rows={3} value={form.definitionEn} onChange={(event) => updateField("definitionEn", event.target.value)} placeholder="English definition..." />
-          </label>
-          <div className="grid grid-cols-2 gap-sm">
-            <label className="block">
-              <span className="font-semibold">IPA</span>
-              <Input value={form.ipa} onChange={(event) => updateField("ipa", event.target.value)} placeholder="/.../" />
-            </label>
-            <label className="block">
-              <span className="font-semibold">Level</span>
-              <Input value={form.level} onChange={(event) => updateField("level", event.target.value)} />
-            </label>
-          </div>
-          <label className="block">
-            <span className="font-semibold">Example EN</span>
-            <Textarea rows={2} value={form.exampleEn} onChange={(event) => updateField("exampleEn", event.target.value)} />
-          </label>
-          <label className="block">
-            <span className="font-semibold">Example VI</span>
-            <Textarea rows={2} value={form.exampleVi} onChange={(event) => updateField("exampleVi", event.target.value)} />
-          </label>
           {message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary">{message}</div> : null}
           {api.syncError ? <div className="rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div> : null}
           <Button type="submit" className="w-full py-md text-lg"><Icon name="add" /> Thêm từ</Button>
         </form>
+        <section className="mt-lg rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1">
+          <h2 className="font-headline-md text-lg font-semibold">Log thêm từ</h2>
+          {logs.length ? (
+            <div className="mt-md space-y-sm">
+              {logs.map((log, index) => (
+                <div key={`${log}-${index}`} className="rounded-xl bg-surface-container-low p-md text-sm text-on-surface-variant">
+                  {log}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-sm text-sm text-on-surface-variant">Chưa thêm từ nào trong phiên này.</p>
+          )}
+        </section>
       </div>
     </main>
   );
