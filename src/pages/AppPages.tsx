@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
@@ -291,11 +291,32 @@ export function CreateEditSetPage({ api }: PageProps) {
   const [tagText, setTagText] = useState(set.tags.join(", "));
   const [csv, setCsv] = useState("");
   const [csvMessage, setCsvMessage] = useState("");
+  const pendingCardFocus = useRef<string | null>(null);
+
+  useEffect(() => {
+    const cardId = pendingCardFocus.current;
+    if (!cardId) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const wordInput = document.getElementById(`card-word-${cardId}`) as HTMLInputElement | null;
+      wordInput?.scrollIntoView({ behavior: "smooth", block: "center" });
+      wordInput?.focus({ preventScroll: true });
+      pendingCardFocus.current = null;
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [set.cards.length]);
 
   if (setId && !existing) return <Navigate to="/sets" replace />;
 
   function updateCard(id: string, patch: Partial<VocabularyCard>) {
     setSet((current) => ({ ...current, cards: current.cards.map((card) => (card.id === id ? { ...card, ...patch } : card)) }));
+  }
+
+  function addCard() {
+    const card = emptyCard();
+    pendingCardFocus.current = card.id;
+    setSet((current) => ({ ...current, cards: [...current.cards, card] }));
   }
 
   function save(event: FormEvent) {
@@ -351,15 +372,15 @@ export function CreateEditSetPage({ api }: PageProps) {
           {csvMessage ? <div className="rounded-xl bg-primary-fixed p-md font-semibold text-primary">{csvMessage}</div> : null}
         </Card>
         <div className="space-y-md">
-          <div className="flex flex-col gap-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center justify-between gap-sm">
             <h2 className="font-headline-md text-headline-md">Vocabulary Cards</h2>
-            <Button type="button" variant="secondary" onClick={() => setSet((current) => ({ ...current, cards: [...current.cards, emptyCard()] }))}><Icon name="add" /> Add Card</Button>
+            <span className="shrink-0 rounded-full bg-primary-fixed px-sm py-xs text-sm font-semibold text-primary">{set.cards.length} cards</span>
           </div>
           {set.cards.map((card, index) => (
             <Card key={card.id} className="space-y-sm">
               <div className="flex items-center justify-between"><strong>Card {index + 1}</strong><Button type="button" variant="ghost" onClick={() => setSet((current) => ({ ...current, cards: current.cards.filter((item) => item.id !== card.id) }))}><Icon name="close" /></Button></div>
               <div className="grid gap-sm md:grid-cols-2">
-                <Input placeholder="word" value={card.word} onChange={(e) => updateCard(card.id, { word: e.target.value })} />
+                <Input id={`card-word-${card.id}`} placeholder="word" value={card.word} onChange={(e) => updateCard(card.id, { word: e.target.value })} />
                 <Input placeholder="ipa" value={card.ipa} onChange={(e) => updateCard(card.id, { ipa: e.target.value })} />
                 <Input placeholder="meaningVi" value={card.meaningVi} onChange={(e) => updateCard(card.id, { meaningVi: e.target.value })} />
                 <Input placeholder="definitionEn" value={card.definitionEn} onChange={(e) => updateCard(card.id, { definitionEn: e.target.value })} />
@@ -370,6 +391,14 @@ export function CreateEditSetPage({ api }: PageProps) {
               </div>
             </Card>
           ))}
+          <Button
+            type="button"
+            variant="secondary"
+            onClick={addCard}
+            className="w-full border-2 border-dashed border-primary/40 bg-primary-fixed/30 py-lg text-primary hover:border-primary dark:bg-primary/15 dark:text-white"
+          >
+            <Icon name="add_circle" /> Add Card
+          </Button>
         </div>
       </div>
     </form>
