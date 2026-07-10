@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, TouchEvent as ReactTouchEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
@@ -76,13 +76,21 @@ function SetCard({ set, onDelete }: { set: VocabularySet; onDelete: () => void }
   );
 }
 
-export function MobileAddOnlyPage({ api }: PageProps) {
+export function MobileAppPage({ api }: PageProps) {
+  const [view, setView] = useState<"add" | "sets" | "study">("add");
   const [form, setForm] = useState({
     word: "",
     meaningVi: "",
   });
   const [message, setMessage] = useState("");
   const [logs, setLogs] = useState<string[]>([]);
+  const [query, setQuery] = useState("");
+  const [selectedSetId, setSelectedSetId] = useState("");
+  const [cardIndex, setCardIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const swiped = useRef(false);
+  const { speak } = useSpeech(api.data.settings.voiceURI);
 
   const mobileSets = useMemo(
     () => api.data.sets
@@ -93,6 +101,19 @@ export function MobileAddOnlyPage({ api }: PageProps) {
   const activeSet = mobileSets.find((set) => set.cards.length < 30) ?? mobileSets[mobileSets.length - 1];
   const nextSetNumber = mobileSets.length + (activeSet && activeSet.cards.length < 30 ? 0 : 1);
   const activeCount = activeSet && activeSet.cards.length < 30 ? activeSet.cards.length : 0;
+  const learningSets = useMemo(
+    () => [...api.data.sets]
+      .filter((set) => set.cards.length > 0 && `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.trim().toLowerCase()))
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)),
+    [api.data.sets, query],
+  );
+  const selectedSet = api.data.sets.find((set) => set.id === selectedSetId);
+  const activeCard = selectedSet?.cards[cardIndex];
+
+  useEffect(() => {
+    if (!selectedSet?.cards.length) return;
+    setCardIndex((current) => Math.min(current, selectedSet.cards.length - 1));
+  }, [selectedSet?.cards.length]);
 
   function updateField(field: keyof typeof form, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -150,48 +171,217 @@ export function MobileAddOnlyPage({ api }: PageProps) {
     setLogs((current) => [successLog, ...current].slice(0, 8));
   }
 
+  function openSet(set: VocabularySet) {
+    if (!set.cards.length) return;
+    setSelectedSetId(set.id);
+    setCardIndex(0);
+    setFlipped(false);
+    setView("study");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function switchView(nextView: "add" | "sets") {
+    setView(nextView);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function moveCard(offset: number) {
+    if (!selectedSet) return;
+    const nextIndex = Math.max(0, Math.min(selectedSet.cards.length - 1, cardIndex + offset));
+    if (nextIndex === cardIndex) return;
+    setFlipped(false);
+    setCardIndex(nextIndex);
+  }
+
+  function startSwipe(event: ReactTouchEvent) {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+    swiped.current = false;
+  }
+
+  function endSwipe(event: ReactTouchEvent) {
+    if (touchStartX.current === null) return;
+    const distance = (event.changedTouches[0]?.clientX ?? touchStartX.current) - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(distance) < 48) return;
+    swiped.current = true;
+    moveCard(distance < 0 ? 1 : -1);
+  }
+
+  if (view === "study" && selectedSet && activeCard) {
+    return (
+      <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
+        <div className="mx-auto flex min-h-[100dvh] max-w-md flex-col px-container-margin pb-[max(20px,env(safe-area-inset-bottom))]">
+          <header className="sticky top-0 z-20 -mx-container-margin flex items-center gap-sm border-b border-surface-variant bg-[#f4f5fb]/95 px-container-margin py-md backdrop-blur dark:border-white/10 dark:bg-[#17191a]/95">
+            <button
+              type="button"
+              aria-label="Quay lại danh sách học phần"
+              onClick={() => switchView("sets")}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-on-surface shadow-level-1 active:scale-95 dark:bg-white/10 dark:text-white"
+            >
+              <Icon name="arrow_back" />
+            </button>
+            <div className="min-w-0 flex-1">
+              <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
+              <div className="text-sm text-on-surface-variant dark:text-white/60">{cardIndex + 1} / {selectedSet.cards.length}</div>
+            </div>
+            <button
+              type="button"
+              aria-label={`Phát âm ${activeCard.word}`}
+              onClick={() => speak(activeCard.word)}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-level-2 active:scale-95"
+            >
+              <Icon name="volume_up" />
+            </button>
+          </header>
+
+          <div className="py-md">
+            <ProgressBar value={percent(cardIndex + 1, selectedSet.cards.length)} />
+          </div>
+
+          <div className="flex flex-1 flex-col justify-center pb-md">
+            <div
+              key={activeCard.id}
+              role="button"
+              tabIndex={0}
+              aria-label={flipped ? "Mặt nghĩa của flashcard. Chạm để xem từ." : "Mặt từ của flashcard. Chạm để xem nghĩa."}
+              onClick={() => {
+                if (swiped.current) {
+                  swiped.current = false;
+                  return;
+                }
+                setFlipped((current) => !current);
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setFlipped((current) => !current);
+                }
+              }}
+              onTouchStart={startSwipe}
+              onTouchEnd={endSwipe}
+              className="mobile-flashcard relative h-[min(58dvh,520px)] min-h-[360px] w-full cursor-pointer select-none outline-none [perspective:1200px] focus-visible:ring-2 focus-visible:ring-primary/40"
+            >
+              <div className={`card-flip relative h-full w-full ${flipped ? "flipped" : ""}`}>
+                <article className="card-face absolute inset-0 flex flex-col items-center justify-center rounded-[28px] border border-surface-variant bg-white p-xl text-center shadow-[0_18px_50px_rgba(53,37,205,0.12)] dark:border-white/10 dark:bg-[#242728]">
+                  <span className="mb-lg rounded-full bg-primary-fixed px-md py-xs text-sm font-bold uppercase tracking-wide text-primary">{activeCard.partOfSpeech || "word"}</span>
+                  <h1 className="break-words font-display-word text-4xl font-bold leading-tight text-on-surface dark:text-white">{activeCard.word}</h1>
+                  {activeCard.ipa ? <p className="mt-md text-xl text-on-surface-variant dark:text-white/60">{activeCard.ipa}</p> : null}
+                  <p className="absolute bottom-lg text-sm font-semibold text-on-surface-variant dark:text-white/50">Chạm để xem nghĩa</p>
+                </article>
+                <article className="card-face card-back absolute inset-0 flex flex-col rounded-[28px] border border-primary/20 bg-primary-fixed p-xl text-left shadow-[0_18px_50px_rgba(53,37,205,0.16)] dark:border-primary/30 dark:bg-[#29264a]">
+                  <div className="flex-1 overflow-y-auto">
+                    <div className="text-sm font-bold uppercase tracking-wide text-primary dark:text-[#c9c5ff]">Nghĩa tiếng Việt</div>
+                    <h2 className="mt-sm break-words font-translation-text text-3xl font-bold leading-tight text-primary dark:text-white">{activeCard.meaningVi}</h2>
+                    {activeCard.definitionEn ? <p className="mt-lg text-lg leading-relaxed text-on-surface dark:text-white/85">{activeCard.definitionEn}</p> : null}
+                    {activeCard.exampleEn ? (
+                      <div className="mt-lg rounded-2xl bg-white/70 p-md dark:bg-white/10">
+                        <p className="italic leading-relaxed">{activeCard.exampleEn}</p>
+                        {activeCard.exampleVi ? <p className="mt-sm text-on-surface-variant dark:text-white/65">{activeCard.exampleVi}</p> : null}
+                      </div>
+                    ) : null}
+                  </div>
+                  <p className="pt-md text-center text-sm font-semibold text-primary dark:text-[#c9c5ff]">Chạm để xem lại từ</p>
+                </article>
+              </div>
+            </div>
+            <p className="mt-md text-center text-xs font-semibold text-on-surface-variant dark:text-white/50">Vuốt sang trái/phải để chuyển thẻ</p>
+          </div>
+
+          <div className="grid grid-cols-[1fr_auto_1fr] gap-sm">
+            <Button type="button" variant="secondary" disabled={cardIndex === 0} onClick={() => moveCard(-1)} className="min-h-12 px-sm"><Icon name="chevron_left" /> Trước</Button>
+            <Button type="button" variant="secondary" onClick={() => speak(activeCard.word)} className="h-12 w-12 rounded-full px-0" aria-label="Phát âm"><Icon name="volume_up" /></Button>
+            <Button type="button" disabled={cardIndex === selectedSet.cards.length - 1} onClick={() => moveCard(1)} className="min-h-12 px-sm">Tiếp <Icon name="chevron_right" /></Button>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-[#f8f9fa] px-container-margin py-lg text-on-background">
-      <div className="mx-auto max-w-md">
-        <header className="sticky top-0 z-10 -mx-container-margin mb-lg border-b border-surface-variant bg-surface-bright/95 px-container-margin py-md backdrop-blur">
-          <div className="text-sm font-semibold text-on-surface-variant">Local English Mobile</div>
-          <h1 className="font-headline-md text-2xl font-bold text-primary">Thêm từ nhanh</h1>
-          <div className="mt-xs text-sm text-on-surface-variant">
-            {activeSet && activeSet.cards.length < 30 ? `${activeSet.title}: ${activeCount}/30` : `Sẽ tạo Mobile Set ${nextSetNumber}`}
+    <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
+      <div className="mx-auto min-h-[100dvh] max-w-md px-container-margin pb-28">
+        <header className="sticky top-0 z-20 -mx-container-margin mb-lg border-b border-surface-variant bg-[#f4f5fb]/95 px-container-margin py-md backdrop-blur dark:border-white/10 dark:bg-[#17191a]/95">
+          <div className="flex items-center justify-between gap-md">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant dark:text-white/50">Local English</div>
+              <h1 className="font-headline-md text-2xl font-bold text-primary dark:text-[#c9c5ff]">{view === "add" ? "Thêm từ nhanh" : "Học Flashcard"}</h1>
+            </div>
+            <span className={`h-2.5 w-2.5 rounded-full ${api.syncState === "error" ? "bg-red-500" : api.syncState === "idle" ? "bg-emerald-500" : "animate-pulse bg-amber-500"}`} title={`Sync: ${api.syncState}`} />
           </div>
-          <div className="mt-xs text-xs text-on-surface-variant">
-            Sync: {api.syncState === "idle" ? "ready" : api.syncState}
-          </div>
+          {view === "add" ? (
+            <div className="mt-xs text-sm text-on-surface-variant dark:text-white/60">
+              {activeSet && activeSet.cards.length < 30 ? `${activeSet.title}: ${activeCount}/30` : `Sẽ tạo Mobile Set ${nextSetNumber}`}
+            </div>
+          ) : <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Chọn một học phần để bắt đầu học.</p>}
         </header>
 
-        <form onSubmit={addWord} className="space-y-md rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1">
-          <label className="block">
-            <span className="font-semibold">Word</span>
-            <Input autoFocus value={form.word} onChange={(event) => updateField("word", event.target.value)} placeholder="abandon" />
-          </label>
-          <label className="block">
-            <span className="font-semibold">Meaning VI</span>
-            <Input value={form.meaningVi} onChange={(event) => updateField("meaningVi", event.target.value)} placeholder="từ bỏ" />
-          </label>
-          {message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary">{message}</div> : null}
-          {api.syncError ? <div className="rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div> : null}
-          <Button type="submit" className="w-full py-md text-lg"><Icon name="add" /> Thêm từ</Button>
-        </form>
-        <section className="mt-lg rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1">
-          <h2 className="font-headline-md text-lg font-semibold">Log thêm từ</h2>
-          {logs.length ? (
-            <div className="mt-md space-y-sm">
-              {logs.map((log, index) => (
-                <div key={`${log}-${index}`} className="rounded-xl bg-surface-container-low p-md text-sm text-on-surface-variant">
-                  {log}
+        {view === "add" ? (
+          <>
+            <form onSubmit={addWord} className="space-y-md rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1 dark:border-white/10 dark:bg-[#242728]">
+              <label className="block">
+                <span className="font-semibold">Word</span>
+                <Input autoFocus value={form.word} onChange={(event) => updateField("word", event.target.value)} placeholder="abandon" autoCapitalize="none" autoCorrect="off" />
+              </label>
+              <label className="block">
+                <span className="font-semibold">Meaning VI</span>
+                <Input value={form.meaningVi} onChange={(event) => updateField("meaningVi", event.target.value)} placeholder="từ bỏ" />
+              </label>
+              {message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary">{message}</div> : null}
+              {api.syncError ? <div className="rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div> : null}
+              <Button type="submit" className="w-full py-md text-lg"><Icon name="add" /> Thêm từ</Button>
+            </form>
+            <section className="mt-lg rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1 dark:border-white/10 dark:bg-[#242728]">
+              <h2 className="font-headline-md text-lg font-semibold">Log thêm từ</h2>
+              {logs.length ? (
+                <div className="mt-md space-y-sm">
+                  {logs.map((log, index) => (
+                    <div key={`${log}-${index}`} className="rounded-xl bg-surface-container-low p-md text-sm text-on-surface-variant dark:bg-white/5 dark:text-white/65">{log}</div>
+                  ))}
                 </div>
-              ))}
+              ) : <p className="mt-sm text-sm text-on-surface-variant dark:text-white/60">Chưa thêm từ nào trong phiên này.</p>}
+            </section>
+          </>
+        ) : (
+          <section>
+            <div className="relative mb-md">
+              <Icon name="search" className="pointer-events-none absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" />
+              <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm học phần..." className="min-h-12 pl-12" />
             </div>
-          ) : (
-            <p className="mt-sm text-sm text-on-surface-variant">Chưa thêm từ nào trong phiên này.</p>
-          )}
-        </section>
+            {learningSets.length ? (
+              <div className="space-y-sm">
+                {learningSets.map((set) => (
+                  <button
+                    type="button"
+                    key={set.id}
+                    onClick={() => openSet(set)}
+                    className="flex w-full items-center gap-md rounded-2xl border border-surface-variant bg-white p-md text-left shadow-level-1 transition active:scale-[0.98] dark:border-white/10 dark:bg-[#242728]"
+                  >
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary dark:bg-primary/25 dark:text-[#c9c5ff]"><Icon name="style" /></span>
+                    <span className="min-w-0 flex-1">
+                      <strong className="block truncate text-lg">{set.title}</strong>
+                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set)}% đã thuộc</span>
+                    </span>
+                    <Icon name="chevron_right" className="shrink-0 text-on-surface-variant dark:text-white/50" />
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-outline-variant bg-white p-xl text-center dark:border-white/20 dark:bg-[#242728]">
+                <Icon name="style" className="text-5xl text-primary" />
+                <h2 className="mt-md font-headline-md text-xl font-bold">Chưa có học phần phù hợp</h2>
+                <p className="mt-sm text-sm text-on-surface-variant dark:text-white/60">Thêm từ mới hoặc thử từ khóa khác.</p>
+              </div>
+            )}
+          </section>
+        )}
       </div>
+
+      <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-surface-variant bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#202324]/95" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
+        <div className="mx-auto grid max-w-md grid-cols-2 gap-sm px-container-margin pt-sm">
+          <button type="button" onClick={() => switchView("add")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "add" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="add_circle" /> Thêm từ</button>
+          <button type="button" onClick={() => switchView("sets")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="style" /> Flashcard</button>
+        </div>
+      </nav>
     </main>
   );
 }

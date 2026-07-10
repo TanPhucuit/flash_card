@@ -15,7 +15,7 @@ import {
   SpellPage,
   TestPage,
   WritePage,
-  MobileAddOnlyPage,
+  MobileAppPage,
 } from "./pages/AppPages";
 
 export type DataApi = ReturnType<typeof useAppData>;
@@ -32,7 +32,7 @@ export default function App() {
     return () => media.removeEventListener("change", onChange);
   }, []);
 
-  if (isMobile) return <MobileAddOnlyPage api={api} />;
+  if (isMobile) return <MobileAppPage api={api} />;
 
   return (
     <AppLayout>
