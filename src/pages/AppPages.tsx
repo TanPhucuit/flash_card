@@ -128,7 +128,7 @@ export function MobileAppPage({ api }: PageProps) {
   const [libraryMode, setLibraryMode] = useState<"flashcard" | "learn">("flashcard");
   const [form, setForm] = useState({
     word: "",
-    meaningVi: "",
+    definitionEn: "",
   });
   const [message, setMessage] = useState("");
   const [logs, setLogs] = useState<string[]>([]);
@@ -193,9 +193,9 @@ export function MobileAppPage({ api }: PageProps) {
   function addWord(event: FormEvent) {
     event.preventDefault();
     const word = form.word.trim();
-    const meaningVi = form.meaningVi.trim();
-    if (!word || !meaningVi) {
-      setMessage("Cần nhập từ tiếng Anh và nghĩa tiếng Việt.");
+    const definitionEn = form.definitionEn.trim();
+    if (!word || !definitionEn) {
+      setMessage("Cần nhập từ tiếng Anh và nghĩa tiếng Anh.");
       return;
     }
 
@@ -216,8 +216,8 @@ export function MobileAppPage({ api }: PageProps) {
       id: crypto.randomUUID(),
       word,
       ipa: "",
-      meaningVi,
-      definitionEn: "",
+      meaningVi: "",
+      definitionEn,
       exampleEn: "",
       exampleVi: "",
       partOfSpeech: "word",
@@ -236,8 +236,8 @@ export function MobileAppPage({ api }: PageProps) {
       updatedAt: now,
     };
     api.upsertSet(savedSet);
-    setForm({ word: "", meaningVi: "" });
-    const successLog = `${new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })} - Đã thêm "${word}" = "${meaningVi}" vào ${savedSet.title} (${savedSet.cards.length}/30).`;
+    setForm({ word: "", definitionEn: "" });
+    const successLog = `${new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })} - Đã thêm "${word}" = "${definitionEn}" vào ${savedSet.title} (${savedSet.cards.length}/30).`;
     setMessage(successLog);
     setLogs((current) => [successLog, ...current].slice(0, 8));
   }
@@ -397,9 +397,9 @@ export function MobileAppPage({ api }: PageProps) {
                 </article>
                 <article className="card-face card-back absolute inset-0 flex flex-col rounded-[28px] border border-primary/20 bg-primary-fixed p-xl text-left shadow-[0_18px_50px_rgba(53,37,205,0.16)] dark:border-primary/30 dark:bg-[#29264a]">
                   <div className="flex-1 overflow-y-auto">
-                    <div className="text-sm font-bold uppercase tracking-wide text-primary dark:text-[#c9c5ff]">Nghĩa tiếng Việt</div>
-                    <h2 className="mt-sm break-words font-translation-text text-3xl font-bold leading-tight text-primary dark:text-white">{activeCard.meaningVi}</h2>
-                    {activeCard.definitionEn ? <p className="mt-lg text-lg leading-relaxed text-on-surface dark:text-white/85">{activeCard.definitionEn}</p> : null}
+                    <div className="text-sm font-bold uppercase tracking-wide text-primary dark:text-[#c9c5ff]">{activeCard.meaningVi ? "Nghĩa tiếng Việt" : "Meaning English"}</div>
+                    <h2 className="mt-sm break-words font-translation-text text-3xl font-bold leading-tight text-primary dark:text-white">{activeCard.meaningVi || activeCard.definitionEn}</h2>
+                    {activeCard.meaningVi && activeCard.definitionEn ? <p className="mt-lg text-lg leading-relaxed text-on-surface dark:text-white/85">{activeCard.definitionEn}</p> : null}
                     {activeCard.exampleEn ? (
                       <div className="mt-lg rounded-2xl bg-white/70 p-md dark:bg-white/10">
                         <p className="italic leading-relaxed">{activeCard.exampleEn}</p>
@@ -538,8 +538,8 @@ export function MobileAppPage({ api }: PageProps) {
                 <Input autoFocus value={form.word} onChange={(event) => updateField("word", event.target.value)} placeholder="abandon" autoCapitalize="none" autoCorrect="off" />
               </label>
               <label className="block">
-                <span className="font-semibold">Meaning VI</span>
-                <Input value={form.meaningVi} onChange={(event) => updateField("meaningVi", event.target.value)} placeholder="từ bỏ" />
+                <span className="font-semibold">Meaning EN</span>
+                <Input value={form.definitionEn} onChange={(event) => updateField("definitionEn", event.target.value)} placeholder="to leave something permanently" autoCapitalize="sentences" />
               </label>
               {message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary">{message}</div> : null}
               {api.syncError ? <div className="rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div> : null}
@@ -731,9 +731,9 @@ export function CreateEditSetPage({ api }: PageProps) {
       alert("Vui lòng nhập tên học phần.");
       return;
     }
-    const validCards = set.cards.filter((card) => card.word.trim() && card.meaningVi.trim());
+    const validCards = set.cards.filter((card) => card.word.trim() && (card.meaningVi.trim() || card.definitionEn.trim()));
     if (!validCards.length) {
-      alert("Cần ít nhất một từ có English word và nghĩa tiếng Việt.");
+      alert("Cần ít nhất một từ có English word và Meaning VI hoặc Meaning EN.");
       return;
     }
     const saved = { ...set, title: set.title.trim(), tags: tagText.split(",").map((tag) => tag.trim()).filter(Boolean), cards: validCards, updatedAt: new Date().toISOString() };
