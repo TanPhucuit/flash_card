@@ -36,6 +36,31 @@ function modePath(setId: string, mode: StudyMode) {
   return `/study/${setId}/${mode}`;
 }
 
+function playCorrectChime(audio: { current: AudioContext | null }) {
+  try {
+    const context = audio.current ?? new AudioContext();
+    audio.current = context;
+    if (context.state === "suspended") void context.resume();
+    const startAt = context.currentTime;
+    [659.25, 880].forEach((frequency, index) => {
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const noteStart = startAt + index * 0.09;
+      oscillator.type = "sine";
+      oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(0.0001, noteStart);
+      gain.gain.exponentialRampToValueAtTime(0.12, noteStart + 0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, noteStart + 0.18);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start(noteStart);
+      oscillator.stop(noteStart + 0.2);
+    });
+  } catch (error) {
+    console.warn("Correct-answer sound is unavailable.", error);
+  }
+}
+
 function Stat({ label, value, icon }: { label: string; value: string | number; icon: string }) {
   return (
     <Card>
@@ -77,7 +102,8 @@ function SetCard({ set, onDelete }: { set: VocabularySet; onDelete: () => void }
 }
 
 export function MobileAppPage({ api }: PageProps) {
-  const [view, setView] = useState<"add" | "sets" | "study">("add");
+  const [view, setView] = useState<"add" | "sets" | "study" | "learn">("add");
+  const [libraryMode, setLibraryMode] = useState<"flashcard" | "learn">("flashcard");
   const [form, setForm] = useState({
     word: "",
     meaningVi: "",
@@ -88,8 +114,14 @@ export function MobileAppPage({ api }: PageProps) {
   const [selectedSetId, setSelectedSetId] = useState("");
   const [cardIndex, setCardIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [learnCards, setLearnCards] = useState<VocabularyCard[]>([]);
+  const [learnIndex, setLearnIndex] = useState(0);
+  const [learnCorrect, setLearnCorrect] = useState(0);
+  const [learnFeedback, setLearnFeedback] = useState<{ choice: string; correct: boolean } | null>(null);
   const touchStartX = useRef<number | null>(null);
   const swiped = useRef(false);
+  const learnTimer = useRef<number | undefined>(undefined);
+  const correctAudio = useRef<AudioContext | null>(null);
   const { speak } = useSpeech(api.data.settings.voiceURI);
 
   const mobileSets = useMemo(
@@ -109,11 +141,27 @@ export function MobileAppPage({ api }: PageProps) {
   );
   const selectedSet = api.data.sets.find((set) => set.id === selectedSetId);
   const activeCard = selectedSet?.cards[cardIndex];
+  const activeLearnCard = learnCards[learnIndex];
+  const learnPrompt = activeLearnCard?.definitionEn || activeLearnCard?.meaningVi || activeLearnCard?.exampleEn || "";
+  const learnChoices = useMemo(() => {
+    if (!selectedSet || !activeLearnCard) return [];
+    const distractors = shuffle(selectedSet.cards)
+      .filter((card) => card.id !== activeLearnCard.id && card.word.trim() && card.word !== activeLearnCard.word)
+      .map((card) => card.word)
+      .filter((word, index, words) => words.indexOf(word) === index)
+      .slice(0, 3);
+    return shuffle([activeLearnCard.word, ...distractors]);
+  }, [activeLearnCard?.id, selectedSetId]);
 
   useEffect(() => {
     if (!selectedSet?.cards.length) return;
     setCardIndex((current) => Math.min(current, selectedSet.cards.length - 1));
   }, [selectedSet?.cards.length]);
+
+  useEffect(() => () => {
+    if (learnTimer.current) window.clearTimeout(learnTimer.current);
+    correctAudio.current?.close();
+  }, []);
 
   function updateField(field: keyof typeof form, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -171,18 +219,69 @@ export function MobileAppPage({ api }: PageProps) {
     setLogs((current) => [successLog, ...current].slice(0, 8));
   }
 
+  function clearLearnTimer() {
+    if (learnTimer.current) window.clearTimeout(learnTimer.current);
+    learnTimer.current = undefined;
+  }
+
   function openSet(set: VocabularySet) {
     if (!set.cards.length) return;
+    clearLearnTimer();
     setSelectedSetId(set.id);
-    setCardIndex(0);
-    setFlipped(false);
-    setView("study");
+    if (libraryMode === "learn") {
+      setLearnCards(preferredCards(set.cards));
+      setLearnIndex(0);
+      setLearnCorrect(0);
+      setLearnFeedback(null);
+      setView("learn");
+    } else {
+      setCardIndex(0);
+      setFlipped(false);
+      setView("study");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function switchView(nextView: "add" | "sets") {
+    clearLearnTimer();
     setView(nextView);
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function openLibrary(mode: "flashcard" | "learn") {
+    setLibraryMode(mode);
+    setQuery("");
+    switchView("sets");
+  }
+
+  function restartLearn() {
+    if (!selectedSet) return;
+    clearLearnTimer();
+    setLearnCards(preferredCards(selectedSet.cards));
+    setLearnIndex(0);
+    setLearnCorrect(0);
+    setLearnFeedback(null);
+  }
+
+  function chooseLearnAnswer(choice: string) {
+    if (!selectedSet || !activeLearnCard || learnFeedback) return;
+    const correct = choice === activeLearnCard.word;
+    const nextCorrect = learnCorrect + (correct ? 1 : 0);
+    setLearnFeedback({ choice, correct });
+    if (correct) {
+      setLearnCorrect(nextCorrect);
+      playCorrectChime(correctAudio);
+    }
+    api.updateSet(selectedSet.id, (current) => updateSetCard(current, activeLearnCard.id, (card) => updateCardStudy(card, correct)));
+
+    learnTimer.current = window.setTimeout(() => {
+      if (learnIndex === learnCards.length - 1) {
+        api.setData((current) => ({ ...current, results: [createResult(selectedSet.id, "learn", learnCards.length, nextCorrect), ...current.results] }));
+      }
+      setLearnFeedback(null);
+      setLearnIndex((current) => current + 1);
+      learnTimer.current = undefined;
+    }, 720);
   }
 
   function moveCard(offset: number) {
@@ -297,6 +396,94 @@ export function MobileAppPage({ api }: PageProps) {
     );
   }
 
+  if (view === "learn" && selectedSet) {
+    const learnComplete = learnIndex >= learnCards.length;
+    return (
+      <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
+        <div className="mx-auto flex min-h-[100dvh] max-w-md flex-col px-container-margin pb-[max(20px,env(safe-area-inset-bottom))]">
+          <header className="sticky top-0 z-20 -mx-container-margin flex items-center gap-sm border-b border-surface-variant bg-[#f4f5fb]/95 px-container-margin py-md backdrop-blur dark:border-white/10 dark:bg-[#17191a]/95">
+            <button
+              type="button"
+              aria-label="Quay lại danh sách học phần"
+              onClick={() => openLibrary("learn")}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-on-surface shadow-level-1 active:scale-95 dark:bg-white/10 dark:text-white"
+            >
+              <Icon name="arrow_back" />
+            </button>
+            <div className="min-w-0 flex-1">
+              <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
+              <div className="text-sm text-on-surface-variant dark:text-white/60">Learn · Chọn từ đúng</div>
+            </div>
+            <span className="flex h-11 min-w-11 items-center justify-center rounded-full bg-emerald-600 px-sm font-bold text-white">{learnCorrect}</span>
+          </header>
+
+          {learnComplete ? (
+            <section className="mobile-learn-enter flex flex-1 flex-col items-center justify-center py-xl text-center">
+              <span className="mobile-learn-success flex h-24 w-24 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_18px_44px_rgba(5,150,105,0.28)]"><Icon name="check" className="text-5xl" /></span>
+              <h1 className="mt-lg font-headline-lg text-3xl font-bold">Hoàn thành</h1>
+              <p className="mt-sm text-lg text-on-surface-variant dark:text-white/65">Bạn trả lời đúng {learnCorrect}/{learnCards.length} câu.</p>
+              <div className="mt-xl grid w-full gap-sm">
+                <Button type="button" onClick={restartLearn} className="min-h-14 text-lg"><Icon name="refresh" /> Học lại</Button>
+                <Button type="button" variant="secondary" onClick={() => openLibrary("learn")} className="min-h-14"><Icon name="library_books" /> Chọn set khác</Button>
+              </div>
+            </section>
+          ) : activeLearnCard ? (
+            <>
+              <div className="py-md">
+                <div className="mb-sm flex items-center justify-between text-sm font-bold text-on-surface-variant dark:text-white/60">
+                  <span>{learnIndex + 1} / {learnCards.length}</span>
+                  <span>{percent(learnIndex, learnCards.length)}%</span>
+                </div>
+                <ProgressBar value={percent(learnIndex, learnCards.length)} />
+              </div>
+
+              <section key={activeLearnCard.id} className={`mobile-learn-enter relative flex flex-1 flex-col rounded-[28px] border bg-white p-lg shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-colors dark:bg-[#242728] ${learnFeedback?.correct ? "mobile-learn-correct border-emerald-500" : "border-surface-variant dark:border-white/10"}`}>
+                {learnFeedback?.correct ? <span className="mobile-learn-success absolute right-md top-md flex h-11 w-11 items-center justify-center rounded-full bg-emerald-600 text-white shadow-level-2"><Icon name="check" /></span> : null}
+                <div className="flex items-center gap-sm text-sm font-bold text-on-surface-variant dark:text-white/65">
+                  <span>{activeLearnCard.definitionEn ? "Definition" : activeLearnCard.meaningVi ? "Nghĩa" : "Example"}</span>
+                  <button type="button" onClick={() => speak(learnPrompt)} aria-label="Phát nội dung câu hỏi" className="flex h-9 w-9 items-center justify-center rounded-full text-primary active:bg-primary-fixed dark:text-[#c9c5ff]"><Icon name="volume_up" className="text-xl" /></button>
+                </div>
+                <p className="mt-lg min-h-28 break-words text-2xl font-medium leading-relaxed text-[#101936] dark:text-white">{learnPrompt}</p>
+
+                <div className="mt-auto pt-xl">
+                  <h2 className="mb-md text-sm font-bold text-on-surface-variant dark:text-white/65">Chọn một đáp án</h2>
+                  <div className="grid gap-sm">
+                    {learnChoices.map((choice, index) => {
+                      const isAnswer = choice === activeLearnCard.word;
+                      const isWrongChoice = Boolean(learnFeedback && learnFeedback.choice === choice && !learnFeedback.correct);
+                      const showCorrect = Boolean(learnFeedback && isAnswer);
+                      return (
+                        <button
+                          type="button"
+                          key={choice}
+                          disabled={Boolean(learnFeedback)}
+                          onClick={() => chooseLearnAnswer(choice)}
+                          className={`flex min-h-16 items-center gap-md rounded-2xl border-2 px-md text-left text-lg font-semibold transition-all duration-200 active:scale-[0.98] disabled:cursor-default ${
+                            showCorrect
+                              ? "mobile-learn-choice-correct border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-200"
+                              : isWrongChoice
+                                ? "border-red-400 bg-red-50 text-red-800 dark:bg-red-500/15 dark:text-red-200"
+                                : learnFeedback
+                                  ? "border-surface-variant bg-white opacity-45 dark:border-white/10 dark:bg-white/5"
+                                  : "border-[#e0e4ee] bg-white text-[#17223f] shadow-[0_2px_8px_rgba(15,23,42,0.03)] dark:border-white/10 dark:bg-white/5 dark:text-white"
+                          }`}
+                        >
+                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${showCorrect ? "bg-emerald-600 text-white" : isWrongChoice ? "bg-red-500 text-white" : "bg-[#eef1f7] text-[#5f6b88] dark:bg-white/10 dark:text-white/70"}`}>{showCorrect ? <Icon name="check" className="text-lg" /> : index + 1}</span>
+                          <span className="min-w-0 flex-1 break-words">{choice}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <button type="button" disabled={Boolean(learnFeedback)} onClick={() => chooseLearnAnswer("__dont_know__")} className="mt-lg w-full py-sm text-center font-bold text-primary disabled:opacity-50 dark:text-[#c9c5ff]">Không biết?</button>
+                </div>
+              </section>
+            </>
+          ) : null}
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
       <div className="mx-auto min-h-[100dvh] max-w-md px-container-margin pb-28">
@@ -304,7 +491,7 @@ export function MobileAppPage({ api }: PageProps) {
           <div className="flex items-center justify-between gap-md">
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant dark:text-white/50">Local English</div>
-              <h1 className="font-headline-md text-2xl font-bold text-primary dark:text-[#c9c5ff]">{view === "add" ? "Thêm từ nhanh" : "Học Flashcard"}</h1>
+              <h1 className="font-headline-md text-2xl font-bold text-primary dark:text-[#c9c5ff]">{view === "add" ? "Thêm từ nhanh" : libraryMode === "learn" ? "Learn" : "Học Flashcard"}</h1>
             </div>
             <span className={`h-2.5 w-2.5 rounded-full ${api.syncState === "error" ? "bg-red-500" : api.syncState === "idle" ? "bg-emerald-500" : "animate-pulse bg-amber-500"}`} title={`Sync: ${api.syncState}`} />
           </div>
@@ -312,7 +499,7 @@ export function MobileAppPage({ api }: PageProps) {
             <div className="mt-xs text-sm text-on-surface-variant dark:text-white/60">
               {activeSet && activeSet.cards.length < 30 ? `${activeSet.title}: ${activeCount}/30` : `Sẽ tạo Mobile Set ${nextSetNumber}`}
             </div>
-          ) : <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Chọn một học phần để bắt đầu học.</p>}
+          ) : <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">{libraryMode === "learn" ? "Chọn set để luyện definition và từ vựng." : "Chọn một học phần để bắt đầu học."}</p>}
         </header>
 
         {view === "add" ? (
@@ -356,7 +543,7 @@ export function MobileAppPage({ api }: PageProps) {
                     onClick={() => openSet(set)}
                     className="flex w-full items-center gap-md rounded-2xl border border-surface-variant bg-white p-md text-left shadow-level-1 transition active:scale-[0.98] dark:border-white/10 dark:bg-[#242728]"
                   >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary dark:bg-primary/25 dark:text-[#c9c5ff]"><Icon name="style" /></span>
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary dark:bg-primary/25 dark:text-[#c9c5ff]"><Icon name={libraryMode === "learn" ? "school" : "style"} /></span>
                     <span className="min-w-0 flex-1">
                       <strong className="block truncate text-lg">{set.title}</strong>
                       <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set)}% đã thuộc</span>
@@ -367,7 +554,7 @@ export function MobileAppPage({ api }: PageProps) {
               </div>
             ) : (
               <div className="rounded-2xl border border-dashed border-outline-variant bg-white p-xl text-center dark:border-white/20 dark:bg-[#242728]">
-                <Icon name="style" className="text-5xl text-primary" />
+                <Icon name={libraryMode === "learn" ? "school" : "style"} className="text-5xl text-primary" />
                 <h2 className="mt-md font-headline-md text-xl font-bold">Chưa có học phần phù hợp</h2>
                 <p className="mt-sm text-sm text-on-surface-variant dark:text-white/60">Thêm từ mới hoặc thử từ khóa khác.</p>
               </div>
@@ -377,9 +564,10 @@ export function MobileAppPage({ api }: PageProps) {
       </div>
 
       <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-surface-variant bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#202324]/95" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
-        <div className="mx-auto grid max-w-md grid-cols-2 gap-sm px-container-margin pt-sm">
+        <div className="mx-auto grid max-w-md grid-cols-3 gap-xs px-container-margin pt-sm">
           <button type="button" onClick={() => switchView("add")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "add" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="add_circle" /> Thêm từ</button>
-          <button type="button" onClick={() => switchView("sets")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="style" /> Flashcard</button>
+          <button type="button" onClick={() => openLibrary("flashcard")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" && libraryMode === "flashcard" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="style" /> Flashcard</button>
+          <button type="button" onClick={() => openLibrary("learn")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" && libraryMode === "learn" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="school" /> Learn</button>
         </div>
       </nav>
     </main>
@@ -733,22 +921,32 @@ function QuizletChoice({
   choice,
   index,
   selected,
+  status = "default",
   onClick,
 }: {
   choice: string;
   index: number;
   selected: boolean;
+  status?: "default" | "correct" | "wrong" | "muted";
   onClick: () => void;
 }) {
+  const statusStyle = status === "correct"
+    ? "learn-choice-correct border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-200"
+    : status === "wrong"
+      ? "border-red-400 bg-red-50 text-red-800 dark:bg-red-500/15 dark:text-red-200"
+      : status === "muted"
+        ? "border-[#e3e7ef] opacity-45 dark:border-white/10"
+        : selected
+          ? "border-primary bg-primary-fixed dark:bg-primary/25"
+          : "border-[#e3e7ef] dark:border-white/10";
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`flex min-h-[64px] items-center gap-md rounded-xl border-2 bg-white px-md text-left text-lg text-[#17223f] transition hover:border-primary hover:shadow-level-1 dark:bg-[#202324] dark:text-white md:min-h-[74px] md:px-lg md:text-xl ${
-        selected ? "border-primary bg-primary-fixed dark:bg-primary/25" : "border-[#e3e7ef] dark:border-white/10"
-      }`}
+      disabled={status !== "default"}
+      className={`flex min-h-[64px] items-center gap-md rounded-xl border-2 bg-white px-md text-left text-lg text-[#17223f] transition hover:border-primary hover:shadow-level-1 disabled:cursor-default dark:bg-[#202324] dark:text-white md:min-h-[74px] md:px-lg md:text-xl ${statusStyle}`}
     >
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#eef1f7] text-base font-bold text-[#5f6b88] dark:bg-white/10 dark:text-white/70">{index + 1}</span>
+      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base font-bold ${status === "correct" ? "bg-emerald-600 text-white" : status === "wrong" ? "bg-red-500 text-white" : "bg-[#eef1f7] text-[#5f6b88] dark:bg-white/10 dark:text-white/70"}`}>{status === "correct" ? <Icon name="check" className="text-lg" /> : index + 1}</span>
       <span>{choice}</span>
     </button>
   );
@@ -765,24 +963,39 @@ export function LearnPage({ api }: PageProps) {
   const [queue, setQueue] = useState<VocabularyCard[]>(() => set ? preferredCards(set.cards) : []);
   const [current, setCurrent] = useState(0);
   const [correct, setCorrect] = useState(0);
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState<{ choice: string; correct: boolean; message: string } | null>(null);
+  const correctAudio = useRef<AudioContext | null>(null);
+  const feedbackTimer = useRef<number | undefined>(undefined);
   const { speak } = useSpeech(api.data.settings.voiceURI);
+  const activeChoiceCard = queue[current];
+  const choices = useMemo(
+    () => set && activeChoiceCard ? answerChoices(set, activeChoiceCard, "word") : [],
+    [set?.id, activeChoiceCard?.id],
+  );
+  useEffect(() => () => {
+    if (feedbackTimer.current) window.clearTimeout(feedbackTimer.current);
+    correctAudio.current?.close();
+  }, []);
   if (!set) return <Navigate to="/sets" replace />;
   const activeSet = set;
   const card = queue[current];
   if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} api={api} />;
   const prompt = quizletPrompt(card, "vi-en");
-  const choices = answerChoices(activeSet, card, prompt.answerField);
   function choose(value: string) {
+    if (feedback) return;
     const ok = value === card[prompt.answerField];
-    setFeedback(ok ? "Correct!" : `Đáp án: ${card[prompt.answerField]}`);
-    if (ok) setCorrect((n) => n + 1);
+    setFeedback({ choice: value, correct: ok, message: ok ? "Correct!" : `Đáp án: ${card[prompt.answerField]}` });
+    if (ok) {
+      setCorrect((n) => n + 1);
+      playCorrectChime(correctAudio);
+    }
     api.updateSet(activeSet.id, (currentSet) => updateSetCard(currentSet, card.id, (item) => updateCardStudy(item, ok)));
-    setTimeout(() => {
-      setFeedback("");
+    feedbackTimer.current = window.setTimeout(() => {
+      setFeedback(null);
       if (!ok) setQueue((items) => [...items, card]);
       setCurrent((n) => n + 1);
-    }, 700);
+      feedbackTimer.current = undefined;
+    }, 720);
   }
   return (
     <div className="mx-auto max-w-7xl">
@@ -791,11 +1004,12 @@ export function LearnPage({ api }: PageProps) {
         <div className="max-w-[55vw] truncate text-right font-semibold text-[#586383] dark:text-white/65 md:max-w-none">{activeSet.title}</div>
       </div>
       <QuizletProgress current={current} total={queue.length} correct={correct} />
-      <section className="mx-auto max-w-6xl rounded-2xl border border-[#e4e8f0] bg-white px-md py-lg shadow-[0_12px_32px_rgba(15,23,42,0.06)] dark:border-white/10 dark:bg-[#232627] md:min-h-[560px] md:px-2xl md:py-xl">
+      <section className={`relative mx-auto max-w-6xl rounded-2xl border bg-white px-md py-lg shadow-[0_12px_32px_rgba(15,23,42,0.06)] dark:bg-[#232627] md:min-h-[560px] md:px-2xl md:py-xl ${feedback?.correct ? "learn-answer-correct border-emerald-500" : "border-[#e4e8f0] dark:border-white/10"}`}>
+        {feedback?.correct ? <span className="learn-success absolute right-lg top-lg flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-level-2"><Icon name="check" /></span> : null}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-sm font-bold text-[#4b587c] dark:text-white/70">
             <span>{prompt.label}</span>
-            <button type="button" onClick={() => speak(card.word)} className="rounded-full p-1 hover:bg-surface-container dark:hover:bg-white/10"><Icon name="volume_up" className="text-xl" /></button>
+            <button type="button" onClick={() => speak(prompt.text)} className="rounded-full p-1 hover:bg-surface-container dark:hover:bg-white/10"><Icon name="volume_up" className="text-xl" /></button>
           </div>
           <div className="text-[#7a86a5]">{current + 1} / {queue.length}</div>
         </div>
@@ -803,12 +1017,21 @@ export function LearnPage({ api }: PageProps) {
         <div className="mt-xl md:mt-2xl">
           <h2 className="mb-md font-bold text-[#4b587c] dark:text-white/70">Choose an answer</h2>
           <div className="grid gap-md md:grid-cols-2">
-            {choices.map((choice, index) => <QuizletChoice key={`${choice}-${index}`} choice={choice} index={index} selected={false} onClick={() => choose(choice)} />)}
+            {choices.map((choice, index) => {
+              const status = !feedback
+                ? "default"
+                : choice === card[prompt.answerField]
+                  ? "correct"
+                  : feedback.choice === choice
+                    ? "wrong"
+                    : "muted";
+              return <QuizletChoice key={`${choice}-${index}`} choice={choice} index={index} selected={false} status={status} onClick={() => choose(choice)} />;
+            })}
           </div>
         </div>
         <div className="mt-lg flex flex-col-reverse items-stretch gap-md sm:flex-row sm:items-center sm:justify-end sm:gap-lg">
-          {feedback ? <div className="mr-auto rounded-xl bg-primary-fixed px-md py-sm font-semibold text-primary">{feedback}</div> : null}
-          <button type="button" onClick={() => choose("__dont_know__")} className="font-bold text-[#4255ff] hover:underline">Don&apos;t know?</button>
+          {feedback ? <div className={`mr-auto rounded-xl px-md py-sm font-semibold ${feedback.correct ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200" : "bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-200"}`}>{feedback.message}</div> : null}
+          <button type="button" disabled={Boolean(feedback)} onClick={() => choose("__dont_know__")} className="font-bold text-[#4255ff] hover:underline disabled:opacity-50">Don&apos;t know?</button>
         </div>
       </section>
     </div>
