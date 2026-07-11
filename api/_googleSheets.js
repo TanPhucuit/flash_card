@@ -25,7 +25,7 @@ export const CARD_HEADERS = [
   "lastStudiedAt",
   "nextReviewAt",
 ];
-export const RESULT_HEADERS = ["id", "setId", "mode", "totalQuestions", "correctAnswers", "wrongAnswers", "accuracy", "studiedAt"];
+export const RESULT_HEADERS = ["id", "setId", "mode", "totalQuestions", "correctAnswers", "wrongAnswers", "accuracy", "studiedAt", "wrongCardIds"];
 
 function b64url(value) {
   return Buffer.from(value).toString("base64url");
@@ -94,7 +94,7 @@ export async function ensureSchema() {
     data: [
       { range: "sets!A1:G1", values: [SET_HEADERS] },
       { range: "cards!A1:R1", values: [CARD_HEADERS] },
-      { range: "results!A1:H1", values: [RESULT_HEADERS] },
+      { range: "results!A1:I1", values: [RESULT_HEADERS] },
     ],
   });
 }
@@ -180,6 +180,7 @@ export function rowsToAppData(raw) {
     wrongAnswers: Number(row[5] || 0),
     accuracy: Number(row[6] || 0),
     studiedAt: row[7],
+    wrongCardIds: row[8] ? parseJsonList(row[8]) : undefined,
   }));
 
   return {
@@ -231,6 +232,7 @@ export function appDataToRows(data) {
     result.wrongAnswers,
     result.accuracy,
     result.studiedAt,
+    result.wrongCardIds === undefined ? "" : JSON.stringify(result.wrongCardIds),
   ]);
   return { setRows, cardRows, resultRows };
 }

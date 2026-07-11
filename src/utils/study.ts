@@ -76,7 +76,7 @@ export function levenshtein(a: string, b: string) {
   return matrix[left.length][right.length];
 }
 
-export function createResult(setId: string, mode: StudyMode, total: number, correct: number): StudyResult {
+export function createResult(setId: string, mode: StudyMode, total: number, correct: number, wrongCardIds: string[] = []): StudyResult {
   return {
     id: crypto.randomUUID(),
     setId,
@@ -86,5 +86,6 @@ export function createResult(setId: string, mode: StudyMode, total: number, corr
     wrongAnswers: Math.max(0, total - correct),
     accuracy: percent(correct, total),
     studiedAt: new Date().toISOString(),
+    wrongCardIds: [...new Set(wrongCardIds)],
   };
 }

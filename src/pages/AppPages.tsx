@@ -42,19 +42,41 @@ function playCorrectChime(audio: { current: AudioContext | null }) {
     audio.current = context;
     if (context.state === "suspended") void context.resume();
     const startAt = context.currentTime;
-    [659.25, 880].forEach((frequency, index) => {
-      const oscillator = context.createOscillator();
-      const gain = context.createGain();
-      const noteStart = startAt + index * 0.09;
-      oscillator.type = "sine";
-      oscillator.frequency.value = frequency;
-      gain.gain.setValueAtTime(0.0001, noteStart);
-      gain.gain.exponentialRampToValueAtTime(0.12, noteStart + 0.025);
-      gain.gain.exponentialRampToValueAtTime(0.0001, noteStart + 0.18);
-      oscillator.connect(gain);
-      gain.connect(context.destination);
-      oscillator.start(noteStart);
-      oscillator.stop(noteStart + 0.2);
+    const pitchVariation = (Math.random() - 0.5) * 4;
+    const master = context.createGain();
+    master.gain.setValueAtTime(0.72, startAt);
+    master.connect(context.destination);
+
+    [523.25, 659.25, 783.99].forEach((frequency, index) => {
+      const noteStart = startAt + index * 0.075;
+      const duration = index === 2 ? 0.38 : 0.3;
+      const bell = context.createOscillator();
+      const shimmer = context.createOscillator();
+      const bellGain = context.createGain();
+      const shimmerGain = context.createGain();
+
+      bell.type = "triangle";
+      bell.frequency.value = frequency;
+      bell.detune.value = pitchVariation;
+      shimmer.type = "sine";
+      shimmer.frequency.value = frequency * 2;
+      shimmer.detune.value = pitchVariation;
+
+      bellGain.gain.setValueAtTime(0.0001, noteStart);
+      bellGain.gain.exponentialRampToValueAtTime(0.09, noteStart + 0.018);
+      bellGain.gain.exponentialRampToValueAtTime(0.0001, noteStart + duration);
+      shimmerGain.gain.setValueAtTime(0.0001, noteStart);
+      shimmerGain.gain.exponentialRampToValueAtTime(0.018, noteStart + 0.012);
+      shimmerGain.gain.exponentialRampToValueAtTime(0.0001, noteStart + duration * 0.72);
+
+      bell.connect(bellGain);
+      shimmer.connect(shimmerGain);
+      bellGain.connect(master);
+      shimmerGain.connect(master);
+      bell.start(noteStart);
+      shimmer.start(noteStart);
+      bell.stop(noteStart + duration + 0.02);
+      shimmer.stop(noteStart + duration + 0.02);
     });
   } catch (error) {
     console.warn("Correct-answer sound is unavailable.", error);
@@ -117,6 +139,7 @@ export function MobileAppPage({ api }: PageProps) {
   const [learnCards, setLearnCards] = useState<VocabularyCard[]>([]);
   const [learnIndex, setLearnIndex] = useState(0);
   const [learnCorrect, setLearnCorrect] = useState(0);
+  const [learnWrongCardIds, setLearnWrongCardIds] = useState<string[]>([]);
   const [learnFeedback, setLearnFeedback] = useState<{ choice: string; correct: boolean } | null>(null);
   const touchStartX = useRef<number | null>(null);
   const swiped = useRef(false);
@@ -232,6 +255,7 @@ export function MobileAppPage({ api }: PageProps) {
       setLearnCards(preferredCards(set.cards));
       setLearnIndex(0);
       setLearnCorrect(0);
+      setLearnWrongCardIds([]);
       setLearnFeedback(null);
       setView("learn");
     } else {
@@ -260,6 +284,7 @@ export function MobileAppPage({ api }: PageProps) {
     setLearnCards(preferredCards(selectedSet.cards));
     setLearnIndex(0);
     setLearnCorrect(0);
+    setLearnWrongCardIds([]);
     setLearnFeedback(null);
   }
 
@@ -271,12 +296,15 @@ export function MobileAppPage({ api }: PageProps) {
     if (correct) {
       setLearnCorrect(nextCorrect);
       playCorrectChime(correctAudio);
+    } else {
+      setLearnWrongCardIds((current) => current.includes(activeLearnCard.id) ? current : [...current, activeLearnCard.id]);
     }
     api.updateSet(selectedSet.id, (current) => updateSetCard(current, activeLearnCard.id, (card) => updateCardStudy(card, correct)));
 
     learnTimer.current = window.setTimeout(() => {
       if (learnIndex === learnCards.length - 1) {
-        api.setData((current) => ({ ...current, results: [createResult(selectedSet.id, "learn", learnCards.length, nextCorrect), ...current.results] }));
+        const wrongCardIds = correct ? learnWrongCardIds : [...new Set([...learnWrongCardIds, activeLearnCard.id])];
+        api.setData((current) => ({ ...current, results: [createResult(selectedSet.id, "learn", learnCards.length, nextCorrect, wrongCardIds), ...current.results] }));
       }
       setLearnFeedback(null);
       setLearnIndex((current) => current + 1);
@@ -960,9 +988,10 @@ function quizletPrompt(card: VocabularyCard, direction: string) {
 export function LearnPage({ api }: PageProps) {
   const { setId } = useParams();
   const set = getSet(api, setId);
-  const [queue, setQueue] = useState<VocabularyCard[]>(() => set ? preferredCards(set.cards) : []);
+  const [queue] = useState<VocabularyCard[]>(() => set ? preferredCards(set.cards) : []);
   const [current, setCurrent] = useState(0);
   const [correct, setCorrect] = useState(0);
+  const [wrongCardIds, setWrongCardIds] = useState<string[]>([]);
   const [feedback, setFeedback] = useState<{ choice: string; correct: boolean; message: string } | null>(null);
   const correctAudio = useRef<AudioContext | null>(null);
   const feedbackTimer = useRef<number | undefined>(undefined);
@@ -979,7 +1008,7 @@ export function LearnPage({ api }: PageProps) {
   if (!set) return <Navigate to="/sets" replace />;
   const activeSet = set;
   const card = queue[current];
-  if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} api={api} />;
+  if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} wrongCardIds={wrongCardIds} api={api} />;
   const prompt = quizletPrompt(card, "vi-en");
   function choose(value: string) {
     if (feedback) return;
@@ -988,11 +1017,12 @@ export function LearnPage({ api }: PageProps) {
     if (ok) {
       setCorrect((n) => n + 1);
       playCorrectChime(correctAudio);
+    } else {
+      setWrongCardIds((items) => items.includes(card.id) ? items : [...items, card.id]);
     }
     api.updateSet(activeSet.id, (currentSet) => updateSetCard(currentSet, card.id, (item) => updateCardStudy(item, ok)));
     feedbackTimer.current = window.setTimeout(() => {
       setFeedback(null);
-      if (!ok) setQueue((items) => [...items, card]);
       setCurrent((n) => n + 1);
       feedbackTimer.current = undefined;
     }, 720);
@@ -1038,10 +1068,10 @@ export function LearnPage({ api }: PageProps) {
   );
 }
 
-function Summary({ api, set, mode, total, correct }: PageProps & { set: VocabularySet; mode: StudyMode; total: number; correct: number }) {
+function Summary({ api, set, mode, total, correct, wrongCardIds = [] }: PageProps & { set: VocabularySet; mode: StudyMode; total: number; correct: number; wrongCardIds?: string[] }) {
   const navigate = useNavigate();
   useEffect(() => {
-    api.setData((current) => ({ ...current, results: [createResult(set.id, mode, total, correct), ...current.results] }));
+    api.setData((current) => ({ ...current, results: [createResult(set.id, mode, total, correct, wrongCardIds), ...current.results] }));
   }, []);
   return (
     <Card className="mx-auto max-w-xl text-center">
@@ -1146,7 +1176,12 @@ export function TestPage({ api }: PageProps) {
   function start() { setQuestions(shuffle(activeSet.cards).slice(0, Math.min(count, activeSet.cards.length))); setStarted(true); setSubmitted(false); setAnswers({}); setRemaining(timerMinutes * 60); }
   function submit() {
     questions.forEach((card, index) => api.updateSet(activeSet.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, questionKind(index) === "truefalse" ? answers[card.id] === String(trueFalseIsTrue(index)) : (answers[card.id] ?? "").trim().toLowerCase() === expected(card, index).toLowerCase()))));
-    api.setData((current) => ({ ...current, results: [createResult(activeSet.id, "test", questions.length, score), ...current.results] }));
+    const wrongCardIds = questions
+      .filter((card, index) => questionKind(index) === "truefalse"
+        ? answers[card.id] !== String(trueFalseIsTrue(index))
+        : (answers[card.id] ?? "").trim().toLowerCase() !== expected(card, index).toLowerCase())
+      .map((card) => card.id);
+    api.setData((current) => ({ ...current, results: [createResult(activeSet.id, "test", questions.length, score, wrongCardIds), ...current.results] }));
     setSubmitted(true);
   }
   useEffect(() => {
@@ -1285,15 +1320,63 @@ export function MatchPage({ api }: PageProps) {
 export function ProgressPage({ api }: PageProps) {
   const cards = api.data.sets.flatMap((set) => set.cards);
   const avg = api.data.results.length ? Math.round(api.data.results.reduce((sum, item) => sum + item.accuracy, 0) / api.data.results.length) : 0;
-  const missed = cards.filter((card) => card.mistakeCount > 0).sort((a, b) => b.mistakeCount - a.mistakeCount).slice(0, 8);
+  const [expandedResultId, setExpandedResultId] = useState<string | null>(null);
   return (
     <>
       <PageTitle title="Tiến độ học tập" subtitle="Theo dõi số từ đã thuộc, từ khó và lịch sử luyện tập." action={<Link to="/sets"><Button><Icon name="event_repeat" /> Review Difficult Words</Button></Link>} />
       <div className="grid grid-cols-2 gap-md lg:grid-cols-5"><Stat label="Tổng số từ" value={cards.length} icon="dictionary" /><Stat label="Mastered" value={cards.filter((c) => c.status === "mastered").length} icon="verified" /><Stat label="Difficult" value={cards.filter((c) => c.status === "difficult").length} icon="warning" /><Stat label="Review Today" value={cards.filter((c) => c.nextReviewAt && new Date(c.nextReviewAt) <= new Date()).length} icon="today" /><Stat label="Accuracy" value={`${avg}%`} icon="target" /></div>
-      <div className="mt-lg grid gap-lg lg:grid-cols-2">
-        <Card><h2 className="font-headline-md text-headline-md">Study history</h2><div className="mt-md space-y-sm">{api.data.results.slice(0, 10).map((result) => <div key={result.id} className="flex justify-between rounded-xl bg-surface-container-low p-md dark:bg-white/5"><span>{result.mode} - {formatDate(result.studiedAt)}</span><strong>{result.accuracy}%</strong></div>)}</div></Card>
-        <Card><h2 className="font-headline-md text-headline-md">Recently missed words</h2><div className="mt-md space-y-sm">{missed.map((card) => <div key={card.id} className="flex justify-between rounded-xl bg-error-container p-md text-red-900"><span>{card.word} - {card.meaningVi}</span><strong>{card.mistakeCount}</strong></div>)}</div></Card>
-      </div>
+      <Card className="mt-lg">
+        <h2 className="font-headline-md text-headline-md">Study history</h2>
+        <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Bấm vào một lần học để xem những từ đã trả lời sai.</p>
+        <div className="mt-md space-y-sm">
+          {api.data.results.length ? api.data.results.slice(0, 20).map((result) => {
+            const expanded = expandedResultId === result.id;
+            const resultSet = api.data.sets.find((set) => set.id === result.setId);
+            const hasWrongDetails = Array.isArray(result.wrongCardIds);
+            const wrongCards = (result.wrongCardIds ?? [])
+              .map((cardId) => resultSet?.cards.find((card) => card.id === cardId))
+              .filter((card): card is VocabularyCard => Boolean(card));
+            return (
+              <div key={result.id} className="overflow-hidden rounded-xl bg-surface-container-low dark:bg-white/5">
+                <button
+                  type="button"
+                  aria-expanded={expanded}
+                  onClick={() => setExpandedResultId(expanded ? null : result.id)}
+                  className="flex w-full items-center gap-md p-md text-left transition hover:bg-surface-container dark:hover:bg-white/5"
+                >
+                  <span className="min-w-0 flex-1">
+                    <strong className="block capitalize">{result.mode} · {formatDate(result.studiedAt)}</strong>
+                    <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{result.correctAnswers}/{result.totalQuestions} câu đúng</span>
+                  </span>
+                  <strong className="text-lg">{result.accuracy}%</strong>
+                  <Icon name="expand_more" className={`shrink-0 transition-transform ${expanded ? "rotate-180" : ""}`} />
+                </button>
+                {expanded ? (
+                  <div className="border-t border-surface-variant bg-white p-md dark:border-white/10 dark:bg-[#232627]">
+                    {!hasWrongDetails ? (
+                      <p className="text-sm text-on-surface-variant dark:text-white/60">Lần học cũ này chưa lưu chi tiết từng từ sai.</p>
+                    ) : result.wrongCardIds?.length === 0 ? (
+                      <div className="flex items-center gap-sm font-semibold text-emerald-700 dark:text-emerald-300"><Icon name="check_circle" /> Không có từ trả lời sai.</div>
+                    ) : wrongCards.length ? (
+                      <div className="space-y-sm">
+                        <div className="text-sm font-bold text-on-surface-variant dark:text-white/60">Từ trả lời sai ({result.wrongCardIds?.length})</div>
+                        {wrongCards.map((card) => (
+                          <div key={card.id} className="flex items-start justify-between gap-md rounded-xl bg-error-container px-md py-sm text-red-900">
+                            <span><strong>{card.word}</strong><span className="mx-xs">·</span>{card.meaningVi}</span>
+                            <span className="shrink-0 text-sm">{card.partOfSpeech}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-on-surface-variant dark:text-white/60">Không còn tìm thấy các từ sai của học phần này.</p>
+                    )}
+                  </div>
+                ) : null}
+              </div>
+            );
+          }) : <p className="rounded-xl bg-surface-container-low p-md text-on-surface-variant dark:bg-white/5 dark:text-white/60">Chưa có lịch sử học tập.</p>}
+        </div>
+      </Card>
     </>
   );
 }

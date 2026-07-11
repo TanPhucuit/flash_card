@@ -41,6 +41,7 @@ export interface StudyResult {
   wrongAnswers: number;
   accuracy: number;
   studiedAt: string;
+  wrongCardIds?: string[];
 }
 
 export interface AppSettings {
