@@ -6,7 +6,7 @@ import { useSpeech } from "../hooks/useSpeech";
 import { AppData, StudyMode, VocabularyCard, VocabularySet } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
-import { createResult, formatDate, getSetProgress, levenshtein, percent, preferredCards, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
+import { createResult, formatDate, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
 
@@ -136,6 +136,7 @@ export function MobileAppPage({ api }: PageProps) {
   const [selectedSetId, setSelectedSetId] = useState("");
   const [cardIndex, setCardIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [flashcardCards, setFlashcardCards] = useState<VocabularyCard[]>([]);
   const [learnCards, setLearnCards] = useState<VocabularyCard[]>([]);
   const [learnIndex, setLearnIndex] = useState(0);
   const [learnCorrect, setLearnCorrect] = useState(0);
@@ -163,7 +164,7 @@ export function MobileAppPage({ api }: PageProps) {
     [api.data.sets, query],
   );
   const selectedSet = api.data.sets.find((set) => set.id === selectedSetId);
-  const activeCard = selectedSet?.cards[cardIndex];
+  const activeCard = flashcardCards[cardIndex];
   const activeLearnCard = learnCards[learnIndex];
   const learnPrompt = activeLearnCard?.definitionEn || activeLearnCard?.meaningVi || activeLearnCard?.exampleEn || "";
   const learnChoices = useMemo(() => {
@@ -177,9 +178,9 @@ export function MobileAppPage({ api }: PageProps) {
   }, [activeLearnCard?.id, selectedSetId]);
 
   useEffect(() => {
-    if (!selectedSet?.cards.length) return;
-    setCardIndex((current) => Math.min(current, selectedSet.cards.length - 1));
-  }, [selectedSet?.cards.length]);
+    if (!flashcardCards.length) return;
+    setCardIndex((current) => Math.min(current, flashcardCards.length - 1));
+  }, [flashcardCards.length]);
 
   useEffect(() => () => {
     if (learnTimer.current) window.clearTimeout(learnTimer.current);
@@ -252,13 +253,14 @@ export function MobileAppPage({ api }: PageProps) {
     clearLearnTimer();
     setSelectedSetId(set.id);
     if (libraryMode === "learn") {
-      setLearnCards(preferredCards(set.cards));
+      setLearnCards(shuffle(set.cards));
       setLearnIndex(0);
       setLearnCorrect(0);
       setLearnWrongCardIds([]);
       setLearnFeedback(null);
       setView("learn");
     } else {
+      setFlashcardCards(shuffle(set.cards));
       setCardIndex(0);
       setFlipped(false);
       setView("study");
@@ -281,7 +283,7 @@ export function MobileAppPage({ api }: PageProps) {
   function restartLearn() {
     if (!selectedSet) return;
     clearLearnTimer();
-    setLearnCards(preferredCards(selectedSet.cards));
+    setLearnCards(shuffle(selectedSet.cards));
     setLearnIndex(0);
     setLearnCorrect(0);
     setLearnWrongCardIds([]);
@@ -313,8 +315,8 @@ export function MobileAppPage({ api }: PageProps) {
   }
 
   function moveCard(offset: number) {
-    if (!selectedSet) return;
-    const nextIndex = Math.max(0, Math.min(selectedSet.cards.length - 1, cardIndex + offset));
+    if (!flashcardCards.length) return;
+    const nextIndex = Math.max(0, Math.min(flashcardCards.length - 1, cardIndex + offset));
     if (nextIndex === cardIndex) return;
     setFlipped(false);
     setCardIndex(nextIndex);
@@ -349,7 +351,7 @@ export function MobileAppPage({ api }: PageProps) {
             </button>
             <div className="min-w-0 flex-1">
               <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
-              <div className="text-sm text-on-surface-variant dark:text-white/60">{cardIndex + 1} / {selectedSet.cards.length}</div>
+              <div className="text-sm text-on-surface-variant dark:text-white/60">{cardIndex + 1} / {flashcardCards.length}</div>
             </div>
             <button
               type="button"
@@ -362,7 +364,7 @@ export function MobileAppPage({ api }: PageProps) {
           </header>
 
           <div className="py-md">
-            <ProgressBar value={percent(cardIndex + 1, selectedSet.cards.length)} />
+            <ProgressBar value={percent(cardIndex + 1, flashcardCards.length)} />
           </div>
 
           <div className="flex flex-1 flex-col justify-center pb-md">
@@ -417,7 +419,7 @@ export function MobileAppPage({ api }: PageProps) {
           <div className="grid grid-cols-[1fr_auto_1fr] gap-sm">
             <Button type="button" variant="secondary" disabled={cardIndex === 0} onClick={() => moveCard(-1)} className="min-h-12 px-sm"><Icon name="chevron_left" /> Trước</Button>
             <Button type="button" variant="secondary" onClick={() => speak(activeCard.word)} className="h-12 w-12 rounded-full px-0" aria-label="Phát âm"><Icon name="volume_up" /></Button>
-            <Button type="button" disabled={cardIndex === selectedSet.cards.length - 1} onClick={() => moveCard(1)} className="min-h-12 px-sm">Tiếp <Icon name="chevron_right" /></Button>
+            <Button type="button" disabled={cardIndex === flashcardCards.length - 1} onClick={() => moveCard(1)} className="min-h-12 px-sm">Tiếp <Icon name="chevron_right" /></Button>
           </div>
         </div>
       </main>
@@ -860,21 +862,22 @@ function StudyHeader({ set, title }: { set: VocabularySet; title: string }) {
 export function FlashcardsPage({ api }: PageProps) {
   const { setId } = useParams();
   const set = getSet(api, setId);
+  const [cards] = useState<VocabularyCard[]>(() => set ? shuffle(set.cards) : []);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const { speak } = useSpeech(api.data.settings.voiceURI);
   if (!set) return <Navigate to="/sets" replace />;
-  const card = set.cards[index] ?? set.cards[0];
+  const card = cards[index] ?? cards[0];
   if (!card) return <EmptyState title="Chưa có từ để học" text="Hãy thêm từ vào học phần trước." />;
   const mark = (correct: boolean) => {
     api.updateSet(set.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, correct)));
     setFlipped(false);
-    setIndex((value) => Math.min(set.cards.length - 1, value + 1));
+    setIndex((value) => Math.min(cards.length - 1, value + 1));
   };
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.code === "Space") { event.preventDefault(); setFlipped((value) => !value); }
-      if (event.key === "ArrowRight") setIndex((value) => Math.min(set.cards.length - 1, value + 1));
+      if (event.key === "ArrowRight") setIndex((value) => Math.min(cards.length - 1, value + 1));
       if (event.key === "ArrowLeft") setIndex((value) => Math.max(0, value - 1));
       if (event.key.toLowerCase() === "k") mark(true);
       if (event.key.toLowerCase() === "d") mark(false);
@@ -886,7 +889,7 @@ export function FlashcardsPage({ api }: PageProps) {
     <>
       <StudyHeader set={set} title="Flashcards" />
       <div className="mx-auto flex min-h-[calc(100vh-190px)] max-w-3xl flex-col justify-center">
-        <div className="mb-md grid grid-cols-[auto_1fr] items-center gap-md"><span className="font-semibold">{index + 1}/{set.cards.length}</span><ProgressBar value={percent(index + 1, set.cards.length)} /></div>
+        <div className="mb-md grid grid-cols-[auto_1fr] items-center gap-md"><span className="font-semibold">{index + 1}/{cards.length}</span><ProgressBar value={percent(index + 1, cards.length)} /></div>
         <div
           role="button"
           tabIndex={0}
@@ -988,7 +991,7 @@ function quizletPrompt(card: VocabularyCard, direction: string) {
 export function LearnPage({ api }: PageProps) {
   const { setId } = useParams();
   const set = getSet(api, setId);
-  const [queue] = useState<VocabularyCard[]>(() => set ? preferredCards(set.cards) : []);
+  const [queue, setQueue] = useState<VocabularyCard[]>(() => set ? shuffle(set.cards) : []);
   const [current, setCurrent] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wrongCardIds, setWrongCardIds] = useState<string[]>([]);
@@ -1008,7 +1011,14 @@ export function LearnPage({ api }: PageProps) {
   if (!set) return <Navigate to="/sets" replace />;
   const activeSet = set;
   const card = queue[current];
-  if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} wrongCardIds={wrongCardIds} api={api} />;
+  function retryLearn() {
+    setQueue(shuffle(activeSet.cards));
+    setCurrent(0);
+    setCorrect(0);
+    setWrongCardIds([]);
+    setFeedback(null);
+  }
+  if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} wrongCardIds={wrongCardIds} onRetry={retryLearn} api={api} />;
   const prompt = quizletPrompt(card, "vi-en");
   function choose(value: string) {
     if (feedback) return;
@@ -1068,7 +1078,7 @@ export function LearnPage({ api }: PageProps) {
   );
 }
 
-function Summary({ api, set, mode, total, correct, wrongCardIds = [] }: PageProps & { set: VocabularySet; mode: StudyMode; total: number; correct: number; wrongCardIds?: string[] }) {
+function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry }: PageProps & { set: VocabularySet; mode: StudyMode; total: number; correct: number; wrongCardIds?: string[]; onRetry?: () => void }) {
   const navigate = useNavigate();
   useEffect(() => {
     api.setData((current) => ({ ...current, results: [createResult(set.id, mode, total, correct, wrongCardIds), ...current.results] }));
@@ -1078,7 +1088,7 @@ function Summary({ api, set, mode, total, correct, wrongCardIds = [] }: PageProp
       <Icon name="verified" className="text-5xl text-primary" />
       <h1 className="mt-md font-headline-lg text-headline-lg">Hoàn thành</h1>
       <p className="mt-sm text-on-surface-variant dark:text-white/65">Đúng {correct}/{total} câu. Accuracy {percent(correct, total)}%.</p>
-      <div className="mt-lg flex justify-center gap-sm"><Button onClick={() => navigate(modePath(set.id, mode))}>Làm lại</Button><Button variant="secondary" onClick={() => navigate(`/sets/${set.id}`)}>Về học phần</Button></div>
+      <div className="mt-lg flex justify-center gap-sm"><Button onClick={() => onRetry ? onRetry() : navigate(modePath(set.id, mode))}>Làm lại</Button><Button variant="secondary" onClick={() => navigate(`/sets/${set.id}`)}>Về học phần</Button></div>
     </Card>
   );
 }
