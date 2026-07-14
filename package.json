@@ -7,6 +7,7 @@
     "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "test:listening": "node --experimental-strip-types tools/test_listening.mjs",
     "convert:vocab": "python tools/pdf_vocab_to_excel.py"
   },
   "dependencies": {

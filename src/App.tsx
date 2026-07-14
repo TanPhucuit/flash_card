@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/ui";
 import { useAppData } from "./hooks/useAppData";
+import { ListeningTestPage } from "./pages/ListeningTestPage";
 import {
   CreateEditSetPage,
   DashboardPage,
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<DashboardPage api={api} />} />
         <Route path="/sets" element={<MySetsPage api={api} />} />
+        <Route path="/listening-test" element={<ListeningTestPage api={api} />} />
         <Route path="/sets/new" element={<CreateEditSetPage api={api} />} />
         <Route path="/sets/:setId" element={<SetDetailPage api={api} />} />
         <Route path="/sets/:setId/edit" element={<CreateEditSetPage api={api} />} />

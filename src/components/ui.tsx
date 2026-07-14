@@ -62,6 +62,7 @@ export function EmptyState({ title, text, action }: { title: string; text: strin
 const nav = [
   ["Dashboard", "/dashboard", "dashboard"],
   ["My Sets", "/sets", "library_books"],
+  ["Listening Test", "/listening-test", "headphones"],
   ["Progress", "/progress", "leaderboard"],
   ["Settings", "/settings", "settings"],
 ] as const;

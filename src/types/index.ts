@@ -1,5 +1,6 @@
 export type CardStatus = "new" | "learning" | "review" | "mastered" | "difficult";
-export type StudyMode = "flashcards" | "learn" | "write" | "spell" | "test" | "match";
+export type VocabularyStudyMode = "flashcards" | "learn" | "write" | "spell" | "test" | "match";
+export type StudyMode = VocabularyStudyMode | "listening";
 
 export interface VocabularyCard {
   id: string;
@@ -32,10 +33,10 @@ export interface VocabularySet {
   lastStudiedAt?: string;
 }
 
-export interface StudyResult {
+export interface VocabularyStudyResult {
   id: string;
   setId: string;
-  mode: StudyMode;
+  mode: VocabularyStudyMode;
   totalQuestions: number;
   correctAnswers: number;
   wrongAnswers: number;
@@ -43,6 +44,15 @@ export interface StudyResult {
   studiedAt: string;
   wrongCardIds?: string[];
 }
+
+export interface ListeningStudyResult {
+  id: string;
+  mode: "listening";
+  accuracy: number;
+  studiedAt: string;
+}
+
+export type StudyResult = VocabularyStudyResult | ListeningStudyResult;
 
 export interface AppSettings {
   theme: "light" | "dark";

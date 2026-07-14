@@ -171,17 +171,27 @@ export function rowsToAppData(raw) {
     });
   }
 
-  const results = (raw.results ?? []).filter((row) => row[0]).map((row) => ({
-    id: row[0],
-    setId: row[1],
-    mode: row[2],
-    totalQuestions: Number(row[3] || 0),
-    correctAnswers: Number(row[4] || 0),
-    wrongAnswers: Number(row[5] || 0),
-    accuracy: Number(row[6] || 0),
-    studiedAt: row[7],
-    wrongCardIds: row[8] ? parseJsonList(row[8]) : undefined,
-  }));
+  const results = (raw.results ?? []).filter((row) => row[0]).map((row) => {
+    if (row[2] === "listening") {
+      return {
+        id: row[0],
+        mode: "listening",
+        accuracy: Number(row[6] || 0),
+        studiedAt: row[7],
+      };
+    }
+    return {
+      id: row[0],
+      setId: row[1],
+      mode: row[2],
+      totalQuestions: Number(row[3] || 0),
+      correctAnswers: Number(row[4] || 0),
+      wrongAnswers: Number(row[5] || 0),
+      accuracy: Number(row[6] || 0),
+      studiedAt: row[7],
+      wrongCardIds: row[8] ? parseJsonList(row[8]) : undefined,
+    };
+  });
 
   return {
     sets: Array.from(setsById.values()),
@@ -223,17 +233,19 @@ export function appDataToRows(data) {
       card.nextReviewAt ?? "",
     ]),
   );
-  const resultRows = (data.results ?? []).map((result) => [
-    result.id,
-    result.setId,
-    result.mode,
-    result.totalQuestions,
-    result.correctAnswers,
-    result.wrongAnswers,
-    result.accuracy,
-    result.studiedAt,
-    result.wrongCardIds === undefined ? "" : JSON.stringify(result.wrongCardIds),
-  ]);
+  const resultRows = (data.results ?? []).map((result) => result.mode === "listening"
+    ? [result.id, "", result.mode, "", "", "", result.accuracy, result.studiedAt, ""]
+    : [
+        result.id,
+        result.setId,
+        result.mode,
+        result.totalQuestions,
+        result.correctAnswers,
+        result.wrongAnswers,
+        result.accuracy,
+        result.studiedAt,
+        result.wrongCardIds === undefined ? "" : JSON.stringify(result.wrongCardIds),
+      ]);
   return { setRows, cardRows, resultRows };
 }
 

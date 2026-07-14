@@ -3,7 +3,7 @@ import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
 import { useSpeech } from "../hooks/useSpeech";
-import { AppData, StudyMode, VocabularyCard, VocabularySet } from "../types";
+import { AppData, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
 import { createResult, formatDate, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
@@ -32,7 +32,7 @@ function getSet(api: DataApi, setId?: string) {
   return api.data.sets.find((set) => set.id === setId);
 }
 
-function modePath(setId: string, mode: StudyMode) {
+function modePath(setId: string, mode: VocabularyStudyMode) {
   return `/study/${setId}/${mode}`;
 }
 
@@ -819,7 +819,7 @@ export function SetDetailPage({ api }: PageProps) {
   const navigate = useNavigate();
   const { speak } = useSpeech(api.data.settings.voiceURI);
   if (!set) return <Navigate to="/sets" replace />;
-  const modes: [StudyMode, string, string][] = [["flashcards", "Flashcards", "style"], ["learn", "Learn", "school"], ["write", "Write", "edit_note"], ["spell", "Spell", "hearing"], ["test", "Test", "quiz"], ["match", "Match", "extension"]];
+  const modes: [VocabularyStudyMode, string, string][] = [["flashcards", "Flashcards", "style"], ["learn", "Learn", "school"], ["write", "Write", "edit_note"], ["spell", "Spell", "hearing"], ["test", "Test", "quiz"], ["match", "Match", "extension"]];
   return (
     <>
       <PageTitle title={set.title} subtitle={set.description} action={<Button variant="secondary" onClick={() => navigate(`/sets/${set.id}/edit`)}><Icon name="edit" /> Edit</Button>} />
@@ -1078,7 +1078,7 @@ export function LearnPage({ api }: PageProps) {
   );
 }
 
-function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry }: PageProps & { set: VocabularySet; mode: StudyMode; total: number; correct: number; wrongCardIds?: string[]; onRetry?: () => void }) {
+function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry }: PageProps & { set: VocabularySet; mode: VocabularyStudyMode; total: number; correct: number; wrongCardIds?: string[]; onRetry?: () => void }) {
   const navigate = useNavigate();
   useEffect(() => {
     api.setData((current) => ({ ...current, results: [createResult(set.id, mode, total, correct, wrongCardIds), ...current.results] }));
@@ -1340,6 +1340,18 @@ export function ProgressPage({ api }: PageProps) {
         <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Bấm vào một lần học để xem những từ đã trả lời sai.</p>
         <div className="mt-md space-y-sm">
           {api.data.results.length ? api.data.results.slice(0, 20).map((result) => {
+            if (result.mode === "listening") {
+              return (
+                <div key={result.id} className="flex items-center gap-md rounded-xl bg-surface-container-low p-md dark:bg-white/5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white"><Icon name="headphones" /></span>
+                  <span className="min-w-0 flex-1">
+                    <strong className="block">Listening Test · {formatDate(result.studiedAt)}</strong>
+                    <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">Chỉ lưu phần trăm đúng</span>
+                  </span>
+                  <strong className="text-lg">{result.accuracy}%</strong>
+                </div>
+              );
+            }
             const expanded = expandedResultId === result.id;
             const resultSet = api.data.sets.find((set) => set.id === result.setId);
             const hasWrongDetails = Array.isArray(result.wrongCardIds);

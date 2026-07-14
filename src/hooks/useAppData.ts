@@ -77,7 +77,7 @@ export function useAppData() {
       setData((current) => ({
         ...current,
         sets: current.sets.filter((set) => set.id !== id),
-        results: current.results.filter((result) => result.setId !== id),
+        results: current.results.filter((result) => result.mode === "listening" || result.setId !== id),
       }));
     },
     updateSet(id: string, updater: (set: VocabularySet) => VocabularySet) {
