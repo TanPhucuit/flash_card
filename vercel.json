@@ -1,4 +1,16 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/youtube/transcript.js": {
+      "regions": ["sin1"]
+    },
+    "api/youtube/transcript-us.js": {
+      "regions": ["iad1"]
+    },
+    "api/youtube/transcript-eu.js": {
+      "regions": ["fra1"]
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",

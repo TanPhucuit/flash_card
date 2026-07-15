@@ -113,20 +113,40 @@ export function normalizeListeningAnswer(value: string) {
 }
 
 export async function fetchYouTubeTranscript(videoId: string) {
-  const response = await fetch(`/api/youtube/transcript?videoId=${encodeURIComponent(videoId)}`, {
-    headers: { Accept: "application/json" },
-    cache: "no-store",
-  });
-  const payload = await response.json().catch(() => ({})) as {
-    cues?: SubtitleCue[];
-    language?: string;
-    languageCode?: string;
-    error?: string;
-  };
-  if (!response.ok) throw new Error(payload.error || "Không thể tự lấy phụ đề từ YouTube.");
-  if (!payload.cues?.length) throw new Error("Video này không có phụ đề phù hợp để tạo bài test.");
-  return {
-    cues: payload.cues,
-    language: payload.language || payload.languageCode || "Unknown",
-  };
+  const endpoints = [
+    "/api/youtube/transcript-edge",
+    "/api/youtube/transcript",
+    "/api/youtube/transcript-us",
+    "/api/youtube/transcript-eu",
+  ];
+  const errors: Array<{ status: number; message: string }> = [];
+
+  for (const endpoint of endpoints) {
+    try {
+      const response = await fetch(`${endpoint}?videoId=${encodeURIComponent(videoId)}`, {
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+      });
+      const payload = await response.json().catch(() => ({})) as {
+        cues?: SubtitleCue[];
+        language?: string;
+        languageCode?: string;
+        error?: string;
+      };
+      if (response.ok && payload.cues?.length) {
+        return {
+          cues: payload.cues,
+          language: payload.language || payload.languageCode || "Unknown",
+        };
+      }
+      const message = payload.error || "Không thể tự lấy phụ đề từ YouTube.";
+      if (response.status === 400) throw new Error(message);
+      errors.push({ status: response.status, message });
+    } catch (error) {
+      errors.push({ status: 0, message: error instanceof Error ? error.message : "Không thể kết nối máy chủ phụ đề." });
+    }
+  }
+
+  const blocked = errors.find((error) => error.status === 503 || error.status === 502);
+  throw new Error(blocked?.message || errors[errors.length - 1]?.message || "Không thể tự lấy phụ đề từ YouTube.");
 }
