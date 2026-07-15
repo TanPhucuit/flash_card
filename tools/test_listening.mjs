@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { appDataToRows, rowsToAppData } from "../api/_googleSheets.js";
-import { parsePlayerResponse, parseTimedText, parseYouTubeConfig, selectCaptionTrack } from "../api/youtube/transcript.js";
+import { parsePlayerResponse, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
 import { extractYouTubeVideoId, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
 
 const srt = `\uFEFF1
@@ -54,10 +54,14 @@ const playerResponse = { captions: { playerCaptionsTracklistRenderer: { captionT
 const playerHtml = `<script>var ytInitialPlayerResponse = ${JSON.stringify(playerResponse)};</script><script>ytcfg.set({"INNERTUBE_API_KEY":"test-key"});</script>`;
 assert.equal(selectCaptionTrack(parsePlayerResponse(playerHtml)).languageCode, "en");
 assert.equal(parseYouTubeConfig(playerHtml).apiKey, "test-key");
+assert.equal(rankCaptionTracks(playerResponse, "https://www.youtube-nocookie.com")[0].sourceOrigin, "https://www.youtube-nocookie.com");
 assert.deepEqual(parseTimedText({ events: [
   { tStartMs: 1000, dDurationMs: 2000, segs: [{ utf8: "SPEAKER: Hello " }, { utf8: "world" }] },
   { tStartMs: 3000, dDurationMs: 1000, segs: [{ utf8: "[Music]" }] },
 ] }), [{ id: "cue-1-1000", startSeconds: 1, endSeconds: 3, text: "Hello world" }]);
+assert.deepEqual(parseXmlTimedText('<?xml version="1.0"?><transcript><text start="1.5" dur="2">Tom &amp; Jerry</text></transcript>'), [
+  { id: "cue-1-1500", startSeconds: 1.5, endSeconds: 3.5, text: "Tom & Jerry" },
+]);
 
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;
