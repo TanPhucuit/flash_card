@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { appDataToRows, rowsToAppData } from "../api/_googleSheets.js";
-import { parsePlayerResponse, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
+import { parsePlayerResponse, parsePublicTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
 import { extractYouTubeVideoId, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
 
 const srt = `\uFEFF1
@@ -62,6 +62,13 @@ assert.deepEqual(parseTimedText({ events: [
 assert.deepEqual(parseXmlTimedText('<?xml version="1.0"?><transcript><text start="1.5" dur="2">Tom &amp; Jerry</text></transcript>'), [
   { id: "cue-1-1500", startSeconds: 1.5, endSeconds: 3.5, text: "Tom & Jerry" },
 ]);
+assert.deepEqual(parsePublicTranscript({ language: "English", language_code: "en", transcript: [
+  { start: 1.25, duration: 2.5, text: "Hello\u00a0 world" },
+] }), {
+  language: "English",
+  languageCode: "en",
+  cues: [{ id: "cue-1-1250", startSeconds: 1.25, endSeconds: 3.75, text: "Hello world" }],
+});
 
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;

@@ -160,6 +160,27 @@ export function parseXmlTimedText(xml) {
   return cues;
 }
 
+export function parsePublicTranscript(payload) {
+  const transcript = Array.isArray(payload?.transcript) ? payload.transcript : [];
+  const cues = transcript.flatMap((segment, index) => {
+    const startSeconds = Number(segment?.start);
+    const durationSeconds = Number(segment?.duration);
+    const text = cleanText(String(segment?.text ?? ""));
+    if (!text || /^\s*[[(].*[\])]\s*$/.test(text) || !Number.isFinite(startSeconds) || !Number.isFinite(durationSeconds) || durationSeconds <= 0) return [];
+    return [{
+      id: `cue-${index + 1}-${Math.round(startSeconds * 1000)}`,
+      startSeconds,
+      endSeconds: startSeconds + durationSeconds,
+      text,
+    }];
+  });
+  return {
+    cues,
+    language: String(payload?.language || payload?.language_code || "Unknown"),
+    languageCode: String(payload?.language_code || ""),
+  };
+}
+
 function trackLanguageName(track) {
   return track?.name?.simpleText
     ?? track?.name?.runs?.map((run) => run.text ?? "").join("")
@@ -210,12 +231,31 @@ async function fetchPlayerResponse(videoId, apiKey, source) {
   return JSON.parse(text);
 }
 
+async function fetchPublicTranscript(videoId) {
+  const response = await fetch(`https://api.youtubetotext.com/full_transcript/${encodeURIComponent(videoId)}?meta=true`, {
+    headers: { Accept: "application/json" },
+    signal: AbortSignal.timeout(20000),
+  });
+  if (!response.ok) return null;
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) return null;
+  const parsed = parsePublicTranscript(await response.json());
+  return parsed.cues.length ? parsed : null;
+}
+
 export default async function handler(req, res) {
   if (req.method !== "GET") return sendJson(res, 405, { error: "Method not allowed" });
   const videoId = typeof req.query?.videoId === "string" ? req.query.videoId : "";
   if (!/^[\w-]{11}$/.test(videoId)) return sendJson(res, 400, { error: "URL YouTube không hợp lệ." });
 
   try {
+    try {
+      const publicTranscript = await fetchPublicTranscript(videoId);
+      if (publicTranscript) return sendJson(res, 200, publicTranscript);
+    } catch {
+      // Fall back to direct YouTube extraction if the transcript provider is unavailable.
+    }
+
     const watchResponse = await fetch(`${WATCH_BASE}${encodeURIComponent(videoId)}&hl=en`, {
       headers: {
         "Accept-Language": "en-US,en;q=0.9",
