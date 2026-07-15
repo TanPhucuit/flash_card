@@ -130,3 +130,15 @@ export async function fetchYouTubeTranscript(videoId: string) {
     language: payload.language || payload.languageCode || "Unknown",
   };
 }
+
+export async function fetchListeningTranslation(text: string) {
+  const response = await fetch("/api/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ text }),
+    cache: "no-store",
+  });
+  const payload = await response.json().catch(() => ({})) as { translation?: string; error?: string };
+  if (!response.ok || !payload.translation) throw new Error(payload.error || "Không thể tải bản dịch.");
+  return payload.translation;
+}

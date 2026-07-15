@@ -3,10 +3,11 @@ import { DataApi } from "../App";
 import { Button, Card, Icon, Input, PageTitle, ProgressBar } from "../components/ui";
 import { useYouTubePlayer } from "../hooks/useYouTubePlayer";
 import { createListeningResult, percent } from "../utils/study";
-import { extractYouTubeVideoId, fetchYouTubeTranscript, normalizeListeningAnswer, SubtitleCue } from "../utils/listening";
+import { extractYouTubeVideoId, fetchListeningTranslation, fetchYouTubeTranscript, normalizeListeningAnswer, SubtitleCue } from "../utils/listening";
 
 type Phase = "setup" | "test" | "result";
 type Feedback = { correct: boolean } | null;
+type TranslationState = { cueId: string; text: string; loading: boolean; error: string } | null;
 
 export function ListeningTestPage({ api }: { api: DataApi }) {
   const [phase, setPhase] = useState<Phase>("setup");
@@ -19,6 +20,7 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
   const [cueIndex, setCueIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [feedback, setFeedback] = useState<Feedback>(null);
+  const [translation, setTranslation] = useState<TranslationState>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [finalAccuracy, setFinalAccuracy] = useState(0);
   const { containerRef, ready, playing, error: playerError, playSegment, pause } = useYouTubePlayer(activeVideoId);
@@ -29,6 +31,7 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
     setCueIndex(0);
     setAnswer("");
     setFeedback(null);
+    setTranslation(null);
     setCorrectCount(0);
   }
 
@@ -70,6 +73,23 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
     pause();
   }
 
+  async function showTranslation() {
+    if (!currentCue || translation?.loading) return;
+    const cueId = currentCue.id;
+    setTranslation({ cueId, text: "", loading: true, error: "" });
+    try {
+      const text = await fetchListeningTranslation(currentCue.text);
+      setTranslation({ cueId, text, loading: false, error: "" });
+    } catch (error) {
+      setTranslation({
+        cueId,
+        text: "",
+        loading: false,
+        error: error instanceof Error ? error.message : "Không thể tải bản dịch.",
+      });
+    }
+  }
+
   function finishTest(nextCorrectCount: number) {
     const accuracy = percent(nextCorrectCount, cues.length);
     setFinalAccuracy(accuracy);
@@ -93,6 +113,7 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
     setCueIndex(nextIndex);
     setAnswer("");
     setFeedback(null);
+    setTranslation(null);
     playSegment(next.startSeconds, next.endSeconds);
   }
 
@@ -192,7 +213,27 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
             {feedback && currentCue ? (
               <div className={`mt-md rounded-2xl p-md ${feedback.correct ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-200" : "bg-red-50 text-red-800 dark:bg-red-500/15 dark:text-red-200"}`}>
                 <div className="flex items-center gap-sm font-bold"><Icon name={feedback.correct ? "check_circle" : "cancel"} /> {feedback.correct ? "Chính xác" : "Chưa chính xác"}</div>
-                <p className="mt-sm text-lg leading-relaxed">{currentCue.text}</p>
+                <div className={`mt-sm grid gap-md ${translation?.cueId === currentCue.id && translation.text ? "lg:grid-cols-2" : ""}`}>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-wide opacity-70">Transcript</div>
+                    <p className="mt-xs text-lg leading-relaxed">{currentCue.text}</p>
+                  </div>
+                  {translation?.cueId === currentCue.id && translation.text ? (
+                    <div className="border-t border-current/15 pt-md lg:border-l lg:border-t-0 lg:pl-md lg:pt-0">
+                      <div className="text-xs font-bold uppercase tracking-wide opacity-70">Bản dịch</div>
+                      <p className="mt-xs text-lg leading-relaxed">{translation.text}</p>
+                    </div>
+                  ) : null}
+                </div>
+                <div className="mt-md flex flex-wrap items-center gap-sm">
+                  {!translation?.text || translation.cueId !== currentCue.id ? (
+                    <Button type="button" variant="secondary" onClick={showTranslation} disabled={translation?.cueId === currentCue.id && translation.loading} className="min-h-10 px-md py-xs text-sm">
+                      <Icon name={translation?.cueId === currentCue.id && translation.loading ? "progress_activity" : "translate"} className={translation?.cueId === currentCue.id && translation.loading ? "animate-spin" : ""} />
+                      {translation?.cueId === currentCue.id && translation.loading ? "Đang dịch..." : "Hiện bản dịch"}
+                    </Button>
+                  ) : null}
+                  {translation?.cueId === currentCue.id && translation.error ? <span className="text-sm font-semibold">{translation.error}</span> : null}
+                </div>
               </div>
             ) : null}
             <div className="mt-auto flex flex-wrap justify-end gap-sm pt-lg">

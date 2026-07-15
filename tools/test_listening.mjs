@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { appDataToRows, rowsToAppData } from "../api/_googleSheets.js";
+import { parseTranslation } from "../api/translate.js";
 import { parsePlayerResponse, parsePublicTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
 import { extractYouTubeVideoId, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
 
@@ -69,6 +70,7 @@ assert.deepEqual(parsePublicTranscript({ language: "English", language_code: "en
   languageCode: "en",
   cues: [{ id: "cue-1-1250", startSeconds: 1.25, endSeconds: 3.75, text: "Hello world" }],
 });
+assert.equal(parseTranslation([[['Xin chào ', 'Hello '], ['thế giới', 'world']], null, 'en']), "Xin chào thế giới");
 
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;
