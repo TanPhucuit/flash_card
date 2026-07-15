@@ -1330,16 +1330,46 @@ export function MatchPage({ api }: PageProps) {
 export function ProgressPage({ api }: PageProps) {
   const cards = api.data.sets.flatMap((set) => set.cards);
   const avg = api.data.results.length ? Math.round(api.data.results.reduce((sum, item) => sum + item.accuracy, 0) / api.data.results.length) : 0;
+  const listeningResults = api.data.results.filter((result) => result.mode === "listening");
+  const readingResults = api.data.results.filter((result) => result.mode !== "listening");
+  const listeningAvg = listeningResults.length ? Math.round(listeningResults.reduce((sum, item) => sum + item.accuracy, 0) / listeningResults.length) : 0;
+  const readingAvg = readingResults.length ? Math.round(readingResults.reduce((sum, item) => sum + item.accuracy, 0) / readingResults.length) : 0;
   const [expandedResultId, setExpandedResultId] = useState<string | null>(null);
+  const [historyCategory, setHistoryCategory] = useState<"reading" | "listening">("reading");
+  const visibleResults = historyCategory === "listening" ? listeningResults : readingResults;
   return (
     <>
       <PageTitle title="Tiến độ học tập" subtitle="Theo dõi số từ đã thuộc, từ khó và lịch sử luyện tập." action={<Link to="/sets"><Button><Icon name="event_repeat" /> Review Difficult Words</Button></Link>} />
       <div className="grid grid-cols-2 gap-md lg:grid-cols-5"><Stat label="Tổng số từ" value={cards.length} icon="dictionary" /><Stat label="Mastered" value={cards.filter((c) => c.status === "mastered").length} icon="verified" /><Stat label="Difficult" value={cards.filter((c) => c.status === "difficult").length} icon="warning" /><Stat label="Review Today" value={cards.filter((c) => c.nextReviewAt && new Date(c.nextReviewAt) <= new Date()).length} icon="today" /><Stat label="Accuracy" value={`${avg}%`} icon="target" /></div>
+      <div className="mt-lg grid gap-md md:grid-cols-2">
+        <Card className="flex items-center gap-md border-l-4 border-l-primary">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary"><Icon name="menu_book" className="text-3xl" /></span>
+          <div className="min-w-0 flex-1">
+            <div className="text-sm font-bold uppercase tracking-wide text-on-surface-variant dark:text-white/60">Reading</div>
+            <div className="mt-xs flex items-end justify-between gap-md"><strong className="text-3xl">{readingAvg}%</strong><span className="text-sm text-on-surface-variant dark:text-white/60">{readingResults.length} lần học</span></div>
+          </div>
+        </Card>
+        <Card className="flex items-center gap-md border-l-4 border-l-emerald-500">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-200"><Icon name="headphones" className="text-3xl" /></span>
+          <div className="min-w-0 flex-1">
+            <div className="text-sm font-bold uppercase tracking-wide text-on-surface-variant dark:text-white/60">Listening</div>
+            <div className="mt-xs flex items-end justify-between gap-md"><strong className="text-3xl">{listeningAvg}%</strong><span className="text-sm text-on-surface-variant dark:text-white/60">{listeningResults.length} bài test</span></div>
+          </div>
+        </Card>
+      </div>
       <Card className="mt-lg">
-        <h2 className="font-headline-md text-headline-md">Study history</h2>
-        <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Bấm vào một lần học để xem những từ đã trả lời sai.</p>
+        <div className="flex flex-wrap items-center justify-between gap-md">
+          <div>
+            <h2 className="font-headline-md text-headline-md">Study history</h2>
+            <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Reading và Listening được lưu, theo dõi riêng.</p>
+          </div>
+          <div className="grid grid-cols-2 rounded-xl bg-surface-container-low p-xs dark:bg-white/5">
+            <button type="button" onClick={() => { setHistoryCategory("reading"); setExpandedResultId(null); }} className={`rounded-lg px-md py-sm text-sm font-bold transition ${historyCategory === "reading" ? "bg-primary text-white shadow-level-1" : "text-on-surface-variant dark:text-white/60"}`}>Reading <span className="ml-xs opacity-75">{readingResults.length}</span></button>
+            <button type="button" onClick={() => { setHistoryCategory("listening"); setExpandedResultId(null); }} className={`rounded-lg px-md py-sm text-sm font-bold transition ${historyCategory === "listening" ? "bg-primary text-white shadow-level-1" : "text-on-surface-variant dark:text-white/60"}`}>Listening <span className="ml-xs opacity-75">{listeningResults.length}</span></button>
+          </div>
+        </div>
         <div className="mt-md space-y-sm">
-          {api.data.results.length ? api.data.results.slice(0, 20).map((result) => {
+          {visibleResults.length ? visibleResults.slice(0, 20).map((result) => {
             if (result.mode === "listening") {
               return (
                 <div key={result.id} className="flex items-center gap-md rounded-xl bg-surface-container-low p-md dark:bg-white/5">
@@ -1396,7 +1426,7 @@ export function ProgressPage({ api }: PageProps) {
                 ) : null}
               </div>
             );
-          }) : <p className="rounded-xl bg-surface-container-low p-md text-on-surface-variant dark:bg-white/5 dark:text-white/60">Chưa có lịch sử học tập.</p>}
+          }) : <p className="rounded-xl bg-surface-container-low p-md text-on-surface-variant dark:bg-white/5 dark:text-white/60">Chưa có lịch sử {historyCategory === "listening" ? "Listening Test" : "Reading"}.</p>}
         </div>
       </Card>
     </>

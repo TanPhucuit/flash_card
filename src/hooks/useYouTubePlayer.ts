@@ -113,7 +113,11 @@ export function useYouTubePlayer(videoId: string | null) {
 
   const playSegment = useCallback((startSeconds: number, endSeconds: number) => {
     if (!videoId || !playerRef.current) return;
-    playerRef.current.loadVideoById({ videoId, startSeconds, endSeconds });
+    playerRef.current.loadVideoById({
+      videoId,
+      startSeconds: Math.max(0, startSeconds - 0.18),
+      endSeconds: endSeconds + 0.22,
+    });
   }, [videoId]);
 
   const pause = useCallback(() => playerRef.current?.pauseVideo(), []);

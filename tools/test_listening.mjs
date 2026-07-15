@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { appDataToRows, rowsToAppData } from "../api/_googleSheets.js";
 import { parseTranslation } from "../api/translate.js";
-import { parsePlayerResponse, parsePublicTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
+import { mergeTranscriptCues, parsePlayerResponse, parsePublicTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
 import { extractYouTubeVideoId, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
 
 const srt = `\uFEFF1
@@ -71,6 +71,17 @@ assert.deepEqual(parsePublicTranscript({ language: "English", language_code: "en
   cues: [{ id: "cue-1-1250", startSeconds: 1.25, endSeconds: 3.75, text: "Hello world" }],
 });
 assert.equal(parseTranslation([[['Xin chào ', 'Hello '], ['thế giới', 'world']], null, 'en']), "Xin chào thế giới");
+
+const semanticCues = mergeTranscriptCues([
+  { id: "raw-1", startSeconds: 0, endSeconds: 4, text: "You visualize yourself succeeding. You imagine the" },
+  { id: "raw-2", startSeconds: 4, endSeconds: 7, text: "life you want so clearly," },
+  { id: "raw-3", startSeconds: 7, endSeconds: 10, text: "but you never take the first step." },
+]);
+assert.deepEqual(semanticCues.map((cue) => cue.text), [
+  "You visualize yourself succeeding.",
+  "You imagine the life you want so clearly, but you never take the first step.",
+]);
+assert.equal(semanticCues[0].endSeconds, semanticCues[1].startSeconds);
 
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;

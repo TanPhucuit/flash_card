@@ -105,9 +105,95 @@ function cleanText(value) {
     .replace(/\n/g, " ")
     .replace(/[\u200B-\u200D\uFEFF]/g, "")
     .replace(/<[^>]*>/g, " ")
+    .replace(/\[(?:music|applause|laughter|cheering|silence|inaudible)[^\]]*\]/gi, " ")
     .replace(/\s+/g, " ")
     .replace(/^[A-Z][A-Z .'-]{1,40}:\s+/, "")
     .trim();
+}
+
+const ABBREVIATIONS = new Set([
+  "mr", "mrs", "ms", "dr", "prof", "sr", "jr", "st", "vs", "etc", "e.g", "i.e", "a.m", "p.m",
+]);
+
+function isAbbreviation(text, punctuationIndex) {
+  if (text[punctuationIndex] !== ".") return false;
+  const prefix = text.slice(0, punctuationIndex).trimEnd();
+  const token = prefix.match(/([\p{L}.]+)$/u)?.[1]?.toLowerCase() ?? "";
+  if (ABBREVIATIONS.has(token)) return true;
+  return token.length === 1 && /\p{L}/u.test(token);
+}
+
+function splitAtNaturalBoundaries(text) {
+  const parts = [];
+  let start = 0;
+  for (let index = 0; index < text.length; index += 1) {
+    const character = text[index];
+    if (!".;!?".includes(character)) continue;
+    if (character === "." && (isAbbreviation(text, index) || /\d/.test(text[index - 1] ?? "") && /\d/.test(text[index + 1] ?? ""))) continue;
+
+    let end = index + 1;
+    while (end < text.length && '"\'”’)]}'.includes(text[end])) end += 1;
+    const nextCharacter = text[end];
+    if (nextCharacter && !/\s/.test(nextCharacter)) continue;
+    const candidate = text.slice(start, end).trim();
+    if (candidate) {
+      parts.push({ text: candidate, startIndex: start, endIndex: end });
+      start = end;
+    }
+  }
+  const remainder = text.slice(start).trim();
+  if (remainder) parts.push({ text: remainder, startIndex: start, endIndex: text.length });
+  return parts;
+}
+
+function hasNaturalEnding(text) {
+  return /[.;!?]["'”’)]*$/u.test(text.trim());
+}
+
+export function mergeTranscriptCues(inputCues) {
+  const cues = [...inputCues].sort((left, right) => left.startSeconds - right.startSeconds);
+  const merged = [];
+  let buffer = null;
+  let previousEnd = null;
+
+  const flush = () => {
+    if (!buffer?.text) return;
+    merged.push({
+      id: `cue-${merged.length + 1}-${Math.round(buffer.startSeconds * 1000)}`,
+      startSeconds: buffer.startSeconds,
+      endSeconds: buffer.endSeconds,
+      text: buffer.text,
+    });
+    buffer = null;
+  };
+
+  for (const cue of cues) {
+    const duration = cue.endSeconds - cue.startSeconds;
+    if (!cue.text || !Number.isFinite(duration) || duration <= 0) continue;
+    const parts = splitAtNaturalBoundaries(cue.text);
+    for (const part of parts) {
+      const partStart = cue.startSeconds + duration * (part.startIndex / Math.max(cue.text.length, 1));
+      const partEnd = cue.startSeconds + duration * (part.endIndex / Math.max(cue.text.length, 1));
+      if (buffer && previousEnd !== null && partStart - previousEnd >= 1.5) flush();
+      if (!buffer) {
+        buffer = { text: part.text, startSeconds: partStart, endSeconds: partEnd };
+      } else {
+        buffer.text = `${buffer.text} ${part.text}`.replace(/\s+/g, " ").trim();
+        buffer.endSeconds = partEnd;
+      }
+      previousEnd = partEnd;
+      if (hasNaturalEnding(part.text)) flush();
+    }
+  }
+  flush();
+  for (let index = 0; index < merged.length - 1; index += 1) {
+    const current = merged[index];
+    const next = merged[index + 1];
+    if (current.endSeconds > next.startSeconds && next.startSeconds > current.startSeconds) {
+      current.endSeconds = next.startSeconds;
+    }
+  }
+  return merged;
 }
 
 export function parseTimedText(payload) {
@@ -175,7 +261,7 @@ export function parsePublicTranscript(payload) {
     }];
   });
   return {
-    cues,
+    cues: mergeTranscriptCues(cues),
     language: String(payload?.language || payload?.language_code || "Unknown"),
     languageCode: String(payload?.language_code || ""),
   };
@@ -201,7 +287,7 @@ async function fetchTrackCues(track) {
     if (text.trim()) {
       try {
         const cues = parseTimedText(JSON.parse(text));
-        if (cues.length) return cues;
+        if (cues.length) return mergeTranscriptCues(cues);
       } catch {
         // Some YouTube clients ignore fmt and return XML; try the raw track below.
       }
@@ -211,7 +297,7 @@ async function fetchTrackCues(track) {
   captionUrl.searchParams.delete("fmt");
   const xmlResponse = await fetch(captionUrl, { headers: { "Accept-Language": "en-US,en;q=0.9" } });
   if (!xmlResponse.ok) return [];
-  return parseXmlTimedText(await xmlResponse.text());
+  return mergeTranscriptCues(parseXmlTimedText(await xmlResponse.text()));
 }
 
 async function fetchPlayerResponse(videoId, apiKey, source) {
