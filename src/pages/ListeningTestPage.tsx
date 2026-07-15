@@ -3,7 +3,7 @@ import { DataApi } from "../App";
 import { Button, Card, Icon, Input, PageTitle, ProgressBar } from "../components/ui";
 import { useYouTubePlayer } from "../hooks/useYouTubePlayer";
 import { createListeningResult, percent } from "../utils/study";
-import { extractYouTubeVideoId, fetchListeningTranslation, fetchYouTubeTranscript, normalizeListeningAnswer, SubtitleCue } from "../utils/listening";
+import { extractYouTubeVideoId, fetchListeningTranslation, fetchYouTubeTranscript, isListeningAnswerCorrect, SubtitleCue } from "../utils/listening";
 
 type Phase = "setup" | "test" | "result";
 type Feedback = { correct: boolean } | null;
@@ -61,7 +61,7 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
   function checkAnswer(event?: FormEvent) {
     event?.preventDefault();
     if (!currentCue || feedback || !answer.trim()) return;
-    const correct = normalizeListeningAnswer(answer) === normalizeListeningAnswer(currentCue.text);
+    const correct = isListeningAnswerCorrect(answer, currentCue.text);
     setFeedback({ correct });
     if (correct) setCorrectCount((count) => count + 1);
     pause();
@@ -210,6 +210,7 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
               placeholder="Gõ câu bạn nghe được..."
               className="min-h-40 w-full resize-none rounded-2xl border-2 border-surface-variant bg-white p-md text-xl leading-relaxed text-on-surface outline-none transition focus:border-primary dark:border-white/10 dark:bg-[#202324] dark:text-white"
             />
+            {!feedback ? <p className="mt-sm text-xs text-on-surface-variant dark:text-white/55">Không tính dấu câu; chấp nhận dạng viết tắt, thiếu “s” số nhiều và lỗi chính tả nhỏ.</p> : null}
             {feedback && currentCue ? (
               <div className={`mt-md rounded-2xl p-md ${feedback.correct ? "bg-emerald-50 text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-200" : "bg-red-50 text-red-800 dark:bg-red-500/15 dark:text-red-200"}`}>
                 <div className="flex items-center gap-sm font-bold"><Icon name={feedback.correct ? "check_circle" : "cancel"} /> {feedback.correct ? "Chính xác" : "Chưa chính xác"}</div>

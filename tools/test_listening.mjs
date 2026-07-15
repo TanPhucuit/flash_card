@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { appDataToRows, rowsToAppData } from "../api/_googleSheets.js";
 import { parseTranslation } from "../api/translate.js";
 import { mergeTranscriptCues, parsePlayerResponse, parsePublicTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
-import { extractYouTubeVideoId, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
+import { extractYouTubeVideoId, isListeningAnswerCorrect, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
 
 const srt = `\uFEFF1
 00:00:01,200 --> 00:00:03,500
@@ -45,8 +45,18 @@ assert.equal(extractYouTubeVideoId(`https://www.youtube.com/shorts/${videoId}`),
 assert.equal(extractYouTubeVideoId(`https://www.youtube.com/embed/${videoId}`), videoId);
 assert.equal(extractYouTubeVideoId("https://example.com/video"), null);
 
-assert.equal(normalizeListeningAnswer("  Don’t, STOP!  "), "dont stop");
+assert.equal(normalizeListeningAnswer("  Don’t, STOP!  "), "do not stop");
 assert.equal(normalizeListeningAnswer("Café"), normalizeListeningAnswer("Cafe\u0301"));
+assert.equal(isListeningAnswerCorrect("you have big dream", "You have big dreams!"), true);
+assert.equal(isListeningAnswerCorrect("you've big dreams", "You have big dreams."), true);
+assert.equal(isListeningAnswerCorrect("you 've big dreams", "You have big dreams."), true);
+assert.equal(isListeningAnswerCorrect("we cant stop", "We can't stop."), true);
+assert.equal(isListeningAnswerCorrect("you have big dreems", "You have big dreams."), true);
+assert.equal(isListeningAnswerCorrect("you have big dreams you can see", "You have big dreams."), false);
+assert.equal(isListeningAnswerCorrect(
+  "you have big dream, you can see yourself succeeding",
+  "You have big dreams. You can see yourself succeeding.",
+), true);
 
 const playerResponse = { captions: { playerCaptionsTracklistRenderer: { captionTracks: [
   { languageCode: "vi", baseUrl: "https://www.youtube.com/api/timedtext?lang=vi" },
@@ -78,10 +88,16 @@ const semanticCues = mergeTranscriptCues([
   { id: "raw-3", startSeconds: 7, endSeconds: 10, text: "but you never take the first step." },
 ]);
 assert.deepEqual(semanticCues.map((cue) => cue.text), [
-  "You visualize yourself succeeding.",
-  "You imagine the life you want so clearly, but you never take the first step.",
+  "You visualize yourself succeeding. You imagine the life you want so clearly, but you never take the first step.",
 ]);
-assert.equal(semanticCues[0].endSeconds, semanticCues[1].startSeconds);
+
+const shortCueGrouping = mergeTranscriptCues([
+  { id: "raw-1", startSeconds: 0.16, endSeconds: 4.48, text: "You have big dreams. You can see" },
+  { id: "raw-2", startSeconds: 2.32, endSeconds: 6.88, text: "yourself succeeding. You imagine the" },
+  { id: "raw-3", startSeconds: 4.48, endSeconds: 9.17, text: "life you want so clearly that it feels almost real." },
+]);
+assert.equal(shortCueGrouping[0].text, "You have big dreams. You can see yourself succeeding.");
+assert.equal(shortCueGrouping[0].endSeconds <= shortCueGrouping[1].startSeconds, true);
 
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;

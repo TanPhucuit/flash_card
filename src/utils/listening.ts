@@ -106,10 +106,62 @@ export function normalizeListeningAnswer(value: string) {
   return value
     .normalize("NFC")
     .toLocaleLowerCase("en")
+    .replace(/\bwon['’]?t\b/g, "will not")
+    .replace(/\bcan['’]?t\b/g, "can not")
+    .replace(/\b([\p{L}]+)n['’]?t\b/gu, "$1 not")
+    .replace(/\b(i|you|we|they)\s*['’]?ve\b/g, "$1 have")
+    .replace(/\b(you|we|they)\s*['’]?re\b/g, "$1 are")
+    .replace(/\bi\s*['’]?m\b/g, "i am")
+    .replace(/\b(i|you|he|she|it|we|they)\s*['’]?ll\b/g, "$1 will")
     .replace(/[’‘`']/g, "")
     .replace(/[^\p{L}\p{N}\s]/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function relaxedToken(value: string) {
+  const irregular: Record<string, string> = { does: "do", has: "have" };
+  if (irregular[value]) return irregular[value];
+  if (value.length <= 3 || /(?:ss|us|is)$/.test(value)) return value;
+  if (value.endsWith("ies") && value.length > 4) return `${value.slice(0, -3)}y`;
+  if (/(?:ches|shes|xes|zes|oes)$/.test(value)) return value.slice(0, -2);
+  if (value.endsWith("s")) return value.slice(0, -1);
+  return value;
+}
+
+function editDistanceAtMostOne(left: string, right: string) {
+  if (left === right) return true;
+  if (Math.abs(left.length - right.length) > 1) return false;
+  let first = left;
+  let second = right;
+  if (first.length > second.length) [first, second] = [second, first];
+  let edits = 0;
+  for (let leftIndex = 0, rightIndex = 0; rightIndex < second.length;) {
+    if (first[leftIndex] === second[rightIndex]) {
+      leftIndex += 1;
+      rightIndex += 1;
+    } else {
+      edits += 1;
+      if (edits > 1) return false;
+      if (first.length === second.length) leftIndex += 1;
+      rightIndex += 1;
+    }
+  }
+  return true;
+}
+
+export function isListeningAnswerCorrect(answer: string, expected: string) {
+  const answerTokens = normalizeListeningAnswer(answer).split(" ").filter(Boolean);
+  const expectedTokens = normalizeListeningAnswer(expected).split(" ").filter(Boolean);
+  if (answerTokens.length !== expectedTokens.length) return false;
+  return expectedTokens.every((expectedToken, index) => {
+    const answerToken = answerTokens[index];
+    if (answerToken === expectedToken) return true;
+    const relaxedAnswer = relaxedToken(answerToken);
+    const relaxedExpected = relaxedToken(expectedToken);
+    if (relaxedAnswer === relaxedExpected) return true;
+    return Math.min(relaxedAnswer.length, relaxedExpected.length) >= 5 && editDistanceAtMostOne(relaxedAnswer, relaxedExpected);
+  });
 }
 
 export async function fetchYouTubeTranscript(videoId: string) {

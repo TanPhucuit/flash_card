@@ -151,7 +151,16 @@ function hasNaturalEnding(text) {
 }
 
 export function mergeTranscriptCues(inputCues) {
-  const cues = [...inputCues].sort((left, right) => left.startSeconds - right.startSeconds);
+  const cues = [...inputCues]
+    .sort((left, right) => left.startSeconds - right.startSeconds)
+    .map((cue) => ({ ...cue }));
+  for (let index = 0; index < cues.length - 1; index += 1) {
+    const current = cues[index];
+    const next = cues[index + 1];
+    if (current.endSeconds > next.startSeconds && next.startSeconds > current.startSeconds) {
+      current.endSeconds = next.startSeconds;
+    }
+  }
   const merged = [];
   let buffer = null;
   let previousEnd = null;
@@ -171,9 +180,12 @@ export function mergeTranscriptCues(inputCues) {
     const duration = cue.endSeconds - cue.startSeconds;
     if (!cue.text || !Number.isFinite(duration) || duration <= 0) continue;
     const parts = splitAtNaturalBoundaries(cue.text);
+    const totalWords = cue.text.trim().split(/\s+/).filter(Boolean).length;
     for (const part of parts) {
-      const partStart = cue.startSeconds + duration * (part.startIndex / Math.max(cue.text.length, 1));
-      const partEnd = cue.startSeconds + duration * (part.endIndex / Math.max(cue.text.length, 1));
+      const wordsBefore = cue.text.slice(0, part.startIndex).trim().split(/\s+/).filter(Boolean).length;
+      const wordsThroughPart = cue.text.slice(0, part.endIndex).trim().split(/\s+/).filter(Boolean).length;
+      const partStart = cue.startSeconds + duration * (wordsBefore / Math.max(totalWords, 1));
+      const partEnd = cue.startSeconds + duration * (wordsThroughPart / Math.max(totalWords, 1));
       if (buffer && previousEnd !== null && partStart - previousEnd >= 1.5) flush();
       if (!buffer) {
         buffer = { text: part.text, startSeconds: partStart, endSeconds: partEnd };
@@ -193,7 +205,37 @@ export function mergeTranscriptCues(inputCues) {
       current.endSeconds = next.startSeconds;
     }
   }
-  return merged;
+
+  const grouped = [];
+  let currentGroup = null;
+  for (const cue of merged) {
+    if (!currentGroup) {
+      currentGroup = { ...cue };
+      continue;
+    }
+    const groupWords = currentGroup.text.split(/\s+/).filter(Boolean).length;
+    if (groupWords < 5) {
+      currentGroup.text = `${currentGroup.text} ${cue.text}`.replace(/\s+/g, " ").trim();
+      currentGroup.endSeconds = cue.endSeconds;
+    } else {
+      grouped.push(currentGroup);
+      currentGroup = { ...cue };
+    }
+  }
+  if (currentGroup) {
+    const groupWords = currentGroup.text.split(/\s+/).filter(Boolean).length;
+    const previous = grouped[grouped.length - 1];
+    if (previous && groupWords < 5) {
+      previous.text = `${previous.text} ${currentGroup.text}`.replace(/\s+/g, " ").trim();
+      previous.endSeconds = currentGroup.endSeconds;
+    } else {
+      grouped.push(currentGroup);
+    }
+  }
+  return grouped.map((cue, index) => ({
+    ...cue,
+    id: `cue-${index + 1}-${Math.round(cue.startSeconds * 1000)}`,
+  }));
 }
 
 export function parseTimedText(payload) {

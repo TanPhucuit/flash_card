@@ -115,8 +115,8 @@ export function useYouTubePlayer(videoId: string | null) {
     if (!videoId || !playerRef.current) return;
     playerRef.current.loadVideoById({
       videoId,
-      startSeconds: Math.max(0, startSeconds - 0.18),
-      endSeconds: endSeconds + 0.22,
+      startSeconds: Math.max(0, startSeconds - 0.06),
+      endSeconds,
     });
   }, [videoId]);
 
