@@ -648,8 +648,23 @@ export function DashboardPage({ api }: PageProps) {
 
 export function MySetsPage({ api }: PageProps) {
   const [query, setQuery] = useState("");
+  const [activeTab, setActiveTab] = useState<"learning" | "completed">("learning");
   const navigate = useNavigate();
-  const filtered = api.data.sets.filter((set) => `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase()));
+
+  const learnedSetIds = useMemo(() => {
+    return new Set(
+      api.data.results
+        .filter((r) => r.mode === "learn" && "setId" in r)
+        .map((r) => (r as any).setId as string)
+    );
+  }, [api.data.results]);
+
+  const filtered = api.data.sets.filter((set) => {
+    const matchQuery = `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
+    if (!matchQuery) return false;
+    const isLearned = learnedSetIds.has(set.id);
+    return activeTab === "completed" ? isLearned : !isLearned;
+  });
 
   function importCsv(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
@@ -671,6 +686,20 @@ export function MySetsPage({ api }: PageProps) {
     <>
       <PageTitle title="My Sets" subtitle="Quản lý các bộ từ vựng đang lưu trên trình duyệt này." action={<Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Create New Set</Button>} />
       <Card className="mb-lg">
+        <div className="mb-md flex gap-sm border-b border-surface-variant dark:border-white/10">
+          <button
+            className={`px-md py-sm font-semibold transition ${activeTab === "learning" ? "border-b-2 border-primary text-primary" : "text-on-surface-variant dark:text-white/60"}`}
+            onClick={() => setActiveTab("learning")}
+          >
+            Chưa hoàn thành
+          </button>
+          <button
+            className={`px-md py-sm font-semibold transition ${activeTab === "completed" ? "border-b-2 border-primary text-primary" : "text-on-surface-variant dark:text-white/60"}`}
+            onClick={() => setActiveTab("completed")}
+          >
+            Đã hoàn thành
+          </button>
+        </div>
         <div className="flex flex-col gap-md md:flex-row">
           <Input placeholder="Tìm theo tên bộ hoặc tag..." value={query} onChange={(event) => setQuery(event.target.value)} />
           <label className="inline-flex cursor-pointer items-center justify-center gap-sm rounded-xl border border-surface-variant bg-white px-lg py-sm font-semibold text-on-surface-variant transition hover:border-primary dark:bg-[#202324] dark:text-white/70">
