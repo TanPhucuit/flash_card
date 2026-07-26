@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, TouchEvent as ReactTouchEvent, useEffect, useMemo, useRef, useState } from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
 import { useSpeech } from "../hooks/useSpeech";
@@ -649,7 +649,28 @@ export function DashboardPage({ api }: PageProps) {
 export function MySetsPage({ api }: PageProps) {
   const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<"learning" | "completed">("learning");
+  const [multiPickerOpen, setMultiPickerOpen] = useState(false);
+  const [selectedSetIds, setSelectedSetIds] = useState<string[]>([]);
+  const [wordCount, setWordCount] = useState(0);
   const navigate = useNavigate();
+
+  const multiPoolTotal = useMemo(
+    () => api.data.sets.filter((set) => selectedSetIds.includes(set.id)).reduce((sum, set) => sum + set.cards.length, 0),
+    [api.data.sets, selectedSetIds],
+  );
+
+  useEffect(() => {
+    setWordCount((current) => (multiPoolTotal === 0 ? 0 : current <= 0 || current > multiPoolTotal ? multiPoolTotal : current));
+  }, [multiPoolTotal]);
+
+  function toggleSetSelection(setId: string) {
+    setSelectedSetIds((current) => (current.includes(setId) ? current.filter((id) => id !== setId) : [...current, setId]));
+  }
+
+  function startMultiLearn() {
+    if (!selectedSetIds.length || wordCount < 1) return;
+    navigate(`/study/multi/learn?sets=${selectedSetIds.join(",")}&count=${wordCount}`);
+  }
 
   const learnedSetIds = useMemo(() => {
     return new Set(
@@ -684,7 +705,59 @@ export function MySetsPage({ api }: PageProps) {
 
   return (
     <>
-      <PageTitle title="My Sets" subtitle="Quản lý các bộ từ vựng đang lưu trên trình duyệt này." action={<Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Create New Set</Button>} />
+      <PageTitle
+        title="My Sets"
+        subtitle="Quản lý các bộ từ vựng đang lưu trên trình duyệt này."
+        action={
+          <div className="flex flex-wrap gap-sm">
+            <Button variant="secondary" onClick={() => setMultiPickerOpen((value) => !value)}>
+              <Icon name="layers" /> Multiset Learn
+            </Button>
+            <Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Create New Set</Button>
+          </div>
+        }
+      />
+      {multiPickerOpen ? (
+        <Card className="mb-lg space-y-md">
+          <div className="flex items-center justify-between">
+            <h2 className="font-headline-md text-lg font-bold">Học nhiều bộ cùng lúc</h2>
+            <Button variant="ghost" onClick={() => setMultiPickerOpen(false)}><Icon name="close" /></Button>
+          </div>
+          <p className="text-sm text-on-surface-variant dark:text-white/60">
+            Chọn các bộ muốn gộp lại để học, sau đó nhập số lượng từ. Nếu số từ ít hơn tổng số từ đã chọn, từ sẽ được lấy ngẫu nhiên; nếu bằng tổng số từ, thứ tự vẫn được xáo trộn ngẫu nhiên.
+          </p>
+          <div className="grid gap-sm md:grid-cols-2 lg:grid-cols-3">
+            {api.data.sets.map((set) => (
+              <label
+                key={set.id}
+                className={`flex cursor-pointer items-center gap-sm rounded-xl border px-md py-sm transition ${selectedSetIds.includes(set.id) ? "border-primary bg-primary-fixed dark:bg-primary/15" : "border-surface-variant dark:border-white/10"}`}
+              >
+                <input type="checkbox" checked={selectedSetIds.includes(set.id)} onChange={() => toggleSetSelection(set.id)} />
+                <span className="min-w-0 flex-1 truncate font-semibold">{set.title}</span>
+                <span className="shrink-0 text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ</span>
+              </label>
+            ))}
+          </div>
+          <div className="flex flex-col items-start gap-sm sm:flex-row sm:items-center">
+            <label className="flex items-center gap-sm font-semibold">
+              Số lượng từ
+              <Input
+                type="number"
+                min={1}
+                max={multiPoolTotal || 1}
+                value={wordCount || ""}
+                onChange={(event) => setWordCount(Math.max(1, Math.min(multiPoolTotal, Number(event.target.value) || 1)))}
+                className="w-28"
+                disabled={!multiPoolTotal}
+              />
+            </label>
+            <span className="text-sm text-on-surface-variant dark:text-white/60">/ {multiPoolTotal} từ đã chọn</span>
+            <Button className="sm:ml-auto" disabled={!selectedSetIds.length || !multiPoolTotal} onClick={startMultiLearn}>
+              <Icon name="play_arrow" /> Bắt đầu học
+            </Button>
+          </div>
+        </Card>
+      ) : null}
       <Card className="mb-lg">
         <div className="mb-md flex gap-sm border-b border-surface-variant dark:border-white/10">
           <button
@@ -954,8 +1027,8 @@ export function FlashcardsPage({ api }: PageProps) {
   );
 }
 
-function answerChoices(set: VocabularySet, card: VocabularyCard, field: "meaningVi" | "word") {
-  const distractors = shuffle(set.cards.filter((item) => item.id !== card.id)).slice(0, 3).map((item) => item[field]);
+function answerChoices(pool: VocabularyCard[], card: VocabularyCard, field: "meaningVi" | "word") {
+  const distractors = shuffle(pool.filter((item) => item.id !== card.id)).slice(0, 3).map((item) => item[field]);
   return shuffle([card[field], ...distractors]);
 }
 
@@ -1013,8 +1086,15 @@ function QuizletChoice({
 }
 
 function quizletPrompt(card: VocabularyCard, direction: string) {
-  if (direction === "vi-en") return { label: "Definition", text: card.definitionEn || card.meaningVi || card.exampleEn, answerField: "word" as const };
-  return { label: "Term", text: card.word, answerField: "meaningVi" as const };
+  if (direction === "vi-en") {
+    return {
+      label: "Definition",
+      text: card.definitionEn || card.exampleEn || card.word,
+      secondaryText: card.meaningVi,
+      answerField: "word" as const,
+    };
+  }
+  return { label: "Term", text: card.word, secondaryText: undefined as string | undefined, answerField: "meaningVi" as const };
 }
 
 export function LearnPage({ api }: PageProps) {
@@ -1030,7 +1110,7 @@ export function LearnPage({ api }: PageProps) {
   const { speak } = useSpeech(api.data.settings.voiceURI);
   const activeChoiceCard = queue[current];
   const choices = useMemo(
-    () => set && activeChoiceCard ? answerChoices(set, activeChoiceCard, "word") : [],
+    () => set && activeChoiceCard ? answerChoices(set.cards, activeChoiceCard, "word") : [],
     [set?.id, activeChoiceCard?.id],
   );
   useEffect(() => () => {
@@ -1082,7 +1162,10 @@ export function LearnPage({ api }: PageProps) {
           </div>
           <div className="text-[#7a86a5]">{current + 1} / {queue.length}</div>
         </div>
-        <div className="mt-lg min-h-20 text-xl leading-relaxed text-[#0f1b3d] dark:text-white md:mt-xl md:min-h-28 md:text-3xl">{prompt.text}</div>
+        <div className="mt-lg min-h-20 leading-relaxed md:mt-xl md:min-h-28">
+          <div className="text-xl text-[#0f1b3d] dark:text-white md:text-3xl">{prompt.text}</div>
+          {prompt.secondaryText ? <div className="mt-xs text-lg font-semibold text-primary dark:text-[#c3c0ff] md:text-xl">{prompt.secondaryText}</div> : null}
+        </div>
         <div className="mt-xl md:mt-2xl">
           <h2 className="mb-md font-bold text-[#4b587c] dark:text-white/70">Choose an answer</h2>
           <div className="grid gap-md md:grid-cols-2">
@@ -1104,6 +1187,133 @@ export function LearnPage({ api }: PageProps) {
         </div>
       </section>
     </div>
+  );
+}
+
+export function MultiSetLearnPage({ api }: PageProps) {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const setIds = useMemo(() => (searchParams.get("sets") ?? "").split(",").filter(Boolean), [searchParams]);
+  const requestedCount = Number(searchParams.get("count") ?? "0");
+
+  const selectedSets = useMemo(
+    () => setIds.map((id) => api.data.sets.find((set) => set.id === id)).filter((set): set is VocabularySet => Boolean(set)),
+    [setIds, api.data.sets],
+  );
+  const pool = useMemo(
+    () => selectedSets.flatMap((set) => set.cards.map((card) => ({ card, setId: set.id }))),
+    [selectedSets],
+  );
+  const count = Math.max(1, Math.min(requestedCount || pool.length, pool.length || 1));
+
+  const [queue, setQueue] = useState(() => shuffle(pool).slice(0, count));
+  const [current, setCurrent] = useState(0);
+  const [correct, setCorrect] = useState(0);
+  const [feedback, setFeedback] = useState<{ choice: string; correct: boolean; message: string } | null>(null);
+  const correctAudio = useRef<AudioContext | null>(null);
+  const feedbackTimer = useRef<number | undefined>(undefined);
+  const { speak } = useSpeech(api.data.settings.voiceURI);
+  const activeItem = queue[current];
+  const choices = useMemo(
+    () => activeItem ? answerChoices(pool.map((item) => item.card), activeItem.card, "word") : [],
+    [activeItem?.card.id, pool],
+  );
+
+  useEffect(() => () => {
+    if (feedbackTimer.current) window.clearTimeout(feedbackTimer.current);
+    correctAudio.current?.close();
+  }, []);
+
+  if (!selectedSets.length || !pool.length) return <Navigate to="/sets" replace />;
+
+  function retry() {
+    setQueue(shuffle(pool).slice(0, count));
+    setCurrent(0);
+    setCorrect(0);
+    setFeedback(null);
+  }
+
+  const item = queue[current];
+  if (!item) return <MultiSummary api={api} setIds={setIds} total={queue.length} correct={correct} onRetry={retry} />;
+  const card = item.card;
+  const prompt = quizletPrompt(card, "vi-en");
+
+  function choose(value: string) {
+    if (feedback) return;
+    const ok = value === card[prompt.answerField];
+    setFeedback({ choice: value, correct: ok, message: ok ? "Correct!" : `Đáp án: ${card[prompt.answerField]}` });
+    if (ok) {
+      setCorrect((n) => n + 1);
+      playCorrectChime(correctAudio);
+    }
+    api.updateSet(item.setId, (currentSet) => updateSetCard(currentSet, card.id, (cardItem) => updateCardStudy(cardItem, ok)));
+    feedbackTimer.current = window.setTimeout(() => {
+      setFeedback(null);
+      setCurrent((n) => n + 1);
+      feedbackTimer.current = undefined;
+    }, 720);
+  }
+
+  const titleLabel = selectedSets.length > 1
+    ? `${selectedSets[0].title} +${selectedSets.length - 1} bộ khác`
+    : selectedSets[0].title;
+
+  return (
+    <div className="mx-auto max-w-7xl">
+      <div className="mb-md flex items-center justify-between md:mb-lg">
+        <Link to="/sets" className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> Multiset Learn</Link>
+        <div className="max-w-[55vw] truncate text-right font-semibold text-[#586383] dark:text-white/65 md:max-w-none">{titleLabel}</div>
+      </div>
+      <QuizletProgress current={current} total={queue.length} correct={correct} />
+      <section className={`relative mx-auto max-w-6xl rounded-2xl border bg-white px-md py-lg shadow-[0_12px_32px_rgba(15,23,42,0.06)] dark:bg-[#232627] md:min-h-[560px] md:px-2xl md:py-xl ${feedback?.correct ? "learn-answer-correct border-emerald-500" : "border-[#e4e8f0] dark:border-white/10"}`}>
+        {feedback?.correct ? <span className="learn-success absolute right-lg top-lg flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white shadow-level-2"><Icon name="check" /></span> : null}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-sm font-bold text-[#4b587c] dark:text-white/70">
+            <span>{prompt.label}</span>
+            <button type="button" onClick={() => speak(prompt.text)} className="rounded-full p-1 hover:bg-surface-container dark:hover:bg-white/10"><Icon name="volume_up" className="text-xl" /></button>
+          </div>
+          <div className="text-[#7a86a5]">{current + 1} / {queue.length}</div>
+        </div>
+        <div className="mt-lg min-h-20 leading-relaxed md:mt-xl md:min-h-28">
+          <div className="text-xl text-[#0f1b3d] dark:text-white md:text-3xl">{prompt.text}</div>
+          {prompt.secondaryText ? <div className="mt-xs text-lg font-semibold text-primary dark:text-[#c3c0ff] md:text-xl">{prompt.secondaryText}</div> : null}
+        </div>
+        <div className="mt-xl md:mt-2xl">
+          <h2 className="mb-md font-bold text-[#4b587c] dark:text-white/70">Choose an answer</h2>
+          <div className="grid gap-md md:grid-cols-2">
+            {choices.map((choice, index) => {
+              const status = !feedback
+                ? "default"
+                : choice === card[prompt.answerField]
+                  ? "correct"
+                  : feedback.choice === choice
+                    ? "wrong"
+                    : "muted";
+              return <QuizletChoice key={`${choice}-${index}`} choice={choice} index={index} selected={false} status={status} onClick={() => choose(choice)} />;
+            })}
+          </div>
+        </div>
+        <div className="mt-lg flex flex-col-reverse items-stretch gap-md sm:flex-row sm:items-center sm:justify-end sm:gap-lg">
+          {feedback ? <div className={`mr-auto rounded-xl px-md py-sm font-semibold ${feedback.correct ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200" : "bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-200"}`}>{feedback.message}</div> : null}
+          <button type="button" disabled={Boolean(feedback)} onClick={() => choose("__dont_know__")} className="font-bold text-[#4255ff] hover:underline disabled:opacity-50">Don&apos;t know?</button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function MultiSummary({ api, setIds, total, correct, onRetry }: PageProps & { setIds: string[]; total: number; correct: number; onRetry: () => void }) {
+  const navigate = useNavigate();
+  useEffect(() => {
+    api.setData((current) => ({ ...current, results: [createResult(setIds.join(","), "learn", total, correct, []), ...current.results] }));
+  }, []);
+  return (
+    <Card className="mx-auto max-w-xl text-center">
+      <Icon name="verified" className="text-5xl text-primary" />
+      <h1 className="mt-md font-headline-lg text-headline-lg">Hoàn thành</h1>
+      <p className="mt-sm text-on-surface-variant dark:text-white/65">Đúng {correct}/{total} câu. Accuracy {percent(correct, total)}%.</p>
+      <div className="mt-lg flex justify-center gap-sm"><Button onClick={onRetry}>Làm lại</Button><Button variant="secondary" onClick={() => navigate("/sets")}>Về My Sets</Button></div>
+    </Card>
   );
 }
 
@@ -1143,7 +1353,10 @@ export function WritePage({ api }: PageProps) {
       <StudyHeader set={activeSet} title="Write" />
       <Card className="mx-auto max-w-2xl space-y-md">
         <div className="text-on-surface-variant dark:text-white/65">{index + 1}/{activeSet.cards.length}</div>
-        <h2 className="font-translation-text text-2xl text-primary">{card.meaningVi || card.definitionEn}</h2>
+        <div className="space-y-xs">
+          {card.definitionEn ? <p className="text-on-surface-variant dark:text-white/70">{card.definitionEn}</p> : null}
+          <h2 className="font-translation-text text-2xl text-primary">{card.meaningVi || card.definitionEn || card.exampleEn}</h2>
+        </div>
         <Input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Gõ từ tiếng Anh..." onKeyDown={(e) => e.key === "Enter" && check()} />
         <div className="flex flex-wrap gap-sm"><Button onClick={check}>Check Answer</Button><Button variant="secondary" onClick={() => setAnswer(card.word.slice(0, Math.ceil(card.word.length / 2)))}>Hint</Button><Button variant="secondary" onClick={() => setFeedback(`Answer: ${card.word}`)}>Show Answer</Button><Button variant="ghost" onClick={() => { setIndex(Math.min(activeSet.cards.length - 1, index + 1)); setAnswer(""); setFeedback(""); }}>Next</Button></div>
         {feedback ? <div className="rounded-xl bg-primary-fixed p-md font-semibold text-primary">{feedback}</div> : null}
@@ -1296,7 +1509,7 @@ export function TestPage({ api }: PageProps) {
                   </div>
                 ) : (
                   <div className="grid gap-md md:grid-cols-2">
-                    {answerChoices(activeSet, card, field).map((choice, choiceIndex) => <QuizletChoice key={`${choice}-${choiceIndex}`} choice={choice} index={choiceIndex} selected={currentAnswer === choice} onClick={() => setAnswers({ ...answers, [card.id]: choice })} />)}
+                    {answerChoices(activeSet.cards, card, field).map((choice, choiceIndex) => <QuizletChoice key={`${choice}-${choiceIndex}`} choice={choice} index={choiceIndex} selected={currentAnswer === choice} onClick={() => setAnswers({ ...answers, [card.id]: choice })} />)}
                   </div>
                 )}
               </div>
@@ -1314,22 +1527,39 @@ export function TestPage({ api }: PageProps) {
   );
 }
 
+const MATCH_BATCH_SIZE = 10;
+
 export function MatchPage({ api }: PageProps) {
   const { setId } = useParams();
   const set = getSet(api, setId);
-  const [cards, setCards] = useState<VocabularyCard[]>(() => set ? shuffle(set.cards).slice(0, Math.min(10, Math.max(6, set.cards.length))) : []);
-  const [right, setRight] = useState(() => shuffle(cards));
+  const [order, setOrder] = useState<VocabularyCard[]>(() => set ? shuffle(set.cards) : []);
+  const batches = useMemo(() => {
+    const chunks: VocabularyCard[][] = [];
+    for (let i = 0; i < order.length; i += MATCH_BATCH_SIZE) chunks.push(order.slice(i, i + MATCH_BATCH_SIZE));
+    return chunks.length ? chunks : [[]];
+  }, [order]);
+  const [batchIndex, setBatchIndex] = useState(0);
+  const cards = batches[batchIndex] ?? [];
+  const [right, setRight] = useState<VocabularyCard[]>(() => shuffle(cards));
   const [leftPick, setLeftPick] = useState("");
   const [matched, setMatched] = useState<string[]>([]);
   const [wrong, setWrong] = useState(false);
   const [seconds, setSeconds] = useState(0);
   if (!set) return <Navigate to="/sets" replace />;
+  const activeSet = set;
+  useEffect(() => {
+    setRight(shuffle(cards));
+    setMatched([]);
+    setLeftPick("");
+    setSeconds(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [batchIndex, order]);
   useEffect(() => {
     const timer = window.setInterval(() => setSeconds((n) => n + 1), 1000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [batchIndex]);
   useEffect(() => {
-    if (cards.length && matched.length === cards.length) api.recordMatchTime(set.id, seconds);
+    if (cards.length && matched.length === cards.length) api.recordMatchTime(activeSet.id, seconds);
   }, [matched.length]);
   function pickMeaning(card: VocabularyCard) {
     if (leftPick === card.id) {
@@ -1341,16 +1571,33 @@ export function MatchPage({ api }: PageProps) {
     }
   }
   const complete = cards.length > 0 && matched.length === cards.length;
+  const isLastBatch = batchIndex === batches.length - 1;
+  const totalWords = order.length;
+  const wordsDone = Math.min(batchIndex * MATCH_BATCH_SIZE + matched.length, totalWords);
+  function restartAll() {
+    setOrder(shuffle(activeSet.cards));
+    setBatchIndex(0);
+  }
   return (
     <>
-      <StudyHeader set={set} title="Match Game" />
+      <StudyHeader set={activeSet} title="Match Game" />
       <Card className={`mx-auto max-w-5xl ${wrong ? "shake" : ""}`}>
-        <div className="mb-md grid grid-cols-3 gap-sm text-center text-sm font-semibold md:text-base"><span>Time: {seconds}s</span><span>Score: {matched.length}/{cards.length}</span><span>Best: {api.data.matchBestTimes[set.id] ? `${api.data.matchBestTimes[set.id]}s` : "-"}</span></div>
+        <div className="mb-sm grid grid-cols-3 gap-sm text-center text-sm font-semibold md:text-base"><span>Time: {seconds}s</span><span>Score: {matched.length}/{cards.length}</span><span>Best: {api.data.matchBestTimes[activeSet.id] ? `${api.data.matchBestTimes[activeSet.id]}s` : "-"}</span></div>
+        <div className="mb-md text-center text-sm font-semibold text-on-surface-variant dark:text-white/60">Khung {batchIndex + 1}/{batches.length} · Đã học {wordsDone}/{totalWords} từ</div>
         <div className="grid gap-md md:grid-cols-2">
           <div className="grid gap-sm">{cards.map((card) => <Button key={card.id} disabled={matched.includes(card.id)} variant={leftPick === card.id ? "primary" : "secondary"} onClick={() => setLeftPick(card.id)}>{card.word}</Button>)}</div>
           <div className="grid gap-sm">{right.map((card) => <Button key={card.id} disabled={matched.includes(card.id)} variant="secondary" onClick={() => pickMeaning(card)}>{card.meaningVi}</Button>)}</div>
         </div>
-        {complete ? <div className="mt-lg rounded-2xl bg-primary-fixed p-lg text-center text-primary"><h2 className="font-headline-md text-headline-md">Hoàn thành trong {seconds}s</h2><Button className="mt-md" onClick={() => { const next = shuffle(set.cards).slice(0, Math.min(10, Math.max(6, set.cards.length))); setCards(next); setRight(shuffle(next)); setMatched([]); setSeconds(0); }}>Play again</Button></div> : null}
+        {complete ? (
+          <div className="mt-lg rounded-2xl bg-primary-fixed p-lg text-center text-primary">
+            <h2 className="font-headline-md text-headline-md">{isLastBatch ? `Hoàn thành cả ${totalWords} từ!` : `Hoàn thành khung ${batchIndex + 1}/${batches.length} trong ${seconds}s`}</h2>
+            {isLastBatch ? (
+              <Button className="mt-md" onClick={restartAll}>Học lại từ đầu</Button>
+            ) : (
+              <Button className="mt-md" onClick={() => setBatchIndex((n) => n + 1)}><Icon name="arrow_forward" /> Khung tiếp theo</Button>
+            )}
+          </div>
+        ) : null}
       </Card>
     </>
   );

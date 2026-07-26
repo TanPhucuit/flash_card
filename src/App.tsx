@@ -11,6 +11,7 @@ import {
   FlashcardsPage,
   LearnPage,
   MatchPage,
+  MultiSetLearnPage,
   MySetsPage,
   ProgressPage,
   SetDetailPage,
@@ -60,6 +61,7 @@ function AuthenticatedApp({ api, isMobile }: { api: DataApi; isMobile: boolean }
           <Route path="/dashboard" element={<DashboardPage api={api} />} />
           <Route path="/sets" element={<MySetsPage api={api} />} />
           <Route path="/listening-test" element={<ListeningTestPage api={api} />} />
+          <Route path="/study/multi/learn" element={<MultiSetLearnPage api={api} />} />
           <Route path="/sets/new" element={<CreateEditSetPage api={api} />} />
           <Route path="/sets/:setId" element={<SetDetailPage api={api} />} />
           <Route path="/sets/:setId/edit" element={<CreateEditSetPage api={api} />} />
