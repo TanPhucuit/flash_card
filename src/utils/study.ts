@@ -32,7 +32,13 @@ export function getMasteryStatusCounts(sets: VocabularySet[], results: StudyResu
     if (isSetFullyMastered(set, results)) {
       counts.mastered += set.cards.length;
     } else {
-      set.cards.forEach((card) => { counts[card.status] += 1; });
+      // A set that hasn't met the strict Learn(x3)+Write@100% rule never
+      // contributes to "mastered", even if some cards individually reached
+      // the legacy per-card "mastered" SRS status.
+      set.cards.forEach((card) => {
+        const bucket = card.status === "mastered" ? "learning" : card.status;
+        counts[bucket] += 1;
+      });
     }
   });
   return counts;
