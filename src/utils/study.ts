@@ -1,4 +1,4 @@
-import { CardStatus, LearnDirection, ListeningStudyResult, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
+import { CardStatus, LEARN_DIRECTIONS, LearnDirection, ListeningStudyResult, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 
 export function formatDate(value?: string) {
   if (!value) return "Chưa học";
@@ -12,6 +12,78 @@ export function percent(value: number, total: number) {
 
 export function getSetProgress(set: VocabularySet) {
   return percent(set.cards.filter((card) => card.status === "mastered").length, set.cards.length);
+}
+
+export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): boolean {
+  if (!set.cards.length) return false;
+  const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);
+  const learnPerfect = (direction: LearnDirection) => relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && r.accuracy === 100);
+  const writePerfect = relevant.some((r) => r.mode === "write" && r.accuracy === 100);
+  return LEARN_DIRECTIONS.every(learnPerfect) && writePerfect;
+}
+
+export function getMasteryStatusCounts(sets: VocabularySet[], results: StudyResult[]): Record<CardStatus, number> {
+  const counts: Record<CardStatus, number> = { mastered: 0, review: 0, learning: 0, difficult: 0, new: 0 };
+  sets.forEach((set) => {
+    if (isSetFullyMastered(set, results)) {
+      counts.mastered += set.cards.length;
+    } else {
+      set.cards.forEach((card) => { counts[card.status] += 1; });
+    }
+  });
+  return counts;
+}
+
+function dayKey(iso: string) {
+  const d = new Date(iso);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+export interface DailyLearnedWords {
+  day: number;
+  dateKey: string;
+  value: number;
+}
+
+export function getLearnedWordsByDay(sets: VocabularySet[], results: StudyResult[], month: Date = new Date()): DailyLearnedWords[] {
+  const setById = new Map(sets.map((set) => [set.id, set]));
+  const year = month.getFullYear();
+  const monthIndex = month.getMonth();
+  const seenPerDay = new Map<string, Set<string>>();
+  const totalsPerDay = new Map<string, number>();
+
+  results.forEach((r) => {
+    if (r.mode !== "learn" && r.mode !== "write") return;
+    if (!("setId" in r)) return;
+    const set = setById.get(r.setId);
+    if (!set || !set.cards.length) return;
+    if (r.totalQuestions < set.cards.length) return;
+    const studiedDate = new Date(r.studiedAt);
+    if (studiedDate.getFullYear() !== year || studiedDate.getMonth() !== monthIndex) return;
+    const key = dayKey(r.studiedAt);
+    const seenSets = seenPerDay.get(key) ?? new Set<string>();
+    if (seenSets.has(r.setId)) return;
+    seenSets.add(r.setId);
+    seenPerDay.set(key, seenSets);
+    totalsPerDay.set(key, (totalsPerDay.get(key) ?? 0) + set.cards.length);
+  });
+
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+  const days: DailyLearnedWords[] = [];
+  for (let day = 1; day <= daysInMonth; day += 1) {
+    const key = `${year}-${String(monthIndex + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    days.push({ day, dateKey: key, value: totalsPerDay.get(key) ?? 0 });
+  }
+  return days;
+}
+
+export function getLearnedWordsByWeek(days: DailyLearnedWords[]): { label: string; value: number }[] {
+  const weeks: { label: string; value: number }[] = [];
+  for (let i = 0; i < days.length; i += 7) {
+    const value = days.slice(i, i + 7).reduce((sum, day) => sum + day.value, 0);
+    weeks.push({ label: `Tuần ${weeks.length + 1}`, value });
+  }
+  return weeks;
 }
 
 export function addDays(date: Date, days: number) {

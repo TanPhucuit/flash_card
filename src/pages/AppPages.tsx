@@ -2,12 +2,12 @@ import { ChangeEvent, FormEvent, TouchEvent as ReactTouchEvent, useEffect, useMe
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
-import { HorizontalBarChart, StatusDonutChart, TrendLineChart } from "../components/charts";
+import { ColumnChart, HorizontalBarChart, StatusDonutChart, TrendLineChart } from "../components/charts";
 import { useSpeech } from "../hooks/useSpeech";
 import { AppData, LEARN_DIRECTIONS, LearnDirection, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
-import { createResult, formatDate, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
+import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
 
@@ -945,6 +945,7 @@ export function DashboardPage({ api }: PageProps) {
   const navigate = useNavigate();
   const cards = api.data.sets.flatMap((set) => set.cards);
   const due = cards.filter((card) => card.nextReviewAt && new Date(card.nextReviewAt) <= new Date()).length;
+  const masteredWords = useMemo(() => getMasteryStatusCounts(api.data.sets, api.data.results).mastered, [api.data.sets, api.data.results]);
   const recent = [...api.data.sets].sort((a, b) => (b.lastStudiedAt ?? b.updatedAt).localeCompare(a.lastStudiedAt ?? a.updatedAt)).slice(0, 3);
   return (
     <>
@@ -952,7 +953,7 @@ export function DashboardPage({ api }: PageProps) {
       <div className="grid grid-cols-2 gap-md lg:grid-cols-4">
         <Stat label="Tổng số từ" value={cards.length} icon="dictionary" />
         <Stat label="Học phần" value={api.data.sets.length} icon="library_books" />
-        <Stat label="Đã thuộc" value={cards.filter((card) => card.status === "mastered").length} icon="verified" />
+        <Stat label="Đã thuộc" value={masteredWords} icon="verified" />
         <Stat label="Ôn hôm nay" value={due} icon="event_repeat" />
       </div>
       <div className="mt-lg grid gap-lg lg:grid-cols-[1.2fr_0.8fr]">
@@ -1998,11 +1999,15 @@ export function ProgressPage({ api }: PageProps) {
   const [historyCategory, setHistoryCategory] = useState<"reading" | "listening">("reading");
   const visibleResults = historyCategory === "listening" ? listeningResults : readingResults;
 
-  const statusCounts = useMemo(() => {
-    const counts: Record<string, number> = { mastered: 0, review: 0, learning: 0, difficult: 0, new: 0 };
-    cards.forEach((card) => { counts[card.status] = (counts[card.status] ?? 0) + 1; });
-    return counts;
-  }, [cards]);
+  const statusCounts = useMemo(() => getMasteryStatusCounts(api.data.sets, api.data.results), [api.data.sets, api.data.results]);
+  const masteredWords = statusCounts.mastered;
+
+  const today = useMemo(() => new Date(), []);
+  const dailyLearnedWords = useMemo(() => getLearnedWordsByDay(api.data.sets, api.data.results, today), [api.data.sets, api.data.results, today]);
+  const weeklyLearnedWords = useMemo(() => getLearnedWordsByWeek(dailyLearnedWords), [dailyLearnedWords]);
+  const todayLearnedWords = dailyLearnedWords.find((d) => d.day === today.getDate())?.value ?? 0;
+  const monthLearnedWords = dailyLearnedWords.reduce((sum, d) => sum + d.value, 0);
+  const monthLabel = new Intl.DateTimeFormat("vi-VN", { month: "long", year: "numeric" }).format(today);
 
   const trendPoints = useMemo(
     () => [...api.data.results]
@@ -2035,7 +2040,8 @@ export function ProgressPage({ api }: PageProps) {
   return (
     <>
       <PageTitle title="Tiến độ học tập" subtitle="Theo dõi số từ đã thuộc, từ khó và lịch sử luyện tập." action={<Link to="/sets"><Button><Icon name="event_repeat" /> Review Difficult Words</Button></Link>} />
-      <div className="grid grid-cols-2 gap-md lg:grid-cols-5"><Stat label="Tổng số từ" value={cards.length} icon="dictionary" /><Stat label="Mastered" value={cards.filter((c) => c.status === "mastered").length} icon="verified" /><Stat label="Difficult" value={cards.filter((c) => c.status === "difficult").length} icon="warning" /><Stat label="Review Today" value={cards.filter((c) => c.nextReviewAt && new Date(c.nextReviewAt) <= new Date()).length} icon="today" /><Stat label="Accuracy" value={`${avg}%`} icon="target" /></div>
+      <div className="grid grid-cols-2 gap-md lg:grid-cols-5"><Stat label="Tổng số từ" value={cards.length} icon="dictionary" /><Stat label="Mastered" value={masteredWords} icon="verified" /><Stat label="Difficult" value={cards.filter((c) => c.status === "difficult").length} icon="warning" /><Stat label="Review Today" value={cards.filter((c) => c.nextReviewAt && new Date(c.nextReviewAt) <= new Date()).length} icon="today" /><Stat label="Accuracy" value={`${avg}%`} icon="target" /></div>
+      <p className="mt-sm text-xs text-on-surface-variant dark:text-white/50">Mastered chỉ tính từ của các bộ đã Learn 100% cả 3 chế độ và Write 100%.</p>
 
       <div className="mt-lg grid gap-md md:grid-cols-2">
         <Card className="flex items-center gap-md border-l-4 border-l-primary">
@@ -2066,6 +2072,35 @@ export function ProgressPage({ api }: PageProps) {
           <div className="mt-lg"><TrendLineChart points={trendPoints} /></div>
         </Card>
       </div>
+
+      <Card className="mt-lg">
+        <div className="flex flex-wrap items-end justify-between gap-md">
+          <div>
+            <h2 className="font-headline-md text-headline-md">Hoạt động học từ · {monthLabel}</h2>
+            <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Đếm số từ trong các bộ đã Learn/Write trọn vẹn (không lặp lại cùng bộ trong ngày). Tự reset khi sang tháng mới.</p>
+          </div>
+          <div className="flex gap-lg">
+            <div className="text-right">
+              <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-300">{todayLearnedWords}</div>
+              <div className="text-xs font-semibold uppercase text-on-surface-variant dark:text-white/50">Hôm nay</div>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-bold">{monthLearnedWords}</div>
+              <div className="text-xs font-semibold uppercase text-on-surface-variant dark:text-white/50">Cả tháng</div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-lg grid gap-lg lg:grid-cols-[2fr_1fr]">
+          <div>
+            <h3 className="mb-sm text-sm font-bold text-on-surface-variant dark:text-white/65">Theo ngày</h3>
+            <ColumnChart data={dailyLearnedWords.map((d) => ({ label: String(d.day), value: d.value }))} highlightLabel={String(today.getDate())} />
+          </div>
+          <div>
+            <h3 className="mb-sm text-sm font-bold text-on-surface-variant dark:text-white/65">Theo tuần</h3>
+            <HorizontalBarChart data={weeklyLearnedWords} colorClass="bg-emerald-500" />
+          </div>
+        </div>
+      </Card>
 
       <div className="mt-lg grid gap-md lg:grid-cols-2">
         <Card>

@@ -91,6 +91,32 @@ export function HorizontalBarChart({ data, colorClass = "bg-primary" }: { data: 
   );
 }
 
+export function ColumnChart({ data, colorClass = "bg-primary", highlightLabel }: { data: { label: string; value: number }[]; colorClass?: string; highlightLabel?: string }) {
+  if (!data.length) {
+    return <div className="flex h-40 items-center justify-center text-sm text-on-surface-variant dark:text-white/50">Chưa có dữ liệu.</div>;
+  }
+  const max = Math.max(1, ...data.map((item) => item.value));
+  return (
+    <div className="w-full overflow-x-auto">
+      <div className="flex min-w-max items-end gap-[3px] px-xs" style={{ height: "9rem" }}>
+        {data.map((item) => {
+          const heightPct = Math.max(item.value > 0 ? 6 : 2, (item.value / max) * 100);
+          const active = item.label === highlightLabel;
+          return (
+            <div key={item.label} className="flex h-full w-4 shrink-0 flex-col items-center justify-end gap-xs" title={`${item.label}: ${item.value}`}>
+              <div
+                className={`w-full rounded-t-sm transition-all ${active ? "bg-emerald-500" : colorClass} ${item.value === 0 ? "opacity-25" : ""}`}
+                style={{ height: `${heightPct}%` }}
+              />
+              <span className={`text-[9px] leading-none ${active ? "font-bold text-emerald-600 dark:text-emerald-300" : "text-on-surface-variant dark:text-white/50"}`}>{item.label}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export function TrendLineChart({ points }: { points: { label: string; value: number }[] }) {
   if (!points.length) {
     return <div className="flex h-40 items-center justify-center text-sm text-on-surface-variant dark:text-white/50">Chưa có dữ liệu.</div>;
