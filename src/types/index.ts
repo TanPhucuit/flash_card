@@ -1,6 +1,8 @@
 export type CardStatus = "new" | "learning" | "review" | "mastered" | "difficult";
 export type VocabularyStudyMode = "flashcards" | "learn" | "write" | "spell" | "test" | "match";
 export type StudyMode = VocabularyStudyMode | "listening";
+export type LearnDirection = "eng-eng" | "viet-eng" | "eng-viet";
+export const LEARN_DIRECTIONS: LearnDirection[] = ["eng-eng", "viet-eng", "eng-viet"];
 
 export interface VocabularyCard {
   id: string;
@@ -43,6 +45,7 @@ export interface VocabularyStudyResult {
   accuracy: number;
   studiedAt: string;
   wrongCardIds?: string[];
+  direction?: LearnDirection;
 }
 
 export interface ListeningStudyResult {

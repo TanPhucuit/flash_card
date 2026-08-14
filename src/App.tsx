@@ -15,8 +15,6 @@ import {
   ProgressPage,
   SetDetailPage,
   SettingsPage,
-  SpellPage,
-  TestPage,
   WritePage,
   MobileAppPage,
 } from "./pages/AppPages";
@@ -62,8 +60,6 @@ function AuthenticatedApp({ api, isMobile }: { api: DataApi; isMobile: boolean }
         <Route path="/study/:setId/flashcards" element={<FlashcardsPage api={api} />} />
         <Route path="/study/:setId/learn" element={<LearnPage api={api} />} />
         <Route path="/study/:setId/write" element={<WritePage api={api} />} />
-        <Route path="/study/:setId/spell" element={<SpellPage api={api} />} />
-        <Route path="/study/:setId/test" element={<TestPage api={api} />} />
         <Route path="/study/:setId/match" element={<MatchPage api={api} />} />
         <Route path="/progress" element={<ProgressPage api={api} />} />
         <Route path="/settings" element={<SettingsPage api={api} />} />

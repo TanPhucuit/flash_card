@@ -28,8 +28,8 @@ export function Card({ children, className = "" }: { children: ReactNode; classN
   return <section className={`rounded-2xl border border-surface-variant bg-white p-lg shadow-level-1 dark:border-white/10 dark:bg-[#232627] ${className}`}>{children}</section>;
 }
 
-export function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return <input {...props} className={`w-full rounded-xl border border-surface-variant bg-white px-md py-sm text-on-surface outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/15 dark:bg-[#202324] dark:text-white ${props.className ?? ""}`} />;
+export function Input({ ref, ...props }: React.InputHTMLAttributes<HTMLInputElement> & { ref?: React.Ref<HTMLInputElement> }) {
+  return <input ref={ref} {...props} className={`w-full rounded-xl border border-surface-variant bg-white px-md py-sm text-on-surface outline-none transition focus:border-secondary focus:ring-2 focus:ring-secondary/15 dark:bg-[#202324] dark:text-white ${props.className ?? ""}`} />;
 }
 
 export function Textarea(props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {

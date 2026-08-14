@@ -2,13 +2,16 @@ import { ChangeEvent, FormEvent, TouchEvent as ReactTouchEvent, useEffect, useMe
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
+import { HorizontalBarChart, StatusDonutChart, TrendLineChart } from "../components/charts";
 import { useSpeech } from "../hooks/useSpeech";
-import { AppData, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
+import { AppData, LEARN_DIRECTIONS, LearnDirection, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
 import { createResult, formatDate, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
+
+const MAX_MIX_SETS = 3;
 
 const emptyCard = (): VocabularyCard => ({
   id: crypto.randomUUID(),
@@ -124,7 +127,8 @@ function SetCard({ set, onDelete }: { set: VocabularySet; onDelete: () => void }
 }
 
 export function MobileAppPage({ api }: PageProps) {
-  const [view, setView] = useState<"add" | "sets" | "study" | "learn">("add");
+  const [view, setView] = useState<"add" | "sets" | "study" | "learn" | "learnPicker" | "mixPicker" | "mix">("add");
+  const [learnDirection, setLearnDirection] = useState<LearnDirection | null>(null);
   const [libraryMode, setLibraryMode] = useState<"flashcard" | "learn">("flashcard");
   const [form, setForm] = useState({
     word: "",
@@ -142,9 +146,17 @@ export function MobileAppPage({ api }: PageProps) {
   const [learnCorrect, setLearnCorrect] = useState(0);
   const [learnWrongCardIds, setLearnWrongCardIds] = useState<string[]>([]);
   const [learnFeedback, setLearnFeedback] = useState<{ choice: string; correct: boolean } | null>(null);
+  const [mixQuery, setMixQuery] = useState("");
+  const [mixPickerIds, setMixPickerIds] = useState<string[]>([]);
+  const [mixQueue, setMixQueue] = useState<{ card: VocabularyCard; setId: string }[]>([]);
+  const [mixIndex, setMixIndex] = useState(0);
+  const [mixCorrect, setMixCorrect] = useState(0);
+  const [mixWrongCardIds, setMixWrongCardIds] = useState<string[]>([]);
+  const [mixFeedback, setMixFeedback] = useState<{ choice: string; correct: boolean } | null>(null);
   const touchStartX = useRef<number | null>(null);
   const swiped = useRef(false);
   const learnTimer = useRef<number | undefined>(undefined);
+  const mixTimer = useRef<number | undefined>(undefined);
   const correctAudio = useRef<AudioContext | null>(null);
   const { speak } = useSpeech(api.data.settings.voiceURI);
 
@@ -166,16 +178,54 @@ export function MobileAppPage({ api }: PageProps) {
   const selectedSet = api.data.sets.find((set) => set.id === selectedSetId);
   const activeCard = flashcardCards[cardIndex];
   const activeLearnCard = learnCards[learnIndex];
-  const learnPrompt = activeLearnCard?.definitionEn || activeLearnCard?.meaningVi || activeLearnCard?.exampleEn || "";
+  const learnDirectionPrompt = activeLearnCard && learnDirection ? quizletPrompt(activeLearnCard, learnDirection) : null;
+  const learnPrompt = learnDirectionPrompt?.text ?? "";
+  const learnCompletedDirections = useMemo(() => {
+    const done = new Set<LearnDirection>();
+    api.data.results.forEach((r) => {
+      if (r.mode === "learn" && "setId" in r && r.setId === selectedSetId && r.direction) done.add(r.direction);
+    });
+    return done;
+  }, [api.data.results, selectedSetId]);
   const learnChoices = useMemo(() => {
-    if (!selectedSet || !activeLearnCard) return [];
+    if (!selectedSet || !activeLearnCard || !learnDirection) return [];
+    const field = quizletPrompt(activeLearnCard, learnDirection).answerField;
     const distractors = shuffle(selectedSet.cards)
-      .filter((card) => card.id !== activeLearnCard.id && card.word.trim() && card.word !== activeLearnCard.word)
-      .map((card) => card.word)
+      .filter((card) => card.id !== activeLearnCard.id && card[field].trim() && card[field] !== activeLearnCard[field])
+      .map((card) => card[field])
+      .filter((value, index, values) => values.indexOf(value) === index)
+      .slice(0, 3);
+    return shuffle([activeLearnCard[field], ...distractors]);
+  }, [activeLearnCard?.id, selectedSetId, learnDirection]);
+
+  const mixPickerSets = useMemo(
+    () => [...api.data.sets]
+      .filter((set) => set.cards.length > 0 && `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(mixQuery.trim().toLowerCase()))
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)),
+    [api.data.sets, mixQuery],
+  );
+  const mixSelectedSets = useMemo(
+    () => mixPickerIds.map((id) => api.data.sets.find((set) => set.id === id)).filter((set): set is VocabularySet => Boolean(set)),
+    [mixPickerIds, api.data.sets],
+  );
+  const mixPool = useMemo(
+    () => mixSelectedSets.flatMap((set) => set.cards.map((card) => ({ card, setId: set.id }))),
+    [mixSelectedSets],
+  );
+  const activeMixItem = mixQueue[mixIndex];
+  const mixPrompt = activeMixItem?.card.definitionEn || activeMixItem?.card.meaningVi || activeMixItem?.card.exampleEn || "";
+  const mixChoices = useMemo(() => {
+    if (!activeMixItem) return [];
+    const distractors = shuffle(mixPool)
+      .filter((item) => item.card.id !== activeMixItem.card.id && item.card.word.trim() && item.card.word !== activeMixItem.card.word)
+      .map((item) => item.card.word)
       .filter((word, index, words) => words.indexOf(word) === index)
       .slice(0, 3);
-    return shuffle([activeLearnCard.word, ...distractors]);
-  }, [activeLearnCard?.id, selectedSetId]);
+    return shuffle([activeMixItem.card.word, ...distractors]);
+  }, [activeMixItem?.card.id, mixPool]);
+  const mixTitleLabel = mixSelectedSets.length > 1
+    ? `${mixSelectedSets[0]?.title} +${mixSelectedSets.length - 1} bộ khác`
+    : mixSelectedSets[0]?.title ?? "";
 
   useEffect(() => {
     if (!flashcardCards.length) return;
@@ -184,6 +234,7 @@ export function MobileAppPage({ api }: PageProps) {
 
   useEffect(() => () => {
     if (learnTimer.current) window.clearTimeout(learnTimer.current);
+    if (mixTimer.current) window.clearTimeout(mixTimer.current);
     correctAudio.current?.close();
   }, []);
 
@@ -253,12 +304,7 @@ export function MobileAppPage({ api }: PageProps) {
     clearLearnTimer();
     setSelectedSetId(set.id);
     if (libraryMode === "learn") {
-      setLearnCards(shuffle(set.cards));
-      setLearnIndex(0);
-      setLearnCorrect(0);
-      setLearnWrongCardIds([]);
-      setLearnFeedback(null);
-      setView("learn");
+      setView("learnPicker");
     } else {
       setFlashcardCards(shuffle(set.cards));
       setCardIndex(0);
@@ -280,6 +326,25 @@ export function MobileAppPage({ api }: PageProps) {
     switchView("sets");
   }
 
+  function startMobileLearn(direction: LearnDirection) {
+    if (!selectedSet) return;
+    clearLearnTimer();
+    setLearnDirection(direction);
+    setLearnCards(shuffle(selectedSet.cards));
+    setLearnIndex(0);
+    setLearnCorrect(0);
+    setLearnWrongCardIds([]);
+    setLearnFeedback(null);
+    setView("learn");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function backToLearnPicker() {
+    clearLearnTimer();
+    setView("learnPicker");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   function restartLearn() {
     if (!selectedSet) return;
     clearLearnTimer();
@@ -291,8 +356,9 @@ export function MobileAppPage({ api }: PageProps) {
   }
 
   function chooseLearnAnswer(choice: string) {
-    if (!selectedSet || !activeLearnCard || learnFeedback) return;
-    const correct = choice === activeLearnCard.word;
+    if (!selectedSet || !activeLearnCard || !learnDirection || learnFeedback) return;
+    const answerField = quizletPrompt(activeLearnCard, learnDirection).answerField;
+    const correct = choice === activeLearnCard[answerField];
     const nextCorrect = learnCorrect + (correct ? 1 : 0);
     setLearnFeedback({ choice, correct });
     if (correct) {
@@ -306,11 +372,77 @@ export function MobileAppPage({ api }: PageProps) {
     learnTimer.current = window.setTimeout(() => {
       if (learnIndex === learnCards.length - 1) {
         const wrongCardIds = correct ? learnWrongCardIds : [...new Set([...learnWrongCardIds, activeLearnCard.id])];
-        api.setData((current) => ({ ...current, results: [createResult(selectedSet.id, "learn", learnCards.length, nextCorrect, wrongCardIds), ...current.results] }));
+        api.setData((current) => ({ ...current, results: [createResult(selectedSet.id, "learn", learnCards.length, nextCorrect, wrongCardIds, learnDirection), ...current.results] }));
       }
       setLearnFeedback(null);
       setLearnIndex((current) => current + 1);
       learnTimer.current = undefined;
+    }, 720);
+  }
+
+  function clearMixTimer() {
+    if (mixTimer.current) window.clearTimeout(mixTimer.current);
+    mixTimer.current = undefined;
+  }
+
+  function openMixPicker() {
+    clearMixTimer();
+    setMixQuery("");
+    setView("mixPicker");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function toggleMixSet(setId: string) {
+    setMixPickerIds((current) => {
+      if (current.includes(setId)) return current.filter((id) => id !== setId);
+      if (current.length >= MAX_MIX_SETS) return current;
+      return [...current, setId];
+    });
+  }
+
+  function startMix() {
+    if (!mixPool.length) return;
+    clearMixTimer();
+    setMixQueue(shuffle(mixPool));
+    setMixIndex(0);
+    setMixCorrect(0);
+    setMixWrongCardIds([]);
+    setMixFeedback(null);
+    setView("mix");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function restartMix() {
+    if (!mixPool.length) return;
+    clearMixTimer();
+    setMixQueue(shuffle(mixPool));
+    setMixIndex(0);
+    setMixCorrect(0);
+    setMixWrongCardIds([]);
+    setMixFeedback(null);
+  }
+
+  function chooseMixAnswer(choice: string) {
+    if (!activeMixItem || mixFeedback) return;
+    const correct = choice === activeMixItem.card.word;
+    const nextCorrect = mixCorrect + (correct ? 1 : 0);
+    setMixFeedback({ choice, correct });
+    if (correct) {
+      setMixCorrect(nextCorrect);
+      playCorrectChime(correctAudio);
+    } else {
+      setMixWrongCardIds((current) => current.includes(activeMixItem.card.id) ? current : [...current, activeMixItem.card.id]);
+    }
+    api.updateSet(activeMixItem.setId, (current) => updateSetCard(current, activeMixItem.card.id, (card) => updateCardStudy(card, correct)));
+
+    mixTimer.current = window.setTimeout(() => {
+      if (mixIndex === mixQueue.length - 1) {
+        const wrongCardIds = correct ? mixWrongCardIds : [...new Set([...mixWrongCardIds, activeMixItem.card.id])];
+        api.setData((current) => ({ ...current, results: [createResult(mixPickerIds.join(","), "learn", mixQueue.length, nextCorrect, wrongCardIds), ...current.results] }));
+      }
+      setMixFeedback(null);
+      setMixIndex((current) => current + 1);
+      mixTimer.current = undefined;
     }, 720);
   }
 
@@ -426,8 +558,7 @@ export function MobileAppPage({ api }: PageProps) {
     );
   }
 
-  if (view === "learn" && selectedSet) {
-    const learnComplete = learnIndex >= learnCards.length;
+  if (view === "learnPicker" && selectedSet) {
     return (
       <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
         <div className="mx-auto flex min-h-[100dvh] max-w-md flex-col px-container-margin pb-[max(20px,env(safe-area-inset-bottom))]">
@@ -442,7 +573,54 @@ export function MobileAppPage({ api }: PageProps) {
             </button>
             <div className="min-w-0 flex-1">
               <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
-              <div className="text-sm text-on-surface-variant dark:text-white/60">Learn · Chọn từ đúng</div>
+              <div className="text-sm text-on-surface-variant dark:text-white/60">Chọn chế độ Learn</div>
+            </div>
+          </header>
+          <p className="py-md text-sm text-on-surface-variant dark:text-white/60">Hoàn thành cả 3 chế độ để bộ từ được tính là đã học xong.</p>
+          <div className="grid gap-sm">
+            {LEARN_DIRECTIONS.map((direction) => {
+              const meta = DIRECTION_META[direction];
+              const done = learnCompletedDirections.has(direction);
+              return (
+                <button
+                  type="button"
+                  key={direction}
+                  onClick={() => startMobileLearn(direction)}
+                  className={`flex items-center gap-md rounded-2xl border-2 bg-white p-md text-left shadow-level-1 transition active:scale-[0.98] dark:bg-[#242728] ${done ? "border-emerald-500" : "border-surface-variant dark:border-white/10"}`}
+                >
+                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${done ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-200" : "bg-primary-fixed text-primary"}`}>
+                    <Icon name={done ? "check_circle" : meta.icon} />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <strong className="block text-lg">{meta.label}</strong>
+                    <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{meta.description}</span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (view === "learn" && selectedSet && learnDirection) {
+    const learnComplete = learnIndex >= learnCards.length;
+    return (
+      <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
+        <div className="mx-auto flex min-h-[100dvh] max-w-md flex-col px-container-margin pb-[max(20px,env(safe-area-inset-bottom))]">
+          <header className="sticky top-0 z-20 -mx-container-margin flex items-center gap-sm border-b border-surface-variant bg-[#f4f5fb]/95 px-container-margin py-md backdrop-blur dark:border-white/10 dark:bg-[#17191a]/95">
+            <button
+              type="button"
+              aria-label="Quay lại chọn chế độ"
+              onClick={backToLearnPicker}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-on-surface shadow-level-1 active:scale-95 dark:bg-white/10 dark:text-white"
+            >
+              <Icon name="arrow_back" />
+            </button>
+            <div className="min-w-0 flex-1">
+              <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
+              <div className="text-sm text-on-surface-variant dark:text-white/60">Learn · {DIRECTION_META[learnDirection].label}</div>
             </div>
             <span className="flex h-11 min-w-11 items-center justify-center rounded-full bg-emerald-600 px-sm font-bold text-white">{learnCorrect}</span>
           </header>
@@ -454,6 +632,7 @@ export function MobileAppPage({ api }: PageProps) {
               <p className="mt-sm text-lg text-on-surface-variant dark:text-white/65">Bạn trả lời đúng {learnCorrect}/{learnCards.length} câu.</p>
               <div className="mt-xl grid w-full gap-sm">
                 <Button type="button" onClick={restartLearn} className="min-h-14 text-lg"><Icon name="refresh" /> Học lại</Button>
+                <Button type="button" variant="secondary" onClick={backToLearnPicker} className="min-h-14"><Icon name="swap_horiz" /> Đổi chế độ</Button>
                 <Button type="button" variant="secondary" onClick={() => openLibrary("learn")} className="min-h-14"><Icon name="library_books" /> Chọn set khác</Button>
               </div>
             </section>
@@ -470,7 +649,7 @@ export function MobileAppPage({ api }: PageProps) {
               <section key={activeLearnCard.id} className={`mobile-learn-enter relative flex flex-1 flex-col rounded-[28px] border bg-white p-lg shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-colors dark:bg-[#242728] ${learnFeedback?.correct ? "mobile-learn-correct border-emerald-500" : "border-surface-variant dark:border-white/10"}`}>
                 {learnFeedback?.correct ? <span className="mobile-learn-success absolute right-md top-md flex h-11 w-11 items-center justify-center rounded-full bg-emerald-600 text-white shadow-level-2"><Icon name="check" /></span> : null}
                 <div className="flex items-center gap-sm text-sm font-bold text-on-surface-variant dark:text-white/65">
-                  <span>{activeLearnCard.definitionEn ? "Definition" : activeLearnCard.meaningVi ? "Nghĩa" : "Example"}</span>
+                  <span>{learnDirectionPrompt?.label}</span>
                   <button type="button" onClick={() => speak(learnPrompt)} aria-label="Phát nội dung câu hỏi" className="flex h-9 w-9 items-center justify-center rounded-full text-primary active:bg-primary-fixed dark:text-[#c9c5ff]"><Icon name="volume_up" className="text-xl" /></button>
                 </div>
                 <p className="mt-lg min-h-28 break-words text-2xl font-medium leading-relaxed text-[#101936] dark:text-white">{learnPrompt}</p>
@@ -479,7 +658,7 @@ export function MobileAppPage({ api }: PageProps) {
                   <h2 className="mb-md text-sm font-bold text-on-surface-variant dark:text-white/65">Chọn một đáp án</h2>
                   <div className="grid gap-sm">
                     {learnChoices.map((choice, index) => {
-                      const isAnswer = choice === activeLearnCard.word;
+                      const isAnswer = choice === activeLearnCard[learnDirectionPrompt!.answerField];
                       const isWrongChoice = Boolean(learnFeedback && learnFeedback.choice === choice && !learnFeedback.correct);
                       const showCorrect = Boolean(learnFeedback && isAnswer);
                       return (
@@ -505,6 +684,163 @@ export function MobileAppPage({ api }: PageProps) {
                     })}
                   </div>
                   <button type="button" disabled={Boolean(learnFeedback)} onClick={() => chooseLearnAnswer("__dont_know__")} className="mt-lg w-full py-sm text-center font-bold text-primary disabled:opacity-50 dark:text-[#c9c5ff]">Không biết?</button>
+                </div>
+              </section>
+            </>
+          ) : null}
+        </div>
+      </main>
+    );
+  }
+
+  if (view === "mixPicker") {
+    return (
+      <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
+        <div className="mx-auto flex min-h-[100dvh] max-w-md flex-col px-container-margin pb-32">
+          <header className="sticky top-0 z-20 -mx-container-margin mb-lg border-b border-surface-variant bg-[#f4f5fb]/95 px-container-margin py-md backdrop-blur dark:border-white/10 dark:bg-[#17191a]/95">
+            <div className="min-w-0 flex-1">
+              <h1 className="font-headline-md text-2xl font-bold text-primary dark:text-[#c9c5ff]">Mix Sets</h1>
+              <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Chọn tối đa {MAX_MIX_SETS} bộ (kể cả bộ đã học) để trộn ngẫu nhiên.</p>
+            </div>
+            <div className="relative mt-md">
+              <Icon name="search" className="pointer-events-none absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" />
+              <Input value={mixQuery} onChange={(event) => setMixQuery(event.target.value)} placeholder="Tìm học phần..." className="min-h-12 pl-12" />
+            </div>
+            <div className="mt-sm text-sm font-bold text-primary dark:text-[#c9c5ff]">{mixPickerIds.length}/{MAX_MIX_SETS} bộ đã chọn · {mixPool.length} từ</div>
+          </header>
+
+          {mixPickerSets.length ? (
+            <div className="flex-1 space-y-sm">
+              {mixPickerSets.map((set) => {
+                const checked = mixPickerIds.includes(set.id);
+                const disabled = !checked && mixPickerIds.length >= MAX_MIX_SETS;
+                return (
+                  <button
+                    type="button"
+                    key={set.id}
+                    disabled={disabled}
+                    onClick={() => toggleMixSet(set.id)}
+                    className={`flex w-full items-center gap-md rounded-2xl border-2 bg-white p-md text-left shadow-level-1 transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-45 dark:bg-[#242728] ${checked ? "border-primary bg-primary-fixed dark:bg-primary/15" : "border-transparent dark:border-white/10"}`}
+                  >
+                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 ${checked ? "border-primary bg-primary text-white" : "border-surface-variant text-transparent dark:border-white/20"}`}>
+                      <Icon name="check" />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <strong className="block truncate text-lg">{set.title}</strong>
+                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set)}% đã thuộc</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-outline-variant bg-white p-xl text-center dark:border-white/20 dark:bg-[#242728]">
+              <Icon name="layers" className="text-5xl text-primary" />
+              <h2 className="mt-md font-headline-md text-xl font-bold">Chưa có học phần phù hợp</h2>
+              <p className="mt-sm text-sm text-on-surface-variant dark:text-white/60">Thử từ khóa khác.</p>
+            </div>
+          )}
+        </div>
+
+        <div className="fixed inset-x-0 bottom-16 z-30 border-t border-surface-variant bg-white/95 px-container-margin py-sm backdrop-blur dark:border-white/10 dark:bg-[#202324]/95">
+          <div className="mx-auto max-w-md">
+            <Button type="button" className="w-full py-md text-lg" disabled={!mixPickerIds.length} onClick={startMix}>
+              <Icon name="play_arrow" /> Bắt đầu học trộn ({mixPool.length} từ)
+            </Button>
+          </div>
+        </div>
+
+        <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-surface-variant bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#202324]/95" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
+          <div className="mx-auto grid max-w-md grid-cols-4 gap-xs px-container-margin pt-sm">
+            <button type="button" onClick={() => switchView("add")} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="add_circle" /> Thêm từ</button>
+            <button type="button" onClick={() => openLibrary("flashcard")} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="style" /> Flashcard</button>
+            <button type="button" onClick={() => openLibrary("learn")} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="school" /> Learn</button>
+            <button type="button" onClick={openMixPicker} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl bg-primary-fixed text-xs font-bold text-primary transition active:scale-95 dark:bg-primary/25 dark:text-white"><Icon name="layers" /> Mix</button>
+          </div>
+        </nav>
+      </main>
+    );
+  }
+
+  if (view === "mix") {
+    const mixComplete = mixIndex >= mixQueue.length;
+    return (
+      <main className="mobile-app-shell min-h-screen overflow-x-hidden bg-[#f4f5fb] text-on-background dark:bg-[#17191a] dark:text-white">
+        <div className="mx-auto flex min-h-[100dvh] max-w-md flex-col px-container-margin pb-[max(20px,env(safe-area-inset-bottom))]">
+          <header className="sticky top-0 z-20 -mx-container-margin flex items-center gap-sm border-b border-surface-variant bg-[#f4f5fb]/95 px-container-margin py-md backdrop-blur dark:border-white/10 dark:bg-[#17191a]/95">
+            <button
+              type="button"
+              aria-label="Quay lại danh sách trộn bộ"
+              onClick={openMixPicker}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-on-surface shadow-level-1 active:scale-95 dark:bg-white/10 dark:text-white"
+            >
+              <Icon name="arrow_back" />
+            </button>
+            <div className="min-w-0 flex-1">
+              <div className="truncate font-headline-md text-lg font-bold">{mixTitleLabel}</div>
+              <div className="text-sm text-on-surface-variant dark:text-white/60">Mix · {mixSelectedSets.length} bộ</div>
+            </div>
+            <span className="flex h-11 min-w-11 items-center justify-center rounded-full bg-emerald-600 px-sm font-bold text-white">{mixCorrect}</span>
+          </header>
+
+          {mixComplete ? (
+            <section className="mobile-learn-enter flex flex-1 flex-col items-center justify-center py-xl text-center">
+              <span className="mobile-learn-success flex h-24 w-24 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_18px_44px_rgba(5,150,105,0.28)]"><Icon name="check" className="text-5xl" /></span>
+              <h1 className="mt-lg font-headline-lg text-3xl font-bold">Hoàn thành</h1>
+              <p className="mt-sm text-lg text-on-surface-variant dark:text-white/65">Bạn trả lời đúng {mixCorrect}/{mixQueue.length} câu.</p>
+              <div className="mt-xl grid w-full gap-sm">
+                <Button type="button" onClick={restartMix} className="min-h-14 text-lg"><Icon name="refresh" /> Học lại</Button>
+                <Button type="button" variant="secondary" onClick={openMixPicker} className="min-h-14"><Icon name="layers" /> Chọn bộ khác</Button>
+              </div>
+            </section>
+          ) : activeMixItem ? (
+            <>
+              <div className="py-md">
+                <div className="mb-sm flex items-center justify-between text-sm font-bold text-on-surface-variant dark:text-white/60">
+                  <span>{mixIndex + 1} / {mixQueue.length}</span>
+                  <span>{percent(mixIndex, mixQueue.length)}%</span>
+                </div>
+                <ProgressBar value={percent(mixIndex, mixQueue.length)} />
+              </div>
+
+              <section key={activeMixItem.card.id} className={`mobile-learn-enter relative flex flex-1 flex-col rounded-[28px] border bg-white p-lg shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-colors dark:bg-[#242728] ${mixFeedback?.correct ? "mobile-learn-correct border-emerald-500" : "border-surface-variant dark:border-white/10"}`}>
+                {mixFeedback?.correct ? <span className="mobile-learn-success absolute right-md top-md flex h-11 w-11 items-center justify-center rounded-full bg-emerald-600 text-white shadow-level-2"><Icon name="check" /></span> : null}
+                <div className="flex items-center gap-sm text-sm font-bold text-on-surface-variant dark:text-white/65">
+                  <span>{activeMixItem.card.definitionEn ? "Definition" : activeMixItem.card.meaningVi ? "Nghĩa" : "Example"}</span>
+                  <button type="button" onClick={() => speak(mixPrompt)} aria-label="Phát nội dung câu hỏi" className="flex h-9 w-9 items-center justify-center rounded-full text-primary active:bg-primary-fixed dark:text-[#c9c5ff]"><Icon name="volume_up" className="text-xl" /></button>
+                </div>
+                <p className="mt-lg min-h-28 break-words text-2xl font-medium leading-relaxed text-[#101936] dark:text-white">{mixPrompt}</p>
+
+                <div className="mt-auto pt-xl">
+                  <h2 className="mb-md text-sm font-bold text-on-surface-variant dark:text-white/65">Chọn một đáp án</h2>
+                  <div className="grid gap-sm">
+                    {mixChoices.map((choice, index) => {
+                      const isAnswer = choice === activeMixItem.card.word;
+                      const isWrongChoice = Boolean(mixFeedback && mixFeedback.choice === choice && !mixFeedback.correct);
+                      const showCorrect = Boolean(mixFeedback && isAnswer);
+                      return (
+                        <button
+                          type="button"
+                          key={choice}
+                          disabled={Boolean(mixFeedback)}
+                          onClick={() => chooseMixAnswer(choice)}
+                          className={`flex min-h-16 items-center gap-md rounded-2xl border-2 px-md text-left text-lg font-semibold transition-all duration-200 active:scale-[0.98] disabled:cursor-default ${
+                            showCorrect
+                              ? "mobile-learn-choice-correct border-emerald-500 bg-emerald-50 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-200"
+                              : isWrongChoice
+                                ? "border-red-400 bg-red-50 text-red-800 dark:bg-red-500/15 dark:text-red-200"
+                                : mixFeedback
+                                  ? "border-surface-variant bg-white opacity-45 dark:border-white/10 dark:bg-white/5"
+                                  : "border-[#e0e4ee] bg-white text-[#17223f] shadow-[0_2px_8px_rgba(15,23,42,0.03)] dark:border-white/10 dark:bg-white/5 dark:text-white"
+                          }`}
+                        >
+                          <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${showCorrect ? "bg-emerald-600 text-white" : isWrongChoice ? "bg-red-500 text-white" : "bg-[#eef1f7] text-[#5f6b88] dark:bg-white/10 dark:text-white/70"}`}>{showCorrect ? <Icon name="check" className="text-lg" /> : index + 1}</span>
+                          <span className="min-w-0 flex-1 break-words">{choice}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <button type="button" disabled={Boolean(mixFeedback)} onClick={() => chooseMixAnswer("__dont_know__")} className="mt-lg w-full py-sm text-center font-bold text-primary disabled:opacity-50 dark:text-[#c9c5ff]">Không biết?</button>
                 </div>
               </section>
             </>
@@ -594,10 +930,11 @@ export function MobileAppPage({ api }: PageProps) {
       </div>
 
       <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-surface-variant bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#202324]/95" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
-        <div className="mx-auto grid max-w-md grid-cols-3 gap-xs px-container-margin pt-sm">
+        <div className="mx-auto grid max-w-md grid-cols-4 gap-xs px-container-margin pt-sm">
           <button type="button" onClick={() => switchView("add")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "add" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="add_circle" /> Thêm từ</button>
           <button type="button" onClick={() => openLibrary("flashcard")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" && libraryMode === "flashcard" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="style" /> Flashcard</button>
           <button type="button" onClick={() => openLibrary("learn")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" && libraryMode === "learn" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="school" /> Learn</button>
+          <button type="button" onClick={openMixPicker} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="layers" /> Mix</button>
         </div>
       </nav>
     </main>
@@ -664,7 +1001,11 @@ export function MySetsPage({ api }: PageProps) {
   }, [multiPoolTotal]);
 
   function toggleSetSelection(setId: string) {
-    setSelectedSetIds((current) => (current.includes(setId) ? current.filter((id) => id !== setId) : [...current, setId]));
+    setSelectedSetIds((current) => {
+      if (current.includes(setId)) return current.filter((id) => id !== setId);
+      if (current.length >= MAX_MIX_SETS) return current;
+      return [...current, setId];
+    });
   }
 
   function startMultiLearn() {
@@ -673,11 +1014,18 @@ export function MySetsPage({ api }: PageProps) {
   }
 
   const learnedSetIds = useMemo(() => {
-    return new Set(
-      api.data.results
-        .filter((r) => r.mode === "learn" && "setId" in r)
-        .map((r) => (r as any).setId as string)
-    );
+    const directionsBySet = new Map<string, Set<LearnDirection>>();
+    api.data.results.forEach((r) => {
+      if (r.mode !== "learn" || !("setId" in r) || !r.direction) return;
+      const setId = r.setId;
+      if (!directionsBySet.has(setId)) directionsBySet.set(setId, new Set());
+      directionsBySet.get(setId)!.add(r.direction);
+    });
+    const completed = new Set<string>();
+    directionsBySet.forEach((directions, setId) => {
+      if (LEARN_DIRECTIONS.every((d) => directions.has(d))) completed.add(setId);
+    });
+    return completed;
   }, [api.data.results]);
 
   const filtered = api.data.sets.filter((set) => {
@@ -711,7 +1059,7 @@ export function MySetsPage({ api }: PageProps) {
         action={
           <div className="flex flex-wrap gap-sm">
             <Button variant="secondary" onClick={() => setMultiPickerOpen((value) => !value)}>
-              <Icon name="layers" /> Multiset Learn
+              <Icon name="layers" /> Learn Mix Set
             </Button>
             <Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Create New Set</Button>
           </div>
@@ -720,23 +1068,28 @@ export function MySetsPage({ api }: PageProps) {
       {multiPickerOpen ? (
         <Card className="mb-lg space-y-md">
           <div className="flex items-center justify-between">
-            <h2 className="font-headline-md text-lg font-bold">Học nhiều bộ cùng lúc</h2>
+            <h2 className="font-headline-md text-lg font-bold">Trộn tối đa {MAX_MIX_SETS} bộ để học</h2>
             <Button variant="ghost" onClick={() => setMultiPickerOpen(false)}><Icon name="close" /></Button>
           </div>
           <p className="text-sm text-on-surface-variant dark:text-white/60">
-            Chọn các bộ muốn gộp lại để học, sau đó nhập số lượng từ. Nếu số từ ít hơn tổng số từ đã chọn, từ sẽ được lấy ngẫu nhiên; nếu bằng tổng số từ, thứ tự vẫn được xáo trộn ngẫu nhiên.
+            Chọn tối đa {MAX_MIX_SETS} bộ bất kỳ (kể cả bộ đã học xong) để gộp lại và học chung. Thứ tự các từ trong phiên học sẽ được xáo trộn hoàn toàn ngẫu nhiên, không theo tuần tự từng bộ.
           </p>
+          <div className="text-sm font-semibold text-primary">{selectedSetIds.length}/{MAX_MIX_SETS} bộ đã chọn</div>
           <div className="grid gap-sm md:grid-cols-2 lg:grid-cols-3">
-            {api.data.sets.map((set) => (
-              <label
-                key={set.id}
-                className={`flex cursor-pointer items-center gap-sm rounded-xl border px-md py-sm transition ${selectedSetIds.includes(set.id) ? "border-primary bg-primary-fixed dark:bg-primary/15" : "border-surface-variant dark:border-white/10"}`}
-              >
-                <input type="checkbox" checked={selectedSetIds.includes(set.id)} onChange={() => toggleSetSelection(set.id)} />
-                <span className="min-w-0 flex-1 truncate font-semibold">{set.title}</span>
-                <span className="shrink-0 text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ</span>
-              </label>
-            ))}
+            {api.data.sets.map((set) => {
+              const checked = selectedSetIds.includes(set.id);
+              const disabled = !checked && selectedSetIds.length >= MAX_MIX_SETS;
+              return (
+                <label
+                  key={set.id}
+                  className={`flex items-center gap-sm rounded-xl border px-md py-sm transition ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${checked ? "border-primary bg-primary-fixed dark:bg-primary/15" : "border-surface-variant dark:border-white/10"}`}
+                >
+                  <input type="checkbox" checked={checked} disabled={disabled} onChange={() => toggleSetSelection(set.id)} />
+                  <span className="min-w-0 flex-1 truncate font-semibold">{set.title}</span>
+                  <span className="shrink-0 text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ</span>
+                </label>
+              );
+            })}
           </div>
           <div className="flex flex-col items-start gap-sm sm:flex-row sm:items-center">
             <label className="flex items-center gap-sm font-semibold">
@@ -921,14 +1274,14 @@ export function SetDetailPage({ api }: PageProps) {
   const navigate = useNavigate();
   const { speak } = useSpeech(api.data.settings.voiceURI);
   if (!set) return <Navigate to="/sets" replace />;
-  const modes: [VocabularyStudyMode, string, string][] = [["flashcards", "Flashcards", "style"], ["learn", "Learn", "school"], ["write", "Write", "edit_note"], ["spell", "Spell", "hearing"], ["test", "Test", "quiz"], ["match", "Match", "extension"]];
+  const modes: [VocabularyStudyMode, string, string][] = [["flashcards", "Flashcards", "style"], ["learn", "Learn", "school"], ["write", "Write", "edit_note"], ["match", "Match", "extension"]];
   return (
     <>
       <PageTitle title={set.title} subtitle={set.description} action={<Button variant="secondary" onClick={() => navigate(`/sets/${set.id}/edit`)}><Icon name="edit" /> Edit</Button>} />
       <Card className="mb-lg">
         <div className="mb-sm flex justify-between text-sm text-on-surface-variant dark:text-white/60"><span>{set.cards.length} từ</span><span>{getSetProgress(set)}% mastered</span></div>
         <ProgressBar value={getSetProgress(set)} />
-        <div className="mt-md grid grid-cols-2 gap-sm sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-md grid grid-cols-2 gap-sm sm:grid-cols-4">
           {modes.map(([mode, label, icon]) => <Button key={mode} variant="secondary" onClick={() => navigate(modePath(set.id, mode))} className="min-h-24 flex-col"><Icon name={icon} /> {label}</Button>)}
         </div>
       </Card>
@@ -1085,21 +1438,66 @@ function QuizletChoice({
   );
 }
 
-function quizletPrompt(card: VocabularyCard, direction: string) {
-  if (direction === "vi-en") {
+const DIRECTION_META: Record<LearnDirection, { label: string; description: string; icon: string }> = {
+  "eng-eng": { label: "Anh - Anh", description: "Đọc định nghĩa tiếng Anh, chọn từ tiếng Anh đúng.", icon: "menu_book" },
+  "viet-eng": { label: "Việt - Anh", description: "Đọc nghĩa tiếng Việt, chọn từ tiếng Anh đúng.", icon: "translate" },
+  "eng-viet": { label: "Anh - Việt", description: "Đọc từ tiếng Anh, chọn nghĩa tiếng Việt đúng.", icon: "swap_horiz" },
+};
+
+function quizletPrompt(card: VocabularyCard, direction: LearnDirection) {
+  if (direction === "eng-eng") {
     return {
-      label: "Definition",
+      label: "Definition (EN)",
       text: card.definitionEn || card.exampleEn || card.word,
-      secondaryText: card.meaningVi,
+      secondaryText: undefined as string | undefined,
       answerField: "word" as const,
     };
   }
-  return { label: "Term", text: card.word, secondaryText: undefined as string | undefined, answerField: "meaningVi" as const };
+  if (direction === "viet-eng") {
+    return {
+      label: "Nghĩa (VI)",
+      text: card.meaningVi || card.definitionEn || card.word,
+      secondaryText: undefined as string | undefined,
+      answerField: "word" as const,
+    };
+  }
+  return { label: "Từ (EN)", text: card.word, secondaryText: undefined as string | undefined, answerField: "meaningVi" as const };
+}
+
+function DirectionPicker({ completed, onChoose }: { completed: Set<LearnDirection>; onChoose: (direction: LearnDirection) => void }) {
+  return (
+    <div className="mx-auto max-w-2xl">
+      <h2 className="mb-md text-center font-headline-md text-headline-md">Chọn chế độ Learn</h2>
+      <p className="mb-lg text-center text-on-surface-variant dark:text-white/65">Hoàn thành cả 3 chế độ để bộ từ được tính là đã học xong.</p>
+      <div className="grid gap-md sm:grid-cols-3">
+        {LEARN_DIRECTIONS.map((direction) => {
+          const meta = DIRECTION_META[direction];
+          const done = completed.has(direction);
+          return (
+            <button
+              key={direction}
+              type="button"
+              onClick={() => onChoose(direction)}
+              className={`flex flex-col items-center gap-sm rounded-2xl border-2 bg-white p-lg text-center shadow-level-1 transition hover:border-primary dark:bg-[#232627] ${done ? "border-emerald-500" : "border-surface-variant dark:border-white/10"}`}
+            >
+              <span className={`flex h-12 w-12 items-center justify-center rounded-full ${done ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-200" : "bg-primary-fixed text-primary"}`}>
+                <Icon name={done ? "check_circle" : meta.icon} />
+              </span>
+              <strong className="text-lg">{meta.label}</strong>
+              <span className="text-sm text-on-surface-variant dark:text-white/60">{meta.description}</span>
+              {done ? <span className="text-xs font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-300">Đã hoàn thành</span> : null}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 export function LearnPage({ api }: PageProps) {
   const { setId } = useParams();
   const set = getSet(api, setId);
+  const [direction, setDirection] = useState<LearnDirection | null>(null);
   const [queue, setQueue] = useState<VocabularyCard[]>(() => set ? shuffle(set.cards) : []);
   const [current, setCurrent] = useState(0);
   const [correct, setCorrect] = useState(0);
@@ -1110,9 +1508,16 @@ export function LearnPage({ api }: PageProps) {
   const { speak } = useSpeech(api.data.settings.voiceURI);
   const activeChoiceCard = queue[current];
   const choices = useMemo(
-    () => set && activeChoiceCard ? answerChoices(set.cards, activeChoiceCard, "word") : [],
-    [set?.id, activeChoiceCard?.id],
+    () => set && activeChoiceCard && direction ? answerChoices(set.cards, activeChoiceCard, quizletPrompt(activeChoiceCard, direction).answerField) : [],
+    [set?.id, activeChoiceCard?.id, direction],
   );
+  const completedDirections = useMemo(() => {
+    const done = new Set<LearnDirection>();
+    api.data.results.forEach((r) => {
+      if (r.mode === "learn" && "setId" in r && r.setId === set?.id && r.direction) done.add(r.direction);
+    });
+    return done;
+  }, [api.data.results, set?.id]);
   useEffect(() => () => {
     if (feedbackTimer.current) window.clearTimeout(feedbackTimer.current);
     correctAudio.current?.close();
@@ -1120,6 +1525,14 @@ export function LearnPage({ api }: PageProps) {
   if (!set) return <Navigate to="/sets" replace />;
   const activeSet = set;
   const card = queue[current];
+  function startDirection(nextDirection: LearnDirection) {
+    setDirection(nextDirection);
+    setQueue(shuffle(activeSet.cards));
+    setCurrent(0);
+    setCorrect(0);
+    setWrongCardIds([]);
+    setFeedback(null);
+  }
   function retryLearn() {
     setQueue(shuffle(activeSet.cards));
     setCurrent(0);
@@ -1127,8 +1540,19 @@ export function LearnPage({ api }: PageProps) {
     setWrongCardIds([]);
     setFeedback(null);
   }
-  if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} wrongCardIds={wrongCardIds} onRetry={retryLearn} api={api} />;
-  const prompt = quizletPrompt(card, "vi-en");
+  function backToPicker() {
+    setDirection(null);
+  }
+  if (!direction) {
+    return (
+      <>
+        <div className="mb-lg"><Link to={`/sets/${activeSet.id}`} className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> {activeSet.title}</Link></div>
+        <DirectionPicker completed={completedDirections} onChoose={startDirection} />
+      </>
+    );
+  }
+  if (!card) return <Summary set={activeSet} mode="learn" total={queue.length || activeSet.cards.length} correct={correct} wrongCardIds={wrongCardIds} onRetry={retryLearn} onChangeMode={backToPicker} api={api} direction={direction} />;
+  const prompt = quizletPrompt(card, direction);
   function choose(value: string) {
     if (feedback) return;
     const ok = value === card[prompt.answerField];
@@ -1149,7 +1573,7 @@ export function LearnPage({ api }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="mb-md flex items-center justify-between md:mb-lg">
-        <Link to={`/sets/${activeSet.id}`} className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> Learn</Link>
+        <button type="button" onClick={backToPicker} className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> {DIRECTION_META[direction].label}</button>
         <div className="max-w-[55vw] truncate text-right font-semibold text-[#586383] dark:text-white/65 md:max-w-none">{activeSet.title}</div>
       </div>
       <QuizletProgress current={current} total={queue.length} correct={correct} />
@@ -1195,6 +1619,7 @@ export function MultiSetLearnPage({ api }: PageProps) {
   const navigate = useNavigate();
   const setIds = useMemo(() => (searchParams.get("sets") ?? "").split(",").filter(Boolean), [searchParams]);
   const requestedCount = Number(searchParams.get("count") ?? "0");
+  const [direction, setDirection] = useState<LearnDirection | null>(null);
 
   const selectedSets = useMemo(
     () => setIds.map((id) => api.data.sets.find((set) => set.id === id)).filter((set): set is VocabularySet => Boolean(set)),
@@ -1215,8 +1640,8 @@ export function MultiSetLearnPage({ api }: PageProps) {
   const { speak } = useSpeech(api.data.settings.voiceURI);
   const activeItem = queue[current];
   const choices = useMemo(
-    () => activeItem ? answerChoices(pool.map((item) => item.card), activeItem.card, "word") : [],
-    [activeItem?.card.id, pool],
+    () => activeItem && direction ? answerChoices(pool.map((item) => item.card), activeItem.card, quizletPrompt(activeItem.card, direction).answerField) : [],
+    [activeItem?.card.id, pool, direction],
   );
 
   useEffect(() => () => {
@@ -1226,6 +1651,14 @@ export function MultiSetLearnPage({ api }: PageProps) {
 
   if (!selectedSets.length || !pool.length) return <Navigate to="/sets" replace />;
 
+  function startDirection(nextDirection: LearnDirection) {
+    setDirection(nextDirection);
+    setQueue(shuffle(pool).slice(0, count));
+    setCurrent(0);
+    setCorrect(0);
+    setFeedback(null);
+  }
+
   function retry() {
     setQueue(shuffle(pool).slice(0, count));
     setCurrent(0);
@@ -1233,10 +1666,19 @@ export function MultiSetLearnPage({ api }: PageProps) {
     setFeedback(null);
   }
 
+  if (!direction) {
+    return (
+      <>
+        <div className="mb-lg"><Link to="/sets" className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> Learn Mix Set</Link></div>
+        <DirectionPicker completed={new Set()} onChoose={startDirection} />
+      </>
+    );
+  }
+
   const item = queue[current];
-  if (!item) return <MultiSummary api={api} setIds={setIds} total={queue.length} correct={correct} onRetry={retry} />;
+  if (!item) return <MultiSummary api={api} setIds={setIds} total={queue.length} correct={correct} onRetry={retry} direction={direction} />;
   const card = item.card;
-  const prompt = quizletPrompt(card, "vi-en");
+  const prompt = quizletPrompt(card, direction);
 
   function choose(value: string) {
     if (feedback) return;
@@ -1261,7 +1703,7 @@ export function MultiSetLearnPage({ api }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="mb-md flex items-center justify-between md:mb-lg">
-        <Link to="/sets" className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> Multiset Learn</Link>
+        <Link to="/sets" className="inline-flex items-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> {DIRECTION_META[direction].label}</Link>
         <div className="max-w-[55vw] truncate text-right font-semibold text-[#586383] dark:text-white/65 md:max-w-none">{titleLabel}</div>
       </div>
       <QuizletProgress current={current} total={queue.length} correct={correct} />
@@ -1302,10 +1744,10 @@ export function MultiSetLearnPage({ api }: PageProps) {
   );
 }
 
-function MultiSummary({ api, setIds, total, correct, onRetry }: PageProps & { setIds: string[]; total: number; correct: number; onRetry: () => void }) {
+function MultiSummary({ api, setIds, total, correct, onRetry, direction }: PageProps & { setIds: string[]; total: number; correct: number; onRetry: () => void; direction?: LearnDirection }) {
   const navigate = useNavigate();
   useEffect(() => {
-    api.setData((current) => ({ ...current, results: [createResult(setIds.join(","), "learn", total, correct, []), ...current.results] }));
+    api.setData((current) => ({ ...current, results: [createResult(setIds.join(","), "learn", total, correct, [], direction), ...current.results] }));
   }, []);
   return (
     <Card className="mx-auto max-w-xl text-center">
@@ -1317,17 +1759,22 @@ function MultiSummary({ api, setIds, total, correct, onRetry }: PageProps & { se
   );
 }
 
-function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry }: PageProps & { set: VocabularySet; mode: VocabularyStudyMode; total: number; correct: number; wrongCardIds?: string[]; onRetry?: () => void }) {
+function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry, onChangeMode, direction }: PageProps & { set: VocabularySet; mode: VocabularyStudyMode; total: number; correct: number; wrongCardIds?: string[]; onRetry?: () => void; onChangeMode?: () => void; direction?: LearnDirection }) {
   const navigate = useNavigate();
   useEffect(() => {
-    api.setData((current) => ({ ...current, results: [createResult(set.id, mode, total, correct, wrongCardIds), ...current.results] }));
+    api.setData((current) => ({ ...current, results: [createResult(set.id, mode, total, correct, wrongCardIds, direction), ...current.results] }));
   }, []);
   return (
     <Card className="mx-auto max-w-xl text-center">
       <Icon name="verified" className="text-5xl text-primary" />
       <h1 className="mt-md font-headline-lg text-headline-lg">Hoàn thành</h1>
       <p className="mt-sm text-on-surface-variant dark:text-white/65">Đúng {correct}/{total} câu. Accuracy {percent(correct, total)}%.</p>
-      <div className="mt-lg flex justify-center gap-sm"><Button onClick={() => onRetry ? onRetry() : navigate(modePath(set.id, mode))}>Làm lại</Button><Button variant="secondary" onClick={() => navigate(`/sets/${set.id}`)}>Về học phần</Button></div>
+      {direction ? <p className="mt-xs text-sm font-semibold text-primary">Chế độ: {DIRECTION_META[direction].label}</p> : null}
+      <div className="mt-lg flex flex-wrap justify-center gap-sm">
+        <Button onClick={() => onRetry ? onRetry() : navigate(modePath(set.id, mode))}>Làm lại</Button>
+        {onChangeMode ? <Button variant="secondary" onClick={onChangeMode}>Đổi chế độ</Button> : null}
+        <Button variant="secondary" onClick={() => navigate(`/sets/${set.id}`)}>Về học phần</Button>
+      </div>
     </Card>
   );
 }
@@ -1335,199 +1782,116 @@ function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry }:
 export function WritePage({ api }: PageProps) {
   const { setId } = useParams();
   const set = getSet(api, setId);
+  const [queue, setQueue] = useState<VocabularyCard[]>(() => set ? shuffle(set.cards) : []);
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
-  const [feedback, setFeedback] = useState("");
+  const [feedback, setFeedback] = useState<{ text: string; correct: boolean } | null>(null);
+  const [answered, setAnswered] = useState(false);
+  const [correct, setCorrect] = useState(0);
+  const [wrongCardIds, setWrongCardIds] = useState<string[]>([]);
+  const [usedHint, setUsedHint] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   if (!set) return <Navigate to="/sets" replace />;
   const activeSet = set;
-  const card = activeSet.cards[index];
-  if (!card) return <EmptyState title="Chưa có từ" text="Hãy thêm từ vào bộ này." />;
+  if (!activeSet.cards.length) return <EmptyState title="Chưa có từ" text="Hãy thêm từ vào bộ này." />;
+  const card = queue[index];
+
+  function restart() {
+    setQueue(shuffle(activeSet.cards));
+    setIndex(0);
+    setAnswer("");
+    setFeedback(null);
+    setAnswered(false);
+    setCorrect(0);
+    setWrongCardIds([]);
+    setUsedHint(false);
+  }
+
+  if (!card) return <Summary set={activeSet} mode="write" total={queue.length} correct={correct} wrongCardIds={wrongCardIds} onRetry={restart} api={api} />;
+
   function check() {
+    if (answered) return;
     const distance = levenshtein(answer, card.word);
-    const ok = distance === 0;
-    setFeedback(ok ? "Correct" : distance <= 2 ? `Almost correct: ${card.word}` : `Incorrect: ${card.word}`);
+    const ok = distance === 0 && !usedHint;
+    setAnswered(true);
+    setFeedback(ok ? { text: "Correct!", correct: true } : { text: `Đáp án: ${card.word}`, correct: false });
+    if (ok) setCorrect((n) => n + 1);
+    else setWrongCardIds((items) => (items.includes(card.id) ? items : [...items, card.id]));
     api.updateSet(activeSet.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, ok)));
   }
+
+  function next() {
+    setIndex((n) => n + 1);
+    setAnswer("");
+    setFeedback(null);
+    setAnswered(false);
+    setUsedHint(false);
+    window.requestAnimationFrame(() => inputRef.current?.focus());
+  }
+
+  function handleEnter() {
+    if (!answered) check();
+    else next();
+  }
+
   return (
     <>
       <StudyHeader set={activeSet} title="Write" />
-      <Card className="mx-auto max-w-2xl space-y-md">
-        <div className="text-on-surface-variant dark:text-white/65">{index + 1}/{activeSet.cards.length}</div>
-        <div className="space-y-xs">
-          {card.definitionEn ? <p className="text-on-surface-variant dark:text-white/70">{card.definitionEn}</p> : null}
-          <h2 className="font-translation-text text-2xl text-primary">{card.meaningVi || card.definitionEn || card.exampleEn}</h2>
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-md flex items-center justify-between text-sm font-semibold text-on-surface-variant dark:text-white/60">
+          <span>{index + 1}/{queue.length}</span>
+          <span>{correct} đúng</span>
         </div>
-        <Input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Gõ từ tiếng Anh..." onKeyDown={(e) => e.key === "Enter" && check()} />
-        <div className="flex flex-wrap gap-sm"><Button onClick={check}>Check Answer</Button><Button variant="secondary" onClick={() => setAnswer(card.word.slice(0, Math.ceil(card.word.length / 2)))}>Hint</Button><Button variant="secondary" onClick={() => setFeedback(`Answer: ${card.word}`)}>Show Answer</Button><Button variant="ghost" onClick={() => { setIndex(Math.min(activeSet.cards.length - 1, index + 1)); setAnswer(""); setFeedback(""); }}>Next</Button></div>
-        {feedback ? <div className="rounded-xl bg-primary-fixed p-md font-semibold text-primary">{feedback}</div> : null}
-      </Card>
+        <ProgressBar value={percent(index, queue.length)} />
+        <Card className="mt-md space-y-md">
+          <div className="space-y-xs">
+            {card.definitionEn ? <p className="text-on-surface-variant dark:text-white/70">{card.definitionEn}</p> : null}
+            <h2 className="font-translation-text text-2xl text-primary">{card.meaningVi || card.definitionEn || card.exampleEn || card.word}</h2>
+          </div>
+          <Input
+            ref={inputRef}
+            autoFocus
+            value={answer}
+            disabled={answered}
+            onChange={(e) => setAnswer(e.target.value)}
+            placeholder="Gõ từ tiếng Anh..."
+            onKeyDown={(e) => e.key === "Enter" && handleEnter()}
+          />
+          <div className="flex flex-wrap gap-sm">
+            {!answered ? (
+              <>
+                <Button onClick={check}>Check Answer</Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setUsedHint(true);
+                    setAnswer(card.word.slice(0, Math.ceil(card.word.length / 2)));
+                  }}
+                >
+                  Hint
+                </Button>
+              </>
+            ) : (
+              <Button onClick={next}>{index === queue.length - 1 ? "Xem kết quả" : "Next"} <Icon name="arrow_forward" /></Button>
+            )}
+          </div>
+          {feedback ? (
+            <div className={`rounded-xl p-md font-semibold ${feedback.correct ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-200" : "bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-200"}`}>
+              {feedback.text}
+            </div>
+          ) : null}
+        </Card>
+      </div>
     </>
   );
 }
 
-export function SpellPage({ api }: PageProps) {
-  const { setId } = useParams();
-  const set = getSet(api, setId);
-  const [index, setIndex] = useState(0);
-  const [answer, setAnswer] = useState("");
-  const [feedback, setFeedback] = useState("");
-  const { speak } = useSpeech(api.data.settings.voiceURI);
-  if (!set) return <Navigate to="/sets" replace />;
-  const activeSet = set;
-  const card = activeSet.cards[index];
-  if (!card) return <EmptyState title="Chưa có từ" text="Hãy thêm từ vào bộ này." />;
-  const check = () => {
-    const ok = answer.trim().toLowerCase() === card.word.toLowerCase();
-    setFeedback(ok ? "Correct" : `Incorrect: ${card.word}`);
-    api.updateSet(activeSet.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, ok)));
-  };
-  return (
-    <>
-      <StudyHeader set={activeSet} title="Spell" />
-      <Card className="mx-auto max-w-2xl space-y-md text-center">
-        <Icon name="hearing" className="text-6xl text-primary" />
-        <p className="text-on-surface-variant dark:text-white/65">Nghe và gõ lại từ tiếng Anh.</p>
-        <div className="flex justify-center gap-sm"><Button onClick={() => speak(card.word)}><Icon name="play_arrow" /> Play</Button><Button variant="secondary" onClick={() => speak(card.word, 0.65)}>Slow</Button><Button variant="secondary" onClick={() => speak(card.word)}>Replay</Button></div>
-        <Input value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Type what you hear..." />
-        <div className="flex justify-center gap-sm"><Button onClick={check}>Check</Button><Button variant="ghost" onClick={() => { setIndex(Math.min(activeSet.cards.length - 1, index + 1)); setAnswer(""); setFeedback(""); }}>Next</Button></div>
-        {feedback ? <div className="rounded-xl bg-primary-fixed p-md font-semibold text-primary">{feedback}</div> : null}
-      </Card>
-    </>
-  );
-}
-
-export function TestPage({ api }: PageProps) {
-  const { setId } = useParams();
-  const set = getSet(api, setId);
-  const [started, setStarted] = useState(false);
-  const [count, setCount] = useState(10);
-  const [questionType, setQuestionType] = useState("mixed");
-  const [direction, setDirection] = useState("mixed");
-  const [timerMinutes, setTimerMinutes] = useState(0);
-  const [remaining, setRemaining] = useState(0);
-  const [questions, setQuestions] = useState<VocabularyCard[]>([]);
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [submitted, setSubmitted] = useState(false);
-  const { speak } = useSpeech(api.data.settings.voiceURI);
-  if (!set) return <Navigate to="/sets" replace />;
-  const activeSet = set;
-  const questionKind = (index: number) => questionType === "mixed" ? (index % 3 === 0 ? "write" : index % 3 === 1 ? "truefalse" : "multiple") : questionType;
-  const questionDirection = (index: number) => direction === "mixed" ? (index % 2 ? "vi-en" : "en-vi") : direction;
-  const expected = (card: VocabularyCard, index: number) => questionDirection(index) === "vi-en" ? card.word : card.meaningVi;
-  const trueFalseIsTrue = (index: number) => index % 2 === 0;
-  const trueFalseAnswer = (card: VocabularyCard, index: number) => {
-    if (trueFalseIsTrue(index)) return expected(card, index);
-    const field = questionDirection(index) === "vi-en" ? "word" : "meaningVi";
-    return activeSet.cards.find((item) => item.id !== card.id)?.[field] ?? expected(card, index);
-  };
-  const score = questions.filter((card, index) => {
-    const answer = answers[card.id] ?? "";
-    if (questionKind(index) === "truefalse") return answer === String(trueFalseIsTrue(index));
-    return answer.trim().toLowerCase() === expected(card, index).toLowerCase();
-  }).length;
-  function start() { setQuestions(shuffle(activeSet.cards).slice(0, Math.min(count, activeSet.cards.length))); setStarted(true); setSubmitted(false); setAnswers({}); setRemaining(timerMinutes * 60); }
-  function submit() {
-    questions.forEach((card, index) => api.updateSet(activeSet.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, questionKind(index) === "truefalse" ? answers[card.id] === String(trueFalseIsTrue(index)) : (answers[card.id] ?? "").trim().toLowerCase() === expected(card, index).toLowerCase()))));
-    const wrongCardIds = questions
-      .filter((card, index) => questionKind(index) === "truefalse"
-        ? answers[card.id] !== String(trueFalseIsTrue(index))
-        : (answers[card.id] ?? "").trim().toLowerCase() !== expected(card, index).toLowerCase())
-      .map((card) => card.id);
-    api.setData((current) => ({ ...current, results: [createResult(activeSet.id, "test", questions.length, score, wrongCardIds), ...current.results] }));
-    setSubmitted(true);
-  }
-  useEffect(() => {
-    if (!started || submitted || !remaining) return;
-    const timer = window.setInterval(() => {
-      setRemaining((value) => {
-        if (value <= 1) {
-          window.clearInterval(timer);
-          submit();
-          return 0;
-        }
-        return value - 1;
-      });
-    }, 1000);
-    return () => window.clearInterval(timer);
-  }, [started, submitted, remaining]);
-  if (!started) return (
-    <>
-      <StudyHeader set={activeSet} title="Test" />
-      <Card className="mx-auto max-w-xl space-y-md">
-        <h2 className="font-headline-md text-headline-md">Setup test</h2>
-        <div className="grid gap-md sm:grid-cols-2">
-          <label className="block"><span className="font-semibold">Số câu</span><Select value={count} onChange={(e) => setCount(Number(e.target.value))}><option value={10}>10 câu</option><option value={20}>20 câu</option><option value={50}>50 câu</option></Select></label>
-          <label className="block"><span className="font-semibold">Dạng câu</span><Select value={questionType} onChange={(e) => setQuestionType(e.target.value)}><option value="mixed">Mixed</option><option value="multiple">Multiple choice</option><option value="write">Write</option><option value="truefalse">True/False</option><option value="matching">Matching</option></Select></label>
-          <label className="block"><span className="font-semibold">Chiều hỏi</span><Select value={direction} onChange={(e) => setDirection(e.target.value)}><option value="mixed">Mixed</option><option value="en-vi">EN→VI</option><option value="vi-en">VI→EN</option></Select></label>
-          <label className="block"><span className="font-semibold">Timer</span><Select value={timerMinutes} onChange={(e) => setTimerMinutes(Number(e.target.value))}><option value={0}>Không giới hạn</option><option value={5}>5 phút</option><option value={10}>10 phút</option><option value={20}>20 phút</option></Select></label>
-        </div>
-        <Button onClick={start} className="w-full">Start Test</Button>
-      </Card>
-    </>
-  );
-  const isCorrectAnswer = (card: VocabularyCard, index: number) => {
-    const answer = answers[card.id] ?? "";
-    if (questionKind(index) === "truefalse") return answer === String(trueFalseIsTrue(index));
-    return answer.trim().toLowerCase() === expected(card, index).toLowerCase();
-  };
-  if (submitted) return (
-    <><StudyHeader set={set} title="Test Results" /><Card className="mx-auto max-w-3xl"><h2 className="font-headline-lg text-headline-lg">Score {score}/{questions.length}</h2><p className="mt-sm">Accuracy {percent(score, questions.length)}%</p><div className="mt-lg space-y-sm">{questions.filter((card, index) => !isCorrectAnswer(card, index)).map((card) => <div key={card.id} className="rounded-xl bg-error-container p-md text-red-900">{card.meaningVi}: <strong>{card.word}</strong></div>)}</div><div className="mt-lg flex gap-sm"><Button onClick={start}>Retry wrong words</Button><Link to={`/sets/${set.id}`}><Button variant="secondary">Done</Button></Link></div></Card></>
-  );
-  const answeredCount = questions.filter((card) => (answers[card.id] ?? "").trim()).length;
-  return (
-    <div className="mx-auto max-w-6xl">
-      <div className="mb-lg text-center md:mb-xl">
-        <Link to={`/sets/${activeSet.id}`} className="mb-sm inline-flex items-center justify-center gap-xs font-semibold text-[#586383] hover:text-primary dark:text-white/65"><Icon name="arrow_back" /> Test</Link>
-        <div className="font-headline-md text-2xl font-bold text-[#17223f] dark:text-white">{answeredCount} / {questions.length}</div>
-        <div className="mx-auto max-w-[85vw] truncate font-semibold text-[#586383] dark:text-white/65 md:max-w-none">{activeSet.title}</div>
-        {remaining ? <div className="mt-sm font-bold text-primary">Time left: {Math.floor(remaining / 60)}:{String(remaining % 60).padStart(2, "0")}</div> : null}
-      </div>
-      <div className="space-y-lg md:space-y-xl">
-        {questions.map((card, index) => {
-          const kind = questionKind(index);
-          const dir = questionDirection(index);
-          const promptInfo = quizletPrompt(card, dir);
-          const field = promptInfo.answerField;
-          const currentAnswer = answers[card.id] ?? "";
-          return (
-            <section key={card.id} className="rounded-2xl bg-white px-md py-lg shadow-[0_12px_36px_rgba(15,23,42,0.08)] dark:bg-[#232627] md:px-xl md:py-xl">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-sm font-bold text-[#4b587c] dark:text-white/70">
-                  <span>{promptInfo.label}</span>
-                  <button type="button" onClick={() => speak(card.word)} className="rounded-full p-1 hover:bg-surface-container dark:hover:bg-white/10"><Icon name="volume_up" className="text-xl" /></button>
-                </div>
-                <div className="text-[#7a86a5]">{index + 1} of {questions.length}</div>
-              </div>
-              <div className="mt-lg min-h-20 text-xl leading-relaxed text-[#0f1b3d] dark:text-white md:mt-xl md:min-h-24 md:text-[28px]">{kind === "truefalse" ? `${promptInfo.text} = ${trueFalseAnswer(card, index)}` : promptInfo.text}</div>
-              <div className="mt-xl md:mt-2xl">
-                <h2 className="mb-md font-bold text-[#4b587c] dark:text-white/70">{kind === "write" ? "Type the answer" : "Choose an answer"}</h2>
-                {kind === "write" ? (
-                  <Input className="min-h-[64px] text-xl" value={currentAnswer} onChange={(e) => setAnswers({ ...answers, [card.id]: e.target.value })} placeholder="Type your answer" />
-                ) : kind === "truefalse" ? (
-                  <div className="grid gap-md md:grid-cols-2">
-                    {["true", "false"].map((choice, choiceIndex) => <QuizletChoice key={choice} choice={choice === "true" ? "True" : "False"} index={choiceIndex} selected={currentAnswer === choice} onClick={() => setAnswers({ ...answers, [card.id]: choice })} />)}
-                  </div>
-                ) : (
-                  <div className="grid gap-md md:grid-cols-2">
-                    {answerChoices(activeSet.cards, card, field).map((choice, choiceIndex) => <QuizletChoice key={`${choice}-${choiceIndex}`} choice={choice} index={choiceIndex} selected={currentAnswer === choice} onClick={() => setAnswers({ ...answers, [card.id]: choice })} />)}
-                  </div>
-                )}
-              </div>
-              <div className="mt-lg flex justify-center">
-                <button type="button" onClick={() => setAnswers({ ...answers, [card.id]: "__dont_know__" })} className="font-bold text-[#4255ff] hover:underline">Don&apos;t know?</button>
-              </div>
-            </section>
-          );
-        })}
-        <div className="sticky bottom-24 flex justify-center md:bottom-lg">
-          <Button onClick={submit} className="min-w-48 rounded-full py-md text-lg shadow-level-2">Submit Test</Button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 const MATCH_BATCH_SIZE = 10;
+
+function matchDisplayText(card: VocabularyCard) {
+  return card.meaningVi || card.definitionEn || card.exampleEn || card.word;
+}
 
 export function MatchPage({ api }: PageProps) {
   const { setId } = useParams();
@@ -1545,8 +1909,12 @@ export function MatchPage({ api }: PageProps) {
   const [matched, setMatched] = useState<string[]>([]);
   const [wrong, setWrong] = useState(false);
   const [seconds, setSeconds] = useState(0);
+  const mistakesRef = useRef(0);
+  const mistakeCardIdsRef = useRef<string[]>([]);
+  const resultSavedRef = useRef(false);
   if (!set) return <Navigate to="/sets" replace />;
   const activeSet = set;
+  if (!activeSet.cards.length) return <EmptyState title="Chưa có từ" text="Hãy thêm từ vào bộ này." />;
   useEffect(() => {
     setRight(shuffle(cards));
     setMatched([]);
@@ -1560,12 +1928,17 @@ export function MatchPage({ api }: PageProps) {
   }, [batchIndex]);
   useEffect(() => {
     if (cards.length && matched.length === cards.length) api.recordMatchTime(activeSet.id, seconds);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matched.length]);
   function pickMeaning(card: VocabularyCard) {
+    if (!leftPick) return;
     if (leftPick === card.id) {
       setMatched((items) => [...items, card.id]);
+      api.updateSet(activeSet.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, true)));
       setLeftPick("");
     } else {
+      mistakesRef.current += 1;
+      if (!mistakeCardIdsRef.current.includes(leftPick)) mistakeCardIdsRef.current = [...mistakeCardIdsRef.current, leftPick];
       setWrong(true);
       setTimeout(() => setWrong(false), 260);
     }
@@ -1574,9 +1947,19 @@ export function MatchPage({ api }: PageProps) {
   const isLastBatch = batchIndex === batches.length - 1;
   const totalWords = order.length;
   const wordsDone = Math.min(batchIndex * MATCH_BATCH_SIZE + matched.length, totalWords);
+  useEffect(() => {
+    if (!isLastBatch || !complete || resultSavedRef.current) return;
+    resultSavedRef.current = true;
+    const attempts = totalWords + mistakesRef.current;
+    api.setData((current) => ({ ...current, results: [createResult(activeSet.id, "match", attempts, totalWords, mistakeCardIdsRef.current), ...current.results] }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLastBatch, complete]);
   function restartAll() {
     setOrder(shuffle(activeSet.cards));
     setBatchIndex(0);
+    mistakesRef.current = 0;
+    mistakeCardIdsRef.current = [];
+    resultSavedRef.current = false;
   }
   return (
     <>
@@ -1584,9 +1967,10 @@ export function MatchPage({ api }: PageProps) {
       <Card className={`mx-auto max-w-5xl ${wrong ? "shake" : ""}`}>
         <div className="mb-sm grid grid-cols-3 gap-sm text-center text-sm font-semibold md:text-base"><span>Time: {seconds}s</span><span>Score: {matched.length}/{cards.length}</span><span>Best: {api.data.matchBestTimes[activeSet.id] ? `${api.data.matchBestTimes[activeSet.id]}s` : "-"}</span></div>
         <div className="mb-md text-center text-sm font-semibold text-on-surface-variant dark:text-white/60">Khung {batchIndex + 1}/{batches.length} · Đã học {wordsDone}/{totalWords} từ</div>
+        <p className="mb-md text-center text-xs text-on-surface-variant dark:text-white/50">Chọn một từ tiếng Anh, sau đó chọn nghĩa tương ứng.</p>
         <div className="grid gap-md md:grid-cols-2">
-          <div className="grid gap-sm">{cards.map((card) => <Button key={card.id} disabled={matched.includes(card.id)} variant={leftPick === card.id ? "primary" : "secondary"} onClick={() => setLeftPick(card.id)}>{card.word}</Button>)}</div>
-          <div className="grid gap-sm">{right.map((card) => <Button key={card.id} disabled={matched.includes(card.id)} variant="secondary" onClick={() => pickMeaning(card)}>{card.meaningVi}</Button>)}</div>
+          <div className="grid gap-sm">{cards.map((card) => <Button key={card.id} disabled={matched.includes(card.id)} variant={leftPick === card.id ? "primary" : "secondary"} onClick={() => setLeftPick(card.id)} className="min-h-14 whitespace-normal break-words text-center">{card.word}</Button>)}</div>
+          <div className="grid gap-sm">{right.map((card) => <Button key={card.id} disabled={matched.includes(card.id)} variant="secondary" onClick={() => pickMeaning(card)} className="min-h-14 whitespace-normal break-words text-center">{matchDisplayText(card)}</Button>)}</div>
         </div>
         {complete ? (
           <div className="mt-lg rounded-2xl bg-primary-fixed p-lg text-center text-primary">
@@ -1613,10 +1997,46 @@ export function ProgressPage({ api }: PageProps) {
   const [expandedResultId, setExpandedResultId] = useState<string | null>(null);
   const [historyCategory, setHistoryCategory] = useState<"reading" | "listening">("reading");
   const visibleResults = historyCategory === "listening" ? listeningResults : readingResults;
+
+  const statusCounts = useMemo(() => {
+    const counts: Record<string, number> = { mastered: 0, review: 0, learning: 0, difficult: 0, new: 0 };
+    cards.forEach((card) => { counts[card.status] = (counts[card.status] ?? 0) + 1; });
+    return counts;
+  }, [cards]);
+
+  const trendPoints = useMemo(
+    () => [...api.data.results]
+      .slice(0, 14)
+      .reverse()
+      .map((result) => ({
+        label: new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit" }).format(new Date(result.studiedAt)),
+        value: result.accuracy,
+      })),
+    [api.data.results],
+  );
+
+  const setProgressBars = useMemo(
+    () => [...api.data.sets]
+      .map((set) => ({ label: set.title, value: getSetProgress(set), suffix: "%" }))
+      .sort((a, b) => b.value - a.value)
+      .slice(0, 6),
+    [api.data.sets],
+  );
+
+  const modeLabels: Record<string, string> = { learn: "Learn", write: "Write", match: "Match", flashcards: "Flashcards", listening: "Listening" };
+  const activityBars = useMemo(() => {
+    const counts: Record<string, number> = {};
+    api.data.results.forEach((result) => { counts[result.mode] = (counts[result.mode] ?? 0) + 1; });
+    return Object.entries(counts)
+      .map(([mode, value]) => ({ label: modeLabels[mode] ?? mode, value, suffix: " lần" }))
+      .sort((a, b) => b.value - a.value);
+  }, [api.data.results]);
+
   return (
     <>
       <PageTitle title="Tiến độ học tập" subtitle="Theo dõi số từ đã thuộc, từ khó và lịch sử luyện tập." action={<Link to="/sets"><Button><Icon name="event_repeat" /> Review Difficult Words</Button></Link>} />
       <div className="grid grid-cols-2 gap-md lg:grid-cols-5"><Stat label="Tổng số từ" value={cards.length} icon="dictionary" /><Stat label="Mastered" value={cards.filter((c) => c.status === "mastered").length} icon="verified" /><Stat label="Difficult" value={cards.filter((c) => c.status === "difficult").length} icon="warning" /><Stat label="Review Today" value={cards.filter((c) => c.nextReviewAt && new Date(c.nextReviewAt) <= new Date()).length} icon="today" /><Stat label="Accuracy" value={`${avg}%`} icon="target" /></div>
+
       <div className="mt-lg grid gap-md md:grid-cols-2">
         <Card className="flex items-center gap-md border-l-4 border-l-primary">
           <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary"><Icon name="menu_book" className="text-3xl" /></span>
@@ -1633,6 +2053,36 @@ export function ProgressPage({ api }: PageProps) {
           </div>
         </Card>
       </div>
+
+      <div className="mt-lg grid gap-md lg:grid-cols-2">
+        <Card>
+          <h2 className="font-headline-md text-headline-md">Trạng thái từ vựng</h2>
+          <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Phân bố {cards.length} từ theo mức độ ghi nhớ.</p>
+          <div className="mt-lg"><StatusDonutChart counts={statusCounts} /></div>
+        </Card>
+        <Card>
+          <h2 className="font-headline-md text-headline-md">Xu hướng độ chính xác</h2>
+          <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">{trendPoints.length} lần học gần nhất (Reading &amp; Listening).</p>
+          <div className="mt-lg"><TrendLineChart points={trendPoints} /></div>
+        </Card>
+      </div>
+
+      <div className="mt-lg grid gap-md lg:grid-cols-2">
+        <Card>
+          <div className="flex items-center justify-between gap-md">
+            <h2 className="font-headline-md text-headline-md">Tiến độ theo học phần</h2>
+            <Link to="/sets" className="shrink-0 text-sm font-semibold text-primary">Xem tất cả</Link>
+          </div>
+          <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Top {setProgressBars.length} học phần theo % đã thuộc.</p>
+          <div className="mt-lg"><HorizontalBarChart data={setProgressBars} /></div>
+        </Card>
+        <Card>
+          <h2 className="font-headline-md text-headline-md">Hoạt động theo chế độ học</h2>
+          <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Số lần luyện tập theo từng chế độ.</p>
+          <div className="mt-lg"><HorizontalBarChart data={activityBars} colorClass="bg-emerald-500" /></div>
+        </Card>
+      </div>
+
       <Card className="mt-lg">
         <div className="flex flex-wrap items-center justify-between gap-md">
           <div>

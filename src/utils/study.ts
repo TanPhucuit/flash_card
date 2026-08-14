@@ -1,4 +1,4 @@
-import { CardStatus, ListeningStudyResult, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
+import { CardStatus, LearnDirection, ListeningStudyResult, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 
 export function formatDate(value?: string) {
   if (!value) return "Chưa học";
@@ -81,7 +81,7 @@ export function levenshtein(a: string, b: string) {
   return matrix[left.length][right.length];
 }
 
-export function createResult(setId: string, mode: VocabularyStudyMode, total: number, correct: number, wrongCardIds: string[] = []): StudyResult {
+export function createResult(setId: string, mode: VocabularyStudyMode, total: number, correct: number, wrongCardIds: string[] = [], direction?: LearnDirection): StudyResult {
   return {
     id: crypto.randomUUID(),
     setId,
@@ -92,6 +92,7 @@ export function createResult(setId: string, mode: VocabularyStudyMode, total: nu
     accuracy: percent(correct, total),
     studiedAt: new Date().toISOString(),
     wrongCardIds: [...new Set(wrongCardIds)],
+    direction,
   };
 }
 
