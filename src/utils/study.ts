@@ -14,11 +14,15 @@ export function getSetProgress(set: VocabularySet) {
   return percent(set.cards.filter((card) => card.status === "mastered").length, set.cards.length);
 }
 
+function isPerfectResult(r: { totalQuestions: number; correctAnswers: number }) {
+  return r.totalQuestions > 0 && r.correctAnswers === r.totalQuestions;
+}
+
 export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): boolean {
   if (!set.cards.length) return false;
   const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);
-  const learnPerfect = (direction: LearnDirection) => relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && r.accuracy === 100);
-  const writePerfect = relevant.some((r) => r.mode === "write" && r.accuracy === 100);
+  const learnPerfect = (direction: LearnDirection) => relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && isPerfectResult(r));
+  const writePerfect = relevant.some((r) => r.mode === "write" && isPerfectResult(r));
   return LEARN_DIRECTIONS.every(learnPerfect) && writePerfect;
 }
 
