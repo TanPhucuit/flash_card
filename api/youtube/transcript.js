@@ -150,6 +150,24 @@ function hasNaturalEnding(text) {
   return /[.;!?]["'”’)]*$/u.test(text.trim());
 }
 
+function countWords(text) {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+// Captions with real punctuation split cleanly on sentence boundaries. Many
+// auto-generated (ASR) tracks have none at all, so without a safety net a
+// continuously-narrated video with no long pauses never finds a natural
+// ending and the whole video collapses into a single giant "cue". These caps
+// force a break at the nearest already-existing chunk boundary (never mid
+// raw-cue) once a segment has grown long enough to read like a full
+// sentence, and a smaller pause is treated as a soft boundary once the
+// buffered text is already substantial.
+const MAX_SEGMENT_WORDS = 16;
+const MAX_SEGMENT_SECONDS = 9;
+const SOFT_PAUSE_SECONDS = 0.6;
+const SOFT_PAUSE_MIN_WORDS = 6;
+const HARD_PAUSE_SECONDS = 1.5;
+
 export function mergeTranscriptCues(inputCues) {
   const cues = [...inputCues]
     .sort((left, right) => left.startSeconds - right.startSeconds)
@@ -186,7 +204,11 @@ export function mergeTranscriptCues(inputCues) {
       const wordsThroughPart = cue.text.slice(0, part.endIndex).trim().split(/\s+/).filter(Boolean).length;
       const partStart = cue.startSeconds + duration * (wordsBefore / Math.max(totalWords, 1));
       const partEnd = cue.startSeconds + duration * (wordsThroughPart / Math.max(totalWords, 1));
-      if (buffer && previousEnd !== null && partStart - previousEnd >= 1.5) flush();
+      if (buffer && previousEnd !== null) {
+        const gap = partStart - previousEnd;
+        const bufferedWords = countWords(buffer.text);
+        if (gap >= HARD_PAUSE_SECONDS || (gap >= SOFT_PAUSE_SECONDS && bufferedWords >= SOFT_PAUSE_MIN_WORDS)) flush();
+      }
       if (!buffer) {
         buffer = { text: part.text, startSeconds: partStart, endSeconds: partEnd };
       } else {
@@ -194,7 +216,11 @@ export function mergeTranscriptCues(inputCues) {
         buffer.endSeconds = partEnd;
       }
       previousEnd = partEnd;
-      if (hasNaturalEnding(part.text)) flush();
+      if (hasNaturalEnding(part.text)) {
+        flush();
+        continue;
+      }
+      if (buffer && (countWords(buffer.text) >= MAX_SEGMENT_WORDS || buffer.endSeconds - buffer.startSeconds >= MAX_SEGMENT_SECONDS)) flush();
     }
   }
   flush();

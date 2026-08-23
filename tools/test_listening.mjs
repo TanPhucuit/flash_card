@@ -99,6 +99,26 @@ const shortCueGrouping = mergeTranscriptCues([
 assert.equal(shortCueGrouping[0].text, "You have big dreams. You can see yourself succeeding.");
 assert.equal(shortCueGrouping[0].endSeconds <= shortCueGrouping[1].startSeconds, true);
 
+// Auto-generated (ASR) captions often carry no punctuation at all. Without a
+// length-based safety net, a continuously-narrated video with only small
+// gaps between raw caption chunks never finds a natural sentence ending and
+// the whole video collapses into a single giant cue.
+const words = "the quick brown fox jumps over the lazy dog and then runs away very fast into the deep dark forest without stopping once".split(" ");
+const noPunctuationRawCues = words.map((word, index) => ({
+  id: `raw-${index}`,
+  startSeconds: index * 0.4,
+  endSeconds: index * 0.4 + 0.4,
+  text: word,
+}));
+const noPunctuationCues = mergeTranscriptCues(noPunctuationRawCues);
+assert.ok(noPunctuationCues.length > 1, "punctuation-less transcript must still split into multiple segments");
+for (const cue of noPunctuationCues) {
+  const cueWordCount = cue.text.split(/\s+/).filter(Boolean).length;
+  assert.ok(cueWordCount <= 16, `segment "${cue.text}" has ${cueWordCount} words, expected <= 16`);
+  assert.ok(cue.endSeconds - cue.startSeconds <= 9.5, `segment "${cue.text}" spans ${(cue.endSeconds - cue.startSeconds).toFixed(1)}s, expected <= 9.5s`);
+}
+assert.equal(noPunctuationCues.map((cue) => cue.text).join(" "), words.join(" "));
+
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;
 assert.deepEqual(listeningRows[0], ["listen-1", "", "listening", "", "", "", 82, "2026-07-15T00:00:00.000Z", "", ""]);
