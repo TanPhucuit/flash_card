@@ -288,11 +288,11 @@ export function parseXmlTimedText(xml) {
   return cues;
 }
 
-export function parsePublicTranscript(payload) {
-  const transcript = Array.isArray(payload?.transcript) ? payload.transcript : [];
-  const cues = transcript.flatMap((segment, index) => {
-    const startSeconds = Number(segment?.start);
-    const durationSeconds = Number(segment?.duration);
+export function parseSupadataTranscript(payload) {
+  const segments = Array.isArray(payload?.content) ? payload.content : [];
+  const cues = segments.flatMap((segment, index) => {
+    const startSeconds = Number(segment?.offset) / 1000;
+    const durationSeconds = Number(segment?.duration) / 1000;
     const text = cleanText(String(segment?.text ?? ""));
     if (!text || /^\s*[[(].*[\])]\s*$/.test(text) || !Number.isFinite(startSeconds) || !Number.isFinite(durationSeconds) || durationSeconds <= 0) return [];
     return [{
@@ -304,8 +304,8 @@ export function parsePublicTranscript(payload) {
   });
   return {
     cues: mergeTranscriptCues(cues),
-    language: String(payload?.language || payload?.language_code || "Unknown"),
-    languageCode: String(payload?.language_code || ""),
+    language: String(payload?.lang || "Unknown"),
+    languageCode: String(payload?.lang || ""),
   };
 }
 
@@ -359,15 +359,17 @@ async function fetchPlayerResponse(videoId, apiKey, source) {
   return JSON.parse(text);
 }
 
-async function fetchPublicTranscript(videoId) {
-  const response = await fetch(`https://api.youtubetotext.com/full_transcript/${encodeURIComponent(videoId)}?meta=true`, {
-    headers: { Accept: "application/json" },
+async function fetchSupadataTranscript(videoId) {
+  const apiKey = process.env.SUPADATA_API_KEY;
+  if (!apiKey) return null;
+  const response = await fetch(`https://api.supadata.ai/v1/youtube/transcript?videoId=${encodeURIComponent(videoId)}`, {
+    headers: { "x-api-key": apiKey, Accept: "application/json" },
     signal: AbortSignal.timeout(20000),
   });
   if (!response.ok) return null;
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) return null;
-  const parsed = parsePublicTranscript(await response.json());
+  const parsed = parseSupadataTranscript(await response.json());
   return parsed.cues.length ? parsed : null;
 }
 
@@ -378,8 +380,8 @@ export default async function handler(req, res) {
 
   try {
     try {
-      const publicTranscript = await fetchPublicTranscript(videoId);
-      if (publicTranscript) return sendJson(res, 200, publicTranscript);
+      const supadataTranscript = await fetchSupadataTranscript(videoId);
+      if (supadataTranscript) return sendJson(res, 200, supadataTranscript);
     } catch {
       // Fall back to direct YouTube extraction if the transcript provider is unavailable.
     }

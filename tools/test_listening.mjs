@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { appDataToRows, rowsToAppData } from "../api/_googleSheets.js";
 import { parseTranslation } from "../api/translate.js";
-import { mergeTranscriptCues, parsePlayerResponse, parsePublicTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
+import { mergeTranscriptCues, parsePlayerResponse, parseSupadataTranscript, parseTimedText, parseXmlTimedText, parseYouTubeConfig, rankCaptionTracks, selectCaptionTrack } from "../api/youtube/transcript.js";
 import { extractYouTubeVideoId, isListeningAnswerCorrect, normalizeListeningAnswer, parseSubtitles } from "../src/utils/listening.ts";
 
 const srt = `\uFEFF1
@@ -73,10 +73,10 @@ assert.deepEqual(parseTimedText({ events: [
 assert.deepEqual(parseXmlTimedText('<?xml version="1.0"?><transcript><text start="1.5" dur="2">Tom &amp; Jerry</text></transcript>'), [
   { id: "cue-1-1500", startSeconds: 1.5, endSeconds: 3.5, text: "Tom & Jerry" },
 ]);
-assert.deepEqual(parsePublicTranscript({ language: "English", language_code: "en", transcript: [
-  { start: 1.25, duration: 2.5, text: "Hello\u00a0 world" },
+assert.deepEqual(parseSupadataTranscript({ lang: "en", content: [
+  { offset: 1250, duration: 2500, text: "Hello\u00a0 world", lang: "en" },
 ] }), {
-  language: "English",
+  language: "en",
   languageCode: "en",
   cues: [{ id: "cue-1-1250", startSeconds: 1.25, endSeconds: 3.75, text: "Hello world" }],
 });
@@ -101,7 +101,7 @@ assert.equal(shortCueGrouping[0].endSeconds <= shortCueGrouping[1].startSeconds,
 
 const listeningResult = { id: "listen-1", mode: "listening", accuracy: 82, studiedAt: "2026-07-15T00:00:00.000Z" };
 const listeningRows = appDataToRows({ sets: [], results: [listeningResult] }).resultRows;
-assert.deepEqual(listeningRows[0], ["listen-1", "", "listening", "", "", "", 82, "2026-07-15T00:00:00.000Z", ""]);
+assert.deepEqual(listeningRows[0], ["listen-1", "", "listening", "", "", "", 82, "2026-07-15T00:00:00.000Z", "", ""]);
 const listeningRoundTrip = rowsToAppData({ sets: [], cards: [], results: listeningRows }).results[0];
 assert.deepEqual(Object.keys(listeningRoundTrip).sort(), ["accuracy", "id", "mode", "studiedAt"]);
 
@@ -109,5 +109,12 @@ const legacyRows = [["legacy-1", "set-1", "test", 10, 8, 2, 80, "2026-07-14T00:0
 const legacyResult = rowsToAppData({ sets: [], cards: [], results: legacyRows }).results[0];
 assert.equal(legacyResult.setId, "set-1");
 assert.deepEqual(legacyResult.wrongCardIds, ["card-2"]);
+assert.equal(legacyResult.direction, undefined);
+
+const learnResult = { id: "learn-1", setId: "set-1", mode: "learn", totalQuestions: 3, correctAnswers: 3, wrongAnswers: 0, accuracy: 100, studiedAt: "2026-08-14T00:00:00.000Z", wrongCardIds: [], direction: "eng-eng" };
+const learnRows = appDataToRows({ sets: [], results: [learnResult] }).resultRows;
+assert.deepEqual(learnRows[0], ["learn-1", "set-1", "learn", 3, 3, 0, 100, "2026-08-14T00:00:00.000Z", "[]", "eng-eng"]);
+const learnRoundTrip = rowsToAppData({ sets: [], cards: [], results: learnRows }).results[0];
+assert.equal(learnRoundTrip.direction, "eng-eng");
 
 console.log("Listening parser, URL, grading and persistence tests: OK");
