@@ -18,6 +18,174 @@ const ANSWER_KEY_HEADER = /^\s*(?:ANSWER\s*KEY|ANSWERS|LISTENING\s+AND\s+READING
 const NUMBERED_LINE = /^\s*(\d{1,3})\s*[.)]?\s+(.*)$/;
 const OPTION_LINE = /^\s*([A-J])\s*[.)]?\s+(.+)$/;
 
+// --------------------------------------------------------------------------
+// Column-aware page reconstruction.
+//
+// pdfjs hands back text runs in reading order for ordinary prose, but a
+// multi-column answer-key table is typeset as several side-by-side columns
+// that all happen to share the same baselines — grouping purely by Y (as a
+// naive "line" builder does) concatenates column 1's, column 2's, column 3's
+// and column 4's text for that row into one interleaved, unparseable string
+// ("3 vii I1.YES 23. water 33.24-hour" is actually four separate answers:
+// Q3, Q11, Q23, Q33). The fix is to detect the columns and read each one top
+// to bottom on its own before moving to the next, which is the order a human
+// reading the table would use.
+export interface PageItem {
+  str: string;
+  x: number;
+  y: number;
+  hasEOL: boolean;
+}
+
+// Marks a hard boundary between "sections" of a page — different answer-key
+// blocks (one per day) sit on the very same page but use different column
+// counts and positions, so column detection has to be scoped to a single
+// section, never the whole page. Reusing the structural headers the rest of
+// this file already keys off of costs nothing extra and needs no new regexes.
+const SECTION_BREAK = new RegExp(
+  [PASSAGE_HEADER, TEST_HEADER, DAY_HEADER, QUESTIONS_HEADER, SINGLE_QUESTION_HEADER, ANSWER_KEY_HEADER]
+    .map((re) => re.source)
+    .join("|"),
+  "i",
+);
+
+interface Cell {
+  x: number;
+  y: number;
+  text: string;
+}
+
+/**
+ * Split a row's items into cells wherever consecutive items' x-starts jump
+ * by more than this many points. Real column gutters in these books measure
+ * 80–110pt; a wrapped word within one cell never jumps anywhere close to
+ * that. (Item.width was tried first and rejected — pdfjs/this OCR pipeline
+ * reports widths that pad out to whatever the next item's x already is,
+ * making width-based gaps read as ~0 even across a genuine column boundary.)
+ */
+const CELL_GAP = 45;
+// Column x-starts cluster tightly (a column's own text wanders at most a
+// couple of characters' worth); real columns sit far enough apart that this
+// is comfortably below the smallest true gutter and above normal jitter.
+const CLUSTER_GAP = 35;
+
+function splitRowIntoCells(row: PageItem[]): Cell[] {
+  const items = row.filter((item) => item.str.trim());
+  if (!items.length) return [];
+  const cells: Cell[] = [];
+  let start = 0;
+  for (let i = 1; i < items.length; i += 1) {
+    if (items[i].x - items[i - 1].x > CELL_GAP) {
+      cells.push(toCell(items.slice(start, i)));
+      start = i;
+    }
+  }
+  cells.push(toCell(items.slice(start)));
+  return cells;
+}
+
+function toCell(chunk: PageItem[]): Cell {
+  return { x: chunk[0].x, y: chunk[0].y, text: chunk.map((item) => item.str).join(" ").trim() };
+}
+
+function clusterByX(cells: Cell[]): Array<{ min: number; max: number }> {
+  const xs = Array.from(new Set(cells.map((cell) => Math.round(cell.x)))).sort((a, b) => a - b);
+  const clusters: number[][] = [];
+  let bucket: number[] = [xs[0]];
+  for (let i = 1; i < xs.length; i += 1) {
+    if (xs[i] - bucket[bucket.length - 1] > CLUSTER_GAP) {
+      clusters.push(bucket);
+      bucket = [];
+    }
+    bucket.push(xs[i]);
+  }
+  clusters.push(bucket);
+  return clusters.map((c) => ({ min: c[0], max: c[c.length - 1] }));
+}
+
+/** Reconstructs one section's worth of rows, column-major if it has more than one column. */
+function reconstructSection(rows: PageItem[][]): string[] {
+  const rowCells = rows.map(splitRowIntoCells);
+  const allCells = rowCells.flat();
+  if (!allCells.length) return [];
+
+  const ranges = clusterByX(allCells);
+  if (ranges.length === 1) {
+    // Single column: this is ordinary prose (or a table with only one column
+    // of content on this page) — emit rows in their natural top-to-bottom order.
+    return rowCells.map((cells) => cells.map((c) => c.text).join(" ").trim()).filter(Boolean);
+  }
+
+  const columnOf = (x: number) => {
+    let best = 0;
+    let bestDist = Infinity;
+    ranges.forEach((range, index) => {
+      const dist = x < range.min ? range.min - x : x > range.max ? x - range.max : 0;
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = index;
+      }
+    });
+    return best;
+  };
+
+  const perColumn: Cell[][] = ranges.map(() => []);
+  for (const cell of allCells) perColumn[columnOf(cell.x)].push(cell);
+  perColumn.forEach((column) => column.sort((a, b) => b.y - a.y));
+
+  return perColumn.flatMap((column) => column.map((cell) => cell.text));
+}
+
+/**
+ * Groups a page's items into visual rows (same logic readingPdfExtract.ts
+ * used to apply directly), then slices those rows into sections at every
+ * structural header and reconstructs each section independently. Exported
+ * so it can be exercised directly against a captured (str, x, y, hasEOL)
+ * dump — the same shape pdfjs text items reduce to — without needing pdfjs
+ * itself.
+ */
+export function reconstructPageLines(items: PageItem[]): string[] {
+  const rows: PageItem[][] = [];
+  let current: PageItem[] = [];
+  let currentY: number | null = null;
+  for (const item of items) {
+    const y = Math.round(item.y * 10) / 10;
+    if (currentY === null) currentY = y;
+    if (Math.abs(y - currentY) > 2.5) {
+      rows.push(current);
+      current = [];
+      currentY = y;
+    }
+    current.push(item);
+    if (item.hasEOL) {
+      rows.push(current);
+      current = [];
+      currentY = null;
+    }
+  }
+  if (current.length) rows.push(current);
+
+  const rowTexts = rows.map((row) => row.map((item) => item.str).join("").trim());
+
+  const sections: Array<{ header: string | null; rows: PageItem[][] }> = [];
+  let active: { header: string | null; rows: PageItem[][] } = { header: null, rows: [] };
+  rows.forEach((row, index) => {
+    const text = rowTexts[index];
+    if (text && SECTION_BREAK.test(text)) {
+      if (active.header !== null || active.rows.length) sections.push(active);
+      active = { header: text, rows: [] };
+      return;
+    }
+    active.rows.push(row);
+  });
+  if (active.header !== null || active.rows.length) sections.push(active);
+
+  return sections.flatMap((section) => {
+    const body = reconstructSection(section.rows);
+    return section.header !== null ? [section.header, ...body] : body;
+  });
+}
+
 /** Instruction wording maps to the actual IELTS question format. */
 function detectType(instruction: string): ReadingQuestionType {
   const text = instruction.toLowerCase();
@@ -41,6 +209,7 @@ interface RawGroup {
 function splitQuestionGroups(lines: string[]): RawGroup[] {
   const groups: RawGroup[] = [];
   let current: RawGroup | null = null;
+  let instructionLines = 0;
 
   for (const line of lines) {
     const range = line.match(QUESTIONS_HEADER);
@@ -50,13 +219,20 @@ function splitQuestionGroups(lines: string[]): RawGroup[] {
       const from = Number(range ? range[1] : single![1]);
       const to = Number(range ? range[2] : single![1]);
       current = { from, to, instruction: "", bodyLines: [] };
+      instructionLines = 0;
       continue;
     }
     if (!current) continue;
     // Everything before the first numbered question is the instruction for the
     // group — that is what tells us whether these are TRUE/FALSE, MCQ, gaps...
-    if (!current.bodyLines.length && !NUMBERED_LINE.test(line)) {
+    // Capped at a handful of lines: a summary-completion group numbers its
+    // blanks inline as "...result not only from (1)" rather than with a
+    // line-leading "1.", so NUMBERED_LINE never matches at all and, without
+    // a cap, every line of the summary would get swallowed as "instruction"
+    // and buildQuestions would never see any of it.
+    if (!current.bodyLines.length && !NUMBERED_LINE.test(line) && instructionLines < 6) {
       current.instruction += ` ${line}`;
+      instructionLines += 1;
       continue;
     }
     current.bodyLines.push(line);
@@ -93,6 +269,25 @@ function buildQuestions(groups: RawGroup[]): ReadingQuestion[] {
       }
       // A wrapped continuation of the current question's wording.
       if (line) active.prompt = `${active.prompt} ${line}`.trim();
+    }
+
+    // Summary-completion questions are frequently numbered inline, mid-
+    // sentence — "...result not only from (1) also from (2)..." — rather
+    // than as a line starting with "N.", so the loop above finds nothing.
+    // Scan the group's raw text for "(N)" markers instead; there is no
+    // per-blank wording to use as a prompt here, only its position in the
+    // summary, so the passage text itself is what the test-taker reads.
+    if (!groupQuestions.length) {
+      const joined = group.bodyLines.join(" ");
+      const seen = new Set<number>();
+      for (const match of joined.matchAll(/\((\d{1,3})\)/g)) {
+        const number = Number(match[1]);
+        if (number < group.from || number > group.to || seen.has(number) || questions.some((q) => q.number === number)) continue;
+        seen.add(number);
+        const question: ReadingQuestion = { id: uid(), number, type, prompt: `Gap ${number} in the summary below`, answer: "" };
+        questions.push(question);
+        groupQuestions.push(question);
+      }
     }
 
     // A group whose prompts are just "Paragraph A", "Paragraph B", ... is a
@@ -139,17 +334,25 @@ function isPlausibleAnswer(type: ReadingQuestionType, answer: string, passageTex
 interface AnswerPair {
   number: number;
   answer: string;
+  /** The "Day N"/"Test N" heading last seen before this pair, "" if none. */
+  label: string;
 }
 
 /**
- * Read every "<number> <answer>" pair out of the key, in the order printed.
- * Answers are matched to questions by number within a bounded look-ahead
- * window (see the assignment loop below) rather than by any "Day N"/"Test N"
- * grouping — that was tried and measured worse, since those same headings
- * are themselves corrupted by running-header OCR noise on scanned books.
+ * Read every "<number> <answer>" pair out of the key, in the order printed,
+ * tagging each with whichever "Day N"/"Test N" heading precedes it. The label
+ * is not used to gate matching directly — several passages in the same book
+ * share the same question shape (a heading-matching set numbered 1, 2, 3...)
+ * and can produce an equally "plausible" run of matches from a completely
+ * different day's key block, so a match search restricted to the wrong scope
+ * has no way to tell it borrowed the wrong day's answers. The label is used
+ * as a tie-breaker instead (see the assignment loop below): among several
+ * candidate starting points that match equally well, prefer the one that
+ * actually sits in this passage's own day.
  */
 function parseAnswerPairs(lines: string[]): AnswerPair[] {
   const pairs: AnswerPair[] = [];
+  let label = "";
   // Matches "1 TRUE", "12 B", "3 not given", and several packed onto one line
   // from a multi-column key table. The answer body is "any character, non-
   // greedy" rather than "no digits" — a numeric-looking answer like "24-hour"
@@ -178,7 +381,12 @@ function parseAnswerPairs(lines: string[]): AnswerPair[] {
   }
 
   for (const rawLine of merged) {
-    if (!rawLine || ANSWER_KEY_HEADER.test(rawLine)) continue;
+    if (!rawLine) continue;
+    const test = rawLine.match(TEST_HEADER);
+    if (test) label = `Test ${test[1]}`;
+    const day = rawLine.match(DAY_HEADER);
+    if (day) label = `Day ${day[1]}`;
+    if (ANSWER_KEY_HEADER.test(rawLine)) continue;
     // Two very common OCR misreads in this position: a capital "I" or "O"
     // immediately before a digit almost always means "1" or "0" — e.g. "I1"
     // for the question number "11". Real roman-numeral answers in these books
@@ -190,7 +398,7 @@ function parseAnswerPairs(lines: string[]): AnswerPair[] {
     while ((match = packed.exec(line))) {
       const answer = match[2].trim().replace(/\s+/g, " ");
       if (!answer) continue;
-      pairs.push({ number: Number(match[1]), answer });
+      pairs.push({ number: Number(match[1]), answer, label });
     }
   }
   return pairs;
@@ -263,43 +471,72 @@ export function parseReadingBook(lines: string[], fileName: string, bookTitle: s
     });
   });
 
-  // Match each question to the next key entry carrying its own number,
-  // within a bounded look-ahead window of the current cursor. This is
-  // deliberately NOT a blind positional fallback: if a passage elsewhere in
-  // the book failed question-detection (its "Questions N-M" header was too
-  // OCR-garbled to match), the key still holds that passage's answers, and
-  // consuming them positionally for a later passage would silently attach
-  // the wrong answer to every question after that point. Requiring an exact
-  // number match means a gap in detection produces a gap in answers instead
-  // of a book's worth of misattributed ones.
+  // Match each passage's questions against the key independently, rather
+  // than walking one cursor forward across the whole book. A single shared
+  // cursor means a detection gap in ANY earlier passage (a garbled
+  // "Questions N-M" header, a summary whose blanks never resolved) leaves
+  // every passage after it searching from the wrong starting point — verified
+  // directly: recovering more passages elsewhere in this book raised total
+  // detected questions but *lowered* total correct matches, because passages
+  // that used to match perfectly on their own were being derailed by
+  // unrelated gaps upstream of them.
   //
-  // Grouping this search by each passage's own "Day N"/"Test N" label was
-  // tried and measured worse in practice: on heavily-OCR'd scans those
-  // labels are themselves corrupted by running headers/footers bleeding in
-  // from neighbouring pages, so trusting them to gate the search discarded
-  // more correct matches than the mislabelling it was meant to prevent.
-  const WINDOW = 60;
-  let cursor = 0;
-  for (const passage of passages) {
-    for (const question of passage.questions) {
-      const searchEnd = Math.min(answerPairs.length, cursor + WINDOW);
-      let found = -1;
-      for (let i = cursor; i < searchEnd; i += 1) {
-        // A number match on its own isn't enough evidence: footer text like
-        // "www.nhantriviet.com" or a stray book title fragment can land on
-        // the same row as a real "N. answer" pair and get regex-matched as
-        // if it were one. Rejecting an implausible shape means that number
-        // stays unanswered instead of teaching the student a fake answer.
-        if (answerPairs[i].number === question.number && isPlausibleAnswer(question.type, answerPairs[i].answer, passage.text)) {
-          found = i;
-          break;
+  // Instead, for each passage, try every place in the key where its own
+  // FIRST question's number appears, walk forward from each candidate
+  // matching as many of the rest of its questions as line up with plausible
+  // answers, and keep whichever starting point matched the most questions.
+  // This localises a bad match to the one passage that picked a wrong
+  // anchor — it can never cascade into passages that would otherwise be fine.
+  const PER_PASSAGE_WINDOW = 20;
+
+  const bestRunFrom = (anchors: number[], passage: ReadingPassage) => {
+    let best: Array<{ question: ReadingQuestion; index: number }> = [];
+    for (const anchor of anchors) {
+      const matches: Array<{ question: ReadingQuestion; index: number }> = [];
+      let cursor = anchor;
+      for (const question of passage.questions) {
+        const searchEnd = Math.min(answerPairs.length, cursor + PER_PASSAGE_WINDOW);
+        let found = -1;
+        for (let i = cursor; i < searchEnd; i += 1) {
+          if (answerPairs[i].number === question.number && isPlausibleAnswer(question.type, answerPairs[i].answer, passage.text)) {
+            found = i;
+            break;
+          }
+        }
+        if (found >= 0) {
+          matches.push({ question, index: found });
+          cursor = found + 1;
         }
       }
-      if (found >= 0) {
-        question.answer = answerPairs[found].answer;
-        cursor = found + 1;
-      }
+      if (matches.length > best.length) best = matches;
     }
+    return best;
+  };
+
+  for (const passage of passages) {
+    const first = passage.questions[0];
+    if (!first) continue;
+
+    const label = passage.title.match(/^(Day \d+|Test \d+)/)?.[1] ?? "";
+    const allAnchors: number[] = [];
+    const sameLabelAnchors: number[] = [];
+    answerPairs.forEach((pair, index) => {
+      if (pair.number !== first.number) return;
+      allAnchors.push(index);
+      if (label && pair.label === label) sameLabelAnchors.push(index);
+    });
+
+    // Several passages in this book share the same question shape (a
+    // heading-matching set starting at 1, say), so a run of plausible
+    // matches on its own is not proof they belong to THIS passage — it may
+    // just as easily be borrowing a different day's key block that happens
+    // to fit the same pattern. Prefer any candidate that actually sits in
+    // this passage's own day; only search the whole key if that comes up
+    // empty (an undetected day label on one side or the other).
+    const scoped = bestRunFrom(sameLabelAnchors, passage);
+    const best = scoped.length ? scoped : bestRunFrom(allAnchors, passage);
+
+    for (const { question, index } of best) question.answer = answerPairs[index].answer;
   }
 
   const book: ReadingBook = {
