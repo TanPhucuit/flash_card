@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/ui";
 import { useAppData } from "./hooks/useAppData";
+import { useReadingData } from "./hooks/useReadingData";
 import { DemoPage } from "./pages/DemoPage";
 import { ListeningTestPage } from "./pages/ListeningTestPage";
+import { ReadingLibraryPage, ReadingTestPage } from "./pages/ReadingPages";
 import {
   CreateEditSetPage,
   DashboardPage,
@@ -21,8 +23,11 @@ import {
 
 export type DataApi = ReturnType<typeof useAppData>;
 
+export type ReadingDataApi = ReturnType<typeof useReadingData>;
+
 export default function App() {
   const api = useAppData();
+  const reading = useReadingData();
   const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 767px)").matches);
 
   useEffect(() => {
@@ -36,14 +41,22 @@ export default function App() {
   return (
     <Routes>
       <Route path="/demo" element={<DemoPage />} />
-      <Route path="*" element={<AuthenticatedApp api={api} isMobile={isMobile} />} />
+      <Route path="*" element={<AuthenticatedApp api={api} reading={reading} isMobile={isMobile} />} />
     </Routes>
   );
 }
 
-function AuthenticatedApp({ api, isMobile }: { api: DataApi; isMobile: boolean }) {
+function AuthenticatedApp({ api, reading, isMobile }: { api: DataApi; reading: ReadingDataApi; isMobile: boolean }) {
   if (isMobile) {
-    return <MobileAppPage api={api} />;
+    // Reading is a split-pane exam layout that needs the desktop chrome, so on
+    // phones it stays reachable by URL but is not part of the mobile shell.
+    return (
+      <Routes>
+        <Route path="/reading" element={<AppLayout><ReadingLibraryPage api={reading} /></AppLayout>} />
+        <Route path="/reading/:bookId/:passageId" element={<AppLayout><ReadingTestPage api={reading} /></AppLayout>} />
+        <Route path="*" element={<MobileAppPage api={api} />} />
+      </Routes>
+    );
   }
 
   return (
@@ -52,6 +65,8 @@ function AuthenticatedApp({ api, isMobile }: { api: DataApi; isMobile: boolean }
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<DashboardPage api={api} />} />
         <Route path="/sets" element={<MySetsPage api={api} />} />
+        <Route path="/reading" element={<ReadingLibraryPage api={reading} />} />
+        <Route path="/reading/:bookId/:passageId" element={<ReadingTestPage api={reading} />} />
         <Route path="/listening-test" element={<ListeningTestPage api={api} />} />
         <Route path="/study/multi/learn" element={<MultiSetLearnPage api={api} />} />
         <Route path="/sets/new" element={<CreateEditSetPage api={api} />} />

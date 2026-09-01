@@ -62,6 +62,7 @@ export function EmptyState({ title, text, action }: { title: string; text: strin
 const nav = [
   ["Dashboard", "/dashboard", "dashboard"],
   ["My Sets", "/sets", "library_books"],
+  ["Reading", "/reading", "menu_book"],
   ["Listening Test", "/listening-test", "headphones"],
   ["Progress", "/progress", "leaderboard"],
   ["Settings", "/settings", "settings"],
@@ -96,7 +97,13 @@ export function AppLayout({ children }: { children: ReactNode }) {
         <main className="flex-1 overflow-x-hidden bg-pattern px-container-margin pb-28 pt-lg md:px-xl md:pb-xl md:pt-xl">
           {children}
         </main>
-        <nav className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-4 border-t border-surface-variant bg-surface-bright/95 px-sm py-sm backdrop-blur dark:border-white/10 dark:bg-[#202324]/95 md:hidden">
+        {/* Column count is derived from `nav` rather than hard-coded: it was
+            pinned at 4 while the list already held 5 entries, which wrapped the
+            last tab onto its own row. */}
+        <nav
+          className="fixed bottom-0 left-0 right-0 z-40 grid border-t border-surface-variant bg-surface-bright/95 px-sm py-sm backdrop-blur dark:border-white/10 dark:bg-[#202324]/95 md:hidden"
+          style={{ gridTemplateColumns: `repeat(${nav.length}, minmax(0, 1fr))` }}
+        >
           {nav.map(([label, to, icon]) => (
             <NavLink key={to} to={to} className={({ isActive }) => `flex flex-col items-center justify-center gap-xs rounded-xl px-xs py-sm text-[11px] font-semibold transition ${isActive ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/65"}`}>
               <Icon name={icon} className="text-[22px]" />

@@ -1,0 +1,81 @@
+// Types for the IELTS Reading practice feature: a PDF book is parsed into
+// passages, each passage carries its own question set, and every sitting is
+// recorded as an attempt so daily/weekly volume can be reported.
+
+// The question shapes an IELTS reading paper actually uses. `gap` covers
+// sentence/summary/table completion (all "write a word from the passage"),
+// `short` covers short-answer questions. They score identically but are kept
+// apart so the UI can label them the way the exam does.
+export type ReadingQuestionType = "tfng" | "ynng" | "mcq" | "gap" | "short" | "matching";
+
+export interface ReadingQuestion {
+  id: string;
+  /** Question number as printed in the book — the key answers are matched on. */
+  number: number;
+  type: ReadingQuestionType;
+  prompt: string;
+  /** Present for `mcq` and `matching`; the letters/labels the taker picks from. */
+  options?: string[];
+  /**
+   * The correct answer from the book's key. Empty string means the key had no
+   * entry for this number — the question is then shown but excluded from
+   * scoring rather than silently marked wrong.
+   */
+  answer: string;
+}
+
+export interface ReadingPassage {
+  id: string;
+  order: number;
+  title: string;
+  /** Full passage body, paragraphs separated by blank lines. */
+  text: string;
+  questions: ReadingQuestion[];
+}
+
+export interface ReadingBook {
+  id: string;
+  title: string;
+  sourceFileName: string;
+  createdAt: string;
+  passages: ReadingPassage[];
+  /** Task id of the book node created in Life Management, once synced. */
+  lifeManagementTaskId?: string;
+}
+
+export interface ReadingAttempt {
+  id: string;
+  bookId: string;
+  bookTitle: string;
+  passageId: string;
+  passageTitle: string;
+  startedAt: string;
+  finishedAt: string;
+  durationSec: number;
+  /** Keyed by question id. */
+  answers: Record<string, string>;
+  correct: number;
+  /** Only counts questions that had an answer in the book's key. */
+  total: number;
+  /** Local YYYY-MM-DD, so "today" means the user's day, not UTC's. */
+  dateKey: string;
+}
+
+/**
+ * Where to mirror books as task nodes. Everything but `baseUrl` is discovered
+ * once and rarely changes; `baseUrl` is per-deployment so it has to be entered.
+ */
+export interface LifeManagementConfig {
+  baseUrl: string;
+  userId: string;
+  topicId: string;
+  /** The READING task the book nodes are attached under. */
+  readingTaskId: string;
+  enabled: boolean;
+}
+
+export interface ReadingData {
+  books: ReadingBook[];
+  attempts: ReadingAttempt[];
+  lifeManagement: LifeManagementConfig;
+}
