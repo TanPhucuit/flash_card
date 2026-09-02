@@ -4,6 +4,7 @@ import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar } from ".
 import { ReadingApi } from "../hooks/useReadingData";
 import { LifeManagementConfig, ReadingAttempt, ReadingPassage, ReadingQuestion } from "../types/reading";
 import { ParsedBookPreview, isAnswerCorrect, parseReadingBook } from "../utils/readingPdf";
+import { VerifiedApplyReport, applyVerifiedAnswers } from "../utils/verifiedAnswers";
 import { extractPdfLines } from "../utils/readingPdfExtract";
 import { syncBookToLifeManagement } from "../utils/lifeManagementSync";
 import { toDateKey } from "../utils/readingStorage";
@@ -174,6 +175,7 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [preview, setPreview] = useState<ParsedBookPreview | null>(null);
+  const [verified, setVerified] = useState<VerifiedApplyReport | null>(null);
   const [error, setError] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -181,11 +183,21 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
     setBusy(true);
     setError("");
     setPreview(null);
+    setVerified(null);
     try {
       setStatus("Đang đọc PDF...");
       const lines = await extractPdfLines(file, (page, total) => setStatus(`Đang đọc trang ${page}/${total}...`));
       setStatus("Đang nhận diện bài đọc và đáp án...");
       const parsed = parseReadingBook(lines, file.name, title);
+      // Nếu có bảng đáp án đã kiểm chứng cho cuốn này thì nó thắng đáp án OCR
+      // đoán được — xem src/data/answerKeys.ts.
+      setVerified(applyVerifiedAnswers(parsed.book));
+      parsed.report = parsed.book.passages.map((passage) => ({
+        passageTitle: passage.title,
+        questionCount: passage.questions.length,
+        answeredCount: passage.questions.filter((question) => question.answer).length,
+        wordCount: passage.text.split(/\s+/).filter(Boolean).length,
+      }));
       if (!parsed.book.passages.length) {
         setError("Không tìm thấy bài đọc nào. File cần có tiêu đề dạng 'READING PASSAGE 1' và phần 'Answer key' ở cuối sách.");
       }
@@ -246,8 +258,20 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
       {preview && preview.book.passages.length ? (
         <div className="mt-md">
           <p className="mb-sm text-sm font-semibold">
-            Nhận diện được {preview.book.passages.length} bài đọc · {preview.answerPairsFound} đáp án trong bảng key
+            Nhận diện được {preview.book.passages.length} bài đọc
+            {verified
+              ? ` · ${verified.filledAnswers} đáp án lấy từ bảng đã kiểm chứng`
+              : ` · ${preview.answerPairsFound} đáp án dò từ bảng key trong PDF`}
           </p>
+          {verified ? (
+            <p className="mb-sm text-xs text-on-surface-variant">
+              Đáp án của "{verified.bookTitle}" được chép tay và đối chiếu độc lập, không dùng OCR —
+              khớp {verified.matchedPassages}/{preview.book.passages.length} bài đọc.
+              {verified.unmatchedPassages.length
+                ? ` ${verified.unmatchedPassages.length} bài chưa khớp tên nên giữ đáp án dò tự động.`
+                : ""}
+            </p>
+          ) : null}
           <div className="max-h-64 overflow-y-auto rounded-xl border border-surface-variant dark:border-white/10">
             {preview.report.map((row, index) => (
               <div key={index} className="flex items-center justify-between gap-md border-b border-surface-variant px-md py-sm last:border-b-0 dark:border-white/10">

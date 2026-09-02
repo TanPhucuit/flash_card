@@ -21,7 +21,19 @@ export function useReadingData() {
   const api = useMemo(
     () => ({
       addBook(book: ReadingBook) {
-        setData((current) => ({ ...current, books: [book, ...current.books] }));
+        // Import lại cùng một cuốn sẽ THAY THẾ bản cũ chứ không thêm bản thứ
+        // hai. Trước đây mỗi lần nhập lại (ví dụ sau khi sửa bảng đáp án) lại
+        // sinh ra một cuốn trùng tên với đáp án sai nằm cạnh cuốn đúng, không
+        // có cách nào phân biệt trong danh sách.
+        const sameBook = (item: ReadingBook) =>
+          item.title.trim().toLowerCase() === book.title.trim().toLowerCase();
+        setData((current) => ({
+          ...current,
+          books: [book, ...current.books.filter((item) => !sameBook(item))],
+          attempts: current.attempts.filter(
+            (attempt) => !current.books.some((item) => sameBook(item) && item.id === attempt.bookId),
+          ),
+        }));
       },
       deleteBook(bookId: string) {
         setData((current) => ({
