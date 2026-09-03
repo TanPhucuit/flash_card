@@ -5,19 +5,20 @@ export default async function handler(req, res) {
   try {
     await ensureSchema();
     const data = req.body && typeof req.body === "object" ? req.body : JSON.parse(req.body || "{}");
-    const { setRows, cardRows, resultRows } = appDataToRows(data);
+    const { setRows, cardRows, resultRows, listRows } = appDataToRows(data);
 
-    await sheetsRequest("POST", "/values:batchClear", { ranges: ["sets!A2:G", "cards!A2:R", "results!A2:J"] });
+    await sheetsRequest("POST", "/values:batchClear", { ranges: ["sets!A2:H", "cards!A2:R", "results!A2:J", "lists!A2:C"] });
     await sheetsRequest("POST", "/values:batchUpdate", {
       valueInputOption: "RAW",
       data: [
-        { range: "sets!A2:G", values: setRows },
+        { range: "sets!A2:H", values: setRows },
         { range: "cards!A2:R", values: cardRows },
         { range: "results!A2:J", values: resultRows },
+        { range: "lists!A2:C", values: listRows },
       ],
     });
 
-    return sendJson(res, 200, { ok: true, sets: setRows.length, cards: cardRows.length, results: resultRows.length });
+    return sendJson(res, 200, { ok: true, sets: setRows.length, cards: cardRows.length, results: resultRows.length, lists: listRows.length });
   } catch (error) {
     console.error(error);
     return sendJson(res, 500, { error: "Cannot save Google Sheet data" });

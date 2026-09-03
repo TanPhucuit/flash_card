@@ -33,6 +33,19 @@ export interface VocabularySet {
   createdAt: string;
   updatedAt: string;
   lastStudiedAt?: string;
+  /** Danh sách (thư mục) chứa set này — xem src/utils/setLists.ts. */
+  listId?: string;
+}
+
+/**
+ * Một "danh sách" là một nhóm các set, ví dụ "c1_c2" hay "15_day_practice".
+ * Đây thuần là một cách gom nhóm để duyệt — không ảnh hưởng gì tới nội dung
+ * hay tiến độ học của set bên trong.
+ */
+export interface VocabularySetList {
+  id: string;
+  title: string;
+  createdAt: string;
 }
 
 export interface VocabularyStudyResult {
@@ -67,4 +80,5 @@ export interface AppData {
   results: StudyResult[];
   settings: AppSettings;
   matchBestTimes: Record<string, number>;
+  lists: VocabularySetList[];
 }

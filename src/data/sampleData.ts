@@ -54,6 +54,7 @@ export const initialData: AppData = {
   sets: [sampleSet],
   results: [],
   matchBestTimes: {},
+  lists: [],
   settings: {
     theme: "light",
     voiceURI: "",

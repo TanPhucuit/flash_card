@@ -8,6 +8,7 @@ function emptyAppData(): AppData {
     sets: [],
     results: [],
     matchBestTimes: {},
+    lists: [],
     settings: {
       theme: "light",
       voiceURI: "",
@@ -20,6 +21,7 @@ function normalizeAppData(parsed: Partial<AppData>): AppData {
     sets: parsed.sets ?? [],
     results: parsed.results ?? [],
     matchBestTimes: parsed.matchBestTimes ?? {},
+    lists: parsed.lists ?? [],
     settings: {
       theme: parsed.settings?.theme ?? "light",
       voiceURI: parsed.settings?.voiceURI ?? "",

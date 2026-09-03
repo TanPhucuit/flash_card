@@ -11,8 +11,18 @@ import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../uti
  * nguồn ở cuối. Tải bằng fetch chứ không nhúng vào bundle: 440KB chữ không nên
  * nằm trong file JS mà mọi trang đều phải tải.
  */
-const BUILTIN_LIBRARY_ID = "open-reading-library-v1";
+// Bump khi NỘI DUNG thư viện thay đổi đáng kể (không chỉ khi sửa lỗi vặt) —
+// đây là cách duy nhất để máy ĐÃ từng nạp thư viện tải lại bản mới, vì logic
+// bên dưới cố tình chỉ nạp một lần cho mỗi id. Từng có đợt sửa lại toàn bộ 52
+// bài (chấm giám khảo, sửa câu hỏi) nhưng người dùng đã mở trang từ trước đó
+// vẫn kẹt ở bản cũ vì id không đổi — họ không bao giờ được nạp lại.
+const BUILTIN_LIBRARY_VERSION = 2;
+const BUILTIN_LIBRARY_ID = `open-reading-library-v${BUILTIN_LIBRARY_VERSION}`;
 const BUILTIN_LIBRARY_URL = "/reading-library.json";
+// Nhận diện MỌI phiên bản cũ của thư viện này để thay thế sạch khi nạp bản
+// mới — nếu chỉ so id chính xác, bump version ở trên sẽ để lại một cuốn cũ
+// nằm lại vĩnh viễn cạnh cuốn mới thay vì được thay thế.
+const isBuiltinLibraryBook = (id: string) => /^open-reading-library-v\d+$/.test(id);
 
 export function useReadingData() {
   const [data, setReactData] = useState<ReadingData>(() => loadReadingData());
@@ -45,7 +55,7 @@ export function useReadingData() {
         if (!library?.passages?.length) return;
         setData((current) => ({
           ...current,
-          books: [library, ...current.books.filter((book) => book.id !== library.id)],
+          books: [library, ...current.books.filter((book) => !isBuiltinLibraryBook(book.id))],
           seededLibraries: [...(current.seededLibraries ?? []), BUILTIN_LIBRARY_ID],
         }));
       })

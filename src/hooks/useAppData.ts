@@ -3,12 +3,21 @@ import { AppData, VocabularySet } from "../types";
 import { loadAppData, saveAppData } from "../utils/storage";
 import { loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
 import { syncStarSets } from "../utils/starSets";
+import { syncSetLists } from "../utils/setLists";
+
+// Cả hai đường đồng bộ luôn chạy CÙNG NHAU và theo ĐÚNG THỨ TỰ này: star sets
+// có thể tạo/xoá set (star-set mới hoặc rỗng đi), nên danh sách phải được
+// đồng bộ SAU, dựa trên tập set đã ổn định — nếu đảo ngược, một set sao vừa
+// sinh ra ở lượt này sẽ chưa có listId cho tới tận lượt gọi kế tiếp.
+function syncDerivedData(data: AppData): AppData {
+  return syncSetLists(syncStarSets(data));
+}
 
 export function useAppData() {
   // Đồng bộ ngay từ dữ liệu đọc lên: cache có thể được ghi từ một bản cũ chưa
-  // có tính năng này, hoặc từ một máy khác, nên các set sao phải được dựng lại
-  // theo đúng cờ sao hiện có thay vì tin vào những gì đã lưu.
-  const [data, setReactData] = useState<AppData>(() => syncStarSets(loadAppData()));
+  // có tính năng này, hoặc từ một máy khác, nên các set sao và danh sách phải
+  // được dựng lại theo đúng dữ liệu hiện có thay vì tin vào những gì đã lưu.
+  const [data, setReactData] = useState<AppData>(() => syncDerivedData(loadAppData()));
   const dataRef = useRef(data);
   const cloudSaveTimer = useRef<number | undefined>(undefined);
   const [syncState, setSyncState] = useState<"idle" | "loading" | "saving" | "error">("idle");
@@ -24,7 +33,7 @@ export function useAppData() {
     setSyncState("loading");
     loadFromGoogleSheet(controller.signal)
       .then((cloudData) => {
-        const synced = syncStarSets(cloudData);
+        const synced = syncDerivedData(cloudData);
         dataRef.current = synced;
         saveAppData(synced);
         setReactData(synced);
@@ -60,9 +69,10 @@ export function useAppData() {
   const setData = useCallback<Dispatch<SetStateAction<AppData>>>((nextOrUpdater) => {
     const current = dataRef.current;
     const updated = typeof nextOrUpdater === "function" ? (nextOrUpdater as (current: AppData) => AppData)(current) : nextOrUpdater;
-    // Danh sách từ khó nhớ được dựng lại ở ĐÂY, trên đường ghi chung, thay vì ở
-    // từng nút gắn sao — một chỗ quên gọi là danh sách lệch với thực tế.
-    const next = syncStarSets(updated);
+    // Danh sách từ khó nhớ và danh sách (thư mục) chứa set được dựng lại ở
+    // ĐÂY, trên đường ghi chung, thay vì ở từng nút bấm — một chỗ quên gọi là
+    // dữ liệu suy ra lệch với thực tế.
+    const next = syncDerivedData(updated);
     dataRef.current = next;
     try {
       saveAppData(next);
@@ -91,6 +101,26 @@ export function useAppData() {
     updateSet(id: string, updater: (set: VocabularySet) => VocabularySet) {
       setData((current) => ({ ...current, sets: current.sets.map((set) => (set.id === id ? updater(set) : set)) }));
     },
+    createList(title: string): string {
+      const id = crypto.randomUUID();
+      setData((current) => ({
+        ...current,
+        lists: [...current.lists, { id, title, createdAt: new Date().toISOString() }],
+      }));
+      return id;
+    },
+    renameList(id: string, title: string) {
+      setData((current) => ({
+        ...current,
+        lists: current.lists.map((list) => (list.id === id ? { ...list, title } : list)),
+      }));
+    },
+    // Chỉ xoá được danh sách RỖNG — set không tự động rơi vào "Mobile Set"
+    // hay biến mất, tránh người dùng lỡ tay xoá cả một mảng nội dung. Trang
+    // gọi hàm này nên tự kiểm tra rỗng trước và hỏi xác nhận.
+    deleteList(id: string) {
+      setData((current) => ({ ...current, lists: current.lists.filter((list) => list.id !== id) }));
+    },
     replaceData(next: AppData) {
       setData(next);
     },
@@ -106,7 +136,7 @@ export function useAppData() {
       }));
     },
     clearAll() {
-      setData({ sets: [], results: [], matchBestTimes: {}, settings: { theme: "light", voiceURI: "" } });
+      setData({ sets: [], results: [], matchBestTimes: {}, lists: [], settings: { theme: "light", voiceURI: "" } });
     },
     setTheme(theme: "light" | "dark") {
       setData((current) => ({ ...current, settings: { ...current.settings, theme } }));

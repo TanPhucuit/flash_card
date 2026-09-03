@@ -4,7 +4,8 @@ const SHEETS_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
 
-export const SET_HEADERS = ["id", "title", "description", "tags", "createdAt", "updatedAt", "lastStudiedAt"];
+export const SET_HEADERS = ["id", "title", "description", "tags", "createdAt", "updatedAt", "lastStudiedAt", "listId"];
+export const LIST_HEADERS = ["id", "title", "createdAt"];
 export const CARD_HEADERS = [
   "setId",
   "id",
@@ -83,7 +84,7 @@ export async function sheetsRequest(method, suffix, body) {
 export async function ensureSchema() {
   const meta = await sheetsRequest("GET", "?includeGridData=false");
   const titles = Object.fromEntries((meta.sheets ?? []).map((sheet) => [sheet.properties.title, sheet.properties.sheetId]));
-  const missing = ["sets", "cards", "results"].filter((title) => !(title in titles));
+  const missing = ["sets", "cards", "results", "lists"].filter((title) => !(title in titles));
   if (missing.length) {
     await sheetsRequest("POST", ":batchUpdate", {
       requests: missing.map((title) => ({ addSheet: { properties: { title } } })),
@@ -92,9 +93,10 @@ export async function ensureSchema() {
   await sheetsRequest("POST", "/values:batchUpdate", {
     valueInputOption: "RAW",
     data: [
-      { range: "sets!A1:G1", values: [SET_HEADERS] },
+      { range: "sets!A1:H1", values: [SET_HEADERS] },
       { range: "cards!A1:R1", values: [CARD_HEADERS] },
       { range: "results!A1:J1", values: [RESULT_HEADERS] },
+      { range: "lists!A1:C1", values: [LIST_HEADERS] },
     ],
   });
 }
@@ -113,7 +115,7 @@ export function rowsToAppData(raw) {
   const setsById = new Map();
 
   for (const row of raw.sets ?? []) {
-    const [id, title, description, tags, createdAt, updatedAt, lastStudiedAt] = row;
+    const [id, title, description, tags, createdAt, updatedAt, lastStudiedAt, listId] = row;
     if (!id) continue;
     setsById.set(id, {
       id,
@@ -124,6 +126,7 @@ export function rowsToAppData(raw) {
       createdAt: createdAt || new Date().toISOString(),
       updatedAt: updatedAt || new Date().toISOString(),
       lastStudiedAt: lastStudiedAt || undefined,
+      listId: listId || undefined,
     });
   }
 
@@ -194,10 +197,17 @@ export function rowsToAppData(raw) {
     };
   });
 
+  const lists = (raw.lists ?? []).filter((row) => row[0]).map((row) => ({
+    id: row[0],
+    title: row[1] ?? "",
+    createdAt: row[2] || new Date().toISOString(),
+  }));
+
   return {
     sets: Array.from(setsById.values()),
     results,
     matchBestTimes: {},
+    lists,
     settings: { theme: "light", voiceURI: "" },
   };
 }
@@ -211,7 +221,9 @@ export function appDataToRows(data) {
     set.createdAt,
     set.updatedAt,
     set.lastStudiedAt ?? "",
+    set.listId ?? "",
   ]);
+  const listRows = (data.lists ?? []).map((list) => [list.id, list.title, list.createdAt]);
   const cardRows = (data.sets ?? []).flatMap((set) =>
     (set.cards ?? []).map((card) => [
       set.id,
@@ -248,7 +260,7 @@ export function appDataToRows(data) {
         result.wrongCardIds === undefined ? "" : JSON.stringify(result.wrongCardIds),
         result.direction ?? "",
       ]);
-  return { setRows, cardRows, resultRows };
+  return { setRows, cardRows, resultRows, listRows };
 }
 
 export function sendJson(res, status, data) {

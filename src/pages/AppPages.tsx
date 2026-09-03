@@ -985,17 +985,71 @@ export function DashboardPage({ api }: PageProps) {
   );
 }
 
+/**
+ * "My Sets" có 3 tầng: TAB (cờ trạng thái: chưa hoàn thành / đã hoàn thành /
+ * từ khó nhớ) → DANH SÁCH (thư mục người dùng tự đặt tên, ví dụ c1_c2) → SET.
+ *
+ * Hai tab đầu KHÔNG phải là danh sách — chúng lọc theo trạng thái học, và bên
+ * trong mỗi tab đó là lưới các danh sách; bấm vào một danh sách mới thấy các
+ * set thuộc danh sách đó (đã lọc theo đúng trạng thái của tab đang mở). Tab
+ * "Từ khó nhớ" không có khái niệm danh sách — nó luôn hiển thị thẳng các bộ
+ * sao tự dựng, vì bản thân nó cũng chỉ là một cờ trạng thái như hai tab kia.
+ */
 export function MySetsPage({ api }: PageProps) {
-  const [query, setQuery] = useState("");
   const [activeTab, setActiveTab] = useState<"learning" | "completed" | "starred">("learning");
+  const [selectedListId, setSelectedListId] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+  const [creatingList, setCreatingList] = useState(false);
+  const [newListTitle, setNewListTitle] = useState("");
   const [multiPickerOpen, setMultiPickerOpen] = useState(false);
   const [selectedSetIds, setSelectedSetIds] = useState<string[]>([]);
   const [wordCount, setWordCount] = useState(0);
   const navigate = useNavigate();
 
+  function switchTab(tab: "learning" | "completed" | "starred") {
+    setActiveTab(tab);
+    setSelectedListId(null);
+    setQuery("");
+  }
+
+  const learnedSetIds = useMemo(() => {
+    const directionsBySet = new Map<string, Set<LearnDirection>>();
+    api.data.results.forEach((r) => {
+      if (r.mode !== "learn" || !("setId" in r) || !r.direction) return;
+      const setId = r.setId;
+      if (!directionsBySet.has(setId)) directionsBySet.set(setId, new Set());
+      directionsBySet.get(setId)!.add(r.direction);
+    });
+    const completed = new Set<string>();
+    directionsBySet.forEach((directions, setId) => {
+      if (LEARN_DIRECTIONS.every((d) => directions.has(d))) completed.add(setId);
+    });
+    return completed;
+  }, [api.data.results]);
+
+  // Set thuộc tab đang mở — CHƯA lọc theo danh sách. Đây là nguồn để đếm số
+  // học phần trên từng thẻ danh sách, và để lọc tiếp khi đã chọn một danh sách.
+  const tabSets = useMemo(() => {
+    if (activeTab === "starred") return api.data.sets.filter(isStarSet);
+    return api.data.sets.filter((set) => {
+      if (isStarSet(set)) return false;
+      const isLearned = learnedSetIds.has(set.id);
+      return activeTab === "completed" ? isLearned : !isLearned;
+    });
+  }, [api.data.sets, activeTab, learnedSetIds]);
+
+  const selectedList = selectedListId ? api.data.lists.find((list) => list.id === selectedListId) ?? null : null;
+
+  const listSets = useMemo(
+    () => (selectedListId ? tabSets.filter((set) => set.listId === selectedListId) : []),
+    [tabSets, selectedListId],
+  );
+
+  const filtered = listSets.filter((set) => `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase()));
+
   const multiPoolTotal = useMemo(
-    () => api.data.sets.filter((set) => selectedSetIds.includes(set.id)).reduce((sum, set) => sum + set.cards.length, 0),
-    [api.data.sets, selectedSetIds],
+    () => listSets.filter((set) => selectedSetIds.includes(set.id)).reduce((sum, set) => sum + set.cards.length, 0),
+    [listSets, selectedSetIds],
   );
 
   useEffect(() => {
@@ -1015,36 +1069,31 @@ export function MySetsPage({ api }: PageProps) {
     navigate(`/study/multi/learn?sets=${selectedSetIds.join(",")}&count=${wordCount}`);
   }
 
-  const learnedSetIds = useMemo(() => {
-    const directionsBySet = new Map<string, Set<LearnDirection>>();
-    api.data.results.forEach((r) => {
-      if (r.mode !== "learn" || !("setId" in r) || !r.direction) return;
-      const setId = r.setId;
-      if (!directionsBySet.has(setId)) directionsBySet.set(setId, new Set());
-      directionsBySet.get(setId)!.add(r.direction);
-    });
-    const completed = new Set<string>();
-    directionsBySet.forEach((directions, setId) => {
-      if (LEARN_DIRECTIONS.every((d) => directions.has(d))) completed.add(setId);
-    });
-    return completed;
-  }, [api.data.results]);
+  function submitNewList(event: FormEvent) {
+    event.preventDefault();
+    const title = newListTitle.trim();
+    if (!title) return;
+    const id = api.createList(title);
+    setNewListTitle("");
+    setCreatingList(false);
+    setSelectedListId(id);
+  }
 
-  const filtered = api.data.sets.filter((set) => {
-    const matchQuery = `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
-    if (!matchQuery) return false;
-    // Bộ từ khó nhớ đứng riêng: nó được dựng tự động từ các từ gắn sao nên
-    // không thuộc về "chưa hoàn thành" hay "đã hoàn thành" — trộn vào một
-    // trong hai chỗ đó thì nó lẫn mất giữa các bộ tự tạo.
-    if (isStarSet(set)) return activeTab === "starred";
-    if (activeTab === "starred") return false;
-    const isLearned = learnedSetIds.has(set.id);
-    return activeTab === "completed" ? isLearned : !isLearned;
-  });
+  function removeList(list: { id: string; title: string }) {
+    // Đếm trên TOÀN BỘ set của danh sách (mọi trạng thái), không chỉ những set
+    // đang lọt vào tab hiện tại — danh sách "trông rỗng" ở tab Đã hoàn thành
+    // vẫn có thể còn set Chưa hoàn thành bên trong.
+    const setCount = api.data.sets.filter((set) => !isStarSet(set) && set.listId === list.id).length;
+    if (setCount > 0) {
+      alert(`Danh sách "${list.title}" còn ${setCount} học phần. Hãy chuyển hết học phần sang danh sách khác trước khi xoá.`);
+      return;
+    }
+    if (confirm(`Xoá danh sách "${list.title}"?`)) api.deleteList(list.id);
+  }
 
   function importCsv(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
-    if (!file) return;
+    if (!file || !selectedList) return;
     file.text().then((text) => {
       const cards = parseCardsCsv(text);
       if (!cards.length) {
@@ -1053,106 +1102,160 @@ export function MySetsPage({ api }: PageProps) {
         return;
       }
       const now = new Date().toISOString();
-      api.upsertSet({ id: crypto.randomUUID(), title: file.name.replace(/\.csv$/i, ""), description: "Được import từ CSV.", tags: ["Imported"], cards, createdAt: now, updatedAt: now });
+      // Set import CSV bên trong một danh sách thì tự thuộc luôn danh sách đó.
+      api.upsertSet({ id: crypto.randomUUID(), title: file.name.replace(/\.csv$/i, ""), description: "Được import từ CSV.", tags: ["Imported"], cards, createdAt: now, updatedAt: now, listId: selectedList.id });
       event.target.value = "";
     });
   }
 
+  const headerAction = activeTab === "starred" ? undefined
+    : selectedList ? (
+      <div className="flex flex-wrap gap-sm">
+        <Button variant="ghost" onClick={() => setSelectedListId(null)}><Icon name="arrow_back" /> Danh sách</Button>
+        <Button variant="secondary" onClick={() => setMultiPickerOpen((value) => !value)}><Icon name="layers" /> Learn Mix Set</Button>
+        <Button onClick={() => navigate(`/sets/new?listId=${selectedList.id}`)}><Icon name="add" /> Create New Set</Button>
+      </div>
+    ) : (
+      <Button onClick={() => setCreatingList(true)}><Icon name="create_new_folder" /> Tạo danh sách mới</Button>
+    );
+
   return (
     <>
       <PageTitle
-        title="My Sets"
-        subtitle="Quản lý các bộ từ vựng đang lưu trên trình duyệt này."
-        action={
-          <div className="flex flex-wrap gap-sm">
-            <Button variant="secondary" onClick={() => setMultiPickerOpen((value) => !value)}>
-              <Icon name="layers" /> Learn Mix Set
-            </Button>
-            <Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Create New Set</Button>
-          </div>
-        }
+        title={selectedList ? selectedList.title : "My Sets"}
+        subtitle={selectedList ? "Quản lý các học phần trong danh sách này." : "Quản lý các bộ từ vựng đang lưu trên trình duyệt này."}
+        action={headerAction}
       />
-      {multiPickerOpen ? (
-        <Card className="mb-lg space-y-md">
-          <div className="flex items-center justify-between">
-            <h2 className="font-headline-md text-lg font-bold">Trộn tối đa {MAX_MIX_SETS} bộ để học</h2>
-            <Button variant="ghost" onClick={() => setMultiPickerOpen(false)}><Icon name="close" /></Button>
-          </div>
-          <p className="text-sm text-on-surface-variant dark:text-white/60">
-            Chọn tối đa {MAX_MIX_SETS} bộ bất kỳ (kể cả bộ đã học xong) để gộp lại và học chung. Thứ tự các từ trong phiên học sẽ được xáo trộn hoàn toàn ngẫu nhiên, không theo tuần tự từng bộ.
-          </p>
-          <div className="text-sm font-semibold text-primary">{selectedSetIds.length}/{MAX_MIX_SETS} bộ đã chọn</div>
-          <div className="grid gap-sm md:grid-cols-2 lg:grid-cols-3">
-            {api.data.sets.map((set) => {
-              const checked = selectedSetIds.includes(set.id);
-              const disabled = !checked && selectedSetIds.length >= MAX_MIX_SETS;
-              return (
-                <label
-                  key={set.id}
-                  className={`flex items-center gap-sm rounded-xl border px-md py-sm transition ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${checked ? "border-primary bg-primary-fixed dark:bg-primary/15" : "border-surface-variant dark:border-white/10"}`}
-                >
-                  <input type="checkbox" checked={checked} disabled={disabled} onChange={() => toggleSetSelection(set.id)} />
-                  <span className="min-w-0 flex-1 truncate font-semibold">{set.title}</span>
-                  <span className="shrink-0 text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ</span>
-                </label>
-              );
-            })}
-          </div>
-          <div className="flex flex-col items-start gap-sm sm:flex-row sm:items-center">
-            <label className="flex items-center gap-sm font-semibold">
-              Số lượng từ
-              <Input
-                type="number"
-                min={1}
-                max={multiPoolTotal || 1}
-                value={wordCount || ""}
-                onChange={(event) => setWordCount(Math.max(1, Math.min(multiPoolTotal, Number(event.target.value) || 1)))}
-                className="w-28"
-                disabled={!multiPoolTotal}
-              />
-            </label>
-            <span className="text-sm text-on-surface-variant dark:text-white/60">/ {multiPoolTotal} từ đã chọn</span>
-            <Button className="sm:ml-auto" disabled={!selectedSetIds.length || !multiPoolTotal} onClick={startMultiLearn}>
-              <Icon name="play_arrow" /> Bắt đầu học
-            </Button>
-          </div>
-        </Card>
-      ) : null}
       <Card className="mb-lg">
-        <div className="mb-md flex gap-sm border-b border-surface-variant dark:border-white/10">
+        <div className="flex gap-sm border-b border-surface-variant dark:border-white/10">
           <button
             className={`px-md py-sm font-semibold transition ${activeTab === "learning" ? "border-b-2 border-primary text-primary" : "text-on-surface-variant dark:text-white/60"}`}
-            onClick={() => setActiveTab("learning")}
+            onClick={() => switchTab("learning")}
           >
             Chưa hoàn thành
           </button>
           <button
             className={`px-md py-sm font-semibold transition ${activeTab === "completed" ? "border-b-2 border-primary text-primary" : "text-on-surface-variant dark:text-white/60"}`}
-            onClick={() => setActiveTab("completed")}
+            onClick={() => switchTab("completed")}
           >
             Đã hoàn thành
           </button>
           <button
             className={`inline-flex items-center gap-xs px-md py-sm font-semibold transition ${activeTab === "starred" ? "border-b-2 border-primary text-primary" : "text-on-surface-variant dark:text-white/60"}`}
-            onClick={() => setActiveTab("starred")}
+            onClick={() => switchTab("starred")}
           >
             <Icon name="star" filled className={activeTab === "starred" ? "text-amber-500" : ""} /> Từ khó nhớ
           </button>
         </div>
-        <div className="flex flex-col gap-md md:flex-row">
-          <Input placeholder="Tìm theo tên bộ hoặc tag..." value={query} onChange={(event) => setQuery(event.target.value)} />
-          <label className="inline-flex cursor-pointer items-center justify-center gap-sm rounded-xl border border-surface-variant bg-white px-lg py-sm font-semibold text-on-surface-variant transition hover:border-primary dark:bg-[#202324] dark:text-white/70">
-            <Icon name="upload_file" /> Import CSV
-            <input type="file" accept=".csv,text/csv" className="hidden" onChange={importCsv} />
-          </label>
-        </div>
       </Card>
-      {filtered.length ? (
-        <div className="grid gap-md lg:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((set) => <SetCard key={set.id} set={set} results={api.data.results} onDelete={() => confirm(`Xóa "${set.title}"?`) && api.deleteSet(set.id)} />)}
-        </div>
+
+      {activeTab === "starred" ? (
+        tabSets.length ? (
+          <div className="grid gap-md lg:grid-cols-2 xl:grid-cols-3">
+            {tabSets.map((set) => <SetCard key={set.id} set={set} results={api.data.results} onDelete={() => confirm(`Xóa "${set.title}"?`) && api.deleteSet(set.id)} />)}
+          </div>
+        ) : (
+          <EmptyState title="Chưa có từ nào được đánh dấu" text="Bấm nút Star khi học Flashcards để thêm từ vào đây." />
+        )
+      ) : selectedList ? (
+        <>
+          {multiPickerOpen ? (
+            <Card className="mb-lg space-y-md">
+              <div className="flex items-center justify-between">
+                <h2 className="font-headline-md text-lg font-bold">Trộn tối đa {MAX_MIX_SETS} bộ để học</h2>
+                <Button variant="ghost" onClick={() => setMultiPickerOpen(false)}><Icon name="close" /></Button>
+              </div>
+              <p className="text-sm text-on-surface-variant dark:text-white/60">
+                Chọn tối đa {MAX_MIX_SETS} bộ bất kỳ trong danh sách này (kể cả bộ đã học xong) để gộp lại và học chung. Thứ tự các từ trong phiên học sẽ được xáo trộn hoàn toàn ngẫu nhiên, không theo tuần tự từng bộ.
+              </p>
+              <div className="text-sm font-semibold text-primary">{selectedSetIds.length}/{MAX_MIX_SETS} bộ đã chọn</div>
+              <div className="grid gap-sm md:grid-cols-2 lg:grid-cols-3">
+                {listSets.map((set) => {
+                  const checked = selectedSetIds.includes(set.id);
+                  const disabled = !checked && selectedSetIds.length >= MAX_MIX_SETS;
+                  return (
+                    <label
+                      key={set.id}
+                      className={`flex items-center gap-sm rounded-xl border px-md py-sm transition ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${checked ? "border-primary bg-primary-fixed dark:bg-primary/15" : "border-surface-variant dark:border-white/10"}`}
+                    >
+                      <input type="checkbox" checked={checked} disabled={disabled} onChange={() => toggleSetSelection(set.id)} />
+                      <span className="min-w-0 flex-1 truncate font-semibold">{set.title}</span>
+                      <span className="shrink-0 text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ</span>
+                    </label>
+                  );
+                })}
+              </div>
+              <div className="flex flex-col items-start gap-sm sm:flex-row sm:items-center">
+                <label className="flex items-center gap-sm font-semibold">
+                  Số lượng từ
+                  <Input
+                    type="number"
+                    min={1}
+                    max={multiPoolTotal || 1}
+                    value={wordCount || ""}
+                    onChange={(event) => setWordCount(Math.max(1, Math.min(multiPoolTotal, Number(event.target.value) || 1)))}
+                    className="w-28"
+                    disabled={!multiPoolTotal}
+                  />
+                </label>
+                <span className="text-sm text-on-surface-variant dark:text-white/60">/ {multiPoolTotal} từ đã chọn</span>
+                <Button className="sm:ml-auto" disabled={!selectedSetIds.length || !multiPoolTotal} onClick={startMultiLearn}>
+                  <Icon name="play_arrow" /> Bắt đầu học
+                </Button>
+              </div>
+            </Card>
+          ) : null}
+          <Card className="mb-lg">
+            <div className="flex flex-col gap-md md:flex-row">
+              <Input placeholder="Tìm theo tên bộ hoặc tag..." value={query} onChange={(event) => setQuery(event.target.value)} />
+              <label className="inline-flex cursor-pointer items-center justify-center gap-sm rounded-xl border border-surface-variant bg-white px-lg py-sm font-semibold text-on-surface-variant transition hover:border-primary dark:bg-[#202324] dark:text-white/70">
+                <Icon name="upload_file" /> Import CSV
+                <input type="file" accept=".csv,text/csv" className="hidden" onChange={importCsv} />
+              </label>
+            </div>
+          </Card>
+          {filtered.length ? (
+            <div className="grid gap-md lg:grid-cols-2 xl:grid-cols-3">
+              {filtered.map((set) => <SetCard key={set.id} set={set} results={api.data.results} onDelete={() => confirm(`Xóa "${set.title}"?`) && api.deleteSet(set.id)} />)}
+            </div>
+          ) : (
+            <EmptyState title="Chưa có học phần phù hợp trong danh sách này" text="Tạo học phần mới hoặc import CSV để bắt đầu." action={<Button onClick={() => navigate(`/sets/new?listId=${selectedList.id}`)}><Icon name="add" /> Tạo học phần</Button>} />
+          )}
+        </>
       ) : (
-        <EmptyState title="Chưa có học phần phù hợp" text="Tạo học phần mới hoặc import CSV để bắt đầu." action={<Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Tạo học phần</Button>} />
+        <>
+          {creatingList ? (
+            <form onSubmit={submitNewList}>
+              <Card className="mb-lg flex flex-col gap-sm sm:flex-row sm:items-center">
+                <Input autoFocus placeholder="Tên danh sách, ví dụ: c1_c2" value={newListTitle} onChange={(event) => setNewListTitle(event.target.value)} className="flex-1" />
+                <div className="flex gap-sm">
+                  <Button type="submit"><Icon name="check" /> Tạo</Button>
+                  <Button type="button" variant="ghost" onClick={() => { setCreatingList(false); setNewListTitle(""); }}>Huỷ</Button>
+                </div>
+              </Card>
+            </form>
+          ) : null}
+          {api.data.lists.length ? (
+            <div className="grid gap-md md:grid-cols-2 lg:grid-cols-3">
+              {api.data.lists.map((list) => {
+                const setsInTab = tabSets.filter((set) => set.listId === list.id);
+                const wordsInTab = setsInTab.reduce((sum, set) => sum + set.cards.length, 0);
+                return (
+                  <Card key={list.id} className="flex flex-col gap-md">
+                    <div className="flex items-start justify-between gap-md">
+                      <h2 className="min-w-0 truncate font-headline-md text-xl font-semibold">{list.title}</h2>
+                      <Button variant="ghost" onClick={() => removeList(list)}><Icon name="delete" /></Button>
+                    </div>
+                    <div className="text-sm text-on-surface-variant dark:text-white/60">{setsInTab.length} học phần · {wordsInTab} từ</div>
+                    <Button className="w-full" onClick={() => setSelectedListId(list.id)}><Icon name="folder_open" /> Mở danh sách</Button>
+                  </Card>
+                );
+              })}
+            </div>
+          ) : (
+            <EmptyState title="Chưa có danh sách nào" text="Tạo danh sách đầu tiên để bắt đầu thêm học phần." action={<Button onClick={() => setCreatingList(true)}><Icon name="create_new_folder" /> Tạo danh sách mới</Button>} />
+          )}
+        </>
       )}
     </>
   );
@@ -1162,8 +1265,22 @@ export function CreateEditSetPage({ api }: PageProps) {
   const { setId } = useParams();
   const existing = getSet(api, setId);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const now = new Date().toISOString();
-  const [set, setSet] = useState<VocabularySet>(() => existing ?? { id: crypto.randomUUID(), title: "", description: "", tags: [], cards: [emptyCard()], createdAt: now, updatedAt: now });
+  // Set mới tạo trong ngữ cảnh một danh sách (bấm "Tạo set" từ bên trong danh
+  // sách đó) thì tự nhận listId của danh sách đang mở qua ?listId=; set đã có
+  // sẵn thì giữ nguyên listId cũ của nó, không đọc từ URL.
+  const requestedListId = searchParams.get("listId");
+  const [set, setSet] = useState<VocabularySet>(() => existing ?? {
+    id: crypto.randomUUID(),
+    title: "",
+    description: "",
+    tags: [],
+    cards: [emptyCard()],
+    createdAt: now,
+    updatedAt: now,
+    listId: requestedListId ?? api.data.lists[0]?.id,
+  });
   const [tagText, setTagText] = useState(set.tags.join(", "));
   const [csv, setCsv] = useState("");
   const [csvMessage, setCsvMessage] = useState("");
@@ -1237,6 +1354,14 @@ export function CreateEditSetPage({ api }: PageProps) {
           <label className="block"><span className="font-semibold">Title</span><Input value={set.title} onChange={(event) => setSet({ ...set, title: event.target.value })} /></label>
           <label className="block"><span className="font-semibold">Description</span><Textarea rows={4} value={set.description} onChange={(event) => setSet({ ...set, description: event.target.value })} /></label>
           <label className="block"><span className="font-semibold">Tags</span><Input placeholder="TOEIC, Business" value={tagText} onChange={(event) => setTagText(event.target.value)} /></label>
+          {isStarSet(set) ? null : (
+            <label className="block">
+              <span className="font-semibold">Danh sách</span>
+              <Select value={set.listId ?? ""} onChange={(event) => setSet({ ...set, listId: event.target.value })}>
+                {api.data.lists.map((list) => <option key={list.id} value={list.id}>{list.title}</option>)}
+              </Select>
+            </label>
+          )}
           <label className="block"><span className="font-semibold">Bulk import CSV</span><Textarea rows={7} placeholder="word,ipa,meaningVi,definitionEn,exampleEn,exampleVi,partOfSpeech,level" value={csv} onChange={(event) => { setCsv(event.target.value); setCsvMessage(""); }} /></label>
           <div className="flex flex-wrap gap-sm">
             <Button type="button" variant="secondary" onClick={() => addCsvCards(csv)}><Icon name="playlist_add" /> Add CSV Cards</Button>
@@ -2264,7 +2389,7 @@ export function SettingsPage({ api }: PageProps) {
         if (!Array.isArray(parsed.sets)) throw new Error("Invalid backup");
         const totalCards = parsed.sets.reduce((sum, set) => sum + (set.cards?.length ?? 0), 0);
         if (confirm(`Tìm thấy ${parsed.sets.length} học phần / ${totalCards} cards ở ${origin}. Khôi phục dữ liệu này? Dữ liệu hiện tại sẽ được thay thế.`)) {
-          api.replaceData({ sets: parsed.sets, results: parsed.results ?? [], matchBestTimes: parsed.matchBestTimes ?? {}, settings: parsed.settings ?? api.data.settings });
+          api.replaceData({ sets: parsed.sets, results: parsed.results ?? [], matchBestTimes: parsed.matchBestTimes ?? {}, lists: parsed.lists ?? [], settings: parsed.settings ?? api.data.settings });
           setRecoverMessage(`Đã khôi phục dữ liệu từ ${origin}.`);
         } else {
           setRecoverMessage("Đã hủy khôi phục.");
@@ -2285,7 +2410,7 @@ export function SettingsPage({ api }: PageProps) {
       try {
         const parsed = JSON.parse(text) as AppData;
         if (!Array.isArray(parsed.sets)) throw new Error("Invalid backup");
-        api.replaceData({ sets: parsed.sets, results: parsed.results ?? [], matchBestTimes: parsed.matchBestTimes ?? {}, settings: parsed.settings ?? api.data.settings });
+        api.replaceData({ sets: parsed.sets, results: parsed.results ?? [], matchBestTimes: parsed.matchBestTimes ?? {}, lists: parsed.lists ?? [], settings: parsed.settings ?? api.data.settings });
       } catch {
         alert("File JSON không hợp lệ.");
       }
