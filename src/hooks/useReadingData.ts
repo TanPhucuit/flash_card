@@ -1,10 +1,59 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LifeManagementConfig, ReadingAttempt, ReadingBook, ReadingData } from "../types/reading";
 import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
+import { loadReadingFromGoogleSheet, saveReadingToGoogleSheet } from "../utils/cloudSync";
 
 export function useReadingData() {
   const [data, setReactData] = useState<ReadingData>(() => loadReadingData());
   const dataRef = useRef(data);
+  const cloudSaveTimer = useRef<number | undefined>(undefined);
+  const [syncState, setSyncState] = useState<"idle" | "loading" | "saving" | "error">("idle");
+  const [syncError, setSyncError] = useState("");
+
+  // Sách và lượt làm bài giờ có nguồn thật là Google Sheet — cùng một cuốn
+  // sách nạp vào từ MÁY NÀY thì máy khác cũng thấy, không còn kẹt riêng trong
+  // localStorage của từng trình duyệt nữa. `lifeManagement` (đường dẫn tới
+  // deployment Life Management) cố tình KHÔNG đồng bộ: mỗi máy có thể trỏ tới
+  // một deployment khác nhau, giống hệt cách AppData không đồng bộ `settings`.
+  useEffect(() => {
+    const controller = new AbortController();
+    setSyncState("loading");
+    loadReadingFromGoogleSheet(controller.signal)
+      .then((cloud) => {
+        setReactData((current) => {
+          const next = { ...current, books: cloud.books, attempts: cloud.attempts };
+          dataRef.current = next;
+          saveReadingData(next);
+          return next;
+        });
+        setSyncState("idle");
+        setSyncError("");
+      })
+      .catch((error) => {
+        if (controller.signal.aborted) return;
+        console.warn("Google Sheet reading sync load failed. Using browser cache.", error);
+        setSyncState("error");
+        setSyncError("Không tải được sách từ Google Sheet, đang dùng dữ liệu cache trên trình duyệt.");
+      });
+    return () => controller.abort();
+  }, []);
+
+  const scheduleCloudSave = useCallback((next: ReadingData) => {
+    if (cloudSaveTimer.current) window.clearTimeout(cloudSaveTimer.current);
+    cloudSaveTimer.current = window.setTimeout(() => {
+      setSyncState("saving");
+      saveReadingToGoogleSheet({ books: next.books, attempts: next.attempts })
+        .then(() => {
+          setSyncState("idle");
+          setSyncError("");
+        })
+        .catch((error) => {
+          console.error("Google Sheet reading sync save failed.", error);
+          setSyncState("error");
+          setSyncError("Không lưu được sách lên Google Sheet. Dữ liệu vẫn còn trong trình duyệt này.");
+        });
+    }, 700);
+  }, []);
 
   const setData = useCallback((updater: (current: ReadingData) => ReadingData) => {
     const next = updater(dataRef.current);
@@ -16,7 +65,8 @@ export function useReadingData() {
       alert("Không lưu được dữ liệu Reading — localStorage có thể đã đầy. Hãy xoá bớt sách cũ.");
     }
     setReactData(next);
-  }, []);
+    scheduleCloudSave(next);
+  }, [scheduleCloudSave]);
 
   const api = useMemo(
     () => ({
@@ -96,7 +146,7 @@ export function useReadingData() {
     };
   }, [data.attempts]);
 
-  return { data, stats, ...api };
+  return { data, stats, syncState, syncError, ...api };
 }
 
 export type ReadingApi = ReturnType<typeof useReadingData>;

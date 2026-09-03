@@ -303,6 +303,142 @@ function buildQuestions(groups: RawGroup[]): ReadingQuestion[] {
   return questions.sort((a, b) => a.number - b.number);
 }
 
+// --------------------------------------------------------------------------
+// Page furniture: watermark fragments, running headers/footers, page numbers,
+// word-count footers. None of this is passage or question content — it is
+// printed on the page but bleeds into the extracted text stream because
+// pdfjs has no notion of "this text is a footer" — and previously it was
+// never filtered out of passage text at all, only out of matched answers.
+// --------------------------------------------------------------------------
+
+// A short line that IS ENTIRELY one of the watermark's own fragments. Scoped
+// to short lines and exact/near-exact matches only — "station" or "mam" as
+// substrings of a real sentence ("the space station orbits...") must survive.
+function isWatermarkFragment(line: string): boolean {
+  const trimmed = line.trim();
+  if (!trimmed || trimmed.length > 40) return false;
+  if (/www\.[a-z0-9.-]+/i.test(trimmed)) return true;
+  if (/^[a-z0-9.-]+\.(?:com|org|net)$/i.test(trimmed)) return true;
+  if (/nhantriviet|mamstation/i.test(trimmed)) return true;
+  return /^(?:MAM|English\s*Station|Stati(?:on)?|Engli(?:sh)?)$/i.test(trimmed);
+}
+
+/** Significant words from the book's own title, for spotting its running header. */
+function titleTokens(bookTitle: string): string[] {
+  const stop = new Set(["for", "the", "of", "and", "on", "in", "a", "an", "to"]);
+  return bookTitle
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((token) => token.length >= 4 && !stop.has(token) && !/^\d+$/.test(token));
+}
+
+/**
+ * True for a line of pure page furniture that should never end up inside a
+ * passage or question's text: watermark fragments, a lone page number, a
+ * "(1,400 words)" footer, stray punctuation debris, a Day/Test tag repeating
+ * mid-passage (its own occurrence at a passage's own start is handled before
+ * this filter ever runs), or a line that shares two or more significant words
+ * with the book's own title — the running header repeats every page but OCR
+ * garbles it a little differently each time, so an exact-match table would
+ * miss most of them; word overlap survives that noise.
+ */
+function isPageFurniture(line: string, bookTitleTokens: string[]): boolean {
+  const trimmed = line.trim();
+  if (!trimmed) return true;
+  if (isWatermarkFragment(trimmed)) return true;
+  if (/^\d{1,4}$/.test(trimmed)) return true;
+  if (/^\(?[\d,]+\s*words?\)?\.?$/i.test(trimmed)) return true;
+  if (/^[\^~`_.\-–—\s]{1,4}$/.test(trimmed)) return true;
+  if (DAY_HEADER.test(trimmed) || TEST_HEADER.test(trimmed)) return true;
+  if (bookTitleTokens.length && trimmed.length <= 60) {
+    const tokens = trimmed.toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+    const overlap = tokens.filter((token) => bookTitleTokens.includes(token)).length;
+    if (overlap >= 2) return true;
+  }
+  return false;
+}
+
+// A paragraph's own lettered label ("A", "B"...) either glued to its first
+// words ("A From the comfort of our modern lives...") or, when column
+// reconstruction split them, sitting alone on its own line.
+const LETTERED_PARAGRAPH_START = /^\s*([A-L])\s+([A-Z][a-z].{15,})$/;
+const LETTERED_PARAGRAPH_ALONE = /^\s*([A-L])\s*$/;
+const SECTION_LABEL = /^\s*(Section\s+\d+)\s*$/i;
+const LIST_OF_HEADINGS_MARK = /^\s*List\s+of\s+Headings\s*$/i;
+
+/**
+ * Rejoins the PDF's per-line-wrap output into real paragraphs. Previously
+ * every wrapped line of the PDF became its own output line, so a paragraph
+ * that reads as three sentences in the book came out as a dozen short
+ * fragments — nothing like the book's own paragraphing.
+ *
+ * There is no reliable per-line position data to key off here (this is a
+ * scanned-and-OCR'd book: two lines belonging to the very same paragraph can
+ * report x-starts several points apart, so indentation is not a trustworthy
+ * signal for this source). What IS reliable is the shape every printed
+ * paragraph has: its lines run close to the column's full width until the
+ * last one, which is shorter and ends the sentence — the same signal
+ * "reflow" tools for justified text use. A lettered paragraph marker
+ * ("A", "Section 2"...) is always a hard, unambiguous break regardless.
+ */
+function reflowParagraphs(lines: string[]): string {
+  const paragraphs: string[] = [];
+  let current: string[] = [];
+  let widths: number[] = [];
+
+  const flush = (label?: string) => {
+    if (current.length) {
+      const text = current
+        .join(" ")
+        // De-hyphenate a word broken across the line wrap ("under-" + "way" -> "underway").
+        .replace(/(\p{L})-\s+(\p{Ll})/gu, "$1$2")
+        .replace(/\s+/g, " ")
+        .trim();
+      if (text) paragraphs.push(text);
+      current = [];
+      widths = [];
+    }
+    if (label) paragraphs.push(label);
+  };
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) continue;
+
+    const lettered = line.match(LETTERED_PARAGRAPH_START);
+    const letteredAlone = line.match(LETTERED_PARAGRAPH_ALONE);
+    const section = line.match(SECTION_LABEL);
+    if (section) {
+      flush(section[1]);
+      continue;
+    }
+    if (letteredAlone) {
+      flush(letteredAlone[1]);
+      continue;
+    }
+    if (lettered) {
+      flush(lettered[1]);
+      current.push(lettered[2]);
+      widths.push(lettered[2].length);
+      continue;
+    }
+
+    const medianWidth = widths.length ? [...widths].sort((a, b) => a - b)[Math.floor(widths.length / 2)] : line.length;
+    // A line noticeably shorter than its paragraph's own recent lines, ending
+    // the sentence, is the last line of that paragraph — the next line, if
+    // any, starts a new one.
+    const endsSentence = /[.!?"'’”]\s*$/.test(line);
+    const isShort = current.length > 0 && line.length < medianWidth * 0.72;
+    current.push(line);
+    widths.push(line.length);
+    if (endsSentence && isShort) flush();
+  }
+  flush();
+
+  return paragraphs.join("\n\n");
+}
+
 const FOOTER_NOISE = /www\.|\.com|\.org|nhantriviet|mamstation|english station/i;
 // tfng/ynng/mcq/matching answers are always a short token in these books —
 // TRUE/FALSE/NOT GIVEN, a single option letter, or a roman-numeral heading
@@ -432,17 +568,100 @@ export function parseReadingBook(lines: string[], fileName: string, bookTitle: s
   const keyLines = keyStart >= 0 ? lines.slice(keyStart) : [];
   const answerPairs = parseAnswerPairs(keyLines);
 
-  // Slice the body at each passage header.
-  const starts: Array<{ index: number; passageNumber: number; testLabel: string }> = [];
+  // Slice the body at each passage boundary. Two different boundaries are in
+  // play, because this book uses two different layouts for a passage:
+  //
+  //  - Most days: an explicit "(READING) PASSAGE N" header opens the chunk,
+  //    body text follows immediately, and the title sits right at the top.
+  //  - The book's "Progressive Test" days print NO such header at all — the
+  //    chunk opens directly on the body's own first lettered paragraph ("A
+  //    <text>"), and the passage's title is only printed once, mid-body, in
+  //    a short caption near the running "Day N" tag. Previously nothing
+  //    detected this shape at all, so every one of these passages — the
+  //    book's main scored tests — produced no task whatsoever.
+  interface ChunkStart {
+    index: number;
+    passageNumber: number;
+    testLabel: string;
+    /** No header of its own: the title has to be dug out of the body instead of read off the top. */
+    titleAtEnd: boolean;
+  }
+  const starts: ChunkStart[] = [];
   let testLabel = "";
-  bodyLines.forEach((line, index) => {
+  let passageCounter = 0;
+  let insideLetteredBody = false;
+  // Guards a lettered body-start from being confused with a "List of
+  // Headings" answer-option line, which is written exactly the same way
+  // ("A Species protected by tracking") but is question material, not the
+  // start of the passage.
+  let listOfHeadingsCountdown = 0;
+  for (let index = 0; index < bodyLines.length; index += 1) {
+    const line = bodyLines[index];
     const test = line.match(TEST_HEADER);
-    if (test) testLabel = `Test ${test[1]}`;
+    if (test) {
+      testLabel = `Test ${test[1]}`;
+      passageCounter = 0;
+      insideLetteredBody = false;
+      continue;
+    }
     const day = line.match(DAY_HEADER);
-    if (day) testLabel = `Day ${day[1]}`;
+    if (day) {
+      testLabel = `Day ${day[1]}`;
+      passageCounter = 0;
+      insideLetteredBody = false;
+      continue;
+    }
+    if (LIST_OF_HEADINGS_MARK.test(line)) listOfHeadingsCountdown = 12;
+    else if (listOfHeadingsCountdown > 0) listOfHeadingsCountdown -= 1;
+
     const header = line.match(PASSAGE_HEADER);
-    if (header) starts.push({ index, passageNumber: Number(header[1]), testLabel });
-  });
+    if (header) {
+      starts.push({ index, passageNumber: Number(header[1]), testLabel, titleAtEnd: false });
+      insideLetteredBody = false;
+      continue;
+    }
+    if (QUESTIONS_HEADER.test(line) || SINGLE_QUESTION_HEADER.test(line)) {
+      insideLetteredBody = false;
+      continue;
+    }
+    if (!insideLetteredBody && listOfHeadingsCountdown === 0) {
+      const lettered = line.match(LETTERED_PARAGRAPH_START);
+      if (lettered && lettered[1] === "A") {
+        passageCounter += 1;
+        starts.push({ index, passageNumber: passageCounter, testLabel, titleAtEnd: true });
+        insideLetteredBody = true;
+      }
+    }
+  }
+
+  // The running-header noise filter needs some form of the book's own title
+  // to spot it by — fall back to the file name when the user hasn't typed a
+  // title yet at the point of picking the file (the field is optional, and
+  // nothing stops someone from choosing the file first).
+  const bookTitleTokens = titleTokens(bookTitle.trim() || fileName.replace(/\.pdf$/i, "").replace(/[_-]+/g, " "));
+  // A plausible title: short, Title-Case-ish, doesn't read as a sentence
+  // (exam instructions and body prose end with terminal punctuation; a title
+  // essentially never does).
+  const isPlausibleTitle = (line: string) => {
+    const trimmed = line.trim();
+    if (trimmed.length < 4 || trimmed.length > 70) return false;
+    if (/[.!?]$/.test(trimmed)) return false;
+    if (isPageFurniture(trimmed, bookTitleTokens)) return false;
+    if (LETTERED_PARAGRAPH_START.test(trimmed) || LETTERED_PARAGRAPH_ALONE.test(trimmed) || SECTION_LABEL.test(trimmed)) return false;
+    if (/^(you (?:should|are advised|need)|read the|choose the|write the|look at the|n\.b\.|questions?\b|complete the|list of headings)/i.test(trimmed)) return false;
+    const words = trimmed.split(/\s+/);
+    if (words.length < 2 || words.length > 10) return false;
+    if (!/^[A-Z0-9]/.test(trimmed)) return false;
+    // OCR damage on this book frequently drops a whole word down to a single
+    // stray letter or fuses a digit into one ("8oo" for "800") — neither
+    // reads as a title, and passing them through would just show corrupted
+    // text as if it were the real one. Fall back to the generic label
+    // instead; a wrong-looking placeholder is more honest than plausible-
+    // looking garbage.
+    if (words.some((word) => /\d/.test(word) && /[a-z]/i.test(word))) return false;
+    if (words.some((word) => word.replace(/[.,]/g, "").length === 1 && !/^[AI]$/i.test(word))) return false;
+    return true;
+  };
 
   const passages: ReadingPassage[] = [];
   starts.forEach((start, i) => {
@@ -450,23 +669,58 @@ export function parseReadingBook(lines: string[], fileName: string, bookTitle: s
     const chunk = bodyLines.slice(start.index, end);
 
     const firstQuestionIndex = chunk.findIndex((line) => QUESTIONS_HEADER.test(line) || SINGLE_QUESTION_HEADER.test(line));
-    const passageLines = firstQuestionIndex > 0 ? chunk.slice(1, firstQuestionIndex) : chunk.slice(1);
-    const questionLines = firstQuestionIndex > 0 ? chunk.slice(firstQuestionIndex) : [];
+    // A header-led chunk's own first line is the header itself, already
+    // known from `start` — drop it. A lettered-body chunk's first line is
+    // real passage content and must be kept.
+    const bodyStart = start.titleAtEnd ? 0 : 1;
+    const rawPassageLines = firstQuestionIndex > 0 ? chunk.slice(bodyStart, firstQuestionIndex) : chunk.slice(bodyStart);
+    const questionLines = (firstQuestionIndex > 0 ? chunk.slice(firstQuestionIndex) : []).filter((line) => !isPageFurniture(line, bookTitleTokens));
 
     const questions = buildQuestions(splitQuestionGroups(questionLines));
     // A chunk with no questions at all is almost always a false positive (a
     // contents entry or a cross-reference), so it is not worth a task.
     if (!questions.length) return;
 
-    // The first non-empty, non-instruction line doubles as the passage's own
-    // title in every Cambridge-style book.
-    const title = passageLines.find((line) => line.length > 3 && !/^you should spend/i.test(line)) ?? "";
+    let title = "";
+    let passageLines = rawPassageLines;
+    if (start.titleAtEnd) {
+      // The title is a short caption sitting somewhere inside the body
+      // (interleaved with the running Day tag and watermark, not at a fixed
+      // position), rather than a header at the top — so it is found by what
+      // it looks like, not by where it sits, and pulled out of the body text
+      // once found so it doesn't show up twice.
+      const titleIndex = rawPassageLines.reduce(
+        (found, line, idx) => (isPlausibleTitle(line) ? idx : found),
+        -1,
+      );
+      if (titleIndex >= 0) {
+        title = rawPassageLines[titleIndex];
+        passageLines = rawPassageLines.filter((_, idx) => idx !== titleIndex);
+      } else {
+        title = `${start.testLabel || "Reading"} passage ${start.passageNumber}`;
+      }
+    } else {
+      // The first plausible (non-instruction, non-furniture) line doubles as
+      // the passage's own title in every Cambridge-style book.
+      title = passageLines.find((line) => line.length > 3 && isPlausibleTitle(line)) ?? passageLines.find((line) => line.length > 3) ?? "";
+    }
+
+    // A passage's final "(1,400 words)" footer sits at almost the same
+    // height as the body's own last line, so row-grouping glues them into
+    // one line with no separator ("...ice patrol. (1,400 words) . Stati
+    // Englis") — nothing downstream of that point on the line is passage
+    // text, so it is cut rather than matched whole-line like the other
+    // furniture patterns.
+    const droppingWordCountTail = (line: string) => line.replace(/\(?[\d,]+\s*words?\)?\.?\s*.*$/i, "").trim();
+    const cleanedPassageLines = passageLines
+      .map(droppingWordCountTail)
+      .filter((line) => !isPageFurniture(line, bookTitleTokens));
 
     passages.push({
       id: uid(),
       order: passages.length + 1,
       title: [start.testLabel, `Passage ${start.passageNumber}`, title].filter(Boolean).join(" · "),
-      text: passageLines.join("\n").replace(/\n{3,}/g, "\n\n").trim(),
+      text: reflowParagraphs(cleanedPassageLines),
       questions,
     });
   });

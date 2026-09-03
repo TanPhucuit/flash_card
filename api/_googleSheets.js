@@ -27,6 +27,16 @@ export const CARD_HEADERS = [
 ];
 export const RESULT_HEADERS = ["id", "setId", "mode", "totalQuestions", "correctAnswers", "wrongAnswers", "accuracy", "studiedAt", "wrongCardIds", "direction"];
 
+// Reading (IELTS practice books) gets its own three tabs, mirroring
+// sets/cards/results. Kept separate from AppData's tabs because a full book
+// can be tens of passages and this schema is unrelated to vocabulary.
+export const BOOK_HEADERS = ["id", "title", "sourceFileName", "createdAt", "lifeManagementTaskId"];
+// One row per passage, not per book: a book's full text would blow past a
+// single cell's usefulness long before it hits the ~50,000 char sheet limit,
+// and per-passage rows are what let a book update touch only what changed.
+export const PASSAGE_HEADERS = ["bookId", "id", "order", "title", "text", "questionsJson"];
+export const READING_ATTEMPT_HEADERS = ["id", "bookId", "bookTitle", "passageId", "passageTitle", "startedAt", "finishedAt", "durationSec", "answersJson", "correct", "total", "dateKey"];
+
 function b64url(value) {
   return Buffer.from(value).toString("base64url");
 }
@@ -95,6 +105,25 @@ export async function ensureSchema() {
       { range: "sets!A1:G1", values: [SET_HEADERS] },
       { range: "cards!A1:R1", values: [CARD_HEADERS] },
       { range: "results!A1:J1", values: [RESULT_HEADERS] },
+    ],
+  });
+}
+
+export async function ensureReadingSchema() {
+  const meta = await sheetsRequest("GET", "?includeGridData=false");
+  const titles = Object.fromEntries((meta.sheets ?? []).map((sheet) => [sheet.properties.title, sheet.properties.sheetId]));
+  const missing = ["books", "passages", "readingAttempts"].filter((title) => !(title in titles));
+  if (missing.length) {
+    await sheetsRequest("POST", ":batchUpdate", {
+      requests: missing.map((title) => ({ addSheet: { properties: { title } } })),
+    });
+  }
+  await sheetsRequest("POST", "/values:batchUpdate", {
+    valueInputOption: "RAW",
+    data: [
+      { range: "books!A1:E1", values: [BOOK_HEADERS] },
+      { range: "passages!A1:F1", values: [PASSAGE_HEADERS] },
+      { range: "readingAttempts!A1:L1", values: [READING_ATTEMPT_HEADERS] },
     ],
   });
 }
@@ -256,4 +285,99 @@ export function sendJson(res, status, data) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Cache-Control", "no-store");
   res.end(JSON.stringify(data));
+}
+
+function parseJsonObject(value, fallback) {
+  if (!value) return fallback;
+  try {
+    const parsed = JSON.parse(value);
+    return parsed && typeof parsed === "object" ? parsed : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function rowsToReadingData(raw) {
+  const booksById = new Map();
+  for (const row of raw.books ?? []) {
+    const [id, title, sourceFileName, createdAt, lifeManagementTaskId] = row;
+    if (!id) continue;
+    booksById.set(id, {
+      id,
+      title: title ?? "",
+      sourceFileName: sourceFileName ?? "",
+      createdAt: createdAt || new Date().toISOString(),
+      passages: [],
+      lifeManagementTaskId: lifeManagementTaskId || undefined,
+    });
+  }
+
+  for (const row of raw.passages ?? []) {
+    const [bookId, id, order, title, text, questionsJson] = row;
+    const book = booksById.get(bookId);
+    if (!book || !id) continue;
+    book.passages.push({
+      id,
+      order: Number(order || 0),
+      title: title ?? "",
+      text: text ?? "",
+      questions: Array.isArray(parseJsonObject(questionsJson, [])) ? parseJsonObject(questionsJson, []) : [],
+    });
+  }
+  for (const book of booksById.values()) book.passages.sort((a, b) => a.order - b.order);
+
+  const attempts = (raw.readingAttempts ?? []).filter((row) => row[0]).map((row) => {
+    const [id, bookId, bookTitle, passageId, passageTitle, startedAt, finishedAt, durationSec, answersJson, correct, total, dateKey] = row;
+    return {
+      id,
+      bookId: bookId ?? "",
+      bookTitle: bookTitle ?? "",
+      passageId: passageId ?? "",
+      passageTitle: passageTitle ?? "",
+      startedAt: startedAt ?? "",
+      finishedAt: finishedAt ?? "",
+      durationSec: Number(durationSec || 0),
+      answers: parseJsonObject(answersJson, {}),
+      correct: Number(correct || 0),
+      total: Number(total || 0),
+      dateKey: dateKey ?? "",
+    };
+  });
+
+  return { books: Array.from(booksById.values()), attempts };
+}
+
+export function readingDataToRows(data) {
+  const bookRows = (data.books ?? []).map((book) => [
+    book.id,
+    book.title,
+    book.sourceFileName,
+    book.createdAt,
+    book.lifeManagementTaskId ?? "",
+  ]);
+  const passageRows = (data.books ?? []).flatMap((book) =>
+    (book.passages ?? []).map((passage) => [
+      book.id,
+      passage.id,
+      passage.order,
+      passage.title,
+      passage.text,
+      JSON.stringify(passage.questions ?? []),
+    ]),
+  );
+  const attemptRows = (data.attempts ?? []).map((attempt) => [
+    attempt.id,
+    attempt.bookId,
+    attempt.bookTitle,
+    attempt.passageId,
+    attempt.passageTitle,
+    attempt.startedAt,
+    attempt.finishedAt,
+    attempt.durationSec,
+    JSON.stringify(attempt.answers ?? {}),
+    attempt.correct,
+    attempt.total,
+    attempt.dateKey,
+  ]);
+  return { bookRows, passageRows, attemptRows };
 }
