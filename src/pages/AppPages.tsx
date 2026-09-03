@@ -1403,11 +1403,12 @@ export function FlashcardsPage({ api }: PageProps) {
             <Button
               variant="secondary"
               aria-pressed={card.starred}
+              aria-label={card.starred ? "Đã đánh dấu từ khó nhớ, bấm để bỏ đánh dấu" : "Đánh dấu từ khó nhớ"}
               className={card.starred ? "border-amber-400 text-amber-600 dark:text-amber-300" : ""}
               onClick={() => { api.updateSet(set.id, (current) => updateSetCard(current, card.id, (item) => ({ ...item, starred: !item.starred }))); }}
             >
               <Icon name="star" filled={card.starred} className={card.starred ? "text-amber-500" : ""} />
-              {card.starred ? "Đã đánh dấu" : "Star"}
+              {card.starred ? null : "Star"}
             </Button>
           )}
         </div>
