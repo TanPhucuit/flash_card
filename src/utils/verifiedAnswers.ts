@@ -54,21 +54,17 @@ function findKey(
   return (sameGroup ?? byName[0]).candidate;
 }
 
-/**
- * Ghi một bảng đáp án (đã kiểm chứng bằng tay, hoặc vừa tải lên từ Excel) đè
- * lên các bài đọc của một cuốn sách. Dùng chung cho cả hai nguồn — chỉ khác
- * nhau ở chỗ bảng đến từ đâu (xem applyVerifiedAnswers và
- * applyUploadedAnswerKey bên dưới), việc ghép bài đọc <-> mục trong bảng và
- * điền câu hỏi là một.
- */
-function applyAnswerKey(book: ReadingBook, passages: VerifiedPassageKey[]): Omit<VerifiedApplyReport, "bookTitle"> {
+export function applyVerifiedAnswers(book: ReadingBook): VerifiedApplyReport | null {
+  const verified = VERIFIED_ANSWER_KEYS.find((entry) => entry.bookMatch.test(book.title));
+  if (!verified) return null;
+
   const used = new Set<VerifiedPassageKey>();
   const unmatchedPassages: string[] = [];
   let matchedPassages = 0;
   let filledAnswers = 0;
 
   for (const passage of book.passages) {
-    const key = findKey(passage.title, passage.text, passages, used);
+    const key = findKey(passage.title, passage.text, verified.passages, used);
     if (!key) {
       unmatchedPassages.push(passage.title);
       continue;
@@ -83,8 +79,8 @@ function applyAnswerKey(book: ReadingBook, passages: VerifiedPassageKey[]): Omit
       filledAnswers += 1;
     }
 
-    // Bảng đáp án là nguồn đúng, nên nếu nó có câu mà phần tách câu hỏi bỏ
-    // sót thì bổ sung vào — người học vẫn làm và vẫn được chấm câu đó.
+    // Bảng đã kiểm chứng là nguồn đúng, nên nếu nó có câu mà phần tách câu hỏi
+    // bỏ sót thì bổ sung vào — người học vẫn làm và vẫn được chấm câu đó.
     const existing = new Set(passage.questions.map((question) => question.number));
     for (const [label, answer] of Object.entries(key.answers)) {
       const number = Number(label);
@@ -101,43 +97,5 @@ function applyAnswerKey(book: ReadingBook, passages: VerifiedPassageKey[]): Omit
     passage.questions.sort((a, b) => a.number - b.number);
   }
 
-  return { matchedPassages, filledAnswers, unmatchedPassages };
-}
-
-export function applyVerifiedAnswers(book: ReadingBook): VerifiedApplyReport | null {
-  const verified = VERIFIED_ANSWER_KEYS.find((entry) => entry.bookMatch.test(book.title));
-  if (!verified) return null;
-  return { bookTitle: verified.title, ...applyAnswerKey(book, verified.passages) };
-}
-
-export interface AnswerKeyRow {
-  /** "Day 1", "Test 2"... — optional, only used as a tie-breaker. */
-  group?: string;
-  passage: string;
-  question: string | number;
-  answer: string;
-}
-
-/**
- * Áp bảng đáp án người dùng vừa tải lên (Excel/CSV/TSV, cột group|passage|
- * question|answer — đúng khuôn tools/answer_key_to_excel.py ở D:\project\
- * OCR_image_to_pdf đã sinh ra) lên một cuốn sách vừa import. Đây là đường mà
- * trước đây hoàn toàn không có: import lại sách tự thêm không hề hỏi xin file
- * đáp án, nên đáp án OCR đoán được (hay sai) không có cách nào được thay thế.
- */
-export function applyUploadedAnswerKey(book: ReadingBook, rows: AnswerKeyRow[]): VerifiedApplyReport {
-  const byPassage = new Map<string, VerifiedPassageKey>();
-  for (const row of rows) {
-    const passageName = String(row.passage ?? "").trim();
-    const questionLabel = String(row.question ?? "").trim();
-    const answer = String(row.answer ?? "").trim();
-    if (!passageName || !questionLabel || !answer) continue;
-    const group = String(row.group ?? "").trim();
-    const key = `${group}\u0000${passageName}`;
-    const existing = byPassage.get(key);
-    if (existing) existing.answers[questionLabel] = answer;
-    else byPassage.set(key, { group, passage: passageName, answers: { [questionLabel]: answer } });
-  }
-  const passages = [...byPassage.values()];
-  return { bookTitle: book.title, ...applyAnswerKey(book, passages) };
+  return { bookTitle: verified.title, matchedPassages, filledAnswers, unmatchedPassages };
 }

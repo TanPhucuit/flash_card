@@ -4,8 +4,7 @@ import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar } from ".
 import { ReadingApi } from "../hooks/useReadingData";
 import { LifeManagementConfig, ReadingAttempt, ReadingPassage, ReadingQuestion } from "../types/reading";
 import { ParsedBookPreview, isAnswerCorrect, parseReadingBook } from "../utils/readingPdf";
-import { VerifiedApplyReport, applyUploadedAnswerKey, applyVerifiedAnswers } from "../utils/verifiedAnswers";
-import { parseAnswerKeyFile } from "../utils/answerKeyFile";
+import { VerifiedApplyReport, applyVerifiedAnswers } from "../utils/verifiedAnswers";
 import { extractPdfLines } from "../utils/readingPdfExtract";
 import { syncBookToLifeManagement } from "../utils/lifeManagementSync";
 import { toDateKey } from "../utils/readingStorage";
@@ -179,18 +178,12 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
   const [verified, setVerified] = useState<VerifiedApplyReport | null>(null);
   const [error, setError] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
-  const [answerKeyReport, setAnswerKeyReport] = useState<VerifiedApplyReport | null>(null);
-  const [answerKeyError, setAnswerKeyError] = useState("");
-  const [answerKeyBusy, setAnswerKeyBusy] = useState(false);
-  const answerKeyFileRef = useRef<HTMLInputElement>(null);
 
   const handleFile = async (file: File) => {
     setBusy(true);
     setError("");
     setPreview(null);
     setVerified(null);
-    setAnswerKeyReport(null);
-    setAnswerKeyError("");
     try {
       setStatus("Đang đọc PDF...");
       const lines = await extractPdfLines(file, (page, total) => setStatus(`Đang đọc trang ${page}/${total}...`));
@@ -214,44 +207,6 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
     } finally {
       setBusy(false);
       setStatus("");
-    }
-  };
-
-  // Trước đây, thêm lại một sách không hề hỏi xin file đáp án — nên đáp án
-  // OCR đoán được (hay sai, hay trống) không có cách nào được thay thế trừ
-  // khi cuốn sách đã có mặt trong data/answerKeys.ts (chỉ đúng một cuốn).
-  // File đáp án dùng đúng khuôn cột PROMPT_ANSWER_KEY.txt / answer_key_to_
-  // excel.py đã sinh ra ở D:\project\OCR_image_to_pdf: group | passage |
-  // question | answer.
-  const handleAnswerKeyFile = async (file: File) => {
-    if (!preview) return;
-    setAnswerKeyBusy(true);
-    setAnswerKeyError("");
-    try {
-      const { rows, unknownColumns } = await parseAnswerKeyFile(file);
-      if (!rows.length) {
-        setAnswerKeyError(
-          unknownColumns.length
-            ? `Không đọc được cột nào khớp. File cần có cột group/passage/question/answer, đang thấy: ${unknownColumns.join(", ")}.`
-            : "File rỗng hoặc không đúng khuôn cột (group | passage | question | answer).",
-        );
-        return;
-      }
-      const report = applyUploadedAnswerKey(preview.book, rows);
-      setAnswerKeyReport(report);
-      setPreview({
-        ...preview,
-        report: preview.book.passages.map((passage) => ({
-          passageTitle: passage.title,
-          questionCount: passage.questions.length,
-          answeredCount: passage.questions.filter((question) => question.answer).length,
-          wordCount: passage.text.split(/\s+/).filter(Boolean).length,
-        })),
-      });
-    } catch (caught) {
-      setAnswerKeyError(caught instanceof Error ? caught.message : "Không đọc được file này.");
-    } finally {
-      setAnswerKeyBusy(false);
     }
   };
 
@@ -330,40 +285,6 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
               </div>
             ))}
           </div>
-        </div>
-      ) : null}
-
-      {preview && preview.book.passages.length ? (
-        <div className="mt-md rounded-xl border border-dashed border-surface-variant p-md dark:border-white/15">
-          {(() => {
-            const missing = preview.report.reduce((sum, row) => sum + (row.questionCount - row.answeredCount), 0);
-            return (
-              <p className="mb-sm text-sm font-semibold">
-                {missing > 0 ? `Còn thiếu ${missing} đáp án` : "Đã đủ đáp án"} — tải file Excel/CSV đáp án để điền hoặc ghi đè
-              </p>
-            );
-          })()}
-          <p className="mb-sm text-xs text-on-surface-variant">
-            Cột: group (VD "Day 1", để trống nếu không có) · passage (đúng/gần đúng tên bài) · question (số câu) · answer.
-            Đúng khuôn file mà tools/answer_key_to_excel.py ở D:\project\OCR_image_to_pdf sinh ra.
-          </p>
-          <input
-            ref={answerKeyFileRef}
-            type="file"
-            accept=".xlsx,.xls,.csv,.tsv,.txt"
-            className="hidden"
-            onChange={(event) => { const file = event.target.files?.[0]; if (file) void handleAnswerKeyFile(file); if (answerKeyFileRef.current) answerKeyFileRef.current.value = ""; }}
-          />
-          <Button variant="secondary" disabled={answerKeyBusy} onClick={() => answerKeyFileRef.current?.click()} className="w-full">
-            <Icon name="table_view" /> Chọn file đáp án Excel/CSV
-          </Button>
-          {answerKeyError ? <p className="mt-sm text-xs text-red-700">{answerKeyError}</p> : null}
-          {answerKeyReport ? (
-            <p className="mt-sm text-xs text-on-surface-variant">
-              Đã điền {answerKeyReport.filledAnswers} đáp án, khớp {answerKeyReport.matchedPassages}/{preview.book.passages.length} bài đọc.
-              {answerKeyReport.unmatchedPassages.length ? ` Chưa khớp: ${answerKeyReport.unmatchedPassages.join(", ")}.` : ""}
-            </p>
-          ) : null}
         </div>
       ) : null}
 
