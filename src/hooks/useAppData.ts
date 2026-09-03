@@ -2,9 +2,13 @@ import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useRef, useS
 import { AppData, VocabularySet } from "../types";
 import { loadAppData, saveAppData } from "../utils/storage";
 import { loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
+import { syncStarSets } from "../utils/starSets";
 
 export function useAppData() {
-  const [data, setReactData] = useState<AppData>(() => loadAppData());
+  // Đồng bộ ngay từ dữ liệu đọc lên: cache có thể được ghi từ một bản cũ chưa
+  // có tính năng này, hoặc từ một máy khác, nên các set sao phải được dựng lại
+  // theo đúng cờ sao hiện có thay vì tin vào những gì đã lưu.
+  const [data, setReactData] = useState<AppData>(() => syncStarSets(loadAppData()));
   const dataRef = useRef(data);
   const cloudSaveTimer = useRef<number | undefined>(undefined);
   const [syncState, setSyncState] = useState<"idle" | "loading" | "saving" | "error">("idle");
@@ -20,9 +24,10 @@ export function useAppData() {
     setSyncState("loading");
     loadFromGoogleSheet(controller.signal)
       .then((cloudData) => {
-        dataRef.current = cloudData;
-        saveAppData(cloudData);
-        setReactData(cloudData);
+        const synced = syncStarSets(cloudData);
+        dataRef.current = synced;
+        saveAppData(synced);
+        setReactData(synced);
         setSyncState("idle");
         setSyncError("");
       })
@@ -54,7 +59,10 @@ export function useAppData() {
 
   const setData = useCallback<Dispatch<SetStateAction<AppData>>>((nextOrUpdater) => {
     const current = dataRef.current;
-    const next = typeof nextOrUpdater === "function" ? (nextOrUpdater as (current: AppData) => AppData)(current) : nextOrUpdater;
+    const updated = typeof nextOrUpdater === "function" ? (nextOrUpdater as (current: AppData) => AppData)(current) : nextOrUpdater;
+    // Danh sách từ khó nhớ được dựng lại ở ĐÂY, trên đường ghi chung, thay vì ở
+    // từng nút gắn sao — một chỗ quên gọi là danh sách lệch với thực tế.
+    const next = syncStarSets(updated);
     dataRef.current = next;
     try {
       saveAppData(next);

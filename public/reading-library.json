@@ -3360,6 +3360,134 @@
      "answer": "describes"
     }
    ]
+  },
+  {
+   "id": "mtlgsygv-8hsbera",
+   "order": 54,
+   "title": "Stonehenge",
+   "text": "Stonehenge is a prehistoric megalithic structure on Salisbury Plain in Wiltshire, England, two miles (3 km) west of Amesbury. It consists of an outer ring of vertical sarsen standing stones, each around 13 feet (4.0 m) high, seven feet (2.1 m) wide, and weighing around 25 tons, topped by connecting horizontal lintel stones which are held in place with mortise and tenon joints—a feature unique among contemporary monuments. Inside is a ring of smaller bluestones. Inside these are free-standing trilithons: two bulkier vertical sarsens joined by a single lintel. The whole monument, now in ruins, is aligned towards the sunrise on the summer solstice and sunset on the winter solstice. The stones are set within earthworks in the middle of the densest complex of Neolithic and Bronze Age monuments in England, including several hundred tumuli (burial mounds).\n\nStonehenge was constructed in several phases, beginning about 3100 BC and continuing until about 1600 BC. The famous circle of large sarsen stones was placed between 2600 BC and 2400 BC. The surrounding circular earth bank and ditch, which constitute the earliest phase of the monument, have been dated to about 3100 BC. Radiocarbon dating suggests that the bluestones were given their current positions between 2400 and 2200 BC, although they may have been at the site as early as 3000 BC.\n\nOne of the most famous landmarks in the United Kingdom, Stonehenge is regarded as a British cultural icon. It has been a legally protected scheduled monument since the Ancient Monuments Protection Act 1882 was passed. The site and its surroundings were added to UNESCO's list of World Heritage Sites in 1986. Stonehenge is owned by the Crown Estate and managed by English Heritage; the surrounding land is owned by the National Trust.\n\nStonehenge could have been a burial ground from its earliest beginnings. Deposits containing human bone date from as early as 3000 BC, when the ditch and bank were first dug, and continued for at least another 500 years.\n\nThe Oxford English Dictionary cites Ælfric's 10th-century glossary, in which henge-cliff is given the meaning 'precipice', or stone; thus, the stanenges or Stanheng \"not far from Salisbury\" recorded by 11th-century writers are \"stones supported in the air\". In 1740, William Stukeley notes: \"Pendulous rocks are now called henges in Yorkshire ... I doubt not, Stonehenge in Saxon signifies the hanging stones.\" Christopher Chippindale's Stonehenge Complete gives the derivation of the name Stonehenge as coming from the Old English words stān 'stone', and either hencg 'hinge' or hen(c)en 'to hang' or 'gallows' or 'instrument of torture'.\n\nThe \"henge\" portion has given its name to a class of monuments known as henges. Archaeologists define henges as earthworks consisting of a circular banked enclosure with an internal ditch. As often happens in archaeological terminology, this is a holdover from antiquarian use.\n\nMike Parker Pearson, leader of the Stonehenge Riverside Project based around Durrington Walls, noted that Stonehenge appears to have been associated with burial from the earliest period of its existence:\n\nStonehenge was a place of burial from its beginning to its zenith in the mid third [sic] millennium B.C. The cremation burial dating to Stonehenge's sarsen stones phase is probably just one of many from this later period of the monument's use and demonstrates that it was still very much a domain of the dead.\n\nStonehenge evolved in several construction phases spanning at least 1500 years. There is evidence of large-scale construction on and around the monument, perhaps extending the landscape's time frame to 6500 years. Dating and understanding the various phases of activity are complicated by disturbance of the natural chalk by periglacial effects and animal burrowing, poor quality early excavation records, and a lack of accurate, scientifically verified dates. The modern phasing most generally agreed to by archaeologists is detailed below. Features mentioned in the text are numbered and shown on the plan, right.\n\nArchaeologists have found four, or possibly five, large Mesolithic postholes (one may have been a natural tree throw), which date to around 8000 BC, beneath the site of the tourist car park that was in use until 2013. These held pine posts around two feet six inches (0.75 m) in diameter, which were erected and eventually rotted in place. Three of the posts (and possibly four) were aligned east–west, which may have had ritual significance. Another Mesolithic astronomical site in Britain is Warren Field in Aberdeenshire, which is considered the world's oldest lunisolar calendar, corrected yearly by observing the midwinter solstice. Similar but later sites have been found in Scandinavia. A settlement that may have been contemporaneous with the posts has been found at Blick Mead, a reliable year-round spring one mile (1.6 km) from Stonehenge.\n\nSalisbury Plain was still wooded, but 4,000 years later, during the earlier Neolithic, people built a causewayed enclosure at Robin Hood's Ball and long barrow tombs in the surrounding landscape. In approximately 3500 BC, a Stonehenge Cursus was built 2,300 feet (700 m) north of the site as the first farmers began clearing the trees and developing the area. Other previously overlooked stone or wooden structures and burial mounds may date as far back as 4000 BC; charcoal from the Blick Mead camp has been dated to that time. The University of Buckingham's Humanities Research Institute believes that the community who built Stonehenge lived there for several millennia, making it potentially \"one of the pivotal places in the history of the Stonehenge landscape.\"\n\n— Nguồn: Wikipedia, \"Stonehenge\" (CC BY-SA 4.0). https://en.wikipedia.org/wiki/Stonehenge",
+   "questions": [
+    {
+     "id": "mtlgsygv-8hsbera-q1",
+     "number": 1,
+     "type": "gap",
+     "prompt": "Stonehenge is a __________ megalithic structure on Salisbury Plain in Wiltshire, England, two miles (3 km) west of Amesbury.",
+     "answer": "prehistoric"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q2",
+     "number": 2,
+     "type": "gap",
+     "prompt": "Stonehenge was constructed in several phases, beginning about 3100 BC and __________ until about 1600 BC.",
+     "answer": "continuing"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q3",
+     "number": 3,
+     "type": "gap",
+     "prompt": "One of the most famous __________ in the United Kingdom, Stonehenge is regarded as a British cultural icon.",
+     "answer": "landmarks"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q4",
+     "number": 4,
+     "type": "gap",
+     "prompt": "Deposits containing human bone date from as early as 3000 BC, when the ditch and bank were first dug, and __________ for at least another 500 years.",
+     "answer": "continued"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q5",
+     "number": 5,
+     "type": "gap",
+     "prompt": "Archaeologists define henges as earthworks __________ of a circular banked enclosure with an internal ditch.",
+     "answer": "consisting"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q6",
+     "number": 6,
+     "type": "gap",
+     "prompt": "The cremation burial dating to Stonehenge's sarsen stones phase is __________ just one of many from this later period of the monument's use and demonstrates that it was still very much a domain of the dead.",
+     "answer": "probably"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q7",
+     "number": 7,
+     "type": "gap",
+     "prompt": "Features mentioned in the text are __________ and shown on the plan, right.",
+     "answer": "numbered"
+    },
+    {
+     "id": "mtlgsygv-8hsbera-q8",
+     "number": 8,
+     "type": "gap",
+     "prompt": "Another Mesolithic astronomical site in Britain is Warren Field in Aberdeenshire, which is __________ the world's oldest lunisolar calendar, corrected yearly by observing the midwinter solstice.",
+     "answer": "considered"
+    }
+   ]
+  },
+  {
+   "id": "mtlgt09l-089m76r",
+   "order": 55,
+   "title": "Coffee",
+   "text": "Coffee is a beverage brewed from roasted, ground coffee beans. Dark-colored and bitter, coffee has a stimulating effect on humans due to its caffeine content; however decaffeinated coffee is also commercially available. There are also various coffee substitutes.\n\nCoffee production begins when the seeds from coffee cherries, the Coffea plant's fruits, are separated to produce unroasted green coffee beans. The \"beans\" are roasted and then ground into fine particles. Coffee is brewed from the ground roasted beans, which are typically steeped in hot water before being filtered out. It is usually served hot, although chilled or iced coffee is common. Coffee can be prepared and presented in a variety of ways, e.g., espresso, French press, caffè latte, or already-brewed canned coffee. Sugar, sugar substitutes, milk, and cream are often added and change the flavor.\n\nThough coffee has become a global commodity, it has a history tied to food traditions around the Red Sea. The earliest reports of coffee drinking pertain to the plant's use among the Sufis of Yemen in southern Arabia in the middle of the 15th century. Up to the end of the 17th century, most of the world's coffee was imported from Yemen. As it gained in popularity, coffee started to be cultivated in Java in the 17th century and the Americas from the 18th century.\n\nThe two most commonly grown coffee bean types are C. arabica and C. robusta. Coffee plants are cultivated in over 70 countries, primarily in the equatorial regions of the Americas, Southeast Asia, the Indian subcontinent, and Africa. Green, unroasted coffee is traded as an agricultural commodity. The global coffee industry was worth US$495.50 billion in 2023. In 2023, Brazil was the leading grower of coffee beans, producing 31% of the world's total, followed by Vietnam. While coffee sales reach billions of dollars annually worldwide, coffee farmers disproportionately live in poverty. Critics of the coffee industry have pointed to its negative impact on the environment, including clearing of land for coffee growing and water use.\n\nThe word coffee entered the English language in 1582 via the Dutch koffie, borrowed from the Ottoman Turkish kahve (قهوه), borrowed from the Arabic qahwah (قَهْوَة). Medieval Arabic lexicons traditionally held that the etymology of qahwah meant 'wine', given its distinctly dark color, and was derived from the verb qahiya (قَهِيَ), 'to have no appetite'. The word qahwah most likely meant 'the dark one', referring to the brew or the bean.\n\nqahwah is not the name of the bean, which are known in Arabic as bunn and in Cushitic languages as būn. Semitic languages have the root qhh, 'dark color', which became a natural designation for the beverage. Its cognates include the Hebrew qehe(h) 'dulling' and the Aramaic qahey ('give acrid taste to'). Although etymologists have connected it with a word meaning 'wine', it is also thought to be from the Kaffa region of Ethiopia.\n\nThere are multiple anecdotal origin stories which lack evidence. Ralph S. Hattox records traditions in which the Islamic prophet Muhammad is said to have been introduced to a stimulating beverage by the Angel Gabriel, who recommended it for its restorative qualities. In another commonly repeated legend, Kaldi, a 9th-century Ethiopian or Arab goatherd, first observed the coffee plant after seeing his flock energized by chewing on the plant. This legend does not appear before 1671, indicating the story is likely apocryphal, first being related by Antoine Faustus Nairon, a Maronite professor of Oriental languages and author of one of the first printed treatises devoted to coffee, De Saluberrima potione Cahue seu Cafe nuncupata Discurscus (Rome, 1671), which describes a camel or goat herder in the Kingdom of Ayaman, Arabia Felix. The herder is unnamed in the earliest account and the name Kaldi appears to be a later invention from the twentieth century. Another legend attributes the discovery of coffee to a Sheikh Omar. Starving after being exiled from Mokha, Omar found berries. After attempting to chew and roast them, Omar boiled them, which yielded a liquid that revitalized and sustained him.\n\nThe earliest possible references to the coffee bean and its qualities appear in al-Razi's 10th-century al-Hawi and in Avicenna's 11th-century The Canon of Medicine both which describe a plant component called bunchum as hot and dry—with al-Razi reporting beneficial effects for the stomach and Ibn Sina also adding claims for the skin and body odor. According to later accounts, bunchum was made from a root rather than from coffee beans. There is no confirmed evidence, either historical or archaeological, of coffee as a drink being consumed before the 15th century. The drink appears to be a relatively recent development. By the late 15th century, coffee drinking was well established among Sufi communities in Yemen.\n\nAn early writer on coffee was Abd al-Qadir al-Jaziri of Ottoman Iraq, who in 1587 compiled a work tracing the history and legal controversies of coffee in his ʿUmdat al-ṣafwa fī ḥill al-qahwa (عمدة الصفوة في حل القهوة), in which he claims that the coffee bean originated in the \"land of Sa'ad ad-Din, and the country of Abyssinia, and of the Jabart, and other places of the land of ‘Ajam, but the time of its first use is unknown, nor do we know the reason.\" Al-Jazīrī asserts that coffee was introduced to Cairo at the start of the 16th century by Sufi devotees.\n\n— Nguồn: Wikipedia, \"Coffee\" (CC BY-SA 4.0). https://en.wikipedia.org/wiki/Coffee",
+   "questions": [
+    {
+     "id": "mtlgt09l-089m76r-q1",
+     "number": 1,
+     "type": "gap",
+     "prompt": "Dark-colored and bitter, coffee has a stimulating __________ on humans due to its caffeine content; however decaffeinated coffee is also commercially available.",
+     "answer": "effect"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q2",
+     "number": 2,
+     "type": "gap",
+     "prompt": "It is usually __________ hot, although chilled or iced coffee is common.",
+     "answer": "served"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q3",
+     "number": 3,
+     "type": "gap",
+     "prompt": "Though coffee has __________ a global commodity, it has a history tied to food traditions around the Red Sea.",
+     "answer": "become"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q4",
+     "number": 4,
+     "type": "gap",
+     "prompt": "As it gained in __________, coffee started to be cultivated in Java in the 17th century and the Americas from the 18th century.",
+     "answer": "popularity"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q5",
+     "number": 5,
+     "type": "gap",
+     "prompt": "In 2023, Brazil was the __________ grower of coffee beans, producing 31% of the world's total, followed by Vietnam.",
+     "answer": "leading"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q6",
+     "number": 6,
+     "type": "gap",
+     "prompt": "The word coffee __________ the English language in 1582 via the Dutch koffie, borrowed from the Ottoman Turkish kahve (قهوه), borrowed from the Arabic qahwah (قَهْوَة).",
+     "answer": "entered"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q7",
+     "number": 7,
+     "type": "gap",
+     "prompt": "Although etymologists have __________ it with a word meaning 'wine', it is also thought to be from the Kaffa region of Ethiopia.",
+     "answer": "connected"
+    },
+    {
+     "id": "mtlgt09l-089m76r-q8",
+     "number": 8,
+     "type": "gap",
+     "prompt": "The herder is __________ in the earliest account and the name Kaldi appears to be a later invention from the twentieth century.",
+     "answer": "unnamed"
+    }
+   ]
   }
  ]
 }
