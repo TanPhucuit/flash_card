@@ -1335,8 +1335,13 @@ export function FlashcardsPage({ api }: PageProps) {
   const [flipped, setFlipped] = useState(false);
   const { speak } = useSpeech(api.data.settings.voiceURI);
   if (!set) return <Navigate to="/sets" replace />;
-  const card = cards[index] ?? cards[0];
-  if (!card) return <EmptyState title="Chưa có từ để học" text="Hãy thêm từ vào học phần trước." />;
+  const shuffledCard = cards[index] ?? cards[0];
+  if (!shuffledCard) return <EmptyState title="Chưa có từ để học" text="Hãy thêm từ vào học phần trước." />;
+  // `cards` chỉ giữ THỨ TỰ xáo trộn, chốt một lần lúc mount — nó không tự cập
+  // nhật khi api.updateSet() ghi thay đổi (ví dụ bấm Star) vào set thật. Đọc
+  // lại đúng bản ghi hiện tại từ set.cards theo id để nút Star đổi màu ngay,
+  // thay vì tô theo bản chụp cũ chưa từng có starred: true.
+  const card = set.cards.find((item) => item.id === shuffledCard.id) ?? shuffledCard;
   const mark = (correct: boolean) => {
     api.updateSet(set.id, (current) => updateSetCard(current, card.id, (item) => updateCardStudy(item, correct)));
     setFlipped(false);
