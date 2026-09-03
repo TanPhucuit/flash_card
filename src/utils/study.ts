@@ -10,12 +10,23 @@ export function percent(value: number, total: number) {
   return Math.round((value / total) * 100);
 }
 
-export function getSetProgress(set: VocabularySet) {
-  return percent(set.cards.filter((card) => card.status === "mastered").length, set.cards.length);
-}
-
 function isPerfectResult(r: { totalQuestions: number; correctAnswers: number }) {
   return r.totalQuestions > 0 && r.correctAnswers === r.totalQuestions;
+}
+
+/**
+ * Tiến độ = 4 phần bằng nhau (25% mỗi phần): học xong (điểm tuyệt đối) từng
+ * trong 3 chế độ Learn (eng-eng, viet-eng, eng-viet), cộng thêm Write điểm
+ * tuyệt đối. Đủ cả 4 mới là 100% — khớp đúng với isSetFullyMastered bên dưới,
+ * chỉ khác là hàm này trả về mức đang dở dang thay vì chỉ true/false.
+ */
+export function getSetProgress(set: VocabularySet, results: StudyResult[]): number {
+  if (!set.cards.length) return 0;
+  const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);
+  const learnPerfect = (direction: LearnDirection) => relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && isPerfectResult(r));
+  const writePerfect = relevant.some((r) => r.mode === "write" && isPerfectResult(r));
+  const completed = LEARN_DIRECTIONS.filter(learnPerfect).length + (writePerfect ? 1 : 0);
+  return Math.round((completed / (LEARN_DIRECTIONS.length + 1)) * 100);
 }
 
 export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): boolean {

@@ -4,7 +4,7 @@ import { DataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
 import { ColumnChart, HorizontalBarChart, StatusDonutChart, TrendLineChart } from "../components/charts";
 import { useSpeech } from "../hooks/useSpeech";
-import { AppData, LEARN_DIRECTIONS, LearnDirection, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
+import { AppData, LEARN_DIRECTIONS, LearnDirection, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
@@ -98,8 +98,8 @@ function Stat({ label, value, icon }: { label: string; value: string | number; i
   );
 }
 
-function SetCard({ set, onDelete }: { set: VocabularySet; onDelete: () => void }) {
-  const progress = getSetProgress(set);
+function SetCard({ set, results, onDelete }: { set: VocabularySet; results: StudyResult[]; onDelete: () => void }) {
+  const progress = getSetProgress(set, results);
   return (
     <Card className="flex flex-col gap-md">
       <div className="flex items-start justify-between gap-md">
@@ -727,7 +727,7 @@ export function MobileAppPage({ api }: PageProps) {
                     </span>
                     <span className="min-w-0 flex-1">
                       <strong className="block truncate text-lg">{set.title}</strong>
-                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set)}% đã thuộc</span>
+                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set, api.data.results)}% đã thuộc</span>
                     </span>
                   </button>
                 );
@@ -912,7 +912,7 @@ export function MobileAppPage({ api }: PageProps) {
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary dark:bg-primary/25 dark:text-[#c9c5ff]"><Icon name={libraryMode === "learn" ? "school" : "style"} /></span>
                     <span className="min-w-0 flex-1">
                       <strong className="block truncate text-lg">{set.title}</strong>
-                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set)}% đã thuộc</span>
+                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set, api.data.results)}% đã thuộc</span>
                     </span>
                     <Icon name="chevron_right" className="shrink-0 text-on-surface-variant dark:text-white/50" />
                   </button>
@@ -973,8 +973,8 @@ export function DashboardPage({ api }: PageProps) {
           <div className="mt-md space-y-sm">
             {recent.map((set) => (
               <button key={set.id} onClick={() => navigate(`/sets/${set.id}`)} className="w-full rounded-xl border border-surface-variant bg-surface-container-lowest p-md text-left transition hover:border-primary dark:border-white/10 dark:bg-white/5">
-                <div className="flex justify-between gap-md"><strong>{set.title}</strong><span>{getSetProgress(set)}%</span></div>
-                <ProgressBar value={getSetProgress(set)} />
+                <div className="flex justify-between gap-md"><strong>{set.title}</strong><span>{getSetProgress(set, api.data.results)}%</span></div>
+                <ProgressBar value={getSetProgress(set, api.data.results)} />
               </button>
             ))}
           </div>
@@ -1137,7 +1137,7 @@ export function MySetsPage({ api }: PageProps) {
       </Card>
       {filtered.length ? (
         <div className="grid gap-md lg:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((set) => <SetCard key={set.id} set={set} onDelete={() => confirm(`Xóa "${set.title}"?`) && api.deleteSet(set.id)} />)}
+          {filtered.map((set) => <SetCard key={set.id} set={set} results={api.data.results} onDelete={() => confirm(`Xóa "${set.title}"?`) && api.deleteSet(set.id)} />)}
         </div>
       ) : (
         <EmptyState title="Chưa có học phần phù hợp" text="Tạo học phần mới hoặc import CSV để bắt đầu." action={<Button onClick={() => navigate("/sets/new")}><Icon name="add" /> Tạo học phần</Button>} />
@@ -1280,8 +1280,8 @@ export function SetDetailPage({ api }: PageProps) {
     <>
       <PageTitle title={set.title} subtitle={set.description} action={<Button variant="secondary" onClick={() => navigate(`/sets/${set.id}/edit`)}><Icon name="edit" /> Edit</Button>} />
       <Card className="mb-lg">
-        <div className="mb-sm flex justify-between text-sm text-on-surface-variant dark:text-white/60"><span>{set.cards.length} từ</span><span>{getSetProgress(set)}% mastered</span></div>
-        <ProgressBar value={getSetProgress(set)} />
+        <div className="mb-sm flex justify-between text-sm text-on-surface-variant dark:text-white/60"><span>{set.cards.length} từ</span><span>{getSetProgress(set, api.data.results)}% mastered</span></div>
+        <ProgressBar value={getSetProgress(set, api.data.results)} />
         <div className="mt-md grid grid-cols-2 gap-sm sm:grid-cols-4">
           {modes.map(([mode, label, icon]) => <Button key={mode} variant="secondary" onClick={() => navigate(modePath(set.id, mode))} className="min-h-24 flex-col"><Icon name={icon} /> {label}</Button>)}
         </div>
@@ -2022,10 +2022,10 @@ export function ProgressPage({ api }: PageProps) {
 
   const setProgressBars = useMemo(
     () => [...api.data.sets]
-      .map((set) => ({ label: set.title, value: getSetProgress(set), suffix: "%" }))
+      .map((set) => ({ label: set.title, value: getSetProgress(set, api.data.results), suffix: "%" }))
       .sort((a, b) => b.value - a.value)
       .slice(0, 6),
-    [api.data.sets],
+    [api.data.sets, api.data.results],
   );
 
   const modeLabels: Record<string, string> = { learn: "Learn", write: "Write", match: "Match", flashcards: "Flashcards", listening: "Listening" };
