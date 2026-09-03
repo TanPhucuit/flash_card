@@ -148,7 +148,16 @@ export function reconstructPageLines(items: PageItem[]): string[] {
   const rows: PageItem[][] = [];
   let current: PageItem[] = [];
   let currentY: number | null = null;
-  for (const item of items) {
+  // Bỏ ngay tại nguồn những mẩu chữ chỉ gồm ký tự điều khiển.
+  //
+  // OCR lại một PDF vốn đã searchable sẽ để lại HAI lớp chữ chồng nhau: lớp cũ
+  // (font không có bảng ToUnicode, giải mã ra toàn ky tu null) và lớp mới đúng.
+  // Hai lớp nằm đúng cùng toạ độ nên chúng xen kẽ 1:1 — cứ một dòng thật lại
+  // một dòng rác. Không lọc ở đây thì mọi khâu phía sau đều lệch: dòng rác trở
+  // thành một "dòng trống" ngắt đoạn giữa mỗi câu, thành một ô trong bảng đáp
+  // án, và có khi thành cả tiêu đề bài đọc.
+  const meaningful = items.filter((item) => item.str.replace(CONTROL_CHARS, "").trim().length > 0);
+  for (const item of meaningful) {
     const y = Math.round(item.y * 10) / 10;
     if (currentY === null) currentY = y;
     if (Math.abs(y - currentY) > 2.5) {
@@ -304,6 +313,187 @@ function buildQuestions(groups: RawGroup[]): ReadingQuestion[] {
 }
 
 const FOOTER_NOISE = /www\.|\.com|\.org|nhantriviet|mamstation|english station/i;
+
+// ---------------------------------------------------------------------------
+// Dựng lại thân bài đọc
+//
+// Một dòng trong PDF không phải là một dòng của bài đọc: chữ trong sách chạy
+// hết bề ngang cột rồi mới xuống dòng, nên một câu văn bị cắt thành ba bốn
+// dòng. Trước đây thân bài được ghép bằng passageLines.join("\n") rồi hiển thị
+// nguyên xi (whitespace-pre-wrap), nên người đọc thấy đúng các chỗ ngắt dòng
+// của trang in — giữa câu, giữa cụm từ — chứ không phải các đoạn văn thật.
+// Kèm theo đó là watermark, số trang và tiêu đề chạy trang lẫn thẳng vào bài.
+//
+// Phần dưới đây làm hai việc tách bạch: bỏ rác (theo mẫu cố định VÀ theo tần
+// suất lặp lại trong cả cuốn), rồi ghép các dòng gãy lại thành đoạn văn.
+// ---------------------------------------------------------------------------
+
+/** Ký tự điều khiển/null từ lớp chữ hỏng của một bản OCR cũ còn sót lại. */
+const CONTROL_CHARS = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g;
+/** Số trang đứng một mình. */
+const BARE_PAGE_NUMBER = /^\d{1,3}$/;
+/** Nhãn loại câu hỏi in trong bảng tra ở đầu sách, hay lọt vào thân bài. */
+const QUESTION_TYPE_LABEL = /^(?:overview|detail|graphic|viewpoint|summary)\s+q\.?$/i;
+/** Nhãn đoạn kiểu "A", "B"... in ở lề trái mỗi đoạn của bài đọc. */
+const PARAGRAPH_MARKER = /^([A-N])$/;
+const PARAGRAPH_MARKER_INLINE = /^([A-N])\s+(?=[A-Z"'])/;
+
+function stripControls(line: string): string {
+  return line.replace(CONTROL_CHARS, "").trim();
+}
+
+/**
+ * Bỏ những dòng lặp đi lặp lại khắp cuốn sách — tiêu đề chạy trang, watermark,
+ * chân trang. Nhận diện bằng TẦN SUẤT chứ không phải bằng danh sách từ khoá:
+ * mỗi cuốn sách có watermark riêng, không thể liệt kê trước; nhưng thứ gì in
+ * lại trên hàng chục trang thì chắc chắn không phải nội dung bài đọc.
+ */
+function findRepeatedNoise(lines: string[]): Set<string> {
+  const counts = new Map<string, number>();
+  for (const line of lines) {
+    const key = line.trim();
+    // Dòng dài là văn xuôi thật, không phải tiêu đề chạy trang.
+    if (!key || key.length > 60) continue;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  const threshold = Math.max(5, Math.floor(lines.length / 400));
+  const noise = new Set<string>();
+  counts.forEach((count, key) => {
+    if (count >= threshold) noise.add(key);
+  });
+  return noise;
+}
+
+function isNoiseLine(line: string, repeated: Set<string>): boolean {
+  if (!line) return false; // dòng trống là ranh giới đoạn, giữ lại
+  if (FOOTER_NOISE.test(line)) return true;
+  if (BARE_PAGE_NUMBER.test(line)) return true;
+  if (QUESTION_TYPE_LABEL.test(line)) return true;
+  if (repeated.has(line)) return true;
+  return false;
+}
+
+/** Dòng có vẻ là chữ thật, không phải mảnh vụn OCR ("dota", "DEA", "h plac"). */
+function looksLikeProse(line: string): boolean {
+  const words = line.split(/\s+/).filter(Boolean);
+  if (!words.length) return false;
+  // Một dòng rất ngắn chỉ được giữ nếu nó là nhãn đoạn hoặc kết thúc một câu.
+  if (line.length <= 4) return PARAGRAPH_MARKER.test(line);
+  const realWords = words.filter((word) => /^[A-Za-z][A-Za-z'’-]{2,}$/.test(word));
+  return realWords.length >= Math.max(1, Math.floor(words.length * 0.4));
+}
+
+/**
+ * Ghép các dòng bị gãy do xuống dòng của trang in thành đoạn văn liền mạch.
+ *
+ * Quy tắc ngắt đoạn: một dòng kết thúc một đoạn khi nó kết thúc bằng dấu câu
+ * VÀ ngắn hơn hẳn bề ngang cột (dòng cuối đoạn bao giờ cũng hụt so với các
+ * dòng được căn đều ở trên). Chỉ dựa vào dấu chấm là sai, vì một câu kết thúc
+ * đúng ngay mép phải rồi câu sau vẫn cùng đoạn.
+ */
+export function reflowParagraphs(rawLines: string[]): string {
+  const lines = rawLines.map(stripControls);
+  const widths = lines.filter((line) => line.length > 20).map((line) => line.length);
+  widths.sort((a, b) => a - b);
+  const medianWidth = widths.length ? widths[Math.floor(widths.length / 2)] : 80;
+  // Dòng cuối đoạn thường hụt đáng kể so với dòng căn đều; 78% là ngưỡng đo
+  // được trên chính các bài đọc trong sách này.
+  const shortLine = medianWidth * 0.78;
+
+  const paragraphs: string[] = [];
+  let current = "";
+
+  const flush = () => {
+    const text = current.replace(/\s+/g, " ").trim();
+    if (text) paragraphs.push(text);
+    current = "";
+  };
+
+  for (const line of lines) {
+    if (!line) {
+      flush();
+      continue;
+    }
+
+    const marker = line.match(PARAGRAPH_MARKER);
+    if (marker) {
+      // Nhãn đoạn đứng một mình: mở đoạn mới, chữ của đoạn nằm ở dòng sau.
+      flush();
+      current = `${marker[1]}. `;
+      continue;
+    }
+
+    const inline = line.match(PARAGRAPH_MARKER_INLINE);
+    if (inline) {
+      flush();
+      current = `${inline[1]}. ${line.slice(inline[0].length)}`;
+      continue;
+    }
+
+    if (current && /-$/.test(current.trimEnd())) {
+      // Từ bị gạch nối cuối dòng: nối liền, bỏ dấu gạch.
+      current = `${current.trimEnd().slice(0, -1)}${line}`;
+    } else {
+      current = current ? `${current} ${line}` : line;
+    }
+
+    const endsSentence = /[.!?:;"”']$/.test(line);
+    if (endsSentence && line.length < shortLine) flush();
+  }
+  flush();
+
+  return paragraphs.join("\n\n");
+}
+
+const INSTRUCTION_LINE = /^(?:you should spend|read the (?:following|text|passage)|questions?\s+\d)/i;
+
+/**
+ * Tên bài đọc, lấy TỪ phần thân đã ghép đoạn chứ không phải từ dòng thô.
+ *
+ * Lấy dòng thô đầu tiên là sai: câu hướng dẫn "You should spend about 20
+ * minutes..." bị cắt làm hai dòng, nên dòng thứ hai ("passage below.") trở
+ * thành tên bài. Sau khi ghép đoạn thì câu hướng dẫn chỉ còn là MỘT đoạn và
+ * loại được trọn vẹn; tên bài là đoạn ngắn, ít chữ, không kết thúc bằng dấu
+ * chấm — đúng hình dạng của một tiêu đề in đậm trong sách.
+ */
+function pickPassageTitle(text: string): string {
+  const paragraphs = text.split("\n\n").map((p) => p.trim()).filter(Boolean);
+  const searchWindow = paragraphs.slice(0, Math.max(3, Math.ceil(paragraphs.length / 2)));
+
+  const looksLikeTitle = (p: string) => {
+    if (p.length > 60 || p.length < 4) return false;
+    if (INSTRUCTION_LINE.test(p)) return false;
+    if (/^[A-N]\.\s/.test(p)) return false; // nhãn đoạn, không phải tiêu đề
+    if (/[.!?]$/.test(p)) return false; // tiêu đề không chấm câu
+    const words = p.split(/\s+/);
+    return words.length >= 1 && words.length <= 9;
+  };
+
+  const title = searchWindow.find(looksLikeTitle);
+  if (title) return title;
+
+  // Không có gì giống tiêu đề: lấy câu đầu của đoạn nội dung đầu tiên, cắt
+  // ngắn — vẫn hơn là để trống hoặc để nguyên một đoạn dài.
+  const firstBody = paragraphs.find((p) => !INSTRUCTION_LINE.test(p));
+  if (!firstBody) return "";
+  const firstSentence = firstBody.replace(/^[A-N]\.\s*/, "").split(/(?<=[.!?])\s/)[0] ?? "";
+  return firstSentence.length > 70 ? `${firstSentence.slice(0, 67)}...` : firstSentence;
+}
+
+/** Lọc rác rồi ghép thành đoạn — điểm vào duy nhất để dựng thân một bài đọc. */
+function buildPassageText(passageLines: string[], repeated: Set<string>): string {
+  const cleaned: string[] = [];
+  for (const raw of passageLines) {
+    const line = stripControls(raw);
+    if (isNoiseLine(line, repeated)) continue;
+    if (line && !looksLikeProse(line)) continue;
+    // Không để hai dòng trống liền nhau sinh ra đoạn rỗng.
+    if (!line && !cleaned.length) continue;
+    if (!line && cleaned[cleaned.length - 1] === "") continue;
+    cleaned.push(line);
+  }
+  return reflowParagraphs(cleaned);
+}
 // tfng/ynng/mcq/matching answers are always a short token in these books —
 // TRUE/FALSE/NOT GIVEN, a single option letter, or a roman-numeral heading
 // number — so anything longer is almost certainly leaked page furniture
@@ -419,6 +609,10 @@ export function parseReadingBook(lines: string[], fileName: string, bookTitle: s
   // "Answer Key" heading once per day, all clustered together near the very
   // end, and every one of those blocks holds real answers that must be kept —
   // stopping at the last heading would silently discard every earlier block.
+  // Tiêu đề chạy trang/watermark của CẢ cuốn, tính một lần rồi dùng lại cho
+  // mọi bài — nhận diện theo tần suất nên mỗi cuốn tự có danh sách của nó.
+  const repeatedNoise = findRepeatedNoise(lines);
+
   const searchFloor = Math.floor(lines.length * 0.6);
   let keyStart = -1;
   for (let i = searchFloor; i < lines.length; i += 1) {
@@ -458,15 +652,13 @@ export function parseReadingBook(lines: string[], fileName: string, bookTitle: s
     // contents entry or a cross-reference), so it is not worth a task.
     if (!questions.length) return;
 
-    // The first non-empty, non-instruction line doubles as the passage's own
-    // title in every Cambridge-style book.
-    const title = passageLines.find((line) => line.length > 3 && !/^you should spend/i.test(line)) ?? "";
+    const text = buildPassageText(passageLines, repeatedNoise);
 
     passages.push({
       id: uid(),
       order: passages.length + 1,
-      title: [start.testLabel, `Passage ${start.passageNumber}`, title].filter(Boolean).join(" · "),
-      text: passageLines.join("\n").replace(/\n{3,}/g, "\n\n").trim(),
+      title: [start.testLabel, `Passage ${start.passageNumber}`, pickPassageTitle(text)].filter(Boolean).join(" · "),
+      text,
       questions,
     });
   });
