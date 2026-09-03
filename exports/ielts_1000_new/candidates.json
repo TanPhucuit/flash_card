@@ -1,0 +1,5002 @@
+[
+ {
+  "word": "exterior",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "exude",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "cloak",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "headmistress",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "timid",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mien",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "reluctantly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "timidity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "complexity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "concurrence",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "concur",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "unpromising",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "avid",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "teem",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "marvel",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "outpatient",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "wing",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "corpse",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "enviable",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "constrained",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "organizational",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "indignant",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "psychiatrist",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "indignantly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "psychiatric",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "eccentricity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "clinical",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "locomotive",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "corps",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "locomotion",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "forensic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "individualism",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "juvenile",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "enthuse",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "jurisdiction",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "belligerent",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "accustomed",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "belligerence",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "trauma",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "stoicism",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "traumatic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "deliberate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "constraint",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "recluse",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "revealing",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "reclusive",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "eccentric",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "metalled",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "sanctity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "oblique",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "conform",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "facsimile",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "norms",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "shamble",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "quirk",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "whir",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "oddity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "blight",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "compel",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "puritanical",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "compulsion",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "brood",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "conceive",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "disdainful",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "conceivable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "zoologist",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "assertion",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "zoology",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "psyche",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "encumbrance",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "unconventional",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "encumber",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "congregate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "hypothesis",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "rally",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "hypothesize",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "resent",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "hypothetical",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "self-conscious",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "parasitic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "wary",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "plumage",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "stoke",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "utilitarian",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "dynamically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "predilection",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "hostess",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "commensurate",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "perpetuate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "commensurately",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "naturalness",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "vindicate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "exhibitionist",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "vindication",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "isolate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "parable",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "isolated",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "minster",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "humble",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "wrack",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "refreshingly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "ironic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "effortless",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "ally",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "vegetation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "callous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "brief",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "callously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "respite",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "derelict",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "suffice",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "materialism",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "purity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "materialistic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "gruelling",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "ferocity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "cast",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "utter",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "comprise",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "evokingly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "plaster",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "recitation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "darkroom",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "equable",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "induct",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "extant",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "induction",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "denounce",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "stock",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "denunciation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "fossil",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "echo",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "geological",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "requisition",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "geologically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "substantiate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "house",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "inscrutable",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "specimen",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "stratosphere",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "gem",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "indulge",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "explanatory",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "indulgence",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "vertical",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "indulgently",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "knowledgeable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "laudatory",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "ordinarily",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "laud",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "hanging",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "glitz",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "tomb",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "glitzy",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "formulate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "automate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "resin",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "apprehend",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "sacrifice",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "athleticism",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "cleanly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "acreage",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "endorsement",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "affectation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "stretching",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "imposition",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "continuity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "circuit",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "shambles",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "stipulation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "claustrophobic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "allot",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "claustrophobia",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "allotment",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "headstrong",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "anticlimactically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "tact",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "forfeiture",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "tactful",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "blitz",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "tactfully",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "primeval",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "blister",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "tenacity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "sponsorship",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "tenacious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "ego",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "tenaciously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "class",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "exact",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "saloon",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "genomic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "lap",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "genomically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "beforehand",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "capacious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "slob",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "unequivocal",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "coverage",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "unequivocally",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "unplug",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "spontaneity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "rediscover",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "provocation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "subtly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "portraiture",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "brainwash",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "succeed",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "brainwashing",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "circumnavigate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "implicate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "circumnavigation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "craft",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "liaise",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "malfunction",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "contractual",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "dependent",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "contractually",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "wayside",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "abject",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "expire",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "sheaf",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "con",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "articulation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "puzzle",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "articulate",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "damply",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "spurious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "carrier",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "spuriously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "washtub",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "calorific",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "apt",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "fabulate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "apt to",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "fabulation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "portable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "octogenarian",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ornamental",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "voracity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "placid",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "brandish",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "placidly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "repose",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "unmanageable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "unencumbered",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "appliance",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "buffoonery",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "relinquish",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "gauche",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "tedious",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "domesticity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "tedium",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "accrue",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "exert",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "proliferation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "extortion",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "blandishment",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "alleviate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "anthropologically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "elaborate",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "monastic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "elaboration",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "midwifery",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "detest",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "adorn",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "detestable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "idle",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "suds",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "conjecture",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "agreeable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "malleable",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "prowl",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "malleability",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "speculate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "ore",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "speculation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "gale",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "speculative",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "promenade",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "peacock",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "testimonial",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "disdain",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "distill",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "reenact",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "distillation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "torment",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "informant",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "extravagance",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "vis-a-vis",
+  "pos": "preposition",
+  "level": "C2"
+ },
+ {
+  "word": "exploit",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "nostalgia",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "mechanism",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "nostalgic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "hence",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "nostalgically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "offspring",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "grievance",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "fit",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "residue",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "oblige",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "physiologically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "drive",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "methodology",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "collaborate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "methodological",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "collaborator",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "methodologically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "collaboration",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "proportional",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "collaborative",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "proportionally",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "showy",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "habitation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "wrangle",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "inartistic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "premise",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ornate",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "advantageous",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "presuppose",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "parasite",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "presupposition",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "fanciful",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "transmitter",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "poise",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "regulatory",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "customary",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "archival",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "insightful",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "diffuse",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "notable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "disperse",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "vicious",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "dispersal",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "viciously",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "adversely",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "pupil",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "pervasive",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "withdrawn",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "pervasiveness",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "withdrawal",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "secure",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "torturous",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "autonomously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "depict",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "outmoded",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "depiction",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "phase",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "upheaval",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "plum",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "shortlist",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "notorious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "uneventful",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "notoriously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "pertinent",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "notoriety",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "pertain to",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "menial",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "daydream",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "insular",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "protagonist",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "antidote",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "simplicity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "postural",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "blockbuster",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "posturing",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "resonate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "revelatory",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "sequel",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "prostrate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "irony",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "haphazard",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "acidic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "haphazardly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "align",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "deficient",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "alignment",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "deficiently",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "suitor",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "delicatessen",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "deceit",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "muscle-bound",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "alienate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "dive",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "persuasively",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "posit",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "confinement",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "cocoon",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "minutiae",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "chrysalis",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "peasant",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ignominious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "inexplicable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "ignominiously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "inexplicably",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "euphoria",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "pigeon",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "euphoric",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "harass",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "euphorically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "harassment",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "relegate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "believably",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "succumb",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "readable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "treacherous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "cleverness",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "treacherously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "persecute",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "treachery",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "persecution",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "maggot",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "smug",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "palate",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "smugly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "palatable",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "ferocious",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "hermit",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ferociously",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "hermetic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "hostile",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "irrelevancy",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "dismay",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "mariner",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "methodical",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "rift",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ruthless",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mere",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "ruthlessness",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "helm",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "talkative",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "autopilot",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "awe",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "eminence",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "clan",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "eminent",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "privileged",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "preeminent",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "crumb",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "unsuspected",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "pace",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "abolish",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "closeness",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "paralysis",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "rarity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "glory in",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "evoke",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "preoccupation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "repel",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "preoccupy",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "repellant",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "prolong",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "aqua",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "audit",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "aquarium",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "drudgery",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "insightfully",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "pressurize",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "flashback",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "pressurization",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "self-worth",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "intermediary",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "agonize",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "hotelier",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "cite",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "denote",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "citation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "denotation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "recite",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "profitability",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ecstasy",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "jargon",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ecstatic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "declination",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ecstatically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "spatial",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "pleasurable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "spatially",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "nature",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "punctual",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "substantially",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "punctuality",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "diversity",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "integration",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "elitist",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "extracurricular",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "grumble",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "encompass",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "rumble",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "all-encompassing",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "neglectful",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "accountability",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "roundup",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "frolic",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "conscientious",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "minefield",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "conscientiously",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "side-step",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "indefinite",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "abundant",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "fuse",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "abundantly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "fusion",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "abundance",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "robust",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "anarchic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "robustly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "prescriptive",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "dismal",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "slab",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "dismally",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "retrospect",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "crave",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "retrospective",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "craving",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "retrospection",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "prospective",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "wordage",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "swap",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "brevity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "remotely",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "uncanny",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "splatter",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "tactic",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "automatic",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "tactical",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "automatically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "tactically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "exhaust",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "tactile",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "violet",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "gambit",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "bubbly",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "babble",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "chaotically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "bauble",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "apprehensive",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "correlate",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "settee",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "correlation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "trampoline",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "painstaking",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "stamina",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "painstakingly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "ploy",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "contraption",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "dither",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "mesh",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "overalls",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "enabler",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "unison",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "lyricist",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "snail",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "lyrical",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "bliss",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "lyrically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "inexhaustible",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "bona fide",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "acre",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "moribund",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "calf",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "solicit",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "heifer",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "vocalist",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ewe",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "philanthropy",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "adversary",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "philanthropist",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "victorious",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "philanthropic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "victoriously",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "philanthropically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "profound",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "precocious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "profoundly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "precociously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "baldly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "wordsmith",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "bald",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "connote",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "bearded",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "connotation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "professionalism",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "herald",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "artistically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "philistine",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "popularization",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "innuendo",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "pendulum",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "induce",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "predecessor",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "anthology",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "boast",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "lament",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "lapse",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "lamentation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ceaseless",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "conduit",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "ceaselessly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "chronology",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "climax",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "chronological",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "climactic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "chronologically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "anticlimactic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "rebound",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "scramble",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "proposition",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "forfeit",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "flagging",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "twitch",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "electrode",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "intellect",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "caffeinate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "descent",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "cosmic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "shed",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "interlude",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "exodus",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "haven",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "immortalize",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "beneficiary",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "genome",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "recuperate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "faction",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "recuperation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "physique",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "recuperative",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "utensil",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "cultish",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "otter",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "irrevocably",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "clammy",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "slither",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "absolute",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "unnerve",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "dispense",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "unnerving",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "dispensable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "unnervingly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "dispensary",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "protrude",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "indispensable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "protrusion",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "divergence",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "qualitative",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "divergent",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "procedural",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "burst",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "demystify",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "superficial",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "demystification",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "superficially",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "proprietary",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "aesthetically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "proprietorial",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "scrutiny",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "floodgates",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "quip",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "imperceptible",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "woo",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "imperceptibly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "plausibility",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "hapless",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "plausibly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "catastrophic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "instinctive",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "catastrophically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "stylistic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "wayward",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "stylistically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "blurb",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "inheritance",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "provincial",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "inherent",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "indolent",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "inherently",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "indolently",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "tune",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "indolence",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "spontaneous",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "taste-maker",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "honk",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "deviant",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "goose",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "deviantly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "innovate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "engender",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "innovation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "emolument",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "innovative",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "munificence",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "connoisseur",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "posterity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "abstraction",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "venomous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "tantrum",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "venomously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "institute",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "choreography",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "discard",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "choreographical",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "fatality",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "archetype",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "angle",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "archetypal",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "stiffen",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "dissension",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "wooded",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "exalted",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "flatter",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "exaltedly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "flattery",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "adept",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "aimless",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "inert",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "aimlessly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "hitherto",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "meaningless",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "angst",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "meaninglessly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "angsty",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "candidly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "drabness",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "vitality",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "melodious",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "provoke",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "melodiously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "provocative",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "magpie",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "provocatively",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "lark",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "clench",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "melancholy",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "haggle",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "meteorology",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "scorn",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "brink",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "scornful",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "unsurpassed",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "scornfully",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "loiter",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "animatedly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "topple",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "obscure",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "intrinsic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "obscurely",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "intrinsically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "elevate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "merit",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "elevation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "promotable",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "pose",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "clinch",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "tediously",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "anonymity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "succession",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "splinter",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "formality",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "reproach",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "jog",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "disseminate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "mountaineer",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "dissemination",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "quest",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "dissemble",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "transatlantic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mangle",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "rudiments",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "bereft",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "rudimentary",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "bereftly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "paddle",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "soliloquy",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "immense",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "solipsism",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "immensely",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "soliloquize",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "advisory",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mutinous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "trying",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mutinously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "adrenaline",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "prissy",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "tinker",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "reptilian",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "lavatory",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "undiminishing",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "expedition",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "contagion",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "insecure",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "homestead",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "insecurely",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "incumbent",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "reassure",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "recumbent",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "reassurance",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "nonchalant",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "insensitive",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "nonchalantly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "insensitively",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "mesmeric",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "profess",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "stultify",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "resort",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "stultifyingly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "oversee",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "wallow",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "overseer",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ponderous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "estimation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ponderously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "commission",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "lassitude",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "liaison",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "vicinity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "stressfully",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "ebb",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "loom",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "wax",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "notwithstanding",
+  "pos": "preposition",
+  "level": "C1"
+ },
+ {
+  "word": "wane",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "structurally",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "antediluvian",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "structural",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "ostensible",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "chauffer",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ostensibly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "sedentary",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "interlocking",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "rapport",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "plane",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "landscape",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "undemonstrative",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "consultation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "undemonstratively",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "consultancy",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "menace",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "bloom",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "menacing",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "engineer",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "menacingly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "retention",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "calamity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "quarry",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "calamitous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "specification",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "calamitously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "contract",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "nigh",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "contractor",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "austere",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "query",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "austerely",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "possessor",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "austerity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "chill",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "idiosyncrasy",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "chilly",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "idiosyncratic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "frost",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "idiomatic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "frosty",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "idiomatically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "frostily",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "kinetic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "man",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "kinetically",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "unmanned",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "unmediated",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "impersonal",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mediate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "impersonally",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "mediation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "impersonate",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "unharried",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "impersonator",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "figurative",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "impersonation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "figuratively",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "buzzer",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "exorcism",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "desert",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "exorcist",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "desertion",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "mundanity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "unoccupied",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "mediocrity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "stuffy",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "dubiously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "stuffily",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "curator",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "stuffiness",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "antithesis",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "gape",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "antithetical",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "repute",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "detract",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "toughness",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "interrogate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "recall",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "interrogation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "recollection",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "interrogative",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "plumbing",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "interrogatively",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "usher",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "perverse",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "glum",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "perversity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "glumly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "attainment",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "gamely",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "opacity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "dissect",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "remit",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "dissection",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "remittance",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "commend",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "recourse",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "commendation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "pedestal",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "thereby",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "pedestrian",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "flick",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "lurid",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "flicker",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "luridly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "unenviable",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "fallacy",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "unenviably",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "rife",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "voice",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "mercenary",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "tread",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "polysyllabic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "allege",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "superfluous",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "allegation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "superfluously",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "bribe",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "snippet",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "bribery",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ephemeral",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "inclusion",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "ephemera",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "inclusive",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "ephemerality",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "inclusively",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "summarily",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "unconvincing",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "skim",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "unconvincingly",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "infallibly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "recharge",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "infallible",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "facilitation",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "infallibility",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "condition",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "depravity",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "conditional",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "depraved",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "conditionally",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "deprecate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "tone",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "deprecatingly",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "supple",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "revile",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "manicure",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "revulsion",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "pedicure",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "arcane",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "facial",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "arcanely",
+  "pos": "adverb",
+  "level": "C2"
+ },
+ {
+  "word": "bouquet",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "porten",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "refurbish",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "divination",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "refurbishment",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "flit",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "grounds",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "hitch",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "ground",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "prone",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "lethargy",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "scavenger",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "lethargic",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "vermin",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "lethargically",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "totemic",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "stately",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "emulate",
+  "pos": "verb",
+  "level": "C2"
+ },
+ {
+  "word": "conserve",
+  "pos": "verb",
+  "level": "C1"
+ },
+ {
+  "word": "emulation",
+  "pos": "noun",
+  "level": "C2"
+ },
+ {
+  "word": "conservatory",
+  "pos": "noun",
+  "level": "C1"
+ },
+ {
+  "word": "avian",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "disquieting",
+  "pos": "adjective",
+  "level": "C1"
+ },
+ {
+  "word": "vestigial",
+  "pos": "adjective",
+  "level": "C2"
+ },
+ {
+  "word": "fiercely",
+  "pos": "adverb",
+  "level": "C1"
+ },
+ {
+  "word": "vestigially",
+  "pos": "adverb",
+  "level": "C2"
+ }
+]
