@@ -19,7 +19,7 @@ export const DEFAULT_LIFE_MANAGEMENT: LifeManagementConfig = {
 };
 
 export function emptyReadingData(): ReadingData {
-  return { books: [], attempts: [], lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT } };
+  return { books: [], attempts: [], lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT }, seededLibraries: [] };
 }
 
 function normalize(parsed: Partial<ReadingData>): ReadingData {
@@ -29,6 +29,7 @@ function normalize(parsed: Partial<ReadingData>): ReadingData {
     // Spread the defaults under the stored value so a config saved before a
     // new field existed still ends up with that field populated.
     lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT, ...(parsed.lifeManagement ?? {}) },
+    seededLibraries: Array.isArray(parsed.seededLibraries) ? parsed.seededLibraries : [],
   };
 }
 

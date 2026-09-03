@@ -1,6 +1,18 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LifeManagementConfig, ReadingAttempt, ReadingBook, ReadingData } from "../types/reading";
 import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
+
+/**
+ * Thư viện bài đọc dựng sẵn, đi kèm chính bản deploy (public/reading-library.json).
+ *
+ * Không phải đề IELTS thật: đề Cambridge/British Council có bản quyền và không
+ * được phép phát hành lại. Đây là bài viết thật trên Wikipedia (CC BY-SA 4.0),
+ * cắt về đúng độ dài và chủ đề của IELTS Academic Reading, mỗi bài ghi rõ
+ * nguồn ở cuối. Tải bằng fetch chứ không nhúng vào bundle: 440KB chữ không nên
+ * nằm trong file JS mà mọi trang đều phải tải.
+ */
+const BUILTIN_LIBRARY_ID = "open-reading-library-v1";
+const BUILTIN_LIBRARY_URL = "/reading-library.json";
 
 export function useReadingData() {
   const [data, setReactData] = useState<ReadingData>(() => loadReadingData());
@@ -17,6 +29,32 @@ export function useReadingData() {
     }
     setReactData(next);
   }, []);
+
+  // Nạp thư viện dựng sẵn đúng MỘT LẦN cho mỗi máy. Ghi lại id đã nạp thay vì
+  // kiểm tra "sách đã có chưa": nếu chỉ kiểm tra sự tồn tại thì người dùng xoá
+  // cuốn này đi, lần mở trang sau nó lại tự mọc lại.
+  useEffect(() => {
+    if (dataRef.current.seededLibraries?.includes(BUILTIN_LIBRARY_ID)) return;
+    const controller = new AbortController();
+    void fetch(BUILTIN_LIBRARY_URL, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json() as Promise<ReadingBook>;
+      })
+      .then((library) => {
+        if (!library?.passages?.length) return;
+        setData((current) => ({
+          ...current,
+          books: [library, ...current.books.filter((book) => book.id !== library.id)],
+          seededLibraries: [...(current.seededLibraries ?? []), BUILTIN_LIBRARY_ID],
+        }));
+      })
+      .catch((error) => {
+        if (controller.signal.aborted) return;
+        console.warn("Không nạp được thư viện bài đọc dựng sẵn.", error);
+      });
+    return () => controller.abort();
+  }, [setData]);
 
   const api = useMemo(
     () => ({

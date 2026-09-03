@@ -78,4 +78,10 @@ export interface ReadingData {
   books: ReadingBook[];
   attempts: ReadingAttempt[];
   lifeManagement: LifeManagementConfig;
+  /**
+   * Id các thư viện dựng sẵn đã được nạp vào máy này. Ghi lại để chỉ nạp ĐÚNG
+   * MỘT LẦN: nếu người dùng xoá cuốn dựng sẵn đi thì lần mở sau nó không tự
+   * mọc lại.
+   */
+  seededLibraries?: string[];
 }
