@@ -7,6 +7,7 @@ import { useSpeech } from "../hooks/useSpeech";
 import { AppData, LEARN_DIRECTIONS, LearnDirection, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
+import { isStarSet } from "../utils/starSets";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
@@ -986,7 +987,7 @@ export function DashboardPage({ api }: PageProps) {
 
 export function MySetsPage({ api }: PageProps) {
   const [query, setQuery] = useState("");
-  const [activeTab, setActiveTab] = useState<"learning" | "completed">("learning");
+  const [activeTab, setActiveTab] = useState<"learning" | "completed" | "starred">("learning");
   const [multiPickerOpen, setMultiPickerOpen] = useState(false);
   const [selectedSetIds, setSelectedSetIds] = useState<string[]>([]);
   const [wordCount, setWordCount] = useState(0);
@@ -1032,6 +1033,11 @@ export function MySetsPage({ api }: PageProps) {
   const filtered = api.data.sets.filter((set) => {
     const matchQuery = `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.toLowerCase());
     if (!matchQuery) return false;
+    // Bộ từ khó nhớ đứng riêng: nó được dựng tự động từ các từ gắn sao nên
+    // không thuộc về "chưa hoàn thành" hay "đã hoàn thành" — trộn vào một
+    // trong hai chỗ đó thì nó lẫn mất giữa các bộ tự tạo.
+    if (isStarSet(set)) return activeTab === "starred";
+    if (activeTab === "starred") return false;
     const isLearned = learnedSetIds.has(set.id);
     return activeTab === "completed" ? isLearned : !isLearned;
   });
@@ -1125,6 +1131,12 @@ export function MySetsPage({ api }: PageProps) {
             onClick={() => setActiveTab("completed")}
           >
             Đã hoàn thành
+          </button>
+          <button
+            className={`inline-flex items-center gap-xs px-md py-sm font-semibold transition ${activeTab === "starred" ? "border-b-2 border-primary text-primary" : "text-on-surface-variant dark:text-white/60"}`}
+            onClick={() => setActiveTab("starred")}
+          >
+            <Icon name="star" filled className={activeTab === "starred" ? "text-amber-500" : ""} /> Từ khó nhớ
           </button>
         </div>
         <div className="flex flex-col gap-md md:flex-row">
@@ -1374,7 +1386,25 @@ export function FlashcardsPage({ api }: PageProps) {
           <Button variant="danger" onClick={() => mark(false)}>Don’t Know</Button>
           <Button onClick={() => setFlipped(!flipped)}>Flip</Button>
           <Button onClick={() => mark(true)}>Know</Button>
-          <Button variant="secondary" onClick={() => { api.updateSet(set.id, (current) => updateSetCard(current, card.id, (item) => ({ ...item, starred: !item.starred }))); }}><Icon name={card.starred ? "star" : "star_border"} /> Star</Button>
+          {/* Ngôi sao được TÔ VÀNG ĐẶC khi từ đang được đánh dấu. Trạng thái
+              đọc thẳng từ card.starred trong dữ liệu, nên mở lại thẻ này lần
+              sau vẫn thấy đúng màu — không phải state cục bộ của trang.
+
+              Trong chính bộ star thì không hiện nút này: mọi từ ở đây đã được
+              gắn sao rồi, nút chỉ còn tác dụng bỏ sao — mà bỏ sao ngay trong
+              bộ được dựng ra TỪ các từ gắn sao là thao tác tự mâu thuẫn, làm
+              thẻ biến mất khỏi bộ đang học giữa chừng. */}
+          {isStarSet(set) ? null : (
+            <Button
+              variant="secondary"
+              aria-pressed={card.starred}
+              className={card.starred ? "border-amber-400 text-amber-600 dark:text-amber-300" : ""}
+              onClick={() => { api.updateSet(set.id, (current) => updateSetCard(current, card.id, (item) => ({ ...item, starred: !item.starred }))); }}
+            >
+              <Icon name="star" filled={card.starred} className={card.starred ? "text-amber-500" : ""} />
+              {card.starred ? "Đã đánh dấu" : "Star"}
+            </Button>
+          )}
         </div>
       </div>
     </>

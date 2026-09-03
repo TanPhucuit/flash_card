@@ -538,10 +538,13 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
         </article>
 
         <section className="overflow-y-auto px-md py-lg">
-          {passage.questions.map((question) => (
+          {passage.questions.map((question, index) => (
             <QuestionBlock
               key={question.id}
               question={question}
+              // Rubric chỉ in MỘT lần cho cả nhóm câu cùng dạng, đúng như đề
+              // thật in "Questions 1-5" rồi mới tới hướng dẫn.
+              showInstruction={Boolean(question.instruction) && question.instruction !== passage.questions[index - 1]?.instruction}
               value={answers[question.id] ?? ""}
               submitted={submitted}
               flagged={flagged.has(question.id)}
@@ -579,6 +582,7 @@ function QuestionBlock({
   value,
   submitted,
   flagged,
+  showInstruction,
   onChange,
   onToggleFlag,
 }: {
@@ -586,6 +590,7 @@ function QuestionBlock({
   value: string;
   submitted: boolean;
   flagged: boolean;
+  showInstruction?: boolean;
   onChange: (value: string) => void;
   onToggleFlag: () => void;
 }) {
@@ -593,6 +598,12 @@ function QuestionBlock({
   const choices = CHOICE_SETS[question.type] ?? (question.options?.length ? question.options.map((option) => option.split(" ")[0]) : null);
 
   return (
+    <>
+    {showInstruction ? (
+      <p className="mb-sm mt-lg whitespace-pre-line rounded-xl bg-primary-fixed px-md py-sm text-sm font-medium leading-6 text-primary dark:bg-primary/20 dark:text-[#c9c5ff]">
+        {question.instruction}
+      </p>
+    ) : null}
     <div
       className={`mb-md rounded-xl border p-md transition ${
         submitted
@@ -618,7 +629,11 @@ function QuestionBlock({
         ) : null}
       </div>
 
-      {question.options?.length ? (
+      {/* Chỉ in danh sách phương án khi chúng thực sự là nội dung. Với matching
+          headings / sentence endings, toàn bộ danh sách đã nằm trong lời dẫn in
+          một lần cho cả nhóm (đúng như đề thật), nên ở đây options chỉ còn là
+          nhãn i, ii, A, B... — in lại dưới từng câu chỉ tổ rối mắt. */}
+      {question.options?.length && question.options.some((option) => option.length > 4) ? (
         <ul className="mb-sm ml-8 space-y-1 text-sm text-on-surface-variant">
           {question.options.map((option, index) => <li key={index}>{option}</li>)}
         </ul>
@@ -666,6 +681,7 @@ function QuestionBlock({
         </p>
       ) : null}
     </div>
+    </>
   );
 }
 

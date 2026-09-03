@@ -13,6 +13,13 @@ export interface ReadingQuestion {
   /** Question number as printed in the book — the key answers are matched on. */
   number: number;
   type: ReadingQuestionType;
+  /**
+   * Rubric shown above the group this question belongs to, in the wording the
+   * exam itself uses ("Choose NO MORE THAN TWO WORDS from the passage...").
+   * Consecutive questions sharing the same text form one group and the rubric
+   * is printed once, the way a real paper prints it.
+   */
+  instruction?: string;
   prompt: string;
   /** Present for `mcq` and `matching`; the letters/labels the taker picks from. */
   options?: string[];
