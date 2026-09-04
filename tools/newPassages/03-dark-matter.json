@@ -1,0 +1,141 @@
+{
+  "title": "Dark Matter",
+  "sourceNote": "Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Dark matter is a hypothesised form of matter that does not emit, absorb, or reflect light, and so cannot be observed directly with telescopes. Its existence is inferred entirely from its gravitational influence on visible matter, on radiation, and on the large-scale structure of the universe. Current estimates suggest that dark matter accounts for roughly 27 percent of the total mass and energy of the universe, dwarfing the 5 percent made up of the ordinary matter that forms stars, planets, and everything else that can be seen."
+    },
+    {
+      "letter": "B",
+      "text": "The first strong evidence for dark matter came in the 1930s, when the Swiss astronomer Fritz Zwicky studied the motion of galaxies within the Coma galaxy cluster. He found that the galaxies were moving far too quickly to be held together by the gravity of the visible matter alone; without some additional, unseen mass, the cluster should have flown apart long ago. Zwicky's proposal attracted little attention at the time. Decades later, in the 1970s, the American astronomer Vera Rubin measured the rotation speeds of stars within individual spiral galaxies and found a similar puzzle: stars at the outer edge of a galaxy were orbiting almost as fast as those near the centre, a pattern that visible matter alone could not explain. Rubin's careful, repeated observations across dozens of galaxies were instrumental in convincing the wider scientific community that dark matter was real."
+    },
+    {
+      "letter": "C",
+      "text": "A further line of evidence comes from gravitational lensing, the bending of light from distant objects as it passes near a massive foreground object, an effect predicted by Einstein's general theory of relativity. By measuring how much light is bent by a galaxy cluster, astronomers can calculate the total mass of the cluster, including any matter that is otherwise invisible. In cluster collisions such as the Bullet Cluster, observations show that the region of greatest mass, as revealed by lensing, is offset from the region containing most of the visible, ordinary matter, a separation that is difficult to explain unless a large amount of unseen mass has passed through the collision largely undisturbed."
+    },
+    {
+      "letter": "D",
+      "text": "Despite decades of searching, the particles that make up dark matter have never been directly detected. The leading hypothesis proposes weakly interacting massive particles, often abbreviated as WIMPs, which would interact with ordinary matter only through gravity and the weak nuclear force, making them exceptionally difficult to catch. Experiments such as XENON1T, built deep underground to shield delicate detectors from cosmic rays and other interference, have searched for the faint signal a WIMP might leave behind when it collides with an atomic nucleus, but so far without a confirmed detection. Alternative candidates, including hypothetical particles called axions and even the possibility that gravity itself behaves differently on very large scales, remain under active investigation."
+    },
+    {
+      "letter": "E",
+      "text": "Dark matter plays a central role in current models of how the universe evolved. Computer simulations show that, without the additional gravity that dark matter provides, the small density fluctuations present shortly after the Big Bang would not have had time to grow into the galaxies and galaxy clusters observed today. In these simulations, dark matter forms a vast, invisible scaffold, sometimes described as the cosmic web, along which ordinary matter later gathered and cooled to form the visible structures that fill the night sky. Understanding what dark matter actually is remains one of the most significant unsolved problems in modern physics."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy the search for its particles has failed so far\nii\tHow it shaped the structure of the universe\niii\tWhat it is, and how much of the universe it makes up\niv\tBending light around a cluster of galaxies\nv\tTwo astronomers whose observations pointed to it\nvi\tProposals to replace it with a new theory of gravity\nvii\tHow it was named",
+      "prompt": "Section A",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa vật chất tối là gì và cho biết nó chiếm khoảng 27% khối lượng-năng lượng vũ trụ. Đúng cả hai vế của tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể về Zwicky (1930s) và Rubin (1970s), hai nhà thiên văn có quan sát dẫn tới bằng chứng về vật chất tối. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về thấu kính hấp dẫn — ánh sáng bị bẻ cong khi đi qua cụm thiên hà nặng, dùng để tính khối lượng ẩn. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói các thí nghiệm như XENON1T tìm hạt WIMP nhưng chưa xác nhận phát hiện được. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói vật chất tối tạo thành 'giàn giáo' vô hình giúp các thiên hà hình thành sau Vụ Nổ Lớn. Đúng tiêu đề ii."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Dark matter has been observed directly using telescopes.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói dark matter 'cannot be observed directly with telescopes' và chỉ được suy ra qua ảnh hưởng hấp dẫn. Đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Zwicky's proposal was widely accepted by scientists as soon as he made it.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: 'Zwicky's proposal attracted little attention at the time'. Ít được chú ý, không phải được chấp nhận rộng rãi ngay. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Rubin found that stars far from a galaxy's centre orbited much more slowly than those near the centre.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn B: 'stars at the outer edge of a galaxy were orbiting almost as fast as those near the centre'. Gần bằng tốc độ, không phải chậm hơn nhiều. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "In the Bullet Cluster, the mass revealed by gravitational lensing lines up exactly with the visible matter.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C: 'the region of greatest mass... is offset from the region containing most of the visible, ordinary matter'. Lệch nhau, không trùng khớp. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A WIMP particle has been conclusively detected by an underground experiment.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn D: các thí nghiệm 'so far without a confirmed detection'. Chưa xác nhận được, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Dark matter is thought to make up roughly ________ of the universe's total mass and energy.",
+      "answer": "27 percent",
+      "number": 11,
+      "explanation": "Đoạn A: 'dark matter accounts for roughly 27 percent of the total mass and energy of the universe'. Đáp án 27 percent."
+    },
+    {
+      "type": "gap",
+      "prompt": "Zwicky studied the motion of galaxies within the ________ cluster.",
+      "answer": "Coma",
+      "number": 12,
+      "explanation": "Đoạn B: 'studied the motion of galaxies within the Coma galaxy cluster'. Đáp án Coma."
+    },
+    {
+      "type": "gap",
+      "prompt": "The bending of light by a massive foreground object is known as gravitational ________.",
+      "answer": "lensing",
+      "number": 13,
+      "explanation": "Đoạn C: 'gravitational lensing, the bending of light from distant objects'. Đáp án lensing."
+    },
+    {
+      "type": "gap",
+      "prompt": "The leading dark matter candidate particles are known by the abbreviation ________.",
+      "answer": "WIMPs",
+      "number": 14,
+      "explanation": "Đoạn D: 'weakly interacting massive particles, often abbreviated as WIMPs'. Đáp án WIMPs."
+    },
+    {
+      "type": "gap",
+      "prompt": "The invisible large-scale structure along which galaxies formed is sometimes called the cosmic ________.",
+      "answer": "web",
+      "number": 15,
+      "explanation": "Đoạn E: 'sometimes described as the cosmic web'. Đáp án web."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "mRNA Vaccines",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "An mRNA vaccine works on a principle quite different from that of traditional vaccines, which typically introduce a weakened or inactivated form of a pathogen, or a piece of one of its proteins, to train the immune system. Instead, an mRNA vaccine delivers a set of genetic instructions, in the form of messenger RNA, that directs a person's own cells to manufacture a harmless fragment of a viral protein themselves. The immune system then learns to recognise this self-made protein as foreign and mounts a defence against it, a response that will later protect the person if they encounter the actual virus."
+    },
+    {
+      "letter": "B",
+      "text": "Messenger RNA is a molecule that cells naturally use to carry genetic instructions from DNA in the nucleus to the protein-making machinery elsewhere in the cell, so the basic biological process an mRNA vaccine relies on is not new. What was new, and what took decades to perfect, was finding a way to introduce synthetic mRNA into cells without it being destroyed almost instantly by the body's defences or triggering a damaging inflammatory reaction. The biochemist Katalin Karikó spent much of her career pursuing this goal, often with little institutional support, before she and her collaborator Drew Weissman discovered in 2005 that modifying one of the chemical building blocks of the synthetic mRNA allowed it to evade the immune system's early defences long enough to do its work. The pair were awarded the 2023 Nobel Prize in Physiology or Medicine for this discovery."
+    },
+    {
+      "letter": "C",
+      "text": "A second technical obstacle was delivering the fragile mRNA molecule into human cells intact, since RNA on its own breaks down within minutes if injected directly into the bloodstream. The solution that made mRNA vaccines practical was to encase the molecule inside a tiny sphere of fat known as a lipid nanoparticle, which protects the mRNA during its journey and helps it fuse with a cell's outer membrane, releasing its genetic cargo directly inside. Refining these lipid nanoparticles to be both safe and efficient at delivering their payload occupied much of the practical development work behind the first mRNA vaccines."
+    },
+    {
+      "letter": "D",
+      "text": "These decades of preparatory research meant that when the COVID-19 pandemic began in early 2020, mRNA vaccine developers could move with unusual speed. The genetic sequence of the SARS-CoV-2 virus was published in January 2020, and within weeks the pharmaceutical company Moderna had designed a candidate vaccine targeting the virus's spike protein, the structure the virus uses to attach to human cells. Pfizer and the German company BioNTech developed a second mRNA vaccine along similar lines. Large clinical trials later that year showed both vaccines to be more than ninety percent effective at preventing symptomatic COVID-19, and both received emergency authorisation before the end of 2020, an extraordinarily short interval for a new vaccine technology that would ordinarily have taken years longer to reach that stage."
+    },
+    {
+      "letter": "E",
+      "text": "Because an mRNA vaccine can be redesigned simply by changing the genetic sequence it carries, rather than by developing an entirely new manufacturing process, researchers can, in principle, update it far more quickly than most conventional vaccines when a virus mutates. Beyond infectious disease, the same underlying technology is now being investigated for use against cancer, where a personalised mRNA vaccine could theoretically instruct a patient's own cells to display fragments of proteins unique to their tumour, prompting the immune system to attack cancer cells specifically. Several such cancer vaccines are currently in clinical trials, though, as with any new medical technology, it will take years of further testing before their safety and effectiveness in this new application can be confirmed."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow this kind of vaccine differs from older ones\nii\tA discovery that let synthetic mRNA survive long enough to work\niii\tWrapping the molecule so it reaches the cell intact\niv\tFrom a published genetic sequence to an authorised vaccine\nv\tA possible future use against cancer\nvi\tSide effects reported after widespread use\nvii\tHow mRNA vaccines are stored and transported",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói vắc-xin mRNA khác vắc-xin truyền thống thế nào: đưa chỉ dẫn di truyền để tế bào tự tạo protein thay vì đưa mầm bệnh. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể về phát hiện của Karikó và Weissman năm 2005 giúp mRNA tổng hợp tránh được phản ứng miễn dịch sớm. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về hạt nano lipid bọc mRNA để đưa nó vào tế bào nguyên vẹn. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D kể từ khi trình tự gen SARS-CoV-2 được công bố tới khi vắc-xin Moderna và Pfizer/BioNTech được cấp phép khẩn cấp năm 2020. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về khả năng dùng công nghệ mRNA cho vắc-xin ung thư cá nhân hoá trong tương lai. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "A traditional vaccine typically introduces genetic instructions rather than a piece of the pathogen itself.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói vắc-xin truyền thống 'introduce a weakened or inactivated form of a pathogen, or a piece of one of its proteins' — đưa mầm bệnh hoặc protein, không phải chỉ dẫn di truyền (đó là cách của mRNA vaccine). FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Karikó received strong institutional support throughout her research into mRNA.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: bà theo đuổi mục tiêu này 'often with little institutional support'. Ít được hỗ trợ, không phải mạnh mẽ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Unmodified RNA breaks down quickly if injected directly into the bloodstream.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'RNA on its own breaks down within minutes if injected directly into the bloodstream'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Clinical trials showed the Moderna and Pfizer-BioNTech vaccines to be less than fifty percent effective.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D: thử nghiệm cho thấy cả hai vắc-xin 'more than ninety percent effective'. Trên 90%, không phải dưới 50%. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Personalised cancer vaccines using mRNA technology are already approved for widespread clinical use.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'Several such cancer vaccines are currently in clinical trials' — vẫn đang thử nghiệm, chưa được phê duyệt rộng rãi. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Karikó and Weissman shared the 2023 Nobel Prize in Physiology or ________.",
+      "answer": "Medicine",
+      "number": 11,
+      "explanation": "Đoạn B: 'awarded the 2023 Nobel Prize in Physiology or Medicine'. Đáp án Medicine."
+    },
+    {
+      "type": "gap",
+      "prompt": "Synthetic mRNA is protected during delivery by being encased in a tiny sphere of fat called a lipid ________.",
+      "answer": "nanoparticle",
+      "number": 12,
+      "explanation": "Đoạn C: 'a tiny sphere of fat known as a lipid nanoparticle'. Đáp án nanoparticle."
+    },
+    {
+      "type": "gap",
+      "prompt": "Both COVID-19 mRNA vaccines target the virus's ________ protein.",
+      "answer": "spike",
+      "number": 13,
+      "explanation": "Đoạn D: 'targeting the virus's spike protein, the structure the virus uses to attach to human cells'. Đáp án spike."
+    },
+    {
+      "type": "gap",
+      "prompt": "Pfizer developed its vaccine together with the German company ________.",
+      "answer": "BioNTech",
+      "number": 14,
+      "explanation": "Đoạn D: 'Pfizer and the German company BioNTech developed a second mRNA vaccine'. Đáp án BioNTech."
+    },
+    {
+      "type": "gap",
+      "prompt": "An mRNA vaccine can be redesigned simply by changing the genetic ________ it carries.",
+      "answer": "sequence",
+      "number": 15,
+      "explanation": "Đoạn E: 'an mRNA vaccine can be redesigned simply by changing the genetic sequence it carries'. Đáp án sequence."
+    }
+  ]
+}

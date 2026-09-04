@@ -1,0 +1,141 @@
+{
+  "title": "Neutron Stars",
+  "sourceNote": "Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A neutron star is the collapsed core left behind after a massive star explodes as a supernova, packing more mass than the Sun into a sphere typically only about twenty kilometres across. The result is by far the densest kind of object in the universe apart from a black hole: a single teaspoon of neutron-star material would weigh roughly as much as a mountain on Earth. The extraordinary density arises because the star's gravity has crushed protons and electrons together until they merge into neutrons, the particle that gives the object its name."
+    },
+    {
+      "letter": "B",
+      "text": "Neutron stars form only from stars significantly more massive than the Sun, typically between about eight and twenty times its mass. When such a star exhausts the nuclear fuel in its core, the core collapses catastrophically while the star's outer layers are blown outward in a supernova explosion. If the collapsing core is not massive enough to continue collapsing all the way into a black hole, the collapse instead halts once the neutrons themselves resist further compression, a quantum mechanical effect known as neutron degeneracy pressure, leaving behind the extraordinarily dense object that remains."
+    },
+    {
+      "letter": "C",
+      "text": "Many neutron stars spin extremely rapidly, a consequence of the original star's rotation being concentrated into a far smaller volume, in the same way a spinning skater speeds up when pulling in their arms. Some rotate hundreds of times per second. A neutron star that emits regular beams of radio waves from its magnetic poles, sweeping past Earth like a lighthouse beam as the star rotates, is called a pulsar. Pulsars were discovered in 1967 by the astronomer Jocelyn Bell Burnell, then a graduate student, who noticed a remarkably regular radio signal and briefly wondered, along with her colleagues, whether it might be a message from an extraterrestrial civilisation before the true explanation was established. The 1974 Nobel Prize in Physics for the discovery was awarded to her supervisor, Antony Hewish, a decision that has remained controversial among many astronomers ever since."
+    },
+    {
+      "letter": "D",
+      "text": "Neutron stars also possess magnetic fields far stronger than any that can be produced artificially on Earth, trillions of times stronger than the Earth's own magnetic field. A small subset of neutron stars, called magnetars, have magnetic fields stronger still, powerful enough that, according to some calculations, a magnetar as close as the Moon could wipe the data from every credit card on Earth. Magnetars occasionally release enormous bursts of X-rays and gamma rays, thought to be caused by sudden readjustments in their intensely stressed magnetic fields and crusts, sometimes described informally as starquakes."
+    },
+    {
+      "letter": "E",
+      "text": "When two neutron stars orbit one another closely, they gradually spiral together, losing energy through the emission of gravitational waves, until they finally collide and merge. In August 2017, such a merger was detected simultaneously by LIGO, through the gravitational waves it produced, and by dozens of telescopes around the world, which observed the resulting flash of light across multiple wavelengths, an event named GW170817. The observation confirmed that neutron-star mergers produce heavy elements such as gold and platinum through a rapid nuclear process, providing the first direct evidence that at least some of the precious metals found on Earth originated in such a cataclysmic collision billions of years ago."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat they are, and how dense they are\nii\tThe stars massive enough to leave one behind\niii\tSpinning lighthouses, and a disputed prize\niv\tMagnetic fields powerful enough to erase data\nv\tHow their mergers forge precious metals\nvi\tPlans to send a probe to study one closely\nvii\tWhy some neutron stars collapse further into black holes",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa sao neutron là gì và độ đặc khủng khiếp của nó (một thìa cà phê nặng bằng cả một ngọn núi). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói chỉ những ngôi sao nặng gấp 8-20 lần Mặt Trời mới để lại sao neutron sau siêu tân tinh. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về pulsar (sao neutron quay nhanh phát tia radio) và câu chuyện giải Nobel gây tranh cãi của Bell Burnell. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về từ trường cực mạnh của magnetar, đủ sức xoá dữ liệu thẻ tín dụng nếu ở gần cỡ khoảng cách Mặt Trăng. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói vụ sáp nhập hai sao neutron GW170817 tạo ra vàng và bạch kim. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Neutron stars are the densest objects in the universe, denser even than black holes.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A: 'by far the densest kind of object in the universe apart from a black hole'. Đặc nhất TRỪ lỗ đen, không phải đặc hơn cả lỗ đen. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A collapsing stellar core always continues collapsing into a black hole.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: 'If the collapsing core is not massive enough to continue collapsing all the way into a black hole, the collapse instead halts'. Không phải LUÔN sụp thành lỗ đen — đôi khi dừng lại thành sao neutron. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Bell Burnell and her colleagues briefly considered that the pulsar signal might come from alien life.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'briefly wondered, along with her colleagues, whether it might be a message from an extraterrestrial civilisation'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Bell Burnell herself received the 1974 Nobel Prize for discovering pulsars.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C: 'The 1974 Nobel Prize in Physics for the discovery was awarded to her supervisor, Antony Hewish'. Giải thưởng thuộc về người hướng dẫn, không phải Bell Burnell. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The 2017 neutron-star merger was detected only through gravitational waves, without any visible light being observed.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: sự kiện được phát hiện đồng thời bởi LIGO VÀ hàng chục kính thiên văn quan sát 'the resulting flash of light'. Có cả ánh sáng quan sát được, không chỉ sóng hấp dẫn. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The collapse of a neutron star's core is halted by a quantum effect called neutron degeneracy ________.",
+      "answer": "pressure",
+      "number": 11,
+      "explanation": "Đoạn B: 'a quantum mechanical effect known as neutron degeneracy pressure'. Đáp án pressure."
+    },
+    {
+      "type": "gap",
+      "prompt": "A rapidly spinning neutron star that sweeps a radio beam past Earth is called a ________.",
+      "answer": "pulsar",
+      "number": 12,
+      "explanation": "Đoạn C: 'is called a pulsar'. Đáp án pulsar."
+    },
+    {
+      "type": "gap",
+      "prompt": "Neutron stars with the strongest known magnetic fields are called ________.",
+      "answer": "magnetars",
+      "number": 13,
+      "explanation": "Đoạn D: 'A small subset of neutron stars, called magnetars, have magnetic fields stronger still'. Đáp án magnetars."
+    },
+    {
+      "type": "gap",
+      "prompt": "Sudden readjustments in a magnetar's crust are sometimes informally called ________.",
+      "answer": "starquakes",
+      "number": 14,
+      "explanation": "Đoạn D: 'sometimes described informally as starquakes'. Đáp án starquakes."
+    },
+    {
+      "type": "gap",
+      "prompt": "The 2017 neutron-star merger detected by LIGO and telescopes worldwide was named ________.",
+      "answer": "GW170817",
+      "number": 15,
+      "explanation": "Đoạn E: 'an event named GW170817'. Đáp án GW170817."
+    }
+  ]
+}

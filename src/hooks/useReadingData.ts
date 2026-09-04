@@ -16,7 +16,7 @@ import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../uti
 // bên dưới cố tình chỉ nạp một lần cho mỗi id. Từng có đợt sửa lại toàn bộ 52
 // bài (chấm giám khảo, sửa câu hỏi) nhưng người dùng đã mở trang từ trước đó
 // vẫn kẹt ở bản cũ vì id không đổi — họ không bao giờ được nạp lại.
-const BUILTIN_LIBRARY_VERSION = 2;
+const BUILTIN_LIBRARY_VERSION = 3;
 const BUILTIN_LIBRARY_ID = `open-reading-library-v${BUILTIN_LIBRARY_VERSION}`;
 const BUILTIN_LIBRARY_URL = "/reading-library.json";
 // Nhận diện MỌI phiên bản cũ của thư viện này để thay thế sạch khi nạp bản

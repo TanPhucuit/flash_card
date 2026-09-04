@@ -1,0 +1,141 @@
+{
+  "title": "CRISPR Gene Editing",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "CRISPR is a technology that allows scientists to alter the DNA of living cells with a precision that was unimaginable only a decade earlier, cutting a specific sequence of genetic code and either disabling it or replacing it with a new one. The name stands for clustered regularly interspaced short palindromic repeats, a rather technical description of a pattern of repeated DNA sequences first noticed in bacteria in the late 1980s, though at the time no one understood what the sequences were for."
+    },
+    {
+      "letter": "B",
+      "text": "The true function of these repeated sequences was only worked out decades later: they form part of a natural immune system that bacteria use to defend themselves against viruses. When a virus infects a bacterium and the bacterium survives, it stores a short snippet of the virus's genetic material within its own CRISPR sequences, a kind of genetic memory. If the same virus attacks again, the bacterium uses this stored snippet, together with an enzyme called Cas9, to recognise and cut apart the invading virus's DNA before it can cause harm. In 2012, the biochemists Jennifer Doudna and Emmanuelle Charpentier showed that this bacterial defence system could be reprogrammed to cut any DNA sequence a researcher chose, simply by supplying Cas9 with a different guide sequence, transforming a curiosity of bacterial biology into a general-purpose gene-editing tool. The two scientists shared the 2020 Nobel Prize in Chemistry for the discovery."
+    },
+    {
+      "letter": "C",
+      "text": "In practice, researchers design a short strand of guide RNA that matches the target DNA sequence they wish to edit. This guide RNA directs the Cas9 enzyme to the matching location in a cell's genome, where Cas9 cuts both strands of the DNA double helix. The cell's own repair machinery then mends the cut, and researchers can exploit this repair process either to disable the targeted gene, by allowing the repair to introduce small errors, or to insert a new sequence of their choosing, by supplying a template for the cell to copy during repair. Compared with earlier gene-editing techniques, CRISPR is markedly faster, cheaper, and more accurate, which is why it spread through research laboratories worldwide within just a few years of its discovery."
+    },
+    {
+      "letter": "D",
+      "text": "CRISPR has already been used to treat human disease. In 2023, regulators in the United Kingdom and the United States approved Casgevy, a CRISPR-based therapy for sickle cell disease and beta thalassaemia, two inherited blood disorders, marking the first CRISPR treatment to reach approved clinical use. The therapy works by editing a patient's own blood stem cells outside the body to switch on a gene that produces a form of haemoglobin normally active only before birth, compensating for the patient's defective adult haemoglobin, before the edited cells are returned to the patient. Researchers are pursuing CRISPR-based treatments for a wide range of other genetic conditions, though each new application requires years of testing to confirm both safety and effectiveness."
+    },
+    {
+      "letter": "E",
+      "text": "The power of CRISPR has also raised serious ethical questions, most sharply illustrated in 2018 when the Chinese scientist He Jiankui announced that he had used CRISPR to edit the genomes of human embryos, resulting in the birth of twin girls with an edited gene intended to confer resistance to HIV. The announcement was met with near-universal condemnation from the international scientific community, both because the safety of the edits had not been adequately established and because editing embryos changes DNA in a way that can be inherited by future generations, a step regarded by most researchers as crossing an ethical line that ordinary gene therapy in adult patients does not cross. He was later sentenced to prison in China, and the episode prompted renewed international debate over how, and whether, editing of the human germline should ever be permitted."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tA bacterial defence system turned into a tool\nii\tWhat CRISPR is, and where the name comes from\niii\tHow the cutting and repairing actually works\niv\tA condemned experiment on human embryos\nv\tThe first approved treatment for a genetic disease\nvi\tPatenting disputes between rival laboratories\nvii\tUsing CRISPR to edit crop plants",
+      "prompt": "Section A",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa CRISPR là gì và tên viết tắt đó có nghĩa gì. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói CRISPR vốn là hệ miễn dịch của vi khuẩn chống virus, được Doudna và Charpentier biến thành công cụ chỉnh sửa gen. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C mô tả chi tiết cơ chế: RNA dẫn đường, Cas9 cắt DNA, tế bào tự sửa chữa. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về Casgevy, liệu pháp CRISPR đầu tiên được phê duyệt lâm sàng cho bệnh hồng cầu hình liềm. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về vụ He Jiankui chỉnh sửa gen phôi người năm 2018, bị cộng đồng khoa học lên án. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Scientists understood the function of CRISPR sequences as soon as they were first noticed in bacteria.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A: 'though at the time no one understood what the sequences were for'. Không hiểu ngay, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Doudna and Charpentier showed that the CRISPR-Cas9 system could be redirected to cut any DNA sequence chosen by a researcher.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'this bacterial defence system could be reprogrammed to cut any DNA sequence a researcher chose'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "CRISPR is generally slower and more expensive than earlier gene-editing techniques.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: CRISPR 'is markedly faster, cheaper, and more accurate' so với kỹ thuật cũ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Casgevy edits a patient's blood stem cells while they remain inside the patient's body.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D: tế bào được chỉnh sửa 'outside the body' rồi mới đưa trở lại bệnh nhân, không phải chỉnh sửa khi còn trong cơ thể. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The scientific community broadly welcomed He Jiankui's experiment on human embryos.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: thí nghiệm 'was met with near-universal condemnation'. Bị lên án gần như tuyệt đối, không phải được hoan nghênh. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Bacteria use CRISPR sequences together with an enzyme called ________ to cut viral DNA.",
+      "answer": "Cas9",
+      "number": 11,
+      "explanation": "Đoạn B: 'using this stored snippet, together with an enzyme called Cas9'. Đáp án Cas9."
+    },
+    {
+      "type": "gap",
+      "prompt": "A short strand of ________ RNA directs Cas9 to the matching DNA sequence.",
+      "answer": "guide",
+      "number": 12,
+      "explanation": "Đoạn C: 'researchers design a short strand of guide RNA'. Đáp án guide."
+    },
+    {
+      "type": "gap",
+      "prompt": "Casgevy was approved in 2023 to treat sickle cell disease and ________.",
+      "answer": "beta thalassaemia",
+      "number": 13,
+      "explanation": "Đoạn D: 'a CRISPR-based therapy for sickle cell disease and beta thalassaemia'. Đáp án beta thalassaemia."
+    },
+    {
+      "type": "gap",
+      "prompt": "Doudna and Charpentier shared the 2020 Nobel Prize in ________.",
+      "answer": "Chemistry",
+      "number": 14,
+      "explanation": "Đoạn B: 'shared the 2020 Nobel Prize in Chemistry for the discovery'. Đáp án Chemistry."
+    },
+    {
+      "type": "gap",
+      "prompt": "He Jiankui's edited embryos were intended to confer resistance to ________.",
+      "answer": "HIV",
+      "number": 15,
+      "explanation": "Đoạn E: 'an edited gene intended to confer resistance to HIV'. Đáp án HIV."
+    }
+  ]
+}

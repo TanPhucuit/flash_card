@@ -1,0 +1,141 @@
+{
+  "title": "Superconductivity",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Superconductivity is the ability of certain materials to conduct electric current with exactly zero electrical resistance once cooled below a specific temperature known as the critical temperature. In an ordinary conductor such as copper, some electrical energy is always lost as heat because electrons collide with vibrating atoms as they move; in a superconductor below its critical temperature, this resistance vanishes entirely, and a current set flowing in a closed superconducting loop can, in principle, continue circulating without any external power source for as long as the material remains cold enough."
+    },
+    {
+      "letter": "B",
+      "text": "The phenomenon was discovered in 1911 by the Dutch physicist Heike Kamerlingh Onnes, three years after he had first succeeded in liquefying helium, a technical achievement that allowed him to cool materials to within a few degrees of absolute zero. While measuring the electrical resistance of solid mercury at these extremely low temperatures, Onnes observed that the resistance dropped abruptly to an immeasurably small value at 4.2 kelvin, a result so unexpected that he initially suspected a fault in his equipment. Onnes received the Nobel Prize in Physics in 1913, awarded for his work on the properties of matter at low temperatures, including this discovery."
+    },
+    {
+      "letter": "C",
+      "text": "A full theoretical explanation did not arrive until 1957, when the physicists John Bardeen, Leon Cooper, and John Robert Schrieffer proposed what became known as BCS theory. According to this theory, below the critical temperature electrons can overcome their mutual electrical repulsion and pair up, forming what are called Cooper pairs, through a subtle interaction mediated by vibrations in the surrounding crystal lattice. These paired electrons move through the material collectively, in a coordinated quantum state that cannot lose energy in the small increments that would normally cause resistance, allowing the current to flow without any dissipation. The three physicists shared the 1972 Nobel Prize in Physics for this work."
+    },
+    {
+      "letter": "D",
+      "text": "For decades after Onnes's discovery, every known superconductor required cooling with liquid helium, an effective but expensive coolant. That changed in 1986, when Georg Bednorz and Karl Müller discovered a class of ceramic materials, now called high-temperature superconductors, that became superconducting at temperatures far higher than BCS theory had led physicists to expect. Certain compounds in this family superconduct above 77 kelvin, the boiling point of liquid nitrogen, a far cheaper and more abundant coolant than liquid helium, opening the door to more practical applications. Bednorz and Müller were awarded the 1987 Nobel Prize in Physics for the discovery, remarkably only a year after they first published it. Despite this progress, a complete theoretical explanation for why these ceramic materials superconduct at such comparatively high temperatures remains elusive, and no material yet superconducts at ordinary room temperature under everyday pressure."
+    },
+    {
+      "letter": "E",
+      "text": "Superconducting materials are already central to several important technologies. The powerful electromagnets used in magnetic resonance imaging scanners and in particle accelerators such as the Large Hadron Collider rely on superconducting coils to generate magnetic fields far stronger than conventional electromagnets could sustain without melting. A related property, known as the Meissner effect, causes a superconductor to expel any magnetic field from its interior, which allows a magnet to be levitated stably above a superconducting surface, a principle exploited in some experimental high-speed trains. Researchers continue to search for materials that superconduct at higher temperatures and lower pressures, since a room-temperature superconductor would allow electricity to be transmitted over long distances with no loss to resistance, a change that could transform the efficiency of electrical grids worldwide."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tAn accidental discovery in liquid helium\nii\tWhat the phenomenon is\niii\tA theory that explained it, decades later\niv\tUses in scanners, colliders and levitating trains\nv\tCeramics that work without liquid helium\nvi\tAttempts to superconduct at room temperature\nvii\tHow the effect was named",
+      "prompt": "Section A",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa siêu dẫn là gì: điện trở bằng 0 dưới nhiệt độ tới hạn. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể Onnes phát hiện hiện tượng năm 1911 khi đo điện trở thuỷ ngân được làm lạnh bằng heli lỏng, ban đầu tưởng thiết bị hỏng. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về thuyết BCS 1957 giải thích cơ chế siêu dẫn qua cặp Cooper — ra đời gần nửa thế kỷ sau khi hiện tượng được phát hiện. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về vật liệu gốm siêu dẫn ở nhiệt độ cao hơn, siêu dẫn được bằng nitơ lỏng thay vì heli lỏng. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E liệt kê ứng dụng: máy MRI, máy gia tốc hạt, tàu đệm từ. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "A current in a closed superconducting loop can keep flowing without a power source as long as it stays cold enough.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'a current set flowing in a closed superconducting loop can, in principle, continue circulating without any external power source'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Onnes immediately recognised superconductivity as a genuine new phenomenon rather than an equipment error.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: 'a result so unexpected that he initially suspected a fault in his equipment'. Ban đầu nghi ngờ thiết bị lỗi, không phải nhận ra ngay đó là hiện tượng thật. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "BCS theory explains superconductivity through paired electrons called Cooper pairs.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'electrons can overcome their mutual electrical repulsion and pair up, forming what are called Cooper pairs'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Physicists fully understand why high-temperature ceramic superconductors work.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D: 'a complete theoretical explanation... remains elusive'. Chưa hiểu đầy đủ, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A material that superconducts at ordinary room temperature and pressure has already been discovered.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn D: 'no material yet superconducts at ordinary room temperature under everyday pressure'. Chưa có vật liệu nào, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Onnes discovered superconductivity while measuring the resistance of solid ________.",
+      "answer": "mercury",
+      "number": 11,
+      "explanation": "Đoạn B: 'measuring the electrical resistance of solid mercury'. Đáp án mercury."
+    },
+    {
+      "type": "gap",
+      "prompt": "In BCS theory, paired electrons are called ________.",
+      "answer": "Cooper pairs",
+      "number": 12,
+      "explanation": "Đoạn C: 'forming what are called Cooper pairs'. Đáp án Cooper pairs."
+    },
+    {
+      "type": "gap",
+      "prompt": "High-temperature superconductors discovered in 1986 are made from a class of ________ materials.",
+      "answer": "ceramic",
+      "number": 13,
+      "explanation": "Đoạn D: 'a class of ceramic materials, now called high-temperature superconductors'. Đáp án ceramic."
+    },
+    {
+      "type": "gap",
+      "prompt": "Certain high-temperature superconductors work above 77 kelvin, the boiling point of liquid ________.",
+      "answer": "nitrogen",
+      "number": 14,
+      "explanation": "Đoạn D: '77 kelvin, the boiling point of liquid nitrogen'. Đáp án nitrogen."
+    },
+    {
+      "type": "gap",
+      "prompt": "The expulsion of a magnetic field from inside a superconductor is called the ________ effect.",
+      "answer": "Meissner",
+      "number": 15,
+      "explanation": "Đoạn E: 'A related property, known as the Meissner effect, causes a superconductor to expel any magnetic field'. Đáp án Meissner."
+    }
+  ]
+}

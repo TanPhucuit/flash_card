@@ -1,0 +1,141 @@
+{
+  "title": "Nuclear Fusion",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Nuclear fusion is the process by which two light atomic nuclei combine to form a heavier nucleus, releasing a large amount of energy in the process. It is the reaction that powers the Sun and almost every other star: at the Sun's core, immense pressure and a temperature of around fifteen million degrees Celsius force hydrogen nuclei to fuse into helium, converting a tiny fraction of their mass directly into energy according to Einstein's equation relating mass and energy. This same reaction, if it could be reliably reproduced and controlled on Earth, promises a source of electricity that produces no greenhouse gases during operation and leaves behind none of the long-lived radioactive waste associated with conventional nuclear fission power stations."
+    },
+    {
+      "letter": "B",
+      "text": "Fusion is difficult to achieve because atomic nuclei carry a positive electric charge and therefore repel one another strongly at close range. Overcoming this repulsion requires heating a fuel, typically a mixture of the hydrogen isotopes deuterium and tritium, to temperatures of well over one hundred million degrees Celsius, several times hotter than the core of the Sun itself, since Earth-based reactors cannot rely on the Sun's crushing gravitational pressure to assist the reaction. At such temperatures the fuel exists as a plasma, an electrically charged gas in which electrons have been stripped from their atoms, and no solid container could survive direct contact with it."
+    },
+    {
+      "letter": "C",
+      "text": "The most widely pursued approach to containing this plasma is a device called a tokamak, a doughnut-shaped chamber first developed by Soviet physicists in the 1950s, which uses powerful magnetic fields to hold the superheated plasma in place without it touching the chamber walls. An alternative approach, known as inertial confinement, instead compresses a small pellet of fuel using an array of extremely powerful lasers fired simultaneously from multiple directions, heating and compressing it so rapidly that fusion reactions occur before the pellet has time to fly apart. In December 2022, researchers at the National Ignition Facility in the United States announced that a laser-driven fusion reaction had, for the first time, produced more energy than the lasers had delivered to the fuel pellet, a milestone known as fusion ignition."
+    },
+    {
+      "letter": "D",
+      "text": "The largest tokamak project currently under construction is ITER, an international collaboration involving the European Union, the United States, China, Russia, India, Japan, and South Korea, being built in southern France. ITER is designed to produce ten times more fusion energy than the external power required to heat its plasma, though it is intended purely as an experimental device to demonstrate the physics and engineering involved, not to generate electricity for the grid. Construction has faced repeated delays and cost overruns since the project began in the early 2000s, and the first fusion experiments using its full deuterium-tritium fuel mixture are not expected until the following decade."
+    },
+    {
+      "letter": "E",
+      "text": "Even if ignition and sustained plasma confinement are achieved reliably, converting fusion energy into usable electricity presents its own engineering challenges, including designing materials able to withstand years of intense neutron bombardment and developing practical methods for extracting the heat released and using it to generate steam for conventional turbines. For these reasons, most experts caution that commercial fusion power stations, if they prove feasible at all, are unlikely to supply significant amounts of electricity before the middle of the twenty-first century. Nonetheless, the recent progress at facilities such as the National Ignition Facility has renewed optimism, and a growing number of privately funded companies are now pursuing fusion alongside the large government-backed projects that have historically dominated the field."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHeat great enough to strip electrons from atoms\nii\tWhat fusion is, and why it is worth pursuing\niii\tTwo different ways of holding the plasma in place\niv\tThe world's largest experimental reactor\nv\tWhy a working power station is still some way off\nvi\tHow fusion differs from nuclear fission\nvii\tPrivate companies racing to build the first reactor",
+      "prompt": "Section A",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa phản ứng nhiệt hạch là gì và vì sao nó đáng theo đuổi: không phát thải khí nhà kính, không để lại rác thải phóng xạ dài hạn. Đúng cả hai vế của tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói nhiên liệu phải nóng tới mức trở thành plasma, khi electron bị tách khỏi nguyên tử. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C so sánh hai cách giữ plasma: tokamak dùng từ trường, và giam giữ quán tính dùng laser. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về ITER, dự án tokamak lớn nhất thế giới, hợp tác quốc tế xây ở Pháp. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói các thách thức kỹ thuật còn lại khiến nhà máy điện nhiệt hạch thương mại còn xa mới thành hiện thực. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Fusion reactors on Earth need higher temperatures than the Sun's core because they lack its gravitational pressure.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn B: nhiệt độ cần trên 100 triệu độ C, cao hơn lõi Mặt Trời nhiều lần, 'since Earth-based reactors cannot rely on the Sun's crushing gravitational pressure'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The tokamak design was first developed by American physicists.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn C: 'a doughnut-shaped chamber first developed by Soviet physicists in the 1950s'. Là các nhà vật lý Liên Xô, không phải Mỹ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The National Ignition Facility's 2022 result used magnetic confinement rather than lasers.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C: kết quả 2022 là 'a laser-driven fusion reaction' — dùng laser (giam giữ quán tính), không phải từ trường. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "ITER is designed to generate electricity for the public power grid.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D: ITER 'is intended purely as an experimental device to demonstrate the physics and engineering involved, not to generate electricity for the grid'. Đề nói ngược mục đích nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Most experts expect commercial fusion power stations to be widespread within the next ten years.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'commercial fusion power stations... are unlikely to supply significant amounts of electricity before the middle of the twenty-first century'. Còn rất xa chục năm, không phải trong 10 năm tới. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Fusion fuel is typically a mixture of the hydrogen isotopes deuterium and ________.",
+      "answer": "tritium",
+      "number": 11,
+      "explanation": "Đoạn B: 'a mixture of the hydrogen isotopes deuterium and tritium'. Đáp án tritium."
+    },
+    {
+      "type": "gap",
+      "prompt": "At extreme temperatures, fusion fuel exists as an electrically charged gas called a ________.",
+      "answer": "plasma",
+      "number": 12,
+      "explanation": "Đoạn B: 'the fuel exists as a plasma, an electrically charged gas'. Đáp án plasma."
+    },
+    {
+      "type": "gap",
+      "prompt": "The 2022 milestone at the National Ignition Facility is known as fusion ________.",
+      "answer": "ignition",
+      "number": 13,
+      "explanation": "Đoạn C: 'a milestone known as fusion ignition'. Đáp án ignition."
+    },
+    {
+      "type": "gap",
+      "prompt": "ITER is being built in southern ________.",
+      "answer": "France",
+      "number": 14,
+      "explanation": "Đoạn D: '...being built in southern France'. Đáp án France."
+    },
+    {
+      "type": "gap",
+      "prompt": "Reactor materials must withstand years of intense ________ bombardment.",
+      "answer": "neutron",
+      "number": 15,
+      "explanation": "Đoạn E: 'designing materials able to withstand years of intense neutron bombardment'. Đáp án neutron."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "The Photoelectric Effect",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The photoelectric effect is the ejection of electrons from the surface of a material, usually a metal, when light falls upon it. The electrons released in this way are called photoelectrons, and the phenomenon is not merely a laboratory curiosity: it underlies devices ranging from the light meters in cameras to the image sensors used in modern astronomy. Heinrich Hertz first noticed the effect in 1887 while experimenting with sparks, but for almost two decades no one could explain why it behaved the way it did."
+    },
+    {
+      "letter": "B",
+      "text": "The trouble was that the effect flatly disobeyed the physics of the day. Nineteenth-century electromagnetic theory treated light as a continuous wave, and on that view a dim beam of light should still be able to knock an electron loose, provided the observer waited long enough for enough energy to build up. Experiments showed the opposite. Below a certain frequency of light, no electrons were emitted at all, no matter how bright the source or how long it shone. Above that frequency, electrons flew out almost instantly, within a fraction of a nanosecond, and increasing the brightness of the light produced more electrons rather than more energetic ones. Nothing in wave theory predicted a sharp frequency cut-off of this kind."
+    },
+    {
+      "letter": "C",
+      "text": "In 1905, Albert Einstein proposed a radical resolution: light itself is not a continuous wave but arrives in discrete packets of energy, later named photons. Each photon carries an amount of energy proportional to the light's frequency, so a single high-frequency photon can deliver a decisive blow to an electron even when the overall beam is faint, while a flood of low-frequency photons, however intense, cannot deliver enough energy in any one collision to free an electron at all. Building on this idea, Einstein wrote a simple equation linking the photon's energy to the kinetic energy of the ejected electron and to a quantity called the work function, the minimum energy needed to pull an electron free of a given metal. The paper earned him the 1921 Nobel Prize in Physics, awarded specifically for this explanation rather than for the theory of relativity for which he later became more widely known."
+    },
+    {
+      "letter": "D",
+      "text": "Einstein's equation predicts that the maximum kinetic energy of an ejected electron rises in direct proportion to the frequency of the incoming light, once that frequency exceeds a threshold value set by the metal's work function. Below the threshold, no amount of extra intensity can trigger emission, because no single photon carries sufficient energy; above it, raising the intensity increases only the number of photoelectrons released per second, not their individual energy. Different metals have different work functions, so the threshold frequency at which the photoelectric effect begins varies from one material to another: caesium, for instance, releases electrons under comparatively dim visible light, whereas many other metals require ultraviolet radiation before any emission occurs at all."
+    },
+    {
+      "letter": "E",
+      "text": "The photoelectric effect is now put to work in a wide range of technologies. Photomultiplier tubes exploit it to detect extremely faint flashes of light, amplifying a single photoelectron into a measurable pulse of current, and are used in medical scanners and particle-physics detectors. Charge-coupled devices, the sensors at the heart of digital cameras and telescopes, rely on a related process to convert incoming light into an electronic signal. Photoelectron spectroscopy, a technique that measures the kinetic energy of electrons knocked out of a sample by ultraviolet or X-ray light, allows chemists to determine which elements are present at a surface and in what chemical state, making the effect Einstein explained more than a century ago a routine tool of modern analytical science."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tThe puzzle that classical physics could not solve\nii\tWhy the effect varies from one metal to the next\niii\tWhat the effect is, and who first noticed it\niv\tModern instruments built on the effect\nv\tAttempts to repeat Hertz's experiment\nvi\tEinstein's explanation, and the prize it won\nvii\tThe effect's role in solar power generation",
+      "prompt": "Section A",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa hiệu ứng quang điện là gì và nhắc tới Hertz — người đầu tiên quan sát thấy nó năm 1887. Đúng cả hai vế của tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B mô tả mâu thuẫn giữa lý thuyết sóng ánh sáng cổ điển và quan sát thực nghiệm: ánh sáng yếu dưới ngưỡng tần số hoàn toàn không giải phóng electron dù chờ bao lâu. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "vi",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về giải thích của Einstein (ánh sáng gồm các photon rời rạc) và giải Nobel Vật lý 1921 ông nhận được vì công trình này. Đúng tiêu đề vi."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D giải thích công thoát (work function) khác nhau giữa các kim loại khiến ngưỡng tần số khởi phát hiệu ứng cũng khác nhau — ví dụ caesium cần ánh sáng nhìn thấy mờ, kim loại khác cần tia cực tím. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E liệt kê các thiết bị hiện đại dựa trên hiệu ứng quang điện: ống nhân quang, cảm biến CCD, quang phổ quang điện tử. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Hertz was able to explain why the photoelectric effect occurred.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói Hertz chỉ quan sát thấy hiện tượng năm 1887, nhưng 'for almost two decades no one could explain why it behaved the way it did'. Không ai giải thích được, kể cả Hertz. Đề nói ông giải thích được nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "According to classical wave theory, a dim light should eventually free an electron if it shines for long enough.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'a dim beam of light should still be able to knock an electron loose, provided the observer waited long enough'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Increasing the brightness of light above the threshold frequency produces more energetic photoelectrons.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn D nói ngược: tăng cường độ trên ngưỡng chỉ tăng SỐ LƯỢNG electron phát ra mỗi giây, 'not their individual energy'. Đề nói tăng năng lượng từng electron nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Einstein received the Nobel Prize in Physics for his theory of relativity.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C nói rõ giải thưởng 'awarded specifically for this explanation rather than for the theory of relativity'. Đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Photoelectron spectroscopy can reveal the chemical state of elements at a surface.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: quang phổ quang điện tử 'allows chemists to determine which elements are present at a surface and in what chemical state'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Electrons ejected by light in this effect are known as ________.",
+      "answer": "photoelectrons",
+      "number": 11,
+      "explanation": "Đoạn A: 'The electrons released in this way are called photoelectrons'. Đáp án photoelectrons."
+    },
+    {
+      "type": "gap",
+      "prompt": "Einstein proposed that light arrives in discrete packets of energy later named ________.",
+      "answer": "photons",
+      "number": 12,
+      "explanation": "Đoạn C: 'light itself is not a continuous wave but arrives in discrete packets of energy, later named photons'. Đáp án photons."
+    },
+    {
+      "type": "gap",
+      "prompt": "The minimum energy needed to free an electron from a particular metal is called the ________.",
+      "answer": "work function",
+      "number": 13,
+      "explanation": "Đoạn C: 'a quantity called the work function, the minimum energy needed to pull an electron free of a given metal'. Đáp án work function."
+    },
+    {
+      "type": "gap",
+      "prompt": "Tubes that amplify a single photoelectron into a measurable pulse of current are called ________.",
+      "answer": "photomultiplier tubes",
+      "number": 14,
+      "explanation": "Đoạn E: 'Photomultiplier tubes exploit it to detect extremely faint flashes of light, amplifying a single photoelectron into a measurable pulse of current'. Đáp án photomultiplier tubes."
+    },
+    {
+      "type": "gap",
+      "prompt": "The sensors inside digital cameras and telescopes are called ________.",
+      "answer": "charge-coupled devices",
+      "number": 15,
+      "explanation": "Đoạn E: 'Charge-coupled devices, the sensors at the heart of digital cameras and telescopes'. Đáp án charge-coupled devices."
+    }
+  ]
+}

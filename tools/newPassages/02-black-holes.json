@@ -1,0 +1,141 @@
+{
+  "title": "Black Holes",
+  "sourceNote": "Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A black hole is a region of space where gravity is so strong that nothing, not even light, can escape once it crosses a boundary called the event horizon. The idea that such an object might exist was first floated in the eighteenth century by the English clergyman John Michell, who reasoned that a sufficiently massive and compact star would have an escape velocity exceeding the speed of light. The modern theory rests instead on Albert Einstein's general theory of relativity, published in 1915, which describes gravity as the curvature of space and time rather than a force acting at a distance."
+    },
+    {
+      "letter": "B",
+      "text": "Black holes form when the core of a massive star runs out of nuclear fuel and can no longer support itself against its own gravity. The core collapses inward, and if enough mass is concentrated in a small enough volume, no known force can halt the collapse: the material shrinks toward a point of infinite density called a singularity, surrounded by the event horizon. Stars capable of forming a black hole in this way typically have at least twenty times the mass of the Sun. Far larger black holes, with masses millions or billions of times that of the Sun, sit at the centres of most large galaxies, including our own Milky Way, though how these supermassive black holes grew so large remains an active area of research."
+    },
+    {
+      "letter": "C",
+      "text": "Because a black hole itself emits no light, astronomers detect it indirectly, chiefly by observing its gravitational effect on nearby matter. Gas and dust falling toward a black hole form a swirling accretion disc, heated by friction to temperatures high enough to emit intense X-rays that telescopes can detect. Stars orbiting an apparently empty point in space, tracing out an orbit that only an enormous unseen mass could produce, provided some of the earliest strong evidence for the supermassive black hole at the centre of the Milky Way. In 2019, the Event Horizon Telescope collaboration released the first direct image of a black hole's shadow, made by combining data from radio telescopes spread across the globe to observe the black hole at the centre of the galaxy M87."
+    },
+    {
+      "letter": "D",
+      "text": "General relativity predicts that a black hole can be completely described by only three quantities: its mass, its electric charge, and its rate of spin, a striking simplicity often summarised in the phrase \"black holes have no hair\". In 1974, the physicist Stephen Hawking argued that black holes are not perfectly black after all. Quantum effects near the event horizon, he showed, should cause a black hole to emit a faint stream of particles now called Hawking radiation, very slowly draining away its mass over immense periods of time. For black holes of stellar mass or larger, this evaporation is so slow that it is utterly undetectable in practice, but the prediction reshaped how physicists think about the relationship between gravity and quantum mechanics."
+    },
+    {
+      "letter": "E",
+      "text": "Two black holes orbiting one another will gradually spiral inward as they radiate energy in the form of gravitational waves, ripples in the fabric of space-time predicted by general relativity nearly a century earlier. In September 2015, the Laser Interferometer Gravitational-Wave Observatory, known as LIGO, detected such waves directly for the first time, produced by the final collision and merger of two black holes more than a billion light-years away. The discovery, announced in 2016, opened an entirely new way of observing the universe and earned three of the scientists involved the 2017 Nobel Prize in Physics."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow they are found without being seen directly\nii\tThree numbers, and a radiation that slowly drains them\niii\tAn early guess, and the modern theory behind it\niv\tTravelling faster than light near the horizon\nv\tHow a dying star can produce one\nvi\tRipples detected after a distant collision\nvii\tPlans to send a probe to the nearest one",
+      "prompt": "Section A",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nhắc tới phỏng đoán sớm của Michell thế kỷ 18 rồi tới lý thuyết hiện đại của Einstein 1915. Đúng cả hai vế của tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B mô tả lỗ đen hình thành thế nào từ sự sụp đổ của một ngôi sao khối lượng lớn hết nhiên liệu hạt nhân. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói các nhà thiên văn phát hiện lỗ đen gián tiếp qua đĩa bồi tụ, quỹ đạo của các ngôi sao, và bức ảnh Event Horizon Telescope 2019. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói lỗ đen được mô tả đầy đủ chỉ bằng ba đại lượng (khối lượng, điện tích, spin) và bức xạ Hawking làm nó bốc hơi dần. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "vi",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về sóng hấp dẫn từ vụ va chạm hai lỗ đen, được LIGO phát hiện năm 2015. Đúng tiêu đề vi."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Michell's proposal was based on Einstein's theory of general relativity.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói Michell đưa ra ý tưởng ở thế kỷ 18, còn lý thuyết Einstein (1915) là nền tảng của cách hiểu HIỆN ĐẠI — hai thứ khác thời điểm. Đề nói ý tưởng của Michell dựa trên thuyết của Einstein là sai thứ tự thời gian: FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Every star that exhausts its nuclear fuel eventually becomes a black hole.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: 'Stars capable of forming a black hole in this way typically have at least twenty times the mass of the Sun'. Chỉ những ngôi sao đủ nặng mới thành lỗ đen, không phải MỌI ngôi sao. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Scientists fully understand how supermassive black holes reached their enormous size.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn B: 'how these supermassive black holes grew so large remains an active area of research' — vẫn đang nghiên cứu, chưa hiểu đầy đủ. Đề nói đã hiểu rõ nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The 2019 image released by the Event Horizon Telescope showed the black hole at the centre of the Milky Way.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C: bức ảnh 2019 là của lỗ đen 'at the centre of the galaxy M87', không phải Dải Ngân Hà. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Hawking radiation causes stellar-mass black holes to lose mass at a rate that can currently be measured.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn D: 'this evaporation is so slow that it is utterly undetectable in practice'. Không đo được trong thực tế, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The boundary beyond which nothing can escape a black hole is called the ________.",
+      "answer": "event horizon",
+      "number": 11,
+      "explanation": "Đoạn A: 'a boundary called the event horizon'. Đáp án event horizon."
+    },
+    {
+      "type": "gap",
+      "prompt": "The point of infinite density at the centre of a collapsed star is called a ________.",
+      "answer": "singularity",
+      "number": 12,
+      "explanation": "Đoạn B: 'the material shrinks toward a point of infinite density called a singularity'. Đáp án singularity."
+    },
+    {
+      "type": "gap",
+      "prompt": "Gas and dust spiralling toward a black hole form a heated ________.",
+      "answer": "accretion disc",
+      "number": 13,
+      "explanation": "Đoạn C: 'Gas and dust falling toward a black hole form a swirling accretion disc, heated by friction'. Đáp án accretion disc."
+    },
+    {
+      "type": "gap",
+      "prompt": "The idea that black holes can be described by only mass, charge and spin is summed up in the phrase 'black holes have no ________'.",
+      "answer": "hair",
+      "number": 14,
+      "explanation": "Đoạn D: 'a striking simplicity often summarised in the phrase black holes have no hair'. Đáp án hair."
+    },
+    {
+      "type": "gap",
+      "prompt": "The observatory that first directly detected gravitational waves in 2015 is known as ________.",
+      "answer": "LIGO",
+      "number": 15,
+      "explanation": "Đoạn E: 'the Laser Interferometer Gravitational-Wave Observatory, known as LIGO'. Đáp án LIGO."
+    }
+  ]
+}

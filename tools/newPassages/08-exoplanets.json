@@ -1,0 +1,141 @@
+{
+  "title": "Exoplanets",
+  "sourceNote": "Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "An exoplanet is any planet that orbits a star other than the Sun. Although philosophers speculated for centuries that other stars might host worlds of their own, the first confirmed detection of a planet orbiting a Sun-like star did not come until 1995, when the Swiss astronomers Michel Mayor and Didier Queloz announced the discovery of 51 Pegasi b, a gas giant orbiting extremely close to its parent star. The pair shared the 2019 Nobel Prize in Physics for the discovery, which opened a field that has since identified thousands of worlds beyond our solar system."
+    },
+    {
+      "letter": "B",
+      "text": "Because exoplanets lie so far away and are vastly outshone by the stars they orbit, astronomers detect most of them indirectly rather than by seeing them in a telescope image. The transit method, responsible for the majority of confirmed discoveries, looks for the tiny, regular dip in a star's brightness that occurs each time a planet passes directly in front of it as seen from Earth. The radial velocity method, used to find 51 Pegasi b, instead detects the slight wobble a planet's gravity induces in its host star, which very slightly shifts the wavelength of the star's light as it moves alternately toward and away from Earth. A smaller number of exoplanets, generally large and orbiting far from their star, have been imaged directly."
+    },
+    {
+      "letter": "C",
+      "text": "NASA's Kepler space telescope, launched in 2009, transformed the field by continuously monitoring the brightness of more than 150,000 stars simultaneously, searching for transit dips too small to detect from the ground. Before Kepler, only a few hundred exoplanets had been confirmed; by the time the mission ended in 2018, it alone had contributed to the confirmation of more than 2,600 exoplanets, along with thousands of further candidates still awaiting confirmation. Kepler's data also allowed astronomers to estimate, for the first time, that the Milky Way likely contains billions of planets similar in size to Earth."
+    },
+    {
+      "letter": "D",
+      "text": "A region around a star where conditions might allow liquid water to persist on a planet's surface, neither so hot that any water boils away nor so cold that it freezes solid, is often called the habitable zone. A planet orbiting within this zone is not automatically habitable, since factors such as its atmosphere, its size, and its magnetic field all strongly influence whether liquid water could actually exist there, but the habitable zone provides astronomers with a useful first filter when searching among thousands of candidates for the planets most likely to resemble Earth. Proxima Centauri b, discovered in 2016 orbiting the star nearest to the Sun, lies within its star's habitable zone, making it one of the most closely studied exoplanets to date despite lying more than four light-years away."
+    },
+    {
+      "letter": "E",
+      "text": "The James Webb Space Telescope, launched in 2021, has extended the field by analysing the atmospheres of exoplanets in unprecedented detail. As a planet transits its star, a small fraction of the star's light passes through the planet's atmosphere on its way to Earth, and different gases in that atmosphere absorb specific wavelengths of light, leaving a distinctive chemical fingerprint that the telescope's instruments can detect. Using this technique, astronomers have already identified water vapour, carbon dioxide, and other molecules in the atmospheres of several exoplanets, a capability that scientists hope will eventually allow them to search for combinations of gases that could indicate the presence of life on a planet many light-years from Earth."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat they are, and the discovery that opened the field\nii\tHow astronomers find planets they cannot directly see\niii\tA space telescope that found thousands of candidates\niv\tReading a planet's atmosphere from its starlight\nv\tA zone where liquid water might survive\nvi\tPlans for a crewed mission beyond the solar system\nvii\tWhy most exoplanets are larger than Jupiter",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa ngoại hành tinh là gì và kể về phát hiện đầu tiên năm 1995 (51 Pegasi b). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về hai phương pháp gián tiếp: transit và radial velocity, vì ngoại hành tinh quá xa để chụp trực tiếp. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về kính Kepler, đóng góp xác nhận hơn 2.600 ngoại hành tinh. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về vùng ở được (habitable zone) — nơi nước lỏng có thể tồn tại. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói kính James Webb phân tích khí quyển ngoại hành tinh qua ánh sáng sao xuyên qua nó. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "51 Pegasi b was discovered using the transit method.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B: '51 Pegasi b' được tìm bằng 'The radial velocity method', không phải transit method. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Before Kepler was launched, only a few hundred exoplanets had been confirmed.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn C: 'Before Kepler, only a few hundred exoplanets had been confirmed'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Any planet located within its star's habitable zone is automatically capable of supporting life.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn D: 'A planet orbiting within this zone is not automatically habitable'. Không tự động ở được, còn phụ thuộc khí quyển, kích thước, từ trường. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Proxima Centauri b orbits the star that is closest to the Sun.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'discovered in 2016 orbiting the star nearest to the Sun'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The James Webb Space Telescope has already found direct evidence of life on an exoplanet.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E chỉ nói đã phát hiện hơi nước, CO2, và các nhà khoa học HY VỌNG một ngày nào đó tìm được dấu hiệu sự sống — chưa có bằng chứng sự sống thật sự. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Mayor and Queloz shared the 2019 Nobel Prize for discovering ________, a gas giant orbiting close to its star.",
+      "answer": "51 Pegasi b",
+      "number": 11,
+      "explanation": "Đoạn A: 'the discovery of 51 Pegasi b, a gas giant orbiting extremely close to its parent star'. Đáp án 51 Pegasi b."
+    },
+    {
+      "type": "gap",
+      "prompt": "The most productive detection method looks for a regular dip in brightness called a ________.",
+      "answer": "transit",
+      "number": 12,
+      "explanation": "Đoạn B: 'The transit method, responsible for the majority of confirmed discoveries'. Đáp án transit."
+    },
+    {
+      "type": "gap",
+      "prompt": "NASA's Kepler telescope was launched in ________.",
+      "answer": "2009",
+      "number": 13,
+      "explanation": "Đoạn C: 'NASA's Kepler space telescope, launched in 2009'. Đáp án 2009."
+    },
+    {
+      "type": "gap",
+      "prompt": "A region where liquid water might persist on a planet's surface is often called the ________ zone.",
+      "answer": "habitable",
+      "number": 14,
+      "explanation": "Đoạn D: 'is often called the habitable zone'. Đáp án habitable."
+    },
+    {
+      "type": "gap",
+      "prompt": "The James Webb Space Telescope was launched in ________.",
+      "answer": "2021",
+      "number": 15,
+      "explanation": "Đoạn E: 'The James Webb Space Telescope, launched in 2021'. Đáp án 2021."
+    }
+  ]
+}

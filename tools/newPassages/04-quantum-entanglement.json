@@ -1,0 +1,141 @@
+{
+  "title": "Quantum Entanglement",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Quantum entanglement is a phenomenon in which two or more particles become linked in such a way that the quantum state of each particle cannot be described independently of the others, even when the particles are separated by a great distance. Measuring a property of one entangled particle instantly determines the corresponding property of its partner, a correlation stronger than anything classical physics allows. The effect emerges directly from the mathematics of quantum mechanics, but its implications proved so unsettling that physicists argued over their meaning for decades."
+    },
+    {
+      "letter": "B",
+      "text": "In 1935, Albert Einstein, together with Boris Podolsky and Nathan Rosen, published a paper arguing that entanglement pointed to a flaw in quantum mechanics. If measuring one particle could instantly influence its distant partner, they reasoned, either information was travelling faster than light, which relativity forbids, or quantum mechanics was an incomplete description of reality that left out some hidden property determined in advance. Einstein famously dismissed the effect as \"spooky action at a distance\", convinced that a more complete theory would eventually restore a common-sense picture of separate, independent particles."
+    },
+    {
+      "letter": "C",
+      "text": "The dispute remained a matter of interpretation, rather than experiment, until 1964, when the physicist John Stewart Bell devised a mathematical inequality that any theory based on Einstein's hidden variables would have to satisfy. Quantum mechanics, by contrast, predicted that entangled particles would violate Bell's inequality under certain conditions. The question could now be settled in the laboratory. Starting in the 1970s and continuing through more rigorous experiments in the following decades, physicists including Alain Aspect measured entangled particles and found repeated violations of Bell's inequality, matching the predictions of quantum mechanics and ruling out the simple hidden-variable explanation Einstein had favoured. In 2022, Aspect shared the Nobel Prize in Physics with John Clauser and Anton Zeilinger for this line of experimental work."
+    },
+    {
+      "letter": "D",
+      "text": "Crucially, entanglement does not allow information to be transmitted faster than light, so it does not violate relativity. The outcome of a measurement on an entangled particle is random; only when the results from both distant locations are later compared, using an ordinary communication channel that cannot exceed the speed of light, does the correlation between them become apparent. Entanglement therefore reveals a correlation built into the particles from the moment they became entangled, rather than a channel through which a signal can be deliberately sent, a distinction that resolves the apparent conflict with relativity that troubled Einstein."
+    },
+    {
+      "letter": "E",
+      "text": "Far from being a philosophical curiosity, entanglement now underpins several emerging technologies. Quantum key distribution uses entangled photons to let two parties share a secret cryptographic key with a security guarantee rooted in physics: any attempt by an eavesdropper to intercept the photons disturbs their quantum state in a detectable way. Quantum computers exploit entanglement between qubits to perform certain calculations far faster than any classical computer, and quantum teleportation, which transfers the exact quantum state of one particle onto another distant particle without physically moving the original, relies entirely on a shared pair of entangled particles as its starting point. None of these technologies transmit matter or energy faster than light; all of them depend on entanglement in the carefully limited sense that Bell's experiments confirmed."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the phenomenon is\nii\tA test that could finally be run in the laboratory\niii\tWhy no signal can travel faster than light\niv\tEinstein's objection to the idea\nv\tTechnologies that now depend on it\nvi\tEarly attempts to build a quantum computer\nvii\tHow particles are made to become entangled",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa hiện tượng rối lượng tử là gì. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về phản đối của Einstein, Podolsky và Rosen năm 1935, gọi đó là 'spooky action at a distance'. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về bất đẳng thức Bell (1964) cho phép kiểm chứng bằng thực nghiệm, và các thí nghiệm của Aspect xác nhận cơ học lượng tử đúng. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D giải thích vì sao rối lượng tử không cho phép truyền tín hiệu nhanh hơn ánh sáng, không mâu thuẫn với thuyết tương đối. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E liệt kê các công nghệ dựa trên rối lượng tử: phân phối khoá lượng tử, máy tính lượng tử, dịch chuyển lượng tử. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Einstein believed that quantum mechanics was a complete and correct description of reality.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói Einstein tin cơ học lượng tử 'was an incomplete description of reality'. Ông cho là chưa hoàn chỉnh, không phải hoàn chỉnh. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Bell's inequality could be tested experimentally, unlike the earlier dispute between Einstein and quantum theory.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn C: 'The question could now be settled in the laboratory'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Experiments testing Bell's inequality confirmed Einstein's hidden-variable explanation.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C: thí nghiệm 'ruling out the simple hidden-variable explanation Einstein had favoured'. Loại bỏ chứ không xác nhận giả thuyết của Einstein. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Entanglement allows information to be sent faster than the speed of light.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D: 'entanglement does not allow information to be transmitted faster than light'. Đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Quantum teleportation physically moves the original particle to a new location.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: dịch chuyển lượng tử chuyển trạng thái 'without physically moving the original' particle. Không di chuyển hạt gốc. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Einstein famously dismissed entanglement as '________ at a distance'.",
+      "answer": "spooky action",
+      "number": 11,
+      "explanation": "Đoạn B: 'Einstein famously dismissed the effect as spooky action at a distance'. Đáp án spooky action."
+    },
+    {
+      "type": "gap",
+      "prompt": "The mathematical test devised in 1964 to distinguish the two theories is known as ________.",
+      "answer": "Bell's inequality",
+      "number": 12,
+      "explanation": "Đoạn C: 'the physicist John Stewart Bell devised a mathematical inequality'. Đáp án Bell's inequality."
+    },
+    {
+      "type": "gap",
+      "prompt": "In 2022, Aspect shared the Nobel Prize in Physics with John Clauser and ________.",
+      "answer": "Anton Zeilinger",
+      "number": 13,
+      "explanation": "Đoạn C: 'Aspect shared the Nobel Prize in Physics with John Clauser and Anton Zeilinger'. Đáp án Anton Zeilinger."
+    },
+    {
+      "type": "gap",
+      "prompt": "A technique that lets two parties share a secret key using entangled photons is called ________.",
+      "answer": "quantum key distribution",
+      "number": 14,
+      "explanation": "Đoạn E: 'Quantum key distribution uses entangled photons to let two parties share a secret cryptographic key'. Đáp án quantum key distribution."
+    },
+    {
+      "type": "gap",
+      "prompt": "Quantum computers exploit entanglement between units of information called ________.",
+      "answer": "qubits",
+      "number": 15,
+      "explanation": "Đoạn E: 'Quantum computers exploit entanglement between qubits'. Đáp án qubits."
+    }
+  ]
+}

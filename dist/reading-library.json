@@ -9817,6 +9817,1766 @@
           "explanation": "Đoạn D: 'Origami paper, often referred to as kami (Japanese for paper)'. Đáp án kami."
         }
       ]
+    },
+    {
+      "id": "nl2-01-photoelectric-effect-p1",
+      "order": 53,
+      "title": "The Photoelectric Effect",
+      "text": "A\nThe photoelectric effect is the ejection of electrons from the surface of a material, usually a metal, when light falls upon it. The electrons released in this way are called photoelectrons, and the phenomenon is not merely a laboratory curiosity: it underlies devices ranging from the light meters in cameras to the image sensors used in modern astronomy. Heinrich Hertz first noticed the effect in 1887 while experimenting with sparks, but for almost two decades no one could explain why it behaved the way it did.\n\nB\nThe trouble was that the effect flatly disobeyed the physics of the day. Nineteenth-century electromagnetic theory treated light as a continuous wave, and on that view a dim beam of light should still be able to knock an electron loose, provided the observer waited long enough for enough energy to build up. Experiments showed the opposite. Below a certain frequency of light, no electrons were emitted at all, no matter how bright the source or how long it shone. Above that frequency, electrons flew out almost instantly, within a fraction of a nanosecond, and increasing the brightness of the light produced more electrons rather than more energetic ones. Nothing in wave theory predicted a sharp frequency cut-off of this kind.\n\nC\nIn 1905, Albert Einstein proposed a radical resolution: light itself is not a continuous wave but arrives in discrete packets of energy, later named photons. Each photon carries an amount of energy proportional to the light's frequency, so a single high-frequency photon can deliver a decisive blow to an electron even when the overall beam is faint, while a flood of low-frequency photons, however intense, cannot deliver enough energy in any one collision to free an electron at all. Building on this idea, Einstein wrote a simple equation linking the photon's energy to the kinetic energy of the ejected electron and to a quantity called the work function, the minimum energy needed to pull an electron free of a given metal. The paper earned him the 1921 Nobel Prize in Physics, awarded specifically for this explanation rather than for the theory of relativity for which he later became more widely known.\n\nD\nEinstein's equation predicts that the maximum kinetic energy of an ejected electron rises in direct proportion to the frequency of the incoming light, once that frequency exceeds a threshold value set by the metal's work function. Below the threshold, no amount of extra intensity can trigger emission, because no single photon carries sufficient energy; above it, raising the intensity increases only the number of photoelectrons released per second, not their individual energy. Different metals have different work functions, so the threshold frequency at which the photoelectric effect begins varies from one material to another: caesium, for instance, releases electrons under comparatively dim visible light, whereas many other metals require ultraviolet radiation before any emission occurs at all.\n\nE\nThe photoelectric effect is now put to work in a wide range of technologies. Photomultiplier tubes exploit it to detect extremely faint flashes of light, amplifying a single photoelectron into a measurable pulse of current, and are used in medical scanners and particle-physics detectors. Charge-coupled devices, the sensors at the heart of digital cameras and telescopes, rely on a related process to convert incoming light into an electronic signal. Photoelectron spectroscopy, a technique that measures the kinetic energy of electrons knocked out of a sample by ultraviolet or X-ray light, allows chemists to determine which elements are present at a surface and in what chemical state, making the effect Einstein explained more than a century ago a routine tool of modern analytical science.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tThe puzzle that classical physics could not solve\nii\tWhy the effect varies from one metal to the next\niii\tWhat the effect is, and who first noticed it\niv\tModern instruments built on the effect\nv\tAttempts to repeat Hertz's experiment\nvi\tEinstein's explanation, and the prize it won\nvii\tThe effect's role in solar power generation",
+          "prompt": "Section A",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa hiệu ứng quang điện là gì và nhắc tới Hertz — người đầu tiên quan sát thấy nó năm 1887. Đúng cả hai vế của tiêu đề iii.",
+          "id": "nl2-01-photoelectric-effect-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B mô tả mâu thuẫn giữa lý thuyết sóng ánh sáng cổ điển và quan sát thực nghiệm: ánh sáng yếu dưới ngưỡng tần số hoàn toàn không giải phóng electron dù chờ bao lâu. Đúng tiêu đề i.",
+          "id": "nl2-01-photoelectric-effect-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "vi",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về giải thích của Einstein (ánh sáng gồm các photon rời rạc) và giải Nobel Vật lý 1921 ông nhận được vì công trình này. Đúng tiêu đề vi.",
+          "id": "nl2-01-photoelectric-effect-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D giải thích công thoát (work function) khác nhau giữa các kim loại khiến ngưỡng tần số khởi phát hiệu ứng cũng khác nhau — ví dụ caesium cần ánh sáng nhìn thấy mờ, kim loại khác cần tia cực tím. Đúng tiêu đề ii.",
+          "id": "nl2-01-photoelectric-effect-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E liệt kê các thiết bị hiện đại dựa trên hiệu ứng quang điện: ống nhân quang, cảm biến CCD, quang phổ quang điện tử. Đúng tiêu đề iv.",
+          "id": "nl2-01-photoelectric-effect-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Hertz was able to explain why the photoelectric effect occurred.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói Hertz chỉ quan sát thấy hiện tượng năm 1887, nhưng 'for almost two decades no one could explain why it behaved the way it did'. Không ai giải thích được, kể cả Hertz. Đề nói ông giải thích được nên FALSE.",
+          "id": "nl2-01-photoelectric-effect-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "According to classical wave theory, a dim light should eventually free an electron if it shines for long enough.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'a dim beam of light should still be able to knock an electron loose, provided the observer waited long enough'. Đúng ý đề nên TRUE.",
+          "id": "nl2-01-photoelectric-effect-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Increasing the brightness of light above the threshold frequency produces more energetic photoelectrons.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn D nói ngược: tăng cường độ trên ngưỡng chỉ tăng SỐ LƯỢNG electron phát ra mỗi giây, 'not their individual energy'. Đề nói tăng năng lượng từng electron nên FALSE.",
+          "id": "nl2-01-photoelectric-effect-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Einstein received the Nobel Prize in Physics for his theory of relativity.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C nói rõ giải thưởng 'awarded specifically for this explanation rather than for the theory of relativity'. Đề nói ngược nên FALSE.",
+          "id": "nl2-01-photoelectric-effect-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Photoelectron spectroscopy can reveal the chemical state of elements at a surface.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: quang phổ quang điện tử 'allows chemists to determine which elements are present at a surface and in what chemical state'. Đúng ý đề nên TRUE.",
+          "id": "nl2-01-photoelectric-effect-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Electrons ejected by light in this effect are known as ________.",
+          "answer": "photoelectrons",
+          "number": 11,
+          "explanation": "Đoạn A: 'The electrons released in this way are called photoelectrons'. Đáp án photoelectrons.",
+          "id": "nl2-01-photoelectric-effect-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Einstein proposed that light arrives in discrete packets of energy later named ________.",
+          "answer": "photons",
+          "number": 12,
+          "explanation": "Đoạn C: 'light itself is not a continuous wave but arrives in discrete packets of energy, later named photons'. Đáp án photons.",
+          "id": "nl2-01-photoelectric-effect-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The minimum energy needed to free an electron from a particular metal is called the ________.",
+          "answer": "work function",
+          "number": 13,
+          "explanation": "Đoạn C: 'a quantity called the work function, the minimum energy needed to pull an electron free of a given metal'. Đáp án work function.",
+          "id": "nl2-01-photoelectric-effect-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Tubes that amplify a single photoelectron into a measurable pulse of current are called ________.",
+          "answer": "photomultiplier tubes",
+          "number": 14,
+          "explanation": "Đoạn E: 'Photomultiplier tubes exploit it to detect extremely faint flashes of light, amplifying a single photoelectron into a measurable pulse of current'. Đáp án photomultiplier tubes.",
+          "id": "nl2-01-photoelectric-effect-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The sensors inside digital cameras and telescopes are called ________.",
+          "answer": "charge-coupled devices",
+          "number": 15,
+          "explanation": "Đoạn E: 'Charge-coupled devices, the sensors at the heart of digital cameras and telescopes'. Đáp án charge-coupled devices.",
+          "id": "nl2-01-photoelectric-effect-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-02-black-holes-p1",
+      "order": 54,
+      "title": "Black Holes",
+      "text": "A\nA black hole is a region of space where gravity is so strong that nothing, not even light, can escape once it crosses a boundary called the event horizon. The idea that such an object might exist was first floated in the eighteenth century by the English clergyman John Michell, who reasoned that a sufficiently massive and compact star would have an escape velocity exceeding the speed of light. The modern theory rests instead on Albert Einstein's general theory of relativity, published in 1915, which describes gravity as the curvature of space and time rather than a force acting at a distance.\n\nB\nBlack holes form when the core of a massive star runs out of nuclear fuel and can no longer support itself against its own gravity. The core collapses inward, and if enough mass is concentrated in a small enough volume, no known force can halt the collapse: the material shrinks toward a point of infinite density called a singularity, surrounded by the event horizon. Stars capable of forming a black hole in this way typically have at least twenty times the mass of the Sun. Far larger black holes, with masses millions or billions of times that of the Sun, sit at the centres of most large galaxies, including our own Milky Way, though how these supermassive black holes grew so large remains an active area of research.\n\nC\nBecause a black hole itself emits no light, astronomers detect it indirectly, chiefly by observing its gravitational effect on nearby matter. Gas and dust falling toward a black hole form a swirling accretion disc, heated by friction to temperatures high enough to emit intense X-rays that telescopes can detect. Stars orbiting an apparently empty point in space, tracing out an orbit that only an enormous unseen mass could produce, provided some of the earliest strong evidence for the supermassive black hole at the centre of the Milky Way. In 2019, the Event Horizon Telescope collaboration released the first direct image of a black hole's shadow, made by combining data from radio telescopes spread across the globe to observe the black hole at the centre of the galaxy M87.\n\nD\nGeneral relativity predicts that a black hole can be completely described by only three quantities: its mass, its electric charge, and its rate of spin, a striking simplicity often summarised in the phrase \"black holes have no hair\". In 1974, the physicist Stephen Hawking argued that black holes are not perfectly black after all. Quantum effects near the event horizon, he showed, should cause a black hole to emit a faint stream of particles now called Hawking radiation, very slowly draining away its mass over immense periods of time. For black holes of stellar mass or larger, this evaporation is so slow that it is utterly undetectable in practice, but the prediction reshaped how physicists think about the relationship between gravity and quantum mechanics.\n\nE\nTwo black holes orbiting one another will gradually spiral inward as they radiate energy in the form of gravitational waves, ripples in the fabric of space-time predicted by general relativity nearly a century earlier. In September 2015, the Laser Interferometer Gravitational-Wave Observatory, known as LIGO, detected such waves directly for the first time, produced by the final collision and merger of two black holes more than a billion light-years away. The discovery, announced in 2016, opened an entirely new way of observing the universe and earned three of the scientists involved the 2017 Nobel Prize in Physics.\n\n— Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow they are found without being seen directly\nii\tThree numbers, and a radiation that slowly drains them\niii\tAn early guess, and the modern theory behind it\niv\tTravelling faster than light near the horizon\nv\tHow a dying star can produce one\nvi\tRipples detected after a distant collision\nvii\tPlans to send a probe to the nearest one",
+          "prompt": "Section A",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nhắc tới phỏng đoán sớm của Michell thế kỷ 18 rồi tới lý thuyết hiện đại của Einstein 1915. Đúng cả hai vế của tiêu đề iii.",
+          "id": "nl2-02-black-holes-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B mô tả lỗ đen hình thành thế nào từ sự sụp đổ của một ngôi sao khối lượng lớn hết nhiên liệu hạt nhân. Đúng tiêu đề v.",
+          "id": "nl2-02-black-holes-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói các nhà thiên văn phát hiện lỗ đen gián tiếp qua đĩa bồi tụ, quỹ đạo của các ngôi sao, và bức ảnh Event Horizon Telescope 2019. Đúng tiêu đề i.",
+          "id": "nl2-02-black-holes-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói lỗ đen được mô tả đầy đủ chỉ bằng ba đại lượng (khối lượng, điện tích, spin) và bức xạ Hawking làm nó bốc hơi dần. Đúng tiêu đề ii.",
+          "id": "nl2-02-black-holes-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "vi",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về sóng hấp dẫn từ vụ va chạm hai lỗ đen, được LIGO phát hiện năm 2015. Đúng tiêu đề vi.",
+          "id": "nl2-02-black-holes-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Michell's proposal was based on Einstein's theory of general relativity.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói Michell đưa ra ý tưởng ở thế kỷ 18, còn lý thuyết Einstein (1915) là nền tảng của cách hiểu HIỆN ĐẠI — hai thứ khác thời điểm. Đề nói ý tưởng của Michell dựa trên thuyết của Einstein là sai thứ tự thời gian: FALSE.",
+          "id": "nl2-02-black-holes-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Every star that exhausts its nuclear fuel eventually becomes a black hole.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: 'Stars capable of forming a black hole in this way typically have at least twenty times the mass of the Sun'. Chỉ những ngôi sao đủ nặng mới thành lỗ đen, không phải MỌI ngôi sao. FALSE.",
+          "id": "nl2-02-black-holes-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Scientists fully understand how supermassive black holes reached their enormous size.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn B: 'how these supermassive black holes grew so large remains an active area of research' — vẫn đang nghiên cứu, chưa hiểu đầy đủ. Đề nói đã hiểu rõ nên FALSE.",
+          "id": "nl2-02-black-holes-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The 2019 image released by the Event Horizon Telescope showed the black hole at the centre of the Milky Way.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C: bức ảnh 2019 là của lỗ đen 'at the centre of the galaxy M87', không phải Dải Ngân Hà. FALSE.",
+          "id": "nl2-02-black-holes-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Hawking radiation causes stellar-mass black holes to lose mass at a rate that can currently be measured.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn D: 'this evaporation is so slow that it is utterly undetectable in practice'. Không đo được trong thực tế, đề nói ngược nên FALSE.",
+          "id": "nl2-02-black-holes-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The boundary beyond which nothing can escape a black hole is called the ________.",
+          "answer": "event horizon",
+          "number": 11,
+          "explanation": "Đoạn A: 'a boundary called the event horizon'. Đáp án event horizon.",
+          "id": "nl2-02-black-holes-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The point of infinite density at the centre of a collapsed star is called a ________.",
+          "answer": "singularity",
+          "number": 12,
+          "explanation": "Đoạn B: 'the material shrinks toward a point of infinite density called a singularity'. Đáp án singularity.",
+          "id": "nl2-02-black-holes-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Gas and dust spiralling toward a black hole form a heated ________.",
+          "answer": "accretion disc",
+          "number": 13,
+          "explanation": "Đoạn C: 'Gas and dust falling toward a black hole form a swirling accretion disc, heated by friction'. Đáp án accretion disc.",
+          "id": "nl2-02-black-holes-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The idea that black holes can be described by only mass, charge and spin is summed up in the phrase 'black holes have no ________'.",
+          "answer": "hair",
+          "number": 14,
+          "explanation": "Đoạn D: 'a striking simplicity often summarised in the phrase black holes have no hair'. Đáp án hair.",
+          "id": "nl2-02-black-holes-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The observatory that first directly detected gravitational waves in 2015 is known as ________.",
+          "answer": "LIGO",
+          "number": 15,
+          "explanation": "Đoạn E: 'the Laser Interferometer Gravitational-Wave Observatory, known as LIGO'. Đáp án LIGO.",
+          "id": "nl2-02-black-holes-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-03-dark-matter-p1",
+      "order": 55,
+      "title": "Dark Matter",
+      "text": "A\nDark matter is a hypothesised form of matter that does not emit, absorb, or reflect light, and so cannot be observed directly with telescopes. Its existence is inferred entirely from its gravitational influence on visible matter, on radiation, and on the large-scale structure of the universe. Current estimates suggest that dark matter accounts for roughly 27 percent of the total mass and energy of the universe, dwarfing the 5 percent made up of the ordinary matter that forms stars, planets, and everything else that can be seen.\n\nB\nThe first strong evidence for dark matter came in the 1930s, when the Swiss astronomer Fritz Zwicky studied the motion of galaxies within the Coma galaxy cluster. He found that the galaxies were moving far too quickly to be held together by the gravity of the visible matter alone; without some additional, unseen mass, the cluster should have flown apart long ago. Zwicky's proposal attracted little attention at the time. Decades later, in the 1970s, the American astronomer Vera Rubin measured the rotation speeds of stars within individual spiral galaxies and found a similar puzzle: stars at the outer edge of a galaxy were orbiting almost as fast as those near the centre, a pattern that visible matter alone could not explain. Rubin's careful, repeated observations across dozens of galaxies were instrumental in convincing the wider scientific community that dark matter was real.\n\nC\nA further line of evidence comes from gravitational lensing, the bending of light from distant objects as it passes near a massive foreground object, an effect predicted by Einstein's general theory of relativity. By measuring how much light is bent by a galaxy cluster, astronomers can calculate the total mass of the cluster, including any matter that is otherwise invisible. In cluster collisions such as the Bullet Cluster, observations show that the region of greatest mass, as revealed by lensing, is offset from the region containing most of the visible, ordinary matter, a separation that is difficult to explain unless a large amount of unseen mass has passed through the collision largely undisturbed.\n\nD\nDespite decades of searching, the particles that make up dark matter have never been directly detected. The leading hypothesis proposes weakly interacting massive particles, often abbreviated as WIMPs, which would interact with ordinary matter only through gravity and the weak nuclear force, making them exceptionally difficult to catch. Experiments such as XENON1T, built deep underground to shield delicate detectors from cosmic rays and other interference, have searched for the faint signal a WIMP might leave behind when it collides with an atomic nucleus, but so far without a confirmed detection. Alternative candidates, including hypothetical particles called axions and even the possibility that gravity itself behaves differently on very large scales, remain under active investigation.\n\nE\nDark matter plays a central role in current models of how the universe evolved. Computer simulations show that, without the additional gravity that dark matter provides, the small density fluctuations present shortly after the Big Bang would not have had time to grow into the galaxies and galaxy clusters observed today. In these simulations, dark matter forms a vast, invisible scaffold, sometimes described as the cosmic web, along which ordinary matter later gathered and cooled to form the visible structures that fill the night sky. Understanding what dark matter actually is remains one of the most significant unsolved problems in modern physics.\n\n— Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy the search for its particles has failed so far\nii\tHow it shaped the structure of the universe\niii\tWhat it is, and how much of the universe it makes up\niv\tBending light around a cluster of galaxies\nv\tTwo astronomers whose observations pointed to it\nvi\tProposals to replace it with a new theory of gravity\nvii\tHow it was named",
+          "prompt": "Section A",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa vật chất tối là gì và cho biết nó chiếm khoảng 27% khối lượng-năng lượng vũ trụ. Đúng cả hai vế của tiêu đề iii.",
+          "id": "nl2-03-dark-matter-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể về Zwicky (1930s) và Rubin (1970s), hai nhà thiên văn có quan sát dẫn tới bằng chứng về vật chất tối. Đúng tiêu đề v.",
+          "id": "nl2-03-dark-matter-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về thấu kính hấp dẫn — ánh sáng bị bẻ cong khi đi qua cụm thiên hà nặng, dùng để tính khối lượng ẩn. Đúng tiêu đề iv.",
+          "id": "nl2-03-dark-matter-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói các thí nghiệm như XENON1T tìm hạt WIMP nhưng chưa xác nhận phát hiện được. Đúng tiêu đề i.",
+          "id": "nl2-03-dark-matter-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói vật chất tối tạo thành 'giàn giáo' vô hình giúp các thiên hà hình thành sau Vụ Nổ Lớn. Đúng tiêu đề ii.",
+          "id": "nl2-03-dark-matter-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Dark matter has been observed directly using telescopes.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói dark matter 'cannot be observed directly with telescopes' và chỉ được suy ra qua ảnh hưởng hấp dẫn. Đề nói ngược nên FALSE.",
+          "id": "nl2-03-dark-matter-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Zwicky's proposal was widely accepted by scientists as soon as he made it.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: 'Zwicky's proposal attracted little attention at the time'. Ít được chú ý, không phải được chấp nhận rộng rãi ngay. FALSE.",
+          "id": "nl2-03-dark-matter-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Rubin found that stars far from a galaxy's centre orbited much more slowly than those near the centre.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn B: 'stars at the outer edge of a galaxy were orbiting almost as fast as those near the centre'. Gần bằng tốc độ, không phải chậm hơn nhiều. FALSE.",
+          "id": "nl2-03-dark-matter-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "In the Bullet Cluster, the mass revealed by gravitational lensing lines up exactly with the visible matter.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C: 'the region of greatest mass... is offset from the region containing most of the visible, ordinary matter'. Lệch nhau, không trùng khớp. FALSE.",
+          "id": "nl2-03-dark-matter-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A WIMP particle has been conclusively detected by an underground experiment.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn D: các thí nghiệm 'so far without a confirmed detection'. Chưa xác nhận được, đề nói ngược nên FALSE.",
+          "id": "nl2-03-dark-matter-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Dark matter is thought to make up roughly ________ of the universe's total mass and energy.",
+          "answer": "27 percent",
+          "number": 11,
+          "explanation": "Đoạn A: 'dark matter accounts for roughly 27 percent of the total mass and energy of the universe'. Đáp án 27 percent.",
+          "id": "nl2-03-dark-matter-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Zwicky studied the motion of galaxies within the ________ cluster.",
+          "answer": "Coma",
+          "number": 12,
+          "explanation": "Đoạn B: 'studied the motion of galaxies within the Coma galaxy cluster'. Đáp án Coma.",
+          "id": "nl2-03-dark-matter-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The bending of light by a massive foreground object is known as gravitational ________.",
+          "answer": "lensing",
+          "number": 13,
+          "explanation": "Đoạn C: 'gravitational lensing, the bending of light from distant objects'. Đáp án lensing.",
+          "id": "nl2-03-dark-matter-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The leading dark matter candidate particles are known by the abbreviation ________.",
+          "answer": "WIMPs",
+          "number": 14,
+          "explanation": "Đoạn D: 'weakly interacting massive particles, often abbreviated as WIMPs'. Đáp án WIMPs.",
+          "id": "nl2-03-dark-matter-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The invisible large-scale structure along which galaxies formed is sometimes called the cosmic ________.",
+          "answer": "web",
+          "number": 15,
+          "explanation": "Đoạn E: 'sometimes described as the cosmic web'. Đáp án web.",
+          "id": "nl2-03-dark-matter-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-04-quantum-entanglement-p1",
+      "order": 56,
+      "title": "Quantum Entanglement",
+      "text": "A\nQuantum entanglement is a phenomenon in which two or more particles become linked in such a way that the quantum state of each particle cannot be described independently of the others, even when the particles are separated by a great distance. Measuring a property of one entangled particle instantly determines the corresponding property of its partner, a correlation stronger than anything classical physics allows. The effect emerges directly from the mathematics of quantum mechanics, but its implications proved so unsettling that physicists argued over their meaning for decades.\n\nB\nIn 1935, Albert Einstein, together with Boris Podolsky and Nathan Rosen, published a paper arguing that entanglement pointed to a flaw in quantum mechanics. If measuring one particle could instantly influence its distant partner, they reasoned, either information was travelling faster than light, which relativity forbids, or quantum mechanics was an incomplete description of reality that left out some hidden property determined in advance. Einstein famously dismissed the effect as \"spooky action at a distance\", convinced that a more complete theory would eventually restore a common-sense picture of separate, independent particles.\n\nC\nThe dispute remained a matter of interpretation, rather than experiment, until 1964, when the physicist John Stewart Bell devised a mathematical inequality that any theory based on Einstein's hidden variables would have to satisfy. Quantum mechanics, by contrast, predicted that entangled particles would violate Bell's inequality under certain conditions. The question could now be settled in the laboratory. Starting in the 1970s and continuing through more rigorous experiments in the following decades, physicists including Alain Aspect measured entangled particles and found repeated violations of Bell's inequality, matching the predictions of quantum mechanics and ruling out the simple hidden-variable explanation Einstein had favoured. In 2022, Aspect shared the Nobel Prize in Physics with John Clauser and Anton Zeilinger for this line of experimental work.\n\nD\nCrucially, entanglement does not allow information to be transmitted faster than light, so it does not violate relativity. The outcome of a measurement on an entangled particle is random; only when the results from both distant locations are later compared, using an ordinary communication channel that cannot exceed the speed of light, does the correlation between them become apparent. Entanglement therefore reveals a correlation built into the particles from the moment they became entangled, rather than a channel through which a signal can be deliberately sent, a distinction that resolves the apparent conflict with relativity that troubled Einstein.\n\nE\nFar from being a philosophical curiosity, entanglement now underpins several emerging technologies. Quantum key distribution uses entangled photons to let two parties share a secret cryptographic key with a security guarantee rooted in physics: any attempt by an eavesdropper to intercept the photons disturbs their quantum state in a detectable way. Quantum computers exploit entanglement between qubits to perform certain calculations far faster than any classical computer, and quantum teleportation, which transfers the exact quantum state of one particle onto another distant particle without physically moving the original, relies entirely on a shared pair of entangled particles as its starting point. None of these technologies transmit matter or energy faster than light; all of them depend on entanglement in the carefully limited sense that Bell's experiments confirmed.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the phenomenon is\nii\tA test that could finally be run in the laboratory\niii\tWhy no signal can travel faster than light\niv\tEinstein's objection to the idea\nv\tTechnologies that now depend on it\nvi\tEarly attempts to build a quantum computer\nvii\tHow particles are made to become entangled",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa hiện tượng rối lượng tử là gì. Đúng tiêu đề i.",
+          "id": "nl2-04-quantum-entanglement-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về phản đối của Einstein, Podolsky và Rosen năm 1935, gọi đó là 'spooky action at a distance'. Đúng tiêu đề iv.",
+          "id": "nl2-04-quantum-entanglement-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về bất đẳng thức Bell (1964) cho phép kiểm chứng bằng thực nghiệm, và các thí nghiệm của Aspect xác nhận cơ học lượng tử đúng. Đúng tiêu đề ii.",
+          "id": "nl2-04-quantum-entanglement-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D giải thích vì sao rối lượng tử không cho phép truyền tín hiệu nhanh hơn ánh sáng, không mâu thuẫn với thuyết tương đối. Đúng tiêu đề iii.",
+          "id": "nl2-04-quantum-entanglement-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E liệt kê các công nghệ dựa trên rối lượng tử: phân phối khoá lượng tử, máy tính lượng tử, dịch chuyển lượng tử. Đúng tiêu đề v.",
+          "id": "nl2-04-quantum-entanglement-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Einstein believed that quantum mechanics was a complete and correct description of reality.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói Einstein tin cơ học lượng tử 'was an incomplete description of reality'. Ông cho là chưa hoàn chỉnh, không phải hoàn chỉnh. FALSE.",
+          "id": "nl2-04-quantum-entanglement-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Bell's inequality could be tested experimentally, unlike the earlier dispute between Einstein and quantum theory.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn C: 'The question could now be settled in the laboratory'. Đúng ý đề nên TRUE.",
+          "id": "nl2-04-quantum-entanglement-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Experiments testing Bell's inequality confirmed Einstein's hidden-variable explanation.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C: thí nghiệm 'ruling out the simple hidden-variable explanation Einstein had favoured'. Loại bỏ chứ không xác nhận giả thuyết của Einstein. FALSE.",
+          "id": "nl2-04-quantum-entanglement-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Entanglement allows information to be sent faster than the speed of light.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D: 'entanglement does not allow information to be transmitted faster than light'. Đề nói ngược nên FALSE.",
+          "id": "nl2-04-quantum-entanglement-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Quantum teleportation physically moves the original particle to a new location.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: dịch chuyển lượng tử chuyển trạng thái 'without physically moving the original' particle. Không di chuyển hạt gốc. FALSE.",
+          "id": "nl2-04-quantum-entanglement-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Einstein famously dismissed entanglement as '________ at a distance'.",
+          "answer": "spooky action",
+          "number": 11,
+          "explanation": "Đoạn B: 'Einstein famously dismissed the effect as spooky action at a distance'. Đáp án spooky action.",
+          "id": "nl2-04-quantum-entanglement-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The mathematical test devised in 1964 to distinguish the two theories is known as ________.",
+          "answer": "Bell's inequality",
+          "number": 12,
+          "explanation": "Đoạn C: 'the physicist John Stewart Bell devised a mathematical inequality'. Đáp án Bell's inequality.",
+          "id": "nl2-04-quantum-entanglement-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "In 2022, Aspect shared the Nobel Prize in Physics with John Clauser and ________.",
+          "answer": "Anton Zeilinger",
+          "number": 13,
+          "explanation": "Đoạn C: 'Aspect shared the Nobel Prize in Physics with John Clauser and Anton Zeilinger'. Đáp án Anton Zeilinger.",
+          "id": "nl2-04-quantum-entanglement-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "A technique that lets two parties share a secret key using entangled photons is called ________.",
+          "answer": "quantum key distribution",
+          "number": 14,
+          "explanation": "Đoạn E: 'Quantum key distribution uses entangled photons to let two parties share a secret cryptographic key'. Đáp án quantum key distribution.",
+          "id": "nl2-04-quantum-entanglement-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Quantum computers exploit entanglement between units of information called ________.",
+          "answer": "qubits",
+          "number": 15,
+          "explanation": "Đoạn E: 'Quantum computers exploit entanglement between qubits'. Đáp án qubits.",
+          "id": "nl2-04-quantum-entanglement-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-05-superconductivity-p1",
+      "order": 57,
+      "title": "Superconductivity",
+      "text": "A\nSuperconductivity is the ability of certain materials to conduct electric current with exactly zero electrical resistance once cooled below a specific temperature known as the critical temperature. In an ordinary conductor such as copper, some electrical energy is always lost as heat because electrons collide with vibrating atoms as they move; in a superconductor below its critical temperature, this resistance vanishes entirely, and a current set flowing in a closed superconducting loop can, in principle, continue circulating without any external power source for as long as the material remains cold enough.\n\nB\nThe phenomenon was discovered in 1911 by the Dutch physicist Heike Kamerlingh Onnes, three years after he had first succeeded in liquefying helium, a technical achievement that allowed him to cool materials to within a few degrees of absolute zero. While measuring the electrical resistance of solid mercury at these extremely low temperatures, Onnes observed that the resistance dropped abruptly to an immeasurably small value at 4.2 kelvin, a result so unexpected that he initially suspected a fault in his equipment. Onnes received the Nobel Prize in Physics in 1913, awarded for his work on the properties of matter at low temperatures, including this discovery.\n\nC\nA full theoretical explanation did not arrive until 1957, when the physicists John Bardeen, Leon Cooper, and John Robert Schrieffer proposed what became known as BCS theory. According to this theory, below the critical temperature electrons can overcome their mutual electrical repulsion and pair up, forming what are called Cooper pairs, through a subtle interaction mediated by vibrations in the surrounding crystal lattice. These paired electrons move through the material collectively, in a coordinated quantum state that cannot lose energy in the small increments that would normally cause resistance, allowing the current to flow without any dissipation. The three physicists shared the 1972 Nobel Prize in Physics for this work.\n\nD\nFor decades after Onnes's discovery, every known superconductor required cooling with liquid helium, an effective but expensive coolant. That changed in 1986, when Georg Bednorz and Karl Müller discovered a class of ceramic materials, now called high-temperature superconductors, that became superconducting at temperatures far higher than BCS theory had led physicists to expect. Certain compounds in this family superconduct above 77 kelvin, the boiling point of liquid nitrogen, a far cheaper and more abundant coolant than liquid helium, opening the door to more practical applications. Bednorz and Müller were awarded the 1987 Nobel Prize in Physics for the discovery, remarkably only a year after they first published it. Despite this progress, a complete theoretical explanation for why these ceramic materials superconduct at such comparatively high temperatures remains elusive, and no material yet superconducts at ordinary room temperature under everyday pressure.\n\nE\nSuperconducting materials are already central to several important technologies. The powerful electromagnets used in magnetic resonance imaging scanners and in particle accelerators such as the Large Hadron Collider rely on superconducting coils to generate magnetic fields far stronger than conventional electromagnets could sustain without melting. A related property, known as the Meissner effect, causes a superconductor to expel any magnetic field from its interior, which allows a magnet to be levitated stably above a superconducting surface, a principle exploited in some experimental high-speed trains. Researchers continue to search for materials that superconduct at higher temperatures and lower pressures, since a room-temperature superconductor would allow electricity to be transmitted over long distances with no loss to resistance, a change that could transform the efficiency of electrical grids worldwide.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tAn accidental discovery in liquid helium\nii\tWhat the phenomenon is\niii\tA theory that explained it, decades later\niv\tUses in scanners, colliders and levitating trains\nv\tCeramics that work without liquid helium\nvi\tAttempts to superconduct at room temperature\nvii\tHow the effect was named",
+          "prompt": "Section A",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa siêu dẫn là gì: điện trở bằng 0 dưới nhiệt độ tới hạn. Đúng tiêu đề ii.",
+          "id": "nl2-05-superconductivity-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể Onnes phát hiện hiện tượng năm 1911 khi đo điện trở thuỷ ngân được làm lạnh bằng heli lỏng, ban đầu tưởng thiết bị hỏng. Đúng tiêu đề i.",
+          "id": "nl2-05-superconductivity-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về thuyết BCS 1957 giải thích cơ chế siêu dẫn qua cặp Cooper — ra đời gần nửa thế kỷ sau khi hiện tượng được phát hiện. Đúng tiêu đề iii.",
+          "id": "nl2-05-superconductivity-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về vật liệu gốm siêu dẫn ở nhiệt độ cao hơn, siêu dẫn được bằng nitơ lỏng thay vì heli lỏng. Đúng tiêu đề v.",
+          "id": "nl2-05-superconductivity-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E liệt kê ứng dụng: máy MRI, máy gia tốc hạt, tàu đệm từ. Đúng tiêu đề iv.",
+          "id": "nl2-05-superconductivity-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "A current in a closed superconducting loop can keep flowing without a power source as long as it stays cold enough.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'a current set flowing in a closed superconducting loop can, in principle, continue circulating without any external power source'. Đúng ý đề nên TRUE.",
+          "id": "nl2-05-superconductivity-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Onnes immediately recognised superconductivity as a genuine new phenomenon rather than an equipment error.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: 'a result so unexpected that he initially suspected a fault in his equipment'. Ban đầu nghi ngờ thiết bị lỗi, không phải nhận ra ngay đó là hiện tượng thật. FALSE.",
+          "id": "nl2-05-superconductivity-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "BCS theory explains superconductivity through paired electrons called Cooper pairs.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'electrons can overcome their mutual electrical repulsion and pair up, forming what are called Cooper pairs'. Đúng ý đề nên TRUE.",
+          "id": "nl2-05-superconductivity-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Physicists fully understand why high-temperature ceramic superconductors work.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D: 'a complete theoretical explanation... remains elusive'. Chưa hiểu đầy đủ, đề nói ngược nên FALSE.",
+          "id": "nl2-05-superconductivity-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A material that superconducts at ordinary room temperature and pressure has already been discovered.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn D: 'no material yet superconducts at ordinary room temperature under everyday pressure'. Chưa có vật liệu nào, đề nói ngược nên FALSE.",
+          "id": "nl2-05-superconductivity-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Onnes discovered superconductivity while measuring the resistance of solid ________.",
+          "answer": "mercury",
+          "number": 11,
+          "explanation": "Đoạn B: 'measuring the electrical resistance of solid mercury'. Đáp án mercury.",
+          "id": "nl2-05-superconductivity-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "In BCS theory, paired electrons are called ________.",
+          "answer": "Cooper pairs",
+          "number": 12,
+          "explanation": "Đoạn C: 'forming what are called Cooper pairs'. Đáp án Cooper pairs.",
+          "id": "nl2-05-superconductivity-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "High-temperature superconductors discovered in 1986 are made from a class of ________ materials.",
+          "answer": "ceramic",
+          "number": 13,
+          "explanation": "Đoạn D: 'a class of ceramic materials, now called high-temperature superconductors'. Đáp án ceramic.",
+          "id": "nl2-05-superconductivity-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Certain high-temperature superconductors work above 77 kelvin, the boiling point of liquid ________.",
+          "answer": "nitrogen",
+          "number": 14,
+          "explanation": "Đoạn D: '77 kelvin, the boiling point of liquid nitrogen'. Đáp án nitrogen.",
+          "id": "nl2-05-superconductivity-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The expulsion of a magnetic field from inside a superconductor is called the ________ effect.",
+          "answer": "Meissner",
+          "number": 15,
+          "explanation": "Đoạn E: 'A related property, known as the Meissner effect, causes a superconductor to expel any magnetic field'. Đáp án Meissner.",
+          "id": "nl2-05-superconductivity-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-06-nuclear-fusion-p1",
+      "order": 58,
+      "title": "Nuclear Fusion",
+      "text": "A\nNuclear fusion is the process by which two light atomic nuclei combine to form a heavier nucleus, releasing a large amount of energy in the process. It is the reaction that powers the Sun and almost every other star: at the Sun's core, immense pressure and a temperature of around fifteen million degrees Celsius force hydrogen nuclei to fuse into helium, converting a tiny fraction of their mass directly into energy according to Einstein's equation relating mass and energy. This same reaction, if it could be reliably reproduced and controlled on Earth, promises a source of electricity that produces no greenhouse gases during operation and leaves behind none of the long-lived radioactive waste associated with conventional nuclear fission power stations.\n\nB\nFusion is difficult to achieve because atomic nuclei carry a positive electric charge and therefore repel one another strongly at close range. Overcoming this repulsion requires heating a fuel, typically a mixture of the hydrogen isotopes deuterium and tritium, to temperatures of well over one hundred million degrees Celsius, several times hotter than the core of the Sun itself, since Earth-based reactors cannot rely on the Sun's crushing gravitational pressure to assist the reaction. At such temperatures the fuel exists as a plasma, an electrically charged gas in which electrons have been stripped from their atoms, and no solid container could survive direct contact with it.\n\nC\nThe most widely pursued approach to containing this plasma is a device called a tokamak, a doughnut-shaped chamber first developed by Soviet physicists in the 1950s, which uses powerful magnetic fields to hold the superheated plasma in place without it touching the chamber walls. An alternative approach, known as inertial confinement, instead compresses a small pellet of fuel using an array of extremely powerful lasers fired simultaneously from multiple directions, heating and compressing it so rapidly that fusion reactions occur before the pellet has time to fly apart. In December 2022, researchers at the National Ignition Facility in the United States announced that a laser-driven fusion reaction had, for the first time, produced more energy than the lasers had delivered to the fuel pellet, a milestone known as fusion ignition.\n\nD\nThe largest tokamak project currently under construction is ITER, an international collaboration involving the European Union, the United States, China, Russia, India, Japan, and South Korea, being built in southern France. ITER is designed to produce ten times more fusion energy than the external power required to heat its plasma, though it is intended purely as an experimental device to demonstrate the physics and engineering involved, not to generate electricity for the grid. Construction has faced repeated delays and cost overruns since the project began in the early 2000s, and the first fusion experiments using its full deuterium-tritium fuel mixture are not expected until the following decade.\n\nE\nEven if ignition and sustained plasma confinement are achieved reliably, converting fusion energy into usable electricity presents its own engineering challenges, including designing materials able to withstand years of intense neutron bombardment and developing practical methods for extracting the heat released and using it to generate steam for conventional turbines. For these reasons, most experts caution that commercial fusion power stations, if they prove feasible at all, are unlikely to supply significant amounts of electricity before the middle of the twenty-first century. Nonetheless, the recent progress at facilities such as the National Ignition Facility has renewed optimism, and a growing number of privately funded companies are now pursuing fusion alongside the large government-backed projects that have historically dominated the field.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHeat great enough to strip electrons from atoms\nii\tWhat fusion is, and why it is worth pursuing\niii\tTwo different ways of holding the plasma in place\niv\tThe world's largest experimental reactor\nv\tWhy a working power station is still some way off\nvi\tHow fusion differs from nuclear fission\nvii\tPrivate companies racing to build the first reactor",
+          "prompt": "Section A",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa phản ứng nhiệt hạch là gì và vì sao nó đáng theo đuổi: không phát thải khí nhà kính, không để lại rác thải phóng xạ dài hạn. Đúng cả hai vế của tiêu đề ii.",
+          "id": "nl2-06-nuclear-fusion-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói nhiên liệu phải nóng tới mức trở thành plasma, khi electron bị tách khỏi nguyên tử. Đúng tiêu đề i.",
+          "id": "nl2-06-nuclear-fusion-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C so sánh hai cách giữ plasma: tokamak dùng từ trường, và giam giữ quán tính dùng laser. Đúng tiêu đề iii.",
+          "id": "nl2-06-nuclear-fusion-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về ITER, dự án tokamak lớn nhất thế giới, hợp tác quốc tế xây ở Pháp. Đúng tiêu đề iv.",
+          "id": "nl2-06-nuclear-fusion-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói các thách thức kỹ thuật còn lại khiến nhà máy điện nhiệt hạch thương mại còn xa mới thành hiện thực. Đúng tiêu đề v.",
+          "id": "nl2-06-nuclear-fusion-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Fusion reactors on Earth need higher temperatures than the Sun's core because they lack its gravitational pressure.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn B: nhiệt độ cần trên 100 triệu độ C, cao hơn lõi Mặt Trời nhiều lần, 'since Earth-based reactors cannot rely on the Sun's crushing gravitational pressure'. Đúng ý đề nên TRUE.",
+          "id": "nl2-06-nuclear-fusion-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The tokamak design was first developed by American physicists.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn C: 'a doughnut-shaped chamber first developed by Soviet physicists in the 1950s'. Là các nhà vật lý Liên Xô, không phải Mỹ. FALSE.",
+          "id": "nl2-06-nuclear-fusion-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The National Ignition Facility's 2022 result used magnetic confinement rather than lasers.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C: kết quả 2022 là 'a laser-driven fusion reaction' — dùng laser (giam giữ quán tính), không phải từ trường. FALSE.",
+          "id": "nl2-06-nuclear-fusion-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "ITER is designed to generate electricity for the public power grid.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D: ITER 'is intended purely as an experimental device to demonstrate the physics and engineering involved, not to generate electricity for the grid'. Đề nói ngược mục đích nên FALSE.",
+          "id": "nl2-06-nuclear-fusion-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most experts expect commercial fusion power stations to be widespread within the next ten years.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'commercial fusion power stations... are unlikely to supply significant amounts of electricity before the middle of the twenty-first century'. Còn rất xa chục năm, không phải trong 10 năm tới. FALSE.",
+          "id": "nl2-06-nuclear-fusion-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Fusion fuel is typically a mixture of the hydrogen isotopes deuterium and ________.",
+          "answer": "tritium",
+          "number": 11,
+          "explanation": "Đoạn B: 'a mixture of the hydrogen isotopes deuterium and tritium'. Đáp án tritium.",
+          "id": "nl2-06-nuclear-fusion-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "At extreme temperatures, fusion fuel exists as an electrically charged gas called a ________.",
+          "answer": "plasma",
+          "number": 12,
+          "explanation": "Đoạn B: 'the fuel exists as a plasma, an electrically charged gas'. Đáp án plasma.",
+          "id": "nl2-06-nuclear-fusion-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The 2022 milestone at the National Ignition Facility is known as fusion ________.",
+          "answer": "ignition",
+          "number": 13,
+          "explanation": "Đoạn C: 'a milestone known as fusion ignition'. Đáp án ignition.",
+          "id": "nl2-06-nuclear-fusion-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "ITER is being built in southern ________.",
+          "answer": "France",
+          "number": 14,
+          "explanation": "Đoạn D: '...being built in southern France'. Đáp án France.",
+          "id": "nl2-06-nuclear-fusion-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Reactor materials must withstand years of intense ________ bombardment.",
+          "answer": "neutron",
+          "number": 15,
+          "explanation": "Đoạn E: 'designing materials able to withstand years of intense neutron bombardment'. Đáp án neutron.",
+          "id": "nl2-06-nuclear-fusion-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-07-neutron-stars-p1",
+      "order": 59,
+      "title": "Neutron Stars",
+      "text": "A\nA neutron star is the collapsed core left behind after a massive star explodes as a supernova, packing more mass than the Sun into a sphere typically only about twenty kilometres across. The result is by far the densest kind of object in the universe apart from a black hole: a single teaspoon of neutron-star material would weigh roughly as much as a mountain on Earth. The extraordinary density arises because the star's gravity has crushed protons and electrons together until they merge into neutrons, the particle that gives the object its name.\n\nB\nNeutron stars form only from stars significantly more massive than the Sun, typically between about eight and twenty times its mass. When such a star exhausts the nuclear fuel in its core, the core collapses catastrophically while the star's outer layers are blown outward in a supernova explosion. If the collapsing core is not massive enough to continue collapsing all the way into a black hole, the collapse instead halts once the neutrons themselves resist further compression, a quantum mechanical effect known as neutron degeneracy pressure, leaving behind the extraordinarily dense object that remains.\n\nC\nMany neutron stars spin extremely rapidly, a consequence of the original star's rotation being concentrated into a far smaller volume, in the same way a spinning skater speeds up when pulling in their arms. Some rotate hundreds of times per second. A neutron star that emits regular beams of radio waves from its magnetic poles, sweeping past Earth like a lighthouse beam as the star rotates, is called a pulsar. Pulsars were discovered in 1967 by the astronomer Jocelyn Bell Burnell, then a graduate student, who noticed a remarkably regular radio signal and briefly wondered, along with her colleagues, whether it might be a message from an extraterrestrial civilisation before the true explanation was established. The 1974 Nobel Prize in Physics for the discovery was awarded to her supervisor, Antony Hewish, a decision that has remained controversial among many astronomers ever since.\n\nD\nNeutron stars also possess magnetic fields far stronger than any that can be produced artificially on Earth, trillions of times stronger than the Earth's own magnetic field. A small subset of neutron stars, called magnetars, have magnetic fields stronger still, powerful enough that, according to some calculations, a magnetar as close as the Moon could wipe the data from every credit card on Earth. Magnetars occasionally release enormous bursts of X-rays and gamma rays, thought to be caused by sudden readjustments in their intensely stressed magnetic fields and crusts, sometimes described informally as starquakes.\n\nE\nWhen two neutron stars orbit one another closely, they gradually spiral together, losing energy through the emission of gravitational waves, until they finally collide and merge. In August 2017, such a merger was detected simultaneously by LIGO, through the gravitational waves it produced, and by dozens of telescopes around the world, which observed the resulting flash of light across multiple wavelengths, an event named GW170817. The observation confirmed that neutron-star mergers produce heavy elements such as gold and platinum through a rapid nuclear process, providing the first direct evidence that at least some of the precious metals found on Earth originated in such a cataclysmic collision billions of years ago.\n\n— Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat they are, and how dense they are\nii\tThe stars massive enough to leave one behind\niii\tSpinning lighthouses, and a disputed prize\niv\tMagnetic fields powerful enough to erase data\nv\tHow their mergers forge precious metals\nvi\tPlans to send a probe to study one closely\nvii\tWhy some neutron stars collapse further into black holes",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa sao neutron là gì và độ đặc khủng khiếp của nó (một thìa cà phê nặng bằng cả một ngọn núi). Đúng tiêu đề i.",
+          "id": "nl2-07-neutron-stars-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói chỉ những ngôi sao nặng gấp 8-20 lần Mặt Trời mới để lại sao neutron sau siêu tân tinh. Đúng tiêu đề ii.",
+          "id": "nl2-07-neutron-stars-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về pulsar (sao neutron quay nhanh phát tia radio) và câu chuyện giải Nobel gây tranh cãi của Bell Burnell. Đúng tiêu đề iii.",
+          "id": "nl2-07-neutron-stars-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về từ trường cực mạnh của magnetar, đủ sức xoá dữ liệu thẻ tín dụng nếu ở gần cỡ khoảng cách Mặt Trăng. Đúng tiêu đề iv.",
+          "id": "nl2-07-neutron-stars-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói vụ sáp nhập hai sao neutron GW170817 tạo ra vàng và bạch kim. Đúng tiêu đề v.",
+          "id": "nl2-07-neutron-stars-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Neutron stars are the densest objects in the universe, denser even than black holes.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A: 'by far the densest kind of object in the universe apart from a black hole'. Đặc nhất TRỪ lỗ đen, không phải đặc hơn cả lỗ đen. FALSE.",
+          "id": "nl2-07-neutron-stars-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A collapsing stellar core always continues collapsing into a black hole.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: 'If the collapsing core is not massive enough to continue collapsing all the way into a black hole, the collapse instead halts'. Không phải LUÔN sụp thành lỗ đen — đôi khi dừng lại thành sao neutron. FALSE.",
+          "id": "nl2-07-neutron-stars-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Bell Burnell and her colleagues briefly considered that the pulsar signal might come from alien life.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'briefly wondered, along with her colleagues, whether it might be a message from an extraterrestrial civilisation'. Đúng ý đề nên TRUE.",
+          "id": "nl2-07-neutron-stars-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Bell Burnell herself received the 1974 Nobel Prize for discovering pulsars.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C: 'The 1974 Nobel Prize in Physics for the discovery was awarded to her supervisor, Antony Hewish'. Giải thưởng thuộc về người hướng dẫn, không phải Bell Burnell. FALSE.",
+          "id": "nl2-07-neutron-stars-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The 2017 neutron-star merger was detected only through gravitational waves, without any visible light being observed.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: sự kiện được phát hiện đồng thời bởi LIGO VÀ hàng chục kính thiên văn quan sát 'the resulting flash of light'. Có cả ánh sáng quan sát được, không chỉ sóng hấp dẫn. FALSE.",
+          "id": "nl2-07-neutron-stars-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The collapse of a neutron star's core is halted by a quantum effect called neutron degeneracy ________.",
+          "answer": "pressure",
+          "number": 11,
+          "explanation": "Đoạn B: 'a quantum mechanical effect known as neutron degeneracy pressure'. Đáp án pressure.",
+          "id": "nl2-07-neutron-stars-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "A rapidly spinning neutron star that sweeps a radio beam past Earth is called a ________.",
+          "answer": "pulsar",
+          "number": 12,
+          "explanation": "Đoạn C: 'is called a pulsar'. Đáp án pulsar.",
+          "id": "nl2-07-neutron-stars-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Neutron stars with the strongest known magnetic fields are called ________.",
+          "answer": "magnetars",
+          "number": 13,
+          "explanation": "Đoạn D: 'A small subset of neutron stars, called magnetars, have magnetic fields stronger still'. Đáp án magnetars.",
+          "id": "nl2-07-neutron-stars-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Sudden readjustments in a magnetar's crust are sometimes informally called ________.",
+          "answer": "starquakes",
+          "number": 14,
+          "explanation": "Đoạn D: 'sometimes described informally as starquakes'. Đáp án starquakes.",
+          "id": "nl2-07-neutron-stars-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The 2017 neutron-star merger detected by LIGO and telescopes worldwide was named ________.",
+          "answer": "GW170817",
+          "number": 15,
+          "explanation": "Đoạn E: 'an event named GW170817'. Đáp án GW170817.",
+          "id": "nl2-07-neutron-stars-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-08-exoplanets-p1",
+      "order": 60,
+      "title": "Exoplanets",
+      "text": "A\nAn exoplanet is any planet that orbits a star other than the Sun. Although philosophers speculated for centuries that other stars might host worlds of their own, the first confirmed detection of a planet orbiting a Sun-like star did not come until 1995, when the Swiss astronomers Michel Mayor and Didier Queloz announced the discovery of 51 Pegasi b, a gas giant orbiting extremely close to its parent star. The pair shared the 2019 Nobel Prize in Physics for the discovery, which opened a field that has since identified thousands of worlds beyond our solar system.\n\nB\nBecause exoplanets lie so far away and are vastly outshone by the stars they orbit, astronomers detect most of them indirectly rather than by seeing them in a telescope image. The transit method, responsible for the majority of confirmed discoveries, looks for the tiny, regular dip in a star's brightness that occurs each time a planet passes directly in front of it as seen from Earth. The radial velocity method, used to find 51 Pegasi b, instead detects the slight wobble a planet's gravity induces in its host star, which very slightly shifts the wavelength of the star's light as it moves alternately toward and away from Earth. A smaller number of exoplanets, generally large and orbiting far from their star, have been imaged directly.\n\nC\nNASA's Kepler space telescope, launched in 2009, transformed the field by continuously monitoring the brightness of more than 150,000 stars simultaneously, searching for transit dips too small to detect from the ground. Before Kepler, only a few hundred exoplanets had been confirmed; by the time the mission ended in 2018, it alone had contributed to the confirmation of more than 2,600 exoplanets, along with thousands of further candidates still awaiting confirmation. Kepler's data also allowed astronomers to estimate, for the first time, that the Milky Way likely contains billions of planets similar in size to Earth.\n\nD\nA region around a star where conditions might allow liquid water to persist on a planet's surface, neither so hot that any water boils away nor so cold that it freezes solid, is often called the habitable zone. A planet orbiting within this zone is not automatically habitable, since factors such as its atmosphere, its size, and its magnetic field all strongly influence whether liquid water could actually exist there, but the habitable zone provides astronomers with a useful first filter when searching among thousands of candidates for the planets most likely to resemble Earth. Proxima Centauri b, discovered in 2016 orbiting the star nearest to the Sun, lies within its star's habitable zone, making it one of the most closely studied exoplanets to date despite lying more than four light-years away.\n\nE\nThe James Webb Space Telescope, launched in 2021, has extended the field by analysing the atmospheres of exoplanets in unprecedented detail. As a planet transits its star, a small fraction of the star's light passes through the planet's atmosphere on its way to Earth, and different gases in that atmosphere absorb specific wavelengths of light, leaving a distinctive chemical fingerprint that the telescope's instruments can detect. Using this technique, astronomers have already identified water vapour, carbon dioxide, and other molecules in the atmospheres of several exoplanets, a capability that scientists hope will eventually allow them to search for combinations of gases that could indicate the presence of life on a planet many light-years from Earth.\n\n— Biên soạn dựa trên kiến thức thiên văn học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat they are, and the discovery that opened the field\nii\tHow astronomers find planets they cannot directly see\niii\tA space telescope that found thousands of candidates\niv\tReading a planet's atmosphere from its starlight\nv\tA zone where liquid water might survive\nvi\tPlans for a crewed mission beyond the solar system\nvii\tWhy most exoplanets are larger than Jupiter",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa ngoại hành tinh là gì và kể về phát hiện đầu tiên năm 1995 (51 Pegasi b). Đúng tiêu đề i.",
+          "id": "nl2-08-exoplanets-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về hai phương pháp gián tiếp: transit và radial velocity, vì ngoại hành tinh quá xa để chụp trực tiếp. Đúng tiêu đề ii.",
+          "id": "nl2-08-exoplanets-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về kính Kepler, đóng góp xác nhận hơn 2.600 ngoại hành tinh. Đúng tiêu đề iii.",
+          "id": "nl2-08-exoplanets-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về vùng ở được (habitable zone) — nơi nước lỏng có thể tồn tại. Đúng tiêu đề v.",
+          "id": "nl2-08-exoplanets-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói kính James Webb phân tích khí quyển ngoại hành tinh qua ánh sáng sao xuyên qua nó. Đúng tiêu đề iv.",
+          "id": "nl2-08-exoplanets-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "51 Pegasi b was discovered using the transit method.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B: '51 Pegasi b' được tìm bằng 'The radial velocity method', không phải transit method. FALSE.",
+          "id": "nl2-08-exoplanets-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Before Kepler was launched, only a few hundred exoplanets had been confirmed.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn C: 'Before Kepler, only a few hundred exoplanets had been confirmed'. Đúng ý đề nên TRUE.",
+          "id": "nl2-08-exoplanets-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Any planet located within its star's habitable zone is automatically capable of supporting life.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn D: 'A planet orbiting within this zone is not automatically habitable'. Không tự động ở được, còn phụ thuộc khí quyển, kích thước, từ trường. FALSE.",
+          "id": "nl2-08-exoplanets-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Proxima Centauri b orbits the star that is closest to the Sun.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'discovered in 2016 orbiting the star nearest to the Sun'. Đúng ý đề nên TRUE.",
+          "id": "nl2-08-exoplanets-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The James Webb Space Telescope has already found direct evidence of life on an exoplanet.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E chỉ nói đã phát hiện hơi nước, CO2, và các nhà khoa học HY VỌNG một ngày nào đó tìm được dấu hiệu sự sống — chưa có bằng chứng sự sống thật sự. FALSE.",
+          "id": "nl2-08-exoplanets-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Mayor and Queloz shared the 2019 Nobel Prize for discovering ________, a gas giant orbiting close to its star.",
+          "answer": "51 Pegasi b",
+          "number": 11,
+          "explanation": "Đoạn A: 'the discovery of 51 Pegasi b, a gas giant orbiting extremely close to its parent star'. Đáp án 51 Pegasi b.",
+          "id": "nl2-08-exoplanets-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The most productive detection method looks for a regular dip in brightness called a ________.",
+          "answer": "transit",
+          "number": 12,
+          "explanation": "Đoạn B: 'The transit method, responsible for the majority of confirmed discoveries'. Đáp án transit.",
+          "id": "nl2-08-exoplanets-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "NASA's Kepler telescope was launched in ________.",
+          "answer": "2009",
+          "number": 13,
+          "explanation": "Đoạn C: 'NASA's Kepler space telescope, launched in 2009'. Đáp án 2009.",
+          "id": "nl2-08-exoplanets-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "A region where liquid water might persist on a planet's surface is often called the ________ zone.",
+          "answer": "habitable",
+          "number": 14,
+          "explanation": "Đoạn D: 'is often called the habitable zone'. Đáp án habitable.",
+          "id": "nl2-08-exoplanets-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The James Webb Space Telescope was launched in ________.",
+          "answer": "2021",
+          "number": 15,
+          "explanation": "Đoạn E: 'The James Webb Space Telescope, launched in 2021'. Đáp án 2021.",
+          "id": "nl2-08-exoplanets-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-09-crispr-p1",
+      "order": 61,
+      "title": "CRISPR Gene Editing",
+      "text": "A\nCRISPR is a technology that allows scientists to alter the DNA of living cells with a precision that was unimaginable only a decade earlier, cutting a specific sequence of genetic code and either disabling it or replacing it with a new one. The name stands for clustered regularly interspaced short palindromic repeats, a rather technical description of a pattern of repeated DNA sequences first noticed in bacteria in the late 1980s, though at the time no one understood what the sequences were for.\n\nB\nThe true function of these repeated sequences was only worked out decades later: they form part of a natural immune system that bacteria use to defend themselves against viruses. When a virus infects a bacterium and the bacterium survives, it stores a short snippet of the virus's genetic material within its own CRISPR sequences, a kind of genetic memory. If the same virus attacks again, the bacterium uses this stored snippet, together with an enzyme called Cas9, to recognise and cut apart the invading virus's DNA before it can cause harm. In 2012, the biochemists Jennifer Doudna and Emmanuelle Charpentier showed that this bacterial defence system could be reprogrammed to cut any DNA sequence a researcher chose, simply by supplying Cas9 with a different guide sequence, transforming a curiosity of bacterial biology into a general-purpose gene-editing tool. The two scientists shared the 2020 Nobel Prize in Chemistry for the discovery.\n\nC\nIn practice, researchers design a short strand of guide RNA that matches the target DNA sequence they wish to edit. This guide RNA directs the Cas9 enzyme to the matching location in a cell's genome, where Cas9 cuts both strands of the DNA double helix. The cell's own repair machinery then mends the cut, and researchers can exploit this repair process either to disable the targeted gene, by allowing the repair to introduce small errors, or to insert a new sequence of their choosing, by supplying a template for the cell to copy during repair. Compared with earlier gene-editing techniques, CRISPR is markedly faster, cheaper, and more accurate, which is why it spread through research laboratories worldwide within just a few years of its discovery.\n\nD\nCRISPR has already been used to treat human disease. In 2023, regulators in the United Kingdom and the United States approved Casgevy, a CRISPR-based therapy for sickle cell disease and beta thalassaemia, two inherited blood disorders, marking the first CRISPR treatment to reach approved clinical use. The therapy works by editing a patient's own blood stem cells outside the body to switch on a gene that produces a form of haemoglobin normally active only before birth, compensating for the patient's defective adult haemoglobin, before the edited cells are returned to the patient. Researchers are pursuing CRISPR-based treatments for a wide range of other genetic conditions, though each new application requires years of testing to confirm both safety and effectiveness.\n\nE\nThe power of CRISPR has also raised serious ethical questions, most sharply illustrated in 2018 when the Chinese scientist He Jiankui announced that he had used CRISPR to edit the genomes of human embryos, resulting in the birth of twin girls with an edited gene intended to confer resistance to HIV. The announcement was met with near-universal condemnation from the international scientific community, both because the safety of the edits had not been adequately established and because editing embryos changes DNA in a way that can be inherited by future generations, a step regarded by most researchers as crossing an ethical line that ordinary gene therapy in adult patients does not cross. He was later sentenced to prison in China, and the episode prompted renewed international debate over how, and whether, editing of the human germline should ever be permitted.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tA bacterial defence system turned into a tool\nii\tWhat CRISPR is, and where the name comes from\niii\tHow the cutting and repairing actually works\niv\tA condemned experiment on human embryos\nv\tThe first approved treatment for a genetic disease\nvi\tPatenting disputes between rival laboratories\nvii\tUsing CRISPR to edit crop plants",
+          "prompt": "Section A",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa CRISPR là gì và tên viết tắt đó có nghĩa gì. Đúng tiêu đề ii.",
+          "id": "nl2-09-crispr-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói CRISPR vốn là hệ miễn dịch của vi khuẩn chống virus, được Doudna và Charpentier biến thành công cụ chỉnh sửa gen. Đúng tiêu đề i.",
+          "id": "nl2-09-crispr-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C mô tả chi tiết cơ chế: RNA dẫn đường, Cas9 cắt DNA, tế bào tự sửa chữa. Đúng tiêu đề iii.",
+          "id": "nl2-09-crispr-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về Casgevy, liệu pháp CRISPR đầu tiên được phê duyệt lâm sàng cho bệnh hồng cầu hình liềm. Đúng tiêu đề v.",
+          "id": "nl2-09-crispr-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về vụ He Jiankui chỉnh sửa gen phôi người năm 2018, bị cộng đồng khoa học lên án. Đúng tiêu đề iv.",
+          "id": "nl2-09-crispr-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Scientists understood the function of CRISPR sequences as soon as they were first noticed in bacteria.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A: 'though at the time no one understood what the sequences were for'. Không hiểu ngay, đề nói ngược nên FALSE.",
+          "id": "nl2-09-crispr-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Doudna and Charpentier showed that the CRISPR-Cas9 system could be redirected to cut any DNA sequence chosen by a researcher.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'this bacterial defence system could be reprogrammed to cut any DNA sequence a researcher chose'. Đúng ý đề nên TRUE.",
+          "id": "nl2-09-crispr-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "CRISPR is generally slower and more expensive than earlier gene-editing techniques.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: CRISPR 'is markedly faster, cheaper, and more accurate' so với kỹ thuật cũ. FALSE.",
+          "id": "nl2-09-crispr-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Casgevy edits a patient's blood stem cells while they remain inside the patient's body.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D: tế bào được chỉnh sửa 'outside the body' rồi mới đưa trở lại bệnh nhân, không phải chỉnh sửa khi còn trong cơ thể. FALSE.",
+          "id": "nl2-09-crispr-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The scientific community broadly welcomed He Jiankui's experiment on human embryos.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: thí nghiệm 'was met with near-universal condemnation'. Bị lên án gần như tuyệt đối, không phải được hoan nghênh. FALSE.",
+          "id": "nl2-09-crispr-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Bacteria use CRISPR sequences together with an enzyme called ________ to cut viral DNA.",
+          "answer": "Cas9",
+          "number": 11,
+          "explanation": "Đoạn B: 'using this stored snippet, together with an enzyme called Cas9'. Đáp án Cas9.",
+          "id": "nl2-09-crispr-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "A short strand of ________ RNA directs Cas9 to the matching DNA sequence.",
+          "answer": "guide",
+          "number": 12,
+          "explanation": "Đoạn C: 'researchers design a short strand of guide RNA'. Đáp án guide.",
+          "id": "nl2-09-crispr-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Casgevy was approved in 2023 to treat sickle cell disease and ________.",
+          "answer": "beta thalassaemia",
+          "number": 13,
+          "explanation": "Đoạn D: 'a CRISPR-based therapy for sickle cell disease and beta thalassaemia'. Đáp án beta thalassaemia.",
+          "id": "nl2-09-crispr-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Doudna and Charpentier shared the 2020 Nobel Prize in ________.",
+          "answer": "Chemistry",
+          "number": 14,
+          "explanation": "Đoạn B: 'shared the 2020 Nobel Prize in Chemistry for the discovery'. Đáp án Chemistry.",
+          "id": "nl2-09-crispr-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "He Jiankui's edited embryos were intended to confer resistance to ________.",
+          "answer": "HIV",
+          "number": 15,
+          "explanation": "Đoạn E: 'an edited gene intended to confer resistance to HIV'. Đáp án HIV.",
+          "id": "nl2-09-crispr-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-10-mrna-vaccines-p1",
+      "order": 62,
+      "title": "mRNA Vaccines",
+      "text": "A\nAn mRNA vaccine works on a principle quite different from that of traditional vaccines, which typically introduce a weakened or inactivated form of a pathogen, or a piece of one of its proteins, to train the immune system. Instead, an mRNA vaccine delivers a set of genetic instructions, in the form of messenger RNA, that directs a person's own cells to manufacture a harmless fragment of a viral protein themselves. The immune system then learns to recognise this self-made protein as foreign and mounts a defence against it, a response that will later protect the person if they encounter the actual virus.\n\nB\nMessenger RNA is a molecule that cells naturally use to carry genetic instructions from DNA in the nucleus to the protein-making machinery elsewhere in the cell, so the basic biological process an mRNA vaccine relies on is not new. What was new, and what took decades to perfect, was finding a way to introduce synthetic mRNA into cells without it being destroyed almost instantly by the body's defences or triggering a damaging inflammatory reaction. The biochemist Katalin Karikó spent much of her career pursuing this goal, often with little institutional support, before she and her collaborator Drew Weissman discovered in 2005 that modifying one of the chemical building blocks of the synthetic mRNA allowed it to evade the immune system's early defences long enough to do its work. The pair were awarded the 2023 Nobel Prize in Physiology or Medicine for this discovery.\n\nC\nA second technical obstacle was delivering the fragile mRNA molecule into human cells intact, since RNA on its own breaks down within minutes if injected directly into the bloodstream. The solution that made mRNA vaccines practical was to encase the molecule inside a tiny sphere of fat known as a lipid nanoparticle, which protects the mRNA during its journey and helps it fuse with a cell's outer membrane, releasing its genetic cargo directly inside. Refining these lipid nanoparticles to be both safe and efficient at delivering their payload occupied much of the practical development work behind the first mRNA vaccines.\n\nD\nThese decades of preparatory research meant that when the COVID-19 pandemic began in early 2020, mRNA vaccine developers could move with unusual speed. The genetic sequence of the SARS-CoV-2 virus was published in January 2020, and within weeks the pharmaceutical company Moderna had designed a candidate vaccine targeting the virus's spike protein, the structure the virus uses to attach to human cells. Pfizer and the German company BioNTech developed a second mRNA vaccine along similar lines. Large clinical trials later that year showed both vaccines to be more than ninety percent effective at preventing symptomatic COVID-19, and both received emergency authorisation before the end of 2020, an extraordinarily short interval for a new vaccine technology that would ordinarily have taken years longer to reach that stage.\n\nE\nBecause an mRNA vaccine can be redesigned simply by changing the genetic sequence it carries, rather than by developing an entirely new manufacturing process, researchers can, in principle, update it far more quickly than most conventional vaccines when a virus mutates. Beyond infectious disease, the same underlying technology is now being investigated for use against cancer, where a personalised mRNA vaccine could theoretically instruct a patient's own cells to display fragments of proteins unique to their tumour, prompting the immune system to attack cancer cells specifically. Several such cancer vaccines are currently in clinical trials, though, as with any new medical technology, it will take years of further testing before their safety and effectiveness in this new application can be confirmed.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow this kind of vaccine differs from older ones\nii\tA discovery that let synthetic mRNA survive long enough to work\niii\tWrapping the molecule so it reaches the cell intact\niv\tFrom a published genetic sequence to an authorised vaccine\nv\tA possible future use against cancer\nvi\tSide effects reported after widespread use\nvii\tHow mRNA vaccines are stored and transported",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói vắc-xin mRNA khác vắc-xin truyền thống thế nào: đưa chỉ dẫn di truyền để tế bào tự tạo protein thay vì đưa mầm bệnh. Đúng tiêu đề i.",
+          "id": "nl2-10-mrna-vaccines-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể về phát hiện của Karikó và Weissman năm 2005 giúp mRNA tổng hợp tránh được phản ứng miễn dịch sớm. Đúng tiêu đề ii.",
+          "id": "nl2-10-mrna-vaccines-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về hạt nano lipid bọc mRNA để đưa nó vào tế bào nguyên vẹn. Đúng tiêu đề iii.",
+          "id": "nl2-10-mrna-vaccines-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D kể từ khi trình tự gen SARS-CoV-2 được công bố tới khi vắc-xin Moderna và Pfizer/BioNTech được cấp phép khẩn cấp năm 2020. Đúng tiêu đề iv.",
+          "id": "nl2-10-mrna-vaccines-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về khả năng dùng công nghệ mRNA cho vắc-xin ung thư cá nhân hoá trong tương lai. Đúng tiêu đề v.",
+          "id": "nl2-10-mrna-vaccines-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "A traditional vaccine typically introduces genetic instructions rather than a piece of the pathogen itself.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói vắc-xin truyền thống 'introduce a weakened or inactivated form of a pathogen, or a piece of one of its proteins' — đưa mầm bệnh hoặc protein, không phải chỉ dẫn di truyền (đó là cách của mRNA vaccine). FALSE.",
+          "id": "nl2-10-mrna-vaccines-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Karikó received strong institutional support throughout her research into mRNA.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: bà theo đuổi mục tiêu này 'often with little institutional support'. Ít được hỗ trợ, không phải mạnh mẽ. FALSE.",
+          "id": "nl2-10-mrna-vaccines-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Unmodified RNA breaks down quickly if injected directly into the bloodstream.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'RNA on its own breaks down within minutes if injected directly into the bloodstream'. Đúng ý đề nên TRUE.",
+          "id": "nl2-10-mrna-vaccines-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Clinical trials showed the Moderna and Pfizer-BioNTech vaccines to be less than fifty percent effective.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D: thử nghiệm cho thấy cả hai vắc-xin 'more than ninety percent effective'. Trên 90%, không phải dưới 50%. FALSE.",
+          "id": "nl2-10-mrna-vaccines-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Personalised cancer vaccines using mRNA technology are already approved for widespread clinical use.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'Several such cancer vaccines are currently in clinical trials' — vẫn đang thử nghiệm, chưa được phê duyệt rộng rãi. FALSE.",
+          "id": "nl2-10-mrna-vaccines-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Karikó and Weissman shared the 2023 Nobel Prize in Physiology or ________.",
+          "answer": "Medicine",
+          "number": 11,
+          "explanation": "Đoạn B: 'awarded the 2023 Nobel Prize in Physiology or Medicine'. Đáp án Medicine.",
+          "id": "nl2-10-mrna-vaccines-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Synthetic mRNA is protected during delivery by being encased in a tiny sphere of fat called a lipid ________.",
+          "answer": "nanoparticle",
+          "number": 12,
+          "explanation": "Đoạn C: 'a tiny sphere of fat known as a lipid nanoparticle'. Đáp án nanoparticle.",
+          "id": "nl2-10-mrna-vaccines-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Both COVID-19 mRNA vaccines target the virus's ________ protein.",
+          "answer": "spike",
+          "number": 13,
+          "explanation": "Đoạn D: 'targeting the virus's spike protein, the structure the virus uses to attach to human cells'. Đáp án spike.",
+          "id": "nl2-10-mrna-vaccines-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Pfizer developed its vaccine together with the German company ________.",
+          "answer": "BioNTech",
+          "number": 14,
+          "explanation": "Đoạn D: 'Pfizer and the German company BioNTech developed a second mRNA vaccine'. Đáp án BioNTech.",
+          "id": "nl2-10-mrna-vaccines-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "An mRNA vaccine can be redesigned simply by changing the genetic ________ it carries.",
+          "answer": "sequence",
+          "number": 15,
+          "explanation": "Đoạn E: 'an mRNA vaccine can be redesigned simply by changing the genetic sequence it carries'. Đáp án sequence.",
+          "id": "nl2-10-mrna-vaccines-q15"
+        }
+      ]
     }
   ]
 }
