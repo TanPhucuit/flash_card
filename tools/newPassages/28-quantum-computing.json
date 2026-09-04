@@ -1,0 +1,141 @@
+{
+  "title": "Quantum Computing",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học máy tính phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A quantum computer is a machine that performs computation using the principles of quantum mechanics, storing and manipulating information not as ordinary binary bits, each of which must be either a definite 0 or a definite 1, but as quantum bits, or qubits, which can exist in a quantum superposition of both states simultaneously until they are directly measured. This fundamentally different way of representing information allows certain carefully designed algorithms to explore a vast number of possible solutions to specific kinds of problems in parallel, offering the potential, for a narrow but genuinely important class of problems, to solve them dramatically faster than any conventional, classical computer ever could, no matter how powerful that classical computer might be."
+    },
+    {
+      "letter": "B",
+      "text": "Superposition alone does not fully explain a quantum computer's potential advantage; a second essential quantum property, entanglement, allows the states of multiple qubits to become correlated with one another in ways that have no equivalent in classical computing, so that the collective information stored across a group of entangled qubits cannot be fully described by considering each qubit's individual state in isolation. Physically realising and precisely controlling qubits has proved extraordinarily difficult in practice: current leading approaches include qubits built from superconducting electrical circuits, which must typically be cooled to temperatures colder than deep space to function, and qubits formed from individual trapped ions, held in place and manipulated using precisely tuned laser beams and electromagnetic fields."
+    },
+    {
+      "letter": "C",
+      "text": "A central practical obstacle facing every current approach is decoherence, the tendency of a fragile quantum state to lose its distinctive quantum properties through unavoidable interaction with its surrounding environment, an effect that current hardware can typically only forestall for a small fraction of a second before critical errors accumulate. Because of this fragility, a genuinely useful, large-scale quantum computer will likely require substantial quantum error correction, a technique that combines the information from many imperfect, error-prone physical qubits to construct a smaller number of much more stable logical qubits, though implementing effective error correction at the scale needed for genuinely useful large-scale computation remains one of the field's foremost unsolved engineering challenges."
+    },
+    {
+      "letter": "D",
+      "text": "In 2019, researchers at Google announced that a quantum processor they had built, containing 53 functioning qubits, had performed a highly specialised, deliberately obscure calculation, of essentially no independent practical value in itself, in around 200 seconds, a calculation the team estimated would have taken one of the world's most powerful conventional supercomputers roughly 10,000 years to complete, a claim the researchers termed quantum supremacy. Researchers at IBM subsequently disputed the specific estimate of how long a classical supercomputer would actually require, arguing that a more cleverly optimised classical algorithm could complete the same specific calculation in a matter of days rather than millennia, illustrating that comparative performance claims of this kind remain genuinely, and sometimes bitterly, contested within the field even when the underlying quantum hardware itself is not in dispute."
+    },
+    {
+      "letter": "E",
+      "text": "Despite this rapid, headline-grabbing experimental progress, most experts caution that today's quantum computers, often described as noisy intermediate-scale quantum, or NISQ, devices, remain far too small and far too error-prone to solve genuinely useful, real-world problems better than existing classical computers can already solve them today. Promising longer-term applications under active research include simulating complex quantum chemical and molecular systems relevant to drug discovery and battery design, a task classical computers handle exceedingly poorly precisely because those systems are themselves inherently quantum mechanical in nature, and certain narrow classes of optimisation problems in logistics and finance. Most researchers in the field estimate that a fault-tolerant, large-scale quantum computer capable of reliably delivering such practical benefits at meaningful commercial scale remains at least a decade away, and quite possibly considerably longer."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat a qubit is, and how it differs from an ordinary bit\nii\tEntanglement, and the physical difficulty of building qubits\niii\tA disputed claim of quantum supremacy\niv\tThe fragility of quantum states, and how errors are corrected\nv\tWhy useful applications are still years away\nvi\tHow quantum computers are cooled to near absolute zero\nvii\tPlans to connect quantum computers over the internet",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa qubit là gì và khác bit thông thường thế nào. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về vướng víu lượng tử (entanglement) và khó khăn vật lý khi chế tạo qubit. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về decoherence và kỹ thuật sửa lỗi lượng tử. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D kể tuyên bố 'ưu thế lượng tử' của Google năm 2019 và tranh cãi với IBM. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói máy tính lượng tử hiện tại (NISQ) chưa đủ mạnh cho ứng dụng thực tế, còn nhiều năm nữa. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "A qubit can exist in a superposition of both 0 and 1 at the same time before it is measured.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: qubit 'can exist in a quantum superposition of both states simultaneously until they are directly measured'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Superconducting qubits can operate reliably at room temperature.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: qubit siêu dẫn 'must typically be cooled to temperatures colder than deep space to function'. Phải làm lạnh cực sâu, không hoạt động ở nhiệt độ phòng. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Current quantum hardware can maintain a fragile quantum state for many hours without error.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: phần cứng hiện tại 'can typically only forestall for a small fraction of a second before critical errors accumulate'. Chỉ vài phần giây, không phải nhiều giờ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "IBM researchers agreed completely with Google's estimate of how long a classical supercomputer would need for the same calculation.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: IBM 'disputed the specific estimate', cho rằng thuật toán cổ điển tối ưu hơn chỉ mất vài ngày chứ không phải 10.000 năm. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Most researchers believe a fault-tolerant, large-scale quantum computer is already available for commercial use today.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'remains at least a decade away, and quite possibly considerably longer'. Còn cách xa hiện tại chứ chưa sẵn sàng. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The loss of a fragile quantum state through interaction with its environment is called ________.",
+      "answer": "decoherence",
+      "number": 11,
+      "explanation": "Đoạn C: 'decoherence, the tendency of a fragile quantum state to lose its distinctive quantum properties'. Đáp án decoherence."
+    },
+    {
+      "type": "gap",
+      "prompt": "Combining many imperfect physical qubits into more stable logical qubits is called quantum error ________.",
+      "answer": "correction",
+      "number": 12,
+      "explanation": "Đoạn C: 'a technique that combines the information from many imperfect... physical qubits to construct a smaller number of much more stable logical qubits' called 'quantum error correction'. Đáp án correction."
+    },
+    {
+      "type": "gap",
+      "prompt": "Google's 2019 quantum processor contained ________ functioning qubits.",
+      "answer": "53",
+      "number": 13,
+      "explanation": "Đoạn D: 'a quantum processor they had built, containing 53 functioning qubits'. Đáp án 53."
+    },
+    {
+      "type": "gap",
+      "prompt": "Google's team termed their claim quantum ________.",
+      "answer": "supremacy",
+      "number": 14,
+      "explanation": "Đoạn D: 'a claim the researchers termed quantum supremacy'. Đáp án supremacy."
+    },
+    {
+      "type": "gap",
+      "prompt": "Today's small, error-prone quantum devices are often described using the abbreviation ________.",
+      "answer": "NISQ",
+      "number": 15,
+      "explanation": "Đoạn E: 'often described as noisy intermediate-scale quantum, or NISQ, devices'. Đáp án NISQ."
+    }
+  ]
+}

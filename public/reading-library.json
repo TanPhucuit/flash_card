@@ -14217,6 +14217,886 @@
           "id": "nl2-25-sapir-whorf-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-26-cryptography-rsa-p1",
+      "order": 78,
+      "title": "The RSA Cryptosystem",
+      "text": "A\nRSA is a method of encryption that allows two people to communicate securely over an insecure channel, such as the public internet, without ever having to meet in advance to agree on a shared secret code. It belongs to a category known as public-key cryptography, in which each user generates a linked pair of keys, one public and one private, so that a message encrypted using the public key can only be decrypted using the corresponding private key, which the recipient keeps entirely secret and never shares with anyone.\n\nB\nThe method is named after Ron Rivest, Adi Shamir, and Leonard Adleman, three researchers at the Massachusetts Institute of Technology who developed it in 1977 and published it the following year. Although RSA is widely regarded as one of the earliest practical public-key cryptosystems to be publicly disclosed, it later emerged that a British mathematician, Clifford Cocks, had independently devised a mathematically equivalent method in 1973 while working for the British intelligence agency GCHQ, but his work remained classified and unpublished for decades, meaning it played no role in the public development of the technology and had no influence on the wider adoption of Rivest, Shamir, and Adleman's independently discovered version.\n\nC\nThe security of RSA rests on a simple asymmetry in ordinary arithmetic: multiplying two very large prime numbers together is computationally fast, taking a modern computer only a fraction of a second even for numbers hundreds of digits long, whereas taking the resulting large product and working backward to determine which two prime numbers were originally multiplied together, a process called factoring, is enormously more difficult and, for sufficiently large numbers, remains computationally infeasible using any publicly known method running on any conventional computer, even one running continuously for many years. A user's public key is derived directly from the product of two large, secretly chosen prime numbers, while the corresponding private key depends on knowing what those two original prime factors actually were, information that only the key's original creator possesses.\n\nD\nBecause directly encrypting large amounts of data using RSA's underlying mathematics is comparatively slow, in practice RSA is rarely used to encrypt an entire message directly. Instead, it is typically used only to securely establish a separate, temporary shared secret key at the start of a communication session, a key that is then used with a much faster, though not itself capable of the same secure key-exchange trick, encryption method called symmetric-key encryption to encrypt the actual bulk of the data being transmitted. This combined, hybrid approach, using RSA's clever key-exchange properties briefly at the outset of a connection and a faster method for the bulk of the data afterward, is the basis of most secure web browsing today, indicated to users by a padlock symbol in their browser's address bar.\n\nE\nRSA's long-term security depends critically on the continued difficulty of factoring the very large numbers involved, and this assumption faces a genuine, though not yet realised, long-term threat from quantum computing. In 1994, the mathematician Peter Shor devised an algorithm, now known as Shor's algorithm, that would allow a sufficiently powerful quantum computer to factor large numbers dramatically faster than any known method running on a conventional computer, which would, if such a machine were ever built at sufficient scale, render RSA and several closely related cryptographic systems insecure. Because building a quantum computer powerful and reliable enough to run Shor's algorithm against real-world key sizes remains a formidable, unsolved engineering challenge, cryptographers have nonetheless already begun developing and standardising a new generation of so-called post-quantum cryptographic methods, believed to resist attack even from a sufficiently powerful future quantum computer, well in advance of such a machine actually being built.\n\n— Biên soạn dựa trên kiến thức khoa học máy tính phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat public-key cryptography is\nii\tThe three researchers behind it, and an earlier secret discovery\niii\tThe arithmetic asymmetry that keeps it secure\niv\tWhy it is combined with a faster encryption method in practice\nv\tA future quantum threat, and preparations already under way\nvi\tHow governments regulate the export of encryption software\nvii\tWeaknesses discovered in the earliest RSA implementations",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa RSA là gì và giải thích mật mã khoá công khai hoạt động ra sao. Đúng tiêu đề i.",
+          "id": "nl2-26-cryptography-rsa-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể về ba nhà nghiên cứu MIT và phát hiện độc lập trước đó của Clifford Cocks tại GCHQ. Đúng tiêu đề ii.",
+          "id": "nl2-26-cryptography-rsa-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C giải thích tính bất đối xứng: nhân số nguyên tố lớn thì nhanh, phân tích ngược thì cực khó. Đúng tiêu đề iii.",
+          "id": "nl2-26-cryptography-rsa-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói vì sao RSA thường chỉ dùng để trao đổi khoá, còn dữ liệu thật mã hoá bằng phương pháp đối xứng nhanh hơn. Đúng tiêu đề iv.",
+          "id": "nl2-26-cryptography-rsa-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về mối đe doạ từ máy tính lượng tử (thuật toán Shor) và nỗ lực chuẩn bị mật mã hậu lượng tử. Đúng tiêu đề v.",
+          "id": "nl2-26-cryptography-rsa-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Two people using RSA must meet in advance to agree on a shared secret code.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: RSA cho phép giao tiếp an toàn 'without ever having to meet in advance to agree on a shared secret code'. FALSE.",
+          "id": "nl2-26-cryptography-rsa-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Clifford Cocks's independent discovery directly influenced the public development of RSA by Rivest, Shamir, and Adleman.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: công trình của Cocks 'remained classified and unpublished for decades, meaning it played no role in the public development'. Không ảnh hưởng gì. FALSE.",
+          "id": "nl2-26-cryptography-rsa-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Multiplying two large prime numbers together is computationally much faster than factoring their product back into the original primes.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'multiplying two very large prime numbers together is computationally fast... whereas... factoring, is enormously more difficult'. Đúng ý đề nên TRUE.",
+          "id": "nl2-26-cryptography-rsa-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "In practice, RSA is normally used to encrypt the entire bulk of a message directly.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: 'RSA is rarely used to encrypt an entire message directly' — chỉ dùng để trao đổi khoá, phần dữ liệu lớn dùng mã hoá đối xứng nhanh hơn. FALSE.",
+          "id": "nl2-26-cryptography-rsa-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A quantum computer capable of running Shor's algorithm against real-world key sizes has already been built.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'building a quantum computer powerful and reliable enough... remains a formidable, unsolved engineering challenge'. Chưa xây được, đề nói ngược nên FALSE.",
+          "id": "nl2-26-cryptography-rsa-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "RSA was developed in 1977 by Ron Rivest, Adi Shamir, and ________.",
+          "answer": "Leonard Adleman",
+          "number": 11,
+          "explanation": "Đoạn B: 'named after Ron Rivest, Adi Shamir, and Leonard Adleman'. Đáp án Leonard Adleman.",
+          "id": "nl2-26-cryptography-rsa-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Clifford Cocks worked for the British intelligence agency ________.",
+          "answer": "GCHQ",
+          "number": 12,
+          "explanation": "Đoạn B: 'while working for the British intelligence agency GCHQ'. Đáp án GCHQ.",
+          "id": "nl2-26-cryptography-rsa-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The process of working backward from a product to its original prime numbers is called ________.",
+          "answer": "factoring",
+          "number": 13,
+          "explanation": "Đoạn C: 'a process called factoring'. Đáp án factoring.",
+          "id": "nl2-26-cryptography-rsa-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "RSA is typically combined with a faster method called ________ encryption for the bulk of the data.",
+          "answer": "symmetric-key",
+          "number": 14,
+          "explanation": "Đoạn D: 'a much faster... encryption method called symmetric-key encryption'. Đáp án symmetric-key.",
+          "id": "nl2-26-cryptography-rsa-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Peter Shor devised his algorithm for factoring large numbers on a quantum computer in ________.",
+          "answer": "1994",
+          "number": 15,
+          "explanation": "Đoạn E: 'In 1994, the mathematician Peter Shor devised an algorithm'. Đáp án 1994.",
+          "id": "nl2-26-cryptography-rsa-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-27-turing-machine-p1",
+      "order": 79,
+      "title": "The Turing Machine",
+      "text": "A\nA Turing machine is a simple, abstract mathematical model of computation, consisting of an infinitely long strip of tape divided into cells, each of which can hold a single symbol, together with a read-write head that moves along the tape one cell at a time, reading the symbol currently under it, writing a new symbol if instructed to, and moving left or right according to a fixed table of rules. Despite its extreme simplicity, the model, introduced in 1936 by the British mathematician Alan Turing, was designed to capture, in the most stripped-down form possible, the essential nature of what it means for a well-defined procedure to be mechanically computable at all.\n\nB\nTuring introduced the machine to answer a specific, abstract question posed by the mathematician David Hilbert, known as the Entscheidungsproblem, or decision problem: whether there exists a single, general procedure capable of determining, for any given mathematical statement, whether that statement is provable within a particular formal system of logic. Turing proved, using his machine as a rigorous mathematical tool, that no such general procedure could exist, since some mathematical questions are provably undecidable, meaning no algorithm could ever determine an answer for every possible input in every possible case. The American logician Alonzo Church independently reached an equivalent conclusion at almost the same time using an entirely different mathematical framework, and the closely related conclusions of the two men are jointly commemorated today in what is known as the Church-Turing thesis.\n\nC\nA particularly important variant Turing described is the universal Turing machine, a single machine capable of simulating the behaviour of any other conceivable Turing machine, given a suitable description of that other machine's rules encoded and provided as input data on its own tape. This concept anticipated, decades in advance, the fundamental architecture of the modern general-purpose computer: rather than requiring a distinct piece of hardware custom-built for every different task, a single, general machine can instead be reconfigured, purely by feeding it different software, to carry out an enormous range of entirely different computational tasks, a principle underlying essentially every computer in widespread use today.\n\nD\nOne of the most consequential problems Turing analysed using his machine is the halting problem: the question of whether it is possible, in general, to write a single algorithm capable of correctly determining, for any arbitrary computer program and any given input, whether running that program on that input would eventually halt or instead continue running forever without ever terminating. Turing proved, using an elegant argument involving a hypothetical program applied to a description of itself, that no such general algorithm can possibly exist, a landmark result that placed a permanent, fundamental limit on what computers, no matter how fast or how cleverly programmed, can ever be made to determine about the behaviour of other computer programs.\n\nE\nDuring the Second World War, Turing applied his exceptional talent for abstract logical reasoning to a highly practical problem, working at Britain's Bletchley Park code-breaking centre to help defeat the German Enigma cipher machine, contributions that historians generally credit with shortening the war in Europe by a meaningful, though inherently difficult to quantify, period of time and saving a substantial number of lives as a direct result. Despite these wartime contributions, Turing was later prosecuted in 1952 under British laws that then criminalised homosexual acts, and he died in 1954 in circumstances that a coroner's inquest at the time ruled a suicide, an outcome some later biographers and historians have questioned. In 2009, the British government issued a formal public apology for his treatment, and in 2013 he received a posthumous royal pardon; the highest annual award in computer science, often described as computing's equivalent of the Nobel Prize, is named the Turing Award in his honour.\n\n— Biên soạn dựa trên kiến thức khoa học máy tính phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the machine is, and what problem it was built to explore\nii\tA single machine that can simulate any other\niii\tA question that proved impossible to answer in general\niv\tSolving Hilbert's question about provability\nv\tWartime code-breaking, and a life honoured only after his death\nvi\tHow modern computers differ physically from Turing's model\nvii\tCritics who dispute that the machine models real computation",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa máy Turing là gì và mục đích nó được thiết kế để giải quyết. Đúng tiêu đề i.",
+          "id": "nl2-27-turing-machine-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói Turing dùng máy của mình để trả lời bài toán Entscheidungsproblem của Hilbert. Đúng tiêu đề iv.",
+          "id": "nl2-27-turing-machine-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về máy Turing phổ quát — một máy mô phỏng được mọi máy Turing khác. Đúng tiêu đề ii.",
+          "id": "nl2-27-turing-machine-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về bài toán dừng (halting problem) — chứng minh không thể có thuật toán tổng quát trả lời được. Đúng tiêu đề iii.",
+          "id": "nl2-27-turing-machine-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E kể về công việc phá mã Enigma của Turing và việc ông chỉ được vinh danh sau khi qua đời. Đúng tiêu đề v.",
+          "id": "nl2-27-turing-machine-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Turing proved that a general procedure exists to determine whether any mathematical statement is provable.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: 'Turing proved... that no such general procedure could exist'. Không tồn tại thủ tục tổng quát đó. FALSE.",
+          "id": "nl2-27-turing-machine-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Alonzo Church reached his equivalent conclusion using the exact same mathematical framework as Turing.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: Church đạt kết luận tương đương 'using an entirely different mathematical framework'. Khung khác nhau, không phải giống hệt. FALSE.",
+          "id": "nl2-27-turing-machine-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A universal Turing machine requires different physical hardware for each different task it performs.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'a single, general machine can instead be reconfigured, purely by feeding it different software' — không cần phần cứng khác nhau cho mỗi nhiệm vụ. FALSE.",
+          "id": "nl2-27-turing-machine-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Turing proved that no general algorithm can determine, for every program and input, whether that program will eventually halt.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'Turing proved... that no such general algorithm can possibly exist'. Đúng ý đề nên TRUE.",
+          "id": "nl2-27-turing-machine-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Turing received the royal pardon and public apology during his own lifetime.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: ông mất năm 1954, còn lời xin lỗi công khai là 2009 và ân xá hoàng gia là 2013 — đều sau khi ông đã mất. FALSE.",
+          "id": "nl2-27-turing-machine-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Turing introduced the machine in ________.",
+          "answer": "1936",
+          "number": 11,
+          "explanation": "Đoạn A: 'the model, introduced in 1936 by the British mathematician Alan Turing'. Đáp án 1936.",
+          "id": "nl2-27-turing-machine-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Hilbert's decision problem is also known by the German term ________.",
+          "answer": "Entscheidungsproblem",
+          "number": 12,
+          "explanation": "Đoạn B: 'known as the Entscheidungsproblem, or decision problem'. Đáp án Entscheidungsproblem.",
+          "id": "nl2-27-turing-machine-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The related conclusions of Turing and Church are jointly known as the ________ thesis.",
+          "answer": "Church-Turing",
+          "number": 13,
+          "explanation": "Đoạn B: 'jointly commemorated today in what is known as the Church-Turing thesis'. Đáp án Church-Turing.",
+          "id": "nl2-27-turing-machine-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "During the Second World War, Turing worked at Britain's ________ code-breaking centre.",
+          "answer": "Bletchley Park",
+          "number": 14,
+          "explanation": "Đoạn E: 'working at Britain's Bletchley Park code-breaking centre'. Đáp án Bletchley Park.",
+          "id": "nl2-27-turing-machine-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The highest annual award in computer science is named the ________ Award in his honour.",
+          "answer": "Turing",
+          "number": 15,
+          "explanation": "Đoạn E: 'is named the Turing Award in his honour'. Đáp án Turing.",
+          "id": "nl2-27-turing-machine-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-28-quantum-computing-p1",
+      "order": 80,
+      "title": "Quantum Computing",
+      "text": "A\nA quantum computer is a machine that performs computation using the principles of quantum mechanics, storing and manipulating information not as ordinary binary bits, each of which must be either a definite 0 or a definite 1, but as quantum bits, or qubits, which can exist in a quantum superposition of both states simultaneously until they are directly measured. This fundamentally different way of representing information allows certain carefully designed algorithms to explore a vast number of possible solutions to specific kinds of problems in parallel, offering the potential, for a narrow but genuinely important class of problems, to solve them dramatically faster than any conventional, classical computer ever could, no matter how powerful that classical computer might be.\n\nB\nSuperposition alone does not fully explain a quantum computer's potential advantage; a second essential quantum property, entanglement, allows the states of multiple qubits to become correlated with one another in ways that have no equivalent in classical computing, so that the collective information stored across a group of entangled qubits cannot be fully described by considering each qubit's individual state in isolation. Physically realising and precisely controlling qubits has proved extraordinarily difficult in practice: current leading approaches include qubits built from superconducting electrical circuits, which must typically be cooled to temperatures colder than deep space to function, and qubits formed from individual trapped ions, held in place and manipulated using precisely tuned laser beams and electromagnetic fields.\n\nC\nA central practical obstacle facing every current approach is decoherence, the tendency of a fragile quantum state to lose its distinctive quantum properties through unavoidable interaction with its surrounding environment, an effect that current hardware can typically only forestall for a small fraction of a second before critical errors accumulate. Because of this fragility, a genuinely useful, large-scale quantum computer will likely require substantial quantum error correction, a technique that combines the information from many imperfect, error-prone physical qubits to construct a smaller number of much more stable logical qubits, though implementing effective error correction at the scale needed for genuinely useful large-scale computation remains one of the field's foremost unsolved engineering challenges.\n\nD\nIn 2019, researchers at Google announced that a quantum processor they had built, containing 53 functioning qubits, had performed a highly specialised, deliberately obscure calculation, of essentially no independent practical value in itself, in around 200 seconds, a calculation the team estimated would have taken one of the world's most powerful conventional supercomputers roughly 10,000 years to complete, a claim the researchers termed quantum supremacy. Researchers at IBM subsequently disputed the specific estimate of how long a classical supercomputer would actually require, arguing that a more cleverly optimised classical algorithm could complete the same specific calculation in a matter of days rather than millennia, illustrating that comparative performance claims of this kind remain genuinely, and sometimes bitterly, contested within the field even when the underlying quantum hardware itself is not in dispute.\n\nE\nDespite this rapid, headline-grabbing experimental progress, most experts caution that today's quantum computers, often described as noisy intermediate-scale quantum, or NISQ, devices, remain far too small and far too error-prone to solve genuinely useful, real-world problems better than existing classical computers can already solve them today. Promising longer-term applications under active research include simulating complex quantum chemical and molecular systems relevant to drug discovery and battery design, a task classical computers handle exceedingly poorly precisely because those systems are themselves inherently quantum mechanical in nature, and certain narrow classes of optimisation problems in logistics and finance. Most researchers in the field estimate that a fault-tolerant, large-scale quantum computer capable of reliably delivering such practical benefits at meaningful commercial scale remains at least a decade away, and quite possibly considerably longer.\n\n— Biên soạn dựa trên kiến thức khoa học máy tính phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat a qubit is, and how it differs from an ordinary bit\nii\tEntanglement, and the physical difficulty of building qubits\niii\tA disputed claim of quantum supremacy\niv\tThe fragility of quantum states, and how errors are corrected\nv\tWhy useful applications are still years away\nvi\tHow quantum computers are cooled to near absolute zero\nvii\tPlans to connect quantum computers over the internet",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa qubit là gì và khác bit thông thường thế nào. Đúng tiêu đề i.",
+          "id": "nl2-28-quantum-computing-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về vướng víu lượng tử (entanglement) và khó khăn vật lý khi chế tạo qubit. Đúng tiêu đề ii.",
+          "id": "nl2-28-quantum-computing-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về decoherence và kỹ thuật sửa lỗi lượng tử. Đúng tiêu đề iv.",
+          "id": "nl2-28-quantum-computing-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D kể tuyên bố 'ưu thế lượng tử' của Google năm 2019 và tranh cãi với IBM. Đúng tiêu đề iii.",
+          "id": "nl2-28-quantum-computing-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói máy tính lượng tử hiện tại (NISQ) chưa đủ mạnh cho ứng dụng thực tế, còn nhiều năm nữa. Đúng tiêu đề v.",
+          "id": "nl2-28-quantum-computing-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "A qubit can exist in a superposition of both 0 and 1 at the same time before it is measured.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: qubit 'can exist in a quantum superposition of both states simultaneously until they are directly measured'. Đúng ý đề nên TRUE.",
+          "id": "nl2-28-quantum-computing-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Superconducting qubits can operate reliably at room temperature.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: qubit siêu dẫn 'must typically be cooled to temperatures colder than deep space to function'. Phải làm lạnh cực sâu, không hoạt động ở nhiệt độ phòng. FALSE.",
+          "id": "nl2-28-quantum-computing-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Current quantum hardware can maintain a fragile quantum state for many hours without error.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: phần cứng hiện tại 'can typically only forestall for a small fraction of a second before critical errors accumulate'. Chỉ vài phần giây, không phải nhiều giờ. FALSE.",
+          "id": "nl2-28-quantum-computing-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "IBM researchers agreed completely with Google's estimate of how long a classical supercomputer would need for the same calculation.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: IBM 'disputed the specific estimate', cho rằng thuật toán cổ điển tối ưu hơn chỉ mất vài ngày chứ không phải 10.000 năm. FALSE.",
+          "id": "nl2-28-quantum-computing-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most researchers believe a fault-tolerant, large-scale quantum computer is already available for commercial use today.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'remains at least a decade away, and quite possibly considerably longer'. Còn cách xa hiện tại chứ chưa sẵn sàng. FALSE.",
+          "id": "nl2-28-quantum-computing-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The loss of a fragile quantum state through interaction with its environment is called ________.",
+          "answer": "decoherence",
+          "number": 11,
+          "explanation": "Đoạn C: 'decoherence, the tendency of a fragile quantum state to lose its distinctive quantum properties'. Đáp án decoherence.",
+          "id": "nl2-28-quantum-computing-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Combining many imperfect physical qubits into more stable logical qubits is called quantum error ________.",
+          "answer": "correction",
+          "number": 12,
+          "explanation": "Đoạn C: 'a technique that combines the information from many imperfect... physical qubits to construct a smaller number of much more stable logical qubits' called 'quantum error correction'. Đáp án correction.",
+          "id": "nl2-28-quantum-computing-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Google's 2019 quantum processor contained ________ functioning qubits.",
+          "answer": "53",
+          "number": 13,
+          "explanation": "Đoạn D: 'a quantum processor they had built, containing 53 functioning qubits'. Đáp án 53.",
+          "id": "nl2-28-quantum-computing-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Google's team termed their claim quantum ________.",
+          "answer": "supremacy",
+          "number": 14,
+          "explanation": "Đoạn D: 'a claim the researchers termed quantum supremacy'. Đáp án supremacy.",
+          "id": "nl2-28-quantum-computing-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Today's small, error-prone quantum devices are often described using the abbreviation ________.",
+          "answer": "NISQ",
+          "number": 15,
+          "explanation": "Đoạn E: 'often described as noisy intermediate-scale quantum, or NISQ, devices'. Đáp án NISQ.",
+          "id": "nl2-28-quantum-computing-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-29-graphene-p1",
+      "order": 81,
+      "title": "Graphene",
+      "text": "A\nGraphene is a form of carbon consisting of a single layer of atoms arranged in a repeating hexagonal, honeycomb-like pattern, making it, at only one atom thick, the thinnest material ever isolated in a laboratory. Graphite, the common material used in ordinary pencils, is itself made up of many millions of these single atomic layers loosely stacked on top of one another, held together only weakly, which is precisely why a pencil can leave a mark on paper: pressing the pencil tip against the page shears off thin flakes of graphite, each flake made of many stacked graphene layers, that transfer onto the paper's surface.\n\nB\nAlthough graphene's theoretical existence had been discussed by physicists for decades, it was not successfully isolated as an actual, stable, freestanding material until 2004, when the physicists Andre Geim and Konstantin Novoselov, working at the University of Manchester, extracted single-atom-thick flakes from ordinary graphite using an ingenious and famously low-tech method: repeatedly applying and removing ordinary adhesive tape to a piece of graphite, progressively splitting the stacked layers apart until, in some cases, only a single atomic layer remained on the tape. Geim and Novoselov shared the 2010 Nobel Prize in Physics for this achievement, a remarkably rapid interval of only six years between the initial discovery and the Nobel Prize, unusually short by the standards of physics, where major discoveries typically take many decades to receive Nobel recognition.\n\nC\nGraphene possesses an extraordinary combination of physical properties. It is roughly two hundred times stronger than steel of the same weight, while remaining remarkably flexible and almost completely transparent to visible light, transmitting more than ninety-seven percent of the light that strikes it. Electrically, graphene conducts electricity more efficiently than copper, and thermally it conducts heat away from a hot object more effectively than any other known material. This unusual combination of extreme strength, flexibility, transparency, and exceptional electrical and thermal conductivity, rarely found together in a single material, is what generated such extraordinary early excitement among materials scientists and technology companies following its successful isolation.\n\nD\nDespite this excitement, converting graphene's remarkable laboratory properties into cheap, reliable, large-scale commercial products has proved considerably more difficult in practice than initial enthusiasm suggested. Producing graphene of consistently high enough quality and purity for demanding applications such as high-performance electronics remains technically challenging and comparatively expensive at industrial scale, and many of the most ambitious early proposed applications, such as ultra-fast graphene-based computer processors intended to eventually replace conventional silicon chips, remain confined mainly to research laboratories rather than commercial products. Nonetheless, graphene has found its way into a growing, if still comparatively modest, range of niche commercial products already on the market, including specialised sporting equipment, certain smartphone touchscreen components, and additives used to strengthen composite materials in various industries.\n\nE\nSince graphene's initial isolation, researchers have identified and begun studying an entire broader family of comparably thin, two-dimensional materials with similarly striking properties, including hexagonal boron nitride, an excellent electrical insulator with a crystal structure closely resembling graphene's, and molybdenum disulfide, a two-dimensional semiconductor of particular interest for building extremely small, next-generation transistors. Researchers have also found that stacking several different two-dimensional materials together in a precisely controlled sequence, sometimes described informally as building a \"van der Waals heterostructure\", can produce combined materials with properties that neither individual constituent layer possesses on its own, a rapidly growing area of materials science that graphene's initial isolation in 2004 was directly responsible for opening up.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and its relation to ordinary pencil graphite\nii\tAn ingenious method that won a rapid Nobel Prize\niii\tAn unusual combination of physical properties\niv\tWhy commercial products have been slower to arrive than hoped\nv\tA wider family of two-dimensional materials it inspired\nvi\tPlans to use graphene in water filtration\nvii\tSafety concerns raised about inhaling graphene particles",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa graphene là gì và liên hệ với than chì trong bút chì thường. Đúng tiêu đề i.",
+          "id": "nl2-29-graphene-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể phương pháp băng dính đơn giản của Geim và Novoselov, giành Nobel chỉ sau 6 năm. Đúng tiêu đề ii.",
+          "id": "nl2-29-graphene-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C liệt kê các tính chất đặc biệt: chắc hơn thép 200 lần, gần như trong suốt, dẫn điện và nhiệt tốt. Đúng tiêu đề iii.",
+          "id": "nl2-29-graphene-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói vì sao sản phẩm thương mại từ graphene chưa phát triển nhanh như kỳ vọng ban đầu. Đúng tiêu đề iv.",
+          "id": "nl2-29-graphene-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói graphene mở ra cả một họ vật liệu hai chiều khác như hexagonal boron nitride. Đúng tiêu đề v.",
+          "id": "nl2-29-graphene-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Graphite consists of many graphene layers stacked and held together only weakly.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'Graphite... is itself made up of many millions of these single atomic layers loosely stacked on top of one another, held together only weakly'. Đúng ý đề nên TRUE.",
+          "id": "nl2-29-graphene-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Graphene's existence was completely unknown to physicists before its isolation in 2004.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'graphene's theoretical existence had been discussed by physicists for decades' trước khi được tách thành công. FALSE.",
+          "id": "nl2-29-graphene-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Graphene transmits more than ninety-seven percent of visible light that strikes it.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'transmitting more than ninety-seven percent of the light that strikes it'. Đúng ý đề nên TRUE.",
+          "id": "nl2-29-graphene-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Graphene-based computer processors have already fully replaced silicon chips in most consumer electronics.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: các ứng dụng đầy tham vọng này 'remain confined mainly to research laboratories rather than commercial products'. Chưa thay thế được silicon trong sản phẩm thương mại. FALSE.",
+          "id": "nl2-29-graphene-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Molybdenum disulfide is described as an electrical insulator.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: molybdenum disulfide là 'a two-dimensional semiconductor', không phải chất cách điện — hexagonal boron nitride mới là chất cách điện. FALSE.",
+          "id": "nl2-29-graphene-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Graphene atoms are arranged in a repeating ________ pattern.",
+          "answer": "hexagonal",
+          "number": 11,
+          "explanation": "Đoạn A: 'a single layer of atoms arranged in a repeating hexagonal, honeycomb-like pattern'. Đáp án hexagonal.",
+          "id": "nl2-29-graphene-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Geim and Novoselov isolated graphene using ordinary adhesive ________.",
+          "answer": "tape",
+          "number": 12,
+          "explanation": "Đoạn B: 'repeatedly applying and removing ordinary adhesive tape to a piece of graphite'. Đáp án tape.",
+          "id": "nl2-29-graphene-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Geim and Novoselov shared the 2010 Nobel Prize in ________.",
+          "answer": "Physics",
+          "number": 13,
+          "explanation": "Đoạn B: 'shared the 2010 Nobel Prize in Physics for this achievement'. Đáp án Physics.",
+          "id": "nl2-29-graphene-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Graphene is roughly two hundred times stronger than ________ of the same weight.",
+          "answer": "steel",
+          "number": 14,
+          "explanation": "Đoạn C: 'roughly two hundred times stronger than steel of the same weight'. Đáp án steel.",
+          "id": "nl2-29-graphene-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Stacking several two-dimensional materials together is sometimes called building a van der Waals ________.",
+          "answer": "heterostructure",
+          "number": 15,
+          "explanation": "Đoạn E: 'sometimes described informally as building a van der Waals heterostructure'. Đáp án heterostructure.",
+          "id": "nl2-29-graphene-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-30-nanotechnology-p1",
+      "order": 82,
+      "title": "Nanotechnology",
+      "text": "A\nNanotechnology is the science, engineering, and application of matter at an extremely small scale, generally defined as structures measuring roughly between one and one hundred nanometres, a nanometre being one billionth of a metre, small enough that a single human hair is typically between 80,000 and 100,000 nanometres wide. At this scale, ordinary bulk materials often display physical, chemical, and electrical properties that differ markedly from how the same substance behaves in larger, everyday quantities, a consequence of quantum mechanical effects and the dramatically increased proportion of a material's atoms that sit at or near its exposed surface rather than buried deep inside its interior.\n\nB\nThe conceptual foundations of nanotechnology are often traced to a 1959 lecture titled \"There's Plenty of Room at the Bottom\", delivered by the physicist Richard Feynman, in which he speculated about the theoretical possibility of manipulating and arranging individual atoms directly, though he did not use the specific term \"nanotechnology\" himself, since that word was coined only later, in 1974, by the Japanese researcher Norio Taniguchi. The field did not become practically feasible until the development of specialised instruments capable of directly imaging and, in some cases, manipulating individual atoms, most notably the scanning tunnelling microscope, invented in 1981 by Gerd Binnig and Heinrich Rohrer, an achievement for which the two shared the 1986 Nobel Prize in Physics.\n\nC\nNanoparticles of gold provide a striking illustration of how dramatically properties can change at the nanoscale: bulk gold is the familiar, unreactive, yellow metal used in jewellery, but gold nanoparticles a few dozen nanometres across can appear vivid red or purple in colour and become chemically far more reactive than bulk gold, properties that depend sensitively on the precise size and shape of the individual nanoparticles involved. Medieval European artisans exploited this effect long before its underlying physical cause was understood scientifically, unknowingly incorporating gold nanoparticles into stained glass to produce vivid, stable red colouring, a technique whose true underlying physical mechanism was not correctly explained until modern nanoscience emerged many centuries later.\n\nD\nNanotechnology has already found practical application across a wide range of industries. In medicine, engineered nanoparticles are used to deliver drugs directly and specifically to targeted cells, such as cancer cells, potentially reducing damaging side effects on healthy surrounding tissue compared with more conventional, less targeted drug delivery methods; the lipid nanoparticles central to mRNA COVID-19 vaccines are themselves a direct practical application of nanotechnology developed for an entirely different original purpose. In consumer products, nanoparticles are incorporated into sunscreens to more effectively block ultraviolet radiation while remaining transparent on the skin, into some textiles to make fabric more resistant to staining and water absorption, and into a range of electronic components to help continue shrinking the size of computer chips.\n\nE\nThe rapid expansion of nanotechnology has also raised safety and regulatory questions that remain only partially resolved. Because engineered nanoparticles behave so differently from the same bulk substance, and can potentially penetrate biological barriers, including cell membranes, more readily than larger particles of an identical chemical composition, researchers have called for careful, ongoing, substance-specific study of their potential toxicity and environmental persistence, since it cannot automatically be assumed that a chemical substance considered generally safe in its familiar, bulk form remains equally safe when engineered into nanoparticle form. Most national regulatory frameworks governing chemical and consumer product safety were originally designed and written before nanotechnology existed as a mature commercial industry, and several international bodies and expert scientific panels have called for these older regulatory frameworks to be updated specifically to properly account for the potentially distinct risks that nanoscale materials, as opposed to the same substances in ordinary bulk form, may pose.\n\n— Biên soạn dựa trên kiến thức khoa học vật liệu phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the scale is, and why properties change there\nii\tA lecture, a coined term, and a microscope that made it possible\niii\tHow medieval artisans unknowingly used the effect\niv\tApplications already found in medicine and consumer goods\nv\tRegulatory frameworks that predate the technology\nvi\tPlans to build molecular assemblers atom by atom\nvii\tHow nanoparticles are manufactured at industrial scale",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa quy mô nano và vì sao tính chất vật liệu thay đổi ở quy mô đó. Đúng tiêu đề i.",
+          "id": "nl2-30-nanotechnology-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể về bài giảng của Feynman 1959, thuật ngữ do Taniguchi đặt ra 1974, và kính hiển vi quét xuyên hầm 1981. Đúng tiêu đề ii.",
+          "id": "nl2-30-nanotechnology-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C kể nghệ nhân thời Trung Cổ vô tình dùng hạt nano vàng để tạo màu đỏ cho kính màu. Đúng tiêu đề iii.",
+          "id": "nl2-30-nanotechnology-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D liệt kê ứng dụng trong y học (vận chuyển thuốc, vắc-xin mRNA) và sản phẩm tiêu dùng. Đúng tiêu đề iv.",
+          "id": "nl2-30-nanotechnology-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói khung pháp lý hiện hành ra đời trước khi công nghệ nano trưởng thành, cần cập nhật. Đúng tiêu đề v.",
+          "id": "nl2-30-nanotechnology-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Feynman used the term 'nanotechnology' in his 1959 lecture.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: 'he did not use the specific term nanotechnology himself, since that word was coined only later, in 1974, by... Norio Taniguchi'. FALSE.",
+          "id": "nl2-30-nanotechnology-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Gold nanoparticles a few dozen nanometres across always appear the same yellow colour as bulk gold.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn C nói ngược: hạt nano vàng 'can appear vivid red or purple in colour', không giống màu vàng của vàng khối. FALSE.",
+          "id": "nl2-30-nanotechnology-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Medieval artisans understood the scientific mechanism behind the colours their gold nanoparticles produced.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'a technique whose true underlying physical mechanism was not correctly explained until modern nanoscience emerged many centuries later'. Họ không hiểu cơ chế, chỉ dùng theo kinh nghiệm. FALSE.",
+          "id": "nl2-30-nanotechnology-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Lipid nanoparticles used in mRNA COVID-19 vaccines are an example of nanotechnology.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'the lipid nanoparticles central to mRNA COVID-19 vaccines are themselves a direct practical application of nanotechnology'. Đúng ý đề nên TRUE.",
+          "id": "nl2-30-nanotechnology-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "It can be safely assumed that a substance safe in bulk form remains equally safe as a nanoparticle.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'it cannot automatically be assumed that a chemical substance considered generally safe in its familiar, bulk form remains equally safe when engineered into nanoparticle form'. FALSE.",
+          "id": "nl2-30-nanotechnology-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "A nanometre is one ________ of a metre.",
+          "answer": "billionth",
+          "number": 11,
+          "explanation": "Đoạn A: 'a nanometre being one billionth of a metre'. Đáp án billionth.",
+          "id": "nl2-30-nanotechnology-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Feynman's 1959 lecture was titled 'There's Plenty of Room at the ________'.",
+          "answer": "Bottom",
+          "number": 12,
+          "explanation": "Đoạn B: 'a 1959 lecture titled There's Plenty of Room at the Bottom'. Đáp án Bottom.",
+          "id": "nl2-30-nanotechnology-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Binnig and Rohrer invented the scanning tunnelling ________ in 1981.",
+          "answer": "microscope",
+          "number": 13,
+          "explanation": "Đoạn B: 'the scanning tunnelling microscope, invented in 1981 by Gerd Binnig and Heinrich Rohrer'. Đáp án microscope.",
+          "id": "nl2-30-nanotechnology-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Medieval artisans incorporated gold nanoparticles into stained ________ to produce red colouring.",
+          "answer": "glass",
+          "number": 14,
+          "explanation": "Đoạn C: 'unknowingly incorporating gold nanoparticles into stained glass to produce vivid, stable red colouring'. Đáp án glass.",
+          "id": "nl2-30-nanotechnology-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Nanoparticles are used in sunscreens to block ________ radiation while remaining transparent.",
+          "answer": "ultraviolet",
+          "number": 15,
+          "explanation": "Đoạn D: 'incorporated into sunscreens to more effectively block ultraviolet radiation while remaining transparent'. Đáp án ultraviolet.",
+          "id": "nl2-30-nanotechnology-q15"
+        }
+      ]
     }
   ]
 }

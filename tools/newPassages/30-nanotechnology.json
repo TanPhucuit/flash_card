@@ -1,0 +1,141 @@
+{
+  "title": "Nanotechnology",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học vật liệu phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Nanotechnology is the science, engineering, and application of matter at an extremely small scale, generally defined as structures measuring roughly between one and one hundred nanometres, a nanometre being one billionth of a metre, small enough that a single human hair is typically between 80,000 and 100,000 nanometres wide. At this scale, ordinary bulk materials often display physical, chemical, and electrical properties that differ markedly from how the same substance behaves in larger, everyday quantities, a consequence of quantum mechanical effects and the dramatically increased proportion of a material's atoms that sit at or near its exposed surface rather than buried deep inside its interior."
+    },
+    {
+      "letter": "B",
+      "text": "The conceptual foundations of nanotechnology are often traced to a 1959 lecture titled \"There's Plenty of Room at the Bottom\", delivered by the physicist Richard Feynman, in which he speculated about the theoretical possibility of manipulating and arranging individual atoms directly, though he did not use the specific term \"nanotechnology\" himself, since that word was coined only later, in 1974, by the Japanese researcher Norio Taniguchi. The field did not become practically feasible until the development of specialised instruments capable of directly imaging and, in some cases, manipulating individual atoms, most notably the scanning tunnelling microscope, invented in 1981 by Gerd Binnig and Heinrich Rohrer, an achievement for which the two shared the 1986 Nobel Prize in Physics."
+    },
+    {
+      "letter": "C",
+      "text": "Nanoparticles of gold provide a striking illustration of how dramatically properties can change at the nanoscale: bulk gold is the familiar, unreactive, yellow metal used in jewellery, but gold nanoparticles a few dozen nanometres across can appear vivid red or purple in colour and become chemically far more reactive than bulk gold, properties that depend sensitively on the precise size and shape of the individual nanoparticles involved. Medieval European artisans exploited this effect long before its underlying physical cause was understood scientifically, unknowingly incorporating gold nanoparticles into stained glass to produce vivid, stable red colouring, a technique whose true underlying physical mechanism was not correctly explained until modern nanoscience emerged many centuries later."
+    },
+    {
+      "letter": "D",
+      "text": "Nanotechnology has already found practical application across a wide range of industries. In medicine, engineered nanoparticles are used to deliver drugs directly and specifically to targeted cells, such as cancer cells, potentially reducing damaging side effects on healthy surrounding tissue compared with more conventional, less targeted drug delivery methods; the lipid nanoparticles central to mRNA COVID-19 vaccines are themselves a direct practical application of nanotechnology developed for an entirely different original purpose. In consumer products, nanoparticles are incorporated into sunscreens to more effectively block ultraviolet radiation while remaining transparent on the skin, into some textiles to make fabric more resistant to staining and water absorption, and into a range of electronic components to help continue shrinking the size of computer chips."
+    },
+    {
+      "letter": "E",
+      "text": "The rapid expansion of nanotechnology has also raised safety and regulatory questions that remain only partially resolved. Because engineered nanoparticles behave so differently from the same bulk substance, and can potentially penetrate biological barriers, including cell membranes, more readily than larger particles of an identical chemical composition, researchers have called for careful, ongoing, substance-specific study of their potential toxicity and environmental persistence, since it cannot automatically be assumed that a chemical substance considered generally safe in its familiar, bulk form remains equally safe when engineered into nanoparticle form. Most national regulatory frameworks governing chemical and consumer product safety were originally designed and written before nanotechnology existed as a mature commercial industry, and several international bodies and expert scientific panels have called for these older regulatory frameworks to be updated specifically to properly account for the potentially distinct risks that nanoscale materials, as opposed to the same substances in ordinary bulk form, may pose."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the scale is, and why properties change there\nii\tA lecture, a coined term, and a microscope that made it possible\niii\tHow medieval artisans unknowingly used the effect\niv\tApplications already found in medicine and consumer goods\nv\tRegulatory frameworks that predate the technology\nvi\tPlans to build molecular assemblers atom by atom\nvii\tHow nanoparticles are manufactured at industrial scale",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa quy mô nano và vì sao tính chất vật liệu thay đổi ở quy mô đó. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể về bài giảng của Feynman 1959, thuật ngữ do Taniguchi đặt ra 1974, và kính hiển vi quét xuyên hầm 1981. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C kể nghệ nhân thời Trung Cổ vô tình dùng hạt nano vàng để tạo màu đỏ cho kính màu. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D liệt kê ứng dụng trong y học (vận chuyển thuốc, vắc-xin mRNA) và sản phẩm tiêu dùng. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói khung pháp lý hiện hành ra đời trước khi công nghệ nano trưởng thành, cần cập nhật. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Feynman used the term 'nanotechnology' in his 1959 lecture.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: 'he did not use the specific term nanotechnology himself, since that word was coined only later, in 1974, by... Norio Taniguchi'. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Gold nanoparticles a few dozen nanometres across always appear the same yellow colour as bulk gold.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn C nói ngược: hạt nano vàng 'can appear vivid red or purple in colour', không giống màu vàng của vàng khối. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Medieval artisans understood the scientific mechanism behind the colours their gold nanoparticles produced.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'a technique whose true underlying physical mechanism was not correctly explained until modern nanoscience emerged many centuries later'. Họ không hiểu cơ chế, chỉ dùng theo kinh nghiệm. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Lipid nanoparticles used in mRNA COVID-19 vaccines are an example of nanotechnology.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'the lipid nanoparticles central to mRNA COVID-19 vaccines are themselves a direct practical application of nanotechnology'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "It can be safely assumed that a substance safe in bulk form remains equally safe as a nanoparticle.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'it cannot automatically be assumed that a chemical substance considered generally safe in its familiar, bulk form remains equally safe when engineered into nanoparticle form'. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "A nanometre is one ________ of a metre.",
+      "answer": "billionth",
+      "number": 11,
+      "explanation": "Đoạn A: 'a nanometre being one billionth of a metre'. Đáp án billionth."
+    },
+    {
+      "type": "gap",
+      "prompt": "Feynman's 1959 lecture was titled 'There's Plenty of Room at the ________'.",
+      "answer": "Bottom",
+      "number": 12,
+      "explanation": "Đoạn B: 'a 1959 lecture titled There's Plenty of Room at the Bottom'. Đáp án Bottom."
+    },
+    {
+      "type": "gap",
+      "prompt": "Binnig and Rohrer invented the scanning tunnelling ________ in 1981.",
+      "answer": "microscope",
+      "number": 13,
+      "explanation": "Đoạn B: 'the scanning tunnelling microscope, invented in 1981 by Gerd Binnig and Heinrich Rohrer'. Đáp án microscope."
+    },
+    {
+      "type": "gap",
+      "prompt": "Medieval artisans incorporated gold nanoparticles into stained ________ to produce red colouring.",
+      "answer": "glass",
+      "number": 14,
+      "explanation": "Đoạn C: 'unknowingly incorporating gold nanoparticles into stained glass to produce vivid, stable red colouring'. Đáp án glass."
+    },
+    {
+      "type": "gap",
+      "prompt": "Nanoparticles are used in sunscreens to block ________ radiation while remaining transparent.",
+      "answer": "ultraviolet",
+      "number": 15,
+      "explanation": "Đoạn D: 'incorporated into sunscreens to more effectively block ultraviolet radiation while remaining transparent'. Đáp án ultraviolet."
+    }
+  ]
+}

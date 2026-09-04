@@ -1,0 +1,141 @@
+{
+  "title": "Graphene",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Graphene is a form of carbon consisting of a single layer of atoms arranged in a repeating hexagonal, honeycomb-like pattern, making it, at only one atom thick, the thinnest material ever isolated in a laboratory. Graphite, the common material used in ordinary pencils, is itself made up of many millions of these single atomic layers loosely stacked on top of one another, held together only weakly, which is precisely why a pencil can leave a mark on paper: pressing the pencil tip against the page shears off thin flakes of graphite, each flake made of many stacked graphene layers, that transfer onto the paper's surface."
+    },
+    {
+      "letter": "B",
+      "text": "Although graphene's theoretical existence had been discussed by physicists for decades, it was not successfully isolated as an actual, stable, freestanding material until 2004, when the physicists Andre Geim and Konstantin Novoselov, working at the University of Manchester, extracted single-atom-thick flakes from ordinary graphite using an ingenious and famously low-tech method: repeatedly applying and removing ordinary adhesive tape to a piece of graphite, progressively splitting the stacked layers apart until, in some cases, only a single atomic layer remained on the tape. Geim and Novoselov shared the 2010 Nobel Prize in Physics for this achievement, a remarkably rapid interval of only six years between the initial discovery and the Nobel Prize, unusually short by the standards of physics, where major discoveries typically take many decades to receive Nobel recognition."
+    },
+    {
+      "letter": "C",
+      "text": "Graphene possesses an extraordinary combination of physical properties. It is roughly two hundred times stronger than steel of the same weight, while remaining remarkably flexible and almost completely transparent to visible light, transmitting more than ninety-seven percent of the light that strikes it. Electrically, graphene conducts electricity more efficiently than copper, and thermally it conducts heat away from a hot object more effectively than any other known material. This unusual combination of extreme strength, flexibility, transparency, and exceptional electrical and thermal conductivity, rarely found together in a single material, is what generated such extraordinary early excitement among materials scientists and technology companies following its successful isolation."
+    },
+    {
+      "letter": "D",
+      "text": "Despite this excitement, converting graphene's remarkable laboratory properties into cheap, reliable, large-scale commercial products has proved considerably more difficult in practice than initial enthusiasm suggested. Producing graphene of consistently high enough quality and purity for demanding applications such as high-performance electronics remains technically challenging and comparatively expensive at industrial scale, and many of the most ambitious early proposed applications, such as ultra-fast graphene-based computer processors intended to eventually replace conventional silicon chips, remain confined mainly to research laboratories rather than commercial products. Nonetheless, graphene has found its way into a growing, if still comparatively modest, range of niche commercial products already on the market, including specialised sporting equipment, certain smartphone touchscreen components, and additives used to strengthen composite materials in various industries."
+    },
+    {
+      "letter": "E",
+      "text": "Since graphene's initial isolation, researchers have identified and begun studying an entire broader family of comparably thin, two-dimensional materials with similarly striking properties, including hexagonal boron nitride, an excellent electrical insulator with a crystal structure closely resembling graphene's, and molybdenum disulfide, a two-dimensional semiconductor of particular interest for building extremely small, next-generation transistors. Researchers have also found that stacking several different two-dimensional materials together in a precisely controlled sequence, sometimes described informally as building a \"van der Waals heterostructure\", can produce combined materials with properties that neither individual constituent layer possesses on its own, a rapidly growing area of materials science that graphene's initial isolation in 2004 was directly responsible for opening up."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and its relation to ordinary pencil graphite\nii\tAn ingenious method that won a rapid Nobel Prize\niii\tAn unusual combination of physical properties\niv\tWhy commercial products have been slower to arrive than hoped\nv\tA wider family of two-dimensional materials it inspired\nvi\tPlans to use graphene in water filtration\nvii\tSafety concerns raised about inhaling graphene particles",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa graphene là gì và liên hệ với than chì trong bút chì thường. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể phương pháp băng dính đơn giản của Geim và Novoselov, giành Nobel chỉ sau 6 năm. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C liệt kê các tính chất đặc biệt: chắc hơn thép 200 lần, gần như trong suốt, dẫn điện và nhiệt tốt. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói vì sao sản phẩm thương mại từ graphene chưa phát triển nhanh như kỳ vọng ban đầu. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói graphene mở ra cả một họ vật liệu hai chiều khác như hexagonal boron nitride. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Graphite consists of many graphene layers stacked and held together only weakly.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'Graphite... is itself made up of many millions of these single atomic layers loosely stacked on top of one another, held together only weakly'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Graphene's existence was completely unknown to physicists before its isolation in 2004.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'graphene's theoretical existence had been discussed by physicists for decades' trước khi được tách thành công. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Graphene transmits more than ninety-seven percent of visible light that strikes it.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'transmitting more than ninety-seven percent of the light that strikes it'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Graphene-based computer processors have already fully replaced silicon chips in most consumer electronics.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: các ứng dụng đầy tham vọng này 'remain confined mainly to research laboratories rather than commercial products'. Chưa thay thế được silicon trong sản phẩm thương mại. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Molybdenum disulfide is described as an electrical insulator.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: molybdenum disulfide là 'a two-dimensional semiconductor', không phải chất cách điện — hexagonal boron nitride mới là chất cách điện. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Graphene atoms are arranged in a repeating ________ pattern.",
+      "answer": "hexagonal",
+      "number": 11,
+      "explanation": "Đoạn A: 'a single layer of atoms arranged in a repeating hexagonal, honeycomb-like pattern'. Đáp án hexagonal."
+    },
+    {
+      "type": "gap",
+      "prompt": "Geim and Novoselov isolated graphene using ordinary adhesive ________.",
+      "answer": "tape",
+      "number": 12,
+      "explanation": "Đoạn B: 'repeatedly applying and removing ordinary adhesive tape to a piece of graphite'. Đáp án tape."
+    },
+    {
+      "type": "gap",
+      "prompt": "Geim and Novoselov shared the 2010 Nobel Prize in ________.",
+      "answer": "Physics",
+      "number": 13,
+      "explanation": "Đoạn B: 'shared the 2010 Nobel Prize in Physics for this achievement'. Đáp án Physics."
+    },
+    {
+      "type": "gap",
+      "prompt": "Graphene is roughly two hundred times stronger than ________ of the same weight.",
+      "answer": "steel",
+      "number": 14,
+      "explanation": "Đoạn C: 'roughly two hundred times stronger than steel of the same weight'. Đáp án steel."
+    },
+    {
+      "type": "gap",
+      "prompt": "Stacking several two-dimensional materials together is sometimes called building a van der Waals ________.",
+      "answer": "heterostructure",
+      "number": 15,
+      "explanation": "Đoạn E: 'sometimes described informally as building a van der Waals heterostructure'. Đáp án heterostructure."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "The Turing Machine",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học máy tính phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A Turing machine is a simple, abstract mathematical model of computation, consisting of an infinitely long strip of tape divided into cells, each of which can hold a single symbol, together with a read-write head that moves along the tape one cell at a time, reading the symbol currently under it, writing a new symbol if instructed to, and moving left or right according to a fixed table of rules. Despite its extreme simplicity, the model, introduced in 1936 by the British mathematician Alan Turing, was designed to capture, in the most stripped-down form possible, the essential nature of what it means for a well-defined procedure to be mechanically computable at all."
+    },
+    {
+      "letter": "B",
+      "text": "Turing introduced the machine to answer a specific, abstract question posed by the mathematician David Hilbert, known as the Entscheidungsproblem, or decision problem: whether there exists a single, general procedure capable of determining, for any given mathematical statement, whether that statement is provable within a particular formal system of logic. Turing proved, using his machine as a rigorous mathematical tool, that no such general procedure could exist, since some mathematical questions are provably undecidable, meaning no algorithm could ever determine an answer for every possible input in every possible case. The American logician Alonzo Church independently reached an equivalent conclusion at almost the same time using an entirely different mathematical framework, and the closely related conclusions of the two men are jointly commemorated today in what is known as the Church-Turing thesis."
+    },
+    {
+      "letter": "C",
+      "text": "A particularly important variant Turing described is the universal Turing machine, a single machine capable of simulating the behaviour of any other conceivable Turing machine, given a suitable description of that other machine's rules encoded and provided as input data on its own tape. This concept anticipated, decades in advance, the fundamental architecture of the modern general-purpose computer: rather than requiring a distinct piece of hardware custom-built for every different task, a single, general machine can instead be reconfigured, purely by feeding it different software, to carry out an enormous range of entirely different computational tasks, a principle underlying essentially every computer in widespread use today."
+    },
+    {
+      "letter": "D",
+      "text": "One of the most consequential problems Turing analysed using his machine is the halting problem: the question of whether it is possible, in general, to write a single algorithm capable of correctly determining, for any arbitrary computer program and any given input, whether running that program on that input would eventually halt or instead continue running forever without ever terminating. Turing proved, using an elegant argument involving a hypothetical program applied to a description of itself, that no such general algorithm can possibly exist, a landmark result that placed a permanent, fundamental limit on what computers, no matter how fast or how cleverly programmed, can ever be made to determine about the behaviour of other computer programs."
+    },
+    {
+      "letter": "E",
+      "text": "During the Second World War, Turing applied his exceptional talent for abstract logical reasoning to a highly practical problem, working at Britain's Bletchley Park code-breaking centre to help defeat the German Enigma cipher machine, contributions that historians generally credit with shortening the war in Europe by a meaningful, though inherently difficult to quantify, period of time and saving a substantial number of lives as a direct result. Despite these wartime contributions, Turing was later prosecuted in 1952 under British laws that then criminalised homosexual acts, and he died in 1954 in circumstances that a coroner's inquest at the time ruled a suicide, an outcome some later biographers and historians have questioned. In 2009, the British government issued a formal public apology for his treatment, and in 2013 he received a posthumous royal pardon; the highest annual award in computer science, often described as computing's equivalent of the Nobel Prize, is named the Turing Award in his honour."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the machine is, and what problem it was built to explore\nii\tA single machine that can simulate any other\niii\tA question that proved impossible to answer in general\niv\tSolving Hilbert's question about provability\nv\tWartime code-breaking, and a life honoured only after his death\nvi\tHow modern computers differ physically from Turing's model\nvii\tCritics who dispute that the machine models real computation",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa máy Turing là gì và mục đích nó được thiết kế để giải quyết. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói Turing dùng máy của mình để trả lời bài toán Entscheidungsproblem của Hilbert. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về máy Turing phổ quát — một máy mô phỏng được mọi máy Turing khác. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về bài toán dừng (halting problem) — chứng minh không thể có thuật toán tổng quát trả lời được. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E kể về công việc phá mã Enigma của Turing và việc ông chỉ được vinh danh sau khi qua đời. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Turing proved that a general procedure exists to determine whether any mathematical statement is provable.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: 'Turing proved... that no such general procedure could exist'. Không tồn tại thủ tục tổng quát đó. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Alonzo Church reached his equivalent conclusion using the exact same mathematical framework as Turing.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: Church đạt kết luận tương đương 'using an entirely different mathematical framework'. Khung khác nhau, không phải giống hệt. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A universal Turing machine requires different physical hardware for each different task it performs.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'a single, general machine can instead be reconfigured, purely by feeding it different software' — không cần phần cứng khác nhau cho mỗi nhiệm vụ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Turing proved that no general algorithm can determine, for every program and input, whether that program will eventually halt.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'Turing proved... that no such general algorithm can possibly exist'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Turing received the royal pardon and public apology during his own lifetime.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: ông mất năm 1954, còn lời xin lỗi công khai là 2009 và ân xá hoàng gia là 2013 — đều sau khi ông đã mất. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Turing introduced the machine in ________.",
+      "answer": "1936",
+      "number": 11,
+      "explanation": "Đoạn A: 'the model, introduced in 1936 by the British mathematician Alan Turing'. Đáp án 1936."
+    },
+    {
+      "type": "gap",
+      "prompt": "Hilbert's decision problem is also known by the German term ________.",
+      "answer": "Entscheidungsproblem",
+      "number": 12,
+      "explanation": "Đoạn B: 'known as the Entscheidungsproblem, or decision problem'. Đáp án Entscheidungsproblem."
+    },
+    {
+      "type": "gap",
+      "prompt": "The related conclusions of Turing and Church are jointly known as the ________ thesis.",
+      "answer": "Church-Turing",
+      "number": 13,
+      "explanation": "Đoạn B: 'jointly commemorated today in what is known as the Church-Turing thesis'. Đáp án Church-Turing."
+    },
+    {
+      "type": "gap",
+      "prompt": "During the Second World War, Turing worked at Britain's ________ code-breaking centre.",
+      "answer": "Bletchley Park",
+      "number": 14,
+      "explanation": "Đoạn E: 'working at Britain's Bletchley Park code-breaking centre'. Đáp án Bletchley Park."
+    },
+    {
+      "type": "gap",
+      "prompt": "The highest annual award in computer science is named the ________ Award in his honour.",
+      "answer": "Turing",
+      "number": 15,
+      "explanation": "Đoạn E: 'is named the Turing Award in his honour'. Đáp án Turing."
+    }
+  ]
+}

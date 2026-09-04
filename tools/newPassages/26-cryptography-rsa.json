@@ -1,0 +1,141 @@
+{
+  "title": "The RSA Cryptosystem",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học máy tính phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "RSA is a method of encryption that allows two people to communicate securely over an insecure channel, such as the public internet, without ever having to meet in advance to agree on a shared secret code. It belongs to a category known as public-key cryptography, in which each user generates a linked pair of keys, one public and one private, so that a message encrypted using the public key can only be decrypted using the corresponding private key, which the recipient keeps entirely secret and never shares with anyone."
+    },
+    {
+      "letter": "B",
+      "text": "The method is named after Ron Rivest, Adi Shamir, and Leonard Adleman, three researchers at the Massachusetts Institute of Technology who developed it in 1977 and published it the following year. Although RSA is widely regarded as one of the earliest practical public-key cryptosystems to be publicly disclosed, it later emerged that a British mathematician, Clifford Cocks, had independently devised a mathematically equivalent method in 1973 while working for the British intelligence agency GCHQ, but his work remained classified and unpublished for decades, meaning it played no role in the public development of the technology and had no influence on the wider adoption of Rivest, Shamir, and Adleman's independently discovered version."
+    },
+    {
+      "letter": "C",
+      "text": "The security of RSA rests on a simple asymmetry in ordinary arithmetic: multiplying two very large prime numbers together is computationally fast, taking a modern computer only a fraction of a second even for numbers hundreds of digits long, whereas taking the resulting large product and working backward to determine which two prime numbers were originally multiplied together, a process called factoring, is enormously more difficult and, for sufficiently large numbers, remains computationally infeasible using any publicly known method running on any conventional computer, even one running continuously for many years. A user's public key is derived directly from the product of two large, secretly chosen prime numbers, while the corresponding private key depends on knowing what those two original prime factors actually were, information that only the key's original creator possesses."
+    },
+    {
+      "letter": "D",
+      "text": "Because directly encrypting large amounts of data using RSA's underlying mathematics is comparatively slow, in practice RSA is rarely used to encrypt an entire message directly. Instead, it is typically used only to securely establish a separate, temporary shared secret key at the start of a communication session, a key that is then used with a much faster, though not itself capable of the same secure key-exchange trick, encryption method called symmetric-key encryption to encrypt the actual bulk of the data being transmitted. This combined, hybrid approach, using RSA's clever key-exchange properties briefly at the outset of a connection and a faster method for the bulk of the data afterward, is the basis of most secure web browsing today, indicated to users by a padlock symbol in their browser's address bar."
+    },
+    {
+      "letter": "E",
+      "text": "RSA's long-term security depends critically on the continued difficulty of factoring the very large numbers involved, and this assumption faces a genuine, though not yet realised, long-term threat from quantum computing. In 1994, the mathematician Peter Shor devised an algorithm, now known as Shor's algorithm, that would allow a sufficiently powerful quantum computer to factor large numbers dramatically faster than any known method running on a conventional computer, which would, if such a machine were ever built at sufficient scale, render RSA and several closely related cryptographic systems insecure. Because building a quantum computer powerful and reliable enough to run Shor's algorithm against real-world key sizes remains a formidable, unsolved engineering challenge, cryptographers have nonetheless already begun developing and standardising a new generation of so-called post-quantum cryptographic methods, believed to resist attack even from a sufficiently powerful future quantum computer, well in advance of such a machine actually being built."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat public-key cryptography is\nii\tThe three researchers behind it, and an earlier secret discovery\niii\tThe arithmetic asymmetry that keeps it secure\niv\tWhy it is combined with a faster encryption method in practice\nv\tA future quantum threat, and preparations already under way\nvi\tHow governments regulate the export of encryption software\nvii\tWeaknesses discovered in the earliest RSA implementations",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa RSA là gì và giải thích mật mã khoá công khai hoạt động ra sao. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể về ba nhà nghiên cứu MIT và phát hiện độc lập trước đó của Clifford Cocks tại GCHQ. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C giải thích tính bất đối xứng: nhân số nguyên tố lớn thì nhanh, phân tích ngược thì cực khó. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói vì sao RSA thường chỉ dùng để trao đổi khoá, còn dữ liệu thật mã hoá bằng phương pháp đối xứng nhanh hơn. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về mối đe doạ từ máy tính lượng tử (thuật toán Shor) và nỗ lực chuẩn bị mật mã hậu lượng tử. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Two people using RSA must meet in advance to agree on a shared secret code.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: RSA cho phép giao tiếp an toàn 'without ever having to meet in advance to agree on a shared secret code'. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Clifford Cocks's independent discovery directly influenced the public development of RSA by Rivest, Shamir, and Adleman.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: công trình của Cocks 'remained classified and unpublished for decades, meaning it played no role in the public development'. Không ảnh hưởng gì. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Multiplying two large prime numbers together is computationally much faster than factoring their product back into the original primes.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'multiplying two very large prime numbers together is computationally fast... whereas... factoring, is enormously more difficult'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "In practice, RSA is normally used to encrypt the entire bulk of a message directly.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: 'RSA is rarely used to encrypt an entire message directly' — chỉ dùng để trao đổi khoá, phần dữ liệu lớn dùng mã hoá đối xứng nhanh hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A quantum computer capable of running Shor's algorithm against real-world key sizes has already been built.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'building a quantum computer powerful and reliable enough... remains a formidable, unsolved engineering challenge'. Chưa xây được, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "RSA was developed in 1977 by Ron Rivest, Adi Shamir, and ________.",
+      "answer": "Leonard Adleman",
+      "number": 11,
+      "explanation": "Đoạn B: 'named after Ron Rivest, Adi Shamir, and Leonard Adleman'. Đáp án Leonard Adleman."
+    },
+    {
+      "type": "gap",
+      "prompt": "Clifford Cocks worked for the British intelligence agency ________.",
+      "answer": "GCHQ",
+      "number": 12,
+      "explanation": "Đoạn B: 'while working for the British intelligence agency GCHQ'. Đáp án GCHQ."
+    },
+    {
+      "type": "gap",
+      "prompt": "The process of working backward from a product to its original prime numbers is called ________.",
+      "answer": "factoring",
+      "number": 13,
+      "explanation": "Đoạn C: 'a process called factoring'. Đáp án factoring."
+    },
+    {
+      "type": "gap",
+      "prompt": "RSA is typically combined with a faster method called ________ encryption for the bulk of the data.",
+      "answer": "symmetric-key",
+      "number": 14,
+      "explanation": "Đoạn D: 'a much faster... encryption method called symmetric-key encryption'. Đáp án symmetric-key."
+    },
+    {
+      "type": "gap",
+      "prompt": "Peter Shor devised his algorithm for factoring large numbers on a quantum computer in ________.",
+      "answer": "1994",
+      "number": 15,
+      "explanation": "Đoạn E: 'In 1994, the mathematician Peter Shor devised an algorithm'. Đáp án 1994."
+    }
+  ]
+}
