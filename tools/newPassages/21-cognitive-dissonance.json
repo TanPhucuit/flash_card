@@ -1,0 +1,141 @@
+{
+  "title": "Cognitive Dissonance",
+  "sourceNote": "Biên soạn dựa trên kiến thức tâm lý học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Cognitive dissonance is the mental discomfort a person experiences when holding two or more contradictory beliefs, values, or attitudes at the same time, or when their behaviour conflicts with their own stated beliefs. The theory was introduced in 1957 by the American psychologist Leon Festinger, who proposed that this discomfort is not merely an unpleasant feeling to be tolerated but an active psychological drive, comparable to hunger or thirst, that motivates a person to reduce the inconsistency by changing one of the conflicting elements, whether that means altering a belief, changing a behaviour, or reinterpreting the situation to make the contradiction seem smaller than it really is."
+    },
+    {
+      "letter": "B",
+      "text": "Festinger developed the theory partly from an unusual piece of fieldwork. In the mid-1950s, he and his colleagues infiltrated a small group whose leader had prophesied that the world would end on a specific date, to observe what would happen to the group's beliefs when the prophecy inevitably failed to come true. Rather than abandoning their beliefs when the predicted apocalypse did not occur, many group members instead became more fervent believers, reinterpreting the failed prophecy as evidence that the group's faith had spared the world from destruction, a striking illustration, Festinger argued, of how people often resolve dissonance by revising their interpretation of events rather than by discarding a deeply held belief."
+    },
+    {
+      "letter": "C",
+      "text": "A classic laboratory demonstration of the theory, conducted by Festinger and James Carlsmith in 1959, asked participants to perform a deliberately tedious task and then to tell a waiting participant, actually an actor working with the experimenters, that the task had been interesting. Some participants were paid twenty dollars for this small deception, while others were paid only one dollar. Counterintuitively, the group paid just one dollar later reported finding the task more genuinely enjoyable than the group paid twenty dollars. Festinger explained this by arguing that the poorly paid group had insufficient external justification for having lied, and so experienced greater dissonance between their action and their true opinion, which they resolved by unconsciously convincing themselves that the task truly had been enjoyable, whereas the well-paid group could simply attribute their lie to the substantial payment and felt comparatively little need to revise their genuine opinion of the task."
+    },
+    {
+      "letter": "D",
+      "text": "Cognitive dissonance has since been used to explain a wide range of everyday behaviour. Smokers who are well aware that smoking is harmful to their health often report finding ways to minimise this discomfort, for instance by focusing on stories of long-lived relatives who smoked, or by exaggerating the difficulty of quitting, rather than simply quitting outright, since these mental adjustments reduce the dissonance between their behaviour and their knowledge of its risks more easily than changing the underlying behaviour does. Similarly, people who have made a difficult or costly decision, such as purchasing an expensive car, frequently seek out information confirming that they made the right choice while actively avoiding information suggesting they made a mistake, a pattern researchers describe as post-decision dissonance reduction."
+    },
+    {
+      "letter": "E",
+      "text": "Later researchers have refined and, in some respects, challenged Festinger's original theory. Some psychologists have argued that dissonance is best understood not as arising from any logical inconsistency in itself but specifically from a threat to a person's self-image as competent, moral, or consistent, a view known as self-consistency theory. Others have proposed that dissonance functions primarily as a signal that helps people avoid actions with genuinely harmful consequences, rather than as a general drive toward abstract logical consistency for its own sake. Despite these ongoing theoretical disputes, the basic observation that people frequently adjust their beliefs to fit their actions, rather than the reverse, remains one of the most well-replicated and widely cited findings in the whole of social psychology."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the theory says, and who proposed it\nii\tA prophecy that failed, and beliefs that grew stronger\niii\tWhy the smaller payment produced the bigger effect\niv\tEveryday examples, from smoking to big purchases\nv\tLater debate over what actually drives the discomfort\nvi\tHow the theory has been applied in advertising\nvii\tCriticism that the original 1957 study was never replicated",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa bất hoà nhận thức là gì và ai đưa ra lý thuyết này (Festinger, 1957). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể về nhóm tiên tri ngày tận thế thất bại nhưng niềm tin của thành viên lại mạnh hơn. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C mô tả thí nghiệm 1959: người được trả 1 đô la thấy nhiệm vụ thú vị hơn người được trả 20 đô la. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về ví dụ đời thường: người hút thuốc và người mua xe đắt tiền. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói các nhà nghiên cứu sau này tranh luận về nguyên nhân thật sự gây ra cảm giác khó chịu đó. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Festinger viewed cognitive dissonance merely as an unpleasant feeling with no motivating effect on behaviour.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: dissonance 'not merely an unpleasant feeling to be tolerated but an active psychological drive... that motivates a person to reduce the inconsistency'. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "When the prophesied apocalypse failed to occur, most group members abandoned their beliefs immediately.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: 'Rather than abandoning their beliefs... many group members instead became more fervent believers'. Không từ bỏ mà càng tin tưởng hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Participants paid one dollar reported finding the tedious task more enjoyable than those paid twenty dollars.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'the group paid just one dollar later reported finding the task more genuinely enjoyable than the group paid twenty dollars'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "People who make an expensive purchase tend to actively seek out information suggesting they made a mistake.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: họ 'seek out information confirming that they made the right choice while actively avoiding information suggesting they made a mistake'. Tránh chứ không tìm bằng chứng sai lầm. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All psychologists today fully agree with Festinger's original explanation of what drives dissonance.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'Later researchers have refined and, in some respects, challenged Festinger's original theory'. Có tranh luận và thách thức, không phải đồng thuận hoàn toàn. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Festinger's theory of cognitive dissonance was introduced in ________.",
+      "answer": "1957",
+      "number": 11,
+      "explanation": "Đoạn A: 'The theory was introduced in 1957'. Đáp án 1957."
+    },
+    {
+      "type": "gap",
+      "prompt": "The 1959 experiment was conducted by Festinger and ________.",
+      "answer": "James Carlsmith",
+      "number": 12,
+      "explanation": "Đoạn C: 'conducted by Festinger and James Carlsmith in 1959'. Đáp án James Carlsmith."
+    },
+    {
+      "type": "gap",
+      "prompt": "Seeking confirming information after a costly decision is called post-decision dissonance ________.",
+      "answer": "reduction",
+      "number": 13,
+      "explanation": "Đoạn D: 'a pattern researchers describe as post-decision dissonance reduction'. Đáp án reduction."
+    },
+    {
+      "type": "gap",
+      "prompt": "The view that dissonance threatens a person's self-image is known as self-consistency ________.",
+      "answer": "theory",
+      "number": 14,
+      "explanation": "Đoạn E: 'a view known as self-consistency theory'. Đáp án theory."
+    },
+    {
+      "type": "gap",
+      "prompt": "Some smokers reduce their discomfort by focusing on stories of long-lived relatives who ________.",
+      "answer": "smoked",
+      "number": 15,
+      "explanation": "Đoạn D: '...by focusing on stories of long-lived relatives who smoked'. Đáp án smoked."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "The Dunning-Kruger Effect",
+  "sourceNote": "Biên soạn dựa trên kiến thức tâm lý học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Dunning-Kruger effect describes a pattern in which people with limited competence at a particular task tend to overestimate their own ability at that task, often quite substantially, because the very skills required to perform well are frequently the same skills required to recognise good performance in the first place. The effect is named after the psychologists David Dunning and Justin Kruger, who described it in a widely cited 1999 paper published after Kruger had noticed a newspaper report about a man who robbed banks with his face covered in lemon juice, apparently believing, wrongly, that the juice would render him invisible to security cameras."
+    },
+    {
+      "letter": "B",
+      "text": "In their original study, Dunning and Kruger tested university students on skills including logical reasoning, grammar, and humour, and then asked each participant to estimate how their own performance compared with that of their peers. Across all three tasks, participants who scored in the bottom quartile substantially overestimated their own ability, typically placing themselves around the fiftieth percentile despite performing considerably worse than that in reality, while the highest-scoring participants slightly underestimated their own relative standing, apparently assuming that a task which felt straightforward to them must feel similarly easy to everyone else."
+    },
+    {
+      "letter": "C",
+      "text": "The explanation Dunning and Kruger proposed centres on what they called a dual burden: a lack of competence at a task simultaneously prevents a person from performing it well and deprives them of the specific expertise needed to accurately judge good performance, whether their own or anyone else's. A novice chess player, for example, typically lacks not only the skill to play well but also the deeper understanding of the game required to recognise just how much stronger an expert's play truly is, making it correspondingly difficult for the novice to appreciate the full extent of the gap between their own ability and genuine expertise."
+    },
+    {
+      "letter": "D",
+      "text": "The Dunning-Kruger effect is frequently illustrated online using a graph showing confidence rising sharply with a small amount of initial knowledge, before dipping as a person becomes aware of the subject's true complexity, and then climbing again more gradually as genuine expertise develops, sometimes described informally as the \"peak of Mount Stupid\" followed by a \"valley of despair\". Although this graphic is a popular and intuitive way of depicting the general idea, Dunning and Kruger's original research did not actually plot confidence against increasing individual expertise over time in this way, and some psychologists have cautioned that the now-famous graph substantially overstates and oversimplifies the sequence of stages their data actually demonstrated."
+    },
+    {
+      "letter": "E",
+      "text": "In recent years, a number of statisticians have argued that at least part of the original Dunning-Kruger finding can be explained by a simple statistical artefact related to how the original data were compared, sometimes called regression to the mean, rather than genuinely reflecting a distinct cognitive bias unique to incompetence. Under this critique, comparing any two imperfectly correlated measurements, such as actual test performance and self-estimated performance, will tend to produce a similar pattern purely by chance, even using randomly generated data that contains no psychological effect at all. Dunning and other researchers in the original tradition have pushed back against this critique, arguing that while statistical artefacts may account for part of the observed pattern, converging evidence from other kinds of studies still supports a genuine, underlying psychological effect beyond pure statistical noise."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the effect is, and the story behind its name\nii\tThe original experiment, and what it found\niii\tWhy a lack of skill hides itself from the person who lacks it\niv\tA popular graph that oversimplifies the research\nv\tA statistical challenge to the whole finding\nvi\tHow the effect is used in job interviews\nvii\tTraining programmes designed to correct overconfidence",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa hiệu ứng Dunning-Kruger và kể câu chuyện tên gọi bắt nguồn từ kẻ cướp bôi nước cốt chanh lên mặt. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B mô tả thí nghiệm gốc 1999 kiểm tra sinh viên về suy luận logic, ngữ pháp, hài hước. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C giải thích 'gánh nặng kép': thiếu kỹ năng khiến người ta vừa làm kém vừa không nhận ra mình làm kém. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về biểu đồ 'Mount Stupid' phổ biến trên mạng nhưng không phản ánh đúng dữ liệu gốc. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về phê phán thống kê cho rằng hiệu ứng có thể chỉ là 'regression to the mean'. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "In the original study, the highest-scoring participants substantially overestimated their relative standing.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: người điểm cao nhất 'slightly underestimated their own relative standing' — đánh giá THẤP hơn thực tế một chút, không phải đánh giá cao quá mức. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Participants in the bottom quartile typically rated themselves near the fiftieth percentile.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'typically placing themselves around the fiftieth percentile despite performing considerably worse than that'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A novice chess player typically has the expertise needed to accurately judge how much better an expert plays.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: người mới chơi 'lacks not only the skill to play well but also the deeper understanding... required to recognise just how much stronger an expert's play truly is'. Thiếu khả năng đánh giá đó. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Dunning and Kruger's original research plotted confidence against expertise over time in the way the popular graph suggests.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: 'Dunning and Kruger's original research did not actually plot confidence against increasing individual expertise over time in this way'. Nghiên cứu gốc không vẽ như vậy. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Dunning has fully accepted the statistical critique and abandoned the idea of a genuine underlying psychological effect.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: Dunning 'pushed back against this critique, arguing that... converging evidence from other kinds of studies still supports a genuine, underlying psychological effect'. Không từ bỏ, mà phản bác lại phê phán. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The effect is named after psychologists David Dunning and ________.",
+      "answer": "Justin Kruger",
+      "number": 11,
+      "explanation": "Đoạn A: 'named after the psychologists David Dunning and Justin Kruger'. Đáp án Justin Kruger."
+    },
+    {
+      "type": "gap",
+      "prompt": "The effect was described in a widely cited paper published in ________.",
+      "answer": "1999",
+      "number": 12,
+      "explanation": "Đoạn A: 'a widely cited 1999 paper'. Đáp án 1999."
+    },
+    {
+      "type": "gap",
+      "prompt": "The bank robber believed that lemon juice would make him ________ to security cameras.",
+      "answer": "invisible",
+      "number": 13,
+      "explanation": "Đoạn A: '...believing, wrongly, that the juice would render him invisible to security cameras'. Đáp án invisible."
+    },
+    {
+      "type": "gap",
+      "prompt": "Dunning and Kruger called the core mechanism a dual ________.",
+      "answer": "burden",
+      "number": 14,
+      "explanation": "Đoạn C: 'centres on what they called a dual burden'. Đáp án burden."
+    },
+    {
+      "type": "gap",
+      "prompt": "The statistical critique of the effect is sometimes called regression to the ________.",
+      "answer": "mean",
+      "number": 15,
+      "explanation": "Đoạn E: 'a simple statistical artefact... sometimes called regression to the mean'. Đáp án mean."
+    }
+  ]
+}

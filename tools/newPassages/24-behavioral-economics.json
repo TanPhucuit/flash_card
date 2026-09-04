@@ -1,0 +1,141 @@
+{
+  "title": "Behavioural Economics",
+  "sourceNote": "Biên soạn dựa trên kiến thức kinh tế học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Behavioural economics combines insights from psychology with economic theory to study how real people actually make financial and other decisions, in contrast to traditional economic models that typically assume decision-makers are perfectly rational, fully informed, and consistently self-interested. Where classical economics generally treats deviations from rational, self-interested behaviour as errors that can safely be ignored on average, behavioural economics instead treats these deviations as regular, predictable patterns of human decision-making that deserve to be studied and modelled directly, since they recur systematically rather than cancelling out at random across a population."
+    },
+    {
+      "letter": "B",
+      "text": "Much of the field's foundational research was conducted by the psychologists Daniel Kahneman and Amos Tversky, beginning in the 1970s. Their work identified numerous cognitive biases, systematic patterns in which people's judgements depart from what a purely rational calculation would predict, and heuristics, mental shortcuts that generally work reasonably well but occasionally lead to significant and predictable errors. One especially influential concept to emerge from this research is loss aversion, the finding that people typically experience the pain of losing a given amount of money considerably more intensely than the pleasure of gaining the identical amount, an asymmetry that helps explain a wide range of otherwise puzzling financial behaviour, including a reluctance to sell investments at a loss even when doing so would be financially prudent. Kahneman was awarded the 2002 Nobel Memorial Prize in Economic Sciences for this research; Tversky, who had died in 1996, was ineligible, since the prize is not awarded posthumously."
+    },
+    {
+      "letter": "C",
+      "text": "Another central concept in behavioural economics is the framing effect, the finding that how a choice is presented, or framed, can significantly influence the decision a person makes even when the underlying options are logically identical. In a well-known illustration, people responded quite differently, in controlled experiments, to a medical treatment described as having a \"ninety percent survival rate\" compared with the mathematically identical treatment described as having a \"ten percent mortality rate\", generally rating the former description more favourably despite the two descriptions conveying exactly the same information. This sensitivity to framing has significant practical implications for how choices are presented to consumers, patients, and voters, since altering only the wording of a choice, without changing the underlying substance at all, can measurably shift the decisions people make."
+    },
+    {
+      "letter": "D",
+      "text": "The economist Richard Thaler extended behavioural economics into practical policy design, coining the term \"nudge\" to describe a small, low-cost change to how choices are presented that predictably steers people toward a particular decision without restricting their freedom to choose differently. A widely cited example involves automatic enrolment in workplace retirement savings plans: making participation the automatic default option, from which an employee must actively choose to opt out rather than actively opt in, has been shown in numerous studies to substantially raise participation rates, even though the actual financial terms on offer, and the ultimate freedom to decline, remain entirely unchanged. Thaler was awarded the 2017 Nobel Memorial Prize in Economic Sciences for his contributions to behavioural economics, including this influential concept."
+    },
+    {
+      "letter": "E",
+      "text": "Governments around the world have since established dedicated behavioural insights teams, informally nicknamed \"nudge units\" in several countries, to apply these findings to public policy, addressing goals ranging from increasing tax compliance and organ donor registration to encouraging healthier eating and improving the uptake of government benefits that eligible citizens might otherwise fail to claim. While such interventions have generally proved to be inexpensive relative to more traditional policy tools such as financial penalties or large public information campaigns, critics have questioned both their long-term effectiveness in some domains and the underlying ethics of governments deliberately exploiting known cognitive biases to influence citizens' choices, even when the stated aims of doing so are broadly beneficial to those citizens."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow the field differs from classical economic theory\nii\tBiases uncovered by two pioneering psychologists\niii\tHow the wording of a choice can change the decision\niv\tA term coined for steering choices without restricting them\nv\tGovernment teams applying the research to public policy\nvi\tCriticism that the underlying experiments cannot be replicated\nvii\tApplications in financial market forecasting",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói kinh tế học hành vi khác kinh tế học cổ điển thế nào — coi sai lệch là quy luật thay vì lỗi ngẫu nhiên. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về Kahneman và Tversky, và khái niệm ác cảm mất mát (loss aversion). Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về hiệu ứng đóng khung (framing effect) — cách diễn đạt ảnh hưởng tới quyết định. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về Thaler và khái niệm 'nudge' — thay đổi nhỏ định hướng lựa chọn mà không hạn chế tự do. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói các chính phủ lập 'nudge units' áp dụng nghiên cứu này vào chính sách công. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Classical economics generally treats deviations from rational behaviour as important patterns worth modelling directly.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: kinh tế học cổ điển 'treats deviations from rational, self-interested behaviour as errors that can safely be ignored on average'. Coi là lỗi bỏ qua được, không phải mẫu hình đáng mô hình hoá. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "People typically feel the pain of a loss more intensely than the pleasure of an equivalent gain.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'people typically experience the pain of losing a given amount of money considerably more intensely than the pleasure of gaining the identical amount'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Tversky shared the 2002 Nobel Memorial Prize in Economic Sciences with Kahneman.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn B: 'Tversky, who had died in 1996, was ineligible, since the prize is not awarded posthumously'. Ông không được nhận giải vì đã mất, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "In the experiment described, people rated the '90% survival rate' description less favourably than the '10% mortality rate' description.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C nói ngược: người tham gia 'rating the former [90% survival] description more favourably'. Đánh giá cách nói 'sống sót' cao hơn, không phải thấp hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Automatic enrolment in retirement savings plans changes the actual financial terms available to employees.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn D nói ngược: 'the actual financial terms on offer, and the ultimate freedom to decline, remain entirely unchanged'. Điều khoản tài chính không đổi. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Mental shortcuts that generally work well but occasionally lead to errors are called ________.",
+      "answer": "heuristics",
+      "number": 11,
+      "explanation": "Đoạn B: 'heuristics, mental shortcuts that generally work reasonably well but occasionally lead to significant and predictable errors'. Đáp án heuristics."
+    },
+    {
+      "type": "gap",
+      "prompt": "The finding that losses feel worse than equivalent gains feel good is called ________.",
+      "answer": "loss aversion",
+      "number": 12,
+      "explanation": "Đoạn B: 'One especially influential concept... is loss aversion'. Đáp án loss aversion."
+    },
+    {
+      "type": "gap",
+      "prompt": "How a choice is presented can change the decision made, a pattern called the ________ effect.",
+      "answer": "framing",
+      "number": 13,
+      "explanation": "Đoạn C: 'the framing effect, the finding that how a choice is presented... can significantly influence the decision'. Đáp án framing."
+    },
+    {
+      "type": "gap",
+      "prompt": "Thaler coined the term '________' for a small change that steers choices without restricting freedom.",
+      "answer": "nudge",
+      "number": 14,
+      "explanation": "Đoạn D: 'coining the term nudge to describe a small, low-cost change'. Đáp án nudge."
+    },
+    {
+      "type": "gap",
+      "prompt": "Thaler won the 2017 Nobel Memorial Prize in ________.",
+      "answer": "Economic Sciences",
+      "number": 15,
+      "explanation": "Đoạn D: 'Thaler was awarded the 2017 Nobel Memorial Prize in Economic Sciences'. Đáp án Economic Sciences."
+    }
+  ]
+}

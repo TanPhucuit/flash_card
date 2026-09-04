@@ -1,0 +1,141 @@
+{
+  "title": "Game Theory",
+  "sourceNote": "Biên soạn dựa trên kiến thức kinh tế học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Game theory is the mathematical study of strategic decision-making among rational participants whose outcomes depend not only on their own choices but also on the choices made by others. Although the term evokes recreational games, its methods apply to a vast range of situations involving interdependent decisions, including business competition, international diplomacy, evolutionary biology, and the design of auctions, wherever the best choice for one participant depends on what other participants are expected to do."
+    },
+    {
+      "letter": "B",
+      "text": "The mathematician John von Neumann laid much of the field's early theoretical groundwork in the 1920s and 1930s, and the discipline was substantially developed in the landmark 1944 book Theory of Games and Economic Behavior, written jointly with the economist Oskar Morgenstern. A pivotal later contribution came from the mathematician John Nash, who in 1950 introduced what became known as the Nash equilibrium, a situation in a game in which no participant can improve their own outcome by changing only their own strategy while every other participant's strategy remains fixed. Nash shared the 1994 Nobel Memorial Prize in Economic Sciences for this and related work, and his life later became widely known to the public through the film A Beautiful Mind, based on a biography of the same name."
+    },
+    {
+      "letter": "C",
+      "text": "Perhaps the most famous illustration in the entire field is the prisoner's dilemma, a scenario in which two individuals, arrested for a crime and questioned separately, must each decide independently whether to betray the other or to remain silent, without knowing what their accomplice has decided. If both remain silent, both receive a relatively light sentence; if both betray each other, both receive a moderate sentence; but if one betrays while the other stays silent, the betrayer goes free while the silent partner receives the harshest sentence of all. The dilemma illustrates a scenario in which each individual's own rational self-interest, considered separately, leads both toward betrayal, the Nash equilibrium of the game, even though mutual silence would objectively have produced a better outcome for both of them jointly."
+    },
+    {
+      "letter": "D",
+      "text": "In many real-world situations, the same interaction between the same parties recurs repeatedly over time rather than occurring only once, a variant known as the repeated or iterated prisoner's dilemma, and this repetition changes the strategic calculation substantially, since betraying an opponent in one round can provoke retaliation in future rounds. In a well-known computer tournament organised by the political scientist Robert Axelrod in 1980, in which submitted computer programs representing different strategies played the iterated prisoner's dilemma repeatedly against one another, a remarkably simple strategy called tit-for-tat, which cooperates on the first move and thereafter simply repeats whatever the opponent did on the previous move, outperformed every other, more elaborate strategy entered into the tournament."
+    },
+    {
+      "letter": "E",
+      "text": "Game theory has since been applied well beyond its original economic setting. In evolutionary biology, researchers use game-theoretic models to explain why cooperation and altruism can persist and even flourish among animals despite the seemingly stronger evolutionary logic favouring pure self-interest, since cooperative strategies can, under certain conditions, outperform purely selfish ones over many repeated interactions within a population. Auction designers draw on game theory to structure the rules of high-value auctions, such as those governments use to sell mobile phone spectrum licences to telecommunications companies, specifically to discourage bidders from acting strategically in ways that would otherwise depress the final price paid or distort the fairness of the outcome."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the field studies, and where it is applied\nii\tA foundational book, and the equilibrium named after Nash\niii\tA dilemma in which self-interest produces a worse outcome for both\niv\tA simple strategy that beat every other in a tournament\nv\tApplications in evolution and in auction design\nvi\tHow von Neumann first became interested in mathematics\nvii\tCriticism that real people rarely behave as rationally as the theory assumes",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa lý thuyết trò chơi là gì và lĩnh vực nó áp dụng. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về cuốn sách nền tảng 1944 và cân bằng Nash 1950. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C mô tả song đề tù nhân — mỗi người theo đuổi lợi ích riêng lại cho kết quả tệ hơn cho cả hai. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D kể giải đấu Axelrod 1980, chiến lược tit-for-tat đơn giản thắng mọi chiến lược khác. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói ứng dụng trong sinh học tiến hoá và thiết kế đấu giá. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Game theory applies only to recreational games rather than to real-world situations.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: 'its methods apply to a vast range of situations involving interdependent decisions' như kinh doanh, ngoại giao, sinh học. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A Nash equilibrium requires that every participant can still improve their outcome by changing their own strategy alone.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: cân bằng Nash là khi 'no participant can improve their own outcome by changing only their own strategy'. Không cải thiện được, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "In the prisoner's dilemma, mutual silence would produce a better joint outcome than mutual betrayal.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'mutual silence would objectively have produced a better outcome for both of them jointly'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "In Axelrod's 1980 tournament, the most complex strategies entered performed the best overall.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: 'a remarkably simple strategy called tit-for-tat... outperformed every other, more elaborate strategy'. Chiến lược ĐƠN GIẢN thắng, không phải phức tạp. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Game-theoretic models help explain why cooperative behaviour can persist in animal populations.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'researchers use game-theoretic models to explain why cooperation and altruism can persist and even flourish among animals'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Von Neumann's 1944 book was co-written with the economist ________.",
+      "answer": "Oskar Morgenstern",
+      "number": 11,
+      "explanation": "Đoạn B: 'written jointly with the economist Oskar Morgenstern'. Đáp án Oskar Morgenstern."
+    },
+    {
+      "type": "gap",
+      "prompt": "Nash shared the 1994 Nobel Memorial Prize in ________.",
+      "answer": "Economic Sciences",
+      "number": 12,
+      "explanation": "Đoạn B: 'shared the 1994 Nobel Memorial Prize in Economic Sciences'. Đáp án Economic Sciences."
+    },
+    {
+      "type": "gap",
+      "prompt": "Nash's life became widely known through the film ________.",
+      "answer": "A Beautiful Mind",
+      "number": 13,
+      "explanation": "Đoạn B: 'through the film A Beautiful Mind'. Đáp án A Beautiful Mind."
+    },
+    {
+      "type": "gap",
+      "prompt": "Axelrod's tournament tested strategies for the repeated, or iterated, prisoner's ________.",
+      "answer": "dilemma",
+      "number": 14,
+      "explanation": "Đoạn D: '...played the iterated prisoner's dilemma repeatedly against one another'. Đáp án dilemma."
+    },
+    {
+      "type": "gap",
+      "prompt": "Governments use game theory to design auctions for mobile phone spectrum ________.",
+      "answer": "licences",
+      "number": 15,
+      "explanation": "Đoạn E: '...to sell mobile phone spectrum licences to telecommunications companies'. Đáp án licences."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "The Sapir-Whorf Hypothesis",
+  "sourceNote": "Biên soạn dựa trên kiến thức ngôn ngữ học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Sapir-Whorf hypothesis, also known as linguistic relativity, proposes that the particular language a person speaks influences, to some degree, how that person perceives and thinks about the world, so that speakers of structurally different languages may experience certain aspects of reality in subtly different ways. The idea is named after the linguist Edward Sapir and his student Benjamin Lee Whorf, though neither of them ever formulated a single, precise statement of the hypothesis; much of what is now called Sapir-Whorf theory was assembled and named by later scholars drawing on scattered observations in their writings."
+    },
+    {
+      "letter": "B",
+      "text": "Whorf's most famous, and most heavily criticised, illustration involved his claim, based on limited fieldwork, that the Hopi language of the American Southwest lacked grammatical structures for referring to time in the way English does, from which he inferred that Hopi speakers might conceptualise time altogether differently from English speakers. Later linguists, conducting more thorough fieldwork with fluent Hopi speakers, found that this claim was substantially inaccurate: Hopi does in fact possess ways of expressing temporal concepts, and the specific inference Whorf drew from his limited and, in places, mistaken data has since been widely rejected by linguists, becoming something of a cautionary tale about drawing sweeping conclusions about thought from limited grammatical observations."
+    },
+    {
+      "letter": "C",
+      "text": "Partly because of such early overreaching claims, a strong version of the hypothesis, sometimes called linguistic determinism, holding that language rigidly determines and limits the very thoughts a person is capable of having, has been almost universally rejected by contemporary linguists as demonstrably too extreme, not least because people can clearly think about, and later find words for, concepts their existing language does not yet have a convenient word for, and can readily translate ideas between structurally very different languages, if sometimes only with additional explanation. A much weaker version of the hypothesis, however, holding merely that language can subtly influence habitual patterns of thought and attention without rigidly limiting or determining what a person is fundamentally capable of thinking, has found considerably more support in rigorous modern experimental research."
+    },
+    {
+      "letter": "D",
+      "text": "One frequently cited body of supporting evidence for this weaker version comes from research on languages that use absolute directional terms, such as north, south, east, and west, for everyday spatial description, rather than relative terms such as left and right, a feature found in a number of Australian Aboriginal languages including Guugu Yimithirr. Speakers of these languages have been shown in careful experiments to maintain a remarkably precise, almost constant awareness of cardinal direction, a skill many speakers of languages relying primarily on relative terms find genuinely difficult to replicate even with deliberate effort, suggesting that habitually using a particular grammatical system for space may indeed train a distinct cognitive skill that goes well beyond ordinary language use itself."
+    },
+    {
+      "letter": "E",
+      "text": "Other well-studied areas of supporting evidence include research on colour perception and grammatical gender. Some studies suggest that speakers of languages with separate basic words for light blue and dark blue, as opposed to a single umbrella word covering the whole range as in English, can distinguish shades within that colour range marginally faster in controlled laboratory tasks. Similarly, in languages that assign grammatical gender to inanimate nouns, speakers have in some experiments been shown to describe those objects using adjectives stereotypically associated with the assigned grammatical gender, for instance describing a bridge assigned a grammatically \"feminine\" gender using words such as elegant or slender, and the same bridge assigned a grammatically \"masculine\" gender in a different language using words such as sturdy or strong, even though the physical object being described was, in each case, identical."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the hypothesis proposes, and where its name comes from\nii\tA famous claim about time that was later found to be wrong\niii\tWhy the strongest version of the idea has been rejected\niv\tSpeakers who stay constantly aware of compass direction\nv\tEvidence from colour words and grammatical gender\nvi\tHow children first acquire their native language\nvii\tEfforts to revive endangered indigenous languages",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa giả thuyết Sapir-Whorf là gì và nguồn gốc tên gọi. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể tuyên bố nổi tiếng của Whorf về ngôn ngữ Hopi và thời gian, sau này bị chứng minh là sai. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói vì sao phiên bản mạnh (linguistic determinism) bị bác bỏ gần như hoàn toàn. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về người nói ngôn ngữ dùng hướng tuyệt đối (như Guugu Yimithirr) luôn ý thức được phương hướng la bàn. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về bằng chứng từ nhận thức màu sắc và giống ngữ pháp. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Sapir and Whorf themselves wrote a single, precise formal statement of the hypothesis named after them.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: 'neither of them ever formulated a single, precise statement of the hypothesis'. Không ai trong hai người viết ra tuyên bố chính xác đó. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Later fieldwork found that Hopi does have ways of expressing temporal concepts.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'Hopi does in fact possess ways of expressing temporal concepts'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Contemporary linguists broadly accept linguistic determinism, the idea that language rigidly limits what a person can think.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: phiên bản mạnh 'has been almost universally rejected by contemporary linguists as demonstrably too extreme'. Bị bác bỏ gần như hoàn toàn, không phải được chấp nhận. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Speakers of languages using relative directional terms find it easy to replicate the constant compass awareness of speakers using absolute terms.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: người nói ngôn ngữ dùng từ tương đối 'find genuinely difficult to replicate even with deliberate effort'. Khó tái tạo chứ không dễ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "In the bridge experiment, the physical object described by speakers of two different languages was identical in each case.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'even though the physical object being described was, in each case, identical'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The Sapir-Whorf hypothesis is also known as linguistic ________.",
+      "answer": "relativity",
+      "number": 11,
+      "explanation": "Đoạn A: 'also known as linguistic relativity'. Đáp án relativity."
+    },
+    {
+      "type": "gap",
+      "prompt": "Whorf's claim about time concerned speakers of the ________ language.",
+      "answer": "Hopi",
+      "number": 12,
+      "explanation": "Đoạn B: 'his claim... that the Hopi language of the American Southwest lacked grammatical structures for referring to time'. Đáp án Hopi."
+    },
+    {
+      "type": "gap",
+      "prompt": "The strong version of the hypothesis is sometimes called linguistic ________.",
+      "answer": "determinism",
+      "number": 13,
+      "explanation": "Đoạn C: 'a strong version of the hypothesis, sometimes called linguistic determinism'. Đáp án determinism."
+    },
+    {
+      "type": "gap",
+      "prompt": "Languages using absolute directional terms rather than left and right include Guugu ________.",
+      "answer": "Yimithirr",
+      "number": 14,
+      "explanation": "Đoạn D: 'a number of Australian Aboriginal languages including Guugu Yimithirr'. Đáp án Yimithirr."
+    },
+    {
+      "type": "gap",
+      "prompt": "Speakers of languages assigning a 'feminine' gender to bridges described them using words such as elegant or ________.",
+      "answer": "slender",
+      "number": 15,
+      "explanation": "Đoạn E: '...describing a bridge assigned a grammatically feminine gender using words such as elegant or slender'. Đáp án slender."
+    }
+  ]
+}

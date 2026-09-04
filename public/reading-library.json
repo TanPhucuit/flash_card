@@ -13337,6 +13337,886 @@
           "id": "nl2-20-radiocarbon-dating-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-21-cognitive-dissonance-p1",
+      "order": 73,
+      "title": "Cognitive Dissonance",
+      "text": "A\nCognitive dissonance is the mental discomfort a person experiences when holding two or more contradictory beliefs, values, or attitudes at the same time, or when their behaviour conflicts with their own stated beliefs. The theory was introduced in 1957 by the American psychologist Leon Festinger, who proposed that this discomfort is not merely an unpleasant feeling to be tolerated but an active psychological drive, comparable to hunger or thirst, that motivates a person to reduce the inconsistency by changing one of the conflicting elements, whether that means altering a belief, changing a behaviour, or reinterpreting the situation to make the contradiction seem smaller than it really is.\n\nB\nFestinger developed the theory partly from an unusual piece of fieldwork. In the mid-1950s, he and his colleagues infiltrated a small group whose leader had prophesied that the world would end on a specific date, to observe what would happen to the group's beliefs when the prophecy inevitably failed to come true. Rather than abandoning their beliefs when the predicted apocalypse did not occur, many group members instead became more fervent believers, reinterpreting the failed prophecy as evidence that the group's faith had spared the world from destruction, a striking illustration, Festinger argued, of how people often resolve dissonance by revising their interpretation of events rather than by discarding a deeply held belief.\n\nC\nA classic laboratory demonstration of the theory, conducted by Festinger and James Carlsmith in 1959, asked participants to perform a deliberately tedious task and then to tell a waiting participant, actually an actor working with the experimenters, that the task had been interesting. Some participants were paid twenty dollars for this small deception, while others were paid only one dollar. Counterintuitively, the group paid just one dollar later reported finding the task more genuinely enjoyable than the group paid twenty dollars. Festinger explained this by arguing that the poorly paid group had insufficient external justification for having lied, and so experienced greater dissonance between their action and their true opinion, which they resolved by unconsciously convincing themselves that the task truly had been enjoyable, whereas the well-paid group could simply attribute their lie to the substantial payment and felt comparatively little need to revise their genuine opinion of the task.\n\nD\nCognitive dissonance has since been used to explain a wide range of everyday behaviour. Smokers who are well aware that smoking is harmful to their health often report finding ways to minimise this discomfort, for instance by focusing on stories of long-lived relatives who smoked, or by exaggerating the difficulty of quitting, rather than simply quitting outright, since these mental adjustments reduce the dissonance between their behaviour and their knowledge of its risks more easily than changing the underlying behaviour does. Similarly, people who have made a difficult or costly decision, such as purchasing an expensive car, frequently seek out information confirming that they made the right choice while actively avoiding information suggesting they made a mistake, a pattern researchers describe as post-decision dissonance reduction.\n\nE\nLater researchers have refined and, in some respects, challenged Festinger's original theory. Some psychologists have argued that dissonance is best understood not as arising from any logical inconsistency in itself but specifically from a threat to a person's self-image as competent, moral, or consistent, a view known as self-consistency theory. Others have proposed that dissonance functions primarily as a signal that helps people avoid actions with genuinely harmful consequences, rather than as a general drive toward abstract logical consistency for its own sake. Despite these ongoing theoretical disputes, the basic observation that people frequently adjust their beliefs to fit their actions, rather than the reverse, remains one of the most well-replicated and widely cited findings in the whole of social psychology.\n\n— Biên soạn dựa trên kiến thức tâm lý học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the theory says, and who proposed it\nii\tA prophecy that failed, and beliefs that grew stronger\niii\tWhy the smaller payment produced the bigger effect\niv\tEveryday examples, from smoking to big purchases\nv\tLater debate over what actually drives the discomfort\nvi\tHow the theory has been applied in advertising\nvii\tCriticism that the original 1957 study was never replicated",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa bất hoà nhận thức là gì và ai đưa ra lý thuyết này (Festinger, 1957). Đúng tiêu đề i.",
+          "id": "nl2-21-cognitive-dissonance-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể về nhóm tiên tri ngày tận thế thất bại nhưng niềm tin của thành viên lại mạnh hơn. Đúng tiêu đề ii.",
+          "id": "nl2-21-cognitive-dissonance-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C mô tả thí nghiệm 1959: người được trả 1 đô la thấy nhiệm vụ thú vị hơn người được trả 20 đô la. Đúng tiêu đề iii.",
+          "id": "nl2-21-cognitive-dissonance-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về ví dụ đời thường: người hút thuốc và người mua xe đắt tiền. Đúng tiêu đề iv.",
+          "id": "nl2-21-cognitive-dissonance-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói các nhà nghiên cứu sau này tranh luận về nguyên nhân thật sự gây ra cảm giác khó chịu đó. Đúng tiêu đề v.",
+          "id": "nl2-21-cognitive-dissonance-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Festinger viewed cognitive dissonance merely as an unpleasant feeling with no motivating effect on behaviour.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: dissonance 'not merely an unpleasant feeling to be tolerated but an active psychological drive... that motivates a person to reduce the inconsistency'. FALSE.",
+          "id": "nl2-21-cognitive-dissonance-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "When the prophesied apocalypse failed to occur, most group members abandoned their beliefs immediately.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: 'Rather than abandoning their beliefs... many group members instead became more fervent believers'. Không từ bỏ mà càng tin tưởng hơn. FALSE.",
+          "id": "nl2-21-cognitive-dissonance-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Participants paid one dollar reported finding the tedious task more enjoyable than those paid twenty dollars.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'the group paid just one dollar later reported finding the task more genuinely enjoyable than the group paid twenty dollars'. Đúng ý đề nên TRUE.",
+          "id": "nl2-21-cognitive-dissonance-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "People who make an expensive purchase tend to actively seek out information suggesting they made a mistake.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: họ 'seek out information confirming that they made the right choice while actively avoiding information suggesting they made a mistake'. Tránh chứ không tìm bằng chứng sai lầm. FALSE.",
+          "id": "nl2-21-cognitive-dissonance-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All psychologists today fully agree with Festinger's original explanation of what drives dissonance.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'Later researchers have refined and, in some respects, challenged Festinger's original theory'. Có tranh luận và thách thức, không phải đồng thuận hoàn toàn. FALSE.",
+          "id": "nl2-21-cognitive-dissonance-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Festinger's theory of cognitive dissonance was introduced in ________.",
+          "answer": "1957",
+          "number": 11,
+          "explanation": "Đoạn A: 'The theory was introduced in 1957'. Đáp án 1957.",
+          "id": "nl2-21-cognitive-dissonance-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The 1959 experiment was conducted by Festinger and ________.",
+          "answer": "James Carlsmith",
+          "number": 12,
+          "explanation": "Đoạn C: 'conducted by Festinger and James Carlsmith in 1959'. Đáp án James Carlsmith.",
+          "id": "nl2-21-cognitive-dissonance-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Seeking confirming information after a costly decision is called post-decision dissonance ________.",
+          "answer": "reduction",
+          "number": 13,
+          "explanation": "Đoạn D: 'a pattern researchers describe as post-decision dissonance reduction'. Đáp án reduction.",
+          "id": "nl2-21-cognitive-dissonance-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The view that dissonance threatens a person's self-image is known as self-consistency ________.",
+          "answer": "theory",
+          "number": 14,
+          "explanation": "Đoạn E: 'a view known as self-consistency theory'. Đáp án theory.",
+          "id": "nl2-21-cognitive-dissonance-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Some smokers reduce their discomfort by focusing on stories of long-lived relatives who ________.",
+          "answer": "smoked",
+          "number": 15,
+          "explanation": "Đoạn D: '...by focusing on stories of long-lived relatives who smoked'. Đáp án smoked.",
+          "id": "nl2-21-cognitive-dissonance-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-22-dunning-kruger-p1",
+      "order": 74,
+      "title": "The Dunning-Kruger Effect",
+      "text": "A\nThe Dunning-Kruger effect describes a pattern in which people with limited competence at a particular task tend to overestimate their own ability at that task, often quite substantially, because the very skills required to perform well are frequently the same skills required to recognise good performance in the first place. The effect is named after the psychologists David Dunning and Justin Kruger, who described it in a widely cited 1999 paper published after Kruger had noticed a newspaper report about a man who robbed banks with his face covered in lemon juice, apparently believing, wrongly, that the juice would render him invisible to security cameras.\n\nB\nIn their original study, Dunning and Kruger tested university students on skills including logical reasoning, grammar, and humour, and then asked each participant to estimate how their own performance compared with that of their peers. Across all three tasks, participants who scored in the bottom quartile substantially overestimated their own ability, typically placing themselves around the fiftieth percentile despite performing considerably worse than that in reality, while the highest-scoring participants slightly underestimated their own relative standing, apparently assuming that a task which felt straightforward to them must feel similarly easy to everyone else.\n\nC\nThe explanation Dunning and Kruger proposed centres on what they called a dual burden: a lack of competence at a task simultaneously prevents a person from performing it well and deprives them of the specific expertise needed to accurately judge good performance, whether their own or anyone else's. A novice chess player, for example, typically lacks not only the skill to play well but also the deeper understanding of the game required to recognise just how much stronger an expert's play truly is, making it correspondingly difficult for the novice to appreciate the full extent of the gap between their own ability and genuine expertise.\n\nD\nThe Dunning-Kruger effect is frequently illustrated online using a graph showing confidence rising sharply with a small amount of initial knowledge, before dipping as a person becomes aware of the subject's true complexity, and then climbing again more gradually as genuine expertise develops, sometimes described informally as the \"peak of Mount Stupid\" followed by a \"valley of despair\". Although this graphic is a popular and intuitive way of depicting the general idea, Dunning and Kruger's original research did not actually plot confidence against increasing individual expertise over time in this way, and some psychologists have cautioned that the now-famous graph substantially overstates and oversimplifies the sequence of stages their data actually demonstrated.\n\nE\nIn recent years, a number of statisticians have argued that at least part of the original Dunning-Kruger finding can be explained by a simple statistical artefact related to how the original data were compared, sometimes called regression to the mean, rather than genuinely reflecting a distinct cognitive bias unique to incompetence. Under this critique, comparing any two imperfectly correlated measurements, such as actual test performance and self-estimated performance, will tend to produce a similar pattern purely by chance, even using randomly generated data that contains no psychological effect at all. Dunning and other researchers in the original tradition have pushed back against this critique, arguing that while statistical artefacts may account for part of the observed pattern, converging evidence from other kinds of studies still supports a genuine, underlying psychological effect beyond pure statistical noise.\n\n— Biên soạn dựa trên kiến thức tâm lý học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the effect is, and the story behind its name\nii\tThe original experiment, and what it found\niii\tWhy a lack of skill hides itself from the person who lacks it\niv\tA popular graph that oversimplifies the research\nv\tA statistical challenge to the whole finding\nvi\tHow the effect is used in job interviews\nvii\tTraining programmes designed to correct overconfidence",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa hiệu ứng Dunning-Kruger và kể câu chuyện tên gọi bắt nguồn từ kẻ cướp bôi nước cốt chanh lên mặt. Đúng tiêu đề i.",
+          "id": "nl2-22-dunning-kruger-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B mô tả thí nghiệm gốc 1999 kiểm tra sinh viên về suy luận logic, ngữ pháp, hài hước. Đúng tiêu đề ii.",
+          "id": "nl2-22-dunning-kruger-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C giải thích 'gánh nặng kép': thiếu kỹ năng khiến người ta vừa làm kém vừa không nhận ra mình làm kém. Đúng tiêu đề iii.",
+          "id": "nl2-22-dunning-kruger-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về biểu đồ 'Mount Stupid' phổ biến trên mạng nhưng không phản ánh đúng dữ liệu gốc. Đúng tiêu đề iv.",
+          "id": "nl2-22-dunning-kruger-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về phê phán thống kê cho rằng hiệu ứng có thể chỉ là 'regression to the mean'. Đúng tiêu đề v.",
+          "id": "nl2-22-dunning-kruger-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "In the original study, the highest-scoring participants substantially overestimated their relative standing.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: người điểm cao nhất 'slightly underestimated their own relative standing' — đánh giá THẤP hơn thực tế một chút, không phải đánh giá cao quá mức. FALSE.",
+          "id": "nl2-22-dunning-kruger-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Participants in the bottom quartile typically rated themselves near the fiftieth percentile.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'typically placing themselves around the fiftieth percentile despite performing considerably worse than that'. Đúng ý đề nên TRUE.",
+          "id": "nl2-22-dunning-kruger-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A novice chess player typically has the expertise needed to accurately judge how much better an expert plays.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: người mới chơi 'lacks not only the skill to play well but also the deeper understanding... required to recognise just how much stronger an expert's play truly is'. Thiếu khả năng đánh giá đó. FALSE.",
+          "id": "nl2-22-dunning-kruger-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Dunning and Kruger's original research plotted confidence against expertise over time in the way the popular graph suggests.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: 'Dunning and Kruger's original research did not actually plot confidence against increasing individual expertise over time in this way'. Nghiên cứu gốc không vẽ như vậy. FALSE.",
+          "id": "nl2-22-dunning-kruger-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Dunning has fully accepted the statistical critique and abandoned the idea of a genuine underlying psychological effect.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: Dunning 'pushed back against this critique, arguing that... converging evidence from other kinds of studies still supports a genuine, underlying psychological effect'. Không từ bỏ, mà phản bác lại phê phán. FALSE.",
+          "id": "nl2-22-dunning-kruger-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The effect is named after psychologists David Dunning and ________.",
+          "answer": "Justin Kruger",
+          "number": 11,
+          "explanation": "Đoạn A: 'named after the psychologists David Dunning and Justin Kruger'. Đáp án Justin Kruger.",
+          "id": "nl2-22-dunning-kruger-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The effect was described in a widely cited paper published in ________.",
+          "answer": "1999",
+          "number": 12,
+          "explanation": "Đoạn A: 'a widely cited 1999 paper'. Đáp án 1999.",
+          "id": "nl2-22-dunning-kruger-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The bank robber believed that lemon juice would make him ________ to security cameras.",
+          "answer": "invisible",
+          "number": 13,
+          "explanation": "Đoạn A: '...believing, wrongly, that the juice would render him invisible to security cameras'. Đáp án invisible.",
+          "id": "nl2-22-dunning-kruger-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Dunning and Kruger called the core mechanism a dual ________.",
+          "answer": "burden",
+          "number": 14,
+          "explanation": "Đoạn C: 'centres on what they called a dual burden'. Đáp án burden.",
+          "id": "nl2-22-dunning-kruger-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The statistical critique of the effect is sometimes called regression to the ________.",
+          "answer": "mean",
+          "number": 15,
+          "explanation": "Đoạn E: 'a simple statistical artefact... sometimes called regression to the mean'. Đáp án mean.",
+          "id": "nl2-22-dunning-kruger-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-23-game-theory-p1",
+      "order": 75,
+      "title": "Game Theory",
+      "text": "A\nGame theory is the mathematical study of strategic decision-making among rational participants whose outcomes depend not only on their own choices but also on the choices made by others. Although the term evokes recreational games, its methods apply to a vast range of situations involving interdependent decisions, including business competition, international diplomacy, evolutionary biology, and the design of auctions, wherever the best choice for one participant depends on what other participants are expected to do.\n\nB\nThe mathematician John von Neumann laid much of the field's early theoretical groundwork in the 1920s and 1930s, and the discipline was substantially developed in the landmark 1944 book Theory of Games and Economic Behavior, written jointly with the economist Oskar Morgenstern. A pivotal later contribution came from the mathematician John Nash, who in 1950 introduced what became known as the Nash equilibrium, a situation in a game in which no participant can improve their own outcome by changing only their own strategy while every other participant's strategy remains fixed. Nash shared the 1994 Nobel Memorial Prize in Economic Sciences for this and related work, and his life later became widely known to the public through the film A Beautiful Mind, based on a biography of the same name.\n\nC\nPerhaps the most famous illustration in the entire field is the prisoner's dilemma, a scenario in which two individuals, arrested for a crime and questioned separately, must each decide independently whether to betray the other or to remain silent, without knowing what their accomplice has decided. If both remain silent, both receive a relatively light sentence; if both betray each other, both receive a moderate sentence; but if one betrays while the other stays silent, the betrayer goes free while the silent partner receives the harshest sentence of all. The dilemma illustrates a scenario in which each individual's own rational self-interest, considered separately, leads both toward betrayal, the Nash equilibrium of the game, even though mutual silence would objectively have produced a better outcome for both of them jointly.\n\nD\nIn many real-world situations, the same interaction between the same parties recurs repeatedly over time rather than occurring only once, a variant known as the repeated or iterated prisoner's dilemma, and this repetition changes the strategic calculation substantially, since betraying an opponent in one round can provoke retaliation in future rounds. In a well-known computer tournament organised by the political scientist Robert Axelrod in 1980, in which submitted computer programs representing different strategies played the iterated prisoner's dilemma repeatedly against one another, a remarkably simple strategy called tit-for-tat, which cooperates on the first move and thereafter simply repeats whatever the opponent did on the previous move, outperformed every other, more elaborate strategy entered into the tournament.\n\nE\nGame theory has since been applied well beyond its original economic setting. In evolutionary biology, researchers use game-theoretic models to explain why cooperation and altruism can persist and even flourish among animals despite the seemingly stronger evolutionary logic favouring pure self-interest, since cooperative strategies can, under certain conditions, outperform purely selfish ones over many repeated interactions within a population. Auction designers draw on game theory to structure the rules of high-value auctions, such as those governments use to sell mobile phone spectrum licences to telecommunications companies, specifically to discourage bidders from acting strategically in ways that would otherwise depress the final price paid or distort the fairness of the outcome.\n\n— Biên soạn dựa trên kiến thức kinh tế học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the field studies, and where it is applied\nii\tA foundational book, and the equilibrium named after Nash\niii\tA dilemma in which self-interest produces a worse outcome for both\niv\tA simple strategy that beat every other in a tournament\nv\tApplications in evolution and in auction design\nvi\tHow von Neumann first became interested in mathematics\nvii\tCriticism that real people rarely behave as rationally as the theory assumes",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa lý thuyết trò chơi là gì và lĩnh vực nó áp dụng. Đúng tiêu đề i.",
+          "id": "nl2-23-game-theory-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về cuốn sách nền tảng 1944 và cân bằng Nash 1950. Đúng tiêu đề ii.",
+          "id": "nl2-23-game-theory-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C mô tả song đề tù nhân — mỗi người theo đuổi lợi ích riêng lại cho kết quả tệ hơn cho cả hai. Đúng tiêu đề iii.",
+          "id": "nl2-23-game-theory-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D kể giải đấu Axelrod 1980, chiến lược tit-for-tat đơn giản thắng mọi chiến lược khác. Đúng tiêu đề iv.",
+          "id": "nl2-23-game-theory-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói ứng dụng trong sinh học tiến hoá và thiết kế đấu giá. Đúng tiêu đề v.",
+          "id": "nl2-23-game-theory-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Game theory applies only to recreational games rather than to real-world situations.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: 'its methods apply to a vast range of situations involving interdependent decisions' như kinh doanh, ngoại giao, sinh học. FALSE.",
+          "id": "nl2-23-game-theory-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A Nash equilibrium requires that every participant can still improve their outcome by changing their own strategy alone.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: cân bằng Nash là khi 'no participant can improve their own outcome by changing only their own strategy'. Không cải thiện được, đề nói ngược nên FALSE.",
+          "id": "nl2-23-game-theory-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "In the prisoner's dilemma, mutual silence would produce a better joint outcome than mutual betrayal.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'mutual silence would objectively have produced a better outcome for both of them jointly'. Đúng ý đề nên TRUE.",
+          "id": "nl2-23-game-theory-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "In Axelrod's 1980 tournament, the most complex strategies entered performed the best overall.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: 'a remarkably simple strategy called tit-for-tat... outperformed every other, more elaborate strategy'. Chiến lược ĐƠN GIẢN thắng, không phải phức tạp. FALSE.",
+          "id": "nl2-23-game-theory-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Game-theoretic models help explain why cooperative behaviour can persist in animal populations.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'researchers use game-theoretic models to explain why cooperation and altruism can persist and even flourish among animals'. Đúng ý đề nên TRUE.",
+          "id": "nl2-23-game-theory-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Von Neumann's 1944 book was co-written with the economist ________.",
+          "answer": "Oskar Morgenstern",
+          "number": 11,
+          "explanation": "Đoạn B: 'written jointly with the economist Oskar Morgenstern'. Đáp án Oskar Morgenstern.",
+          "id": "nl2-23-game-theory-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Nash shared the 1994 Nobel Memorial Prize in ________.",
+          "answer": "Economic Sciences",
+          "number": 12,
+          "explanation": "Đoạn B: 'shared the 1994 Nobel Memorial Prize in Economic Sciences'. Đáp án Economic Sciences.",
+          "id": "nl2-23-game-theory-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Nash's life became widely known through the film ________.",
+          "answer": "A Beautiful Mind",
+          "number": 13,
+          "explanation": "Đoạn B: 'through the film A Beautiful Mind'. Đáp án A Beautiful Mind.",
+          "id": "nl2-23-game-theory-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Axelrod's tournament tested strategies for the repeated, or iterated, prisoner's ________.",
+          "answer": "dilemma",
+          "number": 14,
+          "explanation": "Đoạn D: '...played the iterated prisoner's dilemma repeatedly against one another'. Đáp án dilemma.",
+          "id": "nl2-23-game-theory-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Governments use game theory to design auctions for mobile phone spectrum ________.",
+          "answer": "licences",
+          "number": 15,
+          "explanation": "Đoạn E: '...to sell mobile phone spectrum licences to telecommunications companies'. Đáp án licences.",
+          "id": "nl2-23-game-theory-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-24-behavioral-economics-p1",
+      "order": 76,
+      "title": "Behavioural Economics",
+      "text": "A\nBehavioural economics combines insights from psychology with economic theory to study how real people actually make financial and other decisions, in contrast to traditional economic models that typically assume decision-makers are perfectly rational, fully informed, and consistently self-interested. Where classical economics generally treats deviations from rational, self-interested behaviour as errors that can safely be ignored on average, behavioural economics instead treats these deviations as regular, predictable patterns of human decision-making that deserve to be studied and modelled directly, since they recur systematically rather than cancelling out at random across a population.\n\nB\nMuch of the field's foundational research was conducted by the psychologists Daniel Kahneman and Amos Tversky, beginning in the 1970s. Their work identified numerous cognitive biases, systematic patterns in which people's judgements depart from what a purely rational calculation would predict, and heuristics, mental shortcuts that generally work reasonably well but occasionally lead to significant and predictable errors. One especially influential concept to emerge from this research is loss aversion, the finding that people typically experience the pain of losing a given amount of money considerably more intensely than the pleasure of gaining the identical amount, an asymmetry that helps explain a wide range of otherwise puzzling financial behaviour, including a reluctance to sell investments at a loss even when doing so would be financially prudent. Kahneman was awarded the 2002 Nobel Memorial Prize in Economic Sciences for this research; Tversky, who had died in 1996, was ineligible, since the prize is not awarded posthumously.\n\nC\nAnother central concept in behavioural economics is the framing effect, the finding that how a choice is presented, or framed, can significantly influence the decision a person makes even when the underlying options are logically identical. In a well-known illustration, people responded quite differently, in controlled experiments, to a medical treatment described as having a \"ninety percent survival rate\" compared with the mathematically identical treatment described as having a \"ten percent mortality rate\", generally rating the former description more favourably despite the two descriptions conveying exactly the same information. This sensitivity to framing has significant practical implications for how choices are presented to consumers, patients, and voters, since altering only the wording of a choice, without changing the underlying substance at all, can measurably shift the decisions people make.\n\nD\nThe economist Richard Thaler extended behavioural economics into practical policy design, coining the term \"nudge\" to describe a small, low-cost change to how choices are presented that predictably steers people toward a particular decision without restricting their freedom to choose differently. A widely cited example involves automatic enrolment in workplace retirement savings plans: making participation the automatic default option, from which an employee must actively choose to opt out rather than actively opt in, has been shown in numerous studies to substantially raise participation rates, even though the actual financial terms on offer, and the ultimate freedom to decline, remain entirely unchanged. Thaler was awarded the 2017 Nobel Memorial Prize in Economic Sciences for his contributions to behavioural economics, including this influential concept.\n\nE\nGovernments around the world have since established dedicated behavioural insights teams, informally nicknamed \"nudge units\" in several countries, to apply these findings to public policy, addressing goals ranging from increasing tax compliance and organ donor registration to encouraging healthier eating and improving the uptake of government benefits that eligible citizens might otherwise fail to claim. While such interventions have generally proved to be inexpensive relative to more traditional policy tools such as financial penalties or large public information campaigns, critics have questioned both their long-term effectiveness in some domains and the underlying ethics of governments deliberately exploiting known cognitive biases to influence citizens' choices, even when the stated aims of doing so are broadly beneficial to those citizens.\n\n— Biên soạn dựa trên kiến thức kinh tế học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow the field differs from classical economic theory\nii\tBiases uncovered by two pioneering psychologists\niii\tHow the wording of a choice can change the decision\niv\tA term coined for steering choices without restricting them\nv\tGovernment teams applying the research to public policy\nvi\tCriticism that the underlying experiments cannot be replicated\nvii\tApplications in financial market forecasting",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói kinh tế học hành vi khác kinh tế học cổ điển thế nào — coi sai lệch là quy luật thay vì lỗi ngẫu nhiên. Đúng tiêu đề i.",
+          "id": "nl2-24-behavioral-economics-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về Kahneman và Tversky, và khái niệm ác cảm mất mát (loss aversion). Đúng tiêu đề ii.",
+          "id": "nl2-24-behavioral-economics-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về hiệu ứng đóng khung (framing effect) — cách diễn đạt ảnh hưởng tới quyết định. Đúng tiêu đề iii.",
+          "id": "nl2-24-behavioral-economics-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về Thaler và khái niệm 'nudge' — thay đổi nhỏ định hướng lựa chọn mà không hạn chế tự do. Đúng tiêu đề iv.",
+          "id": "nl2-24-behavioral-economics-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói các chính phủ lập 'nudge units' áp dụng nghiên cứu này vào chính sách công. Đúng tiêu đề v.",
+          "id": "nl2-24-behavioral-economics-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Classical economics generally treats deviations from rational behaviour as important patterns worth modelling directly.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: kinh tế học cổ điển 'treats deviations from rational, self-interested behaviour as errors that can safely be ignored on average'. Coi là lỗi bỏ qua được, không phải mẫu hình đáng mô hình hoá. FALSE.",
+          "id": "nl2-24-behavioral-economics-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "People typically feel the pain of a loss more intensely than the pleasure of an equivalent gain.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'people typically experience the pain of losing a given amount of money considerably more intensely than the pleasure of gaining the identical amount'. Đúng ý đề nên TRUE.",
+          "id": "nl2-24-behavioral-economics-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Tversky shared the 2002 Nobel Memorial Prize in Economic Sciences with Kahneman.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn B: 'Tversky, who had died in 1996, was ineligible, since the prize is not awarded posthumously'. Ông không được nhận giải vì đã mất, đề nói ngược nên FALSE.",
+          "id": "nl2-24-behavioral-economics-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "In the experiment described, people rated the '90% survival rate' description less favourably than the '10% mortality rate' description.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C nói ngược: người tham gia 'rating the former [90% survival] description more favourably'. Đánh giá cách nói 'sống sót' cao hơn, không phải thấp hơn. FALSE.",
+          "id": "nl2-24-behavioral-economics-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Automatic enrolment in retirement savings plans changes the actual financial terms available to employees.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn D nói ngược: 'the actual financial terms on offer, and the ultimate freedom to decline, remain entirely unchanged'. Điều khoản tài chính không đổi. FALSE.",
+          "id": "nl2-24-behavioral-economics-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Mental shortcuts that generally work well but occasionally lead to errors are called ________.",
+          "answer": "heuristics",
+          "number": 11,
+          "explanation": "Đoạn B: 'heuristics, mental shortcuts that generally work reasonably well but occasionally lead to significant and predictable errors'. Đáp án heuristics.",
+          "id": "nl2-24-behavioral-economics-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The finding that losses feel worse than equivalent gains feel good is called ________.",
+          "answer": "loss aversion",
+          "number": 12,
+          "explanation": "Đoạn B: 'One especially influential concept... is loss aversion'. Đáp án loss aversion.",
+          "id": "nl2-24-behavioral-economics-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "How a choice is presented can change the decision made, a pattern called the ________ effect.",
+          "answer": "framing",
+          "number": 13,
+          "explanation": "Đoạn C: 'the framing effect, the finding that how a choice is presented... can significantly influence the decision'. Đáp án framing.",
+          "id": "nl2-24-behavioral-economics-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Thaler coined the term '________' for a small change that steers choices without restricting freedom.",
+          "answer": "nudge",
+          "number": 14,
+          "explanation": "Đoạn D: 'coining the term nudge to describe a small, low-cost change'. Đáp án nudge.",
+          "id": "nl2-24-behavioral-economics-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Thaler won the 2017 Nobel Memorial Prize in ________.",
+          "answer": "Economic Sciences",
+          "number": 15,
+          "explanation": "Đoạn D: 'Thaler was awarded the 2017 Nobel Memorial Prize in Economic Sciences'. Đáp án Economic Sciences.",
+          "id": "nl2-24-behavioral-economics-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-25-sapir-whorf-p1",
+      "order": 77,
+      "title": "The Sapir-Whorf Hypothesis",
+      "text": "A\nThe Sapir-Whorf hypothesis, also known as linguistic relativity, proposes that the particular language a person speaks influences, to some degree, how that person perceives and thinks about the world, so that speakers of structurally different languages may experience certain aspects of reality in subtly different ways. The idea is named after the linguist Edward Sapir and his student Benjamin Lee Whorf, though neither of them ever formulated a single, precise statement of the hypothesis; much of what is now called Sapir-Whorf theory was assembled and named by later scholars drawing on scattered observations in their writings.\n\nB\nWhorf's most famous, and most heavily criticised, illustration involved his claim, based on limited fieldwork, that the Hopi language of the American Southwest lacked grammatical structures for referring to time in the way English does, from which he inferred that Hopi speakers might conceptualise time altogether differently from English speakers. Later linguists, conducting more thorough fieldwork with fluent Hopi speakers, found that this claim was substantially inaccurate: Hopi does in fact possess ways of expressing temporal concepts, and the specific inference Whorf drew from his limited and, in places, mistaken data has since been widely rejected by linguists, becoming something of a cautionary tale about drawing sweeping conclusions about thought from limited grammatical observations.\n\nC\nPartly because of such early overreaching claims, a strong version of the hypothesis, sometimes called linguistic determinism, holding that language rigidly determines and limits the very thoughts a person is capable of having, has been almost universally rejected by contemporary linguists as demonstrably too extreme, not least because people can clearly think about, and later find words for, concepts their existing language does not yet have a convenient word for, and can readily translate ideas between structurally very different languages, if sometimes only with additional explanation. A much weaker version of the hypothesis, however, holding merely that language can subtly influence habitual patterns of thought and attention without rigidly limiting or determining what a person is fundamentally capable of thinking, has found considerably more support in rigorous modern experimental research.\n\nD\nOne frequently cited body of supporting evidence for this weaker version comes from research on languages that use absolute directional terms, such as north, south, east, and west, for everyday spatial description, rather than relative terms such as left and right, a feature found in a number of Australian Aboriginal languages including Guugu Yimithirr. Speakers of these languages have been shown in careful experiments to maintain a remarkably precise, almost constant awareness of cardinal direction, a skill many speakers of languages relying primarily on relative terms find genuinely difficult to replicate even with deliberate effort, suggesting that habitually using a particular grammatical system for space may indeed train a distinct cognitive skill that goes well beyond ordinary language use itself.\n\nE\nOther well-studied areas of supporting evidence include research on colour perception and grammatical gender. Some studies suggest that speakers of languages with separate basic words for light blue and dark blue, as opposed to a single umbrella word covering the whole range as in English, can distinguish shades within that colour range marginally faster in controlled laboratory tasks. Similarly, in languages that assign grammatical gender to inanimate nouns, speakers have in some experiments been shown to describe those objects using adjectives stereotypically associated with the assigned grammatical gender, for instance describing a bridge assigned a grammatically \"feminine\" gender using words such as elegant or slender, and the same bridge assigned a grammatically \"masculine\" gender in a different language using words such as sturdy or strong, even though the physical object being described was, in each case, identical.\n\n— Biên soạn dựa trên kiến thức ngôn ngữ học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the hypothesis proposes, and where its name comes from\nii\tA famous claim about time that was later found to be wrong\niii\tWhy the strongest version of the idea has been rejected\niv\tSpeakers who stay constantly aware of compass direction\nv\tEvidence from colour words and grammatical gender\nvi\tHow children first acquire their native language\nvii\tEfforts to revive endangered indigenous languages",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa giả thuyết Sapir-Whorf là gì và nguồn gốc tên gọi. Đúng tiêu đề i.",
+          "id": "nl2-25-sapir-whorf-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể tuyên bố nổi tiếng của Whorf về ngôn ngữ Hopi và thời gian, sau này bị chứng minh là sai. Đúng tiêu đề ii.",
+          "id": "nl2-25-sapir-whorf-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói vì sao phiên bản mạnh (linguistic determinism) bị bác bỏ gần như hoàn toàn. Đúng tiêu đề iii.",
+          "id": "nl2-25-sapir-whorf-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về người nói ngôn ngữ dùng hướng tuyệt đối (như Guugu Yimithirr) luôn ý thức được phương hướng la bàn. Đúng tiêu đề iv.",
+          "id": "nl2-25-sapir-whorf-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về bằng chứng từ nhận thức màu sắc và giống ngữ pháp. Đúng tiêu đề v.",
+          "id": "nl2-25-sapir-whorf-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Sapir and Whorf themselves wrote a single, precise formal statement of the hypothesis named after them.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: 'neither of them ever formulated a single, precise statement of the hypothesis'. Không ai trong hai người viết ra tuyên bố chính xác đó. FALSE.",
+          "id": "nl2-25-sapir-whorf-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Later fieldwork found that Hopi does have ways of expressing temporal concepts.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'Hopi does in fact possess ways of expressing temporal concepts'. Đúng ý đề nên TRUE.",
+          "id": "nl2-25-sapir-whorf-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Contemporary linguists broadly accept linguistic determinism, the idea that language rigidly limits what a person can think.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: phiên bản mạnh 'has been almost universally rejected by contemporary linguists as demonstrably too extreme'. Bị bác bỏ gần như hoàn toàn, không phải được chấp nhận. FALSE.",
+          "id": "nl2-25-sapir-whorf-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Speakers of languages using relative directional terms find it easy to replicate the constant compass awareness of speakers using absolute terms.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: người nói ngôn ngữ dùng từ tương đối 'find genuinely difficult to replicate even with deliberate effort'. Khó tái tạo chứ không dễ. FALSE.",
+          "id": "nl2-25-sapir-whorf-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "In the bridge experiment, the physical object described by speakers of two different languages was identical in each case.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'even though the physical object being described was, in each case, identical'. Đúng ý đề nên TRUE.",
+          "id": "nl2-25-sapir-whorf-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The Sapir-Whorf hypothesis is also known as linguistic ________.",
+          "answer": "relativity",
+          "number": 11,
+          "explanation": "Đoạn A: 'also known as linguistic relativity'. Đáp án relativity.",
+          "id": "nl2-25-sapir-whorf-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Whorf's claim about time concerned speakers of the ________ language.",
+          "answer": "Hopi",
+          "number": 12,
+          "explanation": "Đoạn B: 'his claim... that the Hopi language of the American Southwest lacked grammatical structures for referring to time'. Đáp án Hopi.",
+          "id": "nl2-25-sapir-whorf-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The strong version of the hypothesis is sometimes called linguistic ________.",
+          "answer": "determinism",
+          "number": 13,
+          "explanation": "Đoạn C: 'a strong version of the hypothesis, sometimes called linguistic determinism'. Đáp án determinism.",
+          "id": "nl2-25-sapir-whorf-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Languages using absolute directional terms rather than left and right include Guugu ________.",
+          "answer": "Yimithirr",
+          "number": 14,
+          "explanation": "Đoạn D: 'a number of Australian Aboriginal languages including Guugu Yimithirr'. Đáp án Yimithirr.",
+          "id": "nl2-25-sapir-whorf-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Speakers of languages assigning a 'feminine' gender to bridges described them using words such as elegant or ________.",
+          "answer": "slender",
+          "number": 15,
+          "explanation": "Đoạn E: '...describing a bridge assigned a grammatically feminine gender using words such as elegant or slender'. Đáp án slender.",
+          "id": "nl2-25-sapir-whorf-q15"
+        }
+      ]
     }
   ]
 }
