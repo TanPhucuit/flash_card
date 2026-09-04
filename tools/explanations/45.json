@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A mô tả quy trình từ hạt cà phê tới ly cà phê, và nguồn gốc lịch sử ở vùng Biển Đỏ. Đúng tiêu đề iii.",
+  "2": "Đoạn B truy nguồn từ tiếng Ả Rập 'qahwah' qua Thổ Nhĩ Kỳ, Hà Lan tới tiếng Anh 1582. Đúng tiêu đề i.",
+  "3": "Đoạn C kể các truyền thuyết về nguồn gốc cà phê (Kaldi, Sheikh Omar) và nói rõ chúng thiếu bằng chứng, có khả năng là hư cấu. Đúng tiêu đề v.",
+  "4": "Đoạn D mô tả các loài Coffea và đặc điểm sinh học của cây (lá, hoa, quả). Đúng tiêu đề ii.",
+  "5": "Đoạn E nói rang ảnh hưởng thế nào tới hạt cà phê: mất ẩm, tăng thể tích, giảm mật độ. Đúng tiêu đề vi.",
+  "6": "Đoạn C: 'This legend does not appear before 1671, indicating the story is likely apocryphal'. Đúng ý đề nên TRUE.",
+  "7": "Đoạn C nói ngược: 'The herder is unnamed in the earliest account and the name Kaldi appears to be a later invention from the twentieth century'. KHÔNG có tên trong bản sớm nhất. Đề nói có tên nên FALSE.",
+  "8": "Đoạn D nói ngược: 'Arabica berries ripen in six to eight months, while robusta takes nine to eleven months'. Robusta chín CHẬM hơn arabica, không phải nhanh hơn. FALSE.",
+  "9": "Đoạn D chỉ định nghĩa peaberry là gì (quả chỉ có một hạt), không hề nói nó có giá trị hơn hạt thường hay không. NOT GIVEN.",
+  "10": "Đoạn D: 'these are called peaberries'. Đáp án peaberries.",
+  "11": "Đoạn D: 'All coffee plants are classified in the family Rubiaceae'. Đáp án Rubiaceae.",
+  "12": "Đoạn B: '...derived from the verb qahiya, to have no appetite'. Đáp án appetite.",
+  "13": "Đoạn B: 'The word coffee entered the English language in 1582'. Đáp án 1582.",
+  "14": "Đoạn D: 'C. arabica, the most highly regarded species'. Đáp án C. arabica.",
+  "15": "Đoạn A: 'The earliest reports of coffee drinking pertain to the plant's use among the Sufis of Yemen'. Đáp án Yemen."
+}

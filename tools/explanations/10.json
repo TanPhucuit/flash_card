@@ -1,0 +1,14 @@
+{
+  "1": "Đoạn A phân loại sông băng theo nơi hình thành (trên núi, trong thung lũng) và theo diện tích (dưới 50.000 km² là chỏm băng, trên là dải băng). Đúng tiêu đề ii — sắp xếp theo kích thước và theo bối cảnh địa hình.",
+  "2": "Đoạn B kể trọn quá trình biến đổi: tuyết rơi vào lòng chảo cirque, nén lại thành névé, rồi firn, rồi băng sông băng. Đúng tiêu đề iii.",
+  "3": "Đoạn C chia sông băng thành các đới: đới tiêu hao (mất khối lượng), đới tích tụ (được thêm), đường cân bằng ở giữa, đới thấm và đới băng chồng. Đúng tiêu đề iv — từ chỗ được thêm tới chỗ mất đi.",
+  "4": "Đoạn D giải thích vì sao băng chảy (trọng lực và biến dạng dẻo) và chảy từ độ dày nào (ít nhất 30 m, vượt 50 m thì lớp trên trượt nhanh hơn lớp dưới). Đúng cả hai vế của tiêu đề v.",
+  "5": "Đoạn A: thềm băng 'tend to be thin with limited slopes and reduced velocities' — tốc độ GIẢM, không phải nhanh hơn. Phần chảy nhanh là 'ice streams', một thứ khác. Đề nói ngược nên FALSE.",
+  "6": "Đoạn A: 'The only extant ice sheets are the two that cover most of Antarctica and Greenland'. 'Extant' nghĩa là còn tồn tại, đúng hai dải, nên TRUE.",
+  "7": "Đoạn B: 'Glacier ice is slightly more dense than ice formed from frozen water because glacier ice contains fewer trapped air bubbles'. Đề chép gần nguyên văn cả kết quả lẫn nguyên nhân nên TRUE.",
+  "8": "Bài chỉ nói đới tích tụ chiếm 60–70% diện tích bề mặt sông băng, không hề nói nó đang co lại theo từng năm. Xu hướng theo thời gian là do đề thêm vào nên NOT GIVEN.",
+  "9": "Đoạn A: 'Only nunataks protrude from their surfaces'. Đề hỏi phần đá nhô lên khỏi mặt dải băng nên đáp án nunatak.",
+  "10": "Đoạn B: tuyết tích lại và đóng băng lại 'turning into névé (granular snow)'. Đề dùng đúng chữ 'granular' nên đáp án là névé, không phải firn — firn là giai đoạn sau, đặc hơn.",
+  "11": "Đoạn C: 'The equilibrium line separates the ablation zone and the accumulation zone'. Đáp án equilibrium line, đúng hai từ.",
+  "12": "Đoạn D: 'Ice needs to be at least 30 m thick to even start flowing'. Đáp án 30 m. Con số 50 m là mốc khác — khi lớp trên bắt đầu trượt nhanh hơn lớp dưới, không phải mốc bắt đầu chảy."
+}

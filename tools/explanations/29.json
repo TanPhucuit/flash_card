@@ -1,0 +1,16 @@
+{
+  "1": "Đoạn A định nghĩa in 3D là gì: dựng vật thể từ mô hình số, đắp vật liệu theo từng lớp dưới điều khiển máy tính. Đúng tiêu đề ii.",
+  "2": "Đoạn B kể chuyện hai cái tên 'additive manufacturing' và '3D printing' dùng song song, có lúc đồng nghĩa có lúc phân biệt tuỳ ngữ cảnh. Đúng tiêu đề i.",
+  "3": "Đoạn C kể các mô tả sớm trong truyện khoa học viễn tưởng (Leinster 1945, Jones 1950) và bằng sáng chế đầu tiên (Gottwald 1971). Đúng tiêu đề iv.",
+  "4": "Đoạn D nói kỹ sư coi trọng công nghệ này vì lợi ích gì: tự do thiết kế, cá nhân hoá, giảm chi phí, giảm rác thải. Đúng tiêu đề v.",
+  "5": "Đoạn A: 'In the 1980s, 3D printing techniques were considered suitable only for the production of functional or aesthetic prototypes'. Đúng ý đề nên TRUE.",
+  "6": "Đoạn B nói ngược: '3D printing' (không phải 'additive manufacturing') mới là tên 'used in popular language by consumer-maker communities and the media'. Đề gán nhầm tên nên FALSE.",
+  "7": "Đoạn B: Zelinski nói hai thuật ngữ 'are still often synonymous in casual usage', NHƯNG 'some manufacturing industry experts are trying to make a distinction' — vẫn có người phân biệt. Đề nói TẤT CẢ MỌI NGƯỜI đều coi là đồng nghĩa nên FALSE.",
+  "8": "Đoạn D: 'Additive Manufacturing processes generate minimal waste by adding material only where needed, unlike traditional methods that cut away excess material'. Đúng ý đề nên TRUE.",
+  "9": "Đoạn D chỉ nói in 3D có thể dùng để sản xuất hệ thống pin lưu trữ, không hề so sánh chi phí với cách sản xuất truyền thống. NOT GIVEN.",
+  "10": "Đoạn A: 'a more appropriate term for it at the time was rapid prototyping'. Đáp án rapid prototyping.",
+  "11": "Đoạn C: 'The general concept... was first described by Murray Leinster in his 1945 short story'. Đáp án Murray Leinster.",
+  "12": "Đoạn C: Raymond F. Jones 'referred to it as a molecular spray in that story'. Đáp án molecular spray.",
+  "13": "Đoạn B: 'the term subtractive manufacturing appeared as a retronym for the large family of machining processes with material removal'. Đáp án subtractive manufacturing.",
+  "14": "Đoạn A: 'Fused deposition modeling (FDM)... is the most common 3D printing process in use as of 2020'. Đáp án Fused deposition modeling."
+}

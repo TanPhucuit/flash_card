@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa dòng hải lưu rồi phân loại: theo nhiệt độ (nóng/lạnh), theo tốc độ và kích thước (drift, current, stream). Đúng cả hai vế của tiêu đề i.",
+  "2": "Đoạn B liệt kê những lực làm nước chuyển động: gió, lực hút của Mặt Trăng, chênh lệch mật độ, hiệu ứng Coriolis. Đúng tiêu đề iii.",
+  "3": "Đoạn C nói hải lưu ảnh hưởng nhiệt độ và khí hậu các vùng, rồi nói nước trồi mang dinh dưỡng nuôi sinh vật phù du và phát tán sinh vật. Đúng cả hai vế của tiêu đề iv.",
+  "4": "Đoạn D nói đại dương ấm lên khiến dòng chảy mạnh lên: hải lưu bờ tây nóng gấp đôi mức trung bình, dòng chảy tầng trên tăng tốc ở 77% diện tích đại dương. Đúng tiêu đề vi.",
+  "5": "Đoạn E nói hải lưu quan trọng với vận tải biển (giảm nhiên liệu, thời tàu buồm) và với phát điện từ dòng chảy. Đúng cả hai vế của tiêu đề vii.",
+  "6": "Đoạn B: 'surface currents are driven by wind systems and deep-water currents are driven by differences in water density due to variations in water temperature and salinity'. Hai động lực khác nhau, đúng ý đề nên TRUE.",
+  "7": "Đoạn B nói ngược: xoáy thuận chiều kim đồng hồ ở Bắc bán cầu và ngược chiều kim đồng hồ ở Nam bán cầu. Đề nói cùng chiều nên FALSE.",
+  "8": "Đoạn D: 'western boundary currents are heating at double the rate of the global average'. Nhanh gấp đôi mức trung bình toàn cầu, đúng ý đề nên TRUE.",
+  "9": "Đoạn E chỉ nói Nhật Bản, Florida và Hawaii 'being considered for test projects' — mới là đang được cân nhắc làm dự án thử nghiệm, chưa phải đã phát điện thương mại. Đề đi xa hơn bài nên NOT GIVEN.",
+  "10": "Đoạn A: dòng chảy thẳng đứng 'playing an important role in the movement of nutrients and gases, such as carbon dioxide, between the surface and the deep ocean'. Đúng phương án B. A và C không có trong bài; D nói về việc ngăn băng hình thành nhưng đó là công của hải lưu ấm ở Bắc Đại Tây Dương, không phải dòng thẳng đứng.",
+  "11": "Đoạn B: 'the eastern equator-ward flowing branch is broad and diffuse whereas the pole-ward flowing western boundary current is relatively narrow'. Nhánh chảy về xích đạo thì rộng, nhánh bờ tây chảy về cực thì hẹp — đúng phương án C. B đảo ngược đúng hai vế này nên là bẫy chính.",
+  "12": "Đoạn E: 'The lack of understanding of ocean currents during that time period is hypothesized to be one of the contributing factors to exploration failure'. Đúng phương án A. B ngược với bài, C và D không được nhắc tới.",
+  "13": "Đoạn B: 'Ocean currents are measured in units of sverdrup (Sv)'. Đáp án sverdrup.",
+  "14": "Đoạn B: 'The Ekman spiral velocity distribution results in the currents flowing at an angle to the driving winds'. Đề hỏi cái gì giải thích góc lệch đó nên đáp án Ekman spiral.",
+  "15": "Đoạn E: 'the Agulhas Current (down along eastern Africa), which long prevented sailors from reaching India'. Đề chép gần nguyên văn nên đáp án Agulhas Current."
+}

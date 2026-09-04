@@ -682,6 +682,16 @@ function QuestionBlock({
           )}
         </p>
       ) : null}
+
+      {/* Giải thích chỉ dành cho câu SAI: câu đã đúng thì người học không cần
+          đọc lại lý do, còn câu sai mới là chỗ đáng dừng lại. Bỏ trống answer
+          nghĩa là câu không được chấm, cũng không có gì để giải thích. */}
+      {submitted && question.answer && !correct && question.explanation ? (
+        <div className="ml-8 mt-sm rounded-xl bg-surface-container-low p-md text-sm leading-6 dark:bg-white/5">
+          <p className="mb-xs font-semibold text-primary dark:text-[#c9c5ff]">Vì sao?</p>
+          <p className="whitespace-pre-line text-on-surface-variant dark:text-white/75">{question.explanation}</p>
+        </div>
+      ) : null}
     </div>
     </>
   );

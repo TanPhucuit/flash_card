@@ -29,6 +29,13 @@ export interface ReadingQuestion {
    * scoring rather than silently marked wrong.
    */
   answer: string;
+  /**
+   * Giải thích bằng tiếng Việt: vì sao đáp án đúng là đáp án đó, dựa vào chỗ
+   * nào trong bài. Chỉ hiện SAU KHI nộp bài và CHỈ với câu trả lời sai — hiện
+   * sớm thì thành lộ đáp án, hiện cả ở câu đúng thì làm loãng đúng chỗ người
+   * học cần đọc kỹ.
+   */
+  explanation?: string;
 }
 
 export interface ReadingPassage {

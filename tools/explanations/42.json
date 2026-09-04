@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa kháng sinh là gì và giới hạn của nó (không diệt được virus, nấm). Đúng tiêu đề iii.",
+  "2": "Đoạn B kể lịch sử từ người Sudan cổ pha bia lên men chứa tetracycline, tới Fleming phát hiện penicillin 1928. Đúng tiêu đề v.",
+  "3": "Đoạn C nói về việc đặt tên hiện tượng ('antibiosis') và cách nghĩa của từ 'antibiotic' đã thay đổi theo thời gian. Đúng tiêu đề i.",
+  "4": "Đoạn D nói về điều trị theo kinh nghiệm (empiric) khi chưa biết tác nhân, và điều trị phòng ngừa cho nhóm nguy cơ. Đúng tiêu đề iv.",
+  "5": "Đoạn E nói về tác dụng phụ có thể xảy ra, từ nhẹ tới nặng. Đúng tiêu đề vii.",
+  "6": "Đoạn A: 'antibiotics are not effective against viruses or fungi'. Đúng ý đề nên TRUE.",
+  "7": "Đoạn B: 'ancient Sudanese societies... were systematically consuming antibiotics as part of their diet' qua bia lên men chứa tetracycline. Đúng ý đề nên TRUE.",
+  "8": "Đoạn C nói ngược: định nghĩa gốc của Waksman 'excluded synthetic antibacterial compounds such as the sulfonamides'. Loại trừ chứ không bao gồm. FALSE.",
+  "9": "Đoạn D nói ngược: kháng sinh phổ hẹp được chọn khi ĐÃ BIẾT tác nhân ('When the responsible pathogenic microorganism is already known'), còn chưa biết thì dùng phổ rộng. FALSE.",
+  "10": "Đoạn B chỉ nói Prontosil được phát triển bởi Domagk tại Bayer, không hề nói về thành công thương mại của nó. NOT GIVEN.",
+  "11": "Đoạn D: 'an empiric therapy is adopted'. Đáp án empiric.",
+  "12": "Đoạn C: 'an airborne bacillus could inhibit the growth of Bacillus anthracis'. Đáp án Bacillus anthracis.",
+  "13": "Đoạn C: '...because the first bacteria to be discovered were rod-shaped'. Đáp án rod-shaped.",
+  "14": "Đoạn B: 'Chemical analyses of Nubian skeletons show consistent, high levels of tetracycline'. Đáp án tetracycline.",
+  "15": "Đoạn B: 'Alexander Fleming (1881–1955) discovered modern-day penicillin in 1928'. Đáp án Alexander Fleming."
+}

@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa trí nhớ là gì và mô tả hệ thống ba phần: bộ xử lý cảm giác, trí nhớ ngắn hạn, trí nhớ dài hạn. Đúng cả hai vế của tiêu đề ii.",
+  "2": "Đoạn B mô tả trí nhớ cảm giác: tồn tại dưới một giây, thí nghiệm partial report của Sperling. Đúng tiêu đề i.",
+  "3": "Đoạn C nói cách mã hoá (sâu/nông) và bối cảnh lúc học ảnh hưởng tới khả năng nhớ lại. Đúng cả hai vế của tiêu đề v.",
+  "4": "Đoạn D nói trí nhớ ngắn hạn chỉ chứa 7±2 mục (Miller) nhưng có thể tăng qua chunking. Đúng tiêu đề iv.",
+  "5": "Đoạn E nói trí nhớ dài hạn có dung lượng chưa xác định được trần, lưu được suốt đời. Đúng tiêu đề vii.",
+  "6": "Đoạn B: 'It is out of cognitive control and is an automatic response'. Đúng ý đề nên TRUE.",
+  "7": "Đoạn B nói ngược: 'This type of memory cannot be prolonged via rehearsal'. Không kéo dài được bằng lặp lại. Đề nói ngược nên FALSE.",
+  "8": "Đoạn D nói ngược: 'Modern perspectives estimate the capacity of short-term memory to be lower, typically on the order of 4–5 items'. Thấp hơn Miller (7±2), không phải cao hơn. FALSE.",
+  "9": "Đoạn C: 'memory is better when encoding emphasizes deep aspects of a stimulus (such as meaning) vs. shallow aspects of a stimulus (such as a place)'. Đúng ý đề nên TRUE.",
+  "10": "Bài chỉ nói trí nhớ dài hạn 'can store much larger quantities' hơn trí nhớ ngắn hạn, không hề so sánh với máy tính. NOT GIVEN.",
+  "11": "Đoạn B: 'the partial report paradigm'. Đáp án partial report.",
+  "12": "Đoạn D: 'Memory capacity can be increased through a process called chunking'. Đáp án chunking.",
+  "13": "Đoạn C: '...match the ones present during learning which connects to the principle called encoding specificity'. Đáp án encoding.",
+  "14": "Đoạn C: 'memory is better when encoding emphasizes deep aspects of a stimulus (such as meaning)'. Đúng phương án A; B, C, D đều ngược hoặc sai so với bài.",
+  "15": "Đoạn D: 'this is because we are able to chunk the information into meaningful groups of numbers'. Đúng phương án C; A, B, D không có trong bài."
+}

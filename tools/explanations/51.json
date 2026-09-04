@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa origami là gì và phân biệt origami nghi lễ với origami giải trí — chỉ loại sau được coi LÀ origami theo nghĩa hẹp. Đúng tiêu đề iii.",
+  "2": "Đoạn B truy nguồn từ 'ori' + 'kami' và các tên gọi khác nhau ở Trung Quốc, Hàn Quốc, Tây Ban Nha. Đúng tiêu đề v.",
+  "3": "Đoạn C kể lịch sử giấy tới Nhật Bản, kỹ thuật nagashi-suki, và cách giấy gấp trở thành đồ trang trí nghi lễ Thần đạo. Đúng tiêu đề i.",
+  "4": "Đoạn D nói về các nếp gấp cơ bản, các base tiêu chuẩn, và bản thân tờ giấy origami (kích thước, trọng lượng, gấp ướt). Đúng tiêu đề iv.",
+  "5": "Đoạn E nói về origami chuyển động (action origami) và origami module ghép từ nhiều mảnh. Đúng tiêu đề vi.",
+  "6": "Đoạn A nói ngược: 'Modern origami practitioners generally discourage the use of cuts, glue, or markings on the paper'. Không khuyến khích cắt/dán, đề nói ngược nên FALSE.",
+  "7": "Đoạn A: 'only recreational origami is generally recognized as origami'. Đúng ý đề nên TRUE.",
+  "8": "Đoạn E nói ngược: mô hình kusudama 'differ from classical origami in that the pieces may be held together using thread or glue' — CÓ dùng chỉ hoặc keo, không phải chỉ nhờ nếp gấp. FALSE.",
+  "9": "Đoạn D chỉ nói giấy origami 'weighs slightly less than copy paper' — nhẹ hơn về trọng lượng, không hề so sánh về GIÁ TIỀN. NOT GIVEN.",
+  "10": "Đoạn A: 'Origami folders often use the Japanese word kirigami to refer to designs which use cuts'. Đáp án kirigami.",
+  "11": "Đoạn C: 'The papermaking technique developed in Japan around 805 to 809 was called nagashi-suki'. Đáp án nagashi-suki.",
+  "12": "Đoạn D: 'Paper weighing 100 g/m2... or more can be wet-folded'. Đáp án wet-folded.",
+  "13": "Đoạn A: 'ceremonial origami is generally called origata to distinguish it from recreational origami'. Đáp án origata.",
+  "14": "Đoạn D: 'the bird base is an intermediate stage in the construction of the flapping bird'. Đáp án bird base.",
+  "15": "Đoạn D: 'Origami paper, often referred to as kami (Japanese for paper)'. Đáp án kami."
+}

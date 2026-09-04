@@ -1,0 +1,16 @@
+{
+  "1": "Đoạn A cho biết Machu Picchu là gì (thành trì Inca thế kỷ 15), nằm ở đâu (dãy Đông Cordillera, cao 2.430 m, cách Cusco 80 km) và ai đưa nó ra ánh sáng (Lizárraga rồi Bingham 1911). Đúng cả ba vế của tiêu đề ii.",
+  "2": "Đoạn B giải nghĩa tên trong tiếng Quechua rồi bàn liệu đó có phải tên đúng không — nghiên cứu 2021 cho rằng nơi này vốn được gọi là 'Huayna Picchu' hoặc 'Picchu'. Đúng cả hai vế của tiêu đề iii.",
+  "3": "Đoạn C tranh luận về niên đại (mô hình cũ 1450 so với đo phóng xạ 1420–1530) và về công năng (dinh thự hoàng gia, nơi nghỉ theo mùa). Đúng cả hai vế của tiêu đề iv.",
+  "4": "Đoạn D nói việc bảo vệ ngày nay (Khu bảo tồn Lịch sử 1981, Di sản Thế giới 1983), hệ động thực vật, và du khách với tàu du lịch, khách sạn. Đúng cả ba vế của tiêu đề v.",
+  "5": "Đoạn A: 'the site was known locally and reached in the early 20th century by the Peruvian explorer Agustín Lizárraga', Bingham chỉ đưa nó ra thế giới năm 1911. Người địa phương đã biết và Lizárraga đến trước. Đề nói Bingham là người đầu tiên nên FALSE.",
+  "6": "Đoạn A: được cho là dinh thự của hoàng đế Pachacuti, 'though no contemporary written records exist to confirm this'. Đề chép gần nguyên văn nên TRUE.",
+  "7": "Đoạn B: nghiên cứu 2021 cho rằng nơi này 'was likely called Huayna Picchu... or simply Picchu', còn cái tên Machu Picchu gắn với di tích có lẽ bắt đầu từ ấn phẩm của Bingham. Đúng ý đề nên TRUE.",
+  "8": "Đoạn C: 'Although Machu Picchu is considered to be a royal estate, it would not have been passed down in the line of succession'. Đề nói ngược nên FALSE.",
+  "9": "Đoạn C chỉ nói 'It is possible that most of its inhabitants died from smallpox' — mới là khả năng, không có con số nào. Đề nói đã tính được số người chết nên NOT GIVEN.",
+  "10": "Đoạn A: 'on a mountain ridge at 2,430 meters (7,970 ft)'. Đáp án 2,430 meters.",
+  "11": "Đoạn A và C: 'Modern radiocarbon dating places its occupation between c. 1420 and 1530'. Đề đã có 1420 nên chỗ trống là 1530.",
+  "12": "Đoạn B: 'pikchu refers to a summit, peak, or pyramid'. Đề đã có 'peak' nên chỗ trống là summit.",
+  "13": "Đoạn D: 'In 1981, Peru declared an area of 325.92 square kilometers surrounding Machu Picchu a Historic Sanctuary'. Đáp án Historic Sanctuary, không phải 'World Heritage Site' — đó là danh hiệu UNESCO trao năm 1983.",
+  "14": "Đoạn D: 'The sanctuary is also a habitat for more than 420 bird species'. Đáp án 420; con số 550 là số loài cây, còn 74 là số họ thực vật."
+}

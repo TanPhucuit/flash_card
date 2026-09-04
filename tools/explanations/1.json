@@ -1,0 +1,16 @@
+{
+  "1": "Đoạn A mở đầu bằng định nghĩa ('Photosynthesis is a system of biological processes by which...') rồi kết bằng tầm quan trọng: duy trì lượng oxy trong khí quyển và cung cấp phần lớn năng lượng sinh học cho sự sống phức tạp. Đúng cả hai vế của tiêu đề i.",
+  "2": "Đoạn B liên tục đối chiếu các kiểu khác nhau: photoautotroph và photoheterotroph, quang hợp thải oxy và quang hợp không thải oxy, cây ưa bóng và cây thường. Đó là 'khác biệt trong cách các sinh vật thực hiện quá trình' (iii).",
+  "3": "Đoạn C mô tả nơi diễn ra quang hợp bên trong tế bào: màng và thylakoid ở vi khuẩn, lục lạp với stroma, grana, lumen ở thực vật và tảo. Đúng tiêu đề iv về các cấu trúc bên trong tế bào.",
+  "4": "Đoạn D là phản ứng phụ thuộc ánh sáng: diệp lục hấp thụ photon, chuỗi truyền electron tạo NADPH và ATP, phân tử nước bị tách ra để trả lại electron. Đúng tiêu đề vi — ánh sáng và nước được dùng để giải phóng năng lượng.",
+  "5": "Đoạn E nói đường tạo ra sẽ được dùng làm gì tiếp: tạo cellulose, tiền chất lipid và axit amin, hoặc làm nhiên liệu cho hô hấp tế bào ở cả thực vật lẫn động vật qua chuỗi thức ăn. Đúng tiêu đề vii về sản phẩm cuối cùng được dùng vào việc gì.",
+  "6": "Đoạn B nói rõ 'not all organisms use carbon dioxide as a source of carbon atoms': photoheterotroph lấy carbon từ hợp chất hữu cơ chứ không phải CO2. Đề dùng 'All' nên mâu thuẫn trực tiếp với bài: FALSE. Với dạng TRUE/FALSE, một từ tuyệt đối như 'all' luôn đáng nghi.",
+  "7": "Đoạn B: 'many varieties of anoxygenic photosynthesis, used mostly by bacteria'. 'Mostly' trong bài tương ứng với 'chiefly' trong đề, nên TRUE.",
+  "8": "Đoạn B nói ngược lại: cây ưa bóng tạo ra ít oxy tới mức tự dùng hết, 'instead of releasing it to the atmosphere' — tức là thải ra ÍT hơn, không phải nhiều hơn. Mâu thuẫn nên FALSE.",
+  "9": "Đoạn C: màng gấp thành thylakoid hoặc túi làm cho 'the membrane a very large surface area and therefore increasing the amount of light that the bacteria can absorb'. Khớp đúng ý đề nên TRUE.",
+  "10": "Bài chỉ nói tảo đỏ dùng được ánh sáng lam-lục nên sống được ở vùng nước SÂU hơn. Không có câu nào so sánh tốc độ sinh trưởng của tảo đỏ với cây xanh, càng không nói gì về vùng nước NÔNG. Thiếu thông tin nên NOT GIVEN.",
+  "11": "Đoạn C: 'A typical plant cell contains about 10 to 100 chloroplasts'. Từ cần điền là chloroplasts, giữ nguyên số nhiều như trong bài.",
+  "12": "Đoạn D: diệp lục lấy lại electron 'when a water molecule is split in a process called photolysis'. Đề chép gần như nguyên văn nên chỗ trống là photolysis.",
+  "13": "Đoạn D: ở cây xanh, phổ hấp thụ có 'absorption peaks in violet-blue and red light'. Đề đã nêu 'red' nên phần còn lại là violet-blue. Đây vẫn được tính là một từ vì trong bài nó viết có gạch nối.",
+  "14": "Đoạn E: 'the enzyme RuBisCO captures CO2 from the atmosphere'. Chỗ trống hỏi tên enzyme nên là RuBisCO, không phải 'Calvin cycle' — Calvin cycle là tên quá trình, không phải enzyme."
+}

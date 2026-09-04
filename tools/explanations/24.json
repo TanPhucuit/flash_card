@@ -1,0 +1,16 @@
+{
+  "1": "Đoạn A cho số liệu hiện tại (2.700 TWh, 8% điện thế giới) và tốc độ tăng trưởng (gần gấp ba từ 2015). Đúng tiêu đề iii.",
+  "2": "Đoạn B nói về năng lượng gió toàn cầu đo được thế nào và các công cụ đánh giá tiềm năng gió (Global Wind Atlas, Renewables.ninja). Đúng tiêu đề ii.",
+  "3": "Đoạn C mô tả trang trại gió là gì và cách đấu nối các turbine với nhau qua hệ thống điện trung thế. Đúng tiêu đề v.",
+  "4": "Đoạn D nói về công suất thực tế (hệ số công suất 35–44%) và cách nó được biểu thị (tỉ lệ so với công suất danh định lý thuyết). Đúng tiêu đề vi.",
+  "5": "Đoạn E nói về turbine gió quy mô nhỏ cho hộ gia đình hoặc cộng đồng cô lập. Đúng tiêu đề i.",
+  "6": "Đoạn C: 'The land between the turbines may be used for agricultural or other purposes'. Đúng ý đề nên TRUE.",
+  "7": "Đoạn B: '1.31 MJ/m2 in the Northern Hemisphere with 1.70 MJ/m2 in the Southern Hemisphere'. Nam bán cầu CAO hơn Bắc bán cầu. Đề nói ngược nên FALSE.",
+  "8": "Đoạn D: 'a wind farm's annual energy production is never as much as the sum of the generator nameplate ratings multiplied by the total hours in a year'. Sản lượng thực tế LUÔN THẤP hơn tổng công suất danh định, không bao giờ bằng. Đề nói bằng nhau nên FALSE.",
+  "9": "Đoạn D: 'Expansion of wind power is being hindered by fossil fuel subsidies'. Đúng ý đề nên TRUE.",
+  "10": "Đoạn E chỉ nói turbine nhỏ là một LỰA CHỌN thay thế máy phát diesel ở vùng cô lập, không hề so sánh chi phí vận hành giữa hai loại. NOT GIVEN.",
+  "11": "Đoạn A: '30 countries generated more than a tenth of their electricity from wind power in 2024'. Đáp án 30.",
+  "12": "Đoạn B: 'The Global Wind Atlas provided by the Technical University of Denmark... provides a global assessment of wind power potential'. Đáp án Global Wind Atlas.",
+  "13": "Đoạn C: 'a distance of 7D is set between each turbine in a fully developed wind farm'. Đáp án 7D.",
+  "14": "Đoạn E: 'Small-scale wind power is the name given to wind generation systems with the capacity to produce up to 50 kW'. Đáp án 50 kW."
+}

@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A giới thiệu chè là gì và mức độ tiêu thụ rộng rãi ra sao. Đúng tiêu đề ii.",
+  "2": "Đoạn B truy nguồn ba nhóm từ (te, cha, chai) và con đường lan truyền của mỗi nhóm. Đúng tiêu đề iv.",
+  "3": "Đoạn C nói cây chè có nguồn gốc từ đâu (vùng sông Irrawaddy). Đúng tiêu đề i.",
+  "4": "Đoạn D nói thành phần hoá học trong tách trà: polyphenol, caffeine, theobromine, theophylline. Đúng tiêu đề vi.",
+  "5": "Đoạn E nói bằng chứng khoa học về lợi ích sức khoẻ còn hạn chế, kèm cảnh báo về fluoride trong trà gạch. Đúng tiêu đề ix.",
+  "6": "Đoạn F nói cây trà trồng được ở đâu, kể cả những vùng khí hậu đại dương xa vùng nhiệt đới. Đúng tiêu đề v.",
+  "7": "Đoạn G nói ai sản xuất trà nhiều nhất (Trung Quốc, Ấn Độ, Kenya, Sri Lanka). Đúng tiêu đề viii.",
+  "8": "Đoạn A: 'After plain drinking water, tea is the most widely consumed beverage in the world'. Đúng ý đề nên TRUE.",
+  "9": "Đoạn B nói ngược: 'cha, which came in the 1590s' là dạng ĐẦU TIÊN vào tiếng Anh, còn 'tea' chỉ tới thế kỷ 17. Đề nói 'tea' vào trước nên FALSE.",
+  "10": "Đoạn C: 'Since there are no known wild populations of this tea, its origin is speculative'. Không tìm thấy quần thể hoang dã nào, đề nói có nên FALSE.",
+  "11": "Đoạn E chỉ nói brick tea 'high levels' fluoride 'enough to pose a health risk', không hề nói nước nào có luật GIỚI HẠN hàm lượng đó. NOT GIVEN.",
+  "12": "Đoạn D: 'The astringency in tea can be attributed to the presence of polyphenols'. Đáp án polyphenols.",
+  "13": "Đoạn D: 'Tea contains small amounts of theobromine and theophylline'. Đề đã có theobromine nên chỗ trống là theophylline.",
+  "14": "Đoạn E: '...manganese, at 0.5 mg per cup or 26% of the Reference Daily Intake'. Đáp án manganese.",
+  "15": "Đoạn G: '...together representing 81% of world tea production'. Đáp án 81%."
+}

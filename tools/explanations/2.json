@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A giới thiệu tổng quan rồi liệt kê hàng loạt cái 'nhất': lạnh nhất, khô nhất, nhiều gió nhất, cao trung bình nhất, nhiệt độ thấp nhất từng đo được. Đúng tiêu đề iv — tổng quan về lục địa và những kỷ lục cực đoan.",
+  "2": "Đoạn B truy nguồn gốc chữ 'antarctic' qua tiếng Pháp trung đại, Latin, Hy Lạp, rồi tới Chaucer. Toàn bộ đoạn nói về tên gọi nên chọn ii.",
+  "3": "Đoạn C nói về diện tích đất, bốn kiểu bờ biển với tỉ lệ phần trăm, và các hồ (Onyx, hồ Vostok, hồ mặn và hồ nước ngọt). Đủ ba thứ trong tiêu đề vi: đất, đường bờ biển và hồ.",
+  "4": "Đoạn D kể chuyện Nam Cực từng là một phần của siêu lục địa Gondwana và tách ra khoảng 183 triệu năm trước. Đúng tiêu đề viii về quá khứ xa xưa khi còn thuộc một khối đất lớn hơn.",
+  "5": "Đoạn E rất ngắn và chỉ làm một việc: so nhiệt độ ven biển (trên 10 °C mùa hè, dưới −40 °C mùa đông) với vùng nội địa cao (−30 °C và dưới −80 °C). Đúng tiêu đề iii.",
+  "6": "Đoạn F giải thích các loài sống sót qua nhiều chu kỳ băng hà nhờ trú ở những vùng ấm biệt lập, rồi liệt kê các loài. Đúng tiêu đề vii — sinh vật và cách chúng sống sót qua các kỷ băng hà.",
+  "7": "Đoạn A nói ngược lại: lượng mưa 'over 200 mm along the coast and far less inland' — vùng nội địa ít hơn nhiều chứ không phải nhiều hơn. Đề đảo chiều so sánh nên FALSE.",
+  "8": "Đoạn A: 70% nước ngọt thế giới đóng băng ở đây, 'if melted, would raise global sea levels by almost 60 metres'. 'Almost 60' khớp với 'around 60' của đề nên TRUE.",
+  "9": "Đoạn C: 'It was once believed that the lake had been sealed off for millions of years, but scientists now estimate its water is replaced... every 13,000 years'. Đó là quan niệm CŨ đã bị bác bỏ. Đề nhắc lại quan niệm cũ như thể vẫn đúng nên FALSE. Dạng câu 'từng được tin là... nhưng nay' rất hay được ra thành FALSE.",
+  "10": "Đoạn D: 'For a large proportion of the Phanerozoic, Antarctica had a tropical or temperate climate, and it was covered in forests'. Khớp trực tiếp nên TRUE.",
+  "11": "Bài có liệt kê nhiều loài ở đoạn F nhưng không hề nói các nhà khoa học kỳ vọng bao nhiêu, hay tìm được nhiều hơn dự đoán. So sánh với 'kỳ vọng' là do đề thêm vào, nên NOT GIVEN.",
+  "12": "Đoạn A: 'It is mainly a polar desert'. Chỗ trống ngay sau 'polar' nên từ cần điền là desert.",
+  "13": "Đoạn C: '44% of the coast is floating ice in the form of an ice shelf'. 44% đúng là 'just under half'. Được viết tối đa hai từ nên ice shelf hợp lệ.",
+  "14": "Đoạn C: 'Lake Vostok, discovered beneath Russia's Vostok Station'. Chỗ trống đứng sau \"Russia's\" nên phải là Vostok Station, không phải 'Lake Vostok'.",
+  "15": "Đoạn F: 'The flightless midge Belgica antarctica, the largest purely terrestrial animal in Antarctica'. Đề đã có 'flightless' nên chỗ trống là midge, chứ không phải tên khoa học Belgica antarctica."
+}

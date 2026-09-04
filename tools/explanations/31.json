@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa pin lithium-ion và cho thấy nó đã tiến bộ ra sao: mật độ năng lượng tăng gấp ba, chi phí giảm mười lần trong ba thập kỷ. Đúng tiêu đề ii.",
+  "2": "Đoạn B mô tả vật liệu điện cực và chất điện phân, và ion/electron di chuyển thế nào giữa chúng khi xả. Đúng tiêu đề v.",
+  "3": "Đoạn C nói ion di chuyển ngược lại khi sạc (intercalation) và nguy hiểm nếu sạc sai điện áp/dòng (có thể nổ). Đúng tiêu đề iv.",
+  "4": "Đoạn D nói từ một cell đơn lẻ ghép thành module rồi thành pack, và các dạng hình học khác nhau (coin cell, cylindrical). Đúng tiêu đề i.",
+  "5": "Đoạn B: 'The electrolyte provides a conductive medium for lithium ions but does not partake in the electrochemical reaction'. Đúng ý đề nên TRUE.",
+  "6": "Đoạn A nói ngược: 'Li-ion battery sizes are generally not standardised (e.g. in the spirit of the AA battery)'. Không được chuẩn hoá như pin AA. Đề nói có nên FALSE.",
+  "7": "Đoạn D: 'Copper is selected for the anode, because lithium does not alloy with it'. Đúng ý đề nên TRUE.",
+  "8": "Đoạn D: coin cell 'poor specific energy (in Wh/kg) and small energy (Wh) per cell'. Năng lượng riêng THẤP chứ không cao. Đề nói ngược nên FALSE.",
+  "9": "Đoạn B chỉ nói silicon được trộn vào 'to increase the capacity' — tăng dung lượng, không hề nói gì về tuổi thọ pin. NOT GIVEN.",
+  "10": "Đoạn A: '...uses the reversible intercalation of lithium ions (Li+) into electronically conducting solids to store energy'. Đáp án intercalation.",
+  "11": "Đoạn B: 'The electrolyte is usually lithium hexafluorophosphate, dissolved in a mixture of organic carbonates'. Đáp án lithium hexafluorophosphate.",
+  "12": "Đoạn C: 'This is sometimes referred to as trickle charging'. Đáp án trickle charging.",
+  "13": "Đoạn A: 'In the three decades since Li-ion batteries were first sold in 1991'. Đáp án 1991.",
+  "14": "Đoạn B: 'The negative electrode is usually graphite'. Đáp án graphite.",
+  "15": "Đoạn C: 'Constant current constant voltage (CC/CV) is the standard method used to charge lithium-ion cells'. Đáp án CC/CV."
+}

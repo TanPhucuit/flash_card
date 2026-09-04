@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa hệ chữ viết là gì rồi phân loại thành các nhóm chính: bảng chữ cái, âm tiết, chữ biểu ý, với ví dụ số lượng ký hiệu khác nhau. Đúng cả hai vế của tiêu đề iii.",
+  "2": "Đoạn B nói viết là gì (ký hiệu thị giác/xúc giác biểu diễn ngôn ngữ) và loại trừ cái gì KHÔNG được tính là viết (bản vẽ, bản đồ). Đúng tiêu đề vi.",
+  "3": "Đoạn C bàn thuật ngữ nghiên cứu (grapheme, allograph...) rồi giải thích vì sao một ký hiệu có nhiều hình dạng (chữ 'a' hai tầng, một tầng, viết tay...). Đúng tiêu đề i.",
+  "4": "Đoạn D kể lịch sử chữ viết ra đời độc lập nhiều lần: chữ hình nêm Sumer, chữ tượng hình Ai Cập, chữ Hán, chữ Trung Mỹ. Đúng tiêu đề iv.",
+  "5": "Đoạn E phân loại hệ chữ viết theo đơn vị ngôn ngữ mà ký hiệu biểu diễn: âm thanh (phonographic) hay ý nghĩa (morphographic), rồi thêm cách chia pleremic/cenemic. Đúng tiêu đề v.",
+  "6": "Đoạn A: 'Alphabets typically use fewer than 100 distinct symbols, while syllabaries and logographies may use hundreds or thousands'. Bảng chữ cái ít ký hiệu hơn hẳn hệ biểu ý, đúng ý đề nên TRUE.",
+  "7": "Đoạn B: 'This definition excludes a broader class of symbolic markings, such as drawings and maps'. Bị loại trừ chứ không được tính, nên đề nói ngược: FALSE.",
+  "8": "Đoạn D: 'historically most proto-writing systems did not produce writing systems'. Đa số KHÔNG trở thành hệ chữ viết đầy đủ. Đề nói ngược nên FALSE.",
+  "9": "Đoạn D: 'There is no evidence of contact between China and the literate peoples of the Near East, and the Mesopotamian and Chinese approaches... are distinct'. Đúng ý đề nên TRUE.",
+  "10": "Đoạn E chỉ nói giới nghiên cứu ngày nay 'generally prefers morphographic over logographic' — ưa dùng hơn, nhưng không nói thuật ngữ cũ đã bị bỏ hẳn, không ai dùng nữa. Đề đi xa hơn bài nên NOT GIVEN.",
+  "11": "Đoạn C: 'A grapheme is the basic functional unit of a writing system'. Đáp án grapheme.",
+  "12": "Đoạn C: 'All writing systems require a set of defined graphemes, collectively called a script'. Đáp án script.",
+  "13": "Đoạn C: 'These variant glyphs are known as the allographs of a grapheme'. Đáp án allographs.",
+  "14": "Đoạn A: 'abjads generally only use letters representing consonant sounds'. Đáp án abjad — chỉ viết phụ âm, khác abugida là viết cặp phụ âm-nguyên âm.",
+  "15": "Đoạn E: 'pleremic... systems with graphemes that have semantic value in isolation'. Đáp án pleremic — mang nghĩa độc lập, trái với cenemic (không mang nghĩa riêng, như chữ cái)."
+}

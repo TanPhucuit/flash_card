@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A giới thiệu chữ Braille là gì và cậu bé Louis Braille đã tạo ra nó thế nào. Đúng tiêu đề iii.",
+  "2": "Đoạn B nói về hệ thống trước đó (night writing của Barbier) và ba nhược điểm khiến Braille phải cải tiến. Đúng tiêu đề i.",
+  "3": "Đoạn C mô tả sáu chấm trong một ô và vì sao một ký hiệu Braille có thể mang nhiều nghĩa (ví dụ ⠙ vừa là 'd' vừa là số 4). Đúng tiêu đề v.",
+  "4": "Đoạn D nói các cách viết Braille: bằng tay (slate và stylus), bằng máy (Perkins Brailler), hay điện tử. Đúng tiêu đề iv.",
+  "5": "Đoạn B: 'Barbier's writings do not use this term' (night writing), thuật ngữ đó được ĐẶT SAU bởi người khác. Đúng ý đề nên TRUE.",
+  "6": "Đoạn B nói ngược: hệ thống Barbier dùng 'sets of 12 embossed dots', còn 6 chấm là cải tiến của chính Braille. FALSE.",
+  "7": "Đoạn C: 'the character ⠙ corresponds in print to both the letter d and the digit 4'. Đúng ý đề nên TRUE.",
+  "8": "Đoạn D nói ngược: dùng slate và stylus 'each dot is created from the back of the page, writing in mirror image' — ấn từ MẶT SAU, không phải mặt trước. FALSE.",
+  "9": "Bài không hề nói thời gian trung bình để học đọc Braille. NOT GIVEN.",
+  "10": "Đoạn C: 'producing 64 (2^6) possible patterns, including one in which there are no raised dots'. Đáp án 64.",
+  "11": "Đoạn D: 'Interpoint refers to braille printing that is offset, so that the paper can be embossed on both sides'. Đáp án Interpoint.",
+  "12": "Đoạn A: 'he developed the braille code based on the French alphabet as an improvement on night writing'. Đáp án night.",
+  "13": "Đoạn A: 'He published his system... in 1829'. Đáp án 1829.",
+  "14": "Đoạn B: 'sets of 12 embossed dots were used to encode 36 different sounds'. Đáp án 36.",
+  "15": "Đoạn D: 'a braille typewriter or Perkins Brailler'. Đáp án Perkins Brailler."
+}

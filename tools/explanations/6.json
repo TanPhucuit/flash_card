@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A trả lời đúng câu hỏi 'ở đâu và vì sao ở đó': ranh giới mảng tách giãn và hội tụ, vùng vỏ bị kéo mỏng, và điểm nóng do luồng manti. Đúng tiêu đề ii.",
+  "2": "Đoạn B nói vỏ cứng Trái Đất vỡ thành mười sáu mảng lớn cùng nhiều mảng nhỏ, rồi bàn cách phân nhóm núi lửa theo thời gian, vị trí, cấu trúc, thành phần (polygenetic và monogenetic). Đúng cả hai vế của tiêu đề iii.",
+  "3": "Đoạn C liệt kê những bộ phận một núi lửa cần (buồng magma, ống dẫn, miệng phun) rồi nhấn mạnh hình dạng rất đa dạng, không chỉ là hình nón. Đúng tiêu đề v.",
+  "4": "Đoạn D nói cái gì thoát ra (hơi nước, CO2, SO2...) và cái gì quyết định mức độ dữ dội (độ nhớt và lượng khí hoà tan, đều do hàm lượng silica quyết định). Đúng tiêu đề vi.",
+  "5": "Đoạn E chỉ là những con số thống kê các vụ phun trào trong thế Holocene 11.700 năm gần đây. Đúng tiêu đề viii.",
+  "6": "Đoạn A: 'because most of Earth's plate boundaries are underwater, most volcanoes are found underwater'. Đề nói phần lớn nằm trên đất liền — trái ngược, nên FALSE.",
+  "7": "Đoạn A: núi lửa do mảng tách giãn 'are usually non-explosive' còn do mảng hội tụ thì 'cause violent eruptions'. Đề diễn đạt lại đúng chiều so sánh nên TRUE.",
+  "8": "Đoạn A câu cuối: 'Volcanoes are usually not created at transform tectonic boundaries where two tectonic plates slide past one another'. Ranh giới trượt ngang chính là chỗ hai mảng trượt qua nhau, và bài nói thường KHÔNG có núi lửa. FALSE.",
+  "9": "Đoạn B: núi lửa 'become extinct after erupting exactly once are monogenetic'. Phun đúng một lần rồi tắt, khớp với 'erupts on only one occasion' nên TRUE.",
+  "10": "Đoạn D chỉ nói Lassen Peak 'is actually a large lava dome' — lớn, nhưng không hề nói lớn NHẤT California. Dạng so sánh nhất mà bài không xác nhận thì chọn NOT GIVEN.",
+  "11": "Đoạn B: 'broken into sixteen larger and several smaller plates'. Đề giữ nguyên cấu trúc nên chỗ trống là smaller.",
+  "12": "Đoạn C: núi lửa cần 'a conduit to allow magma to rise through the crust, and a vent to allow the magma to escape'. Đề đã có 'vent' nên chỗ trống là conduit.",
+  "13": "Đoạn D: 'Water vapour is typically the most abundant volcanic gas'. 'Most abundant' tương ứng 'in the greatest quantity' của đề, đáp án water vapour.",
+  "14": "Đoạn D: 'If the erupted magma contains a high percentage (>63%) of silica, the lava is described as felsic'. Đáp án felsic; dacite và rhyolite chỉ là ví dụ cụ thể của nhóm này.",
+  "15": "Đoạn E: 'lists 10,652 confirmed eruptions from 1,214 volcanoes'. Đề đã có 10.652 nên chỗ trống là 1,214. Đừng lấy 1.113 hay 168 — đó là số vụ chưa chắc chắn và số vụ đã bị bác bỏ."
+}

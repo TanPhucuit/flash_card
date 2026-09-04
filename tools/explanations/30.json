@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A cho biết thuỷ điện cấp bao nhiêu điện thế giới (15%) và cái giá môi trường của nó: mất đất canh tác, di dời dân, gián đoạn hệ sinh thái sông. Đúng cả hai vế của tiêu đề ii.",
+  "2": "Đoạn B kể lịch sử từ Trung Quốc 202 TCN, qua sách của Bélidor, tới nhà máy Arkwright 1771 khởi đầu hệ thống nhà máy. Đúng tiêu đề iv.",
+  "3": "Đoạn C nói Thuỵ Sĩ đã khai thác 88%, Mexico 80% tiềm năng, và IEA dự báo tăng trưởng CHẬM LẠI do thời gian cấp phép và xây dựng dài. Đúng tiêu đề v.",
+  "4": "Đoạn D giải thích cơ chế vật lý: thế năng nước, đầu nước (head), ống dẫn (penstock), tuabin, cả bơm tích năng và nhà máy chạy theo dòng chảy. Đúng tiêu đề vi.",
+  "5": "Đoạn E nói cách phân loại nhà máy lớn (LHP) và nhỏ (SHP) dựa trên công suất, ngưỡng khác nhau tuỳ nước. Đúng tiêu đề i.",
+  "6": "Đoạn A: 'which is more than all other renewable sources combined'. Đúng ý đề nên TRUE.",
+  "7": "Đoạn A: nhà máy có đập và hồ chứa 'the amount of electricity produced can be increased or decreased in seconds or minutes'. Đúng ý đề nên TRUE.",
+  "8": "Đoạn A: 'when constructed in lowland rainforest areas, where part of the forest is inundated, substantial amounts of greenhouse gases may be emitted'. Vẫn có trường hợp phát thải đáng kể, không phải 'never'. Đề dùng tuyệt đối nên FALSE.",
+  "9": "Đoạn D: 'Pumped storage is not an energy source, and appears as a negative number in listings'. Đề nói ngược nên FALSE.",
+  "10": "Đoạn A chỉ nhắc Brazil, Na Uy, Trung Quốc là nước dẫn đầu về thuỷ điện; đoạn C nói Thuỵ Sĩ và Mexico gần hết tiềm năng. Không hề nhắc châu Phi hay tiềm năng chưa khai thác lớn nhất ở đâu. NOT GIVEN.",
+  "11": "Đoạn D: 'the difference in height between the source and the water's outflow. This height difference is called the head'. Đáp án head.",
+  "12": "Đoạn D: 'A large pipe (the penstock) delivers water from the reservoir to the turbine'. Đáp án penstock.",
+  "13": "Đoạn D: 'Run-of-the-river hydroelectric stations are those with small or no reservoir capacity'. Đáp án run-of-the-river.",
+  "14": "Đoạn B: 'Bernard Forest de Bélidor published Architecture Hydraulique, which described vertical- and horizontal-axis hydraulic machines'. Đáp án Architecture Hydraulique.",
+  "15": "Đoạn E: 'a plant with the capacity of 50 MW or more is considered an LHP'. Đáp án 50 MW."
+}

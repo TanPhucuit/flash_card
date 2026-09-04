@@ -1,0 +1,17 @@
+{
+  "1": "Đoạn A định nghĩa địa nhiệt là gì, cho biết chi phí giảm và quy mô sử dụng ngày nay (16 GW, ~100.000 nhân công). Đúng tiêu đề iii.",
+  "2": "Đoạn B kể lịch sử: tắm suối nước nóng thời đồ đá cũ, nhà tắm La Mã, và khai thác công nghiệp đầu tiên 1827 ở Larderello. Đúng tiêu đề i.",
+  "3": "Đoạn C giải thích nhiệt trong lòng Trái Đất đến từ đâu (bồi tụ hành tinh + phân rã phóng xạ) và có bao nhiêu (10^31 J). Đúng tiêu đề iv.",
+  "4": "Đoạn D nói về phát điện địa nhiệt và công nghệ mới (binary cycle) giúp mở rộng ra những nơi trước đây không khai thác được. Đúng tiêu đề v.",
+  "5": "Đoạn A: 'Geothermal power plants produce power at a constant rate, regardless of weather conditions'. Đúng ý đề nên TRUE.",
+  "6": "Đoạn C nói ngược: nhiệt chảy ra bề mặt 44,2 TW nhưng 'most of this energy flux is not recoverable' — PHẦN LỚN không thu hồi được, không phải gần hết thu hồi được. FALSE.",
+  "7": "Đoạn B: 'The admission fees for these baths probably represent the first commercial use of geothermal energy'. Đúng ý đề (dùng 'probably' → 'may have been') nên TRUE.",
+  "8": "Đoạn C: dẫn nhiệt ra bề mặt 44,2 TW, còn phân rã phóng xạ bù lại 30 TW — bù chậm hơn tốc độ mất đi (30 < 44,2), không phải nhanh hơn. Đề nói ngược nên FALSE.",
+  "9": "Đoạn D chỉ nói Myanmar có hơn 39 địa điểm 'capable of' (CÓ KHẢ NĂNG) sản xuất địa nhiệt, không nói nhà máy đã VẬN HÀNH. NOT GIVEN.",
+  "10": "Đoạn B: 'The oldest known spa is at the site of the Huaqing Chi palace'. Đáp án Huaqing Chi.",
+  "11": "Đoạn B: 'The world's oldest geothermal district heating system, in Chaudes-Aigues, France'. Đáp án Chaudes-Aigues.",
+  "12": "Đoạn B: 'the use of geyser steam to extract boric acid from volcanic mud in Larderello, Italy'. Đáp án boric acid.",
+  "13": "Đoạn A: '16 gigawatts (GW) of geothermal power was available worldwide in 2025'. Đáp án 16 gigawatts.",
+  "14": "Đoạn D: 'As of 2010 geothermal electricity was generated in 26 countries'. Đáp án 26.",
+  "15": "Đoạn D: 'The greenhouse gas emissions of geothermal electric stations are on average 45 grams of carbon dioxide per kilowatt-hour'. Đáp án 45 grams."
+}
