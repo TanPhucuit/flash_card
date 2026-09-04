@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/ui";
 import { useAppData } from "./hooks/useAppData";
-import { useLifeManagementStatusSync } from "./hooks/useLifeManagementStatusSync";
+import { LifeManagementSyncApi, useLifeManagementSync } from "./hooks/useLifeManagementSync";
 import { useReadingData } from "./hooks/useReadingData";
 import { DemoPage } from "./pages/DemoPage";
 import { ListeningTestPage } from "./pages/ListeningTestPage";
@@ -30,9 +30,10 @@ export default function App() {
   const api = useAppData();
   const reading = useReadingData();
   const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 767px)").matches);
-  // Đặt ở gốc app để một chế độ vừa học xong ở BẤT KỲ trang nào cũng được đẩy
-  // trạng thái sang Life Management, kể cả khi người dùng không mở trang Sets.
-  useLifeManagementStatusSync(api, reading);
+  // Đặt ở gốc app để mọi thay đổi ở BẤT KỲ trang nào — thêm set, học xong một
+  // chế độ, làm xong một bài đọc — đều được đẩy sang Life Management, kể cả khi
+  // người dùng không bao giờ mở trang Settings.
+  const lmSync = useLifeManagementSync(api, reading);
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 767px)");
@@ -45,12 +46,12 @@ export default function App() {
   return (
     <Routes>
       <Route path="/demo" element={<DemoPage />} />
-      <Route path="*" element={<AuthenticatedApp api={api} reading={reading} isMobile={isMobile} />} />
+      <Route path="*" element={<AuthenticatedApp api={api} reading={reading} isMobile={isMobile} lmSync={lmSync} />} />
     </Routes>
   );
 }
 
-function AuthenticatedApp({ api, reading, isMobile }: { api: DataApi; reading: ReadingDataApi; isMobile: boolean }) {
+function AuthenticatedApp({ api, reading, isMobile, lmSync }: { api: DataApi; reading: ReadingDataApi; isMobile: boolean; lmSync: LifeManagementSyncApi }) {
   if (isMobile) {
     // Reading is a split-pane exam layout that needs the desktop chrome, so on
     // phones it stays reachable by URL but is not part of the mobile shell.
@@ -81,7 +82,7 @@ function AuthenticatedApp({ api, reading, isMobile }: { api: DataApi; reading: R
         <Route path="/study/:setId/write" element={<WritePage api={api} />} />
         <Route path="/study/:setId/match" element={<MatchPage api={api} />} />
         <Route path="/progress" element={<ProgressPage api={api} />} />
-        <Route path="/settings" element={<SettingsPage api={api} />} />
+        <Route path="/settings" element={<SettingsPage api={api} lmSync={lmSync} />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </AppLayout>

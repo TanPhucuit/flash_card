@@ -8,7 +8,7 @@ import { AppData, LEARN_DIRECTIONS, LearnDirection, StudyResult, VocabularyCard,
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
 import { isStarSet } from "../utils/starSets";
-import { syncSetListToLifeManagement } from "../utils/lifeManagementSync";
+import { LifeManagementSyncApi } from "../hooks/useLifeManagementSync";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
@@ -1008,15 +1008,12 @@ export function MySetsPage({ api, reading }: SetsPageProps) {
   const [multiPickerOpen, setMultiPickerOpen] = useState(false);
   const [selectedSetIds, setSelectedSetIds] = useState<string[]>([]);
   const [wordCount, setWordCount] = useState(0);
-  const [syncing, setSyncing] = useState(false);
-  const [syncMessage, setSyncMessage] = useState("");
   const navigate = useNavigate();
 
   function switchTab(tab: "learning" | "completed" | "starred") {
     setActiveTab(tab);
     setSelectedListId(null);
     setQuery("");
-    setSyncMessage("");
   }
 
   const learnedSetIds = useMemo(() => {
@@ -1115,48 +1112,11 @@ export function MySetsPage({ api, reading }: SetsPageProps) {
     });
   }
 
-  // Đồng bộ nguyên một danh sách sang Life Management theo cây ba tầng: danh
-  // sách → bốn node chế độ học → từng set dưới mỗi chế độ, kèm trạng thái hoàn
-  // thành của đúng cặp (set, chế độ). Luôn đẩy TOÀN BỘ set của danh sách
-  // (không lọc theo tab đang mở) — cây bên kia phản ánh nội dung danh sách,
-  // không phản ánh việc mình đang xem tab "chưa hoàn thành" hay "đã hoàn thành".
-  async function syncListToLifeManagement() {
-    if (!selectedList) return;
-    const config = reading.data.lifeManagement;
-    if (!config.baseUrl.trim()) {
-      alert("Chưa cấu hình địa chỉ Life Management. Vào trang Reading → nút đồng bộ để khai báo.");
-      return;
-    }
-    const setsOfList = api.data.sets.filter((set) => !isStarSet(set) && set.listId === selectedList.id);
-    if (!setsOfList.length) {
-      alert("Danh sách này chưa có học phần nào để đồng bộ.");
-      return;
-    }
-
-    setSyncing(true);
-    setSyncMessage("");
-    try {
-      const outcome = await syncSetListToLifeManagement(config, selectedList, setsOfList, api.data.results);
-      api.markLifeManagementSynced(selectedList.id, outcome.listTaskId, outcome.setTaskIds);
-      setSyncMessage(
-        `Đã đồng bộ "${selectedList.title}": tạo mới ${outcome.createdCount} node, dùng lại ${outcome.reusedCount} node có sẵn`
-        + `, đánh dấu hoàn thành ${outcome.completedCount} node.`,
-      );
-    } catch (error) {
-      alert(`Chưa đồng bộ được sang Life Management:\n${error instanceof Error ? error.message : error}`);
-    } finally {
-      setSyncing(false);
-    }
-  }
-
   const headerAction = activeTab === "starred" ? undefined
     : selectedList ? (
       <div className="flex flex-wrap gap-sm">
-        <Button variant="ghost" onClick={() => { setSelectedListId(null); setSyncMessage(""); }}><Icon name="arrow_back" /> Danh sách</Button>
+        <Button variant="ghost" onClick={() => { setSelectedListId(null); }}><Icon name="arrow_back" /> Danh sách</Button>
         <Button variant="secondary" onClick={() => setMultiPickerOpen((value) => !value)}><Icon name="layers" /> Learn Mix Set</Button>
-        <Button variant="secondary" disabled={syncing} onClick={syncListToLifeManagement}>
-          <Icon name="sync" /> {syncing ? "Đang đồng bộ..." : "Đồng bộ Life Management"}
-        </Button>
         <Button onClick={() => navigate(`/sets/new?listId=${selectedList.id}`)}><Icon name="add" /> Create New Set</Button>
       </div>
     ) : (
@@ -1248,9 +1208,6 @@ export function MySetsPage({ api, reading }: SetsPageProps) {
                 </Button>
               </div>
             </Card>
-          ) : null}
-          {syncMessage ? (
-            <div className="mb-lg rounded-xl bg-primary-fixed p-md font-semibold text-primary dark:bg-primary/15 dark:text-white">{syncMessage}</div>
           ) : null}
           <Card className="mb-lg">
             <div className="flex flex-col gap-md md:flex-row">
@@ -2405,7 +2362,7 @@ export function ProgressPage({ api }: PageProps) {
   );
 }
 
-export function SettingsPage({ api }: PageProps) {
+export function SettingsPage({ api, lmSync }: PageProps & { lmSync: LifeManagementSyncApi }) {
   const { voices } = useSpeech(api.data.settings.voiceURI);
   const storageInfo = getStorageDiagnostics();
   const [recoverMessage, setRecoverMessage] = useState("");
@@ -2474,6 +2431,28 @@ export function SettingsPage({ api }: PageProps) {
           <h2 className="font-headline-md text-headline-md">Appearance & Speech</h2>
           <label className="block"><span className="font-semibold">Theme</span><Select value={api.data.settings.theme} onChange={(e) => api.setTheme(e.target.value as "light" | "dark")}><option value="light">Light</option><option value="dark">Dark</option></Select></label>
           <label className="block"><span className="font-semibold">Voice</span><Select value={api.data.settings.voiceURI} onChange={(e) => api.setVoice(e.target.value)}><option value="">Auto English voice</option>{voices.map((voice) => <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name} ({voice.lang})</option>)}</Select></label>
+        </Card>
+        <Card className="space-y-md">
+          <h2 className="font-headline-md text-headline-md">Life Management</h2>
+          <p className="text-sm text-on-surface-variant dark:text-white/70">
+            Cây task bên Life Management được cập nhật tự động: thêm danh sách, thêm học phần hay
+            học xong một chế độ là node tương ứng tự được tạo và đánh dấu. Nút dưới đây chỉ dùng khi
+            muốn đẩy lại ngay mà không đợi.
+          </p>
+          <Button variant="secondary" disabled={lmSync.state === "syncing"} onClick={lmSync.syncNow}>
+            <Icon name="sync" /> {lmSync.state === "syncing" ? "Đang đồng bộ..." : "Đồng bộ ngay"}
+          </Button>
+          {lmSync.message ? (
+            <div
+              className={`rounded-xl p-md text-sm font-semibold ${
+                lmSync.state === "error"
+                  ? "bg-error-container text-on-error-container"
+                  : "bg-primary-fixed text-primary dark:bg-primary/15 dark:text-white"
+              }`}
+            >
+              {lmSync.message}
+            </div>
+          ) : null}
         </Card>
         <Card className="space-y-md">
           <h2 className="font-headline-md text-headline-md">Data</h2>
