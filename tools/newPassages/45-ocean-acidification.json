@@ -1,0 +1,141 @@
+{
+  "title": "Ocean Acidification",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học môi trường phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Ocean acidification is the ongoing, measurable decrease in the pH of the world's oceans, caused chiefly by the ocean's continuous absorption of excess carbon dioxide released into the atmosphere primarily through the large-scale burning of fossil fuels. Since the start of the industrial revolution, the average pH of ocean surface water has fallen by approximately 0.1 units, which, because the pH scale is logarithmic rather than linear, actually corresponds to a roughly thirty percent increase in the overall acidity, or more precisely the hydrogen ion concentration, of ocean surface waters worldwide over that same period."
+    },
+    {
+      "letter": "B",
+      "text": "The underlying chemistry involved is comparatively straightforward: when carbon dioxide dissolves into seawater, it reacts chemically with water molecules to form carbonic acid, which subsequently dissociates further, releasing additional hydrogen ions that directly lower the water's overall pH. The ocean has absorbed, by various careful scientific estimates, somewhere between roughly twenty-five and thirty percent of all the carbon dioxide humans have released into the atmosphere since industrialisation began, a substantial buffering service that has meaningfully slowed the pace of atmospheric climate change but has come at a very real, largely hidden cost to marine chemistry and to the ocean ecosystems that depend directly upon it."
+    },
+    {
+      "letter": "C",
+      "text": "Increased ocean acidity poses a particular, well-documented threat to marine organisms that build shells or skeletons from calcium carbonate, including corals, oysters, clams, and various species of free-floating microscopic plankton that together form the foundation of many marine food webs. As ocean water becomes more acidic, the availability of the specific carbonate ions these organisms require to construct and continuously maintain their shells and skeletons correspondingly decreases, making shell and skeleton formation measurably more energetically costly and, under sufficiently severe conditions, potentially causing existing calcium carbonate structures to begin dissolving away faster than the organism can effectively rebuild and repair them."
+    },
+    {
+      "letter": "D",
+      "text": "Laboratory and carefully controlled field experiments have demonstrated a range of measurable negative effects of increased acidity on various marine species, including reduced shell thickness and structural strength in oysters and other shellfish, impaired larval development in numerous fish species, and, in several particularly striking and well-studied experiments, altered, sometimes distinctly abnormal behaviour in certain reef fish, including a measurably reduced ability to detect the specific chemical scent of nearby predators, a change that would plausibly make affected fish substantially more vulnerable to predation under fully realistic, real-world ocean conditions outside the controlled laboratory setting. Coral reefs, already under severe and well-documented additional stress from rising ocean temperatures and the associated phenomenon of coral bleaching, face a genuinely serious compounding threat from acidification, since the carbonate skeleton that gives coral reefs their characteristic and ecologically essential three-dimensional structure becomes measurably more difficult for corals to build and to subsequently maintain as ocean acidity continues to rise."
+    },
+    {
+      "letter": "E",
+      "text": "Unlike some other, more spatially localised forms of environmental pollution, ocean acidification is a genuinely global phenomenon, since carbon dioxide readily mixes throughout the entire, interconnected global atmosphere before subsequently being absorbed into ocean water at a great many different locations across the planet, meaning that even ocean regions that are otherwise entirely pristine and free from any direct local pollution are nonetheless still measurably affected by acidification originating from fossil fuel emissions released anywhere else on Earth. Because reversing ocean acidification directly and rapidly is not realistically achievable using any currently available technology, most policy proposals for addressing the underlying problem focus instead specifically on substantially reducing the ongoing global emission of carbon dioxide, in order to slow the continuing rate of future ocean acidification, rather than on any proposed technology capable of directly restoring ocean pH to more historically typical, pre-industrial levels."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat is happening to ocean pH, and by how much\nii\tThe chemistry involved, and how much CO2 the ocean has absorbed\niii\tWhy shell-building organisms are especially at risk\niv\tEvidence of harm from laboratory and field experiments\nv\tWhy it is a global problem with no quick technological fix\nvi\tEfforts to breed acid-resistant coral species\nvii\tHow ocean pH is measured by research vessels",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói pH đại dương giảm bao nhiêu kể từ cách mạng công nghiệp. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B giải thích hoá học CO2 tạo axit carbonic và đại dương đã hấp thụ bao nhiêu CO2. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói sinh vật xây vỏ/xương từ canxi carbonat bị đe doạ đặc biệt. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về bằng chứng thí nghiệm: vỏ mỏng hơn, cá không phát hiện được mùi kẻ săn mồi, san hô khó xây khung xương. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói đây là vấn đề toàn cầu, không có công nghệ khắc phục nhanh chóng. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "A drop of 0.1 pH units corresponds to only a small, roughly proportional change in acidity because the pH scale is linear.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: thang pH là 'logarithmic rather than linear', và mức giảm 0.1 tương ứng tăng khoảng 30% độ axit — không phải thay đổi nhỏ, tuyến tính. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The ocean has absorbed between roughly twenty-five and thirty percent of all human-released carbon dioxide since industrialisation.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'The ocean has absorbed... somewhere between roughly twenty-five and thirty percent of all the carbon dioxide humans have released'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Increased acidity makes carbonate ions more available to shell-building organisms.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'the availability of the specific carbonate ions these organisms require... correspondingly decreases' khi nước biển axit hơn. Giảm chứ không tăng. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Some reef fish in experiments showed a reduced ability to detect the scent of nearby predators.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'a measurably reduced ability to detect the specific chemical scent of nearby predators'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "There is currently a widely available technology capable of directly reversing ocean acidification.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'reversing ocean acidification directly and rapidly is not realistically achievable using any currently available technology'. Chưa có công nghệ như vậy. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Ocean surface pH has fallen by approximately ________ units since the industrial revolution.",
+      "answer": "0.1",
+      "number": 11,
+      "explanation": "Đoạn A: 'the average pH of ocean surface water has fallen by approximately 0.1 units'. Đáp án 0.1."
+    },
+    {
+      "type": "gap",
+      "prompt": "Dissolved CO2 reacts with water to form ________ acid.",
+      "answer": "carbonic",
+      "number": 12,
+      "explanation": "Đoạn B: 'it reacts chemically with water molecules to form carbonic acid'. Đáp án carbonic."
+    },
+    {
+      "type": "gap",
+      "prompt": "Shell-building organisms require ________ ions to construct and maintain their shells.",
+      "answer": "carbonate",
+      "number": 13,
+      "explanation": "Đoạn C: 'the availability of the specific carbonate ions these organisms require'. Đáp án carbonate."
+    },
+    {
+      "type": "gap",
+      "prompt": "Coral reefs are already under additional stress from rising ocean temperatures and coral ________.",
+      "answer": "bleaching",
+      "number": 14,
+      "explanation": "Đoạn D: 'severe and well-documented additional stress from rising ocean temperatures and the associated phenomenon of coral bleaching'. Đáp án bleaching."
+    },
+    {
+      "type": "gap",
+      "prompt": "Most policy proposals focus on reducing global ________ emissions rather than restoring pH directly.",
+      "answer": "carbon dioxide",
+      "number": 15,
+      "explanation": "Đoạn E: 'focus instead specifically on substantially reducing the ongoing global emission of carbon dioxide'. Đáp án carbon dioxide."
+    }
+  ]
+}

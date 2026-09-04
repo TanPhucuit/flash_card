@@ -16857,6 +16857,886 @@
           "id": "nl2-40-bronze-age-collapse-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-41-optogenetics-p1",
+      "order": 93,
+      "title": "Optogenetics",
+      "text": "A\nOptogenetics is a research technique that allows scientists to precisely switch individual neurons on or off using pulses of light, achieved by first genetically engineering the target neurons to produce light-sensitive proteins that would not otherwise be present in ordinary brain cells. Before optogenetics became available, researchers studying the brain were largely limited to comparatively blunt tools, such as electrical stimulation or targeted lesions, that typically affected many different intermingled types of neurons within a given brain region simultaneously, making it correspondingly difficult to determine which specific type of neuron, among the many present in that region, was actually responsible for producing a particular observed behaviour or physiological effect.\n\nB\nThe light-sensitive proteins central to optogenetics, called opsins, were originally discovered in microorganisms such as algae and certain light-responsive bacteria, where they naturally serve to help the organism sense and respond appropriately to light in its immediate environment. Researchers, most notably Karl Deisseroth, Ed Boyden, and their respective research groups working in the mid-2000s, found that inserting the specific gene for one such opsin, called channelrhodopsin, into a mammalian neuron caused that neuron to become electrically active whenever blue light was subsequently shone directly upon it, providing an unprecedentedly precise, essentially instantaneous experimental switch for turning specific individual neurons on with a very high degree of both temporal and spatial precision.\n\nC\nTo target only a single, specific type of neuron for genetic modification, out of the many different neuron types typically intermingled together within any given region of the brain, researchers combine the opsin gene with genetic techniques that restrict its expression, and thus its light sensitivity, exclusively to neurons that already naturally produce a particular other, unrelated protein unique or largely specific to that neuron type. Once the modified neurons are expressing the light-sensitive opsin, a thin optical fibre can then be surgically implanted to deliver precisely targeted pulses of light directly to that exact brain region, in an experimental animal such as a laboratory mouse, allowing researchers to switch the targeted neurons on or off with a level of precision, in both timing and location, that was entirely unimaginable using any previously available research technique.\n\nD\nOptogenetics has already substantially transformed neuroscience research. Researchers have used the technique to identify specific populations of neurons responsible for regulating a wide range of complex behaviours in laboratory animals, including aggression, specific fear responses, and various sleep-wake cycle transitions, by directly and precisely activating or silencing carefully targeted neurons and then closely observing the resulting behavioural changes in real time. In one particularly striking and widely cited experiment, researchers were able to artificially induce specific components of what appeared to be an aggressive behavioural response in mice simply by activating a very specific, carefully identified population of neurons within the hypothalamus, a brain structure previously suspected, but not definitively proven, to be centrally involved in regulating aggressive behaviour.\n\nE\nAlthough optogenetics remains overwhelmingly a laboratory research tool rather than an approved clinical treatment, researchers are actively exploring its potential therapeutic and clinical applications, most notably in restoring at least partial vision to certain patients with specific inherited forms of blindness, by genetically engineering surviving retinal cells that would not otherwise directly respond to light to express a suitable opsin protein instead. Early, cautiously encouraging clinical trials for this specific vision-restoration application are already under way, though optogenetic techniques intended for direct, widespread clinical use in humans still face substantial additional practical and regulatory hurdles, including the challenge of safely and reliably delivering the necessary genetic modifications to the correct human cells, and the invasive surgical requirement of implanting light-delivery devices directly and safely within living human tissue.\n\n— Biên soạn dựa trên kiến thức thần kinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the technique is, and the cruder tools it replaced\nii\tA light-sensitive protein borrowed from algae and bacteria\niii\tTargeting only one type of neuron among many\niv\tExperiments revealing which neurons control which behaviour\nv\tEarly steps toward restoring vision in humans\nvi\tHow opsins were first discovered in the nineteenth century\nvii\tSafety concerns raised about implanting optical fibres",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa quang di truyền học và các công cụ thô kém chính xác hơn nó thay thế. Đúng tiêu đề i.",
+          "id": "nl2-41-optogenetics-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về opsin có nguồn gốc từ tảo và vi khuẩn, được đưa vào neuron động vật có vú. Đúng tiêu đề ii.",
+          "id": "nl2-41-optogenetics-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói cách chỉ nhắm đúng một loại neuron cụ thể trong số nhiều loại đan xen. Đúng tiêu đề iii.",
+          "id": "nl2-41-optogenetics-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về các thí nghiệm xác định neuron nào điều khiển hành vi nào — như tính hung hăng. Đúng tiêu đề iv.",
+          "id": "nl2-41-optogenetics-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về ứng dụng lâm sàng tiềm năng: phục hồi thị lực cho người mù bẩm sinh. Đúng tiêu đề v.",
+          "id": "nl2-41-optogenetics-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Electrical stimulation techniques used before optogenetics could target one specific type of neuron with high precision.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: các công cụ cũ 'typically affected many different intermingled types of neurons... simultaneously'. Không chính xác cho một loại duy nhất. FALSE.",
+          "id": "nl2-41-optogenetics-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Channelrhodopsin makes a neuron electrically active when exposed to blue light.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'caused that neuron to become electrically active whenever blue light was subsequently shone directly upon it'. Đúng ý đề nên TRUE.",
+          "id": "nl2-41-optogenetics-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Researchers can restrict opsin expression to only neurons that produce a specific other protein.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'restrict its expression... exclusively to neurons that already naturally produce a particular other, unrelated protein'. Đúng ý đề nên TRUE.",
+          "id": "nl2-41-optogenetics-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The role of the hypothalamus in aggression had been definitively proven before the optogenetics experiment described.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: hypothalamus 'previously suspected, but not definitively proven, to be centrally involved in regulating aggressive behaviour'. Mới chỉ nghi ngờ, chưa chứng minh trước thí nghiệm này. FALSE.",
+          "id": "nl2-41-optogenetics-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Optogenetics is already an approved, widely used clinical treatment for blindness.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'optogenetics remains overwhelmingly a laboratory research tool rather than an approved clinical treatment' — vẫn còn nhiều rào cản. FALSE.",
+          "id": "nl2-41-optogenetics-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Light-sensitive proteins central to optogenetics are called ________.",
+          "answer": "opsins",
+          "number": 11,
+          "explanation": "Đoạn B: 'The light-sensitive proteins central to optogenetics, called opsins'. Đáp án opsins.",
+          "id": "nl2-41-optogenetics-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The specific opsin discovered by Deisseroth and Boyden's groups is called ________.",
+          "answer": "channelrhodopsin",
+          "number": 12,
+          "explanation": "Đoạn B: 'the specific gene for one such opsin, called channelrhodopsin'. Đáp án channelrhodopsin.",
+          "id": "nl2-41-optogenetics-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "A thin optical ________ is surgically implanted to deliver light pulses to a target brain region.",
+          "answer": "fibre",
+          "number": 13,
+          "explanation": "Đoạn C: 'a thin optical fibre can then be surgically implanted'. Đáp án fibre.",
+          "id": "nl2-41-optogenetics-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The aggression experiment activated neurons within the ________.",
+          "answer": "hypothalamus",
+          "number": 14,
+          "explanation": "Đoạn D: 'activating a very specific, carefully identified population of neurons within the hypothalamus'. Đáp án hypothalamus.",
+          "id": "nl2-41-optogenetics-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Vision-restoration research engineers surviving ________ cells to express a suitable opsin.",
+          "answer": "retinal",
+          "number": 15,
+          "explanation": "Đoạn E: 'genetically engineering surviving retinal cells... to express a suitable opsin protein'. Đáp án retinal.",
+          "id": "nl2-41-optogenetics-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-42-cultured-meat-p1",
+      "order": 94,
+      "title": "Cultured Meat",
+      "text": "A\nCultured meat, sometimes also called cultivated or lab-grown meat, is genuine animal muscle tissue produced by growing animal cells directly in a controlled laboratory or industrial bioreactor environment, rather than by raising and subsequently slaughtering an entire living animal in the conventional way. The basic underlying process begins with a small sample of cells taken, typically via a comparatively minor and non-lethal biopsy, from a living donor animal, which are then placed in a nutrient-rich growth medium designed to encourage the cells to multiply, divide, and eventually mature into functional muscle tissue broadly resembling conventional meat in its basic biological composition.\n\nB\nThe world's first publicly demonstrated cultured-meat hamburger was unveiled in London in 2013 by the Dutch researcher Mark Post and his research team, at a cost, for that single small patty alone, of roughly 250,000 euros, funded substantially by the Google co-founder Sergey Brin, reflecting the extraordinary expense of the very earliest, still largely experimental production methods. Since that initial demonstration, production costs have fallen dramatically as researchers have refined growth media formulations, developed more efficient bioreactor designs, and identified cheaper alternative sources for various essential growth-promoting proteins, though cultured meat generally still remains considerably more expensive to produce than conventional meat from farmed animals in most current markets.\n\nC\nOne particularly significant technical and financial challenge has been developing growth media that avoid using foetal bovine serum, a nutrient-rich substance extracted from unborn calves that was widely used in early cultured-meat research but is both extremely expensive and, since it still ultimately derives directly from a slaughtered pregnant animal, somewhat at odds with cultured meat's central ethical selling point of substantially reducing or eliminating direct animal slaughter for meat production. Researchers have since developed various serum-free growth media formulated instead from plant-derived or synthetically manufactured proteins, sugars, and other necessary nutrients, a development widely regarded within the field as essential for both bringing production costs down to commercially competitive levels and for cultured meat to fully deliver on its central ethical promise of essentially eliminating animal slaughter from meat production.\n\nD\nProponents argue that cultured meat could substantially reduce the environmental footprint associated with conventional livestock farming, including its very substantial contribution to overall greenhouse gas emissions, its extensive demand for agricultural land and fresh water, and its well-documented tendency to enable and spread antibiotic resistance through the routine use of antibiotics in intensive conventional animal agriculture. Some independent life-cycle environmental assessments broadly support at least some of these claimed environmental benefits, particularly regarding land use, though the specific comparative greenhouse gas emissions of cultured meat, especially once its production is eventually scaled up to a genuinely large industrial scale, remain a matter of some continuing scientific and methodological uncertainty and disagreement, since the emissions produced depend heavily on the specific, currently unresolved question of what particular energy sources ultimately power the large-scale bioreactor facilities required.\n\nE\nSingapore became the first country in the world to approve cultured meat for direct human consumption, in late 2020, granting regulatory approval for a cultured-chicken product subsequently sold in a small number of local restaurants. Since that initial approval, the United States and several other countries have followed with their own separate regulatory approvals for various specific cultured-meat products, though the industry as a whole continues to face substantial remaining hurdles before it can realistically achieve significant, mainstream market scale, including further necessary reductions in production cost, building sufficient large-scale manufacturing capacity, and overcoming persistent, and in some markets considerable, consumer scepticism about the underlying safety, naturalness, and taste of meat grown directly from cells in a laboratory or industrial facility rather than from a conventionally raised animal.\n\n— Biên soạn dựa trên kiến thức sinh học và công nghệ thực phẩm phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and how the basic process works\nii\tAn extremely expensive first demonstration in London\niii\tRemoving an ingredient at odds with the ethical case for it\niv\tClaimed environmental benefits, and lingering uncertainty\nv\tFirst regulatory approvals, and remaining hurdles\nvi\tTaste tests comparing it directly with conventional meat\nvii\tPatent disputes between rival cultured-meat companies",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa thịt nuôi cấy là gì và quy trình cơ bản. Đúng tiêu đề i.",
+          "id": "nl2-42-cultured-meat-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể về chiếc bánh hamburger nuôi cấy đầu tiên năm 2013 giá 250.000 euro. Đúng tiêu đề ii.",
+          "id": "nl2-42-cultured-meat-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về việc loại bỏ huyết thanh bào thai bò khỏi môi trường nuôi cấy vì mâu thuẫn với lý do đạo đức. Đúng tiêu đề iii.",
+          "id": "nl2-42-cultured-meat-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về lợi ích môi trường được tuyên bố và sự không chắc chắn còn tồn tại. Đúng tiêu đề iv.",
+          "id": "nl2-42-cultured-meat-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về Singapore là nước đầu tiên phê duyệt thịt nuôi cấy và các rào cản còn lại. Đúng tiêu đề v.",
+          "id": "nl2-42-cultured-meat-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Producing cultured meat requires killing the donor animal to obtain the initial cell sample.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: mẫu tế bào lấy 'via a comparatively minor and non-lethal biopsy' — không gây chết động vật hiến tế bào. FALSE.",
+          "id": "nl2-42-cultured-meat-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Cultured meat is now generally cheaper to produce than conventional farmed meat in most current markets.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'cultured meat generally still remains considerably more expensive to produce than conventional meat... in most current markets'. Vẫn đắt hơn, không phải rẻ hơn. FALSE.",
+          "id": "nl2-42-cultured-meat-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Foetal bovine serum is derived from unborn calves.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'a nutrient-rich substance extracted from unborn calves'. Đúng ý đề nên TRUE.",
+          "id": "nl2-42-cultured-meat-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All independent environmental assessments agree completely on the exact greenhouse gas emissions of cultured meat at industrial scale.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: lượng phát thải khí nhà kính ở quy mô công nghiệp 'remain a matter of some continuing scientific and methodological uncertainty and disagreement'. Còn tranh cãi, không có sự đồng thuận hoàn toàn. FALSE.",
+          "id": "nl2-42-cultured-meat-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Singapore was the first country to approve cultured meat for human consumption.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'Singapore became the first country in the world to approve cultured meat for direct human consumption'. Đúng ý đề nên TRUE.",
+          "id": "nl2-42-cultured-meat-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The first cultured-meat hamburger was unveiled in London in ________.",
+          "answer": "2013",
+          "number": 11,
+          "explanation": "Đoạn B: 'was unveiled in London in 2013'. Đáp án 2013.",
+          "id": "nl2-42-cultured-meat-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The first demonstration burger was funded substantially by Google co-founder ________.",
+          "answer": "Sergey Brin",
+          "number": 12,
+          "explanation": "Đoạn B: 'funded substantially by the Google co-founder Sergey Brin'. Đáp án Sergey Brin.",
+          "id": "nl2-42-cultured-meat-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Newer growth media are formulated instead from plant-derived or synthetically manufactured ________.",
+          "answer": "proteins",
+          "number": 13,
+          "explanation": "Đoạn C: 'formulated instead from plant-derived or synthetically manufactured proteins, sugars, and other necessary nutrients'. Đáp án proteins.",
+          "id": "nl2-42-cultured-meat-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Intensive conventional animal agriculture routinely uses ________ that can spread resistance.",
+          "answer": "antibiotics",
+          "number": 14,
+          "explanation": "Đoạn D: 'through the routine use of antibiotics in intensive conventional animal agriculture'. Đáp án antibiotics.",
+          "id": "nl2-42-cultured-meat-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Singapore approved a cultured-________ product for sale in local restaurants.",
+          "answer": "chicken",
+          "number": 15,
+          "explanation": "Đoạn E: 'granting regulatory approval for a cultured-chicken product'. Đáp án chicken.",
+          "id": "nl2-42-cultured-meat-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-43-autonomous-vehicles-p1",
+      "order": 95,
+      "title": "Autonomous Vehicles",
+      "text": "A\nAn autonomous vehicle is a vehicle capable of sensing its immediate surrounding environment and navigating public roads with little or no direct, ongoing input from a human driver, relying on a combination of sensors, including cameras, radar, and often a laser-based sensing technology called lidar, together with sophisticated onboard computer software that interprets this continuous stream of sensor data in real time to identify other vehicles, pedestrians, road markings, and traffic signals, and then decides, moment by moment, how to respond appropriately.\n\nB\nThe Society of Automotive Engineers has defined a widely adopted six-level scale, running from Level 0, meaning no automation whatsoever, up to Level 5, meaning full automation capable of handling literally any driving scenario a conventional human driver could handle, without requiring any human intervention or oversight under any circumstances. Most vehicles currently available for purchase by ordinary consumers offer, at most, Level 2 automation, meaning the vehicle can simultaneously control both steering and speed under certain limited driving conditions, but a human driver is still required to remain fully alert and ready to immediately retake full control at any moment, a requirement several vehicle manufacturers have been criticised for not communicating clearly enough to consumers in their marketing materials and product naming.\n\nC\nCompanies such as Waymo, a subsidiary of Google's parent company Alphabet, operate a small but steadily growing number of Level 4 vehicles, commonly described as robotaxis, offering driverless rides to paying members of the public within certain carefully mapped and geographically restricted urban areas, a level of automation in which the vehicle can handle essentially all aspects of driving unassisted within its specifically defined and pre-approved operational area, without requiring any human safety driver physically present in the vehicle, but is not necessarily capable of reliably operating safely outside that carefully defined area or under unusual road and weather conditions its systems and mapping data have not been specifically designed and tested for.\n\nD\nDeveloping genuinely reliable autonomous vehicles has proved considerably more difficult in practice than many industry experts confidently predicted a decade ago, largely because of the sheer, effectively unbounded variety of unusual, unpredictable, low-probability situations, colloquially termed \"edge cases\" within the industry, that a vehicle operating in real, everyday traffic may unexpectedly encounter, ranging from a plastic shopping bag blown unpredictably across the road by a sudden gust of wind to a police officer manually directing traffic in a way that deliberately overrides standard traffic signals and posted road signs. Training a vehicle's underlying software to correctly recognise and respond safely and appropriately to the truly enormous range of such rare but individually consequential situations, many of which occur so infrequently that gathering sufficient real-world training data on them is itself extremely difficult, remains one of the central, unsolved technical challenges confronting the entire industry.\n\nE\nAutonomous vehicle crashes, though currently statistically rare in absolute terms relative to the enormous cumulative number of miles autonomous test vehicles have collectively driven, have attracted disproportionate media and regulatory scrutiny precisely because they raise novel and largely unresolved legal and ethical questions regarding liability when an autonomous vehicle's own software, rather than any identifiable human driver, is directly responsible for causing a collision. Regulators in different countries and even different states within a single country have adopted substantially different, and in some cases directly conflicting, legal approaches to testing, approving, and assigning legal liability for autonomous vehicles, and most industry analysts now generally expect the genuinely widespread, mainstream adoption of higher levels of vehicle automation to proceed considerably more gradually, and considerably more cautiously, than the more optimistic predictions confidently made throughout much of the previous decade.\n\n— Biên soạn dựa trên kiến thức khoa học kỹ thuật phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the vehicle senses, and how it decides what to do\nii\tA six-level scale, and what most consumer cars actually offer\niii\tDriverless taxis operating within a mapped area\niv\tRare situations that make full reliability so hard to achieve\nv\tCrashes, liability, and slower-than-expected adoption\nvi\tHow lidar sensors were first developed for aviation\nvii\tInsurance premiums for owners of autonomous vehicles",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa xe tự lái là gì và cách nó cảm nhận và quyết định. Đúng tiêu đề i.",
+          "id": "nl2-43-autonomous-vehicles-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về thang 6 cấp độ tự động hoá và hầu hết xe tiêu dùng chỉ đạt cấp độ 2. Đúng tiêu đề ii.",
+          "id": "nl2-43-autonomous-vehicles-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về Waymo vận hành robotaxi cấp độ 4 trong khu vực được lập bản đồ. Đúng tiêu đề iii.",
+          "id": "nl2-43-autonomous-vehicles-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về 'edge cases' — tình huống hiếm gặp khiến việc đạt độ tin cậy cao rất khó. Đúng tiêu đề iv.",
+          "id": "nl2-43-autonomous-vehicles-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về tai nạn, vấn đề trách nhiệm pháp lý, và việc áp dụng rộng rãi diễn ra chậm hơn dự đoán. Đúng tiêu đề v.",
+          "id": "nl2-43-autonomous-vehicles-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Level 5 automation requires a human driver to remain ready to take control at any moment.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: Level 5 nghĩa là 'full automation... without requiring any human intervention or oversight under any circumstances'. Không cần con người sẵn sàng tiếp quản. Yêu cầu đó thuộc về Level 2. FALSE.",
+          "id": "nl2-43-autonomous-vehicles-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Vehicle manufacturers have been criticised for failing to clearly communicate the limits of Level 2 automation to consumers.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'a requirement several vehicle manufacturers have been criticised for not communicating clearly enough to consumers'. Đúng ý đề nên TRUE.",
+          "id": "nl2-43-autonomous-vehicles-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Waymo's Level 4 robotaxis can reliably drive safely anywhere, regardless of location or weather conditions.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: xe 'is not necessarily capable of reliably operating safely outside that carefully defined area or under unusual road and weather conditions'. Chỉ hoạt động tốt trong khu vực xác định. FALSE.",
+          "id": "nl2-43-autonomous-vehicles-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Gathering sufficient real-world training data on rare edge cases is described as extremely difficult.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'many of which occur so infrequently that gathering sufficient real-world training data on them is itself extremely difficult'. Đúng ý đề nên TRUE.",
+          "id": "nl2-43-autonomous-vehicles-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All countries and states have adopted identical legal approaches to autonomous vehicle liability.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: các nước và bang 'have adopted substantially different, and in some cases directly conflicting, legal approaches'. Khác nhau, không phải giống hệt nhau. FALSE.",
+          "id": "nl2-43-autonomous-vehicles-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Besides cameras and radar, autonomous vehicles often use a laser-based sensor called ________.",
+          "answer": "lidar",
+          "number": 11,
+          "explanation": "Đoạn A: 'a laser-based sensing technology called lidar'. Đáp án lidar.",
+          "id": "nl2-43-autonomous-vehicles-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The six-level automation scale was defined by the Society of ________ Engineers.",
+          "answer": "Automotive",
+          "number": 12,
+          "explanation": "Đoạn B: 'The Society of Automotive Engineers has defined a widely adopted six-level scale'. Đáp án Automotive.",
+          "id": "nl2-43-autonomous-vehicles-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Waymo is a subsidiary of Google's parent company ________.",
+          "answer": "Alphabet",
+          "number": 13,
+          "explanation": "Đoạn C: 'a subsidiary of Google's parent company Alphabet'. Đáp án Alphabet.",
+          "id": "nl2-43-autonomous-vehicles-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Rare, unpredictable situations a vehicle may encounter are colloquially termed '________ cases'.",
+          "answer": "edge",
+          "number": 14,
+          "explanation": "Đoạn D: 'colloquially termed edge cases within the industry'. Đáp án edge.",
+          "id": "nl2-43-autonomous-vehicles-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Autonomous vehicle crashes raise unresolved questions about legal ________ when software causes a collision.",
+          "answer": "liability",
+          "number": 15,
+          "explanation": "Đoạn E: 'raise novel and largely unresolved legal and ethical questions regarding liability'. Đáp án liability.",
+          "id": "nl2-43-autonomous-vehicles-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-44-cephalopod-cognition-p1",
+      "order": 96,
+      "title": "Cephalopod Cognition",
+      "text": "A\nCephalopods, a group of marine molluscs that includes octopuses, cuttlefish, and squid, possess by far the largest and most complex nervous systems found among any invertebrate animal group, a fact that has made them an object of intense and sustained scientific fascination given how evolutionarily distant they are from vertebrate animals, including humans, whose own comparably large and complex brains evolved along an entirely separate evolutionary lineage stretching back many hundreds of millions of years.\n\nB\nAn octopus possesses roughly five hundred million neurons in total, a substantial number by invertebrate standards though still considerably fewer than the roughly eighty-six billion found in a typical human brain, but remarkably, only around one third of these neurons are located within the octopus's central brain proper; the remaining two-thirds are instead distributed throughout its eight arms, each of which contains its own substantial cluster of neurons capable of processing sensory information and directly controlling detailed, complex arm movements with a considerable, and only partially understood, degree of independence from the animal's central brain.\n\nC\nThis unusual, highly distributed nervous system allows an octopus's individual arms to continue performing surprisingly sophisticated, coordinated tasks, such as exploring a crevice for hidden food or manipulating a small object, even when that specific arm's direct neural connection to the animal's central brain has been experimentally and reversibly severed under controlled laboratory conditions, a degree of functional autonomy essentially unheard of among vertebrate limbs, which typically become largely non-functional the moment their neural connection to the central nervous system is disrupted. Some researchers have consequently suggested that an octopus's overall cognition might be usefully understood as meaningfully distributed across its entire body, rather than being centralised almost exclusively within its brain in the way vertebrate cognition generally is.\n\nD\nOctopuses have demonstrated a genuinely impressive range of complex cognitive abilities in carefully controlled laboratory experiments, including reliably learning to navigate mazes, successfully solving multi-step physical puzzles to obtain food rewards hidden inside secured, screw-top jars, and, in several well-documented instances, apparently recognising and remembering specific individual human laboratory caretakers, in some cases directing what researchers interpreted as targeted behavioural responses, such as deliberately squirting water, at particular individual staff members they appeared to dislike or had previously found unpleasant or threatening in some specific way. Cuttlefish, close relatives of octopuses, have separately demonstrated, in one particularly notable series of experiments, an ability to delay immediate gratification, choosing to wait for a preferred food item rather than immediately accepting a less preferred one readily available sooner, a form of self-control historically associated in comparative cognition research primarily with certain relatively large-brained vertebrate species such as primates and corvid birds.\n\nE\nCephalopod intelligence evolved along an evolutionary path entirely separate from, and largely independent of, the path that produced vertebrate intelligence, since the most recent common ancestor shared between cephalopods and vertebrates was almost certainly a comparatively simple organism lacking anything resembling a genuinely complex nervous system or brain. This makes cephalopods a particularly valuable subject for researchers specifically interested in convergent evolution, the broader biological phenomenon whereby unrelated evolutionary lineages independently evolve broadly similar complex traits, such as sophisticated cognition and problem-solving ability, in response to broadly comparable environmental pressures and survival challenges, suggesting that complex cognition of a broadly similar kind may be capable of arising through more than a single distinct evolutionary pathway across the wider animal kingdom.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy cephalopods fascinate researchers of animal cognition\nii\tWhere most of an octopus's neurons are actually located\niii\tArms that keep working after being disconnected from the brain\niv\tPuzzle-solving, memory, and delayed gratification in the lab\nv\tAn independent evolutionary path to complex cognition\nvi\tHow cephalopods camouflage themselves from predators\nvii\tConservation concerns facing wild octopus populations",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói vì sao cephalopod hấp dẫn các nhà nghiên cứu nhận thức động vật — hệ thần kinh phức tạp nhất trong động vật không xương sống. Đúng tiêu đề i.",
+          "id": "nl2-44-cephalopod-cognition-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói 2/3 neuron của bạch tuộc nằm ở tám cánh tay, không phải ở não trung tâm. Đúng tiêu đề ii.",
+          "id": "nl2-44-cephalopod-cognition-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói cánh tay vẫn hoạt động phối hợp dù bị cắt kết nối thần kinh với não trung tâm. Đúng tiêu đề iii.",
+          "id": "nl2-44-cephalopod-cognition-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về khả năng giải đố, nhận diện người chăm sóc, và mực nang trì hoãn thoả mãn. Đúng tiêu đề iv.",
+          "id": "nl2-44-cephalopod-cognition-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói trí thông minh cephalopod tiến hoá độc lập với động vật có xương sống — bằng chứng tiến hoá hội tụ. Đúng tiêu đề v.",
+          "id": "nl2-44-cephalopod-cognition-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "An octopus has more neurons in total than a typical human brain.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: octopus có khoảng 500 triệu neuron, 'considerably fewer than the roughly eighty-six billion found in a typical human brain'. Ít hơn nhiều, không phải nhiều hơn. FALSE.",
+          "id": "nl2-44-cephalopod-cognition-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most of an octopus's neurons are located in its central brain rather than in its arms.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'only around one third of these neurons are located within the octopus's central brain proper; the remaining two-thirds are instead distributed throughout its eight arms'. Đa số ở cánh tay, không phải ở não. FALSE.",
+          "id": "nl2-44-cephalopod-cognition-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Vertebrate limbs typically remain fully functional after their neural connection to the central nervous system is disrupted.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: chi động vật có xương sống 'typically become largely non-functional the moment their neural connection to the central nervous system is disrupted'. Mất chức năng, không phải vẫn hoạt động bình thường. FALSE.",
+          "id": "nl2-44-cephalopod-cognition-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Octopuses have been observed apparently recognising and remembering specific individual human caretakers.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'apparently recognising and remembering specific individual human laboratory caretakers'. Đúng ý đề nên TRUE.",
+          "id": "nl2-44-cephalopod-cognition-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The most recent common ancestor of cephalopods and vertebrates likely had a complex brain similar to both groups.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: tổ tiên chung gần nhất 'was almost certainly a comparatively simple organism lacking anything resembling a genuinely complex nervous system'. Tổ tiên đơn giản, không phức tạp. FALSE.",
+          "id": "nl2-44-cephalopod-cognition-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "An octopus possesses roughly ________ neurons in total.",
+          "answer": "five hundred million",
+          "number": 11,
+          "explanation": "Đoạn B: 'An octopus possesses roughly five hundred million neurons in total'. Đáp án five hundred million.",
+          "id": "nl2-44-cephalopod-cognition-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Octopuses in experiments have solved multi-step puzzles to obtain food from secured, screw-top ________.",
+          "answer": "jars",
+          "number": 12,
+          "explanation": "Đoạn D: 'solving multi-step physical puzzles to obtain food rewards hidden inside secured, screw-top jars'. Đáp án jars.",
+          "id": "nl2-44-cephalopod-cognition-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Some octopuses were observed directing targeted behavioural responses, such as deliberately squirting ________, at specific staff members.",
+          "answer": "water",
+          "number": 13,
+          "explanation": "Đoạn D: 'directing what researchers interpreted as targeted behavioural responses, such as deliberately squirting water, at particular individual staff members'. Đáp án water.",
+          "id": "nl2-44-cephalopod-cognition-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Cuttlefish demonstrated an ability to delay immediate ________ in food-choice experiments.",
+          "answer": "gratification",
+          "number": 14,
+          "explanation": "Đoạn D: 'an ability to delay immediate gratification'. Đáp án gratification.",
+          "id": "nl2-44-cephalopod-cognition-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Unrelated lineages independently evolving similar complex traits is called ________ evolution.",
+          "answer": "convergent",
+          "number": 15,
+          "explanation": "Đoạn E: 'convergent evolution, the broader biological phenomenon whereby unrelated evolutionary lineages independently evolve broadly similar complex traits'. Đáp án convergent.",
+          "id": "nl2-44-cephalopod-cognition-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-45-ocean-acidification-p1",
+      "order": 97,
+      "title": "Ocean Acidification",
+      "text": "A\nOcean acidification is the ongoing, measurable decrease in the pH of the world's oceans, caused chiefly by the ocean's continuous absorption of excess carbon dioxide released into the atmosphere primarily through the large-scale burning of fossil fuels. Since the start of the industrial revolution, the average pH of ocean surface water has fallen by approximately 0.1 units, which, because the pH scale is logarithmic rather than linear, actually corresponds to a roughly thirty percent increase in the overall acidity, or more precisely the hydrogen ion concentration, of ocean surface waters worldwide over that same period.\n\nB\nThe underlying chemistry involved is comparatively straightforward: when carbon dioxide dissolves into seawater, it reacts chemically with water molecules to form carbonic acid, which subsequently dissociates further, releasing additional hydrogen ions that directly lower the water's overall pH. The ocean has absorbed, by various careful scientific estimates, somewhere between roughly twenty-five and thirty percent of all the carbon dioxide humans have released into the atmosphere since industrialisation began, a substantial buffering service that has meaningfully slowed the pace of atmospheric climate change but has come at a very real, largely hidden cost to marine chemistry and to the ocean ecosystems that depend directly upon it.\n\nC\nIncreased ocean acidity poses a particular, well-documented threat to marine organisms that build shells or skeletons from calcium carbonate, including corals, oysters, clams, and various species of free-floating microscopic plankton that together form the foundation of many marine food webs. As ocean water becomes more acidic, the availability of the specific carbonate ions these organisms require to construct and continuously maintain their shells and skeletons correspondingly decreases, making shell and skeleton formation measurably more energetically costly and, under sufficiently severe conditions, potentially causing existing calcium carbonate structures to begin dissolving away faster than the organism can effectively rebuild and repair them.\n\nD\nLaboratory and carefully controlled field experiments have demonstrated a range of measurable negative effects of increased acidity on various marine species, including reduced shell thickness and structural strength in oysters and other shellfish, impaired larval development in numerous fish species, and, in several particularly striking and well-studied experiments, altered, sometimes distinctly abnormal behaviour in certain reef fish, including a measurably reduced ability to detect the specific chemical scent of nearby predators, a change that would plausibly make affected fish substantially more vulnerable to predation under fully realistic, real-world ocean conditions outside the controlled laboratory setting. Coral reefs, already under severe and well-documented additional stress from rising ocean temperatures and the associated phenomenon of coral bleaching, face a genuinely serious compounding threat from acidification, since the carbonate skeleton that gives coral reefs their characteristic and ecologically essential three-dimensional structure becomes measurably more difficult for corals to build and to subsequently maintain as ocean acidity continues to rise.\n\nE\nUnlike some other, more spatially localised forms of environmental pollution, ocean acidification is a genuinely global phenomenon, since carbon dioxide readily mixes throughout the entire, interconnected global atmosphere before subsequently being absorbed into ocean water at a great many different locations across the planet, meaning that even ocean regions that are otherwise entirely pristine and free from any direct local pollution are nonetheless still measurably affected by acidification originating from fossil fuel emissions released anywhere else on Earth. Because reversing ocean acidification directly and rapidly is not realistically achievable using any currently available technology, most policy proposals for addressing the underlying problem focus instead specifically on substantially reducing the ongoing global emission of carbon dioxide, in order to slow the continuing rate of future ocean acidification, rather than on any proposed technology capable of directly restoring ocean pH to more historically typical, pre-industrial levels.\n\n— Biên soạn dựa trên kiến thức khoa học môi trường phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat is happening to ocean pH, and by how much\nii\tThe chemistry involved, and how much CO2 the ocean has absorbed\niii\tWhy shell-building organisms are especially at risk\niv\tEvidence of harm from laboratory and field experiments\nv\tWhy it is a global problem with no quick technological fix\nvi\tEfforts to breed acid-resistant coral species\nvii\tHow ocean pH is measured by research vessels",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói pH đại dương giảm bao nhiêu kể từ cách mạng công nghiệp. Đúng tiêu đề i.",
+          "id": "nl2-45-ocean-acidification-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B giải thích hoá học CO2 tạo axit carbonic và đại dương đã hấp thụ bao nhiêu CO2. Đúng tiêu đề ii.",
+          "id": "nl2-45-ocean-acidification-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói sinh vật xây vỏ/xương từ canxi carbonat bị đe doạ đặc biệt. Đúng tiêu đề iii.",
+          "id": "nl2-45-ocean-acidification-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về bằng chứng thí nghiệm: vỏ mỏng hơn, cá không phát hiện được mùi kẻ săn mồi, san hô khó xây khung xương. Đúng tiêu đề iv.",
+          "id": "nl2-45-ocean-acidification-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói đây là vấn đề toàn cầu, không có công nghệ khắc phục nhanh chóng. Đúng tiêu đề v.",
+          "id": "nl2-45-ocean-acidification-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "A drop of 0.1 pH units corresponds to only a small, roughly proportional change in acidity because the pH scale is linear.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: thang pH là 'logarithmic rather than linear', và mức giảm 0.1 tương ứng tăng khoảng 30% độ axit — không phải thay đổi nhỏ, tuyến tính. FALSE.",
+          "id": "nl2-45-ocean-acidification-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The ocean has absorbed between roughly twenty-five and thirty percent of all human-released carbon dioxide since industrialisation.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'The ocean has absorbed... somewhere between roughly twenty-five and thirty percent of all the carbon dioxide humans have released'. Đúng ý đề nên TRUE.",
+          "id": "nl2-45-ocean-acidification-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Increased acidity makes carbonate ions more available to shell-building organisms.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'the availability of the specific carbonate ions these organisms require... correspondingly decreases' khi nước biển axit hơn. Giảm chứ không tăng. FALSE.",
+          "id": "nl2-45-ocean-acidification-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Some reef fish in experiments showed a reduced ability to detect the scent of nearby predators.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'a measurably reduced ability to detect the specific chemical scent of nearby predators'. Đúng ý đề nên TRUE.",
+          "id": "nl2-45-ocean-acidification-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "There is currently a widely available technology capable of directly reversing ocean acidification.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'reversing ocean acidification directly and rapidly is not realistically achievable using any currently available technology'. Chưa có công nghệ như vậy. FALSE.",
+          "id": "nl2-45-ocean-acidification-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Ocean surface pH has fallen by approximately ________ units since the industrial revolution.",
+          "answer": "0.1",
+          "number": 11,
+          "explanation": "Đoạn A: 'the average pH of ocean surface water has fallen by approximately 0.1 units'. Đáp án 0.1.",
+          "id": "nl2-45-ocean-acidification-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Dissolved CO2 reacts with water to form ________ acid.",
+          "answer": "carbonic",
+          "number": 12,
+          "explanation": "Đoạn B: 'it reacts chemically with water molecules to form carbonic acid'. Đáp án carbonic.",
+          "id": "nl2-45-ocean-acidification-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Shell-building organisms require ________ ions to construct and maintain their shells.",
+          "answer": "carbonate",
+          "number": 13,
+          "explanation": "Đoạn C: 'the availability of the specific carbonate ions these organisms require'. Đáp án carbonate.",
+          "id": "nl2-45-ocean-acidification-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Coral reefs are already under additional stress from rising ocean temperatures and coral ________.",
+          "answer": "bleaching",
+          "number": 14,
+          "explanation": "Đoạn D: 'severe and well-documented additional stress from rising ocean temperatures and the associated phenomenon of coral bleaching'. Đáp án bleaching.",
+          "id": "nl2-45-ocean-acidification-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Most policy proposals focus on reducing global ________ emissions rather than restoring pH directly.",
+          "answer": "carbon dioxide",
+          "number": 15,
+          "explanation": "Đoạn E: 'focus instead specifically on substantially reducing the ongoing global emission of carbon dioxide'. Đáp án carbon dioxide.",
+          "id": "nl2-45-ocean-acidification-q15"
+        }
+      ]
     }
   ]
 }

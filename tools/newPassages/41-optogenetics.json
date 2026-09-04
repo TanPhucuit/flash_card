@@ -1,0 +1,141 @@
+{
+  "title": "Optogenetics",
+  "sourceNote": "Biên soạn dựa trên kiến thức thần kinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Optogenetics is a research technique that allows scientists to precisely switch individual neurons on or off using pulses of light, achieved by first genetically engineering the target neurons to produce light-sensitive proteins that would not otherwise be present in ordinary brain cells. Before optogenetics became available, researchers studying the brain were largely limited to comparatively blunt tools, such as electrical stimulation or targeted lesions, that typically affected many different intermingled types of neurons within a given brain region simultaneously, making it correspondingly difficult to determine which specific type of neuron, among the many present in that region, was actually responsible for producing a particular observed behaviour or physiological effect."
+    },
+    {
+      "letter": "B",
+      "text": "The light-sensitive proteins central to optogenetics, called opsins, were originally discovered in microorganisms such as algae and certain light-responsive bacteria, where they naturally serve to help the organism sense and respond appropriately to light in its immediate environment. Researchers, most notably Karl Deisseroth, Ed Boyden, and their respective research groups working in the mid-2000s, found that inserting the specific gene for one such opsin, called channelrhodopsin, into a mammalian neuron caused that neuron to become electrically active whenever blue light was subsequently shone directly upon it, providing an unprecedentedly precise, essentially instantaneous experimental switch for turning specific individual neurons on with a very high degree of both temporal and spatial precision."
+    },
+    {
+      "letter": "C",
+      "text": "To target only a single, specific type of neuron for genetic modification, out of the many different neuron types typically intermingled together within any given region of the brain, researchers combine the opsin gene with genetic techniques that restrict its expression, and thus its light sensitivity, exclusively to neurons that already naturally produce a particular other, unrelated protein unique or largely specific to that neuron type. Once the modified neurons are expressing the light-sensitive opsin, a thin optical fibre can then be surgically implanted to deliver precisely targeted pulses of light directly to that exact brain region, in an experimental animal such as a laboratory mouse, allowing researchers to switch the targeted neurons on or off with a level of precision, in both timing and location, that was entirely unimaginable using any previously available research technique."
+    },
+    {
+      "letter": "D",
+      "text": "Optogenetics has already substantially transformed neuroscience research. Researchers have used the technique to identify specific populations of neurons responsible for regulating a wide range of complex behaviours in laboratory animals, including aggression, specific fear responses, and various sleep-wake cycle transitions, by directly and precisely activating or silencing carefully targeted neurons and then closely observing the resulting behavioural changes in real time. In one particularly striking and widely cited experiment, researchers were able to artificially induce specific components of what appeared to be an aggressive behavioural response in mice simply by activating a very specific, carefully identified population of neurons within the hypothalamus, a brain structure previously suspected, but not definitively proven, to be centrally involved in regulating aggressive behaviour."
+    },
+    {
+      "letter": "E",
+      "text": "Although optogenetics remains overwhelmingly a laboratory research tool rather than an approved clinical treatment, researchers are actively exploring its potential therapeutic and clinical applications, most notably in restoring at least partial vision to certain patients with specific inherited forms of blindness, by genetically engineering surviving retinal cells that would not otherwise directly respond to light to express a suitable opsin protein instead. Early, cautiously encouraging clinical trials for this specific vision-restoration application are already under way, though optogenetic techniques intended for direct, widespread clinical use in humans still face substantial additional practical and regulatory hurdles, including the challenge of safely and reliably delivering the necessary genetic modifications to the correct human cells, and the invasive surgical requirement of implanting light-delivery devices directly and safely within living human tissue."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the technique is, and the cruder tools it replaced\nii\tA light-sensitive protein borrowed from algae and bacteria\niii\tTargeting only one type of neuron among many\niv\tExperiments revealing which neurons control which behaviour\nv\tEarly steps toward restoring vision in humans\nvi\tHow opsins were first discovered in the nineteenth century\nvii\tSafety concerns raised about implanting optical fibres",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa quang di truyền học và các công cụ thô kém chính xác hơn nó thay thế. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về opsin có nguồn gốc từ tảo và vi khuẩn, được đưa vào neuron động vật có vú. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói cách chỉ nhắm đúng một loại neuron cụ thể trong số nhiều loại đan xen. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về các thí nghiệm xác định neuron nào điều khiển hành vi nào — như tính hung hăng. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về ứng dụng lâm sàng tiềm năng: phục hồi thị lực cho người mù bẩm sinh. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Electrical stimulation techniques used before optogenetics could target one specific type of neuron with high precision.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: các công cụ cũ 'typically affected many different intermingled types of neurons... simultaneously'. Không chính xác cho một loại duy nhất. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Channelrhodopsin makes a neuron electrically active when exposed to blue light.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'caused that neuron to become electrically active whenever blue light was subsequently shone directly upon it'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Researchers can restrict opsin expression to only neurons that produce a specific other protein.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'restrict its expression... exclusively to neurons that already naturally produce a particular other, unrelated protein'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The role of the hypothalamus in aggression had been definitively proven before the optogenetics experiment described.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: hypothalamus 'previously suspected, but not definitively proven, to be centrally involved in regulating aggressive behaviour'. Mới chỉ nghi ngờ, chưa chứng minh trước thí nghiệm này. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Optogenetics is already an approved, widely used clinical treatment for blindness.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'optogenetics remains overwhelmingly a laboratory research tool rather than an approved clinical treatment' — vẫn còn nhiều rào cản. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Light-sensitive proteins central to optogenetics are called ________.",
+      "answer": "opsins",
+      "number": 11,
+      "explanation": "Đoạn B: 'The light-sensitive proteins central to optogenetics, called opsins'. Đáp án opsins."
+    },
+    {
+      "type": "gap",
+      "prompt": "The specific opsin discovered by Deisseroth and Boyden's groups is called ________.",
+      "answer": "channelrhodopsin",
+      "number": 12,
+      "explanation": "Đoạn B: 'the specific gene for one such opsin, called channelrhodopsin'. Đáp án channelrhodopsin."
+    },
+    {
+      "type": "gap",
+      "prompt": "A thin optical ________ is surgically implanted to deliver light pulses to a target brain region.",
+      "answer": "fibre",
+      "number": 13,
+      "explanation": "Đoạn C: 'a thin optical fibre can then be surgically implanted'. Đáp án fibre."
+    },
+    {
+      "type": "gap",
+      "prompt": "The aggression experiment activated neurons within the ________.",
+      "answer": "hypothalamus",
+      "number": 14,
+      "explanation": "Đoạn D: 'activating a very specific, carefully identified population of neurons within the hypothalamus'. Đáp án hypothalamus."
+    },
+    {
+      "type": "gap",
+      "prompt": "Vision-restoration research engineers surviving ________ cells to express a suitable opsin.",
+      "answer": "retinal",
+      "number": 15,
+      "explanation": "Đoạn E: 'genetically engineering surviving retinal cells... to express a suitable opsin protein'. Đáp án retinal."
+    }
+  ]
+}

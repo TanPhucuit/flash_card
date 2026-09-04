@@ -1,0 +1,141 @@
+{
+  "title": "Cephalopod Cognition",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Cephalopods, a group of marine molluscs that includes octopuses, cuttlefish, and squid, possess by far the largest and most complex nervous systems found among any invertebrate animal group, a fact that has made them an object of intense and sustained scientific fascination given how evolutionarily distant they are from vertebrate animals, including humans, whose own comparably large and complex brains evolved along an entirely separate evolutionary lineage stretching back many hundreds of millions of years."
+    },
+    {
+      "letter": "B",
+      "text": "An octopus possesses roughly five hundred million neurons in total, a substantial number by invertebrate standards though still considerably fewer than the roughly eighty-six billion found in a typical human brain, but remarkably, only around one third of these neurons are located within the octopus's central brain proper; the remaining two-thirds are instead distributed throughout its eight arms, each of which contains its own substantial cluster of neurons capable of processing sensory information and directly controlling detailed, complex arm movements with a considerable, and only partially understood, degree of independence from the animal's central brain."
+    },
+    {
+      "letter": "C",
+      "text": "This unusual, highly distributed nervous system allows an octopus's individual arms to continue performing surprisingly sophisticated, coordinated tasks, such as exploring a crevice for hidden food or manipulating a small object, even when that specific arm's direct neural connection to the animal's central brain has been experimentally and reversibly severed under controlled laboratory conditions, a degree of functional autonomy essentially unheard of among vertebrate limbs, which typically become largely non-functional the moment their neural connection to the central nervous system is disrupted. Some researchers have consequently suggested that an octopus's overall cognition might be usefully understood as meaningfully distributed across its entire body, rather than being centralised almost exclusively within its brain in the way vertebrate cognition generally is."
+    },
+    {
+      "letter": "D",
+      "text": "Octopuses have demonstrated a genuinely impressive range of complex cognitive abilities in carefully controlled laboratory experiments, including reliably learning to navigate mazes, successfully solving multi-step physical puzzles to obtain food rewards hidden inside secured, screw-top jars, and, in several well-documented instances, apparently recognising and remembering specific individual human laboratory caretakers, in some cases directing what researchers interpreted as targeted behavioural responses, such as deliberately squirting water, at particular individual staff members they appeared to dislike or had previously found unpleasant or threatening in some specific way. Cuttlefish, close relatives of octopuses, have separately demonstrated, in one particularly notable series of experiments, an ability to delay immediate gratification, choosing to wait for a preferred food item rather than immediately accepting a less preferred one readily available sooner, a form of self-control historically associated in comparative cognition research primarily with certain relatively large-brained vertebrate species such as primates and corvid birds."
+    },
+    {
+      "letter": "E",
+      "text": "Cephalopod intelligence evolved along an evolutionary path entirely separate from, and largely independent of, the path that produced vertebrate intelligence, since the most recent common ancestor shared between cephalopods and vertebrates was almost certainly a comparatively simple organism lacking anything resembling a genuinely complex nervous system or brain. This makes cephalopods a particularly valuable subject for researchers specifically interested in convergent evolution, the broader biological phenomenon whereby unrelated evolutionary lineages independently evolve broadly similar complex traits, such as sophisticated cognition and problem-solving ability, in response to broadly comparable environmental pressures and survival challenges, suggesting that complex cognition of a broadly similar kind may be capable of arising through more than a single distinct evolutionary pathway across the wider animal kingdom."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy cephalopods fascinate researchers of animal cognition\nii\tWhere most of an octopus's neurons are actually located\niii\tArms that keep working after being disconnected from the brain\niv\tPuzzle-solving, memory, and delayed gratification in the lab\nv\tAn independent evolutionary path to complex cognition\nvi\tHow cephalopods camouflage themselves from predators\nvii\tConservation concerns facing wild octopus populations",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói vì sao cephalopod hấp dẫn các nhà nghiên cứu nhận thức động vật — hệ thần kinh phức tạp nhất trong động vật không xương sống. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói 2/3 neuron của bạch tuộc nằm ở tám cánh tay, không phải ở não trung tâm. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói cánh tay vẫn hoạt động phối hợp dù bị cắt kết nối thần kinh với não trung tâm. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về khả năng giải đố, nhận diện người chăm sóc, và mực nang trì hoãn thoả mãn. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói trí thông minh cephalopod tiến hoá độc lập với động vật có xương sống — bằng chứng tiến hoá hội tụ. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "An octopus has more neurons in total than a typical human brain.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: octopus có khoảng 500 triệu neuron, 'considerably fewer than the roughly eighty-six billion found in a typical human brain'. Ít hơn nhiều, không phải nhiều hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Most of an octopus's neurons are located in its central brain rather than in its arms.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'only around one third of these neurons are located within the octopus's central brain proper; the remaining two-thirds are instead distributed throughout its eight arms'. Đa số ở cánh tay, không phải ở não. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Vertebrate limbs typically remain fully functional after their neural connection to the central nervous system is disrupted.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: chi động vật có xương sống 'typically become largely non-functional the moment their neural connection to the central nervous system is disrupted'. Mất chức năng, không phải vẫn hoạt động bình thường. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Octopuses have been observed apparently recognising and remembering specific individual human caretakers.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'apparently recognising and remembering specific individual human laboratory caretakers'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The most recent common ancestor of cephalopods and vertebrates likely had a complex brain similar to both groups.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: tổ tiên chung gần nhất 'was almost certainly a comparatively simple organism lacking anything resembling a genuinely complex nervous system'. Tổ tiên đơn giản, không phức tạp. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "An octopus possesses roughly ________ neurons in total.",
+      "answer": "five hundred million",
+      "number": 11,
+      "explanation": "Đoạn B: 'An octopus possesses roughly five hundred million neurons in total'. Đáp án five hundred million."
+    },
+    {
+      "type": "gap",
+      "prompt": "Octopuses in experiments have solved multi-step puzzles to obtain food from secured, screw-top ________.",
+      "answer": "jars",
+      "number": 12,
+      "explanation": "Đoạn D: 'solving multi-step physical puzzles to obtain food rewards hidden inside secured, screw-top jars'. Đáp án jars."
+    },
+    {
+      "type": "gap",
+      "prompt": "Some octopuses were observed directing targeted behavioural responses, such as deliberately squirting ________, at specific staff members.",
+      "answer": "water",
+      "number": 13,
+      "explanation": "Đoạn D: 'directing what researchers interpreted as targeted behavioural responses, such as deliberately squirting water, at particular individual staff members'. Đáp án water."
+    },
+    {
+      "type": "gap",
+      "prompt": "Cuttlefish demonstrated an ability to delay immediate ________ in food-choice experiments.",
+      "answer": "gratification",
+      "number": 14,
+      "explanation": "Đoạn D: 'an ability to delay immediate gratification'. Đáp án gratification."
+    },
+    {
+      "type": "gap",
+      "prompt": "Unrelated lineages independently evolving similar complex traits is called ________ evolution.",
+      "answer": "convergent",
+      "number": 15,
+      "explanation": "Đoạn E: 'convergent evolution, the broader biological phenomenon whereby unrelated evolutionary lineages independently evolve broadly similar complex traits'. Đáp án convergent."
+    }
+  ]
+}

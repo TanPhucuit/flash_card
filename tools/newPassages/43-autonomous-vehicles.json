@@ -1,0 +1,141 @@
+{
+  "title": "Autonomous Vehicles",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học kỹ thuật phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "An autonomous vehicle is a vehicle capable of sensing its immediate surrounding environment and navigating public roads with little or no direct, ongoing input from a human driver, relying on a combination of sensors, including cameras, radar, and often a laser-based sensing technology called lidar, together with sophisticated onboard computer software that interprets this continuous stream of sensor data in real time to identify other vehicles, pedestrians, road markings, and traffic signals, and then decides, moment by moment, how to respond appropriately."
+    },
+    {
+      "letter": "B",
+      "text": "The Society of Automotive Engineers has defined a widely adopted six-level scale, running from Level 0, meaning no automation whatsoever, up to Level 5, meaning full automation capable of handling literally any driving scenario a conventional human driver could handle, without requiring any human intervention or oversight under any circumstances. Most vehicles currently available for purchase by ordinary consumers offer, at most, Level 2 automation, meaning the vehicle can simultaneously control both steering and speed under certain limited driving conditions, but a human driver is still required to remain fully alert and ready to immediately retake full control at any moment, a requirement several vehicle manufacturers have been criticised for not communicating clearly enough to consumers in their marketing materials and product naming."
+    },
+    {
+      "letter": "C",
+      "text": "Companies such as Waymo, a subsidiary of Google's parent company Alphabet, operate a small but steadily growing number of Level 4 vehicles, commonly described as robotaxis, offering driverless rides to paying members of the public within certain carefully mapped and geographically restricted urban areas, a level of automation in which the vehicle can handle essentially all aspects of driving unassisted within its specifically defined and pre-approved operational area, without requiring any human safety driver physically present in the vehicle, but is not necessarily capable of reliably operating safely outside that carefully defined area or under unusual road and weather conditions its systems and mapping data have not been specifically designed and tested for."
+    },
+    {
+      "letter": "D",
+      "text": "Developing genuinely reliable autonomous vehicles has proved considerably more difficult in practice than many industry experts confidently predicted a decade ago, largely because of the sheer, effectively unbounded variety of unusual, unpredictable, low-probability situations, colloquially termed \"edge cases\" within the industry, that a vehicle operating in real, everyday traffic may unexpectedly encounter, ranging from a plastic shopping bag blown unpredictably across the road by a sudden gust of wind to a police officer manually directing traffic in a way that deliberately overrides standard traffic signals and posted road signs. Training a vehicle's underlying software to correctly recognise and respond safely and appropriately to the truly enormous range of such rare but individually consequential situations, many of which occur so infrequently that gathering sufficient real-world training data on them is itself extremely difficult, remains one of the central, unsolved technical challenges confronting the entire industry."
+    },
+    {
+      "letter": "E",
+      "text": "Autonomous vehicle crashes, though currently statistically rare in absolute terms relative to the enormous cumulative number of miles autonomous test vehicles have collectively driven, have attracted disproportionate media and regulatory scrutiny precisely because they raise novel and largely unresolved legal and ethical questions regarding liability when an autonomous vehicle's own software, rather than any identifiable human driver, is directly responsible for causing a collision. Regulators in different countries and even different states within a single country have adopted substantially different, and in some cases directly conflicting, legal approaches to testing, approving, and assigning legal liability for autonomous vehicles, and most industry analysts now generally expect the genuinely widespread, mainstream adoption of higher levels of vehicle automation to proceed considerably more gradually, and considerably more cautiously, than the more optimistic predictions confidently made throughout much of the previous decade."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the vehicle senses, and how it decides what to do\nii\tA six-level scale, and what most consumer cars actually offer\niii\tDriverless taxis operating within a mapped area\niv\tRare situations that make full reliability so hard to achieve\nv\tCrashes, liability, and slower-than-expected adoption\nvi\tHow lidar sensors were first developed for aviation\nvii\tInsurance premiums for owners of autonomous vehicles",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa xe tự lái là gì và cách nó cảm nhận và quyết định. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về thang 6 cấp độ tự động hoá và hầu hết xe tiêu dùng chỉ đạt cấp độ 2. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về Waymo vận hành robotaxi cấp độ 4 trong khu vực được lập bản đồ. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về 'edge cases' — tình huống hiếm gặp khiến việc đạt độ tin cậy cao rất khó. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về tai nạn, vấn đề trách nhiệm pháp lý, và việc áp dụng rộng rãi diễn ra chậm hơn dự đoán. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Level 5 automation requires a human driver to remain ready to take control at any moment.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: Level 5 nghĩa là 'full automation... without requiring any human intervention or oversight under any circumstances'. Không cần con người sẵn sàng tiếp quản. Yêu cầu đó thuộc về Level 2. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Vehicle manufacturers have been criticised for failing to clearly communicate the limits of Level 2 automation to consumers.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'a requirement several vehicle manufacturers have been criticised for not communicating clearly enough to consumers'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Waymo's Level 4 robotaxis can reliably drive safely anywhere, regardless of location or weather conditions.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: xe 'is not necessarily capable of reliably operating safely outside that carefully defined area or under unusual road and weather conditions'. Chỉ hoạt động tốt trong khu vực xác định. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Gathering sufficient real-world training data on rare edge cases is described as extremely difficult.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'many of which occur so infrequently that gathering sufficient real-world training data on them is itself extremely difficult'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All countries and states have adopted identical legal approaches to autonomous vehicle liability.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: các nước và bang 'have adopted substantially different, and in some cases directly conflicting, legal approaches'. Khác nhau, không phải giống hệt nhau. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Besides cameras and radar, autonomous vehicles often use a laser-based sensor called ________.",
+      "answer": "lidar",
+      "number": 11,
+      "explanation": "Đoạn A: 'a laser-based sensing technology called lidar'. Đáp án lidar."
+    },
+    {
+      "type": "gap",
+      "prompt": "The six-level automation scale was defined by the Society of ________ Engineers.",
+      "answer": "Automotive",
+      "number": 12,
+      "explanation": "Đoạn B: 'The Society of Automotive Engineers has defined a widely adopted six-level scale'. Đáp án Automotive."
+    },
+    {
+      "type": "gap",
+      "prompt": "Waymo is a subsidiary of Google's parent company ________.",
+      "answer": "Alphabet",
+      "number": 13,
+      "explanation": "Đoạn C: 'a subsidiary of Google's parent company Alphabet'. Đáp án Alphabet."
+    },
+    {
+      "type": "gap",
+      "prompt": "Rare, unpredictable situations a vehicle may encounter are colloquially termed '________ cases'.",
+      "answer": "edge",
+      "number": 14,
+      "explanation": "Đoạn D: 'colloquially termed edge cases within the industry'. Đáp án edge."
+    },
+    {
+      "type": "gap",
+      "prompt": "Autonomous vehicle crashes raise unresolved questions about legal ________ when software causes a collision.",
+      "answer": "liability",
+      "number": 15,
+      "explanation": "Đoạn E: 'raise novel and largely unresolved legal and ethical questions regarding liability'. Đáp án liability."
+    }
+  ]
+}

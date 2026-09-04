@@ -1,0 +1,141 @@
+{
+  "title": "Cultured Meat",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học và công nghệ thực phẩm phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Cultured meat, sometimes also called cultivated or lab-grown meat, is genuine animal muscle tissue produced by growing animal cells directly in a controlled laboratory or industrial bioreactor environment, rather than by raising and subsequently slaughtering an entire living animal in the conventional way. The basic underlying process begins with a small sample of cells taken, typically via a comparatively minor and non-lethal biopsy, from a living donor animal, which are then placed in a nutrient-rich growth medium designed to encourage the cells to multiply, divide, and eventually mature into functional muscle tissue broadly resembling conventional meat in its basic biological composition."
+    },
+    {
+      "letter": "B",
+      "text": "The world's first publicly demonstrated cultured-meat hamburger was unveiled in London in 2013 by the Dutch researcher Mark Post and his research team, at a cost, for that single small patty alone, of roughly 250,000 euros, funded substantially by the Google co-founder Sergey Brin, reflecting the extraordinary expense of the very earliest, still largely experimental production methods. Since that initial demonstration, production costs have fallen dramatically as researchers have refined growth media formulations, developed more efficient bioreactor designs, and identified cheaper alternative sources for various essential growth-promoting proteins, though cultured meat generally still remains considerably more expensive to produce than conventional meat from farmed animals in most current markets."
+    },
+    {
+      "letter": "C",
+      "text": "One particularly significant technical and financial challenge has been developing growth media that avoid using foetal bovine serum, a nutrient-rich substance extracted from unborn calves that was widely used in early cultured-meat research but is both extremely expensive and, since it still ultimately derives directly from a slaughtered pregnant animal, somewhat at odds with cultured meat's central ethical selling point of substantially reducing or eliminating direct animal slaughter for meat production. Researchers have since developed various serum-free growth media formulated instead from plant-derived or synthetically manufactured proteins, sugars, and other necessary nutrients, a development widely regarded within the field as essential for both bringing production costs down to commercially competitive levels and for cultured meat to fully deliver on its central ethical promise of essentially eliminating animal slaughter from meat production."
+    },
+    {
+      "letter": "D",
+      "text": "Proponents argue that cultured meat could substantially reduce the environmental footprint associated with conventional livestock farming, including its very substantial contribution to overall greenhouse gas emissions, its extensive demand for agricultural land and fresh water, and its well-documented tendency to enable and spread antibiotic resistance through the routine use of antibiotics in intensive conventional animal agriculture. Some independent life-cycle environmental assessments broadly support at least some of these claimed environmental benefits, particularly regarding land use, though the specific comparative greenhouse gas emissions of cultured meat, especially once its production is eventually scaled up to a genuinely large industrial scale, remain a matter of some continuing scientific and methodological uncertainty and disagreement, since the emissions produced depend heavily on the specific, currently unresolved question of what particular energy sources ultimately power the large-scale bioreactor facilities required."
+    },
+    {
+      "letter": "E",
+      "text": "Singapore became the first country in the world to approve cultured meat for direct human consumption, in late 2020, granting regulatory approval for a cultured-chicken product subsequently sold in a small number of local restaurants. Since that initial approval, the United States and several other countries have followed with their own separate regulatory approvals for various specific cultured-meat products, though the industry as a whole continues to face substantial remaining hurdles before it can realistically achieve significant, mainstream market scale, including further necessary reductions in production cost, building sufficient large-scale manufacturing capacity, and overcoming persistent, and in some markets considerable, consumer scepticism about the underlying safety, naturalness, and taste of meat grown directly from cells in a laboratory or industrial facility rather than from a conventionally raised animal."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and how the basic process works\nii\tAn extremely expensive first demonstration in London\niii\tRemoving an ingredient at odds with the ethical case for it\niv\tClaimed environmental benefits, and lingering uncertainty\nv\tFirst regulatory approvals, and remaining hurdles\nvi\tTaste tests comparing it directly with conventional meat\nvii\tPatent disputes between rival cultured-meat companies",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa thịt nuôi cấy là gì và quy trình cơ bản. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể về chiếc bánh hamburger nuôi cấy đầu tiên năm 2013 giá 250.000 euro. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về việc loại bỏ huyết thanh bào thai bò khỏi môi trường nuôi cấy vì mâu thuẫn với lý do đạo đức. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về lợi ích môi trường được tuyên bố và sự không chắc chắn còn tồn tại. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về Singapore là nước đầu tiên phê duyệt thịt nuôi cấy và các rào cản còn lại. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Producing cultured meat requires killing the donor animal to obtain the initial cell sample.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: mẫu tế bào lấy 'via a comparatively minor and non-lethal biopsy' — không gây chết động vật hiến tế bào. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Cultured meat is now generally cheaper to produce than conventional farmed meat in most current markets.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'cultured meat generally still remains considerably more expensive to produce than conventional meat... in most current markets'. Vẫn đắt hơn, không phải rẻ hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Foetal bovine serum is derived from unborn calves.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'a nutrient-rich substance extracted from unborn calves'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All independent environmental assessments agree completely on the exact greenhouse gas emissions of cultured meat at industrial scale.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: lượng phát thải khí nhà kính ở quy mô công nghiệp 'remain a matter of some continuing scientific and methodological uncertainty and disagreement'. Còn tranh cãi, không có sự đồng thuận hoàn toàn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Singapore was the first country to approve cultured meat for human consumption.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'Singapore became the first country in the world to approve cultured meat for direct human consumption'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The first cultured-meat hamburger was unveiled in London in ________.",
+      "answer": "2013",
+      "number": 11,
+      "explanation": "Đoạn B: 'was unveiled in London in 2013'. Đáp án 2013."
+    },
+    {
+      "type": "gap",
+      "prompt": "The first demonstration burger was funded substantially by Google co-founder ________.",
+      "answer": "Sergey Brin",
+      "number": 12,
+      "explanation": "Đoạn B: 'funded substantially by the Google co-founder Sergey Brin'. Đáp án Sergey Brin."
+    },
+    {
+      "type": "gap",
+      "prompt": "Newer growth media are formulated instead from plant-derived or synthetically manufactured ________.",
+      "answer": "proteins",
+      "number": 13,
+      "explanation": "Đoạn C: 'formulated instead from plant-derived or synthetically manufactured proteins, sugars, and other necessary nutrients'. Đáp án proteins."
+    },
+    {
+      "type": "gap",
+      "prompt": "Intensive conventional animal agriculture routinely uses ________ that can spread resistance.",
+      "answer": "antibiotics",
+      "number": 14,
+      "explanation": "Đoạn D: 'through the routine use of antibiotics in intensive conventional animal agriculture'. Đáp án antibiotics."
+    },
+    {
+      "type": "gap",
+      "prompt": "Singapore approved a cultured-________ product for sale in local restaurants.",
+      "answer": "chicken",
+      "number": 15,
+      "explanation": "Đoạn E: 'granting regulatory approval for a cultured-chicken product'. Đáp án chicken."
+    }
+  ]
+}
