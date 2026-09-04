@@ -1,0 +1,141 @@
+{
+  "title": "The Space Elevator",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học vũ trụ phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A space elevator is a hypothetical mega-structure that would allow cargo and, potentially, human passengers to travel between the Earth's surface and orbit by riding mechanical climbing vehicles along a long, exceptionally strong cable, rather than being launched into space using a conventional chemical rocket, which currently remains by far the most expensive part of essentially any space mission. The basic conceptual idea was first proposed in a serious, technically detailed form by the Russian scientist Konstantin Tsiolkovsky in 1895, inspired, according to popular later accounts, by his direct observation of the recently completed Eiffel Tower in Paris."
+    },
+    {
+      "letter": "B",
+      "text": "The fundamental physical principle underlying the concept relies on geostationary orbit, a specific altitude directly above the equator, roughly 35,786 kilometres above the Earth's surface, at which an orbiting satellite's own orbital period exactly matches the Earth's own daily rotation period, causing the satellite to appear to remain permanently fixed above precisely the same point on the Earth's surface at all times. A cable extending both downward from a suitably massive counterweight object stationed in geostationary orbit toward a fixed surface anchor point on Earth, and simultaneously outward beyond that same counterweight into space, could in principle remain held taut indefinitely by the combined, precisely balanced effects of Earth's gravity pulling inward and outward centrifugal force acting on the counterweight, without requiring any continuous engine power or propulsion to maintain its position and structural tension."
+    },
+    {
+      "letter": "C",
+      "text": "The single greatest technical obstacle preventing an actual, physically realisable space elevator from being built is straightforward but currently insurmountable material science: no material yet manufactured by humans possesses anywhere near the necessary combination of tensile strength and comparatively low density required for a cable of the enormous length involved to reliably support even its own weight under tension, let alone any additional practical cargo load riding along it. Carbon nanotubes, an exceptionally strong material discovered and characterised in the 1990s, are frequently proposed by enthusiasts and researchers as a theoretically promising candidate material, since individual carbon nanotube fibres tested under laboratory conditions have demonstrated tensile strength theoretically sufficient for the purpose, but manufacturing carbon nanotube cables of the vastly greater length, and with the very high, consistent structural quality, that an actual functioning space elevator would require remains, even today, considerably beyond current manufacturing capability."
+    },
+    {
+      "letter": "D",
+      "text": "Beyond the core cable-material problem, engineers have identified numerous additional serious practical challenges that would need to be solved before any space elevator could actually be built and safely operated, including safely and reliably powering climbing vehicles as they travel the enormous distance up the cable, a journey that could plausibly take several days at currently plausible climbing speeds; protecting the cable itself from micrometeorite impacts and the general hazard of increasingly abundant space debris in low Earth orbit; and managing the cable's structural interaction with severe high-altitude atmospheric winds and, at the ground anchor point itself, the additional risk posed by potential lightning strikes."
+    },
+    {
+      "letter": "E",
+      "text": "Despite these very substantial, currently unsolved engineering obstacles, proponents argue that a functioning space elevator, if it could ever actually be successfully built, would dramatically reduce the cost of launching cargo into orbit compared with conventional rocket-based launch, potentially by a factor of one hundred or considerably more, since a space elevator, once fully built and operational, would require vastly less energy per unit of cargo mass lifted than any chemical rocket, which must expend the overwhelming majority of its total propellant simply lifting the substantial weight of its own additional fuel. Several research groups, university engineering competitions, and at least one national space agency continue to actively study various aspects of the concept, though most experts in the field candidly agree that a fully operational, practically functioning space elevator likely remains, at an absolute minimum, several decades away, contingent above all on genuinely significant, currently unforeseen future breakthroughs in cable material science."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and who first proposed the idea\nii\tThe orbital physics that would keep the cable taut\niii\tWhy no material yet exists strong enough for the cable\niv\tOther engineering problems beyond the cable itself\nv\tThe cost savings claimed, and how far away the idea remains\nvi\tHow climbing vehicles would be manufactured\nvii\tInternational treaties governing the ownership of orbital structures",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa thang máy vũ trụ là gì và ai đầu tiên đề xuất ý tưởng này (Tsiolkovsky, 1895). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B giải thích nguyên lý vật lý dựa trên quỹ đạo địa tĩnh giữ dây căng. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói rào cản lớn nhất là chưa có vật liệu đủ mạnh, kể cả ống nano carbon vẫn chưa sản xuất được ở quy mô cần thiết. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói các thách thức kỹ thuật khác ngoài vật liệu dây cáp: cấp nguồn, rác vũ trụ, gió, sét. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói tiềm năng tiết kiệm chi phí và ước tính còn cách nhiều thập kỷ mới thành hiện thực. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "A satellite in geostationary orbit appears to remain fixed above the same point on Earth's surface.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn B: 'causing the satellite to appear to remain permanently fixed above precisely the same point on the Earth's surface at all times'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A space elevator cable would require continuous engine power to remain taut once built.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: cáp 'could in principle remain held taut indefinitely... without requiring any continuous engine power or propulsion'. Không cần động cơ liên tục. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Carbon nanotube cables of the length and quality needed for a space elevator can already be manufactured today.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: sản xuất cáp ống nano carbon đủ dài và chất lượng cao 'remains, even today, considerably beyond current manufacturing capability'. Chưa làm được, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Chemical rockets must use most of their fuel simply lifting the weight of their own additional fuel.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn E: tên lửa hoá học 'must expend the overwhelming majority of its total propellant simply lifting the substantial weight of its own additional fuel'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Most experts believe a functioning space elevator could be built within the next five years.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'a fully operational, practically functioning space elevator likely remains, at an absolute minimum, several decades away'. Còn nhiều thập kỷ, không phải 5 năm. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Tsiolkovsky's idea was reportedly inspired by his observation of the recently completed ________ in Paris.",
+      "answer": "Eiffel Tower",
+      "number": 11,
+      "explanation": "Đoạn A: 'inspired... by his direct observation of the recently completed Eiffel Tower in Paris'. Đáp án Eiffel Tower."
+    },
+    {
+      "type": "gap",
+      "prompt": "Geostationary orbit lies roughly ________ kilometres above the Earth's surface.",
+      "answer": "35,786",
+      "number": 12,
+      "explanation": "Đoạn B: 'roughly 35,786 kilometres above the Earth's surface'. Đáp án 35,786."
+    },
+    {
+      "type": "gap",
+      "prompt": "A theoretically promising cable material discovered in the 1990s is ________.",
+      "answer": "carbon nanotubes",
+      "number": 13,
+      "explanation": "Đoạn C: 'Carbon nanotubes, an exceptionally strong material discovered and characterised in the 1990s'. Đáp án carbon nanotubes."
+    },
+    {
+      "type": "gap",
+      "prompt": "The cable would need protection from micrometeorite impacts and space ________.",
+      "answer": "debris",
+      "number": 14,
+      "explanation": "Đoạn D: 'the general hazard of increasingly abundant space debris in low Earth orbit'. Đáp án debris."
+    },
+    {
+      "type": "gap",
+      "prompt": "A working space elevator could reduce launch costs by a factor of one hundred or ________.",
+      "answer": "more",
+      "number": 15,
+      "explanation": "Đoạn E: 'potentially by a factor of one hundred or considerably more'. Đáp án more."
+    }
+  ]
+}

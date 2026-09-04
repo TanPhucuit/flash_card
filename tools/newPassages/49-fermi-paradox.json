@@ -1,0 +1,141 @@
+{
+  "title": "The Fermi Paradox",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý thiên văn phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Fermi paradox refers to the apparent, and genuinely striking, contradiction between the seemingly high statistical likelihood that intelligent extraterrestrial civilisations exist somewhere in our galaxy, given the sheer number of stars and, as researchers now know, planets involved, and the complete absence to date of any confirmed direct evidence, contact, or even indirect detectable signal from any such civilisation whatsoever. It takes its name from the Italian-American physicist Enrico Fermi, who is said to have posed the pointed, deceptively simple question \"Where is everybody?\" during an informal 1950 lunchtime conversation with fellow physicists at the Los Alamos National Laboratory."
+    },
+    {
+      "letter": "B",
+      "text": "The scale of the underlying puzzle becomes considerably clearer once the numbers involved are properly appreciated: the Milky Way galaxy alone contains an estimated one hundred to four hundred billion stars, a substantial proportion of which are now known, from direct astronomical observation, to host at least one orbiting planet, and the galaxy itself is roughly 13.6 billion years old, providing an immense span of time over which intelligent life, once it first arose anywhere within the galaxy, could plausibly have spread outward and colonised a very substantial fraction of it, potentially even using nothing more advanced than comparatively slow, sub-light-speed interstellar spacecraft, given a sufficiently long span of galactic time to do so."
+    },
+    {
+      "letter": "C",
+      "text": "Numerous, often mutually exclusive, explanations have been proposed for the apparent silence. One broad category of explanation, sometimes informally termed the \"great filter\" hypothesis, proposes that some extraordinarily difficult evolutionary or technological transition, a filter that most emerging forms of life or civilisation ultimately fail to successfully pass through, blocks the vast majority of potential civilisations from ever reaching the specific stage of interstellar communication or space travel required to actually be detected by others. Candidate great filters that have been seriously proposed include the specific, contingent origin of self-replicating life itself, the evolutionary transition to genuinely complex, differentiated multicellular organisms, and, more troublingly for humanity's own long-term prospects, some form of civilisation-ending technological self-destruction that might reliably occur shortly after a civilisation first develops sufficiently advanced technology."
+    },
+    {
+      "letter": "D",
+      "text": "Other proposed explanations do not require any single decisive filter at all. Some researchers argue that interstellar travel and long-range communication may simply be considerably more difficult, in practice, than optimistic early calculations assumed, given the immense physical distances and communication time delays genuinely involved even at the speed of light. Others suggest that intelligent civilisations might, for reasons not yet fully understood, generally prove to be comparatively short-lived relative to full galactic timescales, meaning that the specific, comparatively narrow windows of time during which any two civilisations could plausibly overlap and communicate with one another might simply be too brief and too improbably rare to have occurred yet by pure chance. A further, more speculative but frequently discussed possibility, sometimes called the zoo hypothesis, proposes that advanced civilisations may already be aware of humanity's existence but have deliberately chosen not to make contact, whether out of caution, respect for a young civilisation's own independent development, or some other motive not readily comprehensible from a purely human perspective."
+    },
+    {
+      "letter": "E",
+      "text": "The Fermi paradox has direct, practical relevance to ongoing efforts to search for extraterrestrial intelligence, most notably through the SETI Institute's long-running programme, established in 1984, of systematically monitoring specific ranges of the radio spectrum for any signal that might plausibly indicate deliberate artificial, rather than purely natural astrophysical, origin. Despite several decades of dedicated, sustained observational effort, no confirmed candidate signal has ever been positively identified, a persistent negative result that some researchers interpret as at least weakly supportive evidence for one or another version of the great filter hypothesis, though most researchers in the field readily acknowledge that the search conducted so far has covered only an extremely small fraction of the galaxy's total stars and only a correspondingly narrow slice of all the possible radio frequencies over which an advanced civilisation might plausibly choose to communicate."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the paradox is, and the question that named it\nii\tThe scale of the galaxy that makes the silence puzzling\niii\tA filter that most civilisations may fail to pass\niv\tExplanations that require no single decisive barrier\nv\tA radio search that has so far found nothing\nvi\tPlans to send a physical probe beyond the solar system\nvii\tHow Fermi calculated the age of the Milky Way",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa nghịch lý Fermi và câu hỏi 'Where is everybody?' đặt tên cho nó. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B đưa con số về quy mô thiên hà khiến sự im lặng trở nên khó hiểu. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về giả thuyết 'great filter' — rào cản mà hầu hết nền văn minh không vượt qua được. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về các giải thích khác không cần một rào cản duy nhất: khó khăn di chuyển, tuổi thọ văn minh ngắn, giả thuyết vườn thú. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về chương trình SETI tìm kiếm tín hiệu radio mà chưa tìm thấy gì. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Fermi posed his question during a formal scientific conference presentation.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: câu hỏi được đặt ra 'during an informal 1950 lunchtime conversation with fellow physicists'. Không phải trong buổi hội nghị chính thức. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A substantial proportion of the Milky Way's stars are now known to host at least one orbiting planet.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'a substantial proportion of which are now known, from direct astronomical observation, to host at least one orbiting planet'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All proposed great filter candidates involve technology developed after interstellar travel has already begun.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: các ứng viên great filter bao gồm 'the specific, contingent origin of self-replicating life itself' — xảy ra rất sớm, trước khi có công nghệ du hành liên sao. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The zoo hypothesis suggests advanced civilisations may know about humanity but have chosen not to make contact.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'advanced civilisations may already be aware of humanity's existence but have deliberately chosen not to make contact'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "SETI has confirmed at least one candidate signal of artificial extraterrestrial origin.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'no confirmed candidate signal has ever been positively identified'. Chưa xác nhận được tín hiệu nào. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Fermi is said to have asked 'Where is ________?' in 1950.",
+      "answer": "everybody",
+      "number": 11,
+      "explanation": "Đoạn A: 'the pointed, deceptively simple question Where is everybody?'. Đáp án everybody."
+    },
+    {
+      "type": "gap",
+      "prompt": "The Milky Way galaxy is roughly ________ billion years old.",
+      "answer": "13.6",
+      "number": 12,
+      "explanation": "Đoạn B: 'the galaxy itself is roughly 13.6 billion years old'. Đáp án 13.6."
+    },
+    {
+      "type": "gap",
+      "prompt": "The hypothesis that a hard evolutionary transition blocks most civilisations is called the '________ filter'.",
+      "answer": "great",
+      "number": 13,
+      "explanation": "Đoạn C: 'sometimes informally termed the great filter hypothesis'. Đáp án great."
+    },
+    {
+      "type": "gap",
+      "prompt": "The idea that advanced civilisations deliberately avoid contact is called the ________ hypothesis.",
+      "answer": "zoo",
+      "number": 14,
+      "explanation": "Đoạn D: 'sometimes called the zoo hypothesis'. Đáp án zoo."
+    },
+    {
+      "type": "gap",
+      "prompt": "The SETI Institute's radio-monitoring programme was established in ________.",
+      "answer": "1984",
+      "number": 15,
+      "explanation": "Đoạn E: 'the SETI Institute's long-running programme, established in 1984'. Đáp án 1984."
+    }
+  ]
+}

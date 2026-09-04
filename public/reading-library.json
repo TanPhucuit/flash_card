@@ -17737,6 +17737,886 @@
           "id": "nl2-45-ocean-acidification-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-46-permafrost-thaw-p1",
+      "order": 98,
+      "title": "Permafrost Thaw",
+      "text": "A\nPermafrost is ground, including soil, rock, and any ice or organic material it contains, that has remained continuously at or below zero degrees Celsius for at least two consecutive years, though many extensive permafrost regions in the Arctic have in fact remained continuously frozen for many thousands of years without interruption. Permafrost underlies an estimated one quarter of all exposed land in the Northern Hemisphere, spanning large parts of Siberia, Alaska, and northern Canada, and in some particularly cold regions extends to depths of well over a kilometre below the frozen surface.\n\nB\nAs global average temperatures continue to rise, permafrost across large parts of the Arctic has begun thawing at a pace that has genuinely surprised, and in some documented cases significantly alarmed, many climate scientists actively studying the region. Thawing permafrost causes the ground surface above it to subside unevenly, since the ice that had previously rigidly held frozen soil particles firmly in place gradually melts away, a process that has already caused serious, well-documented structural damage to roads, buildings, and other essential infrastructure across several Arctic settlements, in some cases requiring entire communities to be relocated to more geologically stable ground.\n\nC\nBeyond these immediate, highly visible structural and infrastructure concerns, permafrost thaw carries a considerably larger and potentially more consequential global climate implication: permafrost soils contain vast quantities of preserved organic material, chiefly the partially decomposed remains of plants, that accumulated gradually and were subsequently locked away in a stable, deeply frozen state, in many cases for many thousands of years, preventing the decomposition process from ever fully running its natural course. When permafrost thaws, microorganisms that had themselves lain dormant within the frozen ground for millennia become active once more and begin actively decomposing this long-preserved organic material, in the process releasing substantial additional quantities of carbon dioxide and methane, a considerably more potent greenhouse gas over shorter timescales, directly into the atmosphere.\n\nD\nScientists estimate that permafrost across the Arctic collectively contains roughly twice as much carbon as is currently present in the entire Earth's atmosphere, meaning that widespread permafrost thaw has the clear potential to release a truly enormous quantity of additional greenhouse gas, substantially accelerating the pace of global climate change well beyond what is caused directly by human fossil fuel emissions alone. This phenomenon is frequently cited by climate scientists as a potential positive feedback loop, since warming causes permafrost to thaw, thawing permafrost releases additional greenhouse gases, and those additional released gases in turn cause further warming, creating a self-reinforcing cycle that could, under sufficiently severe conditions, continue to accelerate to some meaningful degree even if human-caused emissions were themselves brought under substantially better control.\n\nE\nPermafrost thaw has also unexpectedly revealed remarkably well-preserved biological remains, including the intact carcasses of woolly mammoths and other Ice Age megafauna, frozen and consequently preserved in a remarkably lifelike state for tens of thousands of years, providing scientists with an invaluable, otherwise unattainable source of ancient DNA and detailed soft-tissue anatomical information. However, thawing permafrost also raises separate, more troubling public health concerns of its own: in 2016, a notable anthrax outbreak in Siberia was directly linked by investigating scientists to the thawing of a decades-old reindeer carcass that had itself died of anthrax and had remained safely frozen and biologically inert until the surrounding permafrost thawed sufficiently to expose it, illustrating that long-dormant pathogens preserved within permafrost could, in certain specific circumstances, become an unexpected and genuinely novel public health hazard as the Arctic climate continues to warm.\n\n— Biên soạn dựa trên kiến thức khoa học môi trường phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat permafrost is, and how much land it covers\nii\tDamage to roads and buildings as the ground subsides\niii\tOrganic material locked away for thousands of years\niv\tA self-reinforcing cycle of warming and release\nv\tPreserved carcasses, and a disease outbreak they caused\nvi\tPlans to artificially refreeze thawing permafrost\nvii\tHow permafrost was first mapped using satellite radar",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa tầng đất đóng băng vĩnh cửu là gì và diện tích nó bao phủ. Đúng tiêu đề i.",
+          "id": "nl2-46-permafrost-thaw-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về nền đất sụt lún gây hư hại đường xá, nhà cửa ở khu định cư Bắc Cực. Đúng tiêu đề ii.",
+          "id": "nl2-46-permafrost-thaw-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về chất hữu cơ bị khoá lại hàng nghìn năm và giải phóng khí nhà kính khi tan băng. Đúng tiêu đề iii.",
+          "id": "nl2-46-permafrost-thaw-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về vòng phản hồi tự củng cố giữa nóng lên và tan băng. Đúng tiêu đề iv.",
+          "id": "nl2-46-permafrost-thaw-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về xác voi ma mút được bảo quản và vụ dịch bệnh than năm 2016. Đúng tiêu đề v.",
+          "id": "nl2-46-permafrost-thaw-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Permafrost underlies roughly one quarter of all exposed land in the Northern Hemisphere.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'Permafrost underlies an estimated one quarter of all exposed land in the Northern Hemisphere'. Đúng ý đề nên TRUE.",
+          "id": "nl2-46-permafrost-thaw-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The current pace of Arctic permafrost thaw has surprised many climate scientists.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'thawing at a pace that has genuinely surprised, and in some documented cases significantly alarmed, many climate scientists'. Đúng ý đề nên TRUE.",
+          "id": "nl2-46-permafrost-thaw-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Permafrost contains roughly half as much carbon as is currently present in the Earth's atmosphere.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn D nói ngược: permafrost chứa 'roughly twice as much carbon as is currently present in the entire Earth's atmosphere'. Gấp đôi, không phải bằng nửa. FALSE.",
+          "id": "nl2-46-permafrost-thaw-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The positive feedback loop described could continue accelerating even if human emissions were brought under control.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'could, under sufficiently severe conditions, continue to accelerate to some meaningful degree even if human-caused emissions were themselves brought under substantially better control'. Đúng ý đề nên TRUE.",
+          "id": "nl2-46-permafrost-thaw-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The 2016 Siberian anthrax outbreak was linked to a reindeer carcass that had recently died of the disease.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: xác tuần lộc 'a decades-old reindeer carcass' — chết từ hàng chục năm trước, không phải gần đây. FALSE.",
+          "id": "nl2-46-permafrost-thaw-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Permafrost must remain at or below zero degrees Celsius for at least ________ consecutive years.",
+          "answer": "two",
+          "number": 11,
+          "explanation": "Đoạn A: 'that has remained continuously at or below zero degrees Celsius for at least two consecutive years'. Đáp án two.",
+          "id": "nl2-46-permafrost-thaw-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "In some regions permafrost extends to depths of well over a ________ below the surface.",
+          "answer": "kilometre",
+          "number": 12,
+          "explanation": "Đoạn A: 'extends to depths of well over a kilometre below the frozen surface'. Đáp án kilometre.",
+          "id": "nl2-46-permafrost-thaw-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Thawing permafrost releases carbon dioxide and ________, a more potent greenhouse gas over shorter timescales.",
+          "answer": "methane",
+          "number": 13,
+          "explanation": "Đoạn C: 'releasing substantial additional quantities of carbon dioxide and methane, a considerably more potent greenhouse gas'. Đáp án methane.",
+          "id": "nl2-46-permafrost-thaw-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Permafrost has preserved the carcasses of woolly ________ for tens of thousands of years.",
+          "answer": "mammoths",
+          "number": 14,
+          "explanation": "Đoạn E: 'the intact carcasses of woolly mammoths and other Ice Age megafauna'. Đáp án mammoths.",
+          "id": "nl2-46-permafrost-thaw-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The 2016 disease outbreak linked to thawing permafrost was ________.",
+          "answer": "anthrax",
+          "number": 15,
+          "explanation": "Đoạn E: 'in 2016, a notable anthrax outbreak in Siberia was directly linked... to the thawing'. Đáp án anthrax.",
+          "id": "nl2-46-permafrost-thaw-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-47-antimatter-p1",
+      "order": 99,
+      "title": "Antimatter",
+      "text": "A\nAntimatter consists of particles that are, in a precise sense, mirror images of ordinary matter particles, sharing the exact same mass but carrying exactly opposite electric charge and certain other opposite quantum properties. The positron, the antimatter counterpart of the ordinary electron, was first predicted theoretically in 1928 by the physicist Paul Dirac, whose equations describing the behaviour of electrons unexpectedly permitted an additional, previously unanticipated solution corresponding to a particle identical to the electron in every respect except for carrying a positive rather than negative electric charge.\n\nB\nThe positron was subsequently confirmed experimentally in 1932, when the American physicist Carl Anderson observed distinctive particle tracks in a cloud chamber, a specialised laboratory device used to visualise the paths of charged subatomic particles, that curved in a magnetic field in exactly the direction theoretically predicted for a positively charged particle possessing the same mass as an ordinary electron. Anderson was awarded the 1936 Nobel Prize in Physics for this discovery, and Dirac himself had already separately received the 1933 Nobel Prize in Physics for his earlier theoretical prediction of the positron's likely existence.\n\nC\nWhen a particle of matter encounters its corresponding antimatter counterpart, the pair undergo mutual annihilation, converting their combined total mass entirely into energy, generally in the form of high-energy photons, in scrupulously exact accordance with Einstein's famous mass-energy equivalence formula. This annihilation process is extraordinarily efficient at converting mass into usable energy, releasing considerably more energy per unit of mass than either conventional chemical combustion or even nuclear fission or nuclear fusion reactions, which has periodically led to popular, though currently entirely impractical, speculation about antimatter's theoretical potential as an extremely efficient future fuel or propulsion source.\n\nD\nProducing and, more importantly, subsequently storing antimatter for any meaningful, extended length of time is exceptionally difficult and correspondingly expensive in practice, since antimatter will annihilate essentially instantly upon coming into direct physical contact with any ordinary matter, including the walls of essentially any conceivable conventional storage container. Researchers instead confine antimatter particles using carefully configured magnetic and electric fields within a specialised device called a Penning trap, which suspends the antimatter in a small vacuum, keeping it held safely away from any direct physical contact with the container's ordinary-matter walls. Even with this specialised technology, only genuinely minuscule quantities of antimatter, measured in mere nanograms or even smaller amounts, have ever been successfully produced and stored by researchers worldwide, and the CERN research laboratory in Switzerland has estimated that manufacturing just one single gram of antimatter using current technology would cost several trillion dollars.\n\nE\nOne of the deepest, most persistent unresolved puzzles in the whole of modern physics concerns the fundamental question of why the observable universe today appears to consist overwhelmingly of ordinary matter rather than antimatter, given that the standard, well-established theoretical models of the early universe strongly predict that the immense energy of the Big Bang should have produced closely equal quantities of both matter and antimatter in the universe's very earliest moments. Since matter and antimatter mutually annihilate one another completely upon contact, this observed, deeply puzzling matter-antimatter asymmetry implies that some subtle, currently not fully understood physical process must have very slightly favoured the production of ordinary matter over antimatter in the extremely early universe, and identifying the precise physical mechanism responsible for this small but decisive imbalance remains one of the leading open questions actively driving the entire field of particle physics research today.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat antimatter is, and a theoretical prediction\nii\tExperimental confirmation, and two related Nobel Prizes\niii\tAnnihilation, and speculation about fuel and propulsion\niv\tWhy storing even a tiny amount is so difficult and costly\nv\tA puzzle about why matter outnumbers antimatter today\nvi\tPlans to use antimatter in medical imaging scanners\nvii\tHow antimatter was first named by science-fiction writers",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa phản vật chất là gì và dự đoán lý thuyết của Dirac 1928. Đúng tiêu đề i.",
+          "id": "nl2-47-antimatter-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về xác nhận thực nghiệm của Anderson 1932 và hai giải Nobel liên quan. Đúng tiêu đề ii.",
+          "id": "nl2-47-antimatter-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về hiện tượng huỷ cặp và suy đoán về nhiên liệu/động cơ đẩy tương lai. Đúng tiêu đề iii.",
+          "id": "nl2-47-antimatter-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về khó khăn lưu trữ phản vật chất bằng bẫy Penning và chi phí khổng lồ. Đúng tiêu đề iv.",
+          "id": "nl2-47-antimatter-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về bí ẩn tại sao vũ trụ chủ yếu là vật chất chứ không phải phản vật chất. Đúng tiêu đề v.",
+          "id": "nl2-47-antimatter-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "The positron has a negative electric charge, the same as an ordinary electron.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: positron 'carrying a positive rather than negative electric charge'. Điện tích dương, không phải âm. FALSE.",
+          "id": "nl2-47-antimatter-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Anderson won his Nobel Prize in the same year he first observed the positron's tracks.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: Anderson quan sát positron năm 1932 nhưng nhận giải Nobel năm 1936 — cách nhau bốn năm, không phải cùng năm. FALSE.",
+          "id": "nl2-47-antimatter-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Matter-antimatter annihilation releases more energy per unit of mass than nuclear fusion.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: huỷ cặp 'releasing considerably more energy per unit of mass than either conventional chemical combustion or even nuclear fission or nuclear fusion reactions'. Đúng ý đề nên TRUE.",
+          "id": "nl2-47-antimatter-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Antimatter can be safely stored in an ordinary sealed metal container.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: 'antimatter will annihilate essentially instantly upon coming into direct physical contact with any ordinary matter, including the walls of essentially any conceivable conventional storage container'. Không thể lưu trữ an toàn trong hộp kim loại thường. FALSE.",
+          "id": "nl2-47-antimatter-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Standard theoretical models predict the Big Bang should have produced equal quantities of matter and antimatter.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'strongly predict that the immense energy of the Big Bang should have produced closely equal quantities of both matter and antimatter'. Đúng ý đề nên TRUE.",
+          "id": "nl2-47-antimatter-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The positron was first predicted theoretically in 1928 by ________.",
+          "answer": "Paul Dirac",
+          "number": 11,
+          "explanation": "Đoạn A: 'first predicted theoretically in 1928 by the physicist Paul Dirac'. Đáp án Paul Dirac.",
+          "id": "nl2-47-antimatter-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Anderson observed the positron's tracks using a specialised device called a ________.",
+          "answer": "cloud chamber",
+          "number": 12,
+          "explanation": "Đoạn B: 'a specialised laboratory device used to visualise the paths of charged subatomic particles' called 'a cloud chamber'. Đáp án cloud chamber.",
+          "id": "nl2-47-antimatter-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Matter and antimatter mutually destroy each other in a process called ________.",
+          "answer": "annihilation",
+          "number": 13,
+          "explanation": "Đoạn C: 'the pair undergo mutual annihilation'. Đáp án annihilation.",
+          "id": "nl2-47-antimatter-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Antimatter is confined using magnetic and electric fields in a device called a ________ trap.",
+          "answer": "Penning",
+          "number": 14,
+          "explanation": "Đoạn D: 'within a specialised device called a Penning trap'. Đáp án Penning.",
+          "id": "nl2-47-antimatter-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "CERN estimated that manufacturing one gram of antimatter would cost several ________ dollars.",
+          "answer": "trillion",
+          "number": 15,
+          "explanation": "Đoạn D: 'would cost several trillion dollars'. Đáp án trillion.",
+          "id": "nl2-47-antimatter-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-48-space-elevator-p1",
+      "order": 100,
+      "title": "The Space Elevator",
+      "text": "A\nA space elevator is a hypothetical mega-structure that would allow cargo and, potentially, human passengers to travel between the Earth's surface and orbit by riding mechanical climbing vehicles along a long, exceptionally strong cable, rather than being launched into space using a conventional chemical rocket, which currently remains by far the most expensive part of essentially any space mission. The basic conceptual idea was first proposed in a serious, technically detailed form by the Russian scientist Konstantin Tsiolkovsky in 1895, inspired, according to popular later accounts, by his direct observation of the recently completed Eiffel Tower in Paris.\n\nB\nThe fundamental physical principle underlying the concept relies on geostationary orbit, a specific altitude directly above the equator, roughly 35,786 kilometres above the Earth's surface, at which an orbiting satellite's own orbital period exactly matches the Earth's own daily rotation period, causing the satellite to appear to remain permanently fixed above precisely the same point on the Earth's surface at all times. A cable extending both downward from a suitably massive counterweight object stationed in geostationary orbit toward a fixed surface anchor point on Earth, and simultaneously outward beyond that same counterweight into space, could in principle remain held taut indefinitely by the combined, precisely balanced effects of Earth's gravity pulling inward and outward centrifugal force acting on the counterweight, without requiring any continuous engine power or propulsion to maintain its position and structural tension.\n\nC\nThe single greatest technical obstacle preventing an actual, physically realisable space elevator from being built is straightforward but currently insurmountable material science: no material yet manufactured by humans possesses anywhere near the necessary combination of tensile strength and comparatively low density required for a cable of the enormous length involved to reliably support even its own weight under tension, let alone any additional practical cargo load riding along it. Carbon nanotubes, an exceptionally strong material discovered and characterised in the 1990s, are frequently proposed by enthusiasts and researchers as a theoretically promising candidate material, since individual carbon nanotube fibres tested under laboratory conditions have demonstrated tensile strength theoretically sufficient for the purpose, but manufacturing carbon nanotube cables of the vastly greater length, and with the very high, consistent structural quality, that an actual functioning space elevator would require remains, even today, considerably beyond current manufacturing capability.\n\nD\nBeyond the core cable-material problem, engineers have identified numerous additional serious practical challenges that would need to be solved before any space elevator could actually be built and safely operated, including safely and reliably powering climbing vehicles as they travel the enormous distance up the cable, a journey that could plausibly take several days at currently plausible climbing speeds; protecting the cable itself from micrometeorite impacts and the general hazard of increasingly abundant space debris in low Earth orbit; and managing the cable's structural interaction with severe high-altitude atmospheric winds and, at the ground anchor point itself, the additional risk posed by potential lightning strikes.\n\nE\nDespite these very substantial, currently unsolved engineering obstacles, proponents argue that a functioning space elevator, if it could ever actually be successfully built, would dramatically reduce the cost of launching cargo into orbit compared with conventional rocket-based launch, potentially by a factor of one hundred or considerably more, since a space elevator, once fully built and operational, would require vastly less energy per unit of cargo mass lifted than any chemical rocket, which must expend the overwhelming majority of its total propellant simply lifting the substantial weight of its own additional fuel. Several research groups, university engineering competitions, and at least one national space agency continue to actively study various aspects of the concept, though most experts in the field candidly agree that a fully operational, practically functioning space elevator likely remains, at an absolute minimum, several decades away, contingent above all on genuinely significant, currently unforeseen future breakthroughs in cable material science.\n\n— Biên soạn dựa trên kiến thức khoa học vũ trụ phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and who first proposed the idea\nii\tThe orbital physics that would keep the cable taut\niii\tWhy no material yet exists strong enough for the cable\niv\tOther engineering problems beyond the cable itself\nv\tThe cost savings claimed, and how far away the idea remains\nvi\tHow climbing vehicles would be manufactured\nvii\tInternational treaties governing the ownership of orbital structures",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa thang máy vũ trụ là gì và ai đầu tiên đề xuất ý tưởng này (Tsiolkovsky, 1895). Đúng tiêu đề i.",
+          "id": "nl2-48-space-elevator-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B giải thích nguyên lý vật lý dựa trên quỹ đạo địa tĩnh giữ dây căng. Đúng tiêu đề ii.",
+          "id": "nl2-48-space-elevator-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói rào cản lớn nhất là chưa có vật liệu đủ mạnh, kể cả ống nano carbon vẫn chưa sản xuất được ở quy mô cần thiết. Đúng tiêu đề iii.",
+          "id": "nl2-48-space-elevator-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói các thách thức kỹ thuật khác ngoài vật liệu dây cáp: cấp nguồn, rác vũ trụ, gió, sét. Đúng tiêu đề iv.",
+          "id": "nl2-48-space-elevator-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói tiềm năng tiết kiệm chi phí và ước tính còn cách nhiều thập kỷ mới thành hiện thực. Đúng tiêu đề v.",
+          "id": "nl2-48-space-elevator-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "A satellite in geostationary orbit appears to remain fixed above the same point on Earth's surface.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn B: 'causing the satellite to appear to remain permanently fixed above precisely the same point on the Earth's surface at all times'. Đúng ý đề nên TRUE.",
+          "id": "nl2-48-space-elevator-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A space elevator cable would require continuous engine power to remain taut once built.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: cáp 'could in principle remain held taut indefinitely... without requiring any continuous engine power or propulsion'. Không cần động cơ liên tục. FALSE.",
+          "id": "nl2-48-space-elevator-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Carbon nanotube cables of the length and quality needed for a space elevator can already be manufactured today.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: sản xuất cáp ống nano carbon đủ dài và chất lượng cao 'remains, even today, considerably beyond current manufacturing capability'. Chưa làm được, đề nói ngược nên FALSE.",
+          "id": "nl2-48-space-elevator-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Chemical rockets must use most of their fuel simply lifting the weight of their own additional fuel.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn E: tên lửa hoá học 'must expend the overwhelming majority of its total propellant simply lifting the substantial weight of its own additional fuel'. Đúng ý đề nên TRUE.",
+          "id": "nl2-48-space-elevator-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most experts believe a functioning space elevator could be built within the next five years.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'a fully operational, practically functioning space elevator likely remains, at an absolute minimum, several decades away'. Còn nhiều thập kỷ, không phải 5 năm. FALSE.",
+          "id": "nl2-48-space-elevator-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Tsiolkovsky's idea was reportedly inspired by his observation of the recently completed ________ in Paris.",
+          "answer": "Eiffel Tower",
+          "number": 11,
+          "explanation": "Đoạn A: 'inspired... by his direct observation of the recently completed Eiffel Tower in Paris'. Đáp án Eiffel Tower.",
+          "id": "nl2-48-space-elevator-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Geostationary orbit lies roughly ________ kilometres above the Earth's surface.",
+          "answer": "35,786",
+          "number": 12,
+          "explanation": "Đoạn B: 'roughly 35,786 kilometres above the Earth's surface'. Đáp án 35,786.",
+          "id": "nl2-48-space-elevator-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "A theoretically promising cable material discovered in the 1990s is ________.",
+          "answer": "carbon nanotubes",
+          "number": 13,
+          "explanation": "Đoạn C: 'Carbon nanotubes, an exceptionally strong material discovered and characterised in the 1990s'. Đáp án carbon nanotubes.",
+          "id": "nl2-48-space-elevator-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The cable would need protection from micrometeorite impacts and space ________.",
+          "answer": "debris",
+          "number": 14,
+          "explanation": "Đoạn D: 'the general hazard of increasingly abundant space debris in low Earth orbit'. Đáp án debris.",
+          "id": "nl2-48-space-elevator-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "A working space elevator could reduce launch costs by a factor of one hundred or ________.",
+          "answer": "more",
+          "number": 15,
+          "explanation": "Đoạn E: 'potentially by a factor of one hundred or considerably more'. Đáp án more.",
+          "id": "nl2-48-space-elevator-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-49-fermi-paradox-p1",
+      "order": 101,
+      "title": "The Fermi Paradox",
+      "text": "A\nThe Fermi paradox refers to the apparent, and genuinely striking, contradiction between the seemingly high statistical likelihood that intelligent extraterrestrial civilisations exist somewhere in our galaxy, given the sheer number of stars and, as researchers now know, planets involved, and the complete absence to date of any confirmed direct evidence, contact, or even indirect detectable signal from any such civilisation whatsoever. It takes its name from the Italian-American physicist Enrico Fermi, who is said to have posed the pointed, deceptively simple question \"Where is everybody?\" during an informal 1950 lunchtime conversation with fellow physicists at the Los Alamos National Laboratory.\n\nB\nThe scale of the underlying puzzle becomes considerably clearer once the numbers involved are properly appreciated: the Milky Way galaxy alone contains an estimated one hundred to four hundred billion stars, a substantial proportion of which are now known, from direct astronomical observation, to host at least one orbiting planet, and the galaxy itself is roughly 13.6 billion years old, providing an immense span of time over which intelligent life, once it first arose anywhere within the galaxy, could plausibly have spread outward and colonised a very substantial fraction of it, potentially even using nothing more advanced than comparatively slow, sub-light-speed interstellar spacecraft, given a sufficiently long span of galactic time to do so.\n\nC\nNumerous, often mutually exclusive, explanations have been proposed for the apparent silence. One broad category of explanation, sometimes informally termed the \"great filter\" hypothesis, proposes that some extraordinarily difficult evolutionary or technological transition, a filter that most emerging forms of life or civilisation ultimately fail to successfully pass through, blocks the vast majority of potential civilisations from ever reaching the specific stage of interstellar communication or space travel required to actually be detected by others. Candidate great filters that have been seriously proposed include the specific, contingent origin of self-replicating life itself, the evolutionary transition to genuinely complex, differentiated multicellular organisms, and, more troublingly for humanity's own long-term prospects, some form of civilisation-ending technological self-destruction that might reliably occur shortly after a civilisation first develops sufficiently advanced technology.\n\nD\nOther proposed explanations do not require any single decisive filter at all. Some researchers argue that interstellar travel and long-range communication may simply be considerably more difficult, in practice, than optimistic early calculations assumed, given the immense physical distances and communication time delays genuinely involved even at the speed of light. Others suggest that intelligent civilisations might, for reasons not yet fully understood, generally prove to be comparatively short-lived relative to full galactic timescales, meaning that the specific, comparatively narrow windows of time during which any two civilisations could plausibly overlap and communicate with one another might simply be too brief and too improbably rare to have occurred yet by pure chance. A further, more speculative but frequently discussed possibility, sometimes called the zoo hypothesis, proposes that advanced civilisations may already be aware of humanity's existence but have deliberately chosen not to make contact, whether out of caution, respect for a young civilisation's own independent development, or some other motive not readily comprehensible from a purely human perspective.\n\nE\nThe Fermi paradox has direct, practical relevance to ongoing efforts to search for extraterrestrial intelligence, most notably through the SETI Institute's long-running programme, established in 1984, of systematically monitoring specific ranges of the radio spectrum for any signal that might plausibly indicate deliberate artificial, rather than purely natural astrophysical, origin. Despite several decades of dedicated, sustained observational effort, no confirmed candidate signal has ever been positively identified, a persistent negative result that some researchers interpret as at least weakly supportive evidence for one or another version of the great filter hypothesis, though most researchers in the field readily acknowledge that the search conducted so far has covered only an extremely small fraction of the galaxy's total stars and only a correspondingly narrow slice of all the possible radio frequencies over which an advanced civilisation might plausibly choose to communicate.\n\n— Biên soạn dựa trên kiến thức vật lý thiên văn phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the paradox is, and the question that named it\nii\tThe scale of the galaxy that makes the silence puzzling\niii\tA filter that most civilisations may fail to pass\niv\tExplanations that require no single decisive barrier\nv\tA radio search that has so far found nothing\nvi\tPlans to send a physical probe beyond the solar system\nvii\tHow Fermi calculated the age of the Milky Way",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa nghịch lý Fermi và câu hỏi 'Where is everybody?' đặt tên cho nó. Đúng tiêu đề i.",
+          "id": "nl2-49-fermi-paradox-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B đưa con số về quy mô thiên hà khiến sự im lặng trở nên khó hiểu. Đúng tiêu đề ii.",
+          "id": "nl2-49-fermi-paradox-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về giả thuyết 'great filter' — rào cản mà hầu hết nền văn minh không vượt qua được. Đúng tiêu đề iii.",
+          "id": "nl2-49-fermi-paradox-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về các giải thích khác không cần một rào cản duy nhất: khó khăn di chuyển, tuổi thọ văn minh ngắn, giả thuyết vườn thú. Đúng tiêu đề iv.",
+          "id": "nl2-49-fermi-paradox-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về chương trình SETI tìm kiếm tín hiệu radio mà chưa tìm thấy gì. Đúng tiêu đề v.",
+          "id": "nl2-49-fermi-paradox-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Fermi posed his question during a formal scientific conference presentation.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: câu hỏi được đặt ra 'during an informal 1950 lunchtime conversation with fellow physicists'. Không phải trong buổi hội nghị chính thức. FALSE.",
+          "id": "nl2-49-fermi-paradox-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A substantial proportion of the Milky Way's stars are now known to host at least one orbiting planet.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'a substantial proportion of which are now known, from direct astronomical observation, to host at least one orbiting planet'. Đúng ý đề nên TRUE.",
+          "id": "nl2-49-fermi-paradox-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All proposed great filter candidates involve technology developed after interstellar travel has already begun.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: các ứng viên great filter bao gồm 'the specific, contingent origin of self-replicating life itself' — xảy ra rất sớm, trước khi có công nghệ du hành liên sao. FALSE.",
+          "id": "nl2-49-fermi-paradox-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The zoo hypothesis suggests advanced civilisations may know about humanity but have chosen not to make contact.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'advanced civilisations may already be aware of humanity's existence but have deliberately chosen not to make contact'. Đúng ý đề nên TRUE.",
+          "id": "nl2-49-fermi-paradox-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "SETI has confirmed at least one candidate signal of artificial extraterrestrial origin.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'no confirmed candidate signal has ever been positively identified'. Chưa xác nhận được tín hiệu nào. FALSE.",
+          "id": "nl2-49-fermi-paradox-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Fermi is said to have asked 'Where is ________?' in 1950.",
+          "answer": "everybody",
+          "number": 11,
+          "explanation": "Đoạn A: 'the pointed, deceptively simple question Where is everybody?'. Đáp án everybody.",
+          "id": "nl2-49-fermi-paradox-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The Milky Way galaxy is roughly ________ billion years old.",
+          "answer": "13.6",
+          "number": 12,
+          "explanation": "Đoạn B: 'the galaxy itself is roughly 13.6 billion years old'. Đáp án 13.6.",
+          "id": "nl2-49-fermi-paradox-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The hypothesis that a hard evolutionary transition blocks most civilisations is called the '________ filter'.",
+          "answer": "great",
+          "number": 13,
+          "explanation": "Đoạn C: 'sometimes informally termed the great filter hypothesis'. Đáp án great.",
+          "id": "nl2-49-fermi-paradox-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The idea that advanced civilisations deliberately avoid contact is called the ________ hypothesis.",
+          "answer": "zoo",
+          "number": 14,
+          "explanation": "Đoạn D: 'sometimes called the zoo hypothesis'. Đáp án zoo.",
+          "id": "nl2-49-fermi-paradox-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The SETI Institute's radio-monitoring programme was established in ________.",
+          "answer": "1984",
+          "number": 15,
+          "explanation": "Đoạn E: 'the SETI Institute's long-running programme, established in 1984'. Đáp án 1984.",
+          "id": "nl2-49-fermi-paradox-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-50-string-theory-p1",
+      "order": 102,
+      "title": "String Theory",
+      "text": "A\nString theory is a theoretical framework in physics that proposes replacing the point-like fundamental particles of conventional particle physics, such as electrons and quarks, with unimaginably tiny, one-dimensional vibrating strings of energy, so small that no experiment yet devised comes remotely close to being able to directly detect or resolve their proposed internal structure. According to the theory, the specific mode and pattern in which one of these fundamental strings vibrates directly determines which particular type of particle it appears to be to any outside observer, in much the same broad way that a single guitar string, depending on precisely how it happens to be vibrating, can produce many entirely different musical notes.\n\nB\nString theory was originally developed in the late 1960s in an unsuccessful attempt to explain the strong nuclear force, the fundamental force that binds atomic nuclei together, but was largely abandoned for that specific original purpose once an entirely different theory, called quantum chromodynamics, proved considerably more successful at explaining the relevant experimental data. Interest in string theory was subsequently revived and substantially expanded during the 1980s, once physicists realised that its underlying mathematical framework could, in principle, potentially provide a way of successfully unifying quantum mechanics, the physics governing the smallest subatomic scales, with Einstein's general theory of relativity, the physics governing gravity and large-scale cosmic structure, two extraordinarily successful theories that have otherwise stubbornly resisted every previous serious attempt at direct mathematical unification into one single, consistent framework.\n\nC\nOne of string theory's most immediately striking and unusual features is its mathematical requirement of additional spatial dimensions considerably beyond the three familiar spatial dimensions of ordinary everyday experience. Depending on the precise specific mathematical version of the theory under consideration, string theory typically requires somewhere between ten and eleven total dimensions in order for its underlying equations to remain fully mathematically consistent. Proponents of the theory generally explain the fact that we do not directly perceive these additional dimensions in everyday life by proposing that they are \"compactified\", meaning tightly curled up into an extraordinarily small, subatomic-scale geometric shape at every single point in ordinary space, far too small for any currently conceivable experiment to detect their existence directly.\n\nD\nDespite several decades of substantial and sustained theoretical development by many leading physicists, string theory has yet to make even a single, uniquely specific, experimentally testable prediction that could clearly and decisively distinguish it from rival theoretical approaches to unifying physics, a significant and much-discussed limitation that has led a number of physicists to question, sometimes quite pointedly and publicly, whether string theory should properly be considered genuine, falsifiable empirical science in the traditional sense at all, given that a scientific theory is traditionally expected to make testable predictions capable of being proven wrong by experiment. Proponents of string theory generally respond that the theory's required extremely high energy scales, far beyond what any currently conceivable particle accelerator could plausibly ever achieve, rather than any fundamental defect in the theory's core underlying logical or scientific structure, is what has so far prevented direct, decisive experimental testing.\n\nE\nThe broader mathematical framework of string theory has, regardless of its still entirely unresolved and contested status as a genuine physical theory of our actual universe, proved surprisingly and unexpectedly useful within pure mathematics itself, contributing productively to advances in several previously unrelated and quite distinct mathematical fields, including algebraic geometry and knot theory. Some physicists argue that this substantial mathematical utility alone justifies string theory's continued active study and development, regardless of whether it ultimately proves to correctly describe the actual physical universe we inhabit, while other physicists maintain that decades of research resources invested in a theory that has so far produced no directly testable predictions represents a genuinely serious and troubling opportunity cost for the wider field of fundamental theoretical physics as a whole.\n\n— Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the theory proposes, in place of point-like particles\nii\tAn original purpose abandoned, and a later revival\niii\tExtra dimensions curled up too small to detect\niv\tCriticism that the theory makes no testable prediction\nv\tUnexpected usefulness within pure mathematics\nvi\tHow the theory explains the mass of the electron\nvii\tExperiments planned to directly detect vibrating strings",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa lý thuyết dây thay thế hạt điểm bằng dây rung một chiều. Đúng tiêu đề i.",
+          "id": "nl2-50-string-theory-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể lý thuyết dây ban đầu nhằm giải thích lực hạt nhân mạnh, bị bỏ rơi rồi hồi sinh vào thập niên 1980. Đúng tiêu đề ii.",
+          "id": "nl2-50-string-theory-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về các chiều không gian bổ sung bị 'cuộn lại' quá nhỏ để phát hiện. Đúng tiêu đề iii.",
+          "id": "nl2-50-string-theory-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói lý thuyết dây chưa đưa ra được dự đoán kiểm chứng được nào, bị chỉ trích không phải khoa học thực nghiệm. Đúng tiêu đề iv.",
+          "id": "nl2-50-string-theory-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói khung toán học của lý thuyết dây hữu ích bất ngờ trong toán học thuần tuý. Đúng tiêu đề v.",
+          "id": "nl2-50-string-theory-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "String theory was originally developed to explain the force of gravity.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: lý thuyết dây ban đầu được phát triển 'to explain the strong nuclear force', không phải lực hấp dẫn. FALSE.",
+          "id": "nl2-50-string-theory-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Quantum chromodynamics proved less successful than string theory at explaining the strong nuclear force.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: quantum chromodynamics 'proved considerably more successful' hơn lý thuyết dây trong việc giải thích lực hạt nhân mạnh. FALSE.",
+          "id": "nl2-50-string-theory-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All versions of string theory require exactly the same number of total dimensions.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'Depending on the precise specific mathematical version of the theory... string theory typically requires somewhere between ten and eleven total dimensions'. Khác nhau tuỳ phiên bản, không phải giống hệt nhau. FALSE.",
+          "id": "nl2-50-string-theory-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "String theory has already made a uniquely specific, experimentally testable prediction distinguishing it from rival theories.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: lý thuyết dây 'has yet to make even a single, uniquely specific, experimentally testable prediction'. Chưa có dự đoán như vậy. FALSE.",
+          "id": "nl2-50-string-theory-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "String theory's mathematical framework has contributed to advances in algebraic geometry and knot theory.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'contributing productively to advances in several previously unrelated and quite distinct mathematical fields, including algebraic geometry and knot theory'. Đúng ý đề nên TRUE.",
+          "id": "nl2-50-string-theory-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "String theory replaces point-like particles with vibrating, one-dimensional ________.",
+          "answer": "strings",
+          "number": 11,
+          "explanation": "Đoạn A: 'unimaginably tiny, one-dimensional vibrating strings of energy'. Đáp án strings.",
+          "id": "nl2-50-string-theory-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The theory that succeeded where early string theory failed to explain the strong force is called quantum ________.",
+          "answer": "chromodynamics",
+          "number": 12,
+          "explanation": "Đoạn B: 'an entirely different theory, called quantum chromodynamics'. Đáp án chromodynamics.",
+          "id": "nl2-50-string-theory-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Extra dimensions are said to be '________', curled up too small to detect.",
+          "answer": "compactified",
+          "number": 13,
+          "explanation": "Đoạn C: 'proposing that they are compactified, meaning tightly curled up'. Đáp án compactified.",
+          "id": "nl2-50-string-theory-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Critics question whether string theory should be considered genuine, ________ empirical science.",
+          "answer": "falsifiable",
+          "number": 14,
+          "explanation": "Đoạn D: 'whether string theory should properly be considered genuine, falsifiable empirical science'. Đáp án falsifiable.",
+          "id": "nl2-50-string-theory-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Some physicists argue continued investment in string theory represents a serious opportunity ________.",
+          "answer": "cost",
+          "number": 15,
+          "explanation": "Đoạn E: 'represents a genuinely serious and troubling opportunity cost for the wider field'. Đáp án cost.",
+          "id": "nl2-50-string-theory-q15"
+        }
+      ]
     }
   ]
 }

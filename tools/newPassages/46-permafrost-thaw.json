@@ -1,0 +1,141 @@
+{
+  "title": "Permafrost Thaw",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học môi trường phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Permafrost is ground, including soil, rock, and any ice or organic material it contains, that has remained continuously at or below zero degrees Celsius for at least two consecutive years, though many extensive permafrost regions in the Arctic have in fact remained continuously frozen for many thousands of years without interruption. Permafrost underlies an estimated one quarter of all exposed land in the Northern Hemisphere, spanning large parts of Siberia, Alaska, and northern Canada, and in some particularly cold regions extends to depths of well over a kilometre below the frozen surface."
+    },
+    {
+      "letter": "B",
+      "text": "As global average temperatures continue to rise, permafrost across large parts of the Arctic has begun thawing at a pace that has genuinely surprised, and in some documented cases significantly alarmed, many climate scientists actively studying the region. Thawing permafrost causes the ground surface above it to subside unevenly, since the ice that had previously rigidly held frozen soil particles firmly in place gradually melts away, a process that has already caused serious, well-documented structural damage to roads, buildings, and other essential infrastructure across several Arctic settlements, in some cases requiring entire communities to be relocated to more geologically stable ground."
+    },
+    {
+      "letter": "C",
+      "text": "Beyond these immediate, highly visible structural and infrastructure concerns, permafrost thaw carries a considerably larger and potentially more consequential global climate implication: permafrost soils contain vast quantities of preserved organic material, chiefly the partially decomposed remains of plants, that accumulated gradually and were subsequently locked away in a stable, deeply frozen state, in many cases for many thousands of years, preventing the decomposition process from ever fully running its natural course. When permafrost thaws, microorganisms that had themselves lain dormant within the frozen ground for millennia become active once more and begin actively decomposing this long-preserved organic material, in the process releasing substantial additional quantities of carbon dioxide and methane, a considerably more potent greenhouse gas over shorter timescales, directly into the atmosphere."
+    },
+    {
+      "letter": "D",
+      "text": "Scientists estimate that permafrost across the Arctic collectively contains roughly twice as much carbon as is currently present in the entire Earth's atmosphere, meaning that widespread permafrost thaw has the clear potential to release a truly enormous quantity of additional greenhouse gas, substantially accelerating the pace of global climate change well beyond what is caused directly by human fossil fuel emissions alone. This phenomenon is frequently cited by climate scientists as a potential positive feedback loop, since warming causes permafrost to thaw, thawing permafrost releases additional greenhouse gases, and those additional released gases in turn cause further warming, creating a self-reinforcing cycle that could, under sufficiently severe conditions, continue to accelerate to some meaningful degree even if human-caused emissions were themselves brought under substantially better control."
+    },
+    {
+      "letter": "E",
+      "text": "Permafrost thaw has also unexpectedly revealed remarkably well-preserved biological remains, including the intact carcasses of woolly mammoths and other Ice Age megafauna, frozen and consequently preserved in a remarkably lifelike state for tens of thousands of years, providing scientists with an invaluable, otherwise unattainable source of ancient DNA and detailed soft-tissue anatomical information. However, thawing permafrost also raises separate, more troubling public health concerns of its own: in 2016, a notable anthrax outbreak in Siberia was directly linked by investigating scientists to the thawing of a decades-old reindeer carcass that had itself died of anthrax and had remained safely frozen and biologically inert until the surrounding permafrost thawed sufficiently to expose it, illustrating that long-dormant pathogens preserved within permafrost could, in certain specific circumstances, become an unexpected and genuinely novel public health hazard as the Arctic climate continues to warm."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat permafrost is, and how much land it covers\nii\tDamage to roads and buildings as the ground subsides\niii\tOrganic material locked away for thousands of years\niv\tA self-reinforcing cycle of warming and release\nv\tPreserved carcasses, and a disease outbreak they caused\nvi\tPlans to artificially refreeze thawing permafrost\nvii\tHow permafrost was first mapped using satellite radar",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa tầng đất đóng băng vĩnh cửu là gì và diện tích nó bao phủ. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về nền đất sụt lún gây hư hại đường xá, nhà cửa ở khu định cư Bắc Cực. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về chất hữu cơ bị khoá lại hàng nghìn năm và giải phóng khí nhà kính khi tan băng. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về vòng phản hồi tự củng cố giữa nóng lên và tan băng. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về xác voi ma mút được bảo quản và vụ dịch bệnh than năm 2016. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Permafrost underlies roughly one quarter of all exposed land in the Northern Hemisphere.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'Permafrost underlies an estimated one quarter of all exposed land in the Northern Hemisphere'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The current pace of Arctic permafrost thaw has surprised many climate scientists.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'thawing at a pace that has genuinely surprised, and in some documented cases significantly alarmed, many climate scientists'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Permafrost contains roughly half as much carbon as is currently present in the Earth's atmosphere.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn D nói ngược: permafrost chứa 'roughly twice as much carbon as is currently present in the entire Earth's atmosphere'. Gấp đôi, không phải bằng nửa. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The positive feedback loop described could continue accelerating even if human emissions were brought under control.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'could, under sufficiently severe conditions, continue to accelerate to some meaningful degree even if human-caused emissions were themselves brought under substantially better control'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The 2016 Siberian anthrax outbreak was linked to a reindeer carcass that had recently died of the disease.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: xác tuần lộc 'a decades-old reindeer carcass' — chết từ hàng chục năm trước, không phải gần đây. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Permafrost must remain at or below zero degrees Celsius for at least ________ consecutive years.",
+      "answer": "two",
+      "number": 11,
+      "explanation": "Đoạn A: 'that has remained continuously at or below zero degrees Celsius for at least two consecutive years'. Đáp án two."
+    },
+    {
+      "type": "gap",
+      "prompt": "In some regions permafrost extends to depths of well over a ________ below the surface.",
+      "answer": "kilometre",
+      "number": 12,
+      "explanation": "Đoạn A: 'extends to depths of well over a kilometre below the frozen surface'. Đáp án kilometre."
+    },
+    {
+      "type": "gap",
+      "prompt": "Thawing permafrost releases carbon dioxide and ________, a more potent greenhouse gas over shorter timescales.",
+      "answer": "methane",
+      "number": 13,
+      "explanation": "Đoạn C: 'releasing substantial additional quantities of carbon dioxide and methane, a considerably more potent greenhouse gas'. Đáp án methane."
+    },
+    {
+      "type": "gap",
+      "prompt": "Permafrost has preserved the carcasses of woolly ________ for tens of thousands of years.",
+      "answer": "mammoths",
+      "number": 14,
+      "explanation": "Đoạn E: 'the intact carcasses of woolly mammoths and other Ice Age megafauna'. Đáp án mammoths."
+    },
+    {
+      "type": "gap",
+      "prompt": "The 2016 disease outbreak linked to thawing permafrost was ________.",
+      "answer": "anthrax",
+      "number": 15,
+      "explanation": "Đoạn E: 'in 2016, a notable anthrax outbreak in Siberia was directly linked... to the thawing'. Đáp án anthrax."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "Antimatter",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Antimatter consists of particles that are, in a precise sense, mirror images of ordinary matter particles, sharing the exact same mass but carrying exactly opposite electric charge and certain other opposite quantum properties. The positron, the antimatter counterpart of the ordinary electron, was first predicted theoretically in 1928 by the physicist Paul Dirac, whose equations describing the behaviour of electrons unexpectedly permitted an additional, previously unanticipated solution corresponding to a particle identical to the electron in every respect except for carrying a positive rather than negative electric charge."
+    },
+    {
+      "letter": "B",
+      "text": "The positron was subsequently confirmed experimentally in 1932, when the American physicist Carl Anderson observed distinctive particle tracks in a cloud chamber, a specialised laboratory device used to visualise the paths of charged subatomic particles, that curved in a magnetic field in exactly the direction theoretically predicted for a positively charged particle possessing the same mass as an ordinary electron. Anderson was awarded the 1936 Nobel Prize in Physics for this discovery, and Dirac himself had already separately received the 1933 Nobel Prize in Physics for his earlier theoretical prediction of the positron's likely existence."
+    },
+    {
+      "letter": "C",
+      "text": "When a particle of matter encounters its corresponding antimatter counterpart, the pair undergo mutual annihilation, converting their combined total mass entirely into energy, generally in the form of high-energy photons, in scrupulously exact accordance with Einstein's famous mass-energy equivalence formula. This annihilation process is extraordinarily efficient at converting mass into usable energy, releasing considerably more energy per unit of mass than either conventional chemical combustion or even nuclear fission or nuclear fusion reactions, which has periodically led to popular, though currently entirely impractical, speculation about antimatter's theoretical potential as an extremely efficient future fuel or propulsion source."
+    },
+    {
+      "letter": "D",
+      "text": "Producing and, more importantly, subsequently storing antimatter for any meaningful, extended length of time is exceptionally difficult and correspondingly expensive in practice, since antimatter will annihilate essentially instantly upon coming into direct physical contact with any ordinary matter, including the walls of essentially any conceivable conventional storage container. Researchers instead confine antimatter particles using carefully configured magnetic and electric fields within a specialised device called a Penning trap, which suspends the antimatter in a small vacuum, keeping it held safely away from any direct physical contact with the container's ordinary-matter walls. Even with this specialised technology, only genuinely minuscule quantities of antimatter, measured in mere nanograms or even smaller amounts, have ever been successfully produced and stored by researchers worldwide, and the CERN research laboratory in Switzerland has estimated that manufacturing just one single gram of antimatter using current technology would cost several trillion dollars."
+    },
+    {
+      "letter": "E",
+      "text": "One of the deepest, most persistent unresolved puzzles in the whole of modern physics concerns the fundamental question of why the observable universe today appears to consist overwhelmingly of ordinary matter rather than antimatter, given that the standard, well-established theoretical models of the early universe strongly predict that the immense energy of the Big Bang should have produced closely equal quantities of both matter and antimatter in the universe's very earliest moments. Since matter and antimatter mutually annihilate one another completely upon contact, this observed, deeply puzzling matter-antimatter asymmetry implies that some subtle, currently not fully understood physical process must have very slightly favoured the production of ordinary matter over antimatter in the extremely early universe, and identifying the precise physical mechanism responsible for this small but decisive imbalance remains one of the leading open questions actively driving the entire field of particle physics research today."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat antimatter is, and a theoretical prediction\nii\tExperimental confirmation, and two related Nobel Prizes\niii\tAnnihilation, and speculation about fuel and propulsion\niv\tWhy storing even a tiny amount is so difficult and costly\nv\tA puzzle about why matter outnumbers antimatter today\nvi\tPlans to use antimatter in medical imaging scanners\nvii\tHow antimatter was first named by science-fiction writers",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa phản vật chất là gì và dự đoán lý thuyết của Dirac 1928. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về xác nhận thực nghiệm của Anderson 1932 và hai giải Nobel liên quan. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về hiện tượng huỷ cặp và suy đoán về nhiên liệu/động cơ đẩy tương lai. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về khó khăn lưu trữ phản vật chất bằng bẫy Penning và chi phí khổng lồ. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về bí ẩn tại sao vũ trụ chủ yếu là vật chất chứ không phải phản vật chất. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "The positron has a negative electric charge, the same as an ordinary electron.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: positron 'carrying a positive rather than negative electric charge'. Điện tích dương, không phải âm. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Anderson won his Nobel Prize in the same year he first observed the positron's tracks.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B: Anderson quan sát positron năm 1932 nhưng nhận giải Nobel năm 1936 — cách nhau bốn năm, không phải cùng năm. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Matter-antimatter annihilation releases more energy per unit of mass than nuclear fusion.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: huỷ cặp 'releasing considerably more energy per unit of mass than either conventional chemical combustion or even nuclear fission or nuclear fusion reactions'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Antimatter can be safely stored in an ordinary sealed metal container.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: 'antimatter will annihilate essentially instantly upon coming into direct physical contact with any ordinary matter, including the walls of essentially any conceivable conventional storage container'. Không thể lưu trữ an toàn trong hộp kim loại thường. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Standard theoretical models predict the Big Bang should have produced equal quantities of matter and antimatter.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'strongly predict that the immense energy of the Big Bang should have produced closely equal quantities of both matter and antimatter'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The positron was first predicted theoretically in 1928 by ________.",
+      "answer": "Paul Dirac",
+      "number": 11,
+      "explanation": "Đoạn A: 'first predicted theoretically in 1928 by the physicist Paul Dirac'. Đáp án Paul Dirac."
+    },
+    {
+      "type": "gap",
+      "prompt": "Anderson observed the positron's tracks using a specialised device called a ________.",
+      "answer": "cloud chamber",
+      "number": 12,
+      "explanation": "Đoạn B: 'a specialised laboratory device used to visualise the paths of charged subatomic particles' called 'a cloud chamber'. Đáp án cloud chamber."
+    },
+    {
+      "type": "gap",
+      "prompt": "Matter and antimatter mutually destroy each other in a process called ________.",
+      "answer": "annihilation",
+      "number": 13,
+      "explanation": "Đoạn C: 'the pair undergo mutual annihilation'. Đáp án annihilation."
+    },
+    {
+      "type": "gap",
+      "prompt": "Antimatter is confined using magnetic and electric fields in a device called a ________ trap.",
+      "answer": "Penning",
+      "number": 14,
+      "explanation": "Đoạn D: 'within a specialised device called a Penning trap'. Đáp án Penning."
+    },
+    {
+      "type": "gap",
+      "prompt": "CERN estimated that manufacturing one gram of antimatter would cost several ________ dollars.",
+      "answer": "trillion",
+      "number": 15,
+      "explanation": "Đoạn D: 'would cost several trillion dollars'. Đáp án trillion."
+    }
+  ]
+}

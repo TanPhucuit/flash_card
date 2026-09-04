@@ -1,0 +1,141 @@
+{
+  "title": "String Theory",
+  "sourceNote": "Biên soạn dựa trên kiến thức vật lý phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "String theory is a theoretical framework in physics that proposes replacing the point-like fundamental particles of conventional particle physics, such as electrons and quarks, with unimaginably tiny, one-dimensional vibrating strings of energy, so small that no experiment yet devised comes remotely close to being able to directly detect or resolve their proposed internal structure. According to the theory, the specific mode and pattern in which one of these fundamental strings vibrates directly determines which particular type of particle it appears to be to any outside observer, in much the same broad way that a single guitar string, depending on precisely how it happens to be vibrating, can produce many entirely different musical notes."
+    },
+    {
+      "letter": "B",
+      "text": "String theory was originally developed in the late 1960s in an unsuccessful attempt to explain the strong nuclear force, the fundamental force that binds atomic nuclei together, but was largely abandoned for that specific original purpose once an entirely different theory, called quantum chromodynamics, proved considerably more successful at explaining the relevant experimental data. Interest in string theory was subsequently revived and substantially expanded during the 1980s, once physicists realised that its underlying mathematical framework could, in principle, potentially provide a way of successfully unifying quantum mechanics, the physics governing the smallest subatomic scales, with Einstein's general theory of relativity, the physics governing gravity and large-scale cosmic structure, two extraordinarily successful theories that have otherwise stubbornly resisted every previous serious attempt at direct mathematical unification into one single, consistent framework."
+    },
+    {
+      "letter": "C",
+      "text": "One of string theory's most immediately striking and unusual features is its mathematical requirement of additional spatial dimensions considerably beyond the three familiar spatial dimensions of ordinary everyday experience. Depending on the precise specific mathematical version of the theory under consideration, string theory typically requires somewhere between ten and eleven total dimensions in order for its underlying equations to remain fully mathematically consistent. Proponents of the theory generally explain the fact that we do not directly perceive these additional dimensions in everyday life by proposing that they are \"compactified\", meaning tightly curled up into an extraordinarily small, subatomic-scale geometric shape at every single point in ordinary space, far too small for any currently conceivable experiment to detect their existence directly."
+    },
+    {
+      "letter": "D",
+      "text": "Despite several decades of substantial and sustained theoretical development by many leading physicists, string theory has yet to make even a single, uniquely specific, experimentally testable prediction that could clearly and decisively distinguish it from rival theoretical approaches to unifying physics, a significant and much-discussed limitation that has led a number of physicists to question, sometimes quite pointedly and publicly, whether string theory should properly be considered genuine, falsifiable empirical science in the traditional sense at all, given that a scientific theory is traditionally expected to make testable predictions capable of being proven wrong by experiment. Proponents of string theory generally respond that the theory's required extremely high energy scales, far beyond what any currently conceivable particle accelerator could plausibly ever achieve, rather than any fundamental defect in the theory's core underlying logical or scientific structure, is what has so far prevented direct, decisive experimental testing."
+    },
+    {
+      "letter": "E",
+      "text": "The broader mathematical framework of string theory has, regardless of its still entirely unresolved and contested status as a genuine physical theory of our actual universe, proved surprisingly and unexpectedly useful within pure mathematics itself, contributing productively to advances in several previously unrelated and quite distinct mathematical fields, including algebraic geometry and knot theory. Some physicists argue that this substantial mathematical utility alone justifies string theory's continued active study and development, regardless of whether it ultimately proves to correctly describe the actual physical universe we inhabit, while other physicists maintain that decades of research resources invested in a theory that has so far produced no directly testable predictions represents a genuinely serious and troubling opportunity cost for the wider field of fundamental theoretical physics as a whole."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the theory proposes, in place of point-like particles\nii\tAn original purpose abandoned, and a later revival\niii\tExtra dimensions curled up too small to detect\niv\tCriticism that the theory makes no testable prediction\nv\tUnexpected usefulness within pure mathematics\nvi\tHow the theory explains the mass of the electron\nvii\tExperiments planned to directly detect vibrating strings",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa lý thuyết dây thay thế hạt điểm bằng dây rung một chiều. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể lý thuyết dây ban đầu nhằm giải thích lực hạt nhân mạnh, bị bỏ rơi rồi hồi sinh vào thập niên 1980. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về các chiều không gian bổ sung bị 'cuộn lại' quá nhỏ để phát hiện. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói lý thuyết dây chưa đưa ra được dự đoán kiểm chứng được nào, bị chỉ trích không phải khoa học thực nghiệm. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói khung toán học của lý thuyết dây hữu ích bất ngờ trong toán học thuần tuý. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "String theory was originally developed to explain the force of gravity.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: lý thuyết dây ban đầu được phát triển 'to explain the strong nuclear force', không phải lực hấp dẫn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Quantum chromodynamics proved less successful than string theory at explaining the strong nuclear force.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: quantum chromodynamics 'proved considerably more successful' hơn lý thuyết dây trong việc giải thích lực hạt nhân mạnh. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All versions of string theory require exactly the same number of total dimensions.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'Depending on the precise specific mathematical version of the theory... string theory typically requires somewhere between ten and eleven total dimensions'. Khác nhau tuỳ phiên bản, không phải giống hệt nhau. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "String theory has already made a uniquely specific, experimentally testable prediction distinguishing it from rival theories.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: lý thuyết dây 'has yet to make even a single, uniquely specific, experimentally testable prediction'. Chưa có dự đoán như vậy. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "String theory's mathematical framework has contributed to advances in algebraic geometry and knot theory.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'contributing productively to advances in several previously unrelated and quite distinct mathematical fields, including algebraic geometry and knot theory'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "String theory replaces point-like particles with vibrating, one-dimensional ________.",
+      "answer": "strings",
+      "number": 11,
+      "explanation": "Đoạn A: 'unimaginably tiny, one-dimensional vibrating strings of energy'. Đáp án strings."
+    },
+    {
+      "type": "gap",
+      "prompt": "The theory that succeeded where early string theory failed to explain the strong force is called quantum ________.",
+      "answer": "chromodynamics",
+      "number": 12,
+      "explanation": "Đoạn B: 'an entirely different theory, called quantum chromodynamics'. Đáp án chromodynamics."
+    },
+    {
+      "type": "gap",
+      "prompt": "Extra dimensions are said to be '________', curled up too small to detect.",
+      "answer": "compactified",
+      "number": 13,
+      "explanation": "Đoạn C: 'proposing that they are compactified, meaning tightly curled up'. Đáp án compactified."
+    },
+    {
+      "type": "gap",
+      "prompt": "Critics question whether string theory should be considered genuine, ________ empirical science.",
+      "answer": "falsifiable",
+      "number": 14,
+      "explanation": "Đoạn D: 'whether string theory should properly be considered genuine, falsifiable empirical science'. Đáp án falsifiable."
+    },
+    {
+      "type": "gap",
+      "prompt": "Some physicists argue continued investment in string theory represents a serious opportunity ________.",
+      "answer": "cost",
+      "number": 15,
+      "explanation": "Đoạn E: 'represents a genuinely serious and troubling opportunity cost for the wider field'. Đáp án cost."
+    }
+  ]
+}
