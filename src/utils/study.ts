@@ -29,6 +29,31 @@ export function getSetProgress(set: VocabularySet, results: StudyResult[]): numb
   return Math.round((completed / (LEARN_DIRECTIONS.length + 1)) * 100);
 }
 
+/**
+ * Bốn "chế độ" của một set, đúng bằng bốn thành phần tạo nên tiến độ 100%:
+ * ba hướng Learn cộng với Write. Đây cũng chính là bốn node con mà cây task
+ * bên Life Management đang dùng, nên map thẳng được sang đó.
+ */
+export const SET_MODE_KEYS = ["eng-eng", "viet-eng", "eng-viet", "write"] as const;
+export type SetModeKey = (typeof SET_MODE_KEYS)[number];
+
+/**
+ * Những chế độ đã hoàn thành của một set. "Hoàn thành" ở đây dùng ĐÚNG thước
+ * đo mà thanh tiến độ đang dùng (một lượt đạt tuyệt đối), để trạng thái đẩy
+ * sang Life Management không lệch với con số phần trăm người dùng nhìn thấy.
+ */
+export function getCompletedSetModes(set: VocabularySet, results: StudyResult[]): SetModeKey[] {
+  const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);
+  const done: SetModeKey[] = [];
+  LEARN_DIRECTIONS.forEach((direction) => {
+    if (relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && isPerfectResult(r))) {
+      done.push(direction);
+    }
+  });
+  if (relevant.some((r) => r.mode === "write" && isPerfectResult(r))) done.push("write");
+  return done;
+}
+
 export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): boolean {
   if (!set.cards.length) return false;
   const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);

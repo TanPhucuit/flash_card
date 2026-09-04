@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/ui";
 import { useAppData } from "./hooks/useAppData";
+import { useLifeManagementStatusSync } from "./hooks/useLifeManagementStatusSync";
 import { useReadingData } from "./hooks/useReadingData";
 import { DemoPage } from "./pages/DemoPage";
 import { ListeningTestPage } from "./pages/ListeningTestPage";
@@ -29,6 +30,9 @@ export default function App() {
   const api = useAppData();
   const reading = useReadingData();
   const [isMobile, setIsMobile] = useState(() => window.matchMedia("(max-width: 767px)").matches);
+  // Đặt ở gốc app để một chế độ vừa học xong ở BẤT KỲ trang nào cũng được đẩy
+  // trạng thái sang Life Management, kể cả khi người dùng không mở trang Sets.
+  useLifeManagementStatusSync(api, reading);
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 767px)");

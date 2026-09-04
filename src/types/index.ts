@@ -35,8 +35,13 @@ export interface VocabularySet {
   lastStudiedAt?: string;
   /** Danh sách (thư mục) chứa set này — xem src/utils/setLists.ts. */
   listId?: string;
-  /** Id task tương ứng bên Life Management (node CON của node danh sách). */
-  lifeManagementTaskId?: string;
+  /**
+   * Id task bên Life Management, MỘT id cho mỗi chế độ học: cùng một set nằm
+   * dưới cả bốn node chế độ (LEARN ENG_ENG / VIET_ENG / ENG_VIET / WRITING)
+   * nên mỗi chế độ là một task riêng, đánh dấu hoàn thành độc lập với nhau.
+   * Khoá là SetModeKey — xem src/utils/study.ts.
+   */
+  lifeManagementTaskIds?: Record<string, string>;
 }
 
 /**

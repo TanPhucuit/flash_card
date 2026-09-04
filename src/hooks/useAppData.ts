@@ -126,11 +126,19 @@ export function useAppData() {
      * cha (danh sách) và id các node con (set). Gộp chung thay vì gọi từng set
      * một để chỉ phát sinh một lần lưu và một lần đẩy lên Google Sheet.
      */
-    markLifeManagementSynced(listId: string, listTaskId: string, setTaskIds: Record<string, string>) {
+    markLifeManagementSynced(
+      listId: string,
+      listTaskId: string,
+      setTaskIds: Record<string, Record<string, string>>,
+    ) {
       setData((current) => ({
         ...current,
         lists: current.lists.map((list) => (list.id === listId ? { ...list, lifeManagementTaskId: listTaskId } : list)),
-        sets: current.sets.map((set) => (setTaskIds[set.id] ? { ...set, lifeManagementTaskId: setTaskIds[set.id] } : set)),
+        sets: current.sets.map((set) =>
+          setTaskIds[set.id]
+            ? { ...set, lifeManagementTaskIds: { ...set.lifeManagementTaskIds, ...setTaskIds[set.id] } }
+            : set,
+        ),
       }));
     },
     replaceData(next: AppData) {

@@ -265,8 +265,8 @@ function ImportDialog({ api, onClose }: { api: ReadingApi; onClose: () => void }
       setBusy(true);
       setStatus("Đang tạo node bên Life Management...");
       try {
-        const outcome = await syncBookToLifeManagement(config, book);
-        api.markBookSynced(book.id, outcome.bookTaskId);
+        const outcome = await syncBookToLifeManagement(config, book, api.data.attempts);
+        api.markBookSynced(book.id, outcome.bookTaskId, outcome.passageTaskIds);
       } catch (caught) {
         // The book itself is already saved, so a sync failure is a warning,
         // never a reason to discard the import.

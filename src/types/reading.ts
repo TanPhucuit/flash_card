@@ -38,6 +38,8 @@ export interface ReadingPassage {
   /** Full passage body, paragraphs separated by blank lines. */
   text: string;
   questions: ReadingQuestion[];
+  /** Id task tương ứng bên Life Management (node CON của node sách). */
+  lifeManagementTaskId?: string;
 }
 
 export interface ReadingBook {

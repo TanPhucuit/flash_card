@@ -90,10 +90,22 @@ export function useReadingData() {
           attempts: current.attempts.filter((attempt) => attempt.bookId !== bookId),
         }));
       },
-      markBookSynced(bookId: string, taskId: string) {
+      markBookSynced(bookId: string, taskId: string, passageTaskIds: Record<string, string> = {}) {
         setData((current) => ({
           ...current,
-          books: current.books.map((book) => (book.id === bookId ? { ...book, lifeManagementTaskId: taskId } : book)),
+          books: current.books.map((book) =>
+            book.id === bookId
+              ? {
+                  ...book,
+                  lifeManagementTaskId: taskId,
+                  passages: book.passages.map((passage) =>
+                    passageTaskIds[passage.id]
+                      ? { ...passage, lifeManagementTaskId: passageTaskIds[passage.id] }
+                      : passage,
+                  ),
+                }
+              : book,
+          ),
         }));
       },
       recordAttempt(attempt: ReadingAttempt) {

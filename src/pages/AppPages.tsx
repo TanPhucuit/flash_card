@@ -1115,8 +1115,9 @@ export function MySetsPage({ api, reading }: SetsPageProps) {
     });
   }
 
-  // Đồng bộ nguyên một danh sách sang Life Management: danh sách thành node
-  // cha, từng set trong nó thành node con. Luôn đẩy TOÀN BỘ set của danh sách
+  // Đồng bộ nguyên một danh sách sang Life Management theo cây ba tầng: danh
+  // sách → bốn node chế độ học → từng set dưới mỗi chế độ, kèm trạng thái hoàn
+  // thành của đúng cặp (set, chế độ). Luôn đẩy TOÀN BỘ set của danh sách
   // (không lọc theo tab đang mở) — cây bên kia phản ánh nội dung danh sách,
   // không phản ánh việc mình đang xem tab "chưa hoàn thành" hay "đã hoàn thành".
   async function syncListToLifeManagement() {
@@ -1135,9 +1136,12 @@ export function MySetsPage({ api, reading }: SetsPageProps) {
     setSyncing(true);
     setSyncMessage("");
     try {
-      const outcome = await syncSetListToLifeManagement(config, selectedList, setsOfList);
+      const outcome = await syncSetListToLifeManagement(config, selectedList, setsOfList, api.data.results);
       api.markLifeManagementSynced(selectedList.id, outcome.listTaskId, outcome.setTaskIds);
-      setSyncMessage(`Đã đồng bộ "${selectedList.title}": tạo mới ${outcome.createdCount} node, dùng lại ${outcome.reusedCount} node có sẵn.`);
+      setSyncMessage(
+        `Đã đồng bộ "${selectedList.title}": tạo mới ${outcome.createdCount} node, dùng lại ${outcome.reusedCount} node có sẵn`
+        + `, đánh dấu hoàn thành ${outcome.completedCount} node.`,
+      );
     } catch (error) {
       alert(`Chưa đồng bộ được sang Life Management:\n${error instanceof Error ? error.message : error}`);
     } finally {
