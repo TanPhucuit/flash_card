@@ -11577,6 +11577,1766 @@
           "id": "nl2-10-mrna-vaccines-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-11-telomeres-p1",
+      "order": 63,
+      "title": "Telomeres",
+      "text": "A\nA telomere is a stretch of repetitive DNA sequence found at each end of a chromosome, acting somewhat like the plastic tip on the end of a shoelace that stops the lace from fraying. Without telomeres, the ends of chromosomes would be indistinguishable from the broken DNA produced by damage, prompting a cell's repair machinery to fuse chromosomes together or trigger an unnecessary alarm response, either of which would be catastrophic for the cell. In humans, telomeres consist of the same six-letter DNA sequence repeated thousands of times over.\n\nB\nEach time a cell divides, the enzymes responsible for copying its DNA are unable to fully replicate the very end of each chromosome, so a small portion of telomere is lost with every division, a phenomenon known as the end-replication problem. Over many rounds of division, telomeres shorten progressively until they become too short to protect the chromosome effectively, at which point the cell typically stops dividing altogether, entering a state called senescence, or self-destructs through a controlled process called apoptosis. This limit on the number of times a normal human cell can divide is known as the Hayflick limit, named after the biologist Leonard Hayflick, who first described it in 1961.\n\nC\nNot all cells are bound by this limit in the same way. An enzyme called telomerase can rebuild the repetitive sequence at the end of a chromosome, effectively resetting the countdown, and it is highly active in certain cell types, including stem cells and the cells that produce sperm and eggs, allowing these cell lineages to divide far more often than an ordinary cell without accumulating dangerously short telomeres. Telomerase was discovered in 1984 by Elizabeth Blackburn and Carol Greider, working with Jack Szostak, and the three shared the 2009 Nobel Prize in Physiology or Medicine for their work on how telomeres and telomerase protect chromosomes.\n\nD\nMost cancer cells reactivate telomerase, or use an alternative mechanism to maintain their telomeres, which is one of the reasons they can divide indefinitely rather than being restrained by the Hayflick limit that governs ordinary tissue. This observation has made telomerase an attractive target for cancer treatment: drugs designed to inhibit telomerase might, in principle, cause cancer cells to resume shortening their telomeres and eventually stop dividing, though translating this idea into an effective and safe therapy has proved considerably more difficult in practice than the underlying concept suggests, and no telomerase inhibitor has yet become a routine part of cancer treatment.\n\nE\nTelomere length has also attracted attention as a possible marker of biological ageing, since telomeres in many tissues tend to shorten as a person grows older, and several studies have linked unusually short telomeres, for a person's age, to a higher risk of certain age-related diseases. However, the relationship is far from a precise clock: telomere length varies considerably between individuals of the same age and is influenced by genetics, chronic stress, and lifestyle factors such as smoking, so measuring telomere length cannot reliably predict how long any particular individual will live. Commercial tests that claim to reveal a person's \"biological age\" from a telomere measurement remain scientifically contentious, and most researchers in the field caution against treating such results as more precise than the underlying science actually supports.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat telomeres are, and why chromosomes need them\nii\tAn enzyme that resets the countdown\niii\tA limit on cell division, and the man who found it\niv\tA disputed marker of how fast a person is ageing\nv\tWhy most cancers escape the usual limit\nvi\tRepairing damaged telomeres with gene therapy\nvii\tHow telomere length is measured in the laboratory",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa telomere là gì và vì sao nhiễm sắc thể cần nó — giống đầu nhựa của dây giày ngăn sờn rách. Đúng tiêu đề i.",
+          "id": "nl2-11-telomeres-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói telomere ngắn dần theo mỗi lần phân chia và giới hạn Hayflick, đặt theo tên người tìm ra nó năm 1961. Đúng tiêu đề iii.",
+          "id": "nl2-11-telomeres-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về enzyme telomerase có thể tái tạo telomere, phát hiện năm 1984. Đúng tiêu đề ii.",
+          "id": "nl2-11-telomeres-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói phần lớn tế bào ung thư kích hoạt lại telomerase nên thoát khỏi giới hạn Hayflick. Đúng tiêu đề v.",
+          "id": "nl2-11-telomeres-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói độ dài telomere được coi là dấu hiệu lão hoá nhưng mối liên hệ này còn gây tranh cãi. Đúng tiêu đề iv.",
+          "id": "nl2-11-telomeres-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "DNA-copying enzymes can fully replicate the very end of a chromosome.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B: 'the enzymes responsible for copying its DNA are unable to fully replicate the very end of each chromosome'. Không sao chép được trọn vẹn, đề nói ngược nên FALSE.",
+          "id": "nl2-11-telomeres-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Stem cells have high telomerase activity, which lets them divide more often than ordinary cells.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn C: telomerase 'is highly active in certain cell types, including stem cells... allowing these cell lineages to divide far more often'. Đúng ý đề nên TRUE.",
+          "id": "nl2-11-telomeres-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Telomerase inhibitors are already a standard part of cancer treatment.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn D: 'no telomerase inhibitor has yet become a routine part of cancer treatment'. Chưa phải điều trị thường quy, đề nói ngược nên FALSE.",
+          "id": "nl2-11-telomeres-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Telomere length is exactly the same for every person of a given age.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn E: 'telomere length varies considerably between individuals of the same age'. Khác nhau đáng kể, không phải giống hệt nhau. FALSE.",
+          "id": "nl2-11-telomeres-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Commercial telomere tests can precisely predict how long a specific individual will live.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'measuring telomere length cannot reliably predict how long any particular individual will live'. Đề nói ngược nên FALSE.",
+          "id": "nl2-11-telomeres-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The gradual loss of telomere with each cell division is called the ________ problem.",
+          "answer": "end-replication",
+          "number": 11,
+          "explanation": "Đoạn B: 'a phenomenon known as the end-replication problem'. Đáp án end-replication.",
+          "id": "nl2-11-telomeres-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "A cell that stops dividing but does not die enters a state called ________.",
+          "answer": "senescence",
+          "number": 12,
+          "explanation": "Đoạn B: 'the cell typically stops dividing altogether, entering a state called senescence'. Đáp án senescence.",
+          "id": "nl2-11-telomeres-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The limit on how many times a normal cell can divide is called the ________ limit.",
+          "answer": "Hayflick",
+          "number": 13,
+          "explanation": "Đoạn B: 'This limit... is known as the Hayflick limit'. Đáp án Hayflick.",
+          "id": "nl2-11-telomeres-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Telomerase was discovered in 1984 by Elizabeth Blackburn and ________, working with Jack Szostak.",
+          "answer": "Carol Greider",
+          "number": 14,
+          "explanation": "Đoạn C: 'discovered in 1984 by Elizabeth Blackburn and Carol Greider, working with Jack Szostak'. Đáp án Carol Greider.",
+          "id": "nl2-11-telomeres-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "A cell can also self-destruct through a controlled process called ________.",
+          "answer": "apoptosis",
+          "number": 15,
+          "explanation": "Đoạn B: 'or self-destructs through a controlled process called apoptosis'. Đáp án apoptosis.",
+          "id": "nl2-11-telomeres-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-12-epigenetics-p1",
+      "order": 64,
+      "title": "Epigenetics",
+      "text": "A\nEpigenetics is the study of changes in gene activity that do not involve any alteration to the underlying DNA sequence itself, yet can still be passed on when a cell divides. The word combines the Greek prefix epi-, meaning \"on top of\" or \"in addition to\", with genetics, capturing the idea that a layer of regulation sits above the genetic code, switching individual genes on or off without rewriting the code itself. Every cell in a person's body carries essentially the same DNA, yet a liver cell and a skin cell look and behave completely differently, a puzzle that epigenetics helps to resolve: the difference lies not in which genes are present but in which genes are switched on.\n\nB\nOne of the best-studied epigenetic mechanisms is DNA methylation, in which a small chemical tag called a methyl group is attached to specific locations along the DNA strand, generally acting to silence the gene nearby. A second major mechanism involves modifications to histones, the proteins around which DNA is tightly wound to fit inside the cell's nucleus; chemical tags added to histones can loosen or tighten this winding, making the DNA in that region more or less accessible to the cellular machinery that reads genes and switches them on. Together, these mechanisms allow a cell to maintain a stable pattern of gene activity appropriate to its role, a pattern that is faithfully copied each time the cell divides.\n\nC\nEpigenetic patterns are not fixed for life. Diet, stress, exposure to toxins, and other environmental factors have all been shown, in various studies, to alter patterns of DNA methylation in humans and other animals. One frequently cited example comes from studies of the Dutch famine of 1944 to 1945, in which children conceived during the famine were later found, decades afterward, to carry distinctive methylation patterns at certain genes compared with siblings conceived before or after the famine, alongside a measurably higher risk of certain metabolic conditions in adulthood. Such findings suggest that a mother's nutrition during pregnancy can leave a lasting epigenetic mark on her child, though researchers caution that isolating the precise contribution of epigenetics from other confounding factors in this kind of historical study is genuinely difficult.\n\nD\nWhether epigenetic changes acquired during a person's lifetime can be passed on to their children remains one of the most contested questions in the field. In most cases, the epigenetic marks present in sperm and egg cells are stripped away and reset shortly after fertilisation, a process that appears to prevent most acquired epigenetic changes from being inherited. Some studies in animals, however, have reported that certain epigenetic marks appear to survive this resetting process and influence the traits of offspring, and in a few cases, of subsequent generations as well, a phenomenon known as transgenerational epigenetic inheritance. The extent to which this occurs in humans, and how significant an effect it might have, remains an active area of debate among researchers, and claims in this area are treated with particular caution because they are difficult to distinguish from other explanations, including shared environment and ordinary genetic inheritance.\n\nE\nBecause faulty epigenetic regulation is implicated in numerous diseases, including many cancers, researchers have developed a class of drugs known as epigenetic therapies, which work by inhibiting the enzymes responsible for adding or removing methylation and histone marks. Several such drugs are already approved to treat specific blood cancers, on the reasoning that reactivating genes that have been abnormally silenced in cancer cells can restore normal cell behaviour or make the cells more vulnerable to other treatments. Unlike a mutation in the DNA sequence itself, an epigenetic change is, in principle, reversible, which is part of what makes epigenetic therapy an appealing avenue for future medicine, though as with many emerging treatments its use so far remains limited to a small number of specific conditions.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow the environment can leave a lasting mark\nii\tWhat epigenetics is, and the puzzle it explains\niii\tTwo chemical mechanisms behind the regulation\niv\tDrugs that reverse faulty gene silencing\nv\tWhether acquired changes pass to the next generation\nvi\tSequencing the human epigenome\nvii\tIdentical twins raised in different environments",
+          "prompt": "Section A",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa biểu sinh học là gì và giải thích tại sao tế bào gan và tế bào da khác nhau dù cùng một bộ DNA. Đúng tiêu đề ii.",
+          "id": "nl2-12-epigenetics-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B mô tả hai cơ chế: methyl hoá DNA và biến đổi histone. Đúng tiêu đề iii.",
+          "id": "nl2-12-epigenetics-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói môi trường (chế độ ăn, stress, độc tố) có thể thay đổi mẫu methyl hoá, ví dụ nạn đói Hà Lan 1944-45. Đúng tiêu đề i.",
+          "id": "nl2-12-epigenetics-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D bàn liệu thay đổi biểu sinh học có di truyền cho thế hệ sau không — vẫn còn tranh cãi. Đúng tiêu đề v.",
+          "id": "nl2-12-epigenetics-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về liệu pháp biểu sinh học — thuốc đảo ngược sự im lặng gen bất thường trong ung thư máu. Đúng tiêu đề iv.",
+          "id": "nl2-12-epigenetics-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "A liver cell and a skin cell in the same person contain different DNA sequences.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A: 'Every cell in a person's body carries essentially the same DNA'. Cùng một DNA, khác nhau ở gen nào được bật, không phải khác trình tự DNA. FALSE.",
+          "id": "nl2-12-epigenetics-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "DNA methylation generally activates the nearby gene rather than silencing it.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: methyl hoá 'generally acting to silence the gene nearby'. Làm im lặng gen, không phải kích hoạt. FALSE.",
+          "id": "nl2-12-epigenetics-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Children conceived during the Dutch famine showed distinctive methylation patterns compared with their siblings.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: trẻ thụ thai trong nạn đói 'were later found... to carry distinctive methylation patterns... compared with siblings conceived before or after'. Đúng ý đề nên TRUE.",
+          "id": "nl2-12-epigenetics-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Epigenetic marks in sperm and egg cells are usually erased and reset shortly after fertilisation.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'the epigenetic marks present in sperm and egg cells are stripped away and reset shortly after fertilisation'. Đúng ý đề nên TRUE.",
+          "id": "nl2-12-epigenetics-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Epigenetic therapies are currently used to treat a wide range of diseases across all body systems.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: các thuốc này 'already approved to treat specific blood cancers' và 'use so far remains limited to a small number of specific conditions' — chỉ một số bệnh cụ thể, không phải nhiều bệnh khắp cơ thể. FALSE.",
+          "id": "nl2-12-epigenetics-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Attaching a small chemical tag to DNA to silence a nearby gene is called DNA ________.",
+          "answer": "methylation",
+          "number": 11,
+          "explanation": "Đoạn B: 'DNA methylation, in which a small chemical tag called a methyl group is attached'. Đáp án methylation.",
+          "id": "nl2-12-epigenetics-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "DNA is tightly wound around proteins called ________ to fit inside the nucleus.",
+          "answer": "histones",
+          "number": 12,
+          "explanation": "Đoạn B: 'histones, the proteins around which DNA is tightly wound'. Đáp án histones.",
+          "id": "nl2-12-epigenetics-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Children conceived during the Dutch famine had a higher risk of certain ________ conditions in adulthood.",
+          "answer": "metabolic",
+          "number": 13,
+          "explanation": "Đoạn C: 'a measurably higher risk of certain metabolic conditions in adulthood'. Đáp án metabolic.",
+          "id": "nl2-12-epigenetics-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Epigenetic marks surviving into later generations is known as transgenerational epigenetic ________.",
+          "answer": "inheritance",
+          "number": 14,
+          "explanation": "Đoạn D: 'a phenomenon known as transgenerational epigenetic inheritance'. Đáp án inheritance.",
+          "id": "nl2-12-epigenetics-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Unlike a DNA mutation, an epigenetic change is, in principle, ________.",
+          "answer": "reversible",
+          "number": 15,
+          "explanation": "Đoạn E: 'an epigenetic change is, in principle, reversible'. Đáp án reversible.",
+          "id": "nl2-12-epigenetics-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-13-neuroplasticity-p1",
+      "order": 65,
+      "title": "Neuroplasticity",
+      "text": "A\nNeuroplasticity is the capacity of the brain to reorganise itself by forming new neural connections, strengthening or weakening existing ones, and, to a more limited extent, generating new neurons throughout life. For much of the twentieth century, neuroscientists generally believed that the adult brain's structure was essentially fixed once childhood development was complete, and that any brain regions damaged by injury or disease would remain permanently impaired. Research since the 1960s has overturned this view, revealing an adult brain that continues to adapt and change in response to experience, learning, and injury far more than was once thought possible.\n\nB\nAt the level of individual neurons, plasticity depends chiefly on synapses, the junctions where one neuron communicates with the next. A rule often summarised as \"neurons that fire together, wire together\" describes how synapses that are repeatedly activated in tandem tend to strengthen over time, a process called long-term potentiation, while connections that are rarely used tend to weaken and may eventually be pruned away altogether. This synaptic strengthening and pruning underlies much of learning and memory: practising a skill repeatedly reinforces the specific pattern of neural connections involved, which is part of why deliberate, repeated practice improves performance more reliably than occasional effort.\n\nC\nOne of the most striking illustrations of neuroplasticity comes from studies of London taxi drivers, who must memorise the layout of thousands of streets to pass a notoriously difficult licensing examination known as \"the Knowledge\". Brain scans conducted by the neuroscientist Eleanor Maguire and her colleagues found that experienced taxi drivers had a measurably larger hippocampus, a brain structure closely involved in spatial memory, than a comparison group, and that the size of this enlargement correlated with the number of years a driver had spent on the job. Because the study could not follow individuals from before they began training, it could not entirely rule out the possibility that people with an unusually large hippocampus were simply more likely to become taxi drivers in the first place, but later studies that did track trainees over time found the hippocampus growing measurably as they studied for the examination, supporting the conclusion that the training itself caused the change.\n\nD\nNeuroplasticity also plays a central role in recovery after brain injury, such as a stroke. When a stroke destroys neurons in one part of the brain, nearby or even distant regions can sometimes take over some of the lost function, particularly if the person undergoes intensive, targeted rehabilitation in the weeks and months following the injury. This capacity for compensation is generally greatest soon after the injury and gradually declines over time, which is why physical and occupational therapists typically emphasise beginning rehabilitation as early as safely possible. The degree of recovery achievable varies considerably between individuals and depends on factors including the size and location of the damage, the person's age, and how promptly and intensively rehabilitation begins.\n\nE\nAlthough the brain's ability to change persists throughout life, most researchers agree that plasticity is generally greater in childhood than in adulthood, a difference that helps explain why young children can often recover from severe early brain injuries far more completely than adults with comparable damage, and why learning a new language tends to come more easily before puberty than afterward. Nonetheless, evidence that meaningful plasticity persists well into old age has encouraged the development of cognitive training programmes and physical exercise regimens intended to help preserve mental function during ageing, although the scientific evidence for how much benefit such commercial \"brain training\" programmes actually deliver remains considerably more mixed than marketing for these products often suggests.\n\n— Biên soạn dựa trên kiến thức thần kinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and a belief it overturned\nii\tHow synapses strengthen or weaken with use\niii\tA growing hippocampus in London's taxi drivers\niv\tHelping the brain recover after a stroke\nv\tWhy children's brains adapt more readily than adults'\nvi\tMapping the brain region by region\nvii\tDrugs that claim to boost plasticity",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa khả biến thần kinh là gì và niềm tin cũ nó lật đổ: não người lớn từng bị coi là cố định. Đúng tiêu đề i.",
+          "id": "nl2-13-neuroplasticity-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về synapse mạnh lên hay yếu đi theo quy tắc 'neurons that fire together, wire together'. Đúng tiêu đề ii.",
+          "id": "nl2-13-neuroplasticity-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C kể nghiên cứu của Maguire về hồi hải mã lớn hơn ở tài xế taxi London. Đúng tiêu đề iii.",
+          "id": "nl2-13-neuroplasticity-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói khả biến thần kinh giúp phục hồi sau đột quỵ nhờ phục hồi chức năng sớm và tích cực. Đúng tiêu đề iv.",
+          "id": "nl2-13-neuroplasticity-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói khả biến ở trẻ em lớn hơn người lớn, giải thích vì sao trẻ hồi phục tốt hơn và học ngôn ngữ dễ hơn. Đúng tiêu đề v.",
+          "id": "nl2-13-neuroplasticity-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Twentieth-century neuroscientists generally believed the adult brain could not change its structure.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'neuroscientists generally believed that the adult brain's structure was essentially fixed'. Đúng ý đề nên TRUE.",
+          "id": "nl2-13-neuroplasticity-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Connections between neurons that are rarely used tend to strengthen over time.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: kết nối ít dùng 'tend to weaken and may eventually be pruned away'. Yếu đi chứ không mạnh lên. FALSE.",
+          "id": "nl2-13-neuroplasticity-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Maguire's original study could rule out the possibility that people with a naturally large hippocampus were more likely to become taxi drivers.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C: nghiên cứu ban đầu 'could not entirely rule out the possibility that people with an unusually large hippocampus were simply more likely to become taxi drivers'. Không loại trừ được khả năng đó. FALSE.",
+          "id": "nl2-13-neuroplasticity-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The brain's capacity to compensate after a stroke is generally greatest soon after the injury occurs.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'This capacity for compensation is generally greatest soon after the injury and gradually declines over time'. Đúng ý đề nên TRUE.",
+          "id": "nl2-13-neuroplasticity-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Scientific evidence strongly confirms that commercial brain-training programmes significantly improve mental function in old age.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'the scientific evidence for how much benefit such commercial brain training programmes actually deliver remains considerably more mixed than marketing... suggests'. Bằng chứng còn lẫn lộn, không phải xác nhận mạnh mẽ. FALSE.",
+          "id": "nl2-13-neuroplasticity-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The strengthening of a repeatedly activated synapse is called long-term ________.",
+          "answer": "potentiation",
+          "number": 11,
+          "explanation": "Đoạn B: 'a process called long-term potentiation'. Đáp án potentiation.",
+          "id": "nl2-13-neuroplasticity-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "London taxi drivers must pass a licensing test known as ________.",
+          "answer": "the Knowledge",
+          "number": 12,
+          "explanation": "Đoạn C: 'a notoriously difficult licensing examination known as the Knowledge'. Đáp án the Knowledge.",
+          "id": "nl2-13-neuroplasticity-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Taxi drivers were found to have a larger ________, the brain structure involved in spatial memory.",
+          "answer": "hippocampus",
+          "number": 13,
+          "explanation": "Đoạn C: 'a measurably larger hippocampus, a brain structure closely involved in spatial memory'. Đáp án hippocampus.",
+          "id": "nl2-13-neuroplasticity-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Learning a new language is generally easier before ________ than afterward.",
+          "answer": "puberty",
+          "number": 14,
+          "explanation": "Đoạn E: 'learning a new language tends to come more easily before puberty than afterward'. Đáp án puberty.",
+          "id": "nl2-13-neuroplasticity-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Recovery after a stroke depends partly on how promptly ________ begins.",
+          "answer": "rehabilitation",
+          "number": 15,
+          "explanation": "Đoạn D: 'depends on factors including... how promptly and intensively rehabilitation begins'. Đáp án rehabilitation.",
+          "id": "nl2-13-neuroplasticity-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-14-synesthesia-p1",
+      "order": 66,
+      "title": "Synaesthesia",
+      "text": "A\nSynaesthesia is a neurological condition in which stimulation of one sense automatically and involuntarily triggers a perception in a second, unrelated sense. A person with grapheme-colour synaesthesia, the most commonly studied form, might perceive the letter A as inherently red or the number 7 as inherently green, not as a memory or association they consciously construct but as an immediate and involuntary perceptual experience, much like the way most people cannot help but perceive the sky as blue. Estimates of how common synaesthesia is vary considerably between studies, ranging from roughly one in twenty people to a much smaller fraction, depending on the exact criteria and testing method used.\n\nB\nMore than sixty distinct forms of synaesthesia have been documented. Besides grapheme-colour synaesthesia, other reported forms include chromesthesia, in which sounds or music evoke the perception of colour, lexical-gustatory synaesthesia, in which spoken or written words trigger specific taste sensations, and mirror-touch synaesthesia, in which watching another person being touched produces a genuine tactile sensation on the observer's own body. A single individual may experience more than one type simultaneously, and the specific associations, such as which colour a given letter evokes, tend to be highly consistent for that individual over many years but vary considerably from one synaesthete to another, with no single mapping shared by everyone.\n\nC\nResearchers generally distinguish genuine, involuntary synaesthesia from ordinary associations by testing for consistency over time: a synaesthete asked to identify the colour they associate with a given letter will typically give the same answer with a high degree of accuracy when retested months or even years later, whereas a person asked to simply invent colour associations for letters shows far less consistency on retesting. This consistency test, developed largely by the psychologist Simon Baron-Cohen and colleagues in the 1990s, provided one of the first rigorous, objective ways to confirm that synaesthetic experiences are genuine perceptual phenomena rather than a form of vivid imagination or exaggerated memory association.\n\nD\nThe neural basis of synaesthesia is not yet fully settled, but the leading explanation, known as the cross-activation hypothesis, proposes that synaesthesia arises from atypically dense connections, or from insufficient pruning of connections during early brain development, between neighbouring brain regions that would normally process their respective senses in relative isolation. Supporting this idea, brain-imaging studies of people with grapheme-colour synaesthesia have found unusually strong activity, and in some cases structural differences, in and around brain regions associated with colour processing when the person views ordinary black letters or numbers, even though nothing objectively coloured is present in what they are looking at. Synaesthesia often runs in families, and twin studies suggest a substantial genetic contribution, although the specific genes involved have proved difficult to pin down.\n\nE\nFar from being purely a curiosity, synaesthesia has been reported by a number of notable artists, musicians, and writers, including the composer Franz Liszt, who reportedly asked orchestras for \"more blue\" or \"a little pinker\" sound, and the novelist Vladimir Nabokov, who described his own experience of letters and colours in some detail in his memoirs. Researchers have also found that synaesthetes, on average, perform somewhat better than non-synaesthetes on certain tests of memory, a difference some researchers attribute to the additional sensory associations providing extra memory cues, though the effect appears to be modest and does not hold for every type of memory task studied. Rather than being classified as a disorder, most researchers today regard synaesthesia simply as an unusual but harmless variation in how the brain processes sensory information.\n\n— Biên soạn dựa trên kiến thức thần kinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and how common it might be\nii\tMore than sixty different forms\niii\tA test that separates it from ordinary imagination\niv\tArtists who have reported experiencing it\nv\tThe leading theory of its neural cause\nvi\tTreatments aimed at reducing its symptoms\nvii\tWhy it is more common in left-handed people",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa hiện tượng cộng cảm giác là gì và ước tính tỉ lệ phổ biến. Đúng tiêu đề i.",
+          "id": "nl2-14-synesthesia-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B liệt kê hơn 60 dạng cộng cảm giác khác nhau: chromesthesia, lexical-gustatory, mirror-touch. Đúng tiêu đề ii.",
+          "id": "nl2-14-synesthesia-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về bài kiểm tra tính nhất quán do Baron-Cohen phát triển để phân biệt cộng cảm giác thật với trí tưởng tượng. Đúng tiêu đề iii.",
+          "id": "nl2-14-synesthesia-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về giả thuyết kích hoạt chéo (cross-activation) giải thích cơ chế thần kinh. Đúng tiêu đề v.",
+          "id": "nl2-14-synesthesia-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E kể về Liszt và Nabokov — những nghệ sĩ từng báo cáo có cộng cảm giác. Đúng tiêu đề iv.",
+          "id": "nl2-14-synesthesia-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "All researchers agree on exactly how common synaesthesia is.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A: 'Estimates of how common synaesthesia is vary considerably between studies'. Không thống nhất, đề nói ngược nên FALSE.",
+          "id": "nl2-14-synesthesia-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Different synaesthetes tend to associate the same letter with the same colour as each other.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: liên tưởng 'vary considerably from one synaesthete to another, with no single mapping shared by everyone'. Khác nhau giữa mỗi người, không giống nhau. FALSE.",
+          "id": "nl2-14-synesthesia-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "People asked to invent colour associations for letters show high consistency when retested later.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: người tự nghĩ ra liên tưởng 'shows far less consistency on retesting' so với người có cộng cảm giác thật. FALSE.",
+          "id": "nl2-14-synesthesia-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Brain-imaging studies have found unusual activity in colour-processing regions when synaesthetes view plain black letters.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'unusually strong activity... in brain regions associated with colour processing when the person views ordinary black letters or numbers'. Đúng ý đề nên TRUE.",
+          "id": "nl2-14-synesthesia-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Synaesthetes perform significantly better than non-synaesthetes on every type of memory task.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: hiệu ứng 'appears to be modest and does not hold for every type of memory task studied'. Không phải mọi loại nhiệm vụ trí nhớ, và hiệu ứng chỉ khiêm tốn. FALSE.",
+          "id": "nl2-14-synesthesia-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Synaesthesia in which sounds evoke colour is called ________.",
+          "answer": "chromesthesia",
+          "number": 11,
+          "explanation": "Đoạn B: 'chromesthesia, in which sounds or music evoke the perception of colour'. Đáp án chromesthesia.",
+          "id": "nl2-14-synesthesia-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Watching someone else being touched can trigger a real tactile sensation in ________ synaesthesia.",
+          "answer": "mirror-touch",
+          "number": 12,
+          "explanation": "Đoạn B: 'mirror-touch synaesthesia, in which watching another person being touched produces a genuine tactile sensation'. Đáp án mirror-touch.",
+          "id": "nl2-14-synesthesia-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The consistency test used to confirm genuine synaesthesia was developed largely by ________.",
+          "answer": "Simon Baron-Cohen",
+          "number": 13,
+          "explanation": "Đoạn C: 'developed largely by the psychologist Simon Baron-Cohen and colleagues'. Đáp án Simon Baron-Cohen.",
+          "id": "nl2-14-synesthesia-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The leading explanation for the neural basis of synaesthesia is called the ________ hypothesis.",
+          "answer": "cross-activation",
+          "number": 14,
+          "explanation": "Đoạn D: 'the leading explanation, known as the cross-activation hypothesis'. Đáp án cross-activation.",
+          "id": "nl2-14-synesthesia-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The composer ________ reportedly asked orchestras for 'more blue' sound.",
+          "answer": "Franz Liszt",
+          "number": 15,
+          "explanation": "Đoạn E: 'the composer Franz Liszt, who reportedly asked orchestras for more blue... sound'. Đáp án Franz Liszt.",
+          "id": "nl2-14-synesthesia-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-15-bioluminescence-p1",
+      "order": 67,
+      "title": "Bioluminescence",
+      "text": "A\nBioluminescence is the production and emission of light by a living organism, resulting from a chemical reaction inside or on the surface of the organism's body rather than from any external light source being reflected. It has evolved independently many times across the tree of life, appearing in bacteria, fungi, insects, and a remarkable diversity of marine animals, and researchers estimate that the great majority of light-producing species live in the ocean, particularly in its deeper, darker regions, where sunlight barely penetrates and bioluminescence may be the dominant source of light.\n\nB\nAt the chemical level, bioluminescence typically arises from the reaction of a light-emitting molecule called luciferin with oxygen, a reaction catalysed by an enzyme called luciferase, releasing energy in the form of visible light rather than heat, which is why the process is often described as remarkably efficient compared with an incandescent light bulb, most of whose energy is lost as heat rather than light. Different groups of organisms have evolved chemically distinct versions of luciferin and luciferase, evidence that the ability to produce light arose independently many separate times over the course of evolution rather than being inherited from one single common ancestor.\n\nC\nBioluminescent organisms use their light for a striking range of purposes. Fireflies use rhythmic flashes to attract mates, with the precise pattern of flashes often specific enough to identify the species producing it. The anglerfish, a deep-sea predator, dangles a bioluminescent lure above its mouth, generated by symbiotic bacteria housed in a specialised organ, to draw curious prey within striking distance. Many small marine organisms instead use a sudden flash of light defensively, either to startle a predator, to illuminate the predator itself and make it more visible to the predator's own predators, or to release a glowing cloud that distracts an attacker while the organism escapes into the darkness.\n\nD\nThe Japanese scientist Osamu Shimomura spent decades studying the jellyfish Aequorea victoria, isolating from it a protein that fluoresces green under ultraviolet light, which he named green fluorescent protein, or GFP. Working later with Martin Chalfie and Roger Tsien, Shimomura helped establish GFP as one of the most widely used tools in modern biology: by attaching the gene for GFP to a gene of interest, researchers can make a specific protein glow green inside a living cell, allowing them to watch, in real time, where and when that protein is produced and where it travels within the cell. The three scientists shared the 2008 Nobel Prize in Chemistry for this work, a discovery that began with a purely curiosity-driven study of a glowing jellyfish and ended up transforming how biologists visualise the inner workings of living cells.\n\nE\nBeyond GFP, bioluminescence continues to find practical applications. The luciferase enzyme from fireflies is widely used in laboratories as a sensitive marker of biological activity, since the amount of light it produces is directly proportional to the amount of a chemical called ATP present in a sample, allowing researchers to detect the presence of living cells, including bacterial contamination on food-preparation surfaces, with remarkable sensitivity. Researchers have also investigated bioluminescent bacteria as a possible source of low-energy ambient lighting, and some cities have experimented with bioluminescent algae to illuminate footpaths, though such applications remain far less efficient and far more experimental than conventional electric lighting for the time being.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tThe chemistry behind an efficient light\nii\tAttracting mates, luring prey, and escaping predators\niii\tWhat it is, and where it is most common\niv\tA glowing protein that transformed cell biology\nv\tUsing luciferase to detect hidden bacteria\nvi\tWhy some organisms have lost the ability to glow\nvii\tPlans to light city streets with bioluminescent trees",
+          "prompt": "Section A",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa phát quang sinh học là gì và nơi phổ biến nhất — đại dương sâu tối. Đúng tiêu đề iii.",
+          "id": "nl2-15-bioluminescence-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B giải thích phản ứng hoá học luciferin-luciferase và vì sao nó hiệu quả hơn bóng đèn sợi đốt. Đúng tiêu đề i.",
+          "id": "nl2-15-bioluminescence-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C liệt kê các mục đích dùng ánh sáng: đom đóm thu hút bạn tình, cá cần câu dụ mồi, sinh vật biển tự vệ. Đúng tiêu đề ii.",
+          "id": "nl2-15-bioluminescence-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D kể về Shimomura và protein huỳnh quang xanh lục (GFP) làm thay đổi cách quan sát tế bào sống. Đúng tiêu đề iv.",
+          "id": "nl2-15-bioluminescence-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói luciferase được dùng để phát hiện vi khuẩn ô nhiễm nhờ đo ATP. Đúng tiêu đề v.",
+          "id": "nl2-15-bioluminescence-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Bioluminescence evolved only once and was then inherited by all light-producing species from a single ancestor.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: các nhóm sinh vật có luciferin/luciferase khác nhau về hoá học, là bằng chứng nó 'arose independently many separate times', không phải từ một tổ tiên chung. FALSE.",
+          "id": "nl2-15-bioluminescence-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The anglerfish's lure is produced by bacteria living inside the fish rather than by the fish itself.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn C: mồi nhử 'generated by symbiotic bacteria housed in a specialised organ'. Đúng ý đề nên TRUE.",
+          "id": "nl2-15-bioluminescence-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Shimomura discovered GFP while deliberately searching for a tool to help visualise proteins in living cells.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn D: 'a discovery that began with a purely curiosity-driven study of a glowing jellyfish' — bắt đầu từ tò mò khoa học thuần tuý, không phải chủ đích tìm công cụ sinh học. FALSE.",
+          "id": "nl2-15-bioluminescence-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The amount of light produced by firefly luciferase is proportional to the amount of ATP present in a sample.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn E: 'the amount of light it produces is directly proportional to the amount of a chemical called ATP present'. Đúng ý đề nên TRUE.",
+          "id": "nl2-15-bioluminescence-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Bioluminescent street lighting is now more efficient than conventional electric lighting in most cities.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: các ứng dụng này 'remain far less efficient and far more experimental than conventional electric lighting'. Kém hiệu quả hơn, đề nói ngược nên FALSE.",
+          "id": "nl2-15-bioluminescence-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The light-emitting molecule that reacts with oxygen in bioluminescence is called ________.",
+          "answer": "luciferin",
+          "number": 11,
+          "explanation": "Đoạn B: 'the reaction of a light-emitting molecule called luciferin with oxygen'. Đáp án luciferin.",
+          "id": "nl2-15-bioluminescence-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "This reaction is catalysed by an enzyme called ________.",
+          "answer": "luciferase",
+          "number": 12,
+          "explanation": "Đoạn B: 'a reaction catalysed by an enzyme called luciferase'. Đáp án luciferase.",
+          "id": "nl2-15-bioluminescence-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Shimomura isolated a protein from the jellyfish Aequorea victoria that he named green fluorescent protein, or ________.",
+          "answer": "GFP",
+          "number": 13,
+          "explanation": "Đoạn D: 'which he named green fluorescent protein, or GFP'. Đáp án GFP.",
+          "id": "nl2-15-bioluminescence-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Shimomura, Chalfie and Tsien shared the 2008 Nobel Prize in ________.",
+          "answer": "Chemistry",
+          "number": 14,
+          "explanation": "Đoạn D: 'shared the 2008 Nobel Prize in Chemistry for this work'. Đáp án Chemistry.",
+          "id": "nl2-15-bioluminescence-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Firefly luciferase can detect bacterial contamination on food-preparation ________.",
+          "answer": "surfaces",
+          "number": 15,
+          "explanation": "Đoạn E: 'bacterial contamination on food-preparation surfaces'. Đáp án surfaces.",
+          "id": "nl2-15-bioluminescence-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-16-extremophiles-p1",
+      "order": 68,
+      "title": "Extremophiles",
+      "text": "A\nAn extremophile is an organism that thrives in physical or chemical conditions that would be lethal to most other forms of life, such as extreme heat, cold, pressure, acidity, or salinity. Most known extremophiles belong to the domain Archaea, single-celled microorganisms that resemble bacteria under a microscope but differ from them fundamentally at the molecular level, though extremophile bacteria, and even a handful of extremophile animals, are also known. Far from being marginal curiosities, extremophiles have reshaped how biologists think about the limits of life and about where, in the wider universe, life might conceivably be found.\n\nB\nThermophiles, organisms that flourish at high temperatures, were first studied intensively in the hot springs of Yellowstone National Park in the United States. In 1966, the microbiologist Thomas Brock isolated a bacterium later named Thermus aquaticus from a Yellowstone spring, at temperatures that had previously been assumed too hot to support life. Some extremophiles discovered since then, dwelling around deep-sea hydrothermal vents where mineral-rich water erupts from the seafloor, survive and reproduce at temperatures above 100 degrees Celsius, a feat made possible because the immense pressure at those depths keeps the water from boiling.\n\nC\nAt the opposite extreme, psychrophiles thrive in permanently cold environments, including Antarctic sea ice and the deep ocean, where temperatures hover just above or even below the normal freezing point of water. Their cells contain specialised proteins and altered cell membranes that keep essential biological processes running at temperatures that would freeze the cellular machinery of an ordinary organism solid. Other extremophiles are adapted to extremes of a different kind: acidophiles tolerate the highly acidic water found in some mining-affected streams, halophiles thrive in salt concentrations many times higher than seawater, such as those found in the Dead Sea, and piezophiles are adapted to withstand the crushing pressure found in the deepest ocean trenches, several hundred times the pressure at sea level.\n\nD\nBeyond their scientific interest, extremophiles have proved unexpectedly valuable to industry. The enzyme isolated from Thermus aquaticus, known as Taq polymerase, can withstand the repeated heating to near-boiling temperatures required by the polymerase chain reaction, or PCR, a technique used to copy specific segments of DNA millions of times over for purposes ranging from criminal forensics to diagnosing infectious disease. Before Taq polymerase became available, researchers had to add fresh, heat-sensitive enzyme by hand after every heating cycle, a tedious and error-prone process that the heat-tolerant enzyme from a Yellowstone hot spring eliminated almost entirely, making PCR practical to automate and helping to transform modern molecular biology.\n\nE\nThe existence of organisms that can survive such punishing conditions on Earth has also influenced the search for life beyond it. If life can flourish in boiling, acidic, or intensely cold and salty environments on this planet, astrobiologists reason, then similarly extreme environments elsewhere in the solar system, such as the subsurface ocean thought to lie beneath the icy crust of Jupiter's moon Europa, or the briny, sub-freezing water occasionally detected on Mars, cannot automatically be ruled out as potential habitats for life. This reasoning does not prove that life exists in such places, but it has significantly broadened the range of environments that space missions searching for extraterrestrial life now consider worth investigating.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat they are, and why they matter to biology\nii\tOrganisms that thrive in cold, acid, salt and pressure\niii\tA hot-spring bacterium that transformed a laboratory technique\niv\tThriving near boiling water and undersea vents\nv\tWhy they broaden the search for life elsewhere\nvi\tAttempts to farm extremophiles for food\nvii\tHow extremophiles were first classified as archaea",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa sinh vật cực đoan là gì và vì sao chúng quan trọng với sinh học. Đúng tiêu đề i.",
+          "id": "nl2-16-extremophiles-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về thermophile trong suối nước nóng Yellowstone và miệng phun thuỷ nhiệt dưới biển sâu. Đúng tiêu đề iv.",
+          "id": "nl2-16-extremophiles-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về psychrophile (lạnh), acidophile (axit), halophile (muối), piezophile (áp suất). Đúng tiêu đề ii.",
+          "id": "nl2-16-extremophiles-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về Taq polymerase từ Thermus aquaticus giúp tự động hoá kỹ thuật PCR. Đúng tiêu đề iii.",
+          "id": "nl2-16-extremophiles-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói sinh vật cực đoan mở rộng phạm vi tìm kiếm sự sống ngoài Trái Đất. Đúng tiêu đề v.",
+          "id": "nl2-16-extremophiles-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Archaea and bacteria are fundamentally different at the molecular level despite looking similar under a microscope.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'resemble bacteria under a microscope but differ from them fundamentally at the molecular level'. Đúng ý đề nên TRUE.",
+          "id": "nl2-16-extremophiles-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Water at deep-sea hydrothermal vents boils despite the extreme pressure.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'the immense pressure at those depths keeps the water from boiling' dù nhiệt độ trên 100°C. FALSE.",
+          "id": "nl2-16-extremophiles-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Psychrophiles have cell membranes and proteins adapted to keep functioning in freezing conditions.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'Their cells contain specialised proteins and altered cell membranes that keep essential biological processes running' ở nhiệt độ lạnh. Đúng ý đề nên TRUE.",
+          "id": "nl2-16-extremophiles-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Before Taq polymerase was available, researchers had to manually add fresh enzyme after every heating cycle of PCR.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'researchers had to add fresh, heat-sensitive enzyme by hand after every heating cycle'. Đúng ý đề nên TRUE.",
+          "id": "nl2-16-extremophiles-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Scientists have confirmed that life exists beneath the icy crust of Europa.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: lập luận này 'does not prove that life exists in such places' — mới chỉ mở rộng khả năng, chưa xác nhận có sự sống. FALSE.",
+          "id": "nl2-16-extremophiles-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Brock isolated Thermus aquaticus from a hot spring in ________ National Park.",
+          "answer": "Yellowstone",
+          "number": 11,
+          "explanation": "Đoạn B: 'first studied intensively in the hot springs of Yellowstone National Park'. Đáp án Yellowstone.",
+          "id": "nl2-16-extremophiles-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Organisms adapted to extreme salt concentrations are called ________.",
+          "answer": "halophiles",
+          "number": 12,
+          "explanation": "Đoạn C: 'halophiles thrive in salt concentrations many times higher than seawater'. Đáp án halophiles.",
+          "id": "nl2-16-extremophiles-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The heat-tolerant enzyme isolated from Thermus aquaticus is known as ________.",
+          "answer": "Taq polymerase",
+          "number": 13,
+          "explanation": "Đoạn D: 'The enzyme isolated from Thermus aquaticus, known as Taq polymerase'. Đáp án Taq polymerase.",
+          "id": "nl2-16-extremophiles-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Taq polymerase is essential for a DNA-copying technique known as the ________ reaction.",
+          "answer": "polymerase chain",
+          "number": 14,
+          "explanation": "Đoạn D: 'the polymerase chain reaction, or PCR'. Đáp án polymerase chain.",
+          "id": "nl2-16-extremophiles-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Astrobiologists point to a subsurface ocean beneath the icy crust of Jupiter's moon ________.",
+          "answer": "Europa",
+          "number": 15,
+          "explanation": "Đoạn E: 'the subsurface ocean thought to lie beneath the icy crust of Jupiter's moon Europa'. Đáp án Europa.",
+          "id": "nl2-16-extremophiles-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-17-mycorrhizal-networks-p1",
+      "order": 69,
+      "title": "Mycorrhizal Networks",
+      "text": "A\nA mycorrhiza is a symbiotic association between a fungus and the roots of a plant, a relationship so widespread that an estimated ninety percent of land plant species form such partnerships with at least one fungal species. The fungus extends a vast network of extremely fine threads, called hyphae, through the soil far beyond the reach of the plant's own roots, absorbing water and mineral nutrients, particularly phosphorus, and delivering them to the plant. In exchange, the plant supplies the fungus with sugars produced through photosynthesis, sugars the fungus itself, lacking chlorophyll, cannot manufacture on its own.\n\nB\nBecause a single fungal network can connect to the roots of several different plants at once, sometimes of entirely different species, researchers have found that these networks can effectively link separate plants together underground, a discovery that gained wide public attention following research conducted in the 1990s by the ecologist Suzanne Simard in the forests of British Columbia. Using radioactive and stable isotopes as tracers, Simard demonstrated that carbon manufactured by one tree could travel through a shared fungal network and be taken up by a neighbouring tree of a different species, evidence that resources can move between plants that are not directly connected by their own root systems.\n\nC\nPopular accounts of this research have sometimes described the resulting network using the phrase \"wood wide web\", drawing an analogy with the internet, and have suggested that trees use these connections to deliberately cooperate, share resources altruistically, and even communicate warnings about insect attack to their neighbours. Many mycorrhizal researchers regard some of these popular characterisations as considerably overstated relative to the underlying evidence: while resource transfer between plants through fungal networks has been repeatedly demonstrated in controlled experiments, whether this transfer represents a coordinated, cooperative system actively benefiting the wider forest, as opposed to a largely incidental consequence of a fungus feeding several host plants simultaneously to its own advantage, remains a genuinely open and actively debated scientific question.\n\nD\nEven under the more cautious interpretation, mycorrhizal fungi provide plants with tangible benefits beyond nutrient exchange. Several studies have found that plants connected to an established mycorrhizal network show improved resistance to certain pathogens and greater tolerance of drought stress, effects thought to arise partly from direct fungal assistance and partly from chemical signals that appear to travel between connected plants through the network, priming a neighbouring plant's defences before an attack even reaches it. Seedlings that establish a mycorrhizal connection early in life also tend to survive at higher rates in many forest ecosystems than seedlings that fail to do so, which has practical implications for forestry and ecological restoration projects that plant seedlings without accounting for the state of the soil's existing fungal community.\n\nE\nThe economic and ecological importance of mycorrhizal fungi has led to growing interest in applying them deliberately in agriculture, where intensive tillage, fertiliser use, and pesticide application can all damage or destroy naturally occurring mycorrhizal networks in farmland soil. Commercial mycorrhizal inoculants, containing fungal spores intended to be applied to seeds or soil, are now marketed to farmers and gardeners with claims of improving crop yields and reducing the need for chemical fertiliser, though independent trials have produced decidedly mixed results, working well in some soils and crops and showing little measurable benefit in others, a reminder that the practical value of mycorrhizal relationships, like much else in soil ecology, depends heavily on the specific conditions in which they are applied.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the partnership is, and what each side gains\nii\tA popular label that researchers regard as overstated\niii\tCommercial products of mixed and uncertain benefit\niv\tExperiments showing carbon moving between trees\nv\tBetter resistance to disease and drought\nvi\tHow fungi were first classified separately from plants\nvii\tFungicides that damage the network unintentionally",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa mối quan hệ cộng sinh nấm rễ và mỗi bên được lợi gì. Đúng tiêu đề i.",
+          "id": "nl2-17-mycorrhizal-networks-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể thí nghiệm của Simard dùng đồng vị đánh dấu chứng minh carbon di chuyển giữa các cây qua mạng nấm chung. Đúng tiêu đề iv.",
+          "id": "nl2-17-mycorrhizal-networks-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về cụm từ 'wood wide web' và việc nhiều nhà nghiên cứu cho rằng cách diễn giải phổ thông đã phóng đại. Đúng tiêu đề ii.",
+          "id": "nl2-17-mycorrhizal-networks-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói cây kết nối mạng nấm có khả năng kháng bệnh và chịu hạn tốt hơn. Đúng tiêu đề v.",
+          "id": "nl2-17-mycorrhizal-networks-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về chế phẩm nấm rễ thương mại với kết quả thử nghiệm lẫn lộn. Đúng tiêu đề iii.",
+          "id": "nl2-17-mycorrhizal-networks-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "The fungus in a mycorrhizal relationship can produce its own sugars through photosynthesis.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A: nấm 'lacking chlorophyll, cannot manufacture on its own' đường — không tự quang hợp được. FALSE.",
+          "id": "nl2-17-mycorrhizal-networks-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Simard's research showed carbon moving between trees that were not directly connected by their own roots.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'evidence that resources can move between plants that are not directly connected by their own root systems'. Đúng ý đề nên TRUE.",
+          "id": "nl2-17-mycorrhizal-networks-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All mycorrhizal researchers agree that trees deliberately cooperate through fungal networks for the benefit of the forest.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C: liệu đó có phải hợp tác chủ đích hay chỉ là hệ quả tình cờ 'remains a genuinely open and actively debated scientific question' — chưa có sự đồng thuận. FALSE.",
+          "id": "nl2-17-mycorrhizal-networks-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Seedlings that form a mycorrhizal connection early tend to survive at higher rates in many forests.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'Seedlings that establish a mycorrhizal connection early in life also tend to survive at higher rates'. Đúng ý đề nên TRUE.",
+          "id": "nl2-17-mycorrhizal-networks-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Independent trials of commercial mycorrhizal inoculants have consistently shown large improvements in crop yields.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: 'independent trials have produced decidedly mixed results, working well in some soils... and showing little measurable benefit in others'. Không nhất quán, đề nói ngược nên FALSE.",
+          "id": "nl2-17-mycorrhizal-networks-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Fungal threads that extend through soil to absorb water and nutrients are called ________.",
+          "answer": "hyphae",
+          "number": 11,
+          "explanation": "Đoạn A: 'a vast network of extremely fine threads, called hyphae'. Đáp án hyphae.",
+          "id": "nl2-17-mycorrhizal-networks-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The plant supplies the fungus with ________ produced through photosynthesis.",
+          "answer": "sugars",
+          "number": 12,
+          "explanation": "Đoạn A: 'the plant supplies the fungus with sugars produced through photosynthesis'. Đáp án sugars.",
+          "id": "nl2-17-mycorrhizal-networks-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Simard conducted her research in the forests of ________.",
+          "answer": "British Columbia",
+          "number": 13,
+          "explanation": "Đoạn B: 'research conducted in the 1990s by the ecologist Suzanne Simard in the forests of British Columbia'. Đáp án British Columbia.",
+          "id": "nl2-17-mycorrhizal-networks-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Popular accounts describe the fungal network using the phrase 'wood wide ________'.",
+          "answer": "web",
+          "number": 14,
+          "explanation": "Đoạn C: 'the phrase wood wide web'. Đáp án web.",
+          "id": "nl2-17-mycorrhizal-networks-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Products containing fungal spores sold to farmers are known as mycorrhizal ________.",
+          "answer": "inoculants",
+          "number": 15,
+          "explanation": "Đoạn E: 'Commercial mycorrhizal inoculants, containing fungal spores'. Đáp án inoculants.",
+          "id": "nl2-17-mycorrhizal-networks-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-18-genome-sequencing-p1",
+      "order": 70,
+      "title": "Genome Sequencing",
+      "text": "A\nGenome sequencing is the process of determining the complete order of the four chemical letters, adenine, thymine, guanine, and cytosine, that make up an organism's DNA. The human genome contains roughly three billion of these letters, and reading them out in order, base by base, was for decades one of the most ambitious technical challenges in the whole of biology, requiring not only new chemistry but new computational methods capable of assembling millions of short, overlapping fragments back into a single, continuous sequence.\n\nB\nThe technique that made large-scale sequencing possible was developed in 1977 by the British biochemist Frederick Sanger, who devised a method, now known as Sanger sequencing, that could reliably read several hundred DNA letters at a time. Sanger had already won a Nobel Prize in Chemistry in 1958 for unrelated work on protein structure, and the sequencing method earned him a second Nobel Prize in 1980, making him one of only a handful of people ever to receive the award twice. Sanger sequencing remained the dominant sequencing technology for roughly three decades and was the method used to complete the first draft of the human genome.\n\nC\nThe Human Genome Project, an international collaboration launched in 1990 and involving research centres across the United States, the United Kingdom, France, Germany, Japan, and China, set out to sequence the entire human genome using Sanger's method, applied on an industrial scale across dozens of laboratories working in parallel. The project, originally expected to take fifteen years, produced a working draft in 2000 and declared a essentially complete sequence in 2003, two years ahead of its original schedule, at a total cost of roughly three billion dollars, a substantial sum that nonetheless amounted to only about one dollar for each letter of DNA sequenced.\n\nD\nSince the Human Genome Project concluded, a family of newer techniques collectively known as next-generation sequencing has driven down the cost of sequencing a human genome with extraordinary speed, from the roughly three billion dollars spent on the original project to under a thousand dollars for a single genome today, a decline considerably steeper than the improvement typically seen in computer processing power over a comparable period. These newer methods work by simultaneously sequencing millions of short DNA fragments in parallel rather than one at a time, then relying on powerful computer algorithms to reassemble the fragments in the correct order by matching where they overlap, a task that would be utterly impractical to perform by hand given the scale involved.\n\nE\nThe plummeting cost of sequencing has moved genomics rapidly from a purely research tool into clinical medicine. Sequencing a patient's genome can help identify the precise genetic cause of a previously undiagnosed rare disease, guide the choice of cancer treatment by revealing which mutations are driving a particular tumour's growth, and, through prenatal and newborn screening programmes, detect certain inherited genetic conditions early enough for treatment to begin before serious symptoms develop. At the same time, the growing availability of cheap, comprehensive genetic information has raised new concerns about privacy and potential discrimination, since a person's genome can reveal not only information relevant to their own health but also information about the likely genetic makeup of their biological relatives, who may never have consented to have that information disclosed.\n\n— Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat sequencing means, and the scale of the task\nii\tA method that won its inventor a second Nobel Prize\niii\tAn international project finished ahead of schedule\niv\tA steep and continuing fall in cost\nv\tFrom research tool to everyday clinical use\nvi\tHow DNA was first shown to carry genetic information\nvii\tSequencing the genomes of extinct species",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa giải trình tự gen là gì và quy mô thách thức: ba tỉ chữ cái DNA. Đúng tiêu đề i.",
+          "id": "nl2-18-genome-sequencing-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về Sanger, người phát triển phương pháp giải trình tự và giành Nobel lần thứ hai. Đúng tiêu đề ii.",
+          "id": "nl2-18-genome-sequencing-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về Dự án Bộ gen Người, hoàn thành sớm hai năm so với kế hoạch. Đúng tiêu đề iii.",
+          "id": "nl2-18-genome-sequencing-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói chi phí giải trình tự giảm từ 3 tỉ đô xuống dưới 1.000 đô nhờ công nghệ thế hệ mới. Đúng tiêu đề iv.",
+          "id": "nl2-18-genome-sequencing-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói giải trình tự gen giờ được dùng trong y học lâm sàng: chẩn đoán bệnh hiếm, điều trị ung thư, sàng lọc sơ sinh. Đúng tiêu đề v.",
+          "id": "nl2-18-genome-sequencing-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Sanger's 1980 Nobel Prize was his first Nobel Prize.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B: 'Sanger had already won a Nobel Prize in Chemistry in 1958... the sequencing method earned him a second Nobel Prize in 1980'. Là giải thứ hai, không phải đầu tiên. FALSE.",
+          "id": "nl2-18-genome-sequencing-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The Human Genome Project took longer than its original fifteen-year schedule.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn C: dự án 'declared a essentially complete sequence in 2003, two years ahead of its original schedule'. Xong SỚM hơn, không phải muộn hơn. FALSE.",
+          "id": "nl2-18-genome-sequencing-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The cost of sequencing a human genome has fallen more steeply than typical improvements in computer processing power.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn D: 'a decline considerably steeper than the improvement typically seen in computer processing power over a comparable period'. Đúng ý đề nên TRUE.",
+          "id": "nl2-18-genome-sequencing-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Next-generation sequencing methods sequence DNA fragments one at a time in strict order.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: các phương pháp mới 'sequencing millions of short DNA fragments in parallel rather than one at a time'. Song song, không phải tuần tự từng đoạn. FALSE.",
+          "id": "nl2-18-genome-sequencing-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "A person's genome can reveal information about their biological relatives without those relatives' consent.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: bộ gen 'can reveal... information about the likely genetic makeup of their biological relatives, who may never have consented'. Đúng ý đề nên TRUE.",
+          "id": "nl2-18-genome-sequencing-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The human genome contains roughly ________ letters of DNA.",
+          "answer": "three billion",
+          "number": 11,
+          "explanation": "Đoạn A: 'The human genome contains roughly three billion of these letters'. Đáp án three billion.",
+          "id": "nl2-18-genome-sequencing-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Sanger's sequencing method could reliably read several hundred DNA letters at a ________.",
+          "answer": "time",
+          "number": 12,
+          "explanation": "Đoạn B: '...could reliably read several hundred DNA letters at a time'. Đáp án time.",
+          "id": "nl2-18-genome-sequencing-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The Human Genome Project was launched in ________.",
+          "answer": "1990",
+          "number": 13,
+          "explanation": "Đoạn C: 'an international collaboration launched in 1990'. Đáp án 1990.",
+          "id": "nl2-18-genome-sequencing-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The Human Genome Project cost roughly ________ dollars in total.",
+          "answer": "three billion",
+          "number": 14,
+          "explanation": "Đoạn C: 'at a total cost of roughly three billion dollars'. Đáp án three billion.",
+          "id": "nl2-18-genome-sequencing-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Sequencing a single human genome today costs under ________ dollars.",
+          "answer": "a thousand",
+          "number": 15,
+          "explanation": "Đoạn D: 'to under a thousand dollars for a single genome today'. Đáp án a thousand.",
+          "id": "nl2-18-genome-sequencing-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-19-cambrian-explosion-p1",
+      "order": 71,
+      "title": "The Cambrian Explosion",
+      "text": "A\nThe Cambrian explosion refers to a relatively sudden appearance, roughly 538 million years ago, of a striking diversity of complex animal life in the fossil record, after more than three billion years during which life on Earth had consisted almost entirely of single-celled organisms and simple, soft-bodied multicellular forms. Within a geological interval lasting perhaps twenty to twenty-five million years, brief by the standards of Earth's four-and-a-half-billion-year history, representatives of most major animal groups alive today, including the ancestors of arthropods, molluscs, and early relatives of vertebrates, appear in the fossil record for the first time, many already bearing hard shells or exoskeletons that fossilise far more readily than soft tissue.\n\nB\nMuch of what is known about Cambrian animals comes from a small number of exceptional fossil deposits, called Lagerstätten, where unusually favourable conditions preserved not only hard shells but also soft tissues that are normally lost entirely to decay. The most famous of these is the Burgess Shale, discovered in the Canadian Rocky Mountains in 1909 by the American palaeontologist Charles Doolittle Walcott, which preserves an extraordinarily detailed snapshot of Cambrian marine life, including many bizarre animals with no obvious modern equivalent. A comparable, slightly older deposit called the Chengjiang biota, discovered in China's Yunnan province in 1984, has since provided further detailed evidence of the same burst of early animal diversity.\n\nC\nSeveral explanations have been proposed for why this diversification happened when it did, and most researchers now regard the true answer as a combination of several contributing factors rather than any single decisive cause. A sharp rise in atmospheric and oceanic oxygen levels shortly before the Cambrian may have allowed animals to grow larger and support more energy-demanding tissues and behaviours than had previously been possible. The evolution of vision is thought by some researchers to have triggered an evolutionary arms race, since a predator that can see its prey creates powerful selective pressure favouring prey that can detect the predator in turn, or that develop hard defensive shells, which themselves further favour predators evolving harder mouthparts or better vision, a feedback loop that could accelerate diversification rapidly once it began.\n\nD\nThe apparent suddenness of the Cambrian explosion troubled Charles Darwin himself, who acknowledged in On the Origin of Species that the abrupt appearance of complex animals, without an obvious long fossil record of simpler ancestral forms leading up to them, appeared at first glance to sit uneasily with his theory of gradual evolutionary change by natural selection. Darwin argued that the fossil record of the time was simply too incomplete to have preserved the earlier, presumably soft-bodied ancestors, and subsequent discoveries have partly vindicated this view: fossils of soft-bodied, complex, though comparatively simple, multicellular animals dating from the preceding Ediacaran period, roughly 635 to 538 million years ago, have since been found at numerous sites worldwide, suggesting that animal evolution was already well underway before the Cambrian explosion made it dramatically visible in the fossil record.\n\nE\nRather than representing the literal sudden invention of complex animal life from nothing, most palaeontologists today interpret the Cambrian explosion as principally a dramatic increase in the rate at which animals evolved hard, readily fossilised body parts, combined with a genuine and rapid diversification of body plans that was likely already building on genetic innovations, particularly in the genes controlling embryonic development, that had arisen somewhat earlier during the preceding Ediacaran period. Under this view, the Cambrian explosion is less a mysterious violation of gradual evolution than an unusually well-preserved and dramatic record of a period of genuinely rapid, but not instantaneous, evolutionary change.\n\n— Biên soạn dựa trên kiến thức cổ sinh vật học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat happened, and how quickly it happened\nii\tFossil sites that preserved soft tissue in exceptional detail\niii\tSeveral factors that may have driven the diversification\niv\tHow it appeared to challenge Darwin's own theory\nv\tA more gradual picture that later evidence supported\nvi\tDating the rocks using radioactive decay\nvii\tWhy most Cambrian animals eventually went extinct",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A mô tả sự kiện bùng nổ Cambri là gì và diễn ra nhanh tới mức nào (20-25 triệu năm). Đúng tiêu đề i.",
+          "id": "nl2-19-cambrian-explosion-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về các mỏ hoá thạch đặc biệt (Lagerstätten) như Burgess Shale và Chengjiang lưu giữ cả mô mềm. Đúng tiêu đề ii.",
+          "id": "nl2-19-cambrian-explosion-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nêu vài giả thuyết: tăng oxy, tiến hoá thị giác gây chạy đua vũ trang tiến hoá. Đúng tiêu đề iii.",
+          "id": "nl2-19-cambrian-explosion-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói sự bùng nổ đột ngột này từng khiến chính Darwin lo ngại nó mâu thuẫn với thuyết tiến hoá dần dần của ông. Đúng tiêu đề iv.",
+          "id": "nl2-19-cambrian-explosion-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói các nhà cổ sinh vật học nay coi đây là quá trình tiến hoá nhanh nhưng không tức thời, dựa trên nền tảng đã có từ kỷ Ediacara. Đúng tiêu đề v.",
+          "id": "nl2-19-cambrian-explosion-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Before the Cambrian explosion, life on Earth had existed for more than three billion years.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'after more than three billion years during which life on Earth had consisted almost entirely of single-celled organisms'. Đúng ý đề nên TRUE.",
+          "id": "nl2-19-cambrian-explosion-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The Chengjiang biota was discovered before the Burgess Shale.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B: Burgess Shale phát hiện năm 1909, Chengjiang phát hiện năm 1984 — Chengjiang sau, không phải trước. FALSE.",
+          "id": "nl2-19-cambrian-explosion-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most researchers now believe a single decisive cause fully explains the Cambrian explosion.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C: 'most researchers now regard the true answer as a combination of several contributing factors rather than any single decisive cause'. Nhiều yếu tố kết hợp, không phải một nguyên nhân duy nhất. FALSE.",
+          "id": "nl2-19-cambrian-explosion-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Darwin believed the incompleteness of the fossil record explained the apparently sudden appearance of complex animals.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'Darwin argued that the fossil record of the time was simply too incomplete to have preserved the earlier... ancestors'. Đúng ý đề nên TRUE.",
+          "id": "nl2-19-cambrian-explosion-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Fossils from the Ediacaran period have been found only at a single site worldwide.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn D: hoá thạch Ediacara 'have since been found at numerous sites worldwide'. Nhiều nơi, không phải một nơi duy nhất. FALSE.",
+          "id": "nl2-19-cambrian-explosion-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Exceptional fossil deposits that preserve soft tissue are called ________.",
+          "answer": "Lagerstätten",
+          "number": 11,
+          "explanation": "Đoạn B: 'a small number of exceptional fossil deposits, called Lagerstätten'. Đáp án Lagerstätten.",
+          "id": "nl2-19-cambrian-explosion-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The Burgess Shale was discovered in 1909 by ________.",
+          "answer": "Charles Doolittle Walcott",
+          "number": 12,
+          "explanation": "Đoạn B: 'discovered in the Canadian Rocky Mountains in 1909 by the American palaeontologist Charles Doolittle Walcott'. Đáp án Charles Doolittle Walcott.",
+          "id": "nl2-19-cambrian-explosion-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "A rise in evolutionary pressure between predator and prey senses is described as an evolutionary ________ race.",
+          "answer": "arms",
+          "number": 13,
+          "explanation": "Đoạn C: 'may have... triggered an evolutionary arms race'. Đáp án arms.",
+          "id": "nl2-19-cambrian-explosion-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Darwin discussed this problem in his book On the Origin of ________.",
+          "answer": "Species",
+          "number": 14,
+          "explanation": "Đoạn D: 'who acknowledged in On the Origin of Species'. Đáp án Species.",
+          "id": "nl2-19-cambrian-explosion-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The period immediately before the Cambrian, roughly 635 to 538 million years ago, is called the ________ period.",
+          "answer": "Ediacaran",
+          "number": 15,
+          "explanation": "Đoạn D: 'the preceding Ediacaran period, roughly 635 to 538 million years ago'. Đáp án Ediacaran.",
+          "id": "nl2-19-cambrian-explosion-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-20-radiocarbon-dating-p1",
+      "order": 72,
+      "title": "Radiocarbon Dating",
+      "text": "A\nRadiocarbon dating is a method used to estimate the age of organic material, such as wood, bone, or textile fibres, by measuring the proportion of a radioactive form of carbon, carbon-14, that remains within it. The technique was developed in the late 1940s by the American chemist Willard Libby, who realised that living organisms continuously absorb carbon-14 from the atmosphere while alive, but stop doing so the moment they die, after which the carbon-14 already present in their tissues begins to decay away at a steady, predictable rate. Libby was awarded the 1960 Nobel Prize in Chemistry for developing the method, which transformed archaeology by providing, for the first time, a way to assign approximate calendar ages to organic remains without relying on written historical records.\n\nB\nCarbon-14 is produced continuously in the upper atmosphere when cosmic rays collide with nitrogen atoms, and it exists alongside the far more abundant, stable forms of carbon, carbon-12 and carbon-13, in a roughly constant ratio throughout the atmosphere and in living organisms that exchange carbon with it. Once an organism dies, no new carbon-14 is taken in, and the carbon-14 already present decays into nitrogen at a rate described by its half-life, the time it takes for half of a given quantity of a radioactive substance to decay, which for carbon-14 is approximately 5,730 years. By measuring the remaining proportion of carbon-14 in a sample relative to the stable carbon isotopes, and comparing it against the known half-life, researchers can calculate how much time has passed since the organism died.\n\nC\nBecause carbon-14 decays at a fixed, known rate, radiocarbon dating becomes progressively less precise for older samples and eventually reaches a practical limit: after roughly nine or ten half-lives, so little carbon-14 remains that it becomes difficult to measure reliably against background radiation, setting a practical upper limit for the method at around 50,000 years. This limitation means radiocarbon dating is well suited to material from within the last fifty millennia, spanning much of human prehistory, but useless for dating older fossils such as dinosaur bones, which are instead dated using other radioactive elements with much longer half-lives, or more often by dating the surrounding volcanic rock layers rather than the fossil itself.\n\nD\nAn important complication is that the ratio of carbon-14 to stable carbon in the atmosphere has not remained perfectly constant over time, varying somewhat due to fluctuations in cosmic ray intensity, changes in the Earth's magnetic field, and, in recent centuries, human activity such as the burning of fossil fuels, which releases ancient carbon entirely depleted of carbon-14 into the atmosphere. To correct for these fluctuations, researchers have built detailed calibration curves by cross-checking radiocarbon measurements against material of known, independently verified age, most importantly the annual growth rings of long-lived trees, which can be counted directly, and, for material older than the oldest tree-ring records, layered deposits from lake sediments and coral. Radiocarbon dates are therefore always reported as a calibrated calendar age derived from these curves rather than as a raw, uncorrected measurement.\n\nE\nRadiocarbon dating has been applied to a vast range of archaeological and historical puzzles, from confirming the age of the Dead Sea Scrolls to establishing when humans first settled remote Pacific islands. One especially well-known application involved the Shroud of Turin, a length of linen cloth long venerated by some as the burial shroud of Jesus Christ. Radiocarbon testing carried out independently by three laboratories in 1988 dated the cloth's fibres to a range between roughly 1260 and 1390 CE, a result strongly suggesting a medieval rather than an ancient origin, though the finding has remained a subject of continued debate among some who question whether contamination or repair work on the cloth could have skewed the sample tested.\n\n— Biên soạn dựa trên kiến thức khoa học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the method measures, and who developed it\nii\tHow carbon-14 forms, and how its decay is timed\niii\tCorrecting for a ratio that has not stayed constant\niv\tWhy the method cannot date very old fossils\nv\tTesting a famous religious relic\nvi\tExtending the method to date rocks and minerals\nvii\tHow tree rings were first used to count the seasons",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa phương pháp định tuổi bằng carbon phóng xạ và ai phát triển nó (Libby). Đúng tiêu đề i.",
+          "id": "nl2-20-radiocarbon-dating-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B giải thích carbon-14 hình thành thế nào và chu kỳ bán rã 5.730 năm. Đúng tiêu đề ii.",
+          "id": "nl2-20-radiocarbon-dating-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói giới hạn của phương pháp khoảng 50.000 năm, không dùng được cho hoá thạch khủng long. Đúng tiêu đề iv.",
+          "id": "nl2-20-radiocarbon-dating-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói tỉ lệ carbon-14 trong khí quyển không hằng định, cần đường hiệu chỉnh dựa vào vòng gỗ cây. Đúng tiêu đề iii.",
+          "id": "nl2-20-radiocarbon-dating-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E kể về việc định tuổi Khăn liệm Turin năm 1988 bằng carbon phóng xạ. Đúng tiêu đề v.",
+          "id": "nl2-20-radiocarbon-dating-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Living organisms continuously absorb carbon-14 while they are alive.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'living organisms continuously absorb carbon-14 from the atmosphere while alive'. Đúng ý đề nên TRUE.",
+          "id": "nl2-20-radiocarbon-dating-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Radiocarbon dating can reliably date dinosaur fossils, which are typically tens of millions of years old.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn C: phương pháp 'useless for dating older fossils such as dinosaur bones'. Không dùng được cho hoá thạch khủng long, đề nói ngược nên FALSE.",
+          "id": "nl2-20-radiocarbon-dating-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Burning fossil fuels releases carbon into the atmosphere that is completely free of carbon-14.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn D: đốt nhiên liệu hoá thạch 'releases ancient carbon entirely depleted of carbon-14 into the atmosphere'. Đúng ý đề nên TRUE.",
+          "id": "nl2-20-radiocarbon-dating-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Radiocarbon dates are usually reported as raw, uncorrected measurements.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: 'Radiocarbon dates are therefore always reported as a calibrated calendar age... rather than as a raw, uncorrected measurement'. Luôn được hiệu chỉnh, không phải thô. FALSE.",
+          "id": "nl2-20-radiocarbon-dating-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All researchers now universally accept that the 1988 test of the Shroud of Turin was completely free of any possible error.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E: kết quả 'has remained a subject of continued debate among some who question whether contamination or repair work... could have skewed the sample'. Vẫn còn tranh cãi, không phải được chấp nhận tuyệt đối. FALSE.",
+          "id": "nl2-20-radiocarbon-dating-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Libby was awarded the 1960 Nobel Prize in ________.",
+          "answer": "Chemistry",
+          "number": 11,
+          "explanation": "Đoạn A: 'Libby was awarded the 1960 Nobel Prize in Chemistry'. Đáp án Chemistry.",
+          "id": "nl2-20-radiocarbon-dating-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The half-life of carbon-14 is approximately ________ years.",
+          "answer": "5,730",
+          "number": 12,
+          "explanation": "Đoạn B: 'which for carbon-14 is approximately 5,730 years'. Đáp án 5,730.",
+          "id": "nl2-20-radiocarbon-dating-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The practical upper limit of radiocarbon dating is around ________ years.",
+          "answer": "50,000",
+          "number": 13,
+          "explanation": "Đoạn C: 'setting a practical upper limit for the method at around 50,000 years'. Đáp án 50,000.",
+          "id": "nl2-20-radiocarbon-dating-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Calibration curves rely most importantly on the annual growth rings of long-lived ________.",
+          "answer": "trees",
+          "number": 14,
+          "explanation": "Đoạn D: 'most importantly the annual growth rings of long-lived trees'. Đáp án trees.",
+          "id": "nl2-20-radiocarbon-dating-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The 1988 test dated the Shroud of Turin's fibres to between roughly 1260 and ________ CE.",
+          "answer": "1390",
+          "number": 15,
+          "explanation": "Đoạn E: 'dated the cloth's fibres to a range between roughly 1260 and 1390 CE'. Đáp án 1390.",
+          "id": "nl2-20-radiocarbon-dating-q15"
+        }
+      ]
     }
   ]
 }

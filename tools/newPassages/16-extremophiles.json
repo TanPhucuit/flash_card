@@ -1,0 +1,141 @@
+{
+  "title": "Extremophiles",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "An extremophile is an organism that thrives in physical or chemical conditions that would be lethal to most other forms of life, such as extreme heat, cold, pressure, acidity, or salinity. Most known extremophiles belong to the domain Archaea, single-celled microorganisms that resemble bacteria under a microscope but differ from them fundamentally at the molecular level, though extremophile bacteria, and even a handful of extremophile animals, are also known. Far from being marginal curiosities, extremophiles have reshaped how biologists think about the limits of life and about where, in the wider universe, life might conceivably be found."
+    },
+    {
+      "letter": "B",
+      "text": "Thermophiles, organisms that flourish at high temperatures, were first studied intensively in the hot springs of Yellowstone National Park in the United States. In 1966, the microbiologist Thomas Brock isolated a bacterium later named Thermus aquaticus from a Yellowstone spring, at temperatures that had previously been assumed too hot to support life. Some extremophiles discovered since then, dwelling around deep-sea hydrothermal vents where mineral-rich water erupts from the seafloor, survive and reproduce at temperatures above 100 degrees Celsius, a feat made possible because the immense pressure at those depths keeps the water from boiling."
+    },
+    {
+      "letter": "C",
+      "text": "At the opposite extreme, psychrophiles thrive in permanently cold environments, including Antarctic sea ice and the deep ocean, where temperatures hover just above or even below the normal freezing point of water. Their cells contain specialised proteins and altered cell membranes that keep essential biological processes running at temperatures that would freeze the cellular machinery of an ordinary organism solid. Other extremophiles are adapted to extremes of a different kind: acidophiles tolerate the highly acidic water found in some mining-affected streams, halophiles thrive in salt concentrations many times higher than seawater, such as those found in the Dead Sea, and piezophiles are adapted to withstand the crushing pressure found in the deepest ocean trenches, several hundred times the pressure at sea level."
+    },
+    {
+      "letter": "D",
+      "text": "Beyond their scientific interest, extremophiles have proved unexpectedly valuable to industry. The enzyme isolated from Thermus aquaticus, known as Taq polymerase, can withstand the repeated heating to near-boiling temperatures required by the polymerase chain reaction, or PCR, a technique used to copy specific segments of DNA millions of times over for purposes ranging from criminal forensics to diagnosing infectious disease. Before Taq polymerase became available, researchers had to add fresh, heat-sensitive enzyme by hand after every heating cycle, a tedious and error-prone process that the heat-tolerant enzyme from a Yellowstone hot spring eliminated almost entirely, making PCR practical to automate and helping to transform modern molecular biology."
+    },
+    {
+      "letter": "E",
+      "text": "The existence of organisms that can survive such punishing conditions on Earth has also influenced the search for life beyond it. If life can flourish in boiling, acidic, or intensely cold and salty environments on this planet, astrobiologists reason, then similarly extreme environments elsewhere in the solar system, such as the subsurface ocean thought to lie beneath the icy crust of Jupiter's moon Europa, or the briny, sub-freezing water occasionally detected on Mars, cannot automatically be ruled out as potential habitats for life. This reasoning does not prove that life exists in such places, but it has significantly broadened the range of environments that space missions searching for extraterrestrial life now consider worth investigating."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat they are, and why they matter to biology\nii\tOrganisms that thrive in cold, acid, salt and pressure\niii\tA hot-spring bacterium that transformed a laboratory technique\niv\tThriving near boiling water and undersea vents\nv\tWhy they broaden the search for life elsewhere\nvi\tAttempts to farm extremophiles for food\nvii\tHow extremophiles were first classified as archaea",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa sinh vật cực đoan là gì và vì sao chúng quan trọng với sinh học. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về thermophile trong suối nước nóng Yellowstone và miệng phun thuỷ nhiệt dưới biển sâu. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về psychrophile (lạnh), acidophile (axit), halophile (muối), piezophile (áp suất). Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về Taq polymerase từ Thermus aquaticus giúp tự động hoá kỹ thuật PCR. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói sinh vật cực đoan mở rộng phạm vi tìm kiếm sự sống ngoài Trái Đất. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Archaea and bacteria are fundamentally different at the molecular level despite looking similar under a microscope.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'resemble bacteria under a microscope but differ from them fundamentally at the molecular level'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Water at deep-sea hydrothermal vents boils despite the extreme pressure.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'the immense pressure at those depths keeps the water from boiling' dù nhiệt độ trên 100°C. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Psychrophiles have cell membranes and proteins adapted to keep functioning in freezing conditions.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'Their cells contain specialised proteins and altered cell membranes that keep essential biological processes running' ở nhiệt độ lạnh. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Before Taq polymerase was available, researchers had to manually add fresh enzyme after every heating cycle of PCR.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'researchers had to add fresh, heat-sensitive enzyme by hand after every heating cycle'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Scientists have confirmed that life exists beneath the icy crust of Europa.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: lập luận này 'does not prove that life exists in such places' — mới chỉ mở rộng khả năng, chưa xác nhận có sự sống. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Brock isolated Thermus aquaticus from a hot spring in ________ National Park.",
+      "answer": "Yellowstone",
+      "number": 11,
+      "explanation": "Đoạn B: 'first studied intensively in the hot springs of Yellowstone National Park'. Đáp án Yellowstone."
+    },
+    {
+      "type": "gap",
+      "prompt": "Organisms adapted to extreme salt concentrations are called ________.",
+      "answer": "halophiles",
+      "number": 12,
+      "explanation": "Đoạn C: 'halophiles thrive in salt concentrations many times higher than seawater'. Đáp án halophiles."
+    },
+    {
+      "type": "gap",
+      "prompt": "The heat-tolerant enzyme isolated from Thermus aquaticus is known as ________.",
+      "answer": "Taq polymerase",
+      "number": 13,
+      "explanation": "Đoạn D: 'The enzyme isolated from Thermus aquaticus, known as Taq polymerase'. Đáp án Taq polymerase."
+    },
+    {
+      "type": "gap",
+      "prompt": "Taq polymerase is essential for a DNA-copying technique known as the ________ reaction.",
+      "answer": "polymerase chain",
+      "number": 14,
+      "explanation": "Đoạn D: 'the polymerase chain reaction, or PCR'. Đáp án polymerase chain."
+    },
+    {
+      "type": "gap",
+      "prompt": "Astrobiologists point to a subsurface ocean beneath the icy crust of Jupiter's moon ________.",
+      "answer": "Europa",
+      "number": 15,
+      "explanation": "Đoạn E: 'the subsurface ocean thought to lie beneath the icy crust of Jupiter's moon Europa'. Đáp án Europa."
+    }
+  ]
+}

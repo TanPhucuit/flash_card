@@ -1,0 +1,141 @@
+{
+  "title": "Mycorrhizal Networks",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A mycorrhiza is a symbiotic association between a fungus and the roots of a plant, a relationship so widespread that an estimated ninety percent of land plant species form such partnerships with at least one fungal species. The fungus extends a vast network of extremely fine threads, called hyphae, through the soil far beyond the reach of the plant's own roots, absorbing water and mineral nutrients, particularly phosphorus, and delivering them to the plant. In exchange, the plant supplies the fungus with sugars produced through photosynthesis, sugars the fungus itself, lacking chlorophyll, cannot manufacture on its own."
+    },
+    {
+      "letter": "B",
+      "text": "Because a single fungal network can connect to the roots of several different plants at once, sometimes of entirely different species, researchers have found that these networks can effectively link separate plants together underground, a discovery that gained wide public attention following research conducted in the 1990s by the ecologist Suzanne Simard in the forests of British Columbia. Using radioactive and stable isotopes as tracers, Simard demonstrated that carbon manufactured by one tree could travel through a shared fungal network and be taken up by a neighbouring tree of a different species, evidence that resources can move between plants that are not directly connected by their own root systems."
+    },
+    {
+      "letter": "C",
+      "text": "Popular accounts of this research have sometimes described the resulting network using the phrase \"wood wide web\", drawing an analogy with the internet, and have suggested that trees use these connections to deliberately cooperate, share resources altruistically, and even communicate warnings about insect attack to their neighbours. Many mycorrhizal researchers regard some of these popular characterisations as considerably overstated relative to the underlying evidence: while resource transfer between plants through fungal networks has been repeatedly demonstrated in controlled experiments, whether this transfer represents a coordinated, cooperative system actively benefiting the wider forest, as opposed to a largely incidental consequence of a fungus feeding several host plants simultaneously to its own advantage, remains a genuinely open and actively debated scientific question."
+    },
+    {
+      "letter": "D",
+      "text": "Even under the more cautious interpretation, mycorrhizal fungi provide plants with tangible benefits beyond nutrient exchange. Several studies have found that plants connected to an established mycorrhizal network show improved resistance to certain pathogens and greater tolerance of drought stress, effects thought to arise partly from direct fungal assistance and partly from chemical signals that appear to travel between connected plants through the network, priming a neighbouring plant's defences before an attack even reaches it. Seedlings that establish a mycorrhizal connection early in life also tend to survive at higher rates in many forest ecosystems than seedlings that fail to do so, which has practical implications for forestry and ecological restoration projects that plant seedlings without accounting for the state of the soil's existing fungal community."
+    },
+    {
+      "letter": "E",
+      "text": "The economic and ecological importance of mycorrhizal fungi has led to growing interest in applying them deliberately in agriculture, where intensive tillage, fertiliser use, and pesticide application can all damage or destroy naturally occurring mycorrhizal networks in farmland soil. Commercial mycorrhizal inoculants, containing fungal spores intended to be applied to seeds or soil, are now marketed to farmers and gardeners with claims of improving crop yields and reducing the need for chemical fertiliser, though independent trials have produced decidedly mixed results, working well in some soils and crops and showing little measurable benefit in others, a reminder that the practical value of mycorrhizal relationships, like much else in soil ecology, depends heavily on the specific conditions in which they are applied."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the partnership is, and what each side gains\nii\tA popular label that researchers regard as overstated\niii\tCommercial products of mixed and uncertain benefit\niv\tExperiments showing carbon moving between trees\nv\tBetter resistance to disease and drought\nvi\tHow fungi were first classified separately from plants\nvii\tFungicides that damage the network unintentionally",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa mối quan hệ cộng sinh nấm rễ và mỗi bên được lợi gì. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể thí nghiệm của Simard dùng đồng vị đánh dấu chứng minh carbon di chuyển giữa các cây qua mạng nấm chung. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về cụm từ 'wood wide web' và việc nhiều nhà nghiên cứu cho rằng cách diễn giải phổ thông đã phóng đại. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói cây kết nối mạng nấm có khả năng kháng bệnh và chịu hạn tốt hơn. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về chế phẩm nấm rễ thương mại với kết quả thử nghiệm lẫn lộn. Đúng tiêu đề iii."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "The fungus in a mycorrhizal relationship can produce its own sugars through photosynthesis.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A: nấm 'lacking chlorophyll, cannot manufacture on its own' đường — không tự quang hợp được. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Simard's research showed carbon moving between trees that were not directly connected by their own roots.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'evidence that resources can move between plants that are not directly connected by their own root systems'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All mycorrhizal researchers agree that trees deliberately cooperate through fungal networks for the benefit of the forest.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C: liệu đó có phải hợp tác chủ đích hay chỉ là hệ quả tình cờ 'remains a genuinely open and actively debated scientific question' — chưa có sự đồng thuận. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Seedlings that form a mycorrhizal connection early tend to survive at higher rates in many forests.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'Seedlings that establish a mycorrhizal connection early in life also tend to survive at higher rates'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Independent trials of commercial mycorrhizal inoculants have consistently shown large improvements in crop yields.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'independent trials have produced decidedly mixed results, working well in some soils... and showing little measurable benefit in others'. Không nhất quán, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Fungal threads that extend through soil to absorb water and nutrients are called ________.",
+      "answer": "hyphae",
+      "number": 11,
+      "explanation": "Đoạn A: 'a vast network of extremely fine threads, called hyphae'. Đáp án hyphae."
+    },
+    {
+      "type": "gap",
+      "prompt": "The plant supplies the fungus with ________ produced through photosynthesis.",
+      "answer": "sugars",
+      "number": 12,
+      "explanation": "Đoạn A: 'the plant supplies the fungus with sugars produced through photosynthesis'. Đáp án sugars."
+    },
+    {
+      "type": "gap",
+      "prompt": "Simard conducted her research in the forests of ________.",
+      "answer": "British Columbia",
+      "number": 13,
+      "explanation": "Đoạn B: 'research conducted in the 1990s by the ecologist Suzanne Simard in the forests of British Columbia'. Đáp án British Columbia."
+    },
+    {
+      "type": "gap",
+      "prompt": "Popular accounts describe the fungal network using the phrase 'wood wide ________'.",
+      "answer": "web",
+      "number": 14,
+      "explanation": "Đoạn C: 'the phrase wood wide web'. Đáp án web."
+    },
+    {
+      "type": "gap",
+      "prompt": "Products containing fungal spores sold to farmers are known as mycorrhizal ________.",
+      "answer": "inoculants",
+      "number": 15,
+      "explanation": "Đoạn E: 'Commercial mycorrhizal inoculants, containing fungal spores'. Đáp án inoculants."
+    }
+  ]
+}

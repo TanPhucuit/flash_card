@@ -1,0 +1,141 @@
+{
+  "title": "Neuroplasticity",
+  "sourceNote": "Biên soạn dựa trên kiến thức thần kinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Neuroplasticity is the capacity of the brain to reorganise itself by forming new neural connections, strengthening or weakening existing ones, and, to a more limited extent, generating new neurons throughout life. For much of the twentieth century, neuroscientists generally believed that the adult brain's structure was essentially fixed once childhood development was complete, and that any brain regions damaged by injury or disease would remain permanently impaired. Research since the 1960s has overturned this view, revealing an adult brain that continues to adapt and change in response to experience, learning, and injury far more than was once thought possible."
+    },
+    {
+      "letter": "B",
+      "text": "At the level of individual neurons, plasticity depends chiefly on synapses, the junctions where one neuron communicates with the next. A rule often summarised as \"neurons that fire together, wire together\" describes how synapses that are repeatedly activated in tandem tend to strengthen over time, a process called long-term potentiation, while connections that are rarely used tend to weaken and may eventually be pruned away altogether. This synaptic strengthening and pruning underlies much of learning and memory: practising a skill repeatedly reinforces the specific pattern of neural connections involved, which is part of why deliberate, repeated practice improves performance more reliably than occasional effort."
+    },
+    {
+      "letter": "C",
+      "text": "One of the most striking illustrations of neuroplasticity comes from studies of London taxi drivers, who must memorise the layout of thousands of streets to pass a notoriously difficult licensing examination known as \"the Knowledge\". Brain scans conducted by the neuroscientist Eleanor Maguire and her colleagues found that experienced taxi drivers had a measurably larger hippocampus, a brain structure closely involved in spatial memory, than a comparison group, and that the size of this enlargement correlated with the number of years a driver had spent on the job. Because the study could not follow individuals from before they began training, it could not entirely rule out the possibility that people with an unusually large hippocampus were simply more likely to become taxi drivers in the first place, but later studies that did track trainees over time found the hippocampus growing measurably as they studied for the examination, supporting the conclusion that the training itself caused the change."
+    },
+    {
+      "letter": "D",
+      "text": "Neuroplasticity also plays a central role in recovery after brain injury, such as a stroke. When a stroke destroys neurons in one part of the brain, nearby or even distant regions can sometimes take over some of the lost function, particularly if the person undergoes intensive, targeted rehabilitation in the weeks and months following the injury. This capacity for compensation is generally greatest soon after the injury and gradually declines over time, which is why physical and occupational therapists typically emphasise beginning rehabilitation as early as safely possible. The degree of recovery achievable varies considerably between individuals and depends on factors including the size and location of the damage, the person's age, and how promptly and intensively rehabilitation begins."
+    },
+    {
+      "letter": "E",
+      "text": "Although the brain's ability to change persists throughout life, most researchers agree that plasticity is generally greater in childhood than in adulthood, a difference that helps explain why young children can often recover from severe early brain injuries far more completely than adults with comparable damage, and why learning a new language tends to come more easily before puberty than afterward. Nonetheless, evidence that meaningful plasticity persists well into old age has encouraged the development of cognitive training programmes and physical exercise regimens intended to help preserve mental function during ageing, although the scientific evidence for how much benefit such commercial \"brain training\" programmes actually deliver remains considerably more mixed than marketing for these products often suggests."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and a belief it overturned\nii\tHow synapses strengthen or weaken with use\niii\tA growing hippocampus in London's taxi drivers\niv\tHelping the brain recover after a stroke\nv\tWhy children's brains adapt more readily than adults'\nvi\tMapping the brain region by region\nvii\tDrugs that claim to boost plasticity",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa khả biến thần kinh là gì và niềm tin cũ nó lật đổ: não người lớn từng bị coi là cố định. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về synapse mạnh lên hay yếu đi theo quy tắc 'neurons that fire together, wire together'. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C kể nghiên cứu của Maguire về hồi hải mã lớn hơn ở tài xế taxi London. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói khả biến thần kinh giúp phục hồi sau đột quỵ nhờ phục hồi chức năng sớm và tích cực. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói khả biến ở trẻ em lớn hơn người lớn, giải thích vì sao trẻ hồi phục tốt hơn và học ngôn ngữ dễ hơn. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Twentieth-century neuroscientists generally believed the adult brain could not change its structure.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'neuroscientists generally believed that the adult brain's structure was essentially fixed'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Connections between neurons that are rarely used tend to strengthen over time.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: kết nối ít dùng 'tend to weaken and may eventually be pruned away'. Yếu đi chứ không mạnh lên. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Maguire's original study could rule out the possibility that people with a naturally large hippocampus were more likely to become taxi drivers.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C: nghiên cứu ban đầu 'could not entirely rule out the possibility that people with an unusually large hippocampus were simply more likely to become taxi drivers'. Không loại trừ được khả năng đó. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The brain's capacity to compensate after a stroke is generally greatest soon after the injury occurs.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'This capacity for compensation is generally greatest soon after the injury and gradually declines over time'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Scientific evidence strongly confirms that commercial brain-training programmes significantly improve mental function in old age.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'the scientific evidence for how much benefit such commercial brain training programmes actually deliver remains considerably more mixed than marketing... suggests'. Bằng chứng còn lẫn lộn, không phải xác nhận mạnh mẽ. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The strengthening of a repeatedly activated synapse is called long-term ________.",
+      "answer": "potentiation",
+      "number": 11,
+      "explanation": "Đoạn B: 'a process called long-term potentiation'. Đáp án potentiation."
+    },
+    {
+      "type": "gap",
+      "prompt": "London taxi drivers must pass a licensing test known as ________.",
+      "answer": "the Knowledge",
+      "number": 12,
+      "explanation": "Đoạn C: 'a notoriously difficult licensing examination known as the Knowledge'. Đáp án the Knowledge."
+    },
+    {
+      "type": "gap",
+      "prompt": "Taxi drivers were found to have a larger ________, the brain structure involved in spatial memory.",
+      "answer": "hippocampus",
+      "number": 13,
+      "explanation": "Đoạn C: 'a measurably larger hippocampus, a brain structure closely involved in spatial memory'. Đáp án hippocampus."
+    },
+    {
+      "type": "gap",
+      "prompt": "Learning a new language is generally easier before ________ than afterward.",
+      "answer": "puberty",
+      "number": 14,
+      "explanation": "Đoạn E: 'learning a new language tends to come more easily before puberty than afterward'. Đáp án puberty."
+    },
+    {
+      "type": "gap",
+      "prompt": "Recovery after a stroke depends partly on how promptly ________ begins.",
+      "answer": "rehabilitation",
+      "number": 15,
+      "explanation": "Đoạn D: 'depends on factors including... how promptly and intensively rehabilitation begins'. Đáp án rehabilitation."
+    }
+  ]
+}

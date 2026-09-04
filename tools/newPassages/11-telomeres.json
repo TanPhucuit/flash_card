@@ -1,0 +1,141 @@
+{
+  "title": "Telomeres",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "A telomere is a stretch of repetitive DNA sequence found at each end of a chromosome, acting somewhat like the plastic tip on the end of a shoelace that stops the lace from fraying. Without telomeres, the ends of chromosomes would be indistinguishable from the broken DNA produced by damage, prompting a cell's repair machinery to fuse chromosomes together or trigger an unnecessary alarm response, either of which would be catastrophic for the cell. In humans, telomeres consist of the same six-letter DNA sequence repeated thousands of times over."
+    },
+    {
+      "letter": "B",
+      "text": "Each time a cell divides, the enzymes responsible for copying its DNA are unable to fully replicate the very end of each chromosome, so a small portion of telomere is lost with every division, a phenomenon known as the end-replication problem. Over many rounds of division, telomeres shorten progressively until they become too short to protect the chromosome effectively, at which point the cell typically stops dividing altogether, entering a state called senescence, or self-destructs through a controlled process called apoptosis. This limit on the number of times a normal human cell can divide is known as the Hayflick limit, named after the biologist Leonard Hayflick, who first described it in 1961."
+    },
+    {
+      "letter": "C",
+      "text": "Not all cells are bound by this limit in the same way. An enzyme called telomerase can rebuild the repetitive sequence at the end of a chromosome, effectively resetting the countdown, and it is highly active in certain cell types, including stem cells and the cells that produce sperm and eggs, allowing these cell lineages to divide far more often than an ordinary cell without accumulating dangerously short telomeres. Telomerase was discovered in 1984 by Elizabeth Blackburn and Carol Greider, working with Jack Szostak, and the three shared the 2009 Nobel Prize in Physiology or Medicine for their work on how telomeres and telomerase protect chromosomes."
+    },
+    {
+      "letter": "D",
+      "text": "Most cancer cells reactivate telomerase, or use an alternative mechanism to maintain their telomeres, which is one of the reasons they can divide indefinitely rather than being restrained by the Hayflick limit that governs ordinary tissue. This observation has made telomerase an attractive target for cancer treatment: drugs designed to inhibit telomerase might, in principle, cause cancer cells to resume shortening their telomeres and eventually stop dividing, though translating this idea into an effective and safe therapy has proved considerably more difficult in practice than the underlying concept suggests, and no telomerase inhibitor has yet become a routine part of cancer treatment."
+    },
+    {
+      "letter": "E",
+      "text": "Telomere length has also attracted attention as a possible marker of biological ageing, since telomeres in many tissues tend to shorten as a person grows older, and several studies have linked unusually short telomeres, for a person's age, to a higher risk of certain age-related diseases. However, the relationship is far from a precise clock: telomere length varies considerably between individuals of the same age and is influenced by genetics, chronic stress, and lifestyle factors such as smoking, so measuring telomere length cannot reliably predict how long any particular individual will live. Commercial tests that claim to reveal a person's \"biological age\" from a telomere measurement remain scientifically contentious, and most researchers in the field caution against treating such results as more precise than the underlying science actually supports."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat telomeres are, and why chromosomes need them\nii\tAn enzyme that resets the countdown\niii\tA limit on cell division, and the man who found it\niv\tA disputed marker of how fast a person is ageing\nv\tWhy most cancers escape the usual limit\nvi\tRepairing damaged telomeres with gene therapy\nvii\tHow telomere length is measured in the laboratory",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa telomere là gì và vì sao nhiễm sắc thể cần nó — giống đầu nhựa của dây giày ngăn sờn rách. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói telomere ngắn dần theo mỗi lần phân chia và giới hạn Hayflick, đặt theo tên người tìm ra nó năm 1961. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về enzyme telomerase có thể tái tạo telomere, phát hiện năm 1984. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói phần lớn tế bào ung thư kích hoạt lại telomerase nên thoát khỏi giới hạn Hayflick. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói độ dài telomere được coi là dấu hiệu lão hoá nhưng mối liên hệ này còn gây tranh cãi. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "DNA-copying enzymes can fully replicate the very end of a chromosome.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B: 'the enzymes responsible for copying its DNA are unable to fully replicate the very end of each chromosome'. Không sao chép được trọn vẹn, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Stem cells have high telomerase activity, which lets them divide more often than ordinary cells.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn C: telomerase 'is highly active in certain cell types, including stem cells... allowing these cell lineages to divide far more often'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Telomerase inhibitors are already a standard part of cancer treatment.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn D: 'no telomerase inhibitor has yet become a routine part of cancer treatment'. Chưa phải điều trị thường quy, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Telomere length is exactly the same for every person of a given age.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn E: 'telomere length varies considerably between individuals of the same age'. Khác nhau đáng kể, không phải giống hệt nhau. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Commercial telomere tests can precisely predict how long a specific individual will live.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: 'measuring telomere length cannot reliably predict how long any particular individual will live'. Đề nói ngược nên FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The gradual loss of telomere with each cell division is called the ________ problem.",
+      "answer": "end-replication",
+      "number": 11,
+      "explanation": "Đoạn B: 'a phenomenon known as the end-replication problem'. Đáp án end-replication."
+    },
+    {
+      "type": "gap",
+      "prompt": "A cell that stops dividing but does not die enters a state called ________.",
+      "answer": "senescence",
+      "number": 12,
+      "explanation": "Đoạn B: 'the cell typically stops dividing altogether, entering a state called senescence'. Đáp án senescence."
+    },
+    {
+      "type": "gap",
+      "prompt": "The limit on how many times a normal cell can divide is called the ________ limit.",
+      "answer": "Hayflick",
+      "number": 13,
+      "explanation": "Đoạn B: 'This limit... is known as the Hayflick limit'. Đáp án Hayflick."
+    },
+    {
+      "type": "gap",
+      "prompt": "Telomerase was discovered in 1984 by Elizabeth Blackburn and ________, working with Jack Szostak.",
+      "answer": "Carol Greider",
+      "number": 14,
+      "explanation": "Đoạn C: 'discovered in 1984 by Elizabeth Blackburn and Carol Greider, working with Jack Szostak'. Đáp án Carol Greider."
+    },
+    {
+      "type": "gap",
+      "prompt": "A cell can also self-destruct through a controlled process called ________.",
+      "answer": "apoptosis",
+      "number": 15,
+      "explanation": "Đoạn B: 'or self-destructs through a controlled process called apoptosis'. Đáp án apoptosis."
+    }
+  ]
+}

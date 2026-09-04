@@ -1,0 +1,141 @@
+{
+  "title": "Epigenetics",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Epigenetics is the study of changes in gene activity that do not involve any alteration to the underlying DNA sequence itself, yet can still be passed on when a cell divides. The word combines the Greek prefix epi-, meaning \"on top of\" or \"in addition to\", with genetics, capturing the idea that a layer of regulation sits above the genetic code, switching individual genes on or off without rewriting the code itself. Every cell in a person's body carries essentially the same DNA, yet a liver cell and a skin cell look and behave completely differently, a puzzle that epigenetics helps to resolve: the difference lies not in which genes are present but in which genes are switched on."
+    },
+    {
+      "letter": "B",
+      "text": "One of the best-studied epigenetic mechanisms is DNA methylation, in which a small chemical tag called a methyl group is attached to specific locations along the DNA strand, generally acting to silence the gene nearby. A second major mechanism involves modifications to histones, the proteins around which DNA is tightly wound to fit inside the cell's nucleus; chemical tags added to histones can loosen or tighten this winding, making the DNA in that region more or less accessible to the cellular machinery that reads genes and switches them on. Together, these mechanisms allow a cell to maintain a stable pattern of gene activity appropriate to its role, a pattern that is faithfully copied each time the cell divides."
+    },
+    {
+      "letter": "C",
+      "text": "Epigenetic patterns are not fixed for life. Diet, stress, exposure to toxins, and other environmental factors have all been shown, in various studies, to alter patterns of DNA methylation in humans and other animals. One frequently cited example comes from studies of the Dutch famine of 1944 to 1945, in which children conceived during the famine were later found, decades afterward, to carry distinctive methylation patterns at certain genes compared with siblings conceived before or after the famine, alongside a measurably higher risk of certain metabolic conditions in adulthood. Such findings suggest that a mother's nutrition during pregnancy can leave a lasting epigenetic mark on her child, though researchers caution that isolating the precise contribution of epigenetics from other confounding factors in this kind of historical study is genuinely difficult."
+    },
+    {
+      "letter": "D",
+      "text": "Whether epigenetic changes acquired during a person's lifetime can be passed on to their children remains one of the most contested questions in the field. In most cases, the epigenetic marks present in sperm and egg cells are stripped away and reset shortly after fertilisation, a process that appears to prevent most acquired epigenetic changes from being inherited. Some studies in animals, however, have reported that certain epigenetic marks appear to survive this resetting process and influence the traits of offspring, and in a few cases, of subsequent generations as well, a phenomenon known as transgenerational epigenetic inheritance. The extent to which this occurs in humans, and how significant an effect it might have, remains an active area of debate among researchers, and claims in this area are treated with particular caution because they are difficult to distinguish from other explanations, including shared environment and ordinary genetic inheritance."
+    },
+    {
+      "letter": "E",
+      "text": "Because faulty epigenetic regulation is implicated in numerous diseases, including many cancers, researchers have developed a class of drugs known as epigenetic therapies, which work by inhibiting the enzymes responsible for adding or removing methylation and histone marks. Several such drugs are already approved to treat specific blood cancers, on the reasoning that reactivating genes that have been abnormally silenced in cancer cells can restore normal cell behaviour or make the cells more vulnerable to other treatments. Unlike a mutation in the DNA sequence itself, an epigenetic change is, in principle, reversible, which is part of what makes epigenetic therapy an appealing avenue for future medicine, though as with many emerging treatments its use so far remains limited to a small number of specific conditions."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tHow the environment can leave a lasting mark\nii\tWhat epigenetics is, and the puzzle it explains\niii\tTwo chemical mechanisms behind the regulation\niv\tDrugs that reverse faulty gene silencing\nv\tWhether acquired changes pass to the next generation\nvi\tSequencing the human epigenome\nvii\tIdentical twins raised in different environments",
+      "prompt": "Section A",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa biểu sinh học là gì và giải thích tại sao tế bào gan và tế bào da khác nhau dù cùng một bộ DNA. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B mô tả hai cơ chế: methyl hoá DNA và biến đổi histone. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói môi trường (chế độ ăn, stress, độc tố) có thể thay đổi mẫu methyl hoá, ví dụ nạn đói Hà Lan 1944-45. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D bàn liệu thay đổi biểu sinh học có di truyền cho thế hệ sau không — vẫn còn tranh cãi. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về liệu pháp biểu sinh học — thuốc đảo ngược sự im lặng gen bất thường trong ung thư máu. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "A liver cell and a skin cell in the same person contain different DNA sequences.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A: 'Every cell in a person's body carries essentially the same DNA'. Cùng một DNA, khác nhau ở gen nào được bật, không phải khác trình tự DNA. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "DNA methylation generally activates the nearby gene rather than silencing it.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: methyl hoá 'generally acting to silence the gene nearby'. Làm im lặng gen, không phải kích hoạt. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Children conceived during the Dutch famine showed distinctive methylation patterns compared with their siblings.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: trẻ thụ thai trong nạn đói 'were later found... to carry distinctive methylation patterns... compared with siblings conceived before or after'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Epigenetic marks in sperm and egg cells are usually erased and reset shortly after fertilisation.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'the epigenetic marks present in sperm and egg cells are stripped away and reset shortly after fertilisation'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Epigenetic therapies are currently used to treat a wide range of diseases across all body systems.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: các thuốc này 'already approved to treat specific blood cancers' và 'use so far remains limited to a small number of specific conditions' — chỉ một số bệnh cụ thể, không phải nhiều bệnh khắp cơ thể. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Attaching a small chemical tag to DNA to silence a nearby gene is called DNA ________.",
+      "answer": "methylation",
+      "number": 11,
+      "explanation": "Đoạn B: 'DNA methylation, in which a small chemical tag called a methyl group is attached'. Đáp án methylation."
+    },
+    {
+      "type": "gap",
+      "prompt": "DNA is tightly wound around proteins called ________ to fit inside the nucleus.",
+      "answer": "histones",
+      "number": 12,
+      "explanation": "Đoạn B: 'histones, the proteins around which DNA is tightly wound'. Đáp án histones."
+    },
+    {
+      "type": "gap",
+      "prompt": "Children conceived during the Dutch famine had a higher risk of certain ________ conditions in adulthood.",
+      "answer": "metabolic",
+      "number": 13,
+      "explanation": "Đoạn C: 'a measurably higher risk of certain metabolic conditions in adulthood'. Đáp án metabolic."
+    },
+    {
+      "type": "gap",
+      "prompt": "Epigenetic marks surviving into later generations is known as transgenerational epigenetic ________.",
+      "answer": "inheritance",
+      "number": 14,
+      "explanation": "Đoạn D: 'a phenomenon known as transgenerational epigenetic inheritance'. Đáp án inheritance."
+    },
+    {
+      "type": "gap",
+      "prompt": "Unlike a DNA mutation, an epigenetic change is, in principle, ________.",
+      "answer": "reversible",
+      "number": 15,
+      "explanation": "Đoạn E: 'an epigenetic change is, in principle, reversible'. Đáp án reversible."
+    }
+  ]
+}

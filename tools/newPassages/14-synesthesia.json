@@ -1,0 +1,141 @@
+{
+  "title": "Synaesthesia",
+  "sourceNote": "Biên soạn dựa trên kiến thức thần kinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Synaesthesia is a neurological condition in which stimulation of one sense automatically and involuntarily triggers a perception in a second, unrelated sense. A person with grapheme-colour synaesthesia, the most commonly studied form, might perceive the letter A as inherently red or the number 7 as inherently green, not as a memory or association they consciously construct but as an immediate and involuntary perceptual experience, much like the way most people cannot help but perceive the sky as blue. Estimates of how common synaesthesia is vary considerably between studies, ranging from roughly one in twenty people to a much smaller fraction, depending on the exact criteria and testing method used."
+    },
+    {
+      "letter": "B",
+      "text": "More than sixty distinct forms of synaesthesia have been documented. Besides grapheme-colour synaesthesia, other reported forms include chromesthesia, in which sounds or music evoke the perception of colour, lexical-gustatory synaesthesia, in which spoken or written words trigger specific taste sensations, and mirror-touch synaesthesia, in which watching another person being touched produces a genuine tactile sensation on the observer's own body. A single individual may experience more than one type simultaneously, and the specific associations, such as which colour a given letter evokes, tend to be highly consistent for that individual over many years but vary considerably from one synaesthete to another, with no single mapping shared by everyone."
+    },
+    {
+      "letter": "C",
+      "text": "Researchers generally distinguish genuine, involuntary synaesthesia from ordinary associations by testing for consistency over time: a synaesthete asked to identify the colour they associate with a given letter will typically give the same answer with a high degree of accuracy when retested months or even years later, whereas a person asked to simply invent colour associations for letters shows far less consistency on retesting. This consistency test, developed largely by the psychologist Simon Baron-Cohen and colleagues in the 1990s, provided one of the first rigorous, objective ways to confirm that synaesthetic experiences are genuine perceptual phenomena rather than a form of vivid imagination or exaggerated memory association."
+    },
+    {
+      "letter": "D",
+      "text": "The neural basis of synaesthesia is not yet fully settled, but the leading explanation, known as the cross-activation hypothesis, proposes that synaesthesia arises from atypically dense connections, or from insufficient pruning of connections during early brain development, between neighbouring brain regions that would normally process their respective senses in relative isolation. Supporting this idea, brain-imaging studies of people with grapheme-colour synaesthesia have found unusually strong activity, and in some cases structural differences, in and around brain regions associated with colour processing when the person views ordinary black letters or numbers, even though nothing objectively coloured is present in what they are looking at. Synaesthesia often runs in families, and twin studies suggest a substantial genetic contribution, although the specific genes involved have proved difficult to pin down."
+    },
+    {
+      "letter": "E",
+      "text": "Far from being purely a curiosity, synaesthesia has been reported by a number of notable artists, musicians, and writers, including the composer Franz Liszt, who reportedly asked orchestras for \"more blue\" or \"a little pinker\" sound, and the novelist Vladimir Nabokov, who described his own experience of letters and colours in some detail in his memoirs. Researchers have also found that synaesthetes, on average, perform somewhat better than non-synaesthetes on certain tests of memory, a difference some researchers attribute to the additional sensory associations providing extra memory cues, though the effect appears to be modest and does not hold for every type of memory task studied. Rather than being classified as a disorder, most researchers today regard synaesthesia simply as an unusual but harmless variation in how the brain processes sensory information."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and how common it might be\nii\tMore than sixty different forms\niii\tA test that separates it from ordinary imagination\niv\tArtists who have reported experiencing it\nv\tThe leading theory of its neural cause\nvi\tTreatments aimed at reducing its symptoms\nvii\tWhy it is more common in left-handed people",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa hiện tượng cộng cảm giác là gì và ước tính tỉ lệ phổ biến. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B liệt kê hơn 60 dạng cộng cảm giác khác nhau: chromesthesia, lexical-gustatory, mirror-touch. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về bài kiểm tra tính nhất quán do Baron-Cohen phát triển để phân biệt cộng cảm giác thật với trí tưởng tượng. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về giả thuyết kích hoạt chéo (cross-activation) giải thích cơ chế thần kinh. Đúng tiêu đề v."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E kể về Liszt và Nabokov — những nghệ sĩ từng báo cáo có cộng cảm giác. Đúng tiêu đề iv."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "All researchers agree on exactly how common synaesthesia is.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A: 'Estimates of how common synaesthesia is vary considerably between studies'. Không thống nhất, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Different synaesthetes tend to associate the same letter with the same colour as each other.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: liên tưởng 'vary considerably from one synaesthete to another, with no single mapping shared by everyone'. Khác nhau giữa mỗi người, không giống nhau. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "People asked to invent colour associations for letters show high consistency when retested later.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: người tự nghĩ ra liên tưởng 'shows far less consistency on retesting' so với người có cộng cảm giác thật. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Brain-imaging studies have found unusual activity in colour-processing regions when synaesthetes view plain black letters.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'unusually strong activity... in brain regions associated with colour processing when the person views ordinary black letters or numbers'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Synaesthetes perform significantly better than non-synaesthetes on every type of memory task.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: hiệu ứng 'appears to be modest and does not hold for every type of memory task studied'. Không phải mọi loại nhiệm vụ trí nhớ, và hiệu ứng chỉ khiêm tốn. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Synaesthesia in which sounds evoke colour is called ________.",
+      "answer": "chromesthesia",
+      "number": 11,
+      "explanation": "Đoạn B: 'chromesthesia, in which sounds or music evoke the perception of colour'. Đáp án chromesthesia."
+    },
+    {
+      "type": "gap",
+      "prompt": "Watching someone else being touched can trigger a real tactile sensation in ________ synaesthesia.",
+      "answer": "mirror-touch",
+      "number": 12,
+      "explanation": "Đoạn B: 'mirror-touch synaesthesia, in which watching another person being touched produces a genuine tactile sensation'. Đáp án mirror-touch."
+    },
+    {
+      "type": "gap",
+      "prompt": "The consistency test used to confirm genuine synaesthesia was developed largely by ________.",
+      "answer": "Simon Baron-Cohen",
+      "number": 13,
+      "explanation": "Đoạn C: 'developed largely by the psychologist Simon Baron-Cohen and colleagues'. Đáp án Simon Baron-Cohen."
+    },
+    {
+      "type": "gap",
+      "prompt": "The leading explanation for the neural basis of synaesthesia is called the ________ hypothesis.",
+      "answer": "cross-activation",
+      "number": 14,
+      "explanation": "Đoạn D: 'the leading explanation, known as the cross-activation hypothesis'. Đáp án cross-activation."
+    },
+    {
+      "type": "gap",
+      "prompt": "The composer ________ reportedly asked orchestras for 'more blue' sound.",
+      "answer": "Franz Liszt",
+      "number": 15,
+      "explanation": "Đoạn E: 'the composer Franz Liszt, who reportedly asked orchestras for more blue... sound'. Đáp án Franz Liszt."
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "title": "Genome Sequencing",
+  "sourceNote": "Biên soạn dựa trên kiến thức sinh học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Genome sequencing is the process of determining the complete order of the four chemical letters, adenine, thymine, guanine, and cytosine, that make up an organism's DNA. The human genome contains roughly three billion of these letters, and reading them out in order, base by base, was for decades one of the most ambitious technical challenges in the whole of biology, requiring not only new chemistry but new computational methods capable of assembling millions of short, overlapping fragments back into a single, continuous sequence."
+    },
+    {
+      "letter": "B",
+      "text": "The technique that made large-scale sequencing possible was developed in 1977 by the British biochemist Frederick Sanger, who devised a method, now known as Sanger sequencing, that could reliably read several hundred DNA letters at a time. Sanger had already won a Nobel Prize in Chemistry in 1958 for unrelated work on protein structure, and the sequencing method earned him a second Nobel Prize in 1980, making him one of only a handful of people ever to receive the award twice. Sanger sequencing remained the dominant sequencing technology for roughly three decades and was the method used to complete the first draft of the human genome."
+    },
+    {
+      "letter": "C",
+      "text": "The Human Genome Project, an international collaboration launched in 1990 and involving research centres across the United States, the United Kingdom, France, Germany, Japan, and China, set out to sequence the entire human genome using Sanger's method, applied on an industrial scale across dozens of laboratories working in parallel. The project, originally expected to take fifteen years, produced a working draft in 2000 and declared a essentially complete sequence in 2003, two years ahead of its original schedule, at a total cost of roughly three billion dollars, a substantial sum that nonetheless amounted to only about one dollar for each letter of DNA sequenced."
+    },
+    {
+      "letter": "D",
+      "text": "Since the Human Genome Project concluded, a family of newer techniques collectively known as next-generation sequencing has driven down the cost of sequencing a human genome with extraordinary speed, from the roughly three billion dollars spent on the original project to under a thousand dollars for a single genome today, a decline considerably steeper than the improvement typically seen in computer processing power over a comparable period. These newer methods work by simultaneously sequencing millions of short DNA fragments in parallel rather than one at a time, then relying on powerful computer algorithms to reassemble the fragments in the correct order by matching where they overlap, a task that would be utterly impractical to perform by hand given the scale involved."
+    },
+    {
+      "letter": "E",
+      "text": "The plummeting cost of sequencing has moved genomics rapidly from a purely research tool into clinical medicine. Sequencing a patient's genome can help identify the precise genetic cause of a previously undiagnosed rare disease, guide the choice of cancer treatment by revealing which mutations are driving a particular tumour's growth, and, through prenatal and newborn screening programmes, detect certain inherited genetic conditions early enough for treatment to begin before serious symptoms develop. At the same time, the growing availability of cheap, comprehensive genetic information has raised new concerns about privacy and potential discrimination, since a person's genome can reveal not only information relevant to their own health but also information about the likely genetic makeup of their biological relatives, who may never have consented to have that information disclosed."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat sequencing means, and the scale of the task\nii\tA method that won its inventor a second Nobel Prize\niii\tAn international project finished ahead of schedule\niv\tA steep and continuing fall in cost\nv\tFrom research tool to everyday clinical use\nvi\tHow DNA was first shown to carry genetic information\nvii\tSequencing the genomes of extinct species",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa giải trình tự gen là gì và quy mô thách thức: ba tỉ chữ cái DNA. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về Sanger, người phát triển phương pháp giải trình tự và giành Nobel lần thứ hai. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về Dự án Bộ gen Người, hoàn thành sớm hai năm so với kế hoạch. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói chi phí giải trình tự giảm từ 3 tỉ đô xuống dưới 1.000 đô nhờ công nghệ thế hệ mới. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói giải trình tự gen giờ được dùng trong y học lâm sàng: chẩn đoán bệnh hiếm, điều trị ung thư, sàng lọc sơ sinh. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Sanger's 1980 Nobel Prize was his first Nobel Prize.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B: 'Sanger had already won a Nobel Prize in Chemistry in 1958... the sequencing method earned him a second Nobel Prize in 1980'. Là giải thứ hai, không phải đầu tiên. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The Human Genome Project took longer than its original fifteen-year schedule.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn C: dự án 'declared a essentially complete sequence in 2003, two years ahead of its original schedule'. Xong SỚM hơn, không phải muộn hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The cost of sequencing a human genome has fallen more steeply than typical improvements in computer processing power.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn D: 'a decline considerably steeper than the improvement typically seen in computer processing power over a comparable period'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Next-generation sequencing methods sequence DNA fragments one at a time in strict order.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: các phương pháp mới 'sequencing millions of short DNA fragments in parallel rather than one at a time'. Song song, không phải tuần tự từng đoạn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "A person's genome can reveal information about their biological relatives without those relatives' consent.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: bộ gen 'can reveal... information about the likely genetic makeup of their biological relatives, who may never have consented'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The human genome contains roughly ________ letters of DNA.",
+      "answer": "three billion",
+      "number": 11,
+      "explanation": "Đoạn A: 'The human genome contains roughly three billion of these letters'. Đáp án three billion."
+    },
+    {
+      "type": "gap",
+      "prompt": "Sanger's sequencing method could reliably read several hundred DNA letters at a ________.",
+      "answer": "time",
+      "number": 12,
+      "explanation": "Đoạn B: '...could reliably read several hundred DNA letters at a time'. Đáp án time."
+    },
+    {
+      "type": "gap",
+      "prompt": "The Human Genome Project was launched in ________.",
+      "answer": "1990",
+      "number": 13,
+      "explanation": "Đoạn C: 'an international collaboration launched in 1990'. Đáp án 1990."
+    },
+    {
+      "type": "gap",
+      "prompt": "The Human Genome Project cost roughly ________ dollars in total.",
+      "answer": "three billion",
+      "number": 14,
+      "explanation": "Đoạn C: 'at a total cost of roughly three billion dollars'. Đáp án three billion."
+    },
+    {
+      "type": "gap",
+      "prompt": "Sequencing a single human genome today costs under ________ dollars.",
+      "answer": "a thousand",
+      "number": 15,
+      "explanation": "Đoạn D: 'to under a thousand dollars for a single genome today'. Đáp án a thousand."
+    }
+  ]
+}

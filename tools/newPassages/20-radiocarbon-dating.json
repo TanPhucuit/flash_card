@@ -1,0 +1,141 @@
+{
+  "title": "Radiocarbon Dating",
+  "sourceNote": "Biên soạn dựa trên kiến thức khoa học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Radiocarbon dating is a method used to estimate the age of organic material, such as wood, bone, or textile fibres, by measuring the proportion of a radioactive form of carbon, carbon-14, that remains within it. The technique was developed in the late 1940s by the American chemist Willard Libby, who realised that living organisms continuously absorb carbon-14 from the atmosphere while alive, but stop doing so the moment they die, after which the carbon-14 already present in their tissues begins to decay away at a steady, predictable rate. Libby was awarded the 1960 Nobel Prize in Chemistry for developing the method, which transformed archaeology by providing, for the first time, a way to assign approximate calendar ages to organic remains without relying on written historical records."
+    },
+    {
+      "letter": "B",
+      "text": "Carbon-14 is produced continuously in the upper atmosphere when cosmic rays collide with nitrogen atoms, and it exists alongside the far more abundant, stable forms of carbon, carbon-12 and carbon-13, in a roughly constant ratio throughout the atmosphere and in living organisms that exchange carbon with it. Once an organism dies, no new carbon-14 is taken in, and the carbon-14 already present decays into nitrogen at a rate described by its half-life, the time it takes for half of a given quantity of a radioactive substance to decay, which for carbon-14 is approximately 5,730 years. By measuring the remaining proportion of carbon-14 in a sample relative to the stable carbon isotopes, and comparing it against the known half-life, researchers can calculate how much time has passed since the organism died."
+    },
+    {
+      "letter": "C",
+      "text": "Because carbon-14 decays at a fixed, known rate, radiocarbon dating becomes progressively less precise for older samples and eventually reaches a practical limit: after roughly nine or ten half-lives, so little carbon-14 remains that it becomes difficult to measure reliably against background radiation, setting a practical upper limit for the method at around 50,000 years. This limitation means radiocarbon dating is well suited to material from within the last fifty millennia, spanning much of human prehistory, but useless for dating older fossils such as dinosaur bones, which are instead dated using other radioactive elements with much longer half-lives, or more often by dating the surrounding volcanic rock layers rather than the fossil itself."
+    },
+    {
+      "letter": "D",
+      "text": "An important complication is that the ratio of carbon-14 to stable carbon in the atmosphere has not remained perfectly constant over time, varying somewhat due to fluctuations in cosmic ray intensity, changes in the Earth's magnetic field, and, in recent centuries, human activity such as the burning of fossil fuels, which releases ancient carbon entirely depleted of carbon-14 into the atmosphere. To correct for these fluctuations, researchers have built detailed calibration curves by cross-checking radiocarbon measurements against material of known, independently verified age, most importantly the annual growth rings of long-lived trees, which can be counted directly, and, for material older than the oldest tree-ring records, layered deposits from lake sediments and coral. Radiocarbon dates are therefore always reported as a calibrated calendar age derived from these curves rather than as a raw, uncorrected measurement."
+    },
+    {
+      "letter": "E",
+      "text": "Radiocarbon dating has been applied to a vast range of archaeological and historical puzzles, from confirming the age of the Dead Sea Scrolls to establishing when humans first settled remote Pacific islands. One especially well-known application involved the Shroud of Turin, a length of linen cloth long venerated by some as the burial shroud of Jesus Christ. Radiocarbon testing carried out independently by three laboratories in 1988 dated the cloth's fibres to a range between roughly 1260 and 1390 CE, a result strongly suggesting a medieval rather than an ancient origin, though the finding has remained a subject of continued debate among some who question whether contamination or repair work on the cloth could have skewed the sample tested."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the method measures, and who developed it\nii\tHow carbon-14 forms, and how its decay is timed\niii\tCorrecting for a ratio that has not stayed constant\niv\tWhy the method cannot date very old fossils\nv\tTesting a famous religious relic\nvi\tExtending the method to date rocks and minerals\nvii\tHow tree rings were first used to count the seasons",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa phương pháp định tuổi bằng carbon phóng xạ và ai phát triển nó (Libby). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B giải thích carbon-14 hình thành thế nào và chu kỳ bán rã 5.730 năm. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói giới hạn của phương pháp khoảng 50.000 năm, không dùng được cho hoá thạch khủng long. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói tỉ lệ carbon-14 trong khí quyển không hằng định, cần đường hiệu chỉnh dựa vào vòng gỗ cây. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E kể về việc định tuổi Khăn liệm Turin năm 1988 bằng carbon phóng xạ. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Living organisms continuously absorb carbon-14 while they are alive.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'living organisms continuously absorb carbon-14 from the atmosphere while alive'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Radiocarbon dating can reliably date dinosaur fossils, which are typically tens of millions of years old.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn C: phương pháp 'useless for dating older fossils such as dinosaur bones'. Không dùng được cho hoá thạch khủng long, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Burning fossil fuels releases carbon into the atmosphere that is completely free of carbon-14.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn D: đốt nhiên liệu hoá thạch 'releases ancient carbon entirely depleted of carbon-14 into the atmosphere'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Radiocarbon dates are usually reported as raw, uncorrected measurements.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: 'Radiocarbon dates are therefore always reported as a calibrated calendar age... rather than as a raw, uncorrected measurement'. Luôn được hiệu chỉnh, không phải thô. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All researchers now universally accept that the 1988 test of the Shroud of Turin was completely free of any possible error.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E: kết quả 'has remained a subject of continued debate among some who question whether contamination or repair work... could have skewed the sample'. Vẫn còn tranh cãi, không phải được chấp nhận tuyệt đối. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Libby was awarded the 1960 Nobel Prize in ________.",
+      "answer": "Chemistry",
+      "number": 11,
+      "explanation": "Đoạn A: 'Libby was awarded the 1960 Nobel Prize in Chemistry'. Đáp án Chemistry."
+    },
+    {
+      "type": "gap",
+      "prompt": "The half-life of carbon-14 is approximately ________ years.",
+      "answer": "5,730",
+      "number": 12,
+      "explanation": "Đoạn B: 'which for carbon-14 is approximately 5,730 years'. Đáp án 5,730."
+    },
+    {
+      "type": "gap",
+      "prompt": "The practical upper limit of radiocarbon dating is around ________ years.",
+      "answer": "50,000",
+      "number": 13,
+      "explanation": "Đoạn C: 'setting a practical upper limit for the method at around 50,000 years'. Đáp án 50,000."
+    },
+    {
+      "type": "gap",
+      "prompt": "Calibration curves rely most importantly on the annual growth rings of long-lived ________.",
+      "answer": "trees",
+      "number": 14,
+      "explanation": "Đoạn D: 'most importantly the annual growth rings of long-lived trees'. Đáp án trees."
+    },
+    {
+      "type": "gap",
+      "prompt": "The 1988 test dated the Shroud of Turin's fibres to between roughly 1260 and ________ CE.",
+      "answer": "1390",
+      "number": 15,
+      "explanation": "Đoạn E: 'dated the cloth's fibres to a range between roughly 1260 and 1390 CE'. Đáp án 1390."
+    }
+  ]
+}
