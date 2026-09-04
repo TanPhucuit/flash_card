@@ -397,7 +397,8 @@ function SyncSettingsDialog({
   return (
     <Dialog title="Đồng bộ Life Management" onClose={onClose}>
       <p className="mb-md text-sm text-on-surface-variant">
-        Khi thêm một sách mới, hệ thống tạo một node tên sách nằm dưới READING, và mỗi bài đọc là một task con.
+        Sách mới: một node tên sách nằm dưới READING, mỗi bài đọc là một task con.
+        Từ vựng: mỗi danh sách là một node cha, mỗi học phần trong danh sách là một task con.
       </p>
       <label className="mb-md flex items-center gap-sm text-sm font-semibold">
         <input type="checkbox" checked={draft.enabled} onChange={(event) => setDraft({ ...draft, enabled: event.target.checked })} />
@@ -407,6 +408,7 @@ function SyncSettingsDialog({
       {field("userId", "User ID")}
       {field("topicId", "Topic ID (English)")}
       {field("readingTaskId", "Task ID của node READING")}
+      {field("vocabTaskId", "Task ID của node cha cho danh sách từ vựng")}
       <div className="mt-lg flex justify-end gap-sm">
         <Button variant="ghost" onClick={onClose}>Huỷ</Button>
         <Button onClick={() => onSave(draft)}><Icon name="check" /> Lưu</Button>

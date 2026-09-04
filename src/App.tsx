@@ -64,7 +64,7 @@ function AuthenticatedApp({ api, reading, isMobile }: { api: DataApi; reading: R
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<DashboardPage api={api} />} />
-        <Route path="/sets" element={<MySetsPage api={api} />} />
+        <Route path="/sets" element={<MySetsPage api={api} reading={reading} />} />
         <Route path="/reading" element={<ReadingLibraryPage api={reading} />} />
         <Route path="/reading/:bookId/:passageId" element={<ReadingTestPage api={reading} />} />
         <Route path="/listening-test" element={<ListeningTestPage api={api} />} />

@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, TouchEvent as ReactTouchEvent, useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { DataApi } from "../App";
+import { DataApi, ReadingDataApi } from "../App";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar, Select, Textarea } from "../components/ui";
 import { ColumnChart, HorizontalBarChart, StatusDonutChart, TrendLineChart } from "../components/charts";
 import { useSpeech } from "../hooks/useSpeech";
@@ -8,9 +8,13 @@ import { AppData, LEARN_DIRECTIONS, LearnDirection, StudyResult, VocabularyCard,
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
 import { isStarSet } from "../utils/starSets";
+import { syncSetListToLifeManagement } from "../utils/lifeManagementSync";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
+// Trang danh sách cần thêm cấu hình Life Management, vốn nằm trong dữ liệu
+// Reading — dùng chung một cấu hình thay vì bắt người dùng khai báo hai lần.
+type SetsPageProps = PageProps & { reading: ReadingDataApi };
 
 const MAX_MIX_SETS = 3;
 
@@ -995,7 +999,7 @@ export function DashboardPage({ api }: PageProps) {
  * "Từ khó nhớ" không có khái niệm danh sách — nó luôn hiển thị thẳng các bộ
  * sao tự dựng, vì bản thân nó cũng chỉ là một cờ trạng thái như hai tab kia.
  */
-export function MySetsPage({ api }: PageProps) {
+export function MySetsPage({ api, reading }: SetsPageProps) {
   const [activeTab, setActiveTab] = useState<"learning" | "completed" | "starred">("learning");
   const [selectedListId, setSelectedListId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
@@ -1004,12 +1008,15 @@ export function MySetsPage({ api }: PageProps) {
   const [multiPickerOpen, setMultiPickerOpen] = useState(false);
   const [selectedSetIds, setSelectedSetIds] = useState<string[]>([]);
   const [wordCount, setWordCount] = useState(0);
+  const [syncing, setSyncing] = useState(false);
+  const [syncMessage, setSyncMessage] = useState("");
   const navigate = useNavigate();
 
   function switchTab(tab: "learning" | "completed" | "starred") {
     setActiveTab(tab);
     setSelectedListId(null);
     setQuery("");
+    setSyncMessage("");
   }
 
   const learnedSetIds = useMemo(() => {
@@ -1108,11 +1115,44 @@ export function MySetsPage({ api }: PageProps) {
     });
   }
 
+  // Đồng bộ nguyên một danh sách sang Life Management: danh sách thành node
+  // cha, từng set trong nó thành node con. Luôn đẩy TOÀN BỘ set của danh sách
+  // (không lọc theo tab đang mở) — cây bên kia phản ánh nội dung danh sách,
+  // không phản ánh việc mình đang xem tab "chưa hoàn thành" hay "đã hoàn thành".
+  async function syncListToLifeManagement() {
+    if (!selectedList) return;
+    const config = reading.data.lifeManagement;
+    if (!config.baseUrl.trim()) {
+      alert("Chưa cấu hình địa chỉ Life Management. Vào trang Reading → nút đồng bộ để khai báo.");
+      return;
+    }
+    const setsOfList = api.data.sets.filter((set) => !isStarSet(set) && set.listId === selectedList.id);
+    if (!setsOfList.length) {
+      alert("Danh sách này chưa có học phần nào để đồng bộ.");
+      return;
+    }
+
+    setSyncing(true);
+    setSyncMessage("");
+    try {
+      const outcome = await syncSetListToLifeManagement(config, selectedList, setsOfList);
+      api.markLifeManagementSynced(selectedList.id, outcome.listTaskId, outcome.setTaskIds);
+      setSyncMessage(`Đã đồng bộ "${selectedList.title}": tạo mới ${outcome.createdCount} node, dùng lại ${outcome.reusedCount} node có sẵn.`);
+    } catch (error) {
+      alert(`Chưa đồng bộ được sang Life Management:\n${error instanceof Error ? error.message : error}`);
+    } finally {
+      setSyncing(false);
+    }
+  }
+
   const headerAction = activeTab === "starred" ? undefined
     : selectedList ? (
       <div className="flex flex-wrap gap-sm">
-        <Button variant="ghost" onClick={() => setSelectedListId(null)}><Icon name="arrow_back" /> Danh sách</Button>
+        <Button variant="ghost" onClick={() => { setSelectedListId(null); setSyncMessage(""); }}><Icon name="arrow_back" /> Danh sách</Button>
         <Button variant="secondary" onClick={() => setMultiPickerOpen((value) => !value)}><Icon name="layers" /> Learn Mix Set</Button>
+        <Button variant="secondary" disabled={syncing} onClick={syncListToLifeManagement}>
+          <Icon name="sync" /> {syncing ? "Đang đồng bộ..." : "Đồng bộ Life Management"}
+        </Button>
         <Button onClick={() => navigate(`/sets/new?listId=${selectedList.id}`)}><Icon name="add" /> Create New Set</Button>
       </div>
     ) : (
@@ -1205,6 +1245,9 @@ export function MySetsPage({ api }: PageProps) {
               </div>
             </Card>
           ) : null}
+          {syncMessage ? (
+            <div className="mb-lg rounded-xl bg-primary-fixed p-md font-semibold text-primary dark:bg-primary/15 dark:text-white">{syncMessage}</div>
+          ) : null}
           <Card className="mb-lg">
             <div className="flex flex-col gap-md md:flex-row">
               <Input placeholder="Tìm theo tên bộ hoặc tag..." value={query} onChange={(event) => setQuery(event.target.value)} />
@@ -1246,7 +1289,10 @@ export function MySetsPage({ api }: PageProps) {
                       <h2 className="min-w-0 truncate font-headline-md text-xl font-semibold">{list.title}</h2>
                       <Button variant="ghost" onClick={() => removeList(list)}><Icon name="delete" /></Button>
                     </div>
-                    <div className="text-sm text-on-surface-variant dark:text-white/60">{setsInTab.length} học phần · {wordsInTab} từ</div>
+                    <div className="text-sm text-on-surface-variant dark:text-white/60">
+                      {setsInTab.length} học phần · {wordsInTab} từ
+                      {list.lifeManagementTaskId ? " · đã đồng bộ Life Management" : ""}
+                    </div>
                     <Button className="w-full" onClick={() => setSelectedListId(list.id)}><Icon name="folder_open" /> Mở danh sách</Button>
                   </Card>
                 );

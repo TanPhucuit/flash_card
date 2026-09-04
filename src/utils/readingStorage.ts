@@ -11,15 +11,27 @@ export const READING_BACKUP_KEY = "localEnglishReading:v1:backup";
 // Discovered from the live Life Management database, so a fresh install only
 // needs the deployment URL filled in rather than four opaque UUIDs.
 export const DEFAULT_LIFE_MANAGEMENT: LifeManagementConfig = {
-  baseUrl: "",
+  baseUrl: "https://life-management-theta.vercel.app",
   userId: "70574365-70e1-4a4e-b84c-584f6001ed22",
   topicId: "4f13d430-127e-4a18-95b3-69fa72cad03e",
   readingTaskId: "4482037e-446d-45a3-b48c-3cabec7046d2",
+  vocabTaskId: "4482037e-446d-45a3-b48c-3cabec7046d2",
   enabled: true,
 };
 
 export function emptyReadingData(): ReadingData {
   return { books: [], attempts: [], lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT }, seededLibraries: [] };
+}
+
+function mergeLifeManagement(stored?: Partial<LifeManagementConfig>): LifeManagementConfig {
+  const merged = { ...DEFAULT_LIFE_MANAGEMENT, ...(stored ?? {}) };
+  (Object.keys(DEFAULT_LIFE_MANAGEMENT) as Array<keyof LifeManagementConfig>).forEach((key) => {
+    if (key === "enabled") return;
+    if (typeof merged[key] === "string" && !merged[key].trim()) {
+      (merged[key] as string) = DEFAULT_LIFE_MANAGEMENT[key] as string;
+    }
+  });
+  return merged;
 }
 
 function normalize(parsed: Partial<ReadingData>): ReadingData {
@@ -28,7 +40,12 @@ function normalize(parsed: Partial<ReadingData>): ReadingData {
     attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
     // Spread the defaults under the stored value so a config saved before a
     // new field existed still ends up with that field populated.
-    lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT, ...(parsed.lifeManagement ?? {}) },
+    //
+    // Chuỗi RỖNG cũng bị coi là "chưa có" chứ không phải một giá trị hợp lệ:
+    // bản đầu để baseUrl mặc định là "", nên mọi máy đã dùng từ trước đều lưu
+    // sẵn một chuỗi rỗng, và chuỗi rỗng đó sẽ đè mất giá trị mặc định mới —
+    // đồng bộ vĩnh viễn báo "chưa cấu hình địa chỉ" dù mã đã có sẵn địa chỉ.
+    lifeManagement: mergeLifeManagement(parsed.lifeManagement),
     seededLibraries: Array.isArray(parsed.seededLibraries) ? parsed.seededLibraries : [],
   };
 }

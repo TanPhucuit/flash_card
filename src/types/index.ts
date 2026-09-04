@@ -35,6 +35,8 @@ export interface VocabularySet {
   lastStudiedAt?: string;
   /** Danh sách (thư mục) chứa set này — xem src/utils/setLists.ts. */
   listId?: string;
+  /** Id task tương ứng bên Life Management (node CON của node danh sách). */
+  lifeManagementTaskId?: string;
 }
 
 /**
@@ -46,6 +48,8 @@ export interface VocabularySetList {
   id: string;
   title: string;
   createdAt: string;
+  /** Id task tương ứng bên Life Management (node CHA của các set trong nó). */
+  lifeManagementTaskId?: string;
 }
 
 export interface VocabularyStudyResult {

@@ -121,6 +121,18 @@ export function useAppData() {
     deleteList(id: string) {
       setData((current) => ({ ...current, lists: current.lists.filter((list) => list.id !== id) }));
     },
+    /**
+     * Ghi lại kết quả đồng bộ sang Life Management trong MỘT lần ghi: id node
+     * cha (danh sách) và id các node con (set). Gộp chung thay vì gọi từng set
+     * một để chỉ phát sinh một lần lưu và một lần đẩy lên Google Sheet.
+     */
+    markLifeManagementSynced(listId: string, listTaskId: string, setTaskIds: Record<string, string>) {
+      setData((current) => ({
+        ...current,
+        lists: current.lists.map((list) => (list.id === listId ? { ...list, lifeManagementTaskId: listTaskId } : list)),
+        sets: current.sets.map((set) => (setTaskIds[set.id] ? { ...set, lifeManagementTaskId: setTaskIds[set.id] } : set)),
+      }));
+    },
     replaceData(next: AppData) {
       setData(next);
     },

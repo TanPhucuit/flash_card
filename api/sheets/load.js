@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   if (req.method !== "GET") return sendJson(res, 405, { error: "Method not allowed" });
   try {
     await ensureSchema();
-    const ranges = ["sets!A2:H", "cards!A2:R", "results!A2:J", "lists!A2:C"];
+    const ranges = ["sets!A2:I", "cards!A2:R", "results!A2:J", "lists!A2:D"];
     const payload = await sheetsRequest("GET", `/values:batchGet?ranges=${ranges.map(encodeURIComponent).join("&ranges=")}`);
     const [sets, cards, results, lists] = payload.valueRanges?.map((range) => range.values ?? []) ?? [[], [], [], []];
     return sendJson(res, 200, rowsToAppData({ sets, cards, results, lists }));

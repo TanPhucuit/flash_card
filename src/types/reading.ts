@@ -78,6 +78,11 @@ export interface LifeManagementConfig {
   topicId: string;
   /** The READING task the book nodes are attached under. */
   readingTaskId: string;
+  /**
+   * Task mà các node DANH SÁCH TỪ VỰNG được gắn xuống dưới. Mặc định trùng
+   * với READING vì đó là chỗ người dùng vẫn đang tự đặt các node vocab.
+   */
+  vocabTaskId: string;
   enabled: boolean;
 }
 

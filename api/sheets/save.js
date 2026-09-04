@@ -7,14 +7,14 @@ export default async function handler(req, res) {
     const data = req.body && typeof req.body === "object" ? req.body : JSON.parse(req.body || "{}");
     const { setRows, cardRows, resultRows, listRows } = appDataToRows(data);
 
-    await sheetsRequest("POST", "/values:batchClear", { ranges: ["sets!A2:H", "cards!A2:R", "results!A2:J", "lists!A2:C"] });
+    await sheetsRequest("POST", "/values:batchClear", { ranges: ["sets!A2:I", "cards!A2:R", "results!A2:J", "lists!A2:D"] });
     await sheetsRequest("POST", "/values:batchUpdate", {
       valueInputOption: "RAW",
       data: [
-        { range: "sets!A2:H", values: setRows },
+        { range: "sets!A2:I", values: setRows },
         { range: "cards!A2:R", values: cardRows },
         { range: "results!A2:J", values: resultRows },
-        { range: "lists!A2:C", values: listRows },
+        { range: "lists!A2:D", values: listRows },
       ],
     });
 

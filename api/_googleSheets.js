@@ -4,8 +4,8 @@ const SHEETS_BASE = "https://sheets.googleapis.com/v4/spreadsheets";
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const SCOPE = "https://www.googleapis.com/auth/spreadsheets";
 
-export const SET_HEADERS = ["id", "title", "description", "tags", "createdAt", "updatedAt", "lastStudiedAt", "listId"];
-export const LIST_HEADERS = ["id", "title", "createdAt"];
+export const SET_HEADERS = ["id", "title", "description", "tags", "createdAt", "updatedAt", "lastStudiedAt", "listId", "lifeManagementTaskId"];
+export const LIST_HEADERS = ["id", "title", "createdAt", "lifeManagementTaskId"];
 export const CARD_HEADERS = [
   "setId",
   "id",
@@ -93,10 +93,10 @@ export async function ensureSchema() {
   await sheetsRequest("POST", "/values:batchUpdate", {
     valueInputOption: "RAW",
     data: [
-      { range: "sets!A1:H1", values: [SET_HEADERS] },
+      { range: "sets!A1:I1", values: [SET_HEADERS] },
       { range: "cards!A1:R1", values: [CARD_HEADERS] },
       { range: "results!A1:J1", values: [RESULT_HEADERS] },
-      { range: "lists!A1:C1", values: [LIST_HEADERS] },
+      { range: "lists!A1:D1", values: [LIST_HEADERS] },
     ],
   });
 }
@@ -115,7 +115,7 @@ export function rowsToAppData(raw) {
   const setsById = new Map();
 
   for (const row of raw.sets ?? []) {
-    const [id, title, description, tags, createdAt, updatedAt, lastStudiedAt, listId] = row;
+    const [id, title, description, tags, createdAt, updatedAt, lastStudiedAt, listId, lifeManagementTaskId] = row;
     if (!id) continue;
     setsById.set(id, {
       id,
@@ -127,6 +127,7 @@ export function rowsToAppData(raw) {
       updatedAt: updatedAt || new Date().toISOString(),
       lastStudiedAt: lastStudiedAt || undefined,
       listId: listId || undefined,
+      lifeManagementTaskId: lifeManagementTaskId || undefined,
     });
   }
 
@@ -201,6 +202,7 @@ export function rowsToAppData(raw) {
     id: row[0],
     title: row[1] ?? "",
     createdAt: row[2] || new Date().toISOString(),
+    lifeManagementTaskId: row[3] || undefined,
   }));
 
   return {
@@ -222,8 +224,9 @@ export function appDataToRows(data) {
     set.updatedAt,
     set.lastStudiedAt ?? "",
     set.listId ?? "",
+    set.lifeManagementTaskId ?? "",
   ]);
-  const listRows = (data.lists ?? []).map((list) => [list.id, list.title, list.createdAt]);
+  const listRows = (data.lists ?? []).map((list) => [list.id, list.title, list.createdAt, list.lifeManagementTaskId ?? ""]);
   const cardRows = (data.sets ?? []).flatMap((set) =>
     (set.cards ?? []).map((card) => [
       set.id,
