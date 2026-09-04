@@ -15097,6 +15097,886 @@
           "id": "nl2-30-nanotechnology-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-31-antikythera-mechanism-p1",
+      "order": 83,
+      "title": "The Antikythera Mechanism",
+      "text": "A\nThe Antikythera mechanism is an ancient Greek geared device, recovered in 1901 from a shipwreck near the small island of Antikythera, believed to have been used to predict the positions of the Sun, the Moon, and possibly other astronomical bodies, as well as to forecast eclipses, decades or even centuries in advance. Corroded almost beyond recognition after roughly two thousand years submerged in seawater, it survives today only as a fragmented, heavily encrusted lump of bronze, from which researchers have nonetheless managed to extract an extraordinary amount of detailed information using modern imaging technology unavailable to the divers who first recovered it.\n\nB\nThe wreck itself, carrying a cargo of statues, coins, and various other luxury goods in addition to the mechanism, is generally dated to the first century BCE, and the mechanism is thought to have been built somewhat earlier, though its precise date of construction, its intended purpose in full detail, and the identity of its original maker remain subjects of ongoing scholarly debate. For decades after its discovery, the corroded, fused lump of bronze and internal gearing attracted comparatively little serious scientific attention, its true intricacy and sophistication not becoming apparent until later, more careful examination began.\n\nC\nThe critical breakthrough in understanding the device came from X-ray imaging, first applied systematically to the mechanism by the British historian of science Derek de Solla Price in the 1970s, and considerably refined decades later by an international research team using advanced computed tomography, or CT, scanning technology. These imaging techniques allowed researchers to see, for the first time, the mechanism's complex internal gear-work without physically disassembling its fragile, corroded remains, revealing at least thirty separate interlocking bronze gears, arranged with a level of geometric and mechanical sophistication that had previously been assumed impossible for the ancient Greek world, comparable in intricacy, some researchers have suggested, to a mechanical astronomical clock not otherwise matched in surviving evidence for well over a thousand years afterward.\n\nD\nDetailed inscriptions found engraved on the mechanism's surviving surfaces, deciphered gradually using the same imaging technology, indicate that it could track the complex, irregular movement of the Moon across the sky using a clever gear train incorporating a deliberately offset pin-and-slot mechanism, an ingenious way of mechanically reproducing certain irregularities in lunar motion that had been recognised by Greek astronomers of the period, and could also predict the specific timing of solar and lunar eclipses using an ancient astronomical cycle known as the Saros cycle. A separate dial is believed to have tracked the four-year cycle of the ancient Olympic and other Panhellenic athletic games, an unexpectedly practical, calendrical addition to what is otherwise an overwhelmingly astronomical device.\n\nE\nNo comparably sophisticated geared mechanism has ever been found from antiquity, nor does any surviving ancient text describe a device remotely resembling it in this degree of technical detail, a genuine puzzle that has led some historians to suggest that comparably advanced mechanical devices may once have been considerably more common in the ancient Mediterranean world than the surviving archaeological and textual evidence would otherwise suggest, their fragile bronze construction simply making long-term survival across two millennia extremely unlikely for all but this one fortunate exception, preserved precisely because it sank to the sea floor rather than being melted down and reused, the fate that ordinarily awaited valuable bronze objects once they became obsolete or fell out of active use.\n\n— Biên soạn dựa trên kiến thức khảo cổ học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and how it survives today\nii\tThe wreck it was found in, and years of neglect afterward\niii\tImaging technology that revealed its hidden gears\niv\tWhat the inscriptions show it could actually calculate\nv\tWhy no comparable device has ever been found\nvi\tModern replicas built to test how it worked\nvii\tDebate over whether it was ever actually used at sea",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A định nghĩa cỗ máy Antikythera là gì và tình trạng nó tồn tại tới ngày nay. Đúng tiêu đề i.",
+          "id": "nl2-31-antikythera-mechanism-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về xác tàu đắm và việc cỗ máy ít được chú ý nghiêm túc trong nhiều thập kỷ sau khi phát hiện. Đúng tiêu đề ii.",
+          "id": "nl2-31-antikythera-mechanism-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về công nghệ chụp X-quang và CT giúp thấy được bánh răng bên trong mà không cần tháo rời. Đúng tiêu đề iii.",
+          "id": "nl2-31-antikythera-mechanism-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói các khắc chữ cho biết máy tính được gì: chuyển động Mặt Trăng, nguyệt thực, nhật thực, chu kỳ Olympic. Đúng tiêu đề iv.",
+          "id": "nl2-31-antikythera-mechanism-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói vì sao không tìm thấy thiết bị tương tự nào khác — đồng làm bằng đồng dễ bị nấu chảy tái sử dụng. Đúng tiêu đề v.",
+          "id": "nl2-31-antikythera-mechanism-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Researchers agree with complete certainty on the exact date the mechanism was built.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B: 'its precise date of construction... remain subjects of ongoing scholarly debate'. Vẫn còn tranh luận, không phải chắc chắn tuyệt đối. FALSE.",
+          "id": "nl2-31-antikythera-mechanism-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The mechanism received intense scientific study immediately after its discovery in 1901.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'For decades after its discovery, the corroded, fused lump... attracted comparatively little serious scientific attention'. Ít được chú ý trong nhiều thập kỷ. FALSE.",
+          "id": "nl2-31-antikythera-mechanism-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "CT scanning allowed researchers to examine the internal gears without taking the mechanism apart.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'allowed researchers to see, for the first time, the mechanism's complex internal gear-work without physically disassembling its fragile, corroded remains'. Đúng ý đề nên TRUE.",
+          "id": "nl2-31-antikythera-mechanism-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The pin-and-slot mechanism was used to predict the timing of the ancient Olympic Games.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D: pin-and-slot dùng để mô phỏng chuyển động bất thường của Mặt Trăng, còn chu kỳ Olympic được theo dõi bằng 'A separate dial' khác. FALSE.",
+          "id": "nl2-31-antikythera-mechanism-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Several other comparably sophisticated geared mechanisms from antiquity have since been discovered.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'No comparably sophisticated geared mechanism has ever been found from antiquity'. Không có thiết bị tương tự nào khác được tìm thấy. FALSE.",
+          "id": "nl2-31-antikythera-mechanism-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The mechanism was recovered in 1901 from a shipwreck near the island of ________.",
+          "answer": "Antikythera",
+          "number": 11,
+          "explanation": "Đoạn A: 'recovered in 1901 from a shipwreck near the small island of Antikythera'. Đáp án Antikythera.",
+          "id": "nl2-31-antikythera-mechanism-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "X-ray imaging was first systematically applied to the mechanism by ________ in the 1970s.",
+          "answer": "Derek de Solla Price",
+          "number": 12,
+          "explanation": "Đoạn C: 'first applied systematically to the mechanism by the British historian of science Derek de Solla Price'. Đáp án Derek de Solla Price.",
+          "id": "nl2-31-antikythera-mechanism-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "CT scanning revealed at least ________ separate interlocking bronze gears.",
+          "answer": "thirty",
+          "number": 13,
+          "explanation": "Đoạn C: 'revealing at least thirty separate interlocking bronze gears'. Đáp án thirty.",
+          "id": "nl2-31-antikythera-mechanism-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The mechanism predicted eclipses using an ancient astronomical cycle known as the ________ cycle.",
+          "answer": "Saros",
+          "number": 14,
+          "explanation": "Đoạn D: 'using an ancient astronomical cycle known as the Saros cycle'. Đáp án Saros.",
+          "id": "nl2-31-antikythera-mechanism-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "A separate dial tracked the four-year cycle of the ancient ________ games.",
+          "answer": "Olympic",
+          "number": 15,
+          "explanation": "Đoạn D: 'tracked the four-year cycle of the ancient Olympic and other Panhellenic athletic games'. Đáp án Olympic.",
+          "id": "nl2-31-antikythera-mechanism-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-32-rosetta-stone-p1",
+      "order": 84,
+      "title": "The Rosetta Stone",
+      "text": "A\nThe Rosetta Stone is a fragment of a larger stone slab, inscribed in 196 BCE with a decree issued by a council of Egyptian priests affirming the royal cult of the young pharaoh Ptolemy V, carved in three separate scripts: ancient Egyptian hieroglyphs, Demotic, a simplified, cursive Egyptian script used for everyday administrative purposes, and ancient Greek, the language of Egypt's ruling Ptolemaic dynasty at the time. Because all three inscriptions convey essentially the same decree, and because Greek could already be read fluently by scholars of the period, the stone offered the first genuine, reliable key that would eventually allow the long-lost meaning of Egyptian hieroglyphs to be recovered.\n\nB\nThe stone was discovered by chance in 1799 by French soldiers under Napoleon Bonaparte's command, rebuilding a fort near the Egyptian town of Rosetta during Napoleon's military campaign in Egypt, and it soon attracted intense scholarly interest across Europe. Following Napoleon's eventual defeat in Egypt, the stone passed into British possession under the terms of a surrender agreement and was transported to London, where it has been held by the British Museum since 1802 and remains one of the museum's most visited single objects, though the Egyptian government has repeatedly and publicly requested its permanent return.\n\nC\nDeciphering Egyptian hieroglyphs, a writing system that had gone entirely unread for well over a thousand years by the time the stone was discovered, proved to be a slow, painstaking, and deeply collaborative international scholarly effort. The British polymath Thomas Young made significant early progress in the 1810s, correctly identifying that certain hieroglyphic symbols enclosed within an oval outline, called a cartouche, represented the sounds of a royal name, in this case Ptolemy, but Young ultimately reached an incorrect conclusion regarding the broader hieroglyphic writing system as a whole, wrongly believing it was used only for royal names and titles specifically rather than as a fully phonetic, general-purpose writing system capable of representing the sounds of the wider Egyptian language.\n\nD\nThe definitive breakthrough came from the French scholar Jean-François Champollion, who had studied Egyptian Coptic, a later, spoken descendant language of ancient Egyptian still used liturgically by Egyptian Christians, alongside numerous other ancient and classical languages from an unusually young age. In 1822, building substantially on Young's earlier partial progress but going considerably further, Champollion demonstrated conclusively that hieroglyphs functioned as a genuinely phonetic script for ordinary Egyptian words generally, and not merely for foreign royal names transliterated into hieroglyphic symbols, a discovery that finally, and completely, unlocked the ability to read the vast body of surviving ancient Egyptian texts that had accumulated, entirely unread, over the preceding centuries.\n\nE\nThe decipherment of hieroglyphs achieved through study of the Rosetta Stone transformed Egyptology from a field previously dominated by speculative, often wildly inaccurate guesswork about the meaning and purpose of ancient inscriptions into a rigorous, evidence-based academic discipline capable of reading ancient Egyptian texts directly and accurately for the first time in well over a millennium. Because of the stone's foundational importance to this transformation, the phrase \"Rosetta Stone\" has since entered everyday English usage as a general metaphor for any single key discovery, insight, or piece of evidence that suddenly enables the understanding, decoding, or interpretation of something that had previously seemed hopelessly obscure or entirely unintelligible.\n\n— Biên soạn dựa trên kiến thức khảo cổ học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat is inscribed on the stone, and in how many scripts\nii\tHow it was found, and where it has been kept since\niii\tEarly progress, and one scholar's mistaken conclusion\niv\tThe scholar who finally cracked the code\nv\tHow the phrase entered everyday English\nvi\tRestoration work carried out on the damaged slab\nvii\tRival French and British teams racing to decipher it first",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A mô tả nội dung khắc trên đá Rosetta và ba loại chữ viết. Đúng tiêu đề i.",
+          "id": "nl2-32-rosetta-stone-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể việc phát hiện tình cờ 1799 và số phận nó rơi vào tay Anh, đặt tại Bảo tàng Anh từ 1802. Đúng tiêu đề ii.",
+          "id": "nl2-32-rosetta-stone-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về tiến bộ ban đầu của Thomas Young và kết luận sai của ông về hệ chữ tượng hình. Đúng tiêu đề iii.",
+          "id": "nl2-32-rosetta-stone-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D kể về Champollion, người thực sự giải mã được chữ tượng hình năm 1822. Đúng tiêu đề iv.",
+          "id": "nl2-32-rosetta-stone-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói cụm từ 'Rosetta Stone' đã đi vào tiếng Anh thông dụng như một ẩn dụ. Đúng tiêu đề v.",
+          "id": "nl2-32-rosetta-stone-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "The three scripts on the stone convey three different, unrelated messages.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: 'all three inscriptions convey essentially the same decree'. Cùng một nội dung, không phải ba thông điệp khác nhau. FALSE.",
+          "id": "nl2-32-rosetta-stone-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The Egyptian government has never requested the return of the Rosetta Stone.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'the Egyptian government has repeatedly and publicly requested its permanent return'. Đã nhiều lần yêu cầu, không phải chưa bao giờ. FALSE.",
+          "id": "nl2-32-rosetta-stone-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Thomas Young correctly identified that a cartouche enclosed the sound of a royal name.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn C: 'correctly identifying that certain hieroglyphic symbols enclosed within an oval outline, called a cartouche, represented the sounds of a royal name'. Đúng ý đề nên TRUE.",
+          "id": "nl2-32-rosetta-stone-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Young correctly concluded that hieroglyphs formed a fully phonetic writing system for ordinary Egyptian words.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C nói ngược: Young 'wrongly believing it was used only for royal names and titles' — kết luận sai, không phải đúng. FALSE.",
+          "id": "nl2-32-rosetta-stone-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Champollion had studied Coptic, a later descendant of the ancient Egyptian language.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn D: 'who had studied Egyptian Coptic, a later, spoken descendant language of ancient Egyptian'. Đúng ý đề nên TRUE.",
+          "id": "nl2-32-rosetta-stone-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The decree on the stone was carved in 196 BCE affirming the royal cult of the pharaoh ________.",
+          "answer": "Ptolemy V",
+          "number": 11,
+          "explanation": "Đoạn A: 'affirming the royal cult of the young pharaoh Ptolemy V'. Đáp án Ptolemy V.",
+          "id": "nl2-32-rosetta-stone-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Besides hieroglyphs and Greek, the stone is inscribed in a simplified script called ________.",
+          "answer": "Demotic",
+          "number": 12,
+          "explanation": "Đoạn A: 'Demotic, a simplified, cursive Egyptian script used for everyday administrative purposes'. Đáp án Demotic.",
+          "id": "nl2-32-rosetta-stone-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The stone was discovered by soldiers under the command of ________.",
+          "answer": "Napoleon Bonaparte",
+          "number": 13,
+          "explanation": "Đoạn B: 'discovered by chance in 1799 by French soldiers under Napoleon Bonaparte's command'. Đáp án Napoleon Bonaparte.",
+          "id": "nl2-32-rosetta-stone-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The stone has been held by the ________ since 1802.",
+          "answer": "British Museum",
+          "number": 14,
+          "explanation": "Đoạn B: 'has been held by the British Museum since 1802'. Đáp án British Museum.",
+          "id": "nl2-32-rosetta-stone-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Champollion achieved his decisive breakthrough in ________.",
+          "answer": "1822",
+          "number": 15,
+          "explanation": "Đoạn D: 'In 1822... Champollion demonstrated conclusively that hieroglyphs functioned as a genuinely phonetic script'. Đáp án 1822.",
+          "id": "nl2-32-rosetta-stone-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-33-voynich-manuscript-p1",
+      "order": 85,
+      "title": "The Voynich Manuscript",
+      "text": "A\nThe Voynich manuscript is a handwritten codex of around 240 surviving vellum pages, filled with page after page of text in an entirely unknown, unidentified writing system, accompanied throughout by elaborate illustrations of plants that do not correspond to any known real species, astronomical and astrological diagrams, and small human figures bathing in networks of interconnected pools and pipes, all rendered with a distinctive, internally consistent artistic style. It takes its modern name from Wilfrid Voynich, a Polish-American antiquarian book dealer who acquired the manuscript in 1912 from a Jesuit college in Italy, though the manuscript itself very clearly long predates him.\n\nB\nRadiocarbon dating conducted on the manuscript's vellum in 2009 placed its creation firmly in the early fifteenth century, most likely between about 1404 and 1438, a finding broadly consistent with independent stylistic analysis of its illustrations and handwriting by art historians. The manuscript's true author, its country of origin, and above all the specific meaning and purpose of its text, if the text was ever intended to carry any coherent, decodable meaning at all, remain entirely unknown despite more than a century of dedicated, often highly ingenious, scholarly and amateur attempts at decipherment.\n\nC\nThe manuscript's unidentified script, now generally referred to by researchers as Voynichese, consists of somewhere between twenty and thirty distinct recurring characters, depending on precisely how variant letterforms are counted and classified, arranged into apparent words separated by clear spaces, in a manner that superficially resembles ordinary, natural written language. Detailed statistical analysis of the text has found that it does display certain measurable structural regularities genuinely characteristic of real natural languages, including consistent patterns in word length and word frequency distribution, yet it stubbornly refuses to yield to any of the conventional decoding techniques that have proved successful against every other historical cipher or unknown script previously subjected to serious, sustained scholarly attention.\n\nD\nProposed explanations for the manuscript have ranged widely across the plausible and the wildly speculative. Some researchers argue it encodes a genuine natural language using an unusual, previously unattested writing system, possibly a lost or otherwise unrecorded language, or a known language deliberately disguised through some deliberately obscure encoding scheme. Others have proposed it is an early invented, wholly artificial constructed language, created for reasons no longer knowable to modern scholars. A more sceptical school of thought holds that the manuscript may in fact be an elaborate historical hoax, its pseudo-linguistic patterns generated through a purely mechanical process, such as a specific technique for shuffling and combining a small, fixed table of syllables, that could produce text with statistically language-like properties without the text itself actually encoding any coherent underlying meaning at all.\n\nE\nDespite the advent of powerful modern computational and statistical analysis techniques, and periodic, widely publicised claims of a definitive decipherment appearing in the media roughly once every few years, no proposed solution to the Voynich manuscript has ever achieved anything approaching broad acceptance among specialist scholars, and each new claimed breakthrough has so far been methodically scrutinised and ultimately rejected by other researchers in the field. The manuscript is now held at Yale University's Beinecke Rare Book and Manuscript Library, where high-resolution digital images of every page have been made freely available online, allowing researchers and enthusiasts worldwide to continue attempting to solve what remains, more than a century after Voynich first acquired it, one of the most famous unsolved puzzles in the entire history of writing.\n\n— Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the manuscript contains, and where its name comes from\nii\tDating the vellum, and what remains unknown\niii\tThe script itself, and clues from statistical analysis\niv\tCompeting theories, from lost language to elaborate hoax\nv\tWhy no proposed solution has been widely accepted\nvi\tPrevious owners of the manuscript before Voynich\nvii\tAttempts to translate the illustrations of unknown plants",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A mô tả nội dung bản thảo và nguồn gốc tên gọi từ Wilfrid Voynich. Đúng tiêu đề i.",
+          "id": "nl2-33-voynich-manuscript-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về định tuổi carbon phóng xạ (đầu thế kỷ 15) và những gì vẫn chưa rõ. Đúng tiêu đề ii.",
+          "id": "nl2-33-voynich-manuscript-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C mô tả chữ viết 'Voynichese' và các quy luật thống kê tìm thấy trong văn bản. Đúng tiêu đề iii.",
+          "id": "nl2-33-voynich-manuscript-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D liệt kê các giả thuyết: ngôn ngữ thật, ngôn ngữ nhân tạo, hoặc trò lừa bịp lịch sử. Đúng tiêu đề iv.",
+          "id": "nl2-33-voynich-manuscript-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói không có lời giải nào được chấp nhận rộng rãi dù nhiều tuyên bố xuất hiện đều đặn. Đúng tiêu đề v.",
+          "id": "nl2-33-voynich-manuscript-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "The plants illustrated in the manuscript correspond to known, real species.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: các hình minh hoạ cây cối 'do not correspond to any known real species'. Không tương ứng loài thật nào. FALSE.",
+          "id": "nl2-33-voynich-manuscript-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Wilfrid Voynich created the manuscript himself in 1912.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn A: 'the manuscript itself very clearly long predates him' — ông chỉ mua lại nó năm 1912, không phải tạo ra nó. FALSE.",
+          "id": "nl2-33-voynich-manuscript-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Radiocarbon dating and stylistic analysis of the illustrations agree on roughly the same period of creation.",
+          "answer": "TRUE",
+          "number": 8,
+          "explanation": "Đoạn B: kết quả carbon phóng xạ 'broadly consistent with independent stylistic analysis of its illustrations and handwriting'. Đúng ý đề nên TRUE.",
+          "id": "nl2-33-voynich-manuscript-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The text of the manuscript shows no statistical regularities characteristic of real languages.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C nói ngược: văn bản 'does display certain measurable structural regularities genuinely characteristic of real natural languages'. Có quy luật, không phải hoàn toàn không có. FALSE.",
+          "id": "nl2-33-voynich-manuscript-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "High-resolution digital images of the manuscript are freely available online.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'high-resolution digital images of every page have been made freely available online'. Đúng ý đề nên TRUE.",
+          "id": "nl2-33-voynich-manuscript-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Radiocarbon dating in 2009 placed the manuscript's creation between about 1404 and ________.",
+          "answer": "1438",
+          "number": 11,
+          "explanation": "Đoạn B: 'most likely between about 1404 and 1438'. Đáp án 1438.",
+          "id": "nl2-33-voynich-manuscript-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The manuscript's unidentified script is generally referred to as ________.",
+          "answer": "Voynichese",
+          "number": 12,
+          "explanation": "Đoạn C: 'now generally referred to by researchers as Voynichese'. Đáp án Voynichese.",
+          "id": "nl2-33-voynich-manuscript-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The sceptical hoax theory proposes the text was generated by shuffling a fixed table of ________.",
+          "answer": "syllables",
+          "number": 13,
+          "explanation": "Đoạn D: 'a specific technique for shuffling and combining a small, fixed table of syllables'. Đáp án syllables.",
+          "id": "nl2-33-voynich-manuscript-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The manuscript is now held at Yale University's Beinecke Rare Book and Manuscript ________.",
+          "answer": "Library",
+          "number": 14,
+          "explanation": "Đoạn E: 'is now held at Yale University's Beinecke Rare Book and Manuscript Library'. Đáp án Library.",
+          "id": "nl2-33-voynich-manuscript-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Voynich acquired the manuscript in 1912 from a Jesuit college in ________.",
+          "answer": "Italy",
+          "number": 15,
+          "explanation": "Đoạn A: 'acquired the manuscript in 1912 from a Jesuit college in Italy'. Đáp án Italy.",
+          "id": "nl2-33-voynich-manuscript-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-34-library-of-alexandria-p1",
+      "order": 86,
+      "title": "The Library of Alexandria",
+      "text": "A\nThe Library of Alexandria was one of the largest and most significant centres of scholarship in the ancient world, founded in the Egyptian city of Alexandria in the early third century BCE under the patronage of the Ptolemaic dynasty, the Greek-speaking rulers who governed Egypt following the death of Alexander the Great. Conceived as part of a broader research institution known as the Mouseion, dedicated to the Muses and functioning somewhat like a state-funded university and research academy combined, the library aimed at nothing less than collecting a copy of every significant text then in existence throughout the known ancient world.\n\nB\nAncient sources describe an extraordinarily aggressive acquisition policy pursued by the library's directors, including a practice, described in several ancient accounts of varying reliability, whereby ships arriving in Alexandria's harbour were reportedly searched for scrolls, which the authorities would confiscate and copy, sometimes keeping the original for the library's own collection and returning only the copy to its original owner. Whatever the precise historical accuracy of this specific practice, which modern historians treat with some scholarly caution given the limitations of the surviving ancient sources, the library is generally agreed to have amassed a truly vast collection for its era, with ancient estimates, themselves imprecise and possibly somewhat exaggerated, ranging as high as several hundred thousand individual scrolls.\n\nC\nContrary to the popular, dramatic image of the library's destruction in a single sudden, catastrophic fire, most modern historians now believe its decline was instead a considerably more gradual process, unfolding across several centuries and involving multiple separate, distinct episodes of damage and disruption rather than one clean, decisive event. Julius Caesar's military forces are generally believed to have accidentally set fire to at least part of the library, or to buildings closely associated with it, during fighting in Alexandria in 48 BCE, though ancient sources disagree considerably on the actual scale and severity of the resulting damage. Further, less dramatic decline is thought to have continued over subsequent centuries, driven by factors including diminishing royal patronage and funding, general political instability across the wider region, and the older, more prosaic force of simple long-term institutional neglect.\n\nD\nThe library's scholarly output during its centuries of activity was genuinely substantial. Euclid, whose textbook the Elements would remain the standard introductory work in the field of geometry for well over two thousand years afterward, is believed to have worked at Alexandria, as did the astronomer and mathematician Eratosthenes, who famously calculated the circumference of the Earth with a comparatively small margin of error using nothing more than simple, careful geometric observation and reasoning, well over a thousand years before European sailors would circumnavigate the globe and thereby confirm his estimate through direct empirical means.\n\nE\nThe eventual, definitive loss of the Library of Alexandria's full holdings, whatever the precise combination of causes and specific timeline actually involved, is now widely regarded by classical scholars and historians as one of the single greatest cultural and intellectual losses in the entire recorded history of Western civilisation, since a vast, genuinely irreplaceable body of ancient literature, scientific and philosophical treatises, and detailed historical records, much of it apparently never copied or preserved anywhere else, was almost certainly lost forever along with it. The library has since become a powerful and enduring symbol, invoked repeatedly across many later centuries, of both the tremendous, civilisation-shaping value of concentrated human knowledge and the profound, sobering fragility of even the largest and most carefully organised institutions dedicated to its careful, deliberate long-term preservation.\n\n— Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it was, and who founded it\nii\tAn aggressive policy of acquiring scrolls\niii\tA gradual decline rather than a single fire\niv\tScholars who worked there, and what they achieved\nv\tWhy its loss is still mourned today\nvi\tModern efforts to build a successor library\nvii\tHow scrolls were physically stored and catalogued",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói Thư viện Alexandria là gì và ai sáng lập (nhà Ptolemy). Đúng tiêu đề i.",
+          "id": "nl2-34-library-of-alexandria-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về chính sách thu thập cuộn sách hung hãn — tịch thu từ tàu cập cảng. Đúng tiêu đề ii.",
+          "id": "nl2-34-library-of-alexandria-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói suy tàn của thư viện là quá trình dần dần qua nhiều thế kỷ, không phải một trận cháy duy nhất. Đúng tiêu đề iii.",
+          "id": "nl2-34-library-of-alexandria-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về các học giả làm việc ở đó: Euclid, Eratosthenes. Đúng tiêu đề iv.",
+          "id": "nl2-34-library-of-alexandria-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói vì sao sự mất mát này vẫn được coi là mất mát tri thức lớn nhất lịch sử. Đúng tiêu đề v.",
+          "id": "nl2-34-library-of-alexandria-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "The library aimed to collect a copy of every significant text in the known world.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'the library aimed at nothing less than collecting a copy of every significant text then in existence throughout the known ancient world'. Đúng ý đề nên TRUE.",
+          "id": "nl2-34-library-of-alexandria-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Modern historians treat ancient accounts of the library's scroll-confiscation policy with complete, unquestioning confidence.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: 'modern historians treat with some scholarly caution given the limitations of the surviving ancient sources'. Có sự thận trọng, không phải tin tưởng tuyệt đối. FALSE.",
+          "id": "nl2-34-library-of-alexandria-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most modern historians believe the library was destroyed in a single catastrophic fire.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'most modern historians now believe its decline was instead a considerably more gradual process'. Suy tàn dần dần, không phải một trận cháy duy nhất. FALSE.",
+          "id": "nl2-34-library-of-alexandria-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Ancient sources agree completely on the scale of the damage caused by Julius Caesar's forces.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn C nói ngược: 'ancient sources disagree considerably on the actual scale and severity of the resulting damage'. Không thống nhất, đề nói ngược nên FALSE.",
+          "id": "nl2-34-library-of-alexandria-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Eratosthenes calculated the circumference of the Earth using simple geometric reasoning.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn D: 'calculated the circumference of the Earth with a comparatively small margin of error using nothing more than simple, careful geometric observation and reasoning'. Đúng ý đề nên TRUE.",
+          "id": "nl2-34-library-of-alexandria-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The library was part of a broader research institution known as the ________.",
+          "answer": "Mouseion",
+          "number": 11,
+          "explanation": "Đoạn A: 'a broader research institution known as the Mouseion'. Đáp án Mouseion.",
+          "id": "nl2-34-library-of-alexandria-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Ancient estimates of the library's collection ran as high as several hundred thousand ________.",
+          "answer": "scrolls",
+          "number": 12,
+          "explanation": "Đoạn B: 'ranging as high as several hundred thousand individual scrolls'. Đáp án scrolls.",
+          "id": "nl2-34-library-of-alexandria-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Julius Caesar's forces are believed to have started a fire in Alexandria in ________ BCE.",
+          "answer": "48",
+          "number": 13,
+          "explanation": "Đoạn C: 'during fighting in Alexandria in 48 BCE'. Đáp án 48.",
+          "id": "nl2-34-library-of-alexandria-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Euclid's textbook, called the ________, remained the standard geometry text for over two thousand years.",
+          "answer": "Elements",
+          "number": 14,
+          "explanation": "Đoạn D: 'Euclid, whose textbook the Elements would remain the standard introductory work'. Đáp án Elements.",
+          "id": "nl2-34-library-of-alexandria-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Eratosthenes calculated the Earth's circumference well before sailors could ________ the globe to confirm it.",
+          "answer": "circumnavigate",
+          "number": 15,
+          "explanation": "Đoạn D: 'well over a thousand years before European sailors would circumnavigate the globe'. Đáp án circumnavigate.",
+          "id": "nl2-34-library-of-alexandria-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-35-printing-press-p1",
+      "order": 87,
+      "title": "The Printing Press",
+      "text": "A\nThe printing press with movable metal type was developed in the German city of Mainz around 1440 by the goldsmith and inventor Johannes Gutenberg, whose central innovation was not the basic mechanical concept of a press, already long familiar from wine and olive presses, nor the idea of printed text itself, which had existed for centuries in East Asia using carved wooden blocks, but rather the combination of durable, individually cast, reusable metal type with an oil-based ink and a mechanical press, together forming a practical, integrated system capable of producing multiple identical copies of a text quickly, consistently, and relatively cheaply.\n\nB\nGutenberg's most celebrated and enduring achievement was the so-called Gutenberg Bible, printed around 1455, of which roughly one hundred and eighty copies are generally believed to have been produced, printed partly on paper and partly, for a smaller number of especially prestigious copies, on the more expensive and durable material of vellum. Of these original copies, only forty-eight are known to survive today in various libraries and collections around the world, and surviving copies, on the rare occasions one has changed hands, have sold at auction for several million dollars each, reflecting both their extreme historical rarity and their foundational significance as the very first substantial book produced using movable type in Europe.\n\nC\nThe printing press spread across Europe with remarkable speed following its invention: by the year 1500, only about fifty years after Gutenberg's initial breakthrough, printing presses were operating in well over two hundred and fifty European towns and cities, and it has been estimated that something in the range of twenty million individual books had already been printed continent-wide by that date, a genuinely staggering figure compared with the number of books that had been laboriously copied out entirely by hand in all the preceding centuries of European history combined.\n\nD\nThis rapid, explosive expansion in the availability of printed material had transformative social and intellectual consequences that extended far beyond the technology itself. The Protestant Reformation, launched by Martin Luther in 1517, spread with unprecedented speed across Germany and much of the rest of Europe partly because Luther's writings, most notably his Ninety-five Theses, could be quickly and cheaply reproduced and widely distributed in printed form, reaching a substantially larger audience, and reaching that audience considerably faster, than any handwritten religious pamphlet realistically could have managed in the era immediately preceding printing. The printing press also gradually helped to standardise spelling and grammar within individual European vernacular languages, since printers naturally favoured consistent, uniform conventions across the many identical copies of a single work they produced, in place of the considerable regional and individual variation typically found in earlier handwritten manuscripts.\n\nE\nHistorians frequently identify the printing press as one of the single most consequential inventions in the entirety of human history, credited with playing a central causal role in the later Scientific Revolution, by allowing researchers scattered across different countries to reliably share precise, accurately reproduced data and results with one another, and in the gradual, long-term rise of general literacy rates across European society, as books and other printed material slowly became cheaper and correspondingly more widely available to a much broader segment of the population than before. Although the specific claim that Gutenberg was the single, sole inventor of printing itself is sometimes qualified by historians, given the considerably earlier East Asian precedents involving both woodblock printing and, in Korea, movable metal type predating Gutenberg by roughly two centuries, his particular technological system is nonetheless generally credited with the specific, transformative impact it had on European society, culture, and intellectual life specifically.\n\n— Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat Gutenberg actually invented\nii\tHis most famous book, and how rare it is today\niii\tHow quickly the technology spread across Europe\niv\tConsequences for religion and for language\nv\tIts place among history's most consequential inventions\nvi\tHow paper itself was first manufactured in Europe\nvii\tDisputes between Gutenberg and his business partners",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói rõ điều Gutenberg thực sự sáng tạo ra — không phải máy ép hay chữ in mà là sự kết hợp cả hệ thống. Đúng tiêu đề i.",
+          "id": "nl2-35-printing-press-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về Kinh thánh Gutenberg, số bản còn lại và giá trị đấu giá. Đúng tiêu đề ii.",
+          "id": "nl2-35-printing-press-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói máy in lan rộng nhanh thế nào — hơn 250 thành phố có máy in vào năm 1500. Đúng tiêu đề iii.",
+          "id": "nl2-35-printing-press-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về hệ quả với Cải cách Tin lành và chuẩn hoá ngôn ngữ. Đúng tiêu đề iv.",
+          "id": "nl2-35-printing-press-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói máy in được coi là một trong những phát minh quan trọng nhất lịch sử loài người. Đúng tiêu đề v.",
+          "id": "nl2-35-printing-press-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Gutenberg invented the basic mechanical concept of the press itself.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: sáng tạo của ông 'not the basic mechanical concept of a press, already long familiar from wine and olive presses'. Máy ép đã có từ trước. FALSE.",
+          "id": "nl2-35-printing-press-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "All copies of the Gutenberg Bible were printed on vellum.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: bản in 'printed partly on paper and partly, for a smaller number... on... vellum'. Chỉ một phần in trên vellum, không phải tất cả. FALSE.",
+          "id": "nl2-35-printing-press-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "By 1500, printing presses were operating in fewer than one hundred European towns.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'printing presses were operating in well over two hundred and fifty European towns and cities' vào năm 1500. Nhiều hơn 250, không phải ít hơn 100. FALSE.",
+          "id": "nl2-35-printing-press-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Luther's Ninety-five Theses spread quickly partly because they could be cheaply reproduced in print.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'Luther's writings, most notably his Ninety-five Theses, could be quickly and cheaply reproduced and widely distributed in printed form'. Đúng ý đề nên TRUE.",
+          "id": "nl2-35-printing-press-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Movable metal type first appeared in Korea, predating Gutenberg by roughly two centuries.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'in Korea, movable metal type predating Gutenberg by roughly two centuries'. Đúng ý đề nên TRUE.",
+          "id": "nl2-35-printing-press-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Gutenberg developed his printing system in the German city of ________ around 1440.",
+          "answer": "Mainz",
+          "number": 11,
+          "explanation": "Đoạn A: 'was developed in the German city of Mainz around 1440'. Đáp án Mainz.",
+          "id": "nl2-35-printing-press-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Only ________ copies of the Gutenberg Bible are known to survive today.",
+          "answer": "forty-eight",
+          "number": 12,
+          "explanation": "Đoạn B: 'only forty-eight are known to survive today'. Đáp án forty-eight.",
+          "id": "nl2-35-printing-press-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "By 1500, an estimated ________ books had been printed across Europe.",
+          "answer": "twenty million",
+          "number": 13,
+          "explanation": "Đoạn C: 'something in the range of twenty million individual books had already been printed continent-wide by that date'. Đáp án twenty million.",
+          "id": "nl2-35-printing-press-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The Protestant Reformation was launched by Martin Luther in ________.",
+          "answer": "1517",
+          "number": 14,
+          "explanation": "Đoạn D: 'The Protestant Reformation, launched by Martin Luther in 1517'. Đáp án 1517.",
+          "id": "nl2-35-printing-press-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "The printing press is credited with playing a central role in the later Scientific ________.",
+          "answer": "Revolution",
+          "number": 15,
+          "explanation": "Đoạn E: 'credited with playing a central causal role in the later Scientific Revolution'. Đáp án Revolution.",
+          "id": "nl2-35-printing-press-q15"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,141 @@
+{
+  "title": "The Antikythera Mechanism",
+  "sourceNote": "Biên soạn dựa trên kiến thức khảo cổ học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Antikythera mechanism is an ancient Greek geared device, recovered in 1901 from a shipwreck near the small island of Antikythera, believed to have been used to predict the positions of the Sun, the Moon, and possibly other astronomical bodies, as well as to forecast eclipses, decades or even centuries in advance. Corroded almost beyond recognition after roughly two thousand years submerged in seawater, it survives today only as a fragmented, heavily encrusted lump of bronze, from which researchers have nonetheless managed to extract an extraordinary amount of detailed information using modern imaging technology unavailable to the divers who first recovered it."
+    },
+    {
+      "letter": "B",
+      "text": "The wreck itself, carrying a cargo of statues, coins, and various other luxury goods in addition to the mechanism, is generally dated to the first century BCE, and the mechanism is thought to have been built somewhat earlier, though its precise date of construction, its intended purpose in full detail, and the identity of its original maker remain subjects of ongoing scholarly debate. For decades after its discovery, the corroded, fused lump of bronze and internal gearing attracted comparatively little serious scientific attention, its true intricacy and sophistication not becoming apparent until later, more careful examination began."
+    },
+    {
+      "letter": "C",
+      "text": "The critical breakthrough in understanding the device came from X-ray imaging, first applied systematically to the mechanism by the British historian of science Derek de Solla Price in the 1970s, and considerably refined decades later by an international research team using advanced computed tomography, or CT, scanning technology. These imaging techniques allowed researchers to see, for the first time, the mechanism's complex internal gear-work without physically disassembling its fragile, corroded remains, revealing at least thirty separate interlocking bronze gears, arranged with a level of geometric and mechanical sophistication that had previously been assumed impossible for the ancient Greek world, comparable in intricacy, some researchers have suggested, to a mechanical astronomical clock not otherwise matched in surviving evidence for well over a thousand years afterward."
+    },
+    {
+      "letter": "D",
+      "text": "Detailed inscriptions found engraved on the mechanism's surviving surfaces, deciphered gradually using the same imaging technology, indicate that it could track the complex, irregular movement of the Moon across the sky using a clever gear train incorporating a deliberately offset pin-and-slot mechanism, an ingenious way of mechanically reproducing certain irregularities in lunar motion that had been recognised by Greek astronomers of the period, and could also predict the specific timing of solar and lunar eclipses using an ancient astronomical cycle known as the Saros cycle. A separate dial is believed to have tracked the four-year cycle of the ancient Olympic and other Panhellenic athletic games, an unexpectedly practical, calendrical addition to what is otherwise an overwhelmingly astronomical device."
+    },
+    {
+      "letter": "E",
+      "text": "No comparably sophisticated geared mechanism has ever been found from antiquity, nor does any surviving ancient text describe a device remotely resembling it in this degree of technical detail, a genuine puzzle that has led some historians to suggest that comparably advanced mechanical devices may once have been considerably more common in the ancient Mediterranean world than the surviving archaeological and textual evidence would otherwise suggest, their fragile bronze construction simply making long-term survival across two millennia extremely unlikely for all but this one fortunate exception, preserved precisely because it sank to the sea floor rather than being melted down and reused, the fate that ordinarily awaited valuable bronze objects once they became obsolete or fell out of active use."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it is, and how it survives today\nii\tThe wreck it was found in, and years of neglect afterward\niii\tImaging technology that revealed its hidden gears\niv\tWhat the inscriptions show it could actually calculate\nv\tWhy no comparable device has ever been found\nvi\tModern replicas built to test how it worked\nvii\tDebate over whether it was ever actually used at sea",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A định nghĩa cỗ máy Antikythera là gì và tình trạng nó tồn tại tới ngày nay. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về xác tàu đắm và việc cỗ máy ít được chú ý nghiêm túc trong nhiều thập kỷ sau khi phát hiện. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về công nghệ chụp X-quang và CT giúp thấy được bánh răng bên trong mà không cần tháo rời. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói các khắc chữ cho biết máy tính được gì: chuyển động Mặt Trăng, nguyệt thực, nhật thực, chu kỳ Olympic. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói vì sao không tìm thấy thiết bị tương tự nào khác — đồng làm bằng đồng dễ bị nấu chảy tái sử dụng. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Researchers agree with complete certainty on the exact date the mechanism was built.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B: 'its precise date of construction... remain subjects of ongoing scholarly debate'. Vẫn còn tranh luận, không phải chắc chắn tuyệt đối. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The mechanism received intense scientific study immediately after its discovery in 1901.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'For decades after its discovery, the corroded, fused lump... attracted comparatively little serious scientific attention'. Ít được chú ý trong nhiều thập kỷ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "CT scanning allowed researchers to examine the internal gears without taking the mechanism apart.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'allowed researchers to see, for the first time, the mechanism's complex internal gear-work without physically disassembling its fragile, corroded remains'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The pin-and-slot mechanism was used to predict the timing of the ancient Olympic Games.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D: pin-and-slot dùng để mô phỏng chuyển động bất thường của Mặt Trăng, còn chu kỳ Olympic được theo dõi bằng 'A separate dial' khác. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Several other comparably sophisticated geared mechanisms from antiquity have since been discovered.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'No comparably sophisticated geared mechanism has ever been found from antiquity'. Không có thiết bị tương tự nào khác được tìm thấy. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The mechanism was recovered in 1901 from a shipwreck near the island of ________.",
+      "answer": "Antikythera",
+      "number": 11,
+      "explanation": "Đoạn A: 'recovered in 1901 from a shipwreck near the small island of Antikythera'. Đáp án Antikythera."
+    },
+    {
+      "type": "gap",
+      "prompt": "X-ray imaging was first systematically applied to the mechanism by ________ in the 1970s.",
+      "answer": "Derek de Solla Price",
+      "number": 12,
+      "explanation": "Đoạn C: 'first applied systematically to the mechanism by the British historian of science Derek de Solla Price'. Đáp án Derek de Solla Price."
+    },
+    {
+      "type": "gap",
+      "prompt": "CT scanning revealed at least ________ separate interlocking bronze gears.",
+      "answer": "thirty",
+      "number": 13,
+      "explanation": "Đoạn C: 'revealing at least thirty separate interlocking bronze gears'. Đáp án thirty."
+    },
+    {
+      "type": "gap",
+      "prompt": "The mechanism predicted eclipses using an ancient astronomical cycle known as the ________ cycle.",
+      "answer": "Saros",
+      "number": 14,
+      "explanation": "Đoạn D: 'using an ancient astronomical cycle known as the Saros cycle'. Đáp án Saros."
+    },
+    {
+      "type": "gap",
+      "prompt": "A separate dial tracked the four-year cycle of the ancient ________ games.",
+      "answer": "Olympic",
+      "number": 15,
+      "explanation": "Đoạn D: 'tracked the four-year cycle of the ancient Olympic and other Panhellenic athletic games'. Đáp án Olympic."
+    }
+  ]
+}

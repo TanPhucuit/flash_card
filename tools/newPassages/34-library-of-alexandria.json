@@ -1,0 +1,141 @@
+{
+  "title": "The Library of Alexandria",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Library of Alexandria was one of the largest and most significant centres of scholarship in the ancient world, founded in the Egyptian city of Alexandria in the early third century BCE under the patronage of the Ptolemaic dynasty, the Greek-speaking rulers who governed Egypt following the death of Alexander the Great. Conceived as part of a broader research institution known as the Mouseion, dedicated to the Muses and functioning somewhat like a state-funded university and research academy combined, the library aimed at nothing less than collecting a copy of every significant text then in existence throughout the known ancient world."
+    },
+    {
+      "letter": "B",
+      "text": "Ancient sources describe an extraordinarily aggressive acquisition policy pursued by the library's directors, including a practice, described in several ancient accounts of varying reliability, whereby ships arriving in Alexandria's harbour were reportedly searched for scrolls, which the authorities would confiscate and copy, sometimes keeping the original for the library's own collection and returning only the copy to its original owner. Whatever the precise historical accuracy of this specific practice, which modern historians treat with some scholarly caution given the limitations of the surviving ancient sources, the library is generally agreed to have amassed a truly vast collection for its era, with ancient estimates, themselves imprecise and possibly somewhat exaggerated, ranging as high as several hundred thousand individual scrolls."
+    },
+    {
+      "letter": "C",
+      "text": "Contrary to the popular, dramatic image of the library's destruction in a single sudden, catastrophic fire, most modern historians now believe its decline was instead a considerably more gradual process, unfolding across several centuries and involving multiple separate, distinct episodes of damage and disruption rather than one clean, decisive event. Julius Caesar's military forces are generally believed to have accidentally set fire to at least part of the library, or to buildings closely associated with it, during fighting in Alexandria in 48 BCE, though ancient sources disagree considerably on the actual scale and severity of the resulting damage. Further, less dramatic decline is thought to have continued over subsequent centuries, driven by factors including diminishing royal patronage and funding, general political instability across the wider region, and the older, more prosaic force of simple long-term institutional neglect."
+    },
+    {
+      "letter": "D",
+      "text": "The library's scholarly output during its centuries of activity was genuinely substantial. Euclid, whose textbook the Elements would remain the standard introductory work in the field of geometry for well over two thousand years afterward, is believed to have worked at Alexandria, as did the astronomer and mathematician Eratosthenes, who famously calculated the circumference of the Earth with a comparatively small margin of error using nothing more than simple, careful geometric observation and reasoning, well over a thousand years before European sailors would circumnavigate the globe and thereby confirm his estimate through direct empirical means."
+    },
+    {
+      "letter": "E",
+      "text": "The eventual, definitive loss of the Library of Alexandria's full holdings, whatever the precise combination of causes and specific timeline actually involved, is now widely regarded by classical scholars and historians as one of the single greatest cultural and intellectual losses in the entire recorded history of Western civilisation, since a vast, genuinely irreplaceable body of ancient literature, scientific and philosophical treatises, and detailed historical records, much of it apparently never copied or preserved anywhere else, was almost certainly lost forever along with it. The library has since become a powerful and enduring symbol, invoked repeatedly across many later centuries, of both the tremendous, civilisation-shaping value of concentrated human knowledge and the profound, sobering fragility of even the largest and most carefully organised institutions dedicated to its careful, deliberate long-term preservation."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it was, and who founded it\nii\tAn aggressive policy of acquiring scrolls\niii\tA gradual decline rather than a single fire\niv\tScholars who worked there, and what they achieved\nv\tWhy its loss is still mourned today\nvi\tModern efforts to build a successor library\nvii\tHow scrolls were physically stored and catalogued",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói Thư viện Alexandria là gì và ai sáng lập (nhà Ptolemy). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về chính sách thu thập cuộn sách hung hãn — tịch thu từ tàu cập cảng. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói suy tàn của thư viện là quá trình dần dần qua nhiều thế kỷ, không phải một trận cháy duy nhất. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về các học giả làm việc ở đó: Euclid, Eratosthenes. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói vì sao sự mất mát này vẫn được coi là mất mát tri thức lớn nhất lịch sử. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "The library aimed to collect a copy of every significant text in the known world.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'the library aimed at nothing less than collecting a copy of every significant text then in existence throughout the known ancient world'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Modern historians treat ancient accounts of the library's scroll-confiscation policy with complete, unquestioning confidence.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'modern historians treat with some scholarly caution given the limitations of the surviving ancient sources'. Có sự thận trọng, không phải tin tưởng tuyệt đối. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Most modern historians believe the library was destroyed in a single catastrophic fire.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'most modern historians now believe its decline was instead a considerably more gradual process'. Suy tàn dần dần, không phải một trận cháy duy nhất. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Ancient sources agree completely on the scale of the damage caused by Julius Caesar's forces.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C nói ngược: 'ancient sources disagree considerably on the actual scale and severity of the resulting damage'. Không thống nhất, đề nói ngược nên FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Eratosthenes calculated the circumference of the Earth using simple geometric reasoning.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn D: 'calculated the circumference of the Earth with a comparatively small margin of error using nothing more than simple, careful geometric observation and reasoning'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The library was part of a broader research institution known as the ________.",
+      "answer": "Mouseion",
+      "number": 11,
+      "explanation": "Đoạn A: 'a broader research institution known as the Mouseion'. Đáp án Mouseion."
+    },
+    {
+      "type": "gap",
+      "prompt": "Ancient estimates of the library's collection ran as high as several hundred thousand ________.",
+      "answer": "scrolls",
+      "number": 12,
+      "explanation": "Đoạn B: 'ranging as high as several hundred thousand individual scrolls'. Đáp án scrolls."
+    },
+    {
+      "type": "gap",
+      "prompt": "Julius Caesar's forces are believed to have started a fire in Alexandria in ________ BCE.",
+      "answer": "48",
+      "number": 13,
+      "explanation": "Đoạn C: 'during fighting in Alexandria in 48 BCE'. Đáp án 48."
+    },
+    {
+      "type": "gap",
+      "prompt": "Euclid's textbook, called the ________, remained the standard geometry text for over two thousand years.",
+      "answer": "Elements",
+      "number": 14,
+      "explanation": "Đoạn D: 'Euclid, whose textbook the Elements would remain the standard introductory work'. Đáp án Elements."
+    },
+    {
+      "type": "gap",
+      "prompt": "Eratosthenes calculated the Earth's circumference well before sailors could ________ the globe to confirm it.",
+      "answer": "circumnavigate",
+      "number": 15,
+      "explanation": "Đoạn D: 'well over a thousand years before European sailors would circumnavigate the globe'. Đáp án circumnavigate."
+    }
+  ]
+}

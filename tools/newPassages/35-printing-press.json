@@ -1,0 +1,141 @@
+{
+  "title": "The Printing Press",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The printing press with movable metal type was developed in the German city of Mainz around 1440 by the goldsmith and inventor Johannes Gutenberg, whose central innovation was not the basic mechanical concept of a press, already long familiar from wine and olive presses, nor the idea of printed text itself, which had existed for centuries in East Asia using carved wooden blocks, but rather the combination of durable, individually cast, reusable metal type with an oil-based ink and a mechanical press, together forming a practical, integrated system capable of producing multiple identical copies of a text quickly, consistently, and relatively cheaply."
+    },
+    {
+      "letter": "B",
+      "text": "Gutenberg's most celebrated and enduring achievement was the so-called Gutenberg Bible, printed around 1455, of which roughly one hundred and eighty copies are generally believed to have been produced, printed partly on paper and partly, for a smaller number of especially prestigious copies, on the more expensive and durable material of vellum. Of these original copies, only forty-eight are known to survive today in various libraries and collections around the world, and surviving copies, on the rare occasions one has changed hands, have sold at auction for several million dollars each, reflecting both their extreme historical rarity and their foundational significance as the very first substantial book produced using movable type in Europe."
+    },
+    {
+      "letter": "C",
+      "text": "The printing press spread across Europe with remarkable speed following its invention: by the year 1500, only about fifty years after Gutenberg's initial breakthrough, printing presses were operating in well over two hundred and fifty European towns and cities, and it has been estimated that something in the range of twenty million individual books had already been printed continent-wide by that date, a genuinely staggering figure compared with the number of books that had been laboriously copied out entirely by hand in all the preceding centuries of European history combined."
+    },
+    {
+      "letter": "D",
+      "text": "This rapid, explosive expansion in the availability of printed material had transformative social and intellectual consequences that extended far beyond the technology itself. The Protestant Reformation, launched by Martin Luther in 1517, spread with unprecedented speed across Germany and much of the rest of Europe partly because Luther's writings, most notably his Ninety-five Theses, could be quickly and cheaply reproduced and widely distributed in printed form, reaching a substantially larger audience, and reaching that audience considerably faster, than any handwritten religious pamphlet realistically could have managed in the era immediately preceding printing. The printing press also gradually helped to standardise spelling and grammar within individual European vernacular languages, since printers naturally favoured consistent, uniform conventions across the many identical copies of a single work they produced, in place of the considerable regional and individual variation typically found in earlier handwritten manuscripts."
+    },
+    {
+      "letter": "E",
+      "text": "Historians frequently identify the printing press as one of the single most consequential inventions in the entirety of human history, credited with playing a central causal role in the later Scientific Revolution, by allowing researchers scattered across different countries to reliably share precise, accurately reproduced data and results with one another, and in the gradual, long-term rise of general literacy rates across European society, as books and other printed material slowly became cheaper and correspondingly more widely available to a much broader segment of the population than before. Although the specific claim that Gutenberg was the single, sole inventor of printing itself is sometimes qualified by historians, given the considerably earlier East Asian precedents involving both woodblock printing and, in Korea, movable metal type predating Gutenberg by roughly two centuries, his particular technological system is nonetheless generally credited with the specific, transformative impact it had on European society, culture, and intellectual life specifically."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat Gutenberg actually invented\nii\tHis most famous book, and how rare it is today\niii\tHow quickly the technology spread across Europe\niv\tConsequences for religion and for language\nv\tIts place among history's most consequential inventions\nvi\tHow paper itself was first manufactured in Europe\nvii\tDisputes between Gutenberg and his business partners",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói rõ điều Gutenberg thực sự sáng tạo ra — không phải máy ép hay chữ in mà là sự kết hợp cả hệ thống. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về Kinh thánh Gutenberg, số bản còn lại và giá trị đấu giá. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói máy in lan rộng nhanh thế nào — hơn 250 thành phố có máy in vào năm 1500. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về hệ quả với Cải cách Tin lành và chuẩn hoá ngôn ngữ. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói máy in được coi là một trong những phát minh quan trọng nhất lịch sử loài người. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Gutenberg invented the basic mechanical concept of the press itself.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: sáng tạo của ông 'not the basic mechanical concept of a press, already long familiar from wine and olive presses'. Máy ép đã có từ trước. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "All copies of the Gutenberg Bible were printed on vellum.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: bản in 'printed partly on paper and partly, for a smaller number... on... vellum'. Chỉ một phần in trên vellum, không phải tất cả. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "By 1500, printing presses were operating in fewer than one hundred European towns.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'printing presses were operating in well over two hundred and fifty European towns and cities' vào năm 1500. Nhiều hơn 250, không phải ít hơn 100. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Luther's Ninety-five Theses spread quickly partly because they could be cheaply reproduced in print.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'Luther's writings, most notably his Ninety-five Theses, could be quickly and cheaply reproduced and widely distributed in printed form'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Movable metal type first appeared in Korea, predating Gutenberg by roughly two centuries.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'in Korea, movable metal type predating Gutenberg by roughly two centuries'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Gutenberg developed his printing system in the German city of ________ around 1440.",
+      "answer": "Mainz",
+      "number": 11,
+      "explanation": "Đoạn A: 'was developed in the German city of Mainz around 1440'. Đáp án Mainz."
+    },
+    {
+      "type": "gap",
+      "prompt": "Only ________ copies of the Gutenberg Bible are known to survive today.",
+      "answer": "forty-eight",
+      "number": 12,
+      "explanation": "Đoạn B: 'only forty-eight are known to survive today'. Đáp án forty-eight."
+    },
+    {
+      "type": "gap",
+      "prompt": "By 1500, an estimated ________ books had been printed across Europe.",
+      "answer": "twenty million",
+      "number": 13,
+      "explanation": "Đoạn C: 'something in the range of twenty million individual books had already been printed continent-wide by that date'. Đáp án twenty million."
+    },
+    {
+      "type": "gap",
+      "prompt": "The Protestant Reformation was launched by Martin Luther in ________.",
+      "answer": "1517",
+      "number": 14,
+      "explanation": "Đoạn D: 'The Protestant Reformation, launched by Martin Luther in 1517'. Đáp án 1517."
+    },
+    {
+      "type": "gap",
+      "prompt": "The printing press is credited with playing a central role in the later Scientific ________.",
+      "answer": "Revolution",
+      "number": 15,
+      "explanation": "Đoạn E: 'credited with playing a central causal role in the later Scientific Revolution'. Đáp án Revolution."
+    }
+  ]
+}

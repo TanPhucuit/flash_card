@@ -1,0 +1,141 @@
+{
+  "title": "The Rosetta Stone",
+  "sourceNote": "Biên soạn dựa trên kiến thức khảo cổ học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Rosetta Stone is a fragment of a larger stone slab, inscribed in 196 BCE with a decree issued by a council of Egyptian priests affirming the royal cult of the young pharaoh Ptolemy V, carved in three separate scripts: ancient Egyptian hieroglyphs, Demotic, a simplified, cursive Egyptian script used for everyday administrative purposes, and ancient Greek, the language of Egypt's ruling Ptolemaic dynasty at the time. Because all three inscriptions convey essentially the same decree, and because Greek could already be read fluently by scholars of the period, the stone offered the first genuine, reliable key that would eventually allow the long-lost meaning of Egyptian hieroglyphs to be recovered."
+    },
+    {
+      "letter": "B",
+      "text": "The stone was discovered by chance in 1799 by French soldiers under Napoleon Bonaparte's command, rebuilding a fort near the Egyptian town of Rosetta during Napoleon's military campaign in Egypt, and it soon attracted intense scholarly interest across Europe. Following Napoleon's eventual defeat in Egypt, the stone passed into British possession under the terms of a surrender agreement and was transported to London, where it has been held by the British Museum since 1802 and remains one of the museum's most visited single objects, though the Egyptian government has repeatedly and publicly requested its permanent return."
+    },
+    {
+      "letter": "C",
+      "text": "Deciphering Egyptian hieroglyphs, a writing system that had gone entirely unread for well over a thousand years by the time the stone was discovered, proved to be a slow, painstaking, and deeply collaborative international scholarly effort. The British polymath Thomas Young made significant early progress in the 1810s, correctly identifying that certain hieroglyphic symbols enclosed within an oval outline, called a cartouche, represented the sounds of a royal name, in this case Ptolemy, but Young ultimately reached an incorrect conclusion regarding the broader hieroglyphic writing system as a whole, wrongly believing it was used only for royal names and titles specifically rather than as a fully phonetic, general-purpose writing system capable of representing the sounds of the wider Egyptian language."
+    },
+    {
+      "letter": "D",
+      "text": "The definitive breakthrough came from the French scholar Jean-François Champollion, who had studied Egyptian Coptic, a later, spoken descendant language of ancient Egyptian still used liturgically by Egyptian Christians, alongside numerous other ancient and classical languages from an unusually young age. In 1822, building substantially on Young's earlier partial progress but going considerably further, Champollion demonstrated conclusively that hieroglyphs functioned as a genuinely phonetic script for ordinary Egyptian words generally, and not merely for foreign royal names transliterated into hieroglyphic symbols, a discovery that finally, and completely, unlocked the ability to read the vast body of surviving ancient Egyptian texts that had accumulated, entirely unread, over the preceding centuries."
+    },
+    {
+      "letter": "E",
+      "text": "The decipherment of hieroglyphs achieved through study of the Rosetta Stone transformed Egyptology from a field previously dominated by speculative, often wildly inaccurate guesswork about the meaning and purpose of ancient inscriptions into a rigorous, evidence-based academic discipline capable of reading ancient Egyptian texts directly and accurately for the first time in well over a millennium. Because of the stone's foundational importance to this transformation, the phrase \"Rosetta Stone\" has since entered everyday English usage as a general metaphor for any single key discovery, insight, or piece of evidence that suddenly enables the understanding, decoding, or interpretation of something that had previously seemed hopelessly obscure or entirely unintelligible."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat is inscribed on the stone, and in how many scripts\nii\tHow it was found, and where it has been kept since\niii\tEarly progress, and one scholar's mistaken conclusion\niv\tThe scholar who finally cracked the code\nv\tHow the phrase entered everyday English\nvi\tRestoration work carried out on the damaged slab\nvii\tRival French and British teams racing to decipher it first",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A mô tả nội dung khắc trên đá Rosetta và ba loại chữ viết. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể việc phát hiện tình cờ 1799 và số phận nó rơi vào tay Anh, đặt tại Bảo tàng Anh từ 1802. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về tiến bộ ban đầu của Thomas Young và kết luận sai của ông về hệ chữ tượng hình. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D kể về Champollion, người thực sự giải mã được chữ tượng hình năm 1822. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói cụm từ 'Rosetta Stone' đã đi vào tiếng Anh thông dụng như một ẩn dụ. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "The three scripts on the stone convey three different, unrelated messages.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: 'all three inscriptions convey essentially the same decree'. Cùng một nội dung, không phải ba thông điệp khác nhau. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The Egyptian government has never requested the return of the Rosetta Stone.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: 'the Egyptian government has repeatedly and publicly requested its permanent return'. Đã nhiều lần yêu cầu, không phải chưa bao giờ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Thomas Young correctly identified that a cartouche enclosed the sound of a royal name.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn C: 'correctly identifying that certain hieroglyphic symbols enclosed within an oval outline, called a cartouche, represented the sounds of a royal name'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Young correctly concluded that hieroglyphs formed a fully phonetic writing system for ordinary Egyptian words.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C nói ngược: Young 'wrongly believing it was used only for royal names and titles' — kết luận sai, không phải đúng. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Champollion had studied Coptic, a later descendant of the ancient Egyptian language.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn D: 'who had studied Egyptian Coptic, a later, spoken descendant language of ancient Egyptian'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The decree on the stone was carved in 196 BCE affirming the royal cult of the pharaoh ________.",
+      "answer": "Ptolemy V",
+      "number": 11,
+      "explanation": "Đoạn A: 'affirming the royal cult of the young pharaoh Ptolemy V'. Đáp án Ptolemy V."
+    },
+    {
+      "type": "gap",
+      "prompt": "Besides hieroglyphs and Greek, the stone is inscribed in a simplified script called ________.",
+      "answer": "Demotic",
+      "number": 12,
+      "explanation": "Đoạn A: 'Demotic, a simplified, cursive Egyptian script used for everyday administrative purposes'. Đáp án Demotic."
+    },
+    {
+      "type": "gap",
+      "prompt": "The stone was discovered by soldiers under the command of ________.",
+      "answer": "Napoleon Bonaparte",
+      "number": 13,
+      "explanation": "Đoạn B: 'discovered by chance in 1799 by French soldiers under Napoleon Bonaparte's command'. Đáp án Napoleon Bonaparte."
+    },
+    {
+      "type": "gap",
+      "prompt": "The stone has been held by the ________ since 1802.",
+      "answer": "British Museum",
+      "number": 14,
+      "explanation": "Đoạn B: 'has been held by the British Museum since 1802'. Đáp án British Museum."
+    },
+    {
+      "type": "gap",
+      "prompt": "Champollion achieved his decisive breakthrough in ________.",
+      "answer": "1822",
+      "number": 15,
+      "explanation": "Đoạn D: 'In 1822... Champollion demonstrated conclusively that hieroglyphs functioned as a genuinely phonetic script'. Đáp án 1822."
+    }
+  ]
+}

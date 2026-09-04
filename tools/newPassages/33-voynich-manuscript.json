@@ -1,0 +1,141 @@
+{
+  "title": "The Voynich Manuscript",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Voynich manuscript is a handwritten codex of around 240 surviving vellum pages, filled with page after page of text in an entirely unknown, unidentified writing system, accompanied throughout by elaborate illustrations of plants that do not correspond to any known real species, astronomical and astrological diagrams, and small human figures bathing in networks of interconnected pools and pipes, all rendered with a distinctive, internally consistent artistic style. It takes its modern name from Wilfrid Voynich, a Polish-American antiquarian book dealer who acquired the manuscript in 1912 from a Jesuit college in Italy, though the manuscript itself very clearly long predates him."
+    },
+    {
+      "letter": "B",
+      "text": "Radiocarbon dating conducted on the manuscript's vellum in 2009 placed its creation firmly in the early fifteenth century, most likely between about 1404 and 1438, a finding broadly consistent with independent stylistic analysis of its illustrations and handwriting by art historians. The manuscript's true author, its country of origin, and above all the specific meaning and purpose of its text, if the text was ever intended to carry any coherent, decodable meaning at all, remain entirely unknown despite more than a century of dedicated, often highly ingenious, scholarly and amateur attempts at decipherment."
+    },
+    {
+      "letter": "C",
+      "text": "The manuscript's unidentified script, now generally referred to by researchers as Voynichese, consists of somewhere between twenty and thirty distinct recurring characters, depending on precisely how variant letterforms are counted and classified, arranged into apparent words separated by clear spaces, in a manner that superficially resembles ordinary, natural written language. Detailed statistical analysis of the text has found that it does display certain measurable structural regularities genuinely characteristic of real natural languages, including consistent patterns in word length and word frequency distribution, yet it stubbornly refuses to yield to any of the conventional decoding techniques that have proved successful against every other historical cipher or unknown script previously subjected to serious, sustained scholarly attention."
+    },
+    {
+      "letter": "D",
+      "text": "Proposed explanations for the manuscript have ranged widely across the plausible and the wildly speculative. Some researchers argue it encodes a genuine natural language using an unusual, previously unattested writing system, possibly a lost or otherwise unrecorded language, or a known language deliberately disguised through some deliberately obscure encoding scheme. Others have proposed it is an early invented, wholly artificial constructed language, created for reasons no longer knowable to modern scholars. A more sceptical school of thought holds that the manuscript may in fact be an elaborate historical hoax, its pseudo-linguistic patterns generated through a purely mechanical process, such as a specific technique for shuffling and combining a small, fixed table of syllables, that could produce text with statistically language-like properties without the text itself actually encoding any coherent underlying meaning at all."
+    },
+    {
+      "letter": "E",
+      "text": "Despite the advent of powerful modern computational and statistical analysis techniques, and periodic, widely publicised claims of a definitive decipherment appearing in the media roughly once every few years, no proposed solution to the Voynich manuscript has ever achieved anything approaching broad acceptance among specialist scholars, and each new claimed breakthrough has so far been methodically scrutinised and ultimately rejected by other researchers in the field. The manuscript is now held at Yale University's Beinecke Rare Book and Manuscript Library, where high-resolution digital images of every page have been made freely available online, allowing researchers and enthusiasts worldwide to continue attempting to solve what remains, more than a century after Voynich first acquired it, one of the most famous unsolved puzzles in the entire history of writing."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat the manuscript contains, and where its name comes from\nii\tDating the vellum, and what remains unknown\niii\tThe script itself, and clues from statistical analysis\niv\tCompeting theories, from lost language to elaborate hoax\nv\tWhy no proposed solution has been widely accepted\nvi\tPrevious owners of the manuscript before Voynich\nvii\tAttempts to translate the illustrations of unknown plants",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A mô tả nội dung bản thảo và nguồn gốc tên gọi từ Wilfrid Voynich. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về định tuổi carbon phóng xạ (đầu thế kỷ 15) và những gì vẫn chưa rõ. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C mô tả chữ viết 'Voynichese' và các quy luật thống kê tìm thấy trong văn bản. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D liệt kê các giả thuyết: ngôn ngữ thật, ngôn ngữ nhân tạo, hoặc trò lừa bịp lịch sử. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói không có lời giải nào được chấp nhận rộng rãi dù nhiều tuyên bố xuất hiện đều đặn. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "The plants illustrated in the manuscript correspond to known, real species.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: các hình minh hoạ cây cối 'do not correspond to any known real species'. Không tương ứng loài thật nào. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Wilfrid Voynich created the manuscript himself in 1912.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn A: 'the manuscript itself very clearly long predates him' — ông chỉ mua lại nó năm 1912, không phải tạo ra nó. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Radiocarbon dating and stylistic analysis of the illustrations agree on roughly the same period of creation.",
+      "answer": "TRUE",
+      "number": 8,
+      "explanation": "Đoạn B: kết quả carbon phóng xạ 'broadly consistent with independent stylistic analysis of its illustrations and handwriting'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The text of the manuscript shows no statistical regularities characteristic of real languages.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn C nói ngược: văn bản 'does display certain measurable structural regularities genuinely characteristic of real natural languages'. Có quy luật, không phải hoàn toàn không có. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "High-resolution digital images of the manuscript are freely available online.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'high-resolution digital images of every page have been made freely available online'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Radiocarbon dating in 2009 placed the manuscript's creation between about 1404 and ________.",
+      "answer": "1438",
+      "number": 11,
+      "explanation": "Đoạn B: 'most likely between about 1404 and 1438'. Đáp án 1438."
+    },
+    {
+      "type": "gap",
+      "prompt": "The manuscript's unidentified script is generally referred to as ________.",
+      "answer": "Voynichese",
+      "number": 12,
+      "explanation": "Đoạn C: 'now generally referred to by researchers as Voynichese'. Đáp án Voynichese."
+    },
+    {
+      "type": "gap",
+      "prompt": "The sceptical hoax theory proposes the text was generated by shuffling a fixed table of ________.",
+      "answer": "syllables",
+      "number": 13,
+      "explanation": "Đoạn D: 'a specific technique for shuffling and combining a small, fixed table of syllables'. Đáp án syllables."
+    },
+    {
+      "type": "gap",
+      "prompt": "The manuscript is now held at Yale University's Beinecke Rare Book and Manuscript ________.",
+      "answer": "Library",
+      "number": 14,
+      "explanation": "Đoạn E: 'is now held at Yale University's Beinecke Rare Book and Manuscript Library'. Đáp án Library."
+    },
+    {
+      "type": "gap",
+      "prompt": "Voynich acquired the manuscript in 1912 from a Jesuit college in ________.",
+      "answer": "Italy",
+      "number": 15,
+      "explanation": "Đoạn A: 'acquired the manuscript in 1912 from a Jesuit college in Italy'. Đáp án Italy."
+    }
+  ]
+}
