@@ -1,0 +1,141 @@
+{
+  "title": "The Black Death",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Black Death was a devastating plague pandemic that swept across Europe, the Middle East, and North Africa between roughly 1347 and 1351, killing an estimated thirty to sixty percent of Europe's entire population within just a few years, making it, by most measures, the single deadliest recorded pandemic in the whole of human history. The disease is now generally attributed to the bacterium Yersinia pestis, though this precise causal identification was only conclusively confirmed through modern genetic analysis of the bacterium's DNA recovered from the teeth of medieval plague victims, work carried out in the early twenty-first century, well over six centuries after the pandemic itself had struck."
+    },
+    {
+      "letter": "B",
+      "text": "The pandemic is generally believed to have originated in Central Asia and to have spread westward along established, well-travelled trade routes, most notably reaching Europe in 1347 when a fleet of merchant ships arrived at the Sicilian port of Messina, unknowingly carrying rats infested with fleas that themselves harboured the plague bacterium. From Sicily, the disease spread with alarming speed across the rest of Europe, aided considerably by the dense, unsanitary conditions typical of medieval towns and cities and by the constant, sustained movement of merchants, soldiers, and travellers along established trade and pilgrimage routes throughout the continent."
+    },
+    {
+      "letter": "C",
+      "text": "Medieval physicians, working entirely without any concept of germ theory, proposed a wide range of explanations for the plague's cause, including the idea that it was spread through corrupted, foul-smelling air, known at the time as \"miasma\", and, in a deeply troubling development, the antisemitic conspiracy theory, entirely without foundation, that Jewish communities had deliberately poisoned local wells, a baseless accusation that led directly to horrific waves of violent persecution against Jewish communities across several parts of Europe during the pandemic. Medical treatments actually attempted at the time, including bloodletting and the lancing of the disease's characteristic swollen lymph nodes, generally proved entirely ineffective and were, in the case of certain treatments, actively counterproductive to a patient's chances of recovery."
+    },
+    {
+      "letter": "D",
+      "text": "Beyond the pandemic's catastrophic immediate human toll, historians have identified numerous significant longer-term social and economic consequences that followed. The sudden, dramatic reduction in the available labour force across much of Europe substantially increased the bargaining power of surviving peasants and skilled labourers relative to landowners, contributing over subsequent decades to the gradual decline of the feudal system of obligatory, largely unpaid agricultural labour that had previously dominated much of medieval European society. Some economic historians argue that this shift in bargaining power between labour and landowners indirectly helped lay important groundwork for the later economic and social transformations of the Renaissance period, though the precise causal weight properly attributable to the plague, relative to numerous other contributing historical factors operating over the same broad period, remains a genuinely contested question among specialist historians."
+    },
+    {
+      "letter": "E",
+      "text": "The bacterium responsible for the Black Death has never actually disappeared: Yersinia pestis still exists today, and isolated cases of plague continue to occur in various parts of the world, including in rural areas of the western United States, Madagascar, and the Democratic Republic of the Congo, though modern antibiotic treatment, when administered sufficiently promptly after diagnosis, now makes the disease readily treatable and only rarely fatal in areas where such medical care remains reliably available and accessible, a stark contrast to the catastrophic, near-total absence of any effective treatment during the fourteenth-century pandemic."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tThe scale of the pandemic, and its confirmed cause\nii\tHow the disease travelled from Asia to Sicily\niii\tMistaken beliefs, and the persecution they caused\niv\tLonger-term effects on labour and feudal society\nv\tWhy the bacterium has never disappeared\nvi\tModern vaccines developed against the disease\nvii\tQuarantine measures first introduced during the pandemic",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói quy mô đại dịch và nguyên nhân được xác nhận (vi khuẩn Yersinia pestis). Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể dịch bệnh lan từ Trung Á tới cảng Messina, Sicily năm 1347. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về niềm tin sai lầm (miasma) và thuyết âm mưu bài Do Thái dẫn tới bức hại. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về hệ quả dài hạn: suy giảm lao động dẫn tới suy tàn chế độ phong kiến. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói vi khuẩn chưa bao giờ biến mất, vẫn còn ca bệnh lẻ tẻ ngày nay. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "The bacterial cause of the Black Death was confirmed at the time the pandemic occurred.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn A nói ngược: nguyên nhân 'was only conclusively confirmed through modern genetic analysis... well over six centuries after the pandemic itself had struck'. Xác nhận rất lâu sau, không phải ngay lúc đó. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The theory that Jewish communities had poisoned wells was based on solid evidence.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn C nói ngược: đó là 'a baseless accusation' — hoàn toàn vô căn cứ, không phải có bằng chứng vững chắc. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Bloodletting and lancing lymph nodes were generally effective medieval treatments for the plague.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: các phương pháp này 'generally proved entirely ineffective and were... actively counterproductive'. Vô hiệu, thậm chí phản tác dụng. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The reduced labour force after the plague increased the bargaining power of surviving peasants.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'substantially increased the bargaining power of surviving peasants and skilled labourers relative to landowners'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Modern antibiotic treatment makes the plague only rarely fatal where medical care is available.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'modern antibiotic treatment... now makes the disease readily treatable and only rarely fatal in areas where such medical care remains reliably available'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The Black Death is generally attributed to the bacterium ________.",
+      "answer": "Yersinia pestis",
+      "number": 11,
+      "explanation": "Đoạn A: 'is now generally attributed to the bacterium Yersinia pestis'. Đáp án Yersinia pestis."
+    },
+    {
+      "type": "gap",
+      "prompt": "The disease reached Europe in 1347 at the Sicilian port of ________.",
+      "answer": "Messina",
+      "number": 12,
+      "explanation": "Đoạn B: 'reaching Europe in 1347 when a fleet of merchant ships arrived at the Sicilian port of Messina'. Đáp án Messina."
+    },
+    {
+      "type": "gap",
+      "prompt": "Medieval physicians believed corrupted, foul-smelling air, known as ________, caused the plague.",
+      "answer": "miasma",
+      "number": 13,
+      "explanation": "Đoạn C: 'known at the time as miasma'. Đáp án miasma."
+    },
+    {
+      "type": "gap",
+      "prompt": "The decline of the ________ system of obligatory agricultural labour is linked to labour shortages after the plague.",
+      "answer": "feudal",
+      "number": 14,
+      "explanation": "Đoạn D: 'the gradual decline of the feudal system of obligatory, largely unpaid agricultural labour'. Đáp án feudal."
+    },
+    {
+      "type": "gap",
+      "prompt": "Isolated cases of plague still occur today in rural areas of the western ________.",
+      "answer": "United States",
+      "number": 15,
+      "explanation": "Đoạn E: 'isolated cases of plague continue to occur... including in rural areas of the western United States'. Đáp án United States."
+    }
+  ]
+}

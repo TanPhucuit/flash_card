@@ -1,0 +1,141 @@
+{
+  "title": "The Bronze Age Collapse",
+  "sourceNote": "Biên soạn dựa trên kiến thức khảo cổ học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Bronze Age collapse refers to a widespread, remarkably rapid societal breakdown that struck much of the Eastern Mediterranean and Near East during the twelfth century BCE, bringing about the sudden or gradual fall of several major, previously flourishing civilisations, including the Mycenaean palaces of Greece, the Hittite Empire in Anatolia, and various New Kingdom Egyptian territories, along with the near-total disruption of the extensive, long-distance international trade networks that had previously connected these societies to one another for several preceding centuries."
+    },
+    {
+      "letter": "B",
+      "text": "Archaeological evidence indicates that dozens of major cities across the region were destroyed, abandoned, or both within a remarkably compressed span of just a few decades, and that literacy itself, along with monumental architecture and various other recognisable hallmarks of complex, centralised civilisation, disappeared entirely from several affected regions for centuries afterward, a phenomenon historians often term a genuine \"dark age\". Greece in particular experienced a documented and severe decline in population, a substantial and lasting loss of the sophisticated Linear B writing system previously used by Mycenaean palace administrators, and a pronounced simplification of material culture that persisted for several subsequent centuries before more complex, literate society gradually re-emerged."
+    },
+    {
+      "letter": "C",
+      "text": "Ancient Egyptian inscriptions attribute at least part of the widespread regional disruption to attacks by a loosely organised, poorly documented coalition of seaborne raiders that modern historians collectively refer to as the Sea Peoples, whose precise ethnic origin, homeland, and internal composition remain the subject of continuing scholarly debate and uncertainty. While Egyptian sources describe the Sea Peoples as a significant military threat successfully repelled by the pharaoh Ramesses III in a major recorded battle around 1175 BCE, most modern historians now regard them as more likely a consequence and visible symptom of the wider period's severe social, political, and economic instability, displaced groups set in motion by other underlying causes, rather than the primary root cause of the collapse itself."
+    },
+    {
+      "letter": "D",
+      "text": "Modern historians generally favour multi-causal explanations for the Bronze Age collapse rather than any single decisive event or cause. Climate scientists analysing preserved pollen samples and other environmental proxy records have found substantial evidence of a prolonged, severe drought across much of the Eastern Mediterranean region during roughly this same period, which would have significantly reduced agricultural yields and could very plausibly have triggered widespread famine, internal social unrest, and, quite possibly, the very population displacements that Egyptian sources attribute directly to the Sea Peoples. Other proposed contributing factors include a series of major earthquakes striking several key regional centres within a relatively short span of years, the systemic collapse of the tightly interconnected international trade networks upon which several Bronze Age palace economies had grown critically dependent, most notably for the reliable supply of tin needed to manufacture bronze itself, and a wave of internal social uprisings against the region's various centralised, palace-dominated political and economic systems."
+    },
+    {
+      "letter": "E",
+      "text": "The Bronze Age collapse is frequently cited by historians, archaeologists, and even contemporary policy analysts as a genuinely instructive historical case study in what is sometimes termed \"systems collapse\", the idea that several separate, individually survivable stresses, such as climate change, resource scarcity, and disrupted trade, can interact and compound one another in mutually reinforcing ways to produce a societal breakdown considerably more severe, widespread, and sudden than any single one of the individual contributing stresses could plausibly have caused on its own. Some contemporary researchers studying present-day risks to global economic and ecological stability have explicitly drawn on the Bronze Age collapse as a historical cautionary parallel when examining the potential fragility and interdependence of complex modern societies and their own tightly interconnected global systems."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat collapsed, and how many civilisations it affected\nii\tArchaeological signs of a genuine dark age\niii\tRaiders blamed in Egyptian inscriptions, and a modern reassessment\niv\tSeveral interacting causes rather than one\nv\tA cautionary parallel drawn by modern researchers\nvi\tHow archaeologists first identified the Mycenaean palaces\nvii\tTrade routes that survived the collapse intact",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói sự sụp đổ ảnh hưởng tới những nền văn minh nào: Mycenae, Hittite, Ai Cập. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói bằng chứng khảo cổ về 'thời kỳ đen tối' — mất chữ viết, kiến trúc, dân số suy giảm. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về 'Sea Peoples' bị đổ lỗi trong bia ký Ai Cập, và cách nhìn nhận lại của sử gia hiện đại. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói sử gia hiện đại ưa thích giải thích đa nguyên nhân: hạn hán, động đất, sụp đổ thương mại, nổi dậy. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói các nhà nghiên cứu hiện đại dùng sự kiện này làm bài học cảnh báo cho xã hội ngày nay. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Dozens of major cities were destroyed or abandoned within just a few decades.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn B: 'dozens of major cities across the region were destroyed, abandoned, or both within a remarkably compressed span of just a few decades'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Mycenaean Greece retained full use of the Linear B writing system after the collapse.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn B nói ngược: Hy Lạp trải qua 'a substantial and lasting loss of the sophisticated Linear B writing system'. Mất chữ viết, không phải giữ được. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Most modern historians now regard the Sea Peoples as the primary root cause of the collapse.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: sử gia hiện đại 'regard them as more likely a consequence and visible symptom... rather than the primary root cause'. Là hệ quả, không phải nguyên nhân gốc. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Pollen samples provide evidence of a prolonged, severe drought during the collapse period.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'Climate scientists analysing preserved pollen samples... have found substantial evidence of a prolonged, severe drought'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The Bronze Age collapse has been used as a historical parallel by researchers studying risks to modern global systems.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'Some contemporary researchers... have explicitly drawn on the Bronze Age collapse as a historical cautionary parallel'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The Bronze Age collapse struck the Eastern Mediterranean during the ________ century BCE.",
+      "answer": "twelfth",
+      "number": 11,
+      "explanation": "Đoạn A: 'during the twelfth century BCE'. Đáp án twelfth."
+    },
+    {
+      "type": "gap",
+      "prompt": "Ramesses III is said to have repelled the Sea Peoples around ________ BCE.",
+      "answer": "1175",
+      "number": 12,
+      "explanation": "Đoạn C: 'repelled by the pharaoh Ramesses III in a major recorded battle around 1175 BCE'. Đáp án 1175."
+    },
+    {
+      "type": "gap",
+      "prompt": "Bronze Age palace economies depended critically on trade for a reliable supply of ________ to manufacture bronze.",
+      "answer": "tin",
+      "number": 13,
+      "explanation": "Đoạn D: 'most notably for the reliable supply of tin needed to manufacture bronze itself'. Đáp án tin."
+    },
+    {
+      "type": "gap",
+      "prompt": "The idea that several stresses interact to produce a severe breakdown is termed 'systems ________'.",
+      "answer": "collapse",
+      "number": 14,
+      "explanation": "Đoạn E: 'what is sometimes termed systems collapse'. Đáp án collapse."
+    },
+    {
+      "type": "gap",
+      "prompt": "In Anatolia, the collapse brought about the fall of the ________ Empire.",
+      "answer": "Hittite",
+      "number": 15,
+      "explanation": "Đoạn A: 'the Hittite Empire in Anatolia'. Đáp án Hittite."
+    }
+  ]
+}

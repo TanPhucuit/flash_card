@@ -15977,6 +15977,886 @@
           "id": "nl2-35-printing-press-q15"
         }
       ]
+    },
+    {
+      "id": "nl2-36-black-death-p1",
+      "order": 88,
+      "title": "The Black Death",
+      "text": "A\nThe Black Death was a devastating plague pandemic that swept across Europe, the Middle East, and North Africa between roughly 1347 and 1351, killing an estimated thirty to sixty percent of Europe's entire population within just a few years, making it, by most measures, the single deadliest recorded pandemic in the whole of human history. The disease is now generally attributed to the bacterium Yersinia pestis, though this precise causal identification was only conclusively confirmed through modern genetic analysis of the bacterium's DNA recovered from the teeth of medieval plague victims, work carried out in the early twenty-first century, well over six centuries after the pandemic itself had struck.\n\nB\nThe pandemic is generally believed to have originated in Central Asia and to have spread westward along established, well-travelled trade routes, most notably reaching Europe in 1347 when a fleet of merchant ships arrived at the Sicilian port of Messina, unknowingly carrying rats infested with fleas that themselves harboured the plague bacterium. From Sicily, the disease spread with alarming speed across the rest of Europe, aided considerably by the dense, unsanitary conditions typical of medieval towns and cities and by the constant, sustained movement of merchants, soldiers, and travellers along established trade and pilgrimage routes throughout the continent.\n\nC\nMedieval physicians, working entirely without any concept of germ theory, proposed a wide range of explanations for the plague's cause, including the idea that it was spread through corrupted, foul-smelling air, known at the time as \"miasma\", and, in a deeply troubling development, the antisemitic conspiracy theory, entirely without foundation, that Jewish communities had deliberately poisoned local wells, a baseless accusation that led directly to horrific waves of violent persecution against Jewish communities across several parts of Europe during the pandemic. Medical treatments actually attempted at the time, including bloodletting and the lancing of the disease's characteristic swollen lymph nodes, generally proved entirely ineffective and were, in the case of certain treatments, actively counterproductive to a patient's chances of recovery.\n\nD\nBeyond the pandemic's catastrophic immediate human toll, historians have identified numerous significant longer-term social and economic consequences that followed. The sudden, dramatic reduction in the available labour force across much of Europe substantially increased the bargaining power of surviving peasants and skilled labourers relative to landowners, contributing over subsequent decades to the gradual decline of the feudal system of obligatory, largely unpaid agricultural labour that had previously dominated much of medieval European society. Some economic historians argue that this shift in bargaining power between labour and landowners indirectly helped lay important groundwork for the later economic and social transformations of the Renaissance period, though the precise causal weight properly attributable to the plague, relative to numerous other contributing historical factors operating over the same broad period, remains a genuinely contested question among specialist historians.\n\nE\nThe bacterium responsible for the Black Death has never actually disappeared: Yersinia pestis still exists today, and isolated cases of plague continue to occur in various parts of the world, including in rural areas of the western United States, Madagascar, and the Democratic Republic of the Congo, though modern antibiotic treatment, when administered sufficiently promptly after diagnosis, now makes the disease readily treatable and only rarely fatal in areas where such medical care remains reliably available and accessible, a stark contrast to the catastrophic, near-total absence of any effective treatment during the fourteenth-century pandemic.\n\n— Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tThe scale of the pandemic, and its confirmed cause\nii\tHow the disease travelled from Asia to Sicily\niii\tMistaken beliefs, and the persecution they caused\niv\tLonger-term effects on labour and feudal society\nv\tWhy the bacterium has never disappeared\nvi\tModern vaccines developed against the disease\nvii\tQuarantine measures first introduced during the pandemic",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói quy mô đại dịch và nguyên nhân được xác nhận (vi khuẩn Yersinia pestis). Đúng tiêu đề i.",
+          "id": "nl2-36-black-death-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể dịch bệnh lan từ Trung Á tới cảng Messina, Sicily năm 1347. Đúng tiêu đề ii.",
+          "id": "nl2-36-black-death-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về niềm tin sai lầm (miasma) và thuyết âm mưu bài Do Thái dẫn tới bức hại. Đúng tiêu đề iii.",
+          "id": "nl2-36-black-death-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về hệ quả dài hạn: suy giảm lao động dẫn tới suy tàn chế độ phong kiến. Đúng tiêu đề iv.",
+          "id": "nl2-36-black-death-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói vi khuẩn chưa bao giờ biến mất, vẫn còn ca bệnh lẻ tẻ ngày nay. Đúng tiêu đề v.",
+          "id": "nl2-36-black-death-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "The bacterial cause of the Black Death was confirmed at the time the pandemic occurred.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn A nói ngược: nguyên nhân 'was only conclusively confirmed through modern genetic analysis... well over six centuries after the pandemic itself had struck'. Xác nhận rất lâu sau, không phải ngay lúc đó. FALSE.",
+          "id": "nl2-36-black-death-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The theory that Jewish communities had poisoned wells was based on solid evidence.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn C nói ngược: đó là 'a baseless accusation' — hoàn toàn vô căn cứ, không phải có bằng chứng vững chắc. FALSE.",
+          "id": "nl2-36-black-death-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Bloodletting and lancing lymph nodes were generally effective medieval treatments for the plague.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: các phương pháp này 'generally proved entirely ineffective and were... actively counterproductive'. Vô hiệu, thậm chí phản tác dụng. FALSE.",
+          "id": "nl2-36-black-death-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The reduced labour force after the plague increased the bargaining power of surviving peasants.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'substantially increased the bargaining power of surviving peasants and skilled labourers relative to landowners'. Đúng ý đề nên TRUE.",
+          "id": "nl2-36-black-death-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Modern antibiotic treatment makes the plague only rarely fatal where medical care is available.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'modern antibiotic treatment... now makes the disease readily treatable and only rarely fatal in areas where such medical care remains reliably available'. Đúng ý đề nên TRUE.",
+          "id": "nl2-36-black-death-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The Black Death is generally attributed to the bacterium ________.",
+          "answer": "Yersinia pestis",
+          "number": 11,
+          "explanation": "Đoạn A: 'is now generally attributed to the bacterium Yersinia pestis'. Đáp án Yersinia pestis.",
+          "id": "nl2-36-black-death-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The disease reached Europe in 1347 at the Sicilian port of ________.",
+          "answer": "Messina",
+          "number": 12,
+          "explanation": "Đoạn B: 'reaching Europe in 1347 when a fleet of merchant ships arrived at the Sicilian port of Messina'. Đáp án Messina.",
+          "id": "nl2-36-black-death-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Medieval physicians believed corrupted, foul-smelling air, known as ________, caused the plague.",
+          "answer": "miasma",
+          "number": 13,
+          "explanation": "Đoạn C: 'known at the time as miasma'. Đáp án miasma.",
+          "id": "nl2-36-black-death-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The decline of the ________ system of obligatory agricultural labour is linked to labour shortages after the plague.",
+          "answer": "feudal",
+          "number": 14,
+          "explanation": "Đoạn D: 'the gradual decline of the feudal system of obligatory, largely unpaid agricultural labour'. Đáp án feudal.",
+          "id": "nl2-36-black-death-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Isolated cases of plague still occur today in rural areas of the western ________.",
+          "answer": "United States",
+          "number": 15,
+          "explanation": "Đoạn E: 'isolated cases of plague continue to occur... including in rural areas of the western United States'. Đáp án United States.",
+          "id": "nl2-36-black-death-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-37-manhattan-project-p1",
+      "order": 89,
+      "title": "The Manhattan Project",
+      "text": "A\nThe Manhattan Project was the codename for the United States-led research and development programme that produced the first functional nuclear weapons during the Second World War, formally established in 1942 following growing scientific concern, voiced most influentially in a 1939 letter to President Franklin Roosevelt co-signed by Albert Einstein, that Nazi Germany might be actively pursuing an atomic bomb of its own. Employing well over one hundred thousand people at its wartime peak, spread across dozens of secret research and production sites scattered throughout the United States, Canada, and the United Kingdom, the project represented an extraordinary, unprecedented concentration of scientific talent, industrial capacity, and government funding directed toward a single, overriding military objective.\n\nB\nThe project was directed militarily by General Leslie Groves and scientifically by the physicist J. Robert Oppenheimer, who assembled and led an extraordinary team of leading physicists, chemists, and engineers, many of them refugees who had personally fled Nazi-controlled Europe, at a purpose-built, previously nonexistent secret research town constructed specifically for the project at Los Alamos, New Mexico. The scientific and technical challenges the assembled team had to solve were genuinely immense, spanning everything from the extraordinarily difficult, resource-intensive task of separating and enriching the rare fissile isotope uranium-235 from the far more common uranium-238, to designing an entirely new class of weapon whose basic underlying physics had, until that point, existed only in abstract theoretical calculation rather than in any tested, working physical device.\n\nC\nThe world's first nuclear detonation, codenamed Trinity, took place on 16 July 1945 in the New Mexico desert, producing an explosion considerably more powerful than even many of the project's own scientists had confidently predicted beforehand. Less than a month later, the United States dropped atomic bombs on the Japanese cities of Hiroshima and Nagasaki, on 6 and 9 August 1945 respectively, killing an estimated combined total of well over one hundred thousand people, the overwhelming majority of them civilians, in the immediate blasts and their direct aftermath, with substantially more dying in the following months and years from severe burns, acute radiation sickness, and a range of longer-term radiation-related illnesses and complications.\n\nD\nJapan formally surrendered on 15 August 1945, bringing the Second World War to its final conclusion, though historians continue to debate vigorously the precise relative importance of the atomic bombings, as opposed to other significant contributing factors, including the near-simultaneous Soviet declaration of war on Japan and subsequent invasion of Japanese-controlled Manchuria, in Japan's ultimate decision to surrender when and as it actually did. This question of the bombings' precise causal weight in ending the war remains one of the most extensively debated, and most persistently contested, topics in the entire historiography of the Second World War, with historians continuing to disagree substantially even after decades of subsequent archival research and analysis.\n\nE\nSeveral key scientists who had worked on the project, including Oppenheimer himself, later expressed significant public misgivings, and in some cases outright moral opposition, regarding the weapon's use and its subsequent, rapid post-war proliferation to other nations. Oppenheimer notably later remarked that the successful test had brought to his mind a line from the ancient Hindu scripture the Bhagavad Gita, describing himself as having become \"death, the destroyer of worlds\", and he subsequently opposed the post-war development of the considerably more powerful hydrogen bomb, a stance that ultimately contributed to his security clearance being controversially revoked by the United States government during the politically charged atmosphere of the early Cold War period.\n\n— Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy the project began, and how large it grew\nii\tWho led it, and the technical problems they faced\niii\tThe first test, and the two cities bombed weeks later\niv\tA debated question about why Japan surrendered\nv\tA scientist's later regret and its political consequences\nvi\tHow the project's secrecy was maintained\nvii\tPost-war efforts to control the spread of nuclear weapons",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói tại sao dự án bắt đầu (lo ngại Đức Quốc xã) và quy mô nó lớn tới đâu. Đúng tiêu đề i.",
+          "id": "nl2-37-manhattan-project-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về Groves, Oppenheimer, và các thách thức kỹ thuật ở Los Alamos. Đúng tiêu đề ii.",
+          "id": "nl2-37-manhattan-project-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C kể vụ thử Trinity và hai vụ ném bom xuống Hiroshima, Nagasaki. Đúng tiêu đề iii.",
+          "id": "nl2-37-manhattan-project-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về tranh cãi lịch sử về vai trò thực sự của bom nguyên tử trong việc Nhật đầu hàng. Đúng tiêu đề iv.",
+          "id": "nl2-37-manhattan-project-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về sự day dứt của Oppenheimer và hậu quả chính trị của nó. Đúng tiêu đề v.",
+          "id": "nl2-37-manhattan-project-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Einstein co-signed the 1939 letter that helped prompt the project's creation.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'a 1939 letter to President Franklin Roosevelt co-signed by Albert Einstein'. Đúng ý đề nên TRUE.",
+          "id": "nl2-37-manhattan-project-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The Trinity test produced an explosion less powerful than most scientists had expected.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn C nói ngược: vụ nổ 'considerably more powerful than even many of the project's own scientists had confidently predicted'. Mạnh HƠN dự đoán, không phải yếu hơn. FALSE.",
+          "id": "nl2-37-manhattan-project-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Nagasaki was bombed before Hiroshima.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C: Hiroshima bị ném bom ngày 6/8, Nagasaki ngày 9/8 — Hiroshima trước, không phải Nagasaki trước. FALSE.",
+          "id": "nl2-37-manhattan-project-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Historians unanimously agree that the atomic bombings were the sole cause of Japan's surrender.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: 'historians continue to debate vigorously the precise relative importance of the atomic bombings' cùng với yếu tố khác như Liên Xô tuyên chiến. Không có sự đồng thuận tuyệt đối. FALSE.",
+          "id": "nl2-37-manhattan-project-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Oppenheimer's security clearance was revoked partly because he opposed developing the hydrogen bomb.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'he subsequently opposed the post-war development of the considerably more powerful hydrogen bomb, a stance that ultimately contributed to his security clearance being controversially revoked'. Đúng ý đề nên TRUE.",
+          "id": "nl2-37-manhattan-project-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The Manhattan Project was formally established in ________.",
+          "answer": "1942",
+          "number": 11,
+          "explanation": "Đoạn A: 'formally established in 1942'. Đáp án 1942.",
+          "id": "nl2-37-manhattan-project-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The project's military director was General ________.",
+          "answer": "Leslie Groves",
+          "number": 12,
+          "explanation": "Đoạn B: 'directed militarily by General Leslie Groves'. Đáp án Leslie Groves.",
+          "id": "nl2-37-manhattan-project-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "The research team was based at a secret town built at ________, New Mexico.",
+          "answer": "Los Alamos",
+          "number": 13,
+          "explanation": "Đoạn B: 'at a purpose-built, previously nonexistent secret research town constructed specifically for the project at Los Alamos, New Mexico'. Đáp án Los Alamos.",
+          "id": "nl2-37-manhattan-project-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The first nuclear detonation was codenamed ________.",
+          "answer": "Trinity",
+          "number": 14,
+          "explanation": "Đoạn C: 'The world's first nuclear detonation, codenamed Trinity'. Đáp án Trinity.",
+          "id": "nl2-37-manhattan-project-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Japan formally surrendered on ________.",
+          "answer": "15 August 1945",
+          "number": 15,
+          "explanation": "Đoạn D: 'Japan formally surrendered on 15 August 1945'. Đáp án 15 August 1945.",
+          "id": "nl2-37-manhattan-project-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-38-green-revolution-p1",
+      "order": 90,
+      "title": "The Green Revolution",
+      "text": "A\nThe Green Revolution refers to a set of agricultural research initiatives, technology transfers, and infrastructure investments occurring roughly between the 1940s and the late 1960s that dramatically increased crop yields across large parts of the developing world, most notably in Mexico, India, and Pakistan, and is generally credited with averting large-scale famines that many demographers and agricultural economists had confidently predicted, on the basis of rapid population growth outpacing food production, would otherwise strike substantial portions of Asia during that period.\n\nB\nThe central figure most closely associated with the Green Revolution is the American agronomist Norman Borlaug, who spent decades working in Mexico developing high-yielding, disease-resistant varieties of wheat, including notably semi-dwarf varieties bred specifically to have shorter, sturdier stalks that could support the substantially heavier grain loads produced by increased fertiliser use without simply collapsing and falling over under that added weight, a persistent problem, known as lodging, that had previously limited how much fertiliser could be usefully applied to traditional, taller wheat varieties. Borlaug's semi-dwarf wheat varieties, once further adapted and refined for local growing conditions, dramatically increased yields when introduced to Pakistan and India during the 1960s, and he was awarded the Nobel Peace Prize in 1970 in explicit recognition of this contribution to global food security and the consequent prevention of large-scale famine.\n\nC\nThe Green Revolution's package of innovations extended well beyond improved crop varieties alone. Its full implementation typically required substantially increased use of synthetic nitrogen fertiliser, expanded and more reliable irrigation infrastructure, and the more systematic use of chemical pesticides to protect the new, high-yielding varieties from insect damage and crop disease, together with the introduction of mechanised farm equipment in many regions. This combined technological package required considerably more capital investment than traditional subsistence farming methods had previously demanded, meaning that wealthier farmers, who could more readily afford these substantial upfront costs, often benefited disproportionately more, at least in the revolution's early years, compared with poorer smallholder farmers who frequently lacked comparable access to the credit and capital needed to fully adopt the same combined package of new technologies and inputs.\n\nD\nIndia provides one of the most frequently cited and dramatic examples of the Green Revolution's overall impact: the country's wheat production roughly tripled between the mid-1960s and the mid-1980s, transforming India within roughly two decades from a country that had depended heavily on substantial food imports and periodic international food aid into one that was, for the most part, self-sufficient in food grain production and, in certain years, even a net exporter of surplus grain. This dramatic transformation is widely credited with helping India avoid the kind of catastrophic, widespread famine that a number of prominent demographers and economists had confidently and publicly predicted for the country as recently as the 1960s.\n\nE\nDespite these clear and substantial benefits, the Green Revolution's longer-term environmental and social consequences have attracted considerable and sustained scholarly criticism. Heavy, sustained fertiliser and pesticide use has been linked in many regions to soil degradation over time, to the pollution of nearby rivers and groundwater through agricultural runoff, and to a marked reduction in agricultural biodiversity, since farmers increasingly concentrated cultivation on a comparatively small number of high-yielding varieties at the expense of numerous traditional, locally adapted crop varieties that had previously been grown, some of which have since become considerably rarer or effectively lost to cultivation altogether. Some economists and agricultural historians have also argued that the substantial economic benefits of the Green Revolution were not, in the end, always shared equitably among all farmers, with larger, wealthier landholders in some regions benefiting disproportionately relative to smaller, poorer farmers working comparatively marginal or less productive land.\n\n— Biên soạn dựa trên kiến thức lịch sử nông nghiệp phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it was, and the famine it is credited with averting\nii\tThe agronomist behind the new wheat varieties\niii\tA wider package of technology, not just new seeds\niv\tIndia's dramatic rise in wheat production\nv\tEnvironmental and social costs that followed\nvi\tPlans to extend the revolution to sub-Saharan Africa\nvii\tRice varieties developed alongside the wheat programme",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói Cách mạng Xanh là gì và nạn đói nó được cho là đã ngăn chặn được. Đúng tiêu đề i.",
+          "id": "nl2-38-green-revolution-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói về Norman Borlaug và giống lúa mì bán lùn ông phát triển. Đúng tiêu đề ii.",
+          "id": "nl2-38-green-revolution-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói Cách mạng Xanh không chỉ là giống mới mà cả phân bón, tưới tiêu, thuốc trừ sâu, cơ giới hoá. Đúng tiêu đề iii.",
+          "id": "nl2-38-green-revolution-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói về sản lượng lúa mì Ấn Độ tăng gấp ba giữa thập niên 60 và 80. Đúng tiêu đề iv.",
+          "id": "nl2-38-green-revolution-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về hệ quả môi trường và xã hội bị chỉ trích: thoái hoá đất, mất đa dạng sinh học, bất bình đẳng. Đúng tiêu đề v.",
+          "id": "nl2-38-green-revolution-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Taller, traditional wheat varieties could support heavier grain loads from increased fertiliser without collapsing.",
+          "answer": "FALSE",
+          "number": 6,
+          "explanation": "Đoạn B nói ngược: giống lúa mì truyền thống cao hơn dễ bị 'lodging' (đổ ngã) khi tăng phân bón — chính vì vậy Borlaug mới phát triển giống bán lùn. FALSE.",
+          "id": "nl2-38-green-revolution-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Borlaug received the Nobel Peace Prize in 1970.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'he was awarded the Nobel Peace Prize in 1970'. Đúng ý đề nên TRUE.",
+          "id": "nl2-38-green-revolution-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Poorer smallholder farmers generally benefited more than wealthier farmers in the early years of the Green Revolution.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: 'wealthier farmers... often benefited disproportionately more, at least in the revolution's early years'. Nông dân giàu hưởng lợi nhiều hơn, không phải nông dân nghèo. FALSE.",
+          "id": "nl2-38-green-revolution-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "India became, for the most part, self-sufficient in food grain production after the Green Revolution.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'transforming India... into one that was, for the most part, self-sufficient in food grain production'. Đúng ý đề nên TRUE.",
+          "id": "nl2-38-green-revolution-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Heavy fertiliser and pesticide use has been linked to increased agricultural biodiversity.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: 'a marked reduction in agricultural biodiversity' — giảm chứ không tăng đa dạng sinh học. FALSE.",
+          "id": "nl2-38-green-revolution-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "Borlaug developed semi-dwarf varieties of ________.",
+          "answer": "wheat",
+          "number": 11,
+          "explanation": "Đoạn B: 'developing high-yielding, disease-resistant varieties of wheat, including notably semi-dwarf varieties'. Đáp án wheat.",
+          "id": "nl2-38-green-revolution-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Tall wheat varieties collapsing under heavy grain loads is a problem known as ________.",
+          "answer": "lodging",
+          "number": 12,
+          "explanation": "Đoạn B: 'a persistent problem, known as lodging'. Đáp án lodging.",
+          "id": "nl2-38-green-revolution-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Full implementation of the Green Revolution required expanded ________ infrastructure.",
+          "answer": "irrigation",
+          "number": 13,
+          "explanation": "Đoạn C: 'expanded and more reliable irrigation infrastructure'. Đáp án irrigation.",
+          "id": "nl2-38-green-revolution-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "India's wheat production roughly ________ between the mid-1960s and the mid-1980s.",
+          "answer": "tripled",
+          "number": 14,
+          "explanation": "Đoạn D: 'the country's wheat production roughly tripled between the mid-1960s and the mid-1980s'. Đáp án tripled.",
+          "id": "nl2-38-green-revolution-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Heavy fertiliser and pesticide use has been linked to ________ degradation.",
+          "answer": "soil",
+          "number": 15,
+          "explanation": "Đoạn E: 'has been linked in many regions to soil degradation over time'. Đáp án soil.",
+          "id": "nl2-38-green-revolution-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-39-longitude-problem-p1",
+      "order": 91,
+      "title": "The Longitude Problem",
+      "text": "A\nFor much of the age of sail, sailors navigating the open ocean could determine their latitude, their position north or south of the equator, with reasonable accuracy and relative ease, chiefly by measuring the angle of the Sun or known stars above the horizon. Determining longitude, a ship's position east or west, proved a vastly more difficult problem, since it depends on precisely knowing the difference in local time between the ship's current position and a fixed reference location, and no sufficiently accurate, reliable method existed for tracking that time difference at sea for the better part of two centuries of oceanic exploration and trade.\n\nB\nThe consequences of this navigational shortfall were sometimes severe and occasionally catastrophic. In 1707, a British naval squadron, having significantly miscalculated its longitude while returning home in poor visibility, wrecked on rocks near the Isles of Scilly off the southwestern English coast, an incident that killed close to two thousand sailors in a single disaster and shocked the British public and government alike. Partly in direct response to this and other, less spectacular but still costly navigational failures, the British Parliament passed the Longitude Act in 1714, formally establishing a substantial cash prize, ultimately worth up to £20,000, a genuinely enormous sum of money for the period, for anyone who could devise a sufficiently practical and reliable method of determining longitude at sea to within a specified degree of accuracy.\n\nC\nTwo broad, competing categories of solution to the longitude problem were seriously pursued during the eighteenth century. One approach, strongly favoured by many of the era's most eminent professional astronomers, relied on precisely and carefully measuring the position of the Moon relative to fixed background stars, a method requiring extensive astronomical tables, painstaking observation, and lengthy, error-prone manual calculation, but requiring no fundamentally new mechanical instrument beyond existing astronomical apparatus. The rival, mechanical approach instead required constructing an extraordinarily accurate seagoing clock, or marine chronometer, capable of reliably keeping precise time over long ocean voyages despite the ship's constant, often violent motion, significant changes in ambient temperature and humidity, and considerable variation in air pressure, a formidable and, to many contemporary experts, seemingly implausible engineering challenge.\n\nD\nThe self-taught English carpenter and clockmaker John Harrison dedicated much of his working life, spanning several decades, to solving the mechanical, clock-based version of the problem, ultimately producing a succession of increasingly refined marine timekeepers, most famously a compact, watch-like device generally known as H4, which successfully kept sufficiently accurate time during an extended sea trial to Jamaica in the 1760s, comfortably satisfying the accuracy requirements originally specified by the 1714 Longitude Act. Harrison nonetheless faced years of persistent scepticism, bureaucratic delay, and outright resistance from the official Board of Longitude, several of whose most influential members had personally invested considerable professional reputation and effort in the rival, astronomically based lunar-distance method and were consequently reluctant to fully credit an unschooled tradesman's practical mechanical solution over their own preferred astronomical approach.\n\nE\nHarrison eventually received a substantial portion of the promised prize money, though only after direct royal intervention from King George III and years of additional, often bitter, dispute and advocacy on his behalf. His chronometers, and the many further design refinements and simplifications that swiftly followed from other clockmakers building on his fundamental design principles, eventually made accurate marine chronometers practical and affordable enough for widespread routine use throughout the British and other European merchant and naval fleets by the early nineteenth century, transforming maritime navigation and substantially reducing the previously severe and frequent risk of ships becoming dangerously lost or running fatally aground due to accumulated navigational error over the course of long ocean voyages.\n\n— Biên soạn dựa trên kiến thức lịch sử khoa học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy longitude was so much harder to measure than latitude\nii\tA disaster that led to a large cash prize\niii\tTwo rival approaches under serious consideration\niv\tA self-taught clockmaker's decades-long solution\nv\tResistance from the Board, and eventual vindication\nvi\tHow satellite navigation eventually replaced chronometers\nvii\tEarly attempts to measure longitude using magnetic compasses",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A giải thích vì sao đo kinh độ khó hơn vĩ độ nhiều. Đúng tiêu đề i.",
+          "id": "nl2-39-longitude-problem-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B kể thảm hoạ đắm tàu 1707 dẫn tới Đạo luật Kinh độ 1714 với giải thưởng lớn. Đúng tiêu đề ii.",
+          "id": "nl2-39-longitude-problem-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về hai hướng giải pháp cạnh tranh: phương pháp thiên văn (khoảng cách Mặt Trăng) và phương pháp cơ khí (đồng hồ hàng hải). Đúng tiêu đề iii.",
+          "id": "nl2-39-longitude-problem-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D kể về John Harrison và chiếc H4 sau nhiều thập kỷ nghiên cứu. Đúng tiêu đề iv.",
+          "id": "nl2-39-longitude-problem-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói về sự phản đối từ Board of Longitude và việc Harrison cuối cùng được minh oan nhờ vua can thiệp. Đúng tiêu đề v.",
+          "id": "nl2-39-longitude-problem-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Sailors found it easier to determine latitude than longitude at sea.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn A: 'sailors navigating the open ocean could determine their latitude... with reasonable accuracy and relative ease' trong khi kinh độ 'proved a vastly more difficult problem'. Đúng ý đề nên TRUE.",
+          "id": "nl2-39-longitude-problem-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The 1707 naval disaster near the Isles of Scilly killed close to two thousand sailors.",
+          "answer": "TRUE",
+          "number": 7,
+          "explanation": "Đoạn B: 'an incident that killed close to two thousand sailors in a single disaster'. Đúng ý đề nên TRUE.",
+          "id": "nl2-39-longitude-problem-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The lunar-distance method required building an entirely new mechanical instrument.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: phương pháp Mặt Trăng 'requiring no fundamentally new mechanical instrument beyond existing astronomical apparatus'. Không cần thiết bị cơ khí mới, đó là đặc điểm của phương pháp đồng hồ. FALSE.",
+          "id": "nl2-39-longitude-problem-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Harrison's H4 failed to meet the accuracy requirements of the 1714 Longitude Act during its sea trial to Jamaica.",
+          "answer": "FALSE",
+          "number": 9,
+          "explanation": "Đoạn D nói ngược: H4 'successfully kept sufficiently accurate time... comfortably satisfying the accuracy requirements'. Đạt yêu cầu, không phải thất bại. FALSE.",
+          "id": "nl2-39-longitude-problem-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Harrison received his prize money without any need for direct royal intervention.",
+          "answer": "FALSE",
+          "number": 10,
+          "explanation": "Đoạn E nói ngược: ông nhận tiền thưởng 'only after direct royal intervention from King George III'. Cần sự can thiệp của vua, không phải tự động nhận được. FALSE.",
+          "id": "nl2-39-longitude-problem-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The British Parliament passed the Longitude Act in ________.",
+          "answer": "1714",
+          "number": 11,
+          "explanation": "Đoạn B: 'the British Parliament passed the Longitude Act in 1714'. Đáp án 1714.",
+          "id": "nl2-39-longitude-problem-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "The prize established by the Act was ultimately worth up to ________.",
+          "answer": "£20,000",
+          "number": 12,
+          "explanation": "Đoạn B: 'a substantial cash prize, ultimately worth up to £20,000'. Đáp án £20,000.",
+          "id": "nl2-39-longitude-problem-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "A seagoing clock designed to solve the longitude problem is called a marine ________.",
+          "answer": "chronometer",
+          "number": 13,
+          "explanation": "Đoạn C: 'constructing an extraordinarily accurate seagoing clock, or marine chronometer'. Đáp án chronometer.",
+          "id": "nl2-39-longitude-problem-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "Harrison's most famous timekeeper, a compact, watch-like device, is generally known as ________.",
+          "answer": "H4",
+          "number": 14,
+          "explanation": "Đoạn D: 'a compact, watch-like device generally known as H4'. Đáp án H4.",
+          "id": "nl2-39-longitude-problem-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "Harrison faced resistance from the official Board of ________.",
+          "answer": "Longitude",
+          "number": 15,
+          "explanation": "Đoạn D: 'faced years of persistent scepticism, bureaucratic delay, and outright resistance from the official Board of Longitude'. Đáp án Longitude.",
+          "id": "nl2-39-longitude-problem-q15"
+        }
+      ]
+    },
+    {
+      "id": "nl2-40-bronze-age-collapse-p1",
+      "order": 92,
+      "title": "The Bronze Age Collapse",
+      "text": "A\nThe Bronze Age collapse refers to a widespread, remarkably rapid societal breakdown that struck much of the Eastern Mediterranean and Near East during the twelfth century BCE, bringing about the sudden or gradual fall of several major, previously flourishing civilisations, including the Mycenaean palaces of Greece, the Hittite Empire in Anatolia, and various New Kingdom Egyptian territories, along with the near-total disruption of the extensive, long-distance international trade networks that had previously connected these societies to one another for several preceding centuries.\n\nB\nArchaeological evidence indicates that dozens of major cities across the region were destroyed, abandoned, or both within a remarkably compressed span of just a few decades, and that literacy itself, along with monumental architecture and various other recognisable hallmarks of complex, centralised civilisation, disappeared entirely from several affected regions for centuries afterward, a phenomenon historians often term a genuine \"dark age\". Greece in particular experienced a documented and severe decline in population, a substantial and lasting loss of the sophisticated Linear B writing system previously used by Mycenaean palace administrators, and a pronounced simplification of material culture that persisted for several subsequent centuries before more complex, literate society gradually re-emerged.\n\nC\nAncient Egyptian inscriptions attribute at least part of the widespread regional disruption to attacks by a loosely organised, poorly documented coalition of seaborne raiders that modern historians collectively refer to as the Sea Peoples, whose precise ethnic origin, homeland, and internal composition remain the subject of continuing scholarly debate and uncertainty. While Egyptian sources describe the Sea Peoples as a significant military threat successfully repelled by the pharaoh Ramesses III in a major recorded battle around 1175 BCE, most modern historians now regard them as more likely a consequence and visible symptom of the wider period's severe social, political, and economic instability, displaced groups set in motion by other underlying causes, rather than the primary root cause of the collapse itself.\n\nD\nModern historians generally favour multi-causal explanations for the Bronze Age collapse rather than any single decisive event or cause. Climate scientists analysing preserved pollen samples and other environmental proxy records have found substantial evidence of a prolonged, severe drought across much of the Eastern Mediterranean region during roughly this same period, which would have significantly reduced agricultural yields and could very plausibly have triggered widespread famine, internal social unrest, and, quite possibly, the very population displacements that Egyptian sources attribute directly to the Sea Peoples. Other proposed contributing factors include a series of major earthquakes striking several key regional centres within a relatively short span of years, the systemic collapse of the tightly interconnected international trade networks upon which several Bronze Age palace economies had grown critically dependent, most notably for the reliable supply of tin needed to manufacture bronze itself, and a wave of internal social uprisings against the region's various centralised, palace-dominated political and economic systems.\n\nE\nThe Bronze Age collapse is frequently cited by historians, archaeologists, and even contemporary policy analysts as a genuinely instructive historical case study in what is sometimes termed \"systems collapse\", the idea that several separate, individually survivable stresses, such as climate change, resource scarcity, and disrupted trade, can interact and compound one another in mutually reinforcing ways to produce a societal breakdown considerably more severe, widespread, and sudden than any single one of the individual contributing stresses could plausibly have caused on its own. Some contemporary researchers studying present-day risks to global economic and ecological stability have explicitly drawn on the Bronze Age collapse as a historical cautionary parallel when examining the potential fragility and interdependence of complex modern societies and their own tightly interconnected global systems.\n\n— Biên soạn dựa trên kiến thức khảo cổ học phổ thông (không sao chép nguyên văn Wikipedia).",
+      "questions": [
+        {
+          "type": "matching",
+          "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat collapsed, and how many civilisations it affected\nii\tArchaeological signs of a genuine dark age\niii\tRaiders blamed in Egyptian inscriptions, and a modern reassessment\niv\tSeveral interacting causes rather than one\nv\tA cautionary parallel drawn by modern researchers\nvi\tHow archaeologists first identified the Mycenaean palaces\nvii\tTrade routes that survived the collapse intact",
+          "prompt": "Section A",
+          "answer": "i",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 1,
+          "explanation": "Đoạn A nói sự sụp đổ ảnh hưởng tới những nền văn minh nào: Mycenae, Hittite, Ai Cập. Đúng tiêu đề i.",
+          "id": "nl2-40-bronze-age-collapse-q1"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section B",
+          "answer": "ii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 2,
+          "explanation": "Đoạn B nói bằng chứng khảo cổ về 'thời kỳ đen tối' — mất chữ viết, kiến trúc, dân số suy giảm. Đúng tiêu đề ii.",
+          "id": "nl2-40-bronze-age-collapse-q2"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section C",
+          "answer": "iii",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 3,
+          "explanation": "Đoạn C nói về 'Sea Peoples' bị đổ lỗi trong bia ký Ai Cập, và cách nhìn nhận lại của sử gia hiện đại. Đúng tiêu đề iii.",
+          "id": "nl2-40-bronze-age-collapse-q3"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section D",
+          "answer": "iv",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 4,
+          "explanation": "Đoạn D nói sử gia hiện đại ưa thích giải thích đa nguyên nhân: hạn hán, động đất, sụp đổ thương mại, nổi dậy. Đúng tiêu đề iv.",
+          "id": "nl2-40-bronze-age-collapse-q4"
+        },
+        {
+          "type": "matching",
+          "prompt": "Section E",
+          "answer": "v",
+          "options": [
+            "i",
+            "ii",
+            "iii",
+            "iv",
+            "v",
+            "vi",
+            "vii"
+          ],
+          "number": 5,
+          "explanation": "Đoạn E nói các nhà nghiên cứu hiện đại dùng sự kiện này làm bài học cảnh báo cho xã hội ngày nay. Đúng tiêu đề v.",
+          "id": "nl2-40-bronze-age-collapse-q5"
+        },
+        {
+          "type": "tfng",
+          "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+          "prompt": "Dozens of major cities were destroyed or abandoned within just a few decades.",
+          "answer": "TRUE",
+          "number": 6,
+          "explanation": "Đoạn B: 'dozens of major cities across the region were destroyed, abandoned, or both within a remarkably compressed span of just a few decades'. Đúng ý đề nên TRUE.",
+          "id": "nl2-40-bronze-age-collapse-q6"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Mycenaean Greece retained full use of the Linear B writing system after the collapse.",
+          "answer": "FALSE",
+          "number": 7,
+          "explanation": "Đoạn B nói ngược: Hy Lạp trải qua 'a substantial and lasting loss of the sophisticated Linear B writing system'. Mất chữ viết, không phải giữ được. FALSE.",
+          "id": "nl2-40-bronze-age-collapse-q7"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Most modern historians now regard the Sea Peoples as the primary root cause of the collapse.",
+          "answer": "FALSE",
+          "number": 8,
+          "explanation": "Đoạn C nói ngược: sử gia hiện đại 'regard them as more likely a consequence and visible symptom... rather than the primary root cause'. Là hệ quả, không phải nguyên nhân gốc. FALSE.",
+          "id": "nl2-40-bronze-age-collapse-q8"
+        },
+        {
+          "type": "tfng",
+          "prompt": "Pollen samples provide evidence of a prolonged, severe drought during the collapse period.",
+          "answer": "TRUE",
+          "number": 9,
+          "explanation": "Đoạn D: 'Climate scientists analysing preserved pollen samples... have found substantial evidence of a prolonged, severe drought'. Đúng ý đề nên TRUE.",
+          "id": "nl2-40-bronze-age-collapse-q9"
+        },
+        {
+          "type": "tfng",
+          "prompt": "The Bronze Age collapse has been used as a historical parallel by researchers studying risks to modern global systems.",
+          "answer": "TRUE",
+          "number": 10,
+          "explanation": "Đoạn E: 'Some contemporary researchers... have explicitly drawn on the Bronze Age collapse as a historical cautionary parallel'. Đúng ý đề nên TRUE.",
+          "id": "nl2-40-bronze-age-collapse-q10"
+        },
+        {
+          "type": "gap",
+          "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "prompt": "The Bronze Age collapse struck the Eastern Mediterranean during the ________ century BCE.",
+          "answer": "twelfth",
+          "number": 11,
+          "explanation": "Đoạn A: 'during the twelfth century BCE'. Đáp án twelfth.",
+          "id": "nl2-40-bronze-age-collapse-q11"
+        },
+        {
+          "type": "gap",
+          "prompt": "Ramesses III is said to have repelled the Sea Peoples around ________ BCE.",
+          "answer": "1175",
+          "number": 12,
+          "explanation": "Đoạn C: 'repelled by the pharaoh Ramesses III in a major recorded battle around 1175 BCE'. Đáp án 1175.",
+          "id": "nl2-40-bronze-age-collapse-q12"
+        },
+        {
+          "type": "gap",
+          "prompt": "Bronze Age palace economies depended critically on trade for a reliable supply of ________ to manufacture bronze.",
+          "answer": "tin",
+          "number": 13,
+          "explanation": "Đoạn D: 'most notably for the reliable supply of tin needed to manufacture bronze itself'. Đáp án tin.",
+          "id": "nl2-40-bronze-age-collapse-q13"
+        },
+        {
+          "type": "gap",
+          "prompt": "The idea that several stresses interact to produce a severe breakdown is termed 'systems ________'.",
+          "answer": "collapse",
+          "number": 14,
+          "explanation": "Đoạn E: 'what is sometimes termed systems collapse'. Đáp án collapse.",
+          "id": "nl2-40-bronze-age-collapse-q14"
+        },
+        {
+          "type": "gap",
+          "prompt": "In Anatolia, the collapse brought about the fall of the ________ Empire.",
+          "answer": "Hittite",
+          "number": 15,
+          "explanation": "Đoạn A: 'the Hittite Empire in Anatolia'. Đáp án Hittite.",
+          "id": "nl2-40-bronze-age-collapse-q15"
+        }
+      ]
     }
   ]
 }

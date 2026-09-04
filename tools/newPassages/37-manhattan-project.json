@@ -1,0 +1,141 @@
+{
+  "title": "The Manhattan Project",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Manhattan Project was the codename for the United States-led research and development programme that produced the first functional nuclear weapons during the Second World War, formally established in 1942 following growing scientific concern, voiced most influentially in a 1939 letter to President Franklin Roosevelt co-signed by Albert Einstein, that Nazi Germany might be actively pursuing an atomic bomb of its own. Employing well over one hundred thousand people at its wartime peak, spread across dozens of secret research and production sites scattered throughout the United States, Canada, and the United Kingdom, the project represented an extraordinary, unprecedented concentration of scientific talent, industrial capacity, and government funding directed toward a single, overriding military objective."
+    },
+    {
+      "letter": "B",
+      "text": "The project was directed militarily by General Leslie Groves and scientifically by the physicist J. Robert Oppenheimer, who assembled and led an extraordinary team of leading physicists, chemists, and engineers, many of them refugees who had personally fled Nazi-controlled Europe, at a purpose-built, previously nonexistent secret research town constructed specifically for the project at Los Alamos, New Mexico. The scientific and technical challenges the assembled team had to solve were genuinely immense, spanning everything from the extraordinarily difficult, resource-intensive task of separating and enriching the rare fissile isotope uranium-235 from the far more common uranium-238, to designing an entirely new class of weapon whose basic underlying physics had, until that point, existed only in abstract theoretical calculation rather than in any tested, working physical device."
+    },
+    {
+      "letter": "C",
+      "text": "The world's first nuclear detonation, codenamed Trinity, took place on 16 July 1945 in the New Mexico desert, producing an explosion considerably more powerful than even many of the project's own scientists had confidently predicted beforehand. Less than a month later, the United States dropped atomic bombs on the Japanese cities of Hiroshima and Nagasaki, on 6 and 9 August 1945 respectively, killing an estimated combined total of well over one hundred thousand people, the overwhelming majority of them civilians, in the immediate blasts and their direct aftermath, with substantially more dying in the following months and years from severe burns, acute radiation sickness, and a range of longer-term radiation-related illnesses and complications."
+    },
+    {
+      "letter": "D",
+      "text": "Japan formally surrendered on 15 August 1945, bringing the Second World War to its final conclusion, though historians continue to debate vigorously the precise relative importance of the atomic bombings, as opposed to other significant contributing factors, including the near-simultaneous Soviet declaration of war on Japan and subsequent invasion of Japanese-controlled Manchuria, in Japan's ultimate decision to surrender when and as it actually did. This question of the bombings' precise causal weight in ending the war remains one of the most extensively debated, and most persistently contested, topics in the entire historiography of the Second World War, with historians continuing to disagree substantially even after decades of subsequent archival research and analysis."
+    },
+    {
+      "letter": "E",
+      "text": "Several key scientists who had worked on the project, including Oppenheimer himself, later expressed significant public misgivings, and in some cases outright moral opposition, regarding the weapon's use and its subsequent, rapid post-war proliferation to other nations. Oppenheimer notably later remarked that the successful test had brought to his mind a line from the ancient Hindu scripture the Bhagavad Gita, describing himself as having become \"death, the destroyer of worlds\", and he subsequently opposed the post-war development of the considerably more powerful hydrogen bomb, a stance that ultimately contributed to his security clearance being controversially revoked by the United States government during the politically charged atmosphere of the early Cold War period."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy the project began, and how large it grew\nii\tWho led it, and the technical problems they faced\niii\tThe first test, and the two cities bombed weeks later\niv\tA debated question about why Japan surrendered\nv\tA scientist's later regret and its political consequences\nvi\tHow the project's secrecy was maintained\nvii\tPost-war efforts to control the spread of nuclear weapons",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói tại sao dự án bắt đầu (lo ngại Đức Quốc xã) và quy mô nó lớn tới đâu. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về Groves, Oppenheimer, và các thách thức kỹ thuật ở Los Alamos. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C kể vụ thử Trinity và hai vụ ném bom xuống Hiroshima, Nagasaki. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về tranh cãi lịch sử về vai trò thực sự của bom nguyên tử trong việc Nhật đầu hàng. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về sự day dứt của Oppenheimer và hậu quả chính trị của nó. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Einstein co-signed the 1939 letter that helped prompt the project's creation.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'a 1939 letter to President Franklin Roosevelt co-signed by Albert Einstein'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The Trinity test produced an explosion less powerful than most scientists had expected.",
+      "answer": "FALSE",
+      "number": 7,
+      "explanation": "Đoạn C nói ngược: vụ nổ 'considerably more powerful than even many of the project's own scientists had confidently predicted'. Mạnh HƠN dự đoán, không phải yếu hơn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Nagasaki was bombed before Hiroshima.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C: Hiroshima bị ném bom ngày 6/8, Nagasaki ngày 9/8 — Hiroshima trước, không phải Nagasaki trước. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Historians unanimously agree that the atomic bombings were the sole cause of Japan's surrender.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: 'historians continue to debate vigorously the precise relative importance of the atomic bombings' cùng với yếu tố khác như Liên Xô tuyên chiến. Không có sự đồng thuận tuyệt đối. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Oppenheimer's security clearance was revoked partly because he opposed developing the hydrogen bomb.",
+      "answer": "TRUE",
+      "number": 10,
+      "explanation": "Đoạn E: 'he subsequently opposed the post-war development of the considerably more powerful hydrogen bomb, a stance that ultimately contributed to his security clearance being controversially revoked'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The Manhattan Project was formally established in ________.",
+      "answer": "1942",
+      "number": 11,
+      "explanation": "Đoạn A: 'formally established in 1942'. Đáp án 1942."
+    },
+    {
+      "type": "gap",
+      "prompt": "The project's military director was General ________.",
+      "answer": "Leslie Groves",
+      "number": 12,
+      "explanation": "Đoạn B: 'directed militarily by General Leslie Groves'. Đáp án Leslie Groves."
+    },
+    {
+      "type": "gap",
+      "prompt": "The research team was based at a secret town built at ________, New Mexico.",
+      "answer": "Los Alamos",
+      "number": 13,
+      "explanation": "Đoạn B: 'at a purpose-built, previously nonexistent secret research town constructed specifically for the project at Los Alamos, New Mexico'. Đáp án Los Alamos."
+    },
+    {
+      "type": "gap",
+      "prompt": "The first nuclear detonation was codenamed ________.",
+      "answer": "Trinity",
+      "number": 14,
+      "explanation": "Đoạn C: 'The world's first nuclear detonation, codenamed Trinity'. Đáp án Trinity."
+    },
+    {
+      "type": "gap",
+      "prompt": "Japan formally surrendered on ________.",
+      "answer": "15 August 1945",
+      "number": 15,
+      "explanation": "Đoạn D: 'Japan formally surrendered on 15 August 1945'. Đáp án 15 August 1945."
+    }
+  ]
+}

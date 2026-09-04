@@ -1,0 +1,141 @@
+{
+  "title": "The Green Revolution",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử nông nghiệp phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "The Green Revolution refers to a set of agricultural research initiatives, technology transfers, and infrastructure investments occurring roughly between the 1940s and the late 1960s that dramatically increased crop yields across large parts of the developing world, most notably in Mexico, India, and Pakistan, and is generally credited with averting large-scale famines that many demographers and agricultural economists had confidently predicted, on the basis of rapid population growth outpacing food production, would otherwise strike substantial portions of Asia during that period."
+    },
+    {
+      "letter": "B",
+      "text": "The central figure most closely associated with the Green Revolution is the American agronomist Norman Borlaug, who spent decades working in Mexico developing high-yielding, disease-resistant varieties of wheat, including notably semi-dwarf varieties bred specifically to have shorter, sturdier stalks that could support the substantially heavier grain loads produced by increased fertiliser use without simply collapsing and falling over under that added weight, a persistent problem, known as lodging, that had previously limited how much fertiliser could be usefully applied to traditional, taller wheat varieties. Borlaug's semi-dwarf wheat varieties, once further adapted and refined for local growing conditions, dramatically increased yields when introduced to Pakistan and India during the 1960s, and he was awarded the Nobel Peace Prize in 1970 in explicit recognition of this contribution to global food security and the consequent prevention of large-scale famine."
+    },
+    {
+      "letter": "C",
+      "text": "The Green Revolution's package of innovations extended well beyond improved crop varieties alone. Its full implementation typically required substantially increased use of synthetic nitrogen fertiliser, expanded and more reliable irrigation infrastructure, and the more systematic use of chemical pesticides to protect the new, high-yielding varieties from insect damage and crop disease, together with the introduction of mechanised farm equipment in many regions. This combined technological package required considerably more capital investment than traditional subsistence farming methods had previously demanded, meaning that wealthier farmers, who could more readily afford these substantial upfront costs, often benefited disproportionately more, at least in the revolution's early years, compared with poorer smallholder farmers who frequently lacked comparable access to the credit and capital needed to fully adopt the same combined package of new technologies and inputs."
+    },
+    {
+      "letter": "D",
+      "text": "India provides one of the most frequently cited and dramatic examples of the Green Revolution's overall impact: the country's wheat production roughly tripled between the mid-1960s and the mid-1980s, transforming India within roughly two decades from a country that had depended heavily on substantial food imports and periodic international food aid into one that was, for the most part, self-sufficient in food grain production and, in certain years, even a net exporter of surplus grain. This dramatic transformation is widely credited with helping India avoid the kind of catastrophic, widespread famine that a number of prominent demographers and economists had confidently and publicly predicted for the country as recently as the 1960s."
+    },
+    {
+      "letter": "E",
+      "text": "Despite these clear and substantial benefits, the Green Revolution's longer-term environmental and social consequences have attracted considerable and sustained scholarly criticism. Heavy, sustained fertiliser and pesticide use has been linked in many regions to soil degradation over time, to the pollution of nearby rivers and groundwater through agricultural runoff, and to a marked reduction in agricultural biodiversity, since farmers increasingly concentrated cultivation on a comparatively small number of high-yielding varieties at the expense of numerous traditional, locally adapted crop varieties that had previously been grown, some of which have since become considerably rarer or effectively lost to cultivation altogether. Some economists and agricultural historians have also argued that the substantial economic benefits of the Green Revolution were not, in the end, always shared equitably among all farmers, with larger, wealthier landholders in some regions benefiting disproportionately relative to smaller, poorer farmers working comparatively marginal or less productive land."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhat it was, and the famine it is credited with averting\nii\tThe agronomist behind the new wheat varieties\niii\tA wider package of technology, not just new seeds\niv\tIndia's dramatic rise in wheat production\nv\tEnvironmental and social costs that followed\nvi\tPlans to extend the revolution to sub-Saharan Africa\nvii\tRice varieties developed alongside the wheat programme",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A nói Cách mạng Xanh là gì và nạn đói nó được cho là đã ngăn chặn được. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B nói về Norman Borlaug và giống lúa mì bán lùn ông phát triển. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói Cách mạng Xanh không chỉ là giống mới mà cả phân bón, tưới tiêu, thuốc trừ sâu, cơ giới hoá. Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D nói về sản lượng lúa mì Ấn Độ tăng gấp ba giữa thập niên 60 và 80. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về hệ quả môi trường và xã hội bị chỉ trích: thoái hoá đất, mất đa dạng sinh học, bất bình đẳng. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Taller, traditional wheat varieties could support heavier grain loads from increased fertiliser without collapsing.",
+      "answer": "FALSE",
+      "number": 6,
+      "explanation": "Đoạn B nói ngược: giống lúa mì truyền thống cao hơn dễ bị 'lodging' (đổ ngã) khi tăng phân bón — chính vì vậy Borlaug mới phát triển giống bán lùn. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Borlaug received the Nobel Peace Prize in 1970.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'he was awarded the Nobel Peace Prize in 1970'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Poorer smallholder farmers generally benefited more than wealthier farmers in the early years of the Green Revolution.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: 'wealthier farmers... often benefited disproportionately more, at least in the revolution's early years'. Nông dân giàu hưởng lợi nhiều hơn, không phải nông dân nghèo. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "India became, for the most part, self-sufficient in food grain production after the Green Revolution.",
+      "answer": "TRUE",
+      "number": 9,
+      "explanation": "Đoạn D: 'transforming India... into one that was, for the most part, self-sufficient in food grain production'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Heavy fertiliser and pesticide use has been linked to increased agricultural biodiversity.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: 'a marked reduction in agricultural biodiversity' — giảm chứ không tăng đa dạng sinh học. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "Borlaug developed semi-dwarf varieties of ________.",
+      "answer": "wheat",
+      "number": 11,
+      "explanation": "Đoạn B: 'developing high-yielding, disease-resistant varieties of wheat, including notably semi-dwarf varieties'. Đáp án wheat."
+    },
+    {
+      "type": "gap",
+      "prompt": "Tall wheat varieties collapsing under heavy grain loads is a problem known as ________.",
+      "answer": "lodging",
+      "number": 12,
+      "explanation": "Đoạn B: 'a persistent problem, known as lodging'. Đáp án lodging."
+    },
+    {
+      "type": "gap",
+      "prompt": "Full implementation of the Green Revolution required expanded ________ infrastructure.",
+      "answer": "irrigation",
+      "number": 13,
+      "explanation": "Đoạn C: 'expanded and more reliable irrigation infrastructure'. Đáp án irrigation."
+    },
+    {
+      "type": "gap",
+      "prompt": "India's wheat production roughly ________ between the mid-1960s and the mid-1980s.",
+      "answer": "tripled",
+      "number": 14,
+      "explanation": "Đoạn D: 'the country's wheat production roughly tripled between the mid-1960s and the mid-1980s'. Đáp án tripled."
+    },
+    {
+      "type": "gap",
+      "prompt": "Heavy fertiliser and pesticide use has been linked to ________ degradation.",
+      "answer": "soil",
+      "number": 15,
+      "explanation": "Đoạn E: 'has been linked in many regions to soil degradation over time'. Đáp án soil."
+    }
+  ]
+}

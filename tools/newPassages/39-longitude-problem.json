@@ -1,0 +1,141 @@
+{
+  "title": "The Longitude Problem",
+  "sourceNote": "Biên soạn dựa trên kiến thức lịch sử khoa học phổ thông (không sao chép nguyên văn Wikipedia).",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "For much of the age of sail, sailors navigating the open ocean could determine their latitude, their position north or south of the equator, with reasonable accuracy and relative ease, chiefly by measuring the angle of the Sun or known stars above the horizon. Determining longitude, a ship's position east or west, proved a vastly more difficult problem, since it depends on precisely knowing the difference in local time between the ship's current position and a fixed reference location, and no sufficiently accurate, reliable method existed for tracking that time difference at sea for the better part of two centuries of oceanic exploration and trade."
+    },
+    {
+      "letter": "B",
+      "text": "The consequences of this navigational shortfall were sometimes severe and occasionally catastrophic. In 1707, a British naval squadron, having significantly miscalculated its longitude while returning home in poor visibility, wrecked on rocks near the Isles of Scilly off the southwestern English coast, an incident that killed close to two thousand sailors in a single disaster and shocked the British public and government alike. Partly in direct response to this and other, less spectacular but still costly navigational failures, the British Parliament passed the Longitude Act in 1714, formally establishing a substantial cash prize, ultimately worth up to £20,000, a genuinely enormous sum of money for the period, for anyone who could devise a sufficiently practical and reliable method of determining longitude at sea to within a specified degree of accuracy."
+    },
+    {
+      "letter": "C",
+      "text": "Two broad, competing categories of solution to the longitude problem were seriously pursued during the eighteenth century. One approach, strongly favoured by many of the era's most eminent professional astronomers, relied on precisely and carefully measuring the position of the Moon relative to fixed background stars, a method requiring extensive astronomical tables, painstaking observation, and lengthy, error-prone manual calculation, but requiring no fundamentally new mechanical instrument beyond existing astronomical apparatus. The rival, mechanical approach instead required constructing an extraordinarily accurate seagoing clock, or marine chronometer, capable of reliably keeping precise time over long ocean voyages despite the ship's constant, often violent motion, significant changes in ambient temperature and humidity, and considerable variation in air pressure, a formidable and, to many contemporary experts, seemingly implausible engineering challenge."
+    },
+    {
+      "letter": "D",
+      "text": "The self-taught English carpenter and clockmaker John Harrison dedicated much of his working life, spanning several decades, to solving the mechanical, clock-based version of the problem, ultimately producing a succession of increasingly refined marine timekeepers, most famously a compact, watch-like device generally known as H4, which successfully kept sufficiently accurate time during an extended sea trial to Jamaica in the 1760s, comfortably satisfying the accuracy requirements originally specified by the 1714 Longitude Act. Harrison nonetheless faced years of persistent scepticism, bureaucratic delay, and outright resistance from the official Board of Longitude, several of whose most influential members had personally invested considerable professional reputation and effort in the rival, astronomically based lunar-distance method and were consequently reluctant to fully credit an unschooled tradesman's practical mechanical solution over their own preferred astronomical approach."
+    },
+    {
+      "letter": "E",
+      "text": "Harrison eventually received a substantial portion of the promised prize money, though only after direct royal intervention from King George III and years of additional, often bitter, dispute and advocacy on his behalf. His chronometers, and the many further design refinements and simplifications that swiftly followed from other clockmakers building on his fundamental design principles, eventually made accurate marine chronometers practical and affordable enough for widespread routine use throughout the British and other European merchant and naval fleets by the early nineteenth century, transforming maritime navigation and substantially reducing the previously severe and frequent risk of ships becoming dangerously lost or running fatally aground due to accumulated navigational error over the course of long ocean voyages."
+    }
+  ],
+  "questions": [
+    {
+      "type": "matching",
+      "instruction": "The passage has 5 sections, A-E.\nChoose the correct heading for each section from the list of headings below.\nWrite the correct number, i-vii, as your answer.\nNB There are more headings than sections, so you will not use them all.\n\nList of Headings\ni\tWhy longitude was so much harder to measure than latitude\nii\tA disaster that led to a large cash prize\niii\tTwo rival approaches under serious consideration\niv\tA self-taught clockmaker's decades-long solution\nv\tResistance from the Board, and eventual vindication\nvi\tHow satellite navigation eventually replaced chronometers\nvii\tEarly attempts to measure longitude using magnetic compasses",
+      "prompt": "Section A",
+      "answer": "i",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 1,
+      "explanation": "Đoạn A giải thích vì sao đo kinh độ khó hơn vĩ độ nhiều. Đúng tiêu đề i."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section B",
+      "answer": "ii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 2,
+      "explanation": "Đoạn B kể thảm hoạ đắm tàu 1707 dẫn tới Đạo luật Kinh độ 1714 với giải thưởng lớn. Đúng tiêu đề ii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section C",
+      "answer": "iii",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 3,
+      "explanation": "Đoạn C nói về hai hướng giải pháp cạnh tranh: phương pháp thiên văn (khoảng cách Mặt Trăng) và phương pháp cơ khí (đồng hồ hàng hải). Đúng tiêu đề iii."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section D",
+      "answer": "iv",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 4,
+      "explanation": "Đoạn D kể về John Harrison và chiếc H4 sau nhiều thập kỷ nghiên cứu. Đúng tiêu đề iv."
+    },
+    {
+      "type": "matching",
+      "prompt": "Section E",
+      "answer": "v",
+      "options": ["i", "ii", "iii", "iv", "v", "vi", "vii"],
+      "number": 5,
+      "explanation": "Đoạn E nói về sự phản đối từ Board of Longitude và việc Harrison cuối cùng được minh oan nhờ vua can thiệp. Đúng tiêu đề v."
+    },
+    {
+      "type": "tfng",
+      "instruction": "Do the following statements agree with the information given in the passage?\nWrite\nTRUE  if the statement agrees with the information\nFALSE  if the statement contradicts the information\nNOT GIVEN  if there is no information on this",
+      "prompt": "Sailors found it easier to determine latitude than longitude at sea.",
+      "answer": "TRUE",
+      "number": 6,
+      "explanation": "Đoạn A: 'sailors navigating the open ocean could determine their latitude... with reasonable accuracy and relative ease' trong khi kinh độ 'proved a vastly more difficult problem'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The 1707 naval disaster near the Isles of Scilly killed close to two thousand sailors.",
+      "answer": "TRUE",
+      "number": 7,
+      "explanation": "Đoạn B: 'an incident that killed close to two thousand sailors in a single disaster'. Đúng ý đề nên TRUE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "The lunar-distance method required building an entirely new mechanical instrument.",
+      "answer": "FALSE",
+      "number": 8,
+      "explanation": "Đoạn C nói ngược: phương pháp Mặt Trăng 'requiring no fundamentally new mechanical instrument beyond existing astronomical apparatus'. Không cần thiết bị cơ khí mới, đó là đặc điểm của phương pháp đồng hồ. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Harrison's H4 failed to meet the accuracy requirements of the 1714 Longitude Act during its sea trial to Jamaica.",
+      "answer": "FALSE",
+      "number": 9,
+      "explanation": "Đoạn D nói ngược: H4 'successfully kept sufficiently accurate time... comfortably satisfying the accuracy requirements'. Đạt yêu cầu, không phải thất bại. FALSE."
+    },
+    {
+      "type": "tfng",
+      "prompt": "Harrison received his prize money without any need for direct royal intervention.",
+      "answer": "FALSE",
+      "number": 10,
+      "explanation": "Đoạn E nói ngược: ông nhận tiền thưởng 'only after direct royal intervention from King George III'. Cần sự can thiệp của vua, không phải tự động nhận được. FALSE."
+    },
+    {
+      "type": "gap",
+      "instruction": "Complete the sentences below.\nChoose NO MORE THAN TWO WORDS from the passage for each answer.",
+      "prompt": "The British Parliament passed the Longitude Act in ________.",
+      "answer": "1714",
+      "number": 11,
+      "explanation": "Đoạn B: 'the British Parliament passed the Longitude Act in 1714'. Đáp án 1714."
+    },
+    {
+      "type": "gap",
+      "prompt": "The prize established by the Act was ultimately worth up to ________.",
+      "answer": "£20,000",
+      "number": 12,
+      "explanation": "Đoạn B: 'a substantial cash prize, ultimately worth up to £20,000'. Đáp án £20,000."
+    },
+    {
+      "type": "gap",
+      "prompt": "A seagoing clock designed to solve the longitude problem is called a marine ________.",
+      "answer": "chronometer",
+      "number": 13,
+      "explanation": "Đoạn C: 'constructing an extraordinarily accurate seagoing clock, or marine chronometer'. Đáp án chronometer."
+    },
+    {
+      "type": "gap",
+      "prompt": "Harrison's most famous timekeeper, a compact, watch-like device, is generally known as ________.",
+      "answer": "H4",
+      "number": 14,
+      "explanation": "Đoạn D: 'a compact, watch-like device generally known as H4'. Đáp án H4."
+    },
+    {
+      "type": "gap",
+      "prompt": "Harrison faced resistance from the official Board of ________.",
+      "answer": "Longitude",
+      "number": 15,
+      "explanation": "Đoạn D: 'faced years of persistent scepticism, bureaucratic delay, and outright resistance from the official Board of Longitude'. Đáp án Longitude."
+    }
+  ]
+}
