@@ -5,6 +5,8 @@ import { loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
 import { syncStarSets } from "../utils/starSets";
 import { syncSetLists } from "../utils/setLists";
 
+const STORAGE_FULL_MESSAGE = "Không lưu được vào bộ nhớ máy — localStorage có thể đã đầy. Dữ liệu vẫn dùng được trong phiên này; hãy Export JSON để không mất khi tải lại trang.";
+
 // Cả hai đường đồng bộ luôn chạy CÙNG NHAU và theo ĐÚNG THỨ TỰ này: star sets
 // có thể tạo/xoá set (star-set mới hoặc rỗng đi), nên danh sách phải được
 // đồng bộ SAU, dựa trên tập set đã ổn định — nếu đảo ngược, một set sao vừa
@@ -76,9 +78,21 @@ export function useAppData() {
     dataRef.current = next;
     try {
       saveAppData(next);
+      // Functional form: đọc trạng thái MỚI NHẤT chứ không phải giá trị đã
+      // đóng gói lúc setData được tạo (setData chỉ được tạo lại khi
+      // scheduleCloudSave đổi, nên syncError đóng gói ở đây gần như luôn cũ).
+      setSyncError((current) => (current === STORAGE_FULL_MESSAGE ? "" : current));
     } catch (error) {
+      // Không alert(): một hộp thoại chặn cả luồng JS sẽ hiện lại ở MỌI thao
+      // tác tiếp theo hễ localStorage vẫn còn đầy (thêm từ, trả lời Learn...),
+      // biến thành "web đứng hình liên tục đòi đồng bộ" trên máy đã đầy dung
+      // lượng — nhất là điện thoại, nơi hạn mức localStorage nhỏ hơn máy tính.
+      // Dữ liệu vẫn cập nhật đúng trong bộ nhớ (setReactData ở dưới), chỉ là
+      // không được lưu lại cho lần mở sau; báo lỗi qua banner đã có sẵn thay
+      // vì chặn đứng người dùng.
       console.error("Không thể lưu dữ liệu vào trình duyệt.", error);
-      alert("Không thể lưu dữ liệu vào trình duyệt. Có thể localStorage đã đầy hoặc bị chặn. Hãy Export JSON để sao lưu ngay.");
+      setSyncState("error");
+      setSyncError(STORAGE_FULL_MESSAGE);
     }
     setReactData(next);
     scheduleCloudSave(next);

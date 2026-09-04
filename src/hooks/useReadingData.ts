@@ -6,27 +6,31 @@ import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../uti
  * Thư viện bài đọc dựng sẵn, đi kèm chính bản deploy (public/reading-library.json).
  *
  * Không phải đề IELTS thật: đề Cambridge/British Council có bản quyền và không
- * được phép phát hành lại. Đây là bài viết thật trên Wikipedia (CC BY-SA 4.0),
- * cắt về đúng độ dài và chủ đề của IELTS Academic Reading, mỗi bài ghi rõ
- * nguồn ở cuối. Tải bằng fetch chứ không nhúng vào bundle: 440KB chữ không nên
- * nằm trong file JS mà mọi trang đều phải tải.
+ * được phép phát hành lại. Đây là bài viết tự biên soạn theo phong cách
+ * Wikipedia, cắt về đúng độ dài và chủ đề của IELTS Academic Reading.
+ *
+ * CỐ TÌNH KHÔNG lưu nội dung thư viện này vào localStorage. Nó là dữ liệu tĩnh,
+ * giống hệt nhau cho mọi người dùng, tải lại từ file JSON mỗi lần mở app là đủ
+ * — ghi cả trăm bài đọc kèm câu hỏi và giải thích (hiện đã hơn 1MB, nhân đôi vì
+ * còn ghi thêm bản backup) vào localStorage là lãng phí không cần thiết, và
+ * trên trình duyệt di động vốn có hạn mức localStorage nhỏ hơn máy tính, việc
+ * này từng khiến MỌI thao tác của web từ vựng — kể cả những phần chẳng liên
+ * quan gì tới Reading — bị chặn lại: mỗi lần lưu app đầy dữ liệu sau khi
+ * localStorage đã đầy sẽ ném lỗi, và lỗi đó từng bị xử lý bằng alert() chặn cả
+ * luồng, lặp lại ở mọi thao tác tiếp theo (Thêm từ, Learn...).
  */
-// Bump khi NỘI DUNG thư viện thay đổi đáng kể (không chỉ khi sửa lỗi vặt) —
-// đây là cách duy nhất để máy ĐÃ từng nạp thư viện tải lại bản mới, vì logic
-// bên dưới cố tình chỉ nạp một lần cho mỗi id. Từng có đợt sửa lại toàn bộ 52
-// bài (chấm giám khảo, sửa câu hỏi) nhưng người dùng đã mở trang từ trước đó
-// vẫn kẹt ở bản cũ vì id không đổi — họ không bao giờ được nạp lại.
-const BUILTIN_LIBRARY_VERSION = 10;
-const BUILTIN_LIBRARY_ID = `open-reading-library-v${BUILTIN_LIBRARY_VERSION}`;
+const BUILTIN_LIBRARY_ID = "open-reading-library";
 const BUILTIN_LIBRARY_URL = "/reading-library.json";
-// Nhận diện MỌI phiên bản cũ của thư viện này để thay thế sạch khi nạp bản
-// mới — nếu chỉ so id chính xác, bump version ở trên sẽ để lại một cuốn cũ
-// nằm lại vĩnh viễn cạnh cuốn mới thay vì được thay thế.
-const isBuiltinLibraryBook = (id: string) => /^open-reading-library-v\d+$/.test(id);
 
 export function useReadingData() {
   const [data, setReactData] = useState<ReadingData>(() => loadReadingData());
   const dataRef = useRef(data);
+  // Thư viện dựng sẵn: chỉ tồn tại trong bộ nhớ của phiên hiện tại, KHÔNG đi
+  // qua saveReadingData. Đồng bộ Life Management có thể ghi id task vào đây
+  // trong lúc dùng (xem markBookSynced), nhưng id đó không sống sót qua lần
+  // tải trang sau — không sao, logic đồng bộ vốn đã tự nhận diện lại node cũ
+  // theo tên nếu không tìm thấy theo id.
+  const [builtinLibrary, setBuiltinLibrary] = useState<ReadingBook | null>(null);
 
   const setData = useCallback((updater: (current: ReadingData) => ReadingData) => {
     const next = updater(dataRef.current);
@@ -34,17 +38,21 @@ export function useReadingData() {
     try {
       saveReadingData(next);
     } catch (error) {
-      console.error("Không thể lưu dữ liệu Reading.", error);
-      alert("Không lưu được dữ liệu Reading — localStorage có thể đã đầy. Hãy xoá bớt sách cũ.");
+      // Không alert(): một alert() chặn cả luồng JS, và nếu ghi tiếp tục thất
+      // bại (localStorage vẫn đầy) thì hộp thoại này sẽ hiện lại ở thao tác kế
+      // tiếp — với người dùng, đó là "web đứng hình liên tục đòi đồng bộ".
+      // Dữ liệu vẫn cập nhật đúng trong bộ nhớ (setReactData ở dưới vẫn chạy),
+      // chỉ là không được lưu lại cho lần mở sau — âm thầm chấp nhận vậy còn
+      // hơn chặn đứng thao tác của người dùng.
+      console.error("Không lưu được dữ liệu Reading — localStorage có thể đã đầy.", error);
     }
     setReactData(next);
   }, []);
 
-  // Nạp thư viện dựng sẵn đúng MỘT LẦN cho mỗi máy. Ghi lại id đã nạp thay vì
-  // kiểm tra "sách đã có chưa": nếu chỉ kiểm tra sự tồn tại thì người dùng xoá
-  // cuốn này đi, lần mở trang sau nó lại tự mọc lại.
+  // Nạp thư viện dựng sẵn mỗi khi mở app — rẻ, vì nó chỉ là một GET tới file
+  // tĩnh cùng gốc (trình duyệt tự cache), và không còn cần cờ "đã nạp chưa"
+  // kiểu cũ vì kết quả không được lưu vào localStorage để mà phải né nạp lại.
   useEffect(() => {
-    if (dataRef.current.seededLibraries?.includes(BUILTIN_LIBRARY_ID)) return;
     const controller = new AbortController();
     void fetch(BUILTIN_LIBRARY_URL, { signal: controller.signal })
       .then((response) => {
@@ -52,19 +60,24 @@ export function useReadingData() {
         return response.json() as Promise<ReadingBook>;
       })
       .then((library) => {
-        if (!library?.passages?.length) return;
-        setData((current) => ({
-          ...current,
-          books: [library, ...current.books.filter((book) => !isBuiltinLibraryBook(book.id))],
-          seededLibraries: [...(current.seededLibraries ?? []), BUILTIN_LIBRARY_ID],
-        }));
+        if (!library?.passages?.length || controller.signal.aborted) return;
+        setBuiltinLibrary({ ...library, id: BUILTIN_LIBRARY_ID });
       })
       .catch((error) => {
         if (controller.signal.aborted) return;
         console.warn("Không nạp được thư viện bài đọc dựng sẵn.", error);
       });
     return () => controller.abort();
-  }, [setData]);
+  }, []);
+
+  // Cây hiển thị: thư viện dựng sẵn (nếu đã tải và chưa bị người dùng xoá) ghép
+  // trước danh sách sách người dùng tự thêm. Đây là chỗ DUY NHẤT hai nguồn gặp
+  // nhau — mọi trang khác chỉ cần đọc api.data.books như trước, không đổi gì.
+  const books = useMemo(() => {
+    const hidden = data.hiddenLibraries ?? [];
+    const extra = builtinLibrary && !hidden.includes(builtinLibrary.id) ? [builtinLibrary] : [];
+    return [...extra, ...data.books];
+  }, [builtinLibrary, data.books, data.hiddenLibraries]);
 
   const api = useMemo(
     () => ({
@@ -84,6 +97,14 @@ export function useReadingData() {
         }));
       },
       deleteBook(bookId: string) {
+        if (bookId === builtinLibrary?.id) {
+          // Thư viện dựng sẵn không nằm trong data.books nên xoá nó nghĩa là
+          // ghi nhớ "đã ẩn" — nếu không, lần mở trang sau nó lại tự mọc lại vì
+          // luôn được nạp lại từ file tĩnh.
+          setBuiltinLibrary(null);
+          setData((current) => ({ ...current, hiddenLibraries: [...(current.hiddenLibraries ?? []), bookId] }));
+          return;
+        }
         setData((current) => ({
           ...current,
           books: current.books.filter((book) => book.id !== bookId),
@@ -91,21 +112,20 @@ export function useReadingData() {
         }));
       },
       markBookSynced(bookId: string, taskId: string, passageTaskIds: Record<string, string> = {}) {
+        const applyIds = (book: ReadingBook): ReadingBook => ({
+          ...book,
+          lifeManagementTaskId: taskId,
+          passages: book.passages.map((passage) =>
+            passageTaskIds[passage.id] ? { ...passage, lifeManagementTaskId: passageTaskIds[passage.id] } : passage,
+          ),
+        });
+        if (bookId === builtinLibrary?.id) {
+          setBuiltinLibrary((current) => (current ? applyIds(current) : current));
+          return;
+        }
         setData((current) => ({
           ...current,
-          books: current.books.map((book) =>
-            book.id === bookId
-              ? {
-                  ...book,
-                  lifeManagementTaskId: taskId,
-                  passages: book.passages.map((passage) =>
-                    passageTaskIds[passage.id]
-                      ? { ...passage, lifeManagementTaskId: passageTaskIds[passage.id] }
-                      : passage,
-                  ),
-                }
-              : book,
-          ),
+          books: current.books.map((book) => (book.id === bookId ? applyIds(book) : book)),
         }));
       },
       recordAttempt(attempt: ReadingAttempt) {
@@ -115,7 +135,7 @@ export function useReadingData() {
         setData((current) => ({ ...current, lifeManagement: config }));
       },
     }),
-    [setData],
+    [setData, builtinLibrary?.id],
   );
 
   // Volume stats. Counted per attempt (one sitting of one passage) rather than
@@ -156,7 +176,7 @@ export function useReadingData() {
     };
   }, [data.attempts]);
 
-  return { data, stats, ...api };
+  return { data: { ...data, books }, stats, ...api };
 }
 
 export type ReadingApi = ReturnType<typeof useReadingData>;

@@ -174,12 +174,64 @@ export function MobileAppPage({ api }: PageProps) {
   const activeSet = mobileSets.find((set) => set.cards.length < 30) ?? mobileSets[mobileSets.length - 1];
   const nextSetNumber = mobileSets.length + (activeSet && activeSet.cards.length < 30 ? 0 : 1);
   const activeCount = activeSet && activeSet.cards.length < 30 ? activeSet.cards.length : 0;
-  const learningSets = useMemo(
-    () => [...api.data.sets]
-      .filter((set) => set.cards.length > 0 && `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.trim().toLowerCase()))
-      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)),
-    [api.data.sets, query],
-  );
+
+  // Thư viện trên mobile giờ tổ chức theo đúng cấu trúc bên desktop — cờ
+  // (chưa/đã hoàn thành/từ khó nhớ) rồi tới danh sách rồi mới tới set — thay
+  // vì một danh sách phẳng gộp hết mọi set lại như trước, không phân biệt gì.
+  const [mobileTab, setMobileTab] = useState<"learning" | "completed" | "starred">("learning");
+  const [mobileListId, setMobileListId] = useState<string | null>(null);
+
+  function switchMobileTab(tab: "learning" | "completed" | "starred") {
+    setMobileTab(tab);
+    setMobileListId(null);
+    setQuery("");
+  }
+
+  const learnedSetIds = useMemo(() => {
+    const directionsBySet = new Map<string, Set<LearnDirection>>();
+    api.data.results.forEach((r) => {
+      if (r.mode !== "learn" || !("setId" in r) || !r.direction) return;
+      if (!directionsBySet.has(r.setId)) directionsBySet.set(r.setId, new Set());
+      directionsBySet.get(r.setId)!.add(r.direction);
+    });
+    const completed = new Set<string>();
+    directionsBySet.forEach((directions, setId) => {
+      if (LEARN_DIRECTIONS.every((d) => directions.has(d))) completed.add(setId);
+    });
+    return completed;
+  }, [api.data.results]);
+
+  const mobileTabSets = useMemo(() => {
+    if (mobileTab === "starred") return api.data.sets.filter(isStarSet);
+    return api.data.sets.filter((set) => {
+      if (isStarSet(set) || set.cards.length === 0) return false;
+      const isLearned = learnedSetIds.has(set.id);
+      return mobileTab === "completed" ? isLearned : !isLearned;
+    });
+  }, [api.data.sets, mobileTab, learnedSetIds]);
+
+  const mobileSelectedList = mobileListId ? api.data.lists.find((list) => list.id === mobileListId) ?? null : null;
+
+  // Set trong tab hiện tại nhưng CHƯA chọn danh sách nào — dùng để đếm số học
+  // phần/số từ hiển thị trên từng thẻ danh sách.
+  const mobileListCounts = useMemo(() => {
+    const counts = new Map<string, { sets: number; words: number }>();
+    mobileTabSets.forEach((set) => {
+      if (!set.listId) return;
+      const entry = counts.get(set.listId) ?? { sets: 0, words: 0 };
+      entry.sets += 1;
+      entry.words += set.cards.length;
+      counts.set(set.listId, entry);
+    });
+    return counts;
+  }, [mobileTabSets]);
+
+  const learningSets = useMemo(() => {
+    const scope = mobileTab === "starred" ? mobileTabSets : mobileTabSets.filter((set) => set.listId === mobileListId);
+    return [...scope]
+      .filter((set) => `${set.title} ${set.tags.join(" ")}`.toLowerCase().includes(query.trim().toLowerCase()))
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  }, [mobileTabSets, mobileTab, mobileListId, query]);
   const selectedSet = api.data.sets.find((set) => set.id === selectedSetId);
   const activeCard = flashcardCards[cardIndex];
   const activeLearnCard = learnCards[learnIndex];
@@ -901,34 +953,84 @@ export function MobileAppPage({ api }: PageProps) {
           </>
         ) : (
           <section>
-            <div className="relative mb-md">
-              <Icon name="search" className="pointer-events-none absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" />
-              <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm học phần..." className="min-h-12 pl-12" />
+            {/* Cờ chưa/đã hoàn thành/từ khó nhớ — cùng cấu trúc với desktop,
+                chỉ thu nhỏ lại vừa khung điện thoại thay vì tab kiểu gạch chân
+                rộng rãi của desktop. */}
+            <div className="mb-md flex gap-xs rounded-2xl bg-surface-container-low p-xs dark:bg-white/5">
+              <button type="button" onClick={() => switchMobileTab("learning")} className={`min-h-10 flex-1 rounded-xl text-xs font-bold transition ${mobileTab === "learning" ? "bg-white text-primary shadow-level-1 dark:bg-[#242728] dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}>Chưa xong</button>
+              <button type="button" onClick={() => switchMobileTab("completed")} className={`min-h-10 flex-1 rounded-xl text-xs font-bold transition ${mobileTab === "completed" ? "bg-white text-primary shadow-level-1 dark:bg-[#242728] dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}>Đã xong</button>
+              <button type="button" onClick={() => switchMobileTab("starred")} className={`flex min-h-10 flex-1 items-center justify-center gap-1 rounded-xl text-xs font-bold transition ${mobileTab === "starred" ? "bg-white text-primary shadow-level-1 dark:bg-[#242728] dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="star" filled={mobileTab === "starred"} className={mobileTab === "starred" ? "text-amber-500" : ""} /> Khó nhớ</button>
             </div>
-            {learningSets.length ? (
-              <div className="space-y-sm">
-                {learningSets.map((set) => (
-                  <button
-                    type="button"
-                    key={set.id}
-                    onClick={() => openSet(set)}
-                    className="flex w-full items-center gap-md rounded-2xl border border-surface-variant bg-white p-md text-left shadow-level-1 transition active:scale-[0.98] dark:border-white/10 dark:bg-[#242728]"
-                  >
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-fixed text-primary dark:bg-primary/25 dark:text-[#c9c5ff]"><Icon name={libraryMode === "learn" ? "school" : "style"} /></span>
-                    <span className="min-w-0 flex-1">
-                      <strong className="block truncate text-lg">{set.title}</strong>
-                      <span className="mt-xs block text-sm text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set, api.data.results)}% đã thuộc</span>
-                    </span>
-                    <Icon name="chevron_right" className="shrink-0 text-on-surface-variant dark:text-white/50" />
-                  </button>
-                ))}
-              </div>
+
+            {mobileTab !== "starred" && !mobileSelectedList ? (
+              // Chưa chọn danh sách nào: hiển thị các danh sách trong tab này,
+              // giống hệt lưới danh sách bên desktop nhưng xếp một cột cho vừa
+              // màn hình hẹp.
+              api.data.lists.length ? (
+                <div className="space-y-sm">
+                  {api.data.lists.map((list) => {
+                    const counts = mobileListCounts.get(list.id) ?? { sets: 0, words: 0 };
+                    return (
+                      <button
+                        type="button"
+                        key={list.id}
+                        onClick={() => setMobileListId(list.id)}
+                        className="flex w-full items-center gap-sm rounded-2xl border border-surface-variant bg-white p-sm text-left shadow-level-1 transition active:scale-[0.98] dark:border-white/10 dark:bg-[#242728]"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface-container text-on-surface-variant dark:bg-white/10 dark:text-white/70"><Icon name="folder" /></span>
+                        <span className="min-w-0 flex-1">
+                          <strong className="block truncate text-[15px]">{list.title}</strong>
+                          <span className="mt-0.5 block text-xs text-on-surface-variant dark:text-white/60">{counts.sets} học phần · {counts.words} từ</span>
+                        </span>
+                        <Icon name="chevron_right" className="shrink-0 text-on-surface-variant dark:text-white/50" />
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-dashed border-outline-variant bg-white p-lg text-center dark:border-white/20 dark:bg-[#242728]">
+                  <Icon name="folder_open" className="text-4xl text-primary" />
+                  <h2 className="mt-sm font-headline-md text-lg font-bold">Chưa có danh sách nào</h2>
+                  <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Tạo danh sách trên máy tính để tổ chức các học phần.</p>
+                </div>
+              )
             ) : (
-              <div className="rounded-2xl border border-dashed border-outline-variant bg-white p-xl text-center dark:border-white/20 dark:bg-[#242728]">
-                <Icon name={libraryMode === "learn" ? "school" : "style"} className="text-5xl text-primary" />
-                <h2 className="mt-md font-headline-md text-xl font-bold">Chưa có học phần phù hợp</h2>
-                <p className="mt-sm text-sm text-on-surface-variant dark:text-white/60">Thêm từ mới hoặc thử từ khóa khác.</p>
-              </div>
+              <>
+                {mobileSelectedList ? (
+                  <button type="button" onClick={() => setMobileListId(null)} className="mb-sm inline-flex items-center gap-xs text-sm font-semibold text-primary dark:text-[#c9c5ff]">
+                    <Icon name="arrow_back" /> {mobileSelectedList.title}
+                  </button>
+                ) : null}
+                <div className="relative mb-md">
+                  <Icon name="search" className="pointer-events-none absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" />
+                  <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Tìm học phần..." className="min-h-11 pl-12" />
+                </div>
+                {learningSets.length ? (
+                  <div className="space-y-sm">
+                    {learningSets.map((set) => (
+                      <button
+                        type="button"
+                        key={set.id}
+                        onClick={() => openSet(set)}
+                        className="flex w-full items-center gap-sm rounded-2xl border border-surface-variant bg-white p-sm text-left shadow-level-1 transition active:scale-[0.98] dark:border-white/10 dark:bg-[#242728]"
+                      >
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-fixed text-primary dark:bg-primary/25 dark:text-[#c9c5ff]"><Icon name={libraryMode === "learn" ? "school" : "style"} /></span>
+                        <span className="min-w-0 flex-1">
+                          <strong className="block truncate text-[15px]">{set.title}</strong>
+                          <span className="mt-0.5 block text-xs text-on-surface-variant dark:text-white/60">{set.cards.length} từ · {getSetProgress(set, api.data.results)}% đã thuộc</span>
+                        </span>
+                        <Icon name="chevron_right" className="shrink-0 text-on-surface-variant dark:text-white/50" />
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="rounded-2xl border border-dashed border-outline-variant bg-white p-lg text-center dark:border-white/20 dark:bg-[#242728]">
+                    <Icon name={libraryMode === "learn" ? "school" : "style"} className="text-4xl text-primary" />
+                    <h2 className="mt-sm font-headline-md text-lg font-bold">Chưa có học phần phù hợp</h2>
+                    <p className="mt-xs text-sm text-on-surface-variant dark:text-white/60">Thêm từ mới hoặc thử từ khóa khác.</p>
+                  </div>
+                )}
+              </>
             )}
           </section>
         )}

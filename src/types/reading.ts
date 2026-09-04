@@ -100,9 +100,10 @@ export interface ReadingData {
   attempts: ReadingAttempt[];
   lifeManagement: LifeManagementConfig;
   /**
-   * Id các thư viện dựng sẵn đã được nạp vào máy này. Ghi lại để chỉ nạp ĐÚNG
-   * MỘT LẦN: nếu người dùng xoá cuốn dựng sẵn đi thì lần mở sau nó không tự
-   * mọc lại.
+   * Id các thư viện dựng sẵn mà người dùng đã bấm xoá. Thư viện dựng sẵn
+   * KHÔNG được lưu vào localStorage nữa (xem useReadingData) — nó được tải
+   * lại từ file tĩnh mỗi phiên — nên phải ghi nhớ riêng việc "đã xoá" ở đây,
+   * nếu không nó sẽ tự mọc lại ngay lần mở trang kế tiếp.
    */
-  seededLibraries?: string[];
+  hiddenLibraries?: string[];
 }

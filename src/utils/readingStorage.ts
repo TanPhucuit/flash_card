@@ -20,7 +20,7 @@ export const DEFAULT_LIFE_MANAGEMENT: LifeManagementConfig = {
 };
 
 export function emptyReadingData(): ReadingData {
-  return { books: [], attempts: [], lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT }, seededLibraries: [] };
+  return { books: [], attempts: [], lifeManagement: { ...DEFAULT_LIFE_MANAGEMENT }, hiddenLibraries: [] };
 }
 
 function mergeLifeManagement(stored?: Partial<LifeManagementConfig>): LifeManagementConfig {
@@ -46,7 +46,7 @@ function normalize(parsed: Partial<ReadingData>): ReadingData {
     // sẵn một chuỗi rỗng, và chuỗi rỗng đó sẽ đè mất giá trị mặc định mới —
     // đồng bộ vĩnh viễn báo "chưa cấu hình địa chỉ" dù mã đã có sẵn địa chỉ.
     lifeManagement: mergeLifeManagement(parsed.lifeManagement),
-    seededLibraries: Array.isArray(parsed.seededLibraries) ? parsed.seededLibraries : [],
+    hiddenLibraries: Array.isArray(parsed.hiddenLibraries) ? parsed.hiddenLibraries : [],
   };
 }
 
