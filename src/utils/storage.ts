@@ -56,10 +56,31 @@ export function loadAppData(): AppData {
   return emptyAppData();
 }
 
-export function saveAppData(data: AppData) {
+export function saveAppData(data: AppData): string {
   const serialized = JSON.stringify(data);
   localStorage.setItem(STORAGE_KEY, serialized);
   localStorage.setItem(STORAGE_BACKUP_KEY, serialized);
+  return serialized;
+}
+
+/**
+ * Ghi rồi đọc lại NGAY một khoá thử, thay vì chỉ dựa vào try/catch của
+ * setItem — trên một số trình duyệt/WebView bị hạn chế lưu trữ (thường gặp
+ * nhất trên iPad khi Safari bật "Chặn tất cả cookie" hoặc đang ở chế độ Duyệt
+ * web riêng tư), setItem() không ném lỗi gì cả nhưng dữ liệu không thực sự
+ * được lưu lại — đây là cách duy nhất phát hiện được kiểu ghi-giả đó.
+ */
+export function testStorageWritable(): boolean {
+  const testKey = "localEnglishFlashcards:writeTest";
+  const testValue = String(Date.now());
+  try {
+    localStorage.setItem(testKey, testValue);
+    const ok = localStorage.getItem(testKey) === testValue;
+    localStorage.removeItem(testKey);
+    return ok;
+  } catch {
+    return false;
+  }
 }
 
 export function getStorageDiagnostics() {
@@ -71,5 +92,6 @@ export function getStorageDiagnostics() {
     hasBackup: Boolean(backup),
     primaryBytes: raw ? new Blob([raw]).size : 0,
     backupBytes: backup ? new Blob([backup]).size : 0,
+    writable: testStorageWritable(),
   };
 }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LifeManagementConfig, ReadingAttempt, ReadingBook, ReadingData } from "../types/reading";
-import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
+import { READING_STORAGE_KEY, loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
 
 /**
  * Thư viện bài đọc dựng sẵn, đi kèm chính bản deploy (public/reading-library.json).
@@ -22,9 +22,13 @@ import { loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../uti
 const BUILTIN_LIBRARY_ID = "open-reading-library";
 const BUILTIN_LIBRARY_URL = "/reading-library.json";
 
+const READING_STORAGE_FAILED_MESSAGE =
+  "Không lưu được kết quả bài đọc vào máy này — trình duyệt đang chặn hoặc xoá bộ nhớ lưu trữ (localStorage). Bài đọc vẫn dùng được trong phiên này nhưng sẽ mất khi tải lại trang. Trên iPad: kiểm tra Cài đặt > Safari > Nâng cao, tắt \"Chặn tất cả cookie\" hoặc thoát khỏi chế độ Duyệt web riêng tư, rồi tải lại trang.";
+
 export function useReadingData() {
   const [data, setReactData] = useState<ReadingData>(() => loadReadingData());
   const dataRef = useRef(data);
+  const [syncError, setSyncError] = useState("");
   // Thư viện dựng sẵn: chỉ tồn tại trong bộ nhớ của phiên hiện tại, KHÔNG đi
   // qua saveReadingData. Đồng bộ Life Management có thể ghi id task vào đây
   // trong lúc dùng (xem markBookSynced), nhưng id đó không sống sót qua lần
@@ -36,15 +40,27 @@ export function useReadingData() {
     const next = updater(dataRef.current);
     dataRef.current = next;
     try {
-      saveReadingData(next);
+      const serialized = saveReadingData(next);
+      // Một số trình duyệt/WebView (đặc biệt trên iPad khi bật "Chặn tất cả
+      // cookie" hoặc đang ở chế độ Duyệt web riêng tư) không ném lỗi khi ghi
+      // localStorage — setItem() chạy "thành công" nhưng không thực sự lưu gì
+      // cả, hoặc vẫn giữ giá trị CŨ. So khớp lại đúng nội dung vừa ghi để bắt
+      // được kiểu ghi-giả này, thứ mà try/catch một mình không phát hiện ra —
+      // đây là nguyên nhân phổ biến nhất khiến bài đọc "làm xong nhưng không
+      // lưu" mà không hề có lỗi nào hiện ra.
+      if (localStorage.getItem(READING_STORAGE_KEY) !== serialized) {
+        throw new Error("localStorage.setItem silently no-op'd or was reverted");
+      }
+      setSyncError("");
     } catch (error) {
       // Không alert(): một alert() chặn cả luồng JS, và nếu ghi tiếp tục thất
       // bại (localStorage vẫn đầy) thì hộp thoại này sẽ hiện lại ở thao tác kế
       // tiếp — với người dùng, đó là "web đứng hình liên tục đòi đồng bộ".
       // Dữ liệu vẫn cập nhật đúng trong bộ nhớ (setReactData ở dưới vẫn chạy),
-      // chỉ là không được lưu lại cho lần mở sau — âm thầm chấp nhận vậy còn
-      // hơn chặn đứng thao tác của người dùng.
-      console.error("Không lưu được dữ liệu Reading — localStorage có thể đã đầy.", error);
+      // chỉ là không được lưu lại cho lần mở sau — báo qua banner thay vì
+      // chặn đứng thao tác của người dùng.
+      console.error("Không lưu được dữ liệu Reading — localStorage có thể đã đầy hoặc bị chặn.", error);
+      setSyncError(READING_STORAGE_FAILED_MESSAGE);
     }
     setReactData(next);
   }, []);
@@ -176,7 +192,7 @@ export function useReadingData() {
     };
   }, [data.attempts]);
 
-  return { data: { ...data, books }, stats, ...api };
+  return { data: { ...data, books }, stats, syncError, ...api };
 }
 
 export type ReadingApi = ReturnType<typeof useReadingData>;

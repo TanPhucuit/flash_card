@@ -57,15 +57,15 @@ function AuthenticatedApp({ api, reading, isMobile, lmSync }: { api: DataApi; re
     // phones it stays reachable by URL but is not part of the mobile shell.
     return (
       <Routes>
-        <Route path="/reading" element={<AppLayout><ReadingLibraryPage api={reading} /></AppLayout>} />
-        <Route path="/reading/:bookId/:passageId" element={<AppLayout><ReadingTestPage api={reading} /></AppLayout>} />
+        <Route path="/reading" element={<AppLayout syncError={reading.syncError}><ReadingLibraryPage api={reading} /></AppLayout>} />
+        <Route path="/reading/:bookId/:passageId" element={<AppLayout syncError={reading.syncError}><ReadingTestPage api={reading} /></AppLayout>} />
         <Route path="*" element={<MobileAppPage api={api} />} />
       </Routes>
     );
   }
 
   return (
-    <AppLayout>
+    <AppLayout syncError={api.syncError || reading.syncError}>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<DashboardPage api={api} />} />
@@ -82,7 +82,7 @@ function AuthenticatedApp({ api, reading, isMobile, lmSync }: { api: DataApi; re
         <Route path="/study/:setId/write" element={<WritePage api={api} />} />
         <Route path="/study/:setId/match" element={<MatchPage api={api} />} />
         <Route path="/progress" element={<ProgressPage api={api} />} />
-        <Route path="/settings" element={<SettingsPage api={api} lmSync={lmSync} />} />
+        <Route path="/settings" element={<SettingsPage api={api} reading={reading} lmSync={lmSync} />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </AppLayout>

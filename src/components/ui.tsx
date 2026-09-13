@@ -68,7 +68,7 @@ const nav = [
   ["Settings", "/settings", "settings"],
 ] as const;
 
-export function AppLayout({ children }: { children: ReactNode }) {
+export function AppLayout({ children, syncError }: { children: ReactNode; syncError?: string }) {
   const navigate = useNavigate();
   return (
     <div className="app-shell flex min-h-screen bg-background text-on-background dark:bg-[#191c1d] dark:text-white">
@@ -95,6 +95,9 @@ export function AppLayout({ children }: { children: ReactNode }) {
           </button>
         </header>
         <main className="flex-1 overflow-x-hidden bg-pattern px-container-margin pb-28 pt-lg md:px-xl md:pb-xl md:pt-xl">
+          {syncError ? (
+            <div className="mb-lg rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{syncError}</div>
+          ) : null}
           {children}
         </main>
         {/* Column count is derived from `nav` rather than hard-coded: it was

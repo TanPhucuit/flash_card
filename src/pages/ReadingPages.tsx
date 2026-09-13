@@ -69,6 +69,10 @@ export function ReadingLibraryPage({ api }: { api: ReadingApi }) {
         }
       />
 
+      {api.syncError ? (
+        <div className="mb-lg rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
+      ) : null}
+
       <div className="mb-lg grid grid-cols-2 gap-md lg:grid-cols-4">
         <StatTile label="Hôm nay" value={stats.todayCount} suffix="bài" accent />
         <StatTile label="Tuần này" value={stats.weekCount} suffix="bài" />
@@ -505,6 +509,10 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
           )}
         </div>
       </div>
+
+      {submitted && api.syncError ? (
+        <div className="border-b border-surface-variant bg-error-container px-md py-sm text-sm font-semibold text-red-900">{api.syncError}</div>
+      ) : null}
 
       {submitted ? (
         <div className="border-b border-surface-variant bg-primary-fixed px-md py-md dark:border-white/10 dark:bg-primary/20">

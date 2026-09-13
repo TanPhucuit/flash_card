@@ -74,10 +74,20 @@ export function loadReadingData(): ReadingData {
   return emptyReadingData();
 }
 
-export function saveReadingData(data: ReadingData) {
+export function saveReadingData(data: ReadingData): string {
   const serialized = JSON.stringify(data);
   localStorage.setItem(READING_STORAGE_KEY, serialized);
   localStorage.setItem(READING_BACKUP_KEY, serialized);
+  return serialized;
+}
+
+export function getReadingStorageDiagnostics() {
+  const raw = localStorage.getItem(READING_STORAGE_KEY);
+  return {
+    hasData: Boolean(raw),
+    bytes: raw ? new Blob([raw]).size : 0,
+    attemptCount: raw ? ((JSON.parse(raw) as Partial<ReadingData>).attempts?.length ?? 0) : 0,
+  };
 }
 
 /** Local calendar day, not UTC — "today" has to mean the user's today. */

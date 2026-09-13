@@ -7,6 +7,8 @@ import { useSpeech } from "../hooks/useSpeech";
 import { AppData, LEARN_DIRECTIONS, LearnDirection, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
 import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
+import { getReadingStorageDiagnostics } from "../utils/readingStorage";
+import { ReadingApi } from "../hooks/useReadingData";
 import { isStarSet } from "../utils/starSets";
 import { LifeManagementSyncApi } from "../hooks/useLifeManagementSync";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
@@ -2464,9 +2466,10 @@ export function ProgressPage({ api }: PageProps) {
   );
 }
 
-export function SettingsPage({ api, lmSync }: PageProps & { lmSync: LifeManagementSyncApi }) {
+export function SettingsPage({ api, reading, lmSync }: PageProps & { reading: ReadingApi; lmSync: LifeManagementSyncApi }) {
   const { voices } = useSpeech(api.data.settings.voiceURI);
   const storageInfo = getStorageDiagnostics();
+  const readingStorageInfo = getReadingStorageDiagnostics();
   const [recoverMessage, setRecoverMessage] = useState("");
 
   function recoverFromOrigin(origin: string) {
@@ -2561,6 +2564,13 @@ export function SettingsPage({ api, lmSync }: PageProps & { lmSync: LifeManageme
           <div className="rounded-xl bg-surface-container-low p-md text-sm text-on-surface-variant dark:bg-white/5 dark:text-white/70">
             <div>Origin: <strong>{storageInfo.origin}</strong></div>
             <div>Storage: primary {storageInfo.hasPrimary ? "OK" : "empty"} ({Math.round(storageInfo.primaryBytes / 1024)} KB), backup {storageInfo.hasBackup ? "OK" : "empty"} ({Math.round(storageInfo.backupBytes / 1024)} KB)</div>
+            <div>Ghi thử localStorage: <strong className={storageInfo.writable ? "" : "text-red-600"}>{storageInfo.writable ? "OK" : "THẤT BẠI — trình duyệt đang chặn lưu trữ"}</strong></div>
+            <div>Dữ liệu Reading: {readingStorageInfo.hasData ? "OK" : "trống"} ({Math.round(readingStorageInfo.bytes / 1024)} KB, {readingStorageInfo.attemptCount} lượt làm bài đã lưu)</div>
+            {!storageInfo.writable ? (
+              <p className="mt-sm font-semibold text-red-600">
+                Trình duyệt này không cho phép web lưu dữ liệu. Trên iPad: vào Cài đặt {"->"} Safari {"->"} Nâng cao (Advanced), tắt "Chặn tất cả cookie" (Block All Cookies), hoặc thoát khỏi chế độ Duyệt web riêng tư (Private Browsing), rồi tải lại trang này.
+              </p>
+            ) : null}
           </div>
           <div className="rounded-xl border border-surface-variant p-md dark:border-white/10">
             <div className="font-semibold">Recover data from another dev origin</div>
