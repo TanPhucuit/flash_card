@@ -8,6 +8,15 @@ import { LifeManagementConfig, ReadingData } from "../types/reading";
 export const READING_STORAGE_KEY = "localEnglishReading:v1";
 export const READING_BACKUP_KEY = "localEnglishReading:v1:backup";
 
+// Thư viện dựng sẵn nay luôn được tải lại từ file tĩnh (xem useReadingData),
+// không lưu vào localStorage. Các máy đã mở app từ trước thì còn giữ một BẢN CŨ
+// của nó trong data.books (id kiểu "open-reading-library-v2") — nếu để nguyên,
+// bản cũ đó sẽ che mất dữ liệu mới và mọi chỉnh sửa trên server không bao giờ
+// tới được người dùng. Nên bỏ bản lưu cũ khi đọc, và gắn lại lịch sử làm bài
+// của nó vào id hiện hành để không mất lịch sử.
+export const BUILTIN_LIBRARY_ID = "open-reading-library";
+const LEGACY_LIBRARY_ID = /^open-reading-library/;
+
 // Discovered from the live Life Management database, so a fresh install only
 // needs the deployment URL filled in rather than four opaque UUIDs.
 export const DEFAULT_LIFE_MANAGEMENT: LifeManagementConfig = {
@@ -35,9 +44,15 @@ function mergeLifeManagement(stored?: Partial<LifeManagementConfig>): LifeManage
 }
 
 function normalize(parsed: Partial<ReadingData>): ReadingData {
+  const books = (Array.isArray(parsed.books) ? parsed.books : []).filter((book) => !LEGACY_LIBRARY_ID.test(book.id));
+  const attempts = (Array.isArray(parsed.attempts) ? parsed.attempts : []).map((attempt) =>
+    LEGACY_LIBRARY_ID.test(attempt.bookId) && attempt.bookId !== BUILTIN_LIBRARY_ID
+      ? { ...attempt, bookId: BUILTIN_LIBRARY_ID }
+      : attempt,
+  );
   return {
-    books: Array.isArray(parsed.books) ? parsed.books : [],
-    attempts: Array.isArray(parsed.attempts) ? parsed.attempts : [],
+    books,
+    attempts,
     // Spread the defaults under the stored value so a config saved before a
     // new field existed still ends up with that field populated.
     //

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LifeManagementConfig, ReadingAttempt, ReadingBook, ReadingData } from "../types/reading";
-import { READING_STORAGE_KEY, loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
+import { BUILTIN_LIBRARY_ID, READING_STORAGE_KEY, loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
 
 /**
  * Thư viện bài đọc dựng sẵn, đi kèm chính bản deploy (public/reading-library.json).
@@ -19,7 +19,6 @@ import { READING_STORAGE_KEY, loadReadingData, saveReadingData, startOfWeek, toD
  * localStorage đã đầy sẽ ném lỗi, và lỗi đó từng bị xử lý bằng alert() chặn cả
  * luồng, lặp lại ở mọi thao tác tiếp theo (Thêm từ, Learn...).
  */
-const BUILTIN_LIBRARY_ID = "open-reading-library";
 const BUILTIN_LIBRARY_URL = "/reading-library.json";
 
 const READING_STORAGE_FAILED_MESSAGE =
@@ -70,7 +69,7 @@ export function useReadingData() {
   // kiểu cũ vì kết quả không được lưu vào localStorage để mà phải né nạp lại.
   useEffect(() => {
     const controller = new AbortController();
-    void fetch(BUILTIN_LIBRARY_URL, { signal: controller.signal })
+    void fetch(BUILTIN_LIBRARY_URL, { signal: controller.signal, cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json() as Promise<ReadingBook>;
