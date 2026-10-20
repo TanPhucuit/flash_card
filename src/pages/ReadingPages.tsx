@@ -10,10 +10,10 @@ import { extractPdfLines } from "../utils/readingPdfExtract";
 import { syncBookToLifeManagement } from "../utils/lifeManagementSync";
 import { toDateKey } from "../utils/readingStorage";
 
-const uid = () => `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`;
+export const uid = () => `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`;
 
 /** IELTS Academic Reading raw-score to band, the standard published table. */
-function bandFor(correct: number, total: number): string {
+export function bandFor(correct: number, total: number): string {
   if (!total) return "–";
   const scaled = Math.round((correct / total) * 40);
   const table: Array<[number, string]> = [
@@ -24,7 +24,7 @@ function bandFor(correct: number, total: number): string {
   return "2.5";
 }
 
-function formatClock(seconds: number) {
+export function formatClock(seconds: number) {
   const m = Math.floor(Math.abs(seconds) / 60);
   const s = Math.abs(seconds) % 60;
   return `${seconds < 0 ? "-" : ""}${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
@@ -582,7 +582,7 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
   );
 }
 
-const CHOICE_SETS: Partial<Record<ReadingQuestion["type"], string[]>> = {
+export const CHOICE_SETS: Partial<Record<ReadingQuestion["type"], string[]>> = {
   tfng: ["TRUE", "FALSE", "NOT GIVEN"],
   ynng: ["YES", "NO", "NOT GIVEN"],
 };

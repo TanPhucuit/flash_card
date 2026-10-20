@@ -10,6 +10,7 @@ import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils
 import { getReadingStorageDiagnostics } from "../utils/readingStorage";
 import { ReadingApi } from "../hooks/useReadingData";
 import { isStarSet } from "../utils/starSets";
+import { MobileNav, MobileTab } from "../components/MobileNav";
 import { LifeManagementSyncApi } from "../hooks/useLifeManagementSync";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
@@ -166,6 +167,8 @@ export function MobileAppPage({ api }: PageProps) {
   const mixTimer = useRef<number | undefined>(undefined);
   const correctAudio = useRef<AudioContext | null>(null);
   const { speak } = useSpeech(api.data.settings.voiceURI);
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const mobileSets = useMemo(
     () => api.data.sets
@@ -384,6 +387,23 @@ export function MobileAppPage({ api }: PageProps) {
     setQuery("");
     switchView("sets");
   }
+
+  function selectMobileTab(tab: MobileTab) {
+    if (tab === "reading") navigate("/reading");
+    else if (tab === "add") switchView("add");
+    else if (tab === "mix") openMixPicker();
+    else openLibrary(tab);
+  }
+
+  // Các trang Reading nằm ngoài component này, nên khi người dùng bấm một tab
+  // khác từ đó, tab được truyền qua ?tab= để mở đúng màn hình ngay khi quay về.
+  useEffect(() => {
+    const tab = searchParams.get("tab") as MobileTab | null;
+    if (!tab) return;
+    if (tab === "flashcard" || tab === "learn" || tab === "mix" || tab === "add") selectMobileTab(tab);
+    setSearchParams({}, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function startMobileLearn(direction: LearnDirection) {
     if (!selectedSet) return;
@@ -809,14 +829,7 @@ export function MobileAppPage({ api }: PageProps) {
           </div>
         </div>
 
-        <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-surface-variant bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#202324]/95" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
-          <div className="mx-auto grid max-w-md grid-cols-4 gap-xs px-container-margin pt-sm">
-            <button type="button" onClick={() => switchView("add")} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="add_circle" /> Thêm từ</button>
-            <button type="button" onClick={() => openLibrary("flashcard")} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="style" /> Flashcard</button>
-            <button type="button" onClick={() => openLibrary("learn")} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="school" /> Learn</button>
-            <button type="button" onClick={openMixPicker} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl bg-primary-fixed text-xs font-bold text-primary transition active:scale-95 dark:bg-primary/25 dark:text-white"><Icon name="layers" /> Mix</button>
-          </div>
-        </nav>
+        <MobileNav active="mix" onSelect={selectMobileTab} />
       </main>
     );
   }
@@ -1038,14 +1051,7 @@ export function MobileAppPage({ api }: PageProps) {
         )}
       </div>
 
-      <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-surface-variant bg-white/95 backdrop-blur dark:border-white/10 dark:bg-[#202324]/95" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
-        <div className="mx-auto grid max-w-md grid-cols-4 gap-xs px-container-margin pt-sm">
-          <button type="button" onClick={() => switchView("add")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "add" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="add_circle" /> Thêm từ</button>
-          <button type="button" onClick={() => openLibrary("flashcard")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" && libraryMode === "flashcard" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="style" /> Flashcard</button>
-          <button type="button" onClick={() => openLibrary("learn")} className={`flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold transition active:scale-95 ${view === "sets" && libraryMode === "learn" ? "bg-primary-fixed text-primary dark:bg-primary/25 dark:text-white" : "text-on-surface-variant dark:text-white/60"}`}><Icon name="school" /> Learn</button>
-          <button type="button" onClick={openMixPicker} className="flex min-h-14 flex-col items-center justify-center gap-xs rounded-2xl text-xs font-bold text-on-surface-variant transition active:scale-95 dark:text-white/60"><Icon name="layers" /> Mix</button>
-        </div>
-      </nav>
+      <MobileNav active={view === "add" ? "add" : view === "sets" ? libraryMode : undefined} onSelect={selectMobileTab} />
     </main>
   );
 }

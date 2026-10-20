@@ -7,6 +7,7 @@ import { useReadingData } from "./hooks/useReadingData";
 import { DemoPage } from "./pages/DemoPage";
 import { ListeningTestPage } from "./pages/ListeningTestPage";
 import { ReadingLibraryPage, ReadingTestPage } from "./pages/ReadingPages";
+import { MobileReadingLibraryPage, MobileReadingTestPage } from "./pages/MobileReadingPages";
 import {
   CreateEditSetPage,
   DashboardPage,
@@ -53,12 +54,12 @@ export default function App() {
 
 function AuthenticatedApp({ api, reading, isMobile, lmSync }: { api: DataApi; reading: ReadingDataApi; isMobile: boolean; lmSync: LifeManagementSyncApi }) {
   if (isMobile) {
-    // Reading is a split-pane exam layout that needs the desktop chrome, so on
-    // phones it stays reachable by URL but is not part of the mobile shell.
+    // Bản desktop của Reading là bố cục hai cột (bài đọc | câu hỏi) không vừa
+    // màn hình điện thoại, nên mobile có trang riêng: bài đọc ở trên, câu hỏi ở dưới.
     return (
       <Routes>
-        <Route path="/reading" element={<AppLayout syncError={reading.syncError}><ReadingLibraryPage api={reading} /></AppLayout>} />
-        <Route path="/reading/:bookId/:passageId" element={<AppLayout syncError={reading.syncError}><ReadingTestPage api={reading} /></AppLayout>} />
+        <Route path="/reading" element={<MobileReadingLibraryPage api={reading} />} />
+        <Route path="/reading/:bookId/:passageId" element={<MobileReadingTestPage api={reading} />} />
         <Route path="*" element={<MobileAppPage api={api} />} />
       </Routes>
     );
