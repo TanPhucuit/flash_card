@@ -1,4 +1,4 @@
-import { LifeManagementConfig, ReadingData } from "../types/reading";
+import { LifeManagementConfig, ReadingAttempt, ReadingData } from "../types/reading";
 
 // Reading data lives under its OWN localStorage key, deliberately outside the
 // AppData that useAppData manages. That store is overwritten wholesale by the
@@ -43,13 +43,16 @@ function mergeLifeManagement(stored?: Partial<LifeManagementConfig>): LifeManage
   return merged;
 }
 
+/** Gắn bài làm của các bản thư viện dựng sẵn cũ về id hiện hành. */
+export function normalizeAttempt(attempt: ReadingAttempt): ReadingAttempt {
+  return LEGACY_LIBRARY_ID.test(attempt.bookId) && attempt.bookId !== BUILTIN_LIBRARY_ID
+    ? { ...attempt, bookId: BUILTIN_LIBRARY_ID }
+    : attempt;
+}
+
 function normalize(parsed: Partial<ReadingData>): ReadingData {
   const books = (Array.isArray(parsed.books) ? parsed.books : []).filter((book) => !LEGACY_LIBRARY_ID.test(book.id));
-  const attempts = (Array.isArray(parsed.attempts) ? parsed.attempts : []).map((attempt) =>
-    LEGACY_LIBRARY_ID.test(attempt.bookId) && attempt.bookId !== BUILTIN_LIBRARY_ID
-      ? { ...attempt, bookId: BUILTIN_LIBRARY_ID }
-      : attempt,
-  );
+  const attempts = (Array.isArray(parsed.attempts) ? parsed.attempts : []).map(normalizeAttempt);
   return {
     books,
     attempts,

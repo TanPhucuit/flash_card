@@ -72,6 +72,11 @@ export function ReadingLibraryPage({ api }: { api: ReadingApi }) {
       {api.syncError ? (
         <div className="mb-lg rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
       ) : null}
+      {api.cloudState === "error" ? (
+        <div className="mb-lg rounded-xl bg-amber-100 p-md text-sm font-semibold text-amber-900 dark:bg-amber-500/20 dark:text-amber-100">
+          Chưa đồng bộ được lịch sử làm bài với máy chủ — kết quả làm trên thiết bị khác có thể chưa hiện. Kiểm tra mạng rồi tải lại trang.
+        </div>
+      ) : null}
 
       <div className="mb-lg grid grid-cols-2 gap-md lg:grid-cols-4">
         <StatTile label="Hôm nay" value={stats.todayCount} suffix="bài" accent />

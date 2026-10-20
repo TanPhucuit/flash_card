@@ -16,9 +16,14 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
   const navigate = useNavigate();
   const { books, attempts } = api.data;
   const { stats } = api;
-  const [filter, setFilter] = useState<"all" | "todo" | "done">("all");
   const [query, setQuery] = useState("");
   const restoredScroll = useRef(false);
+
+  const attemptCount = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const attempt of attempts) map.set(attempt.passageId, (map.get(attempt.passageId) ?? 0) + 1);
+    return map;
+  }, [attempts]);
 
   const bestByPassage = useMemo(() => {
     const map = new Map<string, ReadingAttempt>();
@@ -36,14 +41,10 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
     return books
       .map((book) => ({
         book,
-        passages: book.passages.filter((passage) => {
-          if (needle && !passage.title.toLowerCase().includes(needle)) return false;
-          if (filter === "all") return true;
-          return (filter === "done") === bestByPassage.has(passage.id);
-        }),
+        passages: book.passages.filter((passage) => !needle || passage.title.toLowerCase().includes(needle)),
       }))
       .filter((entry) => entry.passages.length);
-  }, [books, query, filter, bestByPassage]);
+  }, [books, query]);
 
   const totalPassages = books.reduce((sum, book) => sum + book.passages.length, 0);
   const donePassages = books.reduce((sum, book) => sum + book.passages.filter((passage) => bestByPassage.has(passage.id)).length, 0);
@@ -93,28 +94,15 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
               />
             </div>
           </div>
-          <div className="mt-sm grid grid-cols-3 gap-1 rounded-xl bg-surface-container p-1 dark:bg-white/5">
-            {([
-              ["all", "Tất cả"],
-              ["todo", "Chưa làm"],
-              ["done", "Đã làm"],
-            ] as const).map(([value, label]) => (
-              <button
-                key={value}
-                type="button"
-                onClick={() => setFilter(value)}
-                className={`min-h-10 rounded-lg text-sm font-bold transition active:scale-95 ${
-                  filter === value ? "bg-white text-primary shadow-level-1 dark:bg-primary/30 dark:text-white" : "text-on-surface-variant dark:text-white/60"
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
         </header>
 
         {api.syncError ? (
           <div className="mb-md rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
+        ) : null}
+        {api.cloudState === "error" ? (
+          <div className="mb-md rounded-xl bg-amber-100 p-md text-sm font-semibold text-amber-900 dark:bg-amber-500/20 dark:text-amber-100">
+            Chưa đồng bộ được lịch sử làm bài với máy chủ — kết quả trên thiết bị khác có thể chưa hiện. Kiểm tra mạng rồi tải lại trang.
+          </div>
         ) : null}
 
         {!books.length ? (
@@ -123,7 +111,7 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
             <p className="font-semibold">Đang tải thư viện bài đọc...</p>
           </div>
         ) : !visibleBooks.length ? (
-          <p className="py-xl text-center text-sm text-on-surface-variant">Không có bài nào khớp bộ lọc.</p>
+          <p className="py-xl text-center text-sm text-on-surface-variant">Không có bài nào khớp từ khoá.</p>
         ) : (
           visibleBooks.map(({ book, passages }) => (
             <section key={book.id} className="mb-lg">
@@ -134,6 +122,7 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
                 {passages.map((passage, index) => {
                   const best = bestByPassage.get(passage.id);
                   const ratio = best && best.total ? best.correct / best.total : 0;
+                  const times = attemptCount.get(passage.id) ?? 0;
                   return (
                     <button
                       key={passage.id}
@@ -143,9 +132,16 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
                         index ? "border-t border-surface-variant dark:border-white/10" : ""
                       }`}
                     >
+                      <Icon
+                        name={best ? "check_circle" : "radio_button_unchecked"}
+                        filled={Boolean(best)}
+                        className={`shrink-0 text-[22px] ${best ? "text-green-600 dark:text-green-400" : "text-surface-variant dark:text-white/25"}`}
+                      />
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-[15px] font-semibold">{passage.title}</p>
-                        <p className="text-xs text-on-surface-variant dark:text-white/55">{passage.questions.length} câu hỏi</p>
+                        <p className="text-xs text-on-surface-variant dark:text-white/55">
+                          {best ? `Đã làm ${times} lần · tốt nhất ${best.correct}/${best.total}` : `${passage.questions.length} câu hỏi · chưa làm`}
+                        </p>
                       </div>
                       {best ? (
                         <span

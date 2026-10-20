@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LifeManagementConfig, ReadingAttempt, ReadingBook, ReadingData } from "../types/reading";
 import { BUILTIN_LIBRARY_ID, READING_STORAGE_KEY, loadReadingData, saveReadingData, startOfWeek, toDateKey } from "../utils/readingStorage";
+import { loadReadingAttempts, mergeAttempts, pushReadingAttempts } from "../utils/readingCloud";
 
 /**
  * Thư viện bài đọc dựng sẵn, đi kèm chính bản deploy (public/reading-library.json).
@@ -63,6 +64,31 @@ export function useReadingData() {
     }
     setReactData(next);
   }, []);
+
+  // Lịch sử làm bài dùng chung giữa các thiết bị (Google Sheet, tab
+  // reading_attempts). localStorage chỉ còn là bản đệm của máy này: khi mở app
+  // thì gộp lịch sử trên cloud vào, rồi đẩy lên những bài máy này có mà cloud
+  // chưa có (bài làm lúc mất mạng, hoặc từ trước khi có đồng bộ).
+  const [cloudState, setCloudState] = useState<"syncing" | "idle" | "error">("syncing");
+  useEffect(() => {
+    const controller = new AbortController();
+    loadReadingAttempts(controller.signal)
+      .then((remote) => {
+        const remoteIds = new Set(remote.map((attempt) => attempt.id));
+        const localOnly = dataRef.current.attempts.filter((attempt) => !remoteIds.has(attempt.id));
+        if (remote.some((attempt) => !dataRef.current.attempts.some((local) => local.id === attempt.id))) {
+          setData((current) => ({ ...current, attempts: mergeAttempts(current.attempts, remote) }));
+        }
+        return pushReadingAttempts(localOnly);
+      })
+      .then(() => setCloudState("idle"))
+      .catch((error) => {
+        if (controller.signal.aborted) return;
+        console.warn("Không đồng bộ được lịch sử Reading với Google Sheet.", error);
+        setCloudState("error");
+      });
+    return () => controller.abort();
+  }, [setData]);
 
   // Nạp thư viện dựng sẵn mỗi khi mở app — rẻ, vì nó chỉ là một GET tới file
   // tĩnh cùng gốc (trình duyệt tự cache), và không còn cần cờ "đã nạp chưa"
@@ -145,6 +171,13 @@ export function useReadingData() {
       },
       recordAttempt(attempt: ReadingAttempt) {
         setData((current) => ({ ...current, attempts: [attempt, ...current.attempts] }));
+        // Lỗi mạng ở đây không mất bài: lần mở app sau sẽ đẩy lại mọi bài cloud chưa có.
+        pushReadingAttempts([attempt])
+          .then(() => setCloudState("idle"))
+          .catch((error) => {
+            console.warn("Chưa đẩy được bài làm lên Google Sheet, sẽ thử lại lần mở sau.", error);
+            setCloudState("error");
+          });
       },
       setLifeManagement(config: LifeManagementConfig) {
         setData((current) => ({ ...current, lifeManagement: config }));
@@ -191,7 +224,7 @@ export function useReadingData() {
     };
   }, [data.attempts]);
 
-  return { data: { ...data, books }, stats, syncError, ...api };
+  return { data: { ...data, books }, stats, syncError, cloudState, ...api };
 }
 
 export type ReadingApi = ReturnType<typeof useReadingData>;
