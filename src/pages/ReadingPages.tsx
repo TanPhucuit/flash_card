@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar } from "../components/ui";
 import { ReadingApi } from "../hooks/useReadingData";
 import { LifeManagementConfig, ReadingAttempt, ReadingPassage, ReadingQuestion } from "../types/reading";
 import { ParsedBookPreview, isAnswerCorrect, parseReadingBook } from "../utils/readingPdf";
+import { gradeQuestions } from "../utils/readingGrade";
 import { VerifiedApplyReport, applyUploadedAnswerKey, applyVerifiedAnswers } from "../utils/verifiedAnswers";
 import { parseAnswerKeyFile } from "../utils/answerKeyFile";
 import { extractPdfLines } from "../utils/readingPdfExtract";
@@ -72,11 +74,7 @@ export function ReadingLibraryPage({ api }: { api: ReadingApi }) {
       {api.syncError ? (
         <div className="mb-lg rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
       ) : null}
-      {api.cloudState === "error" ? (
-        <div className="mb-lg rounded-xl bg-amber-100 p-md text-sm font-semibold text-amber-900 dark:bg-amber-500/20 dark:text-amber-100">
-          Chưa đồng bộ được lịch sử làm bài với máy chủ — kết quả làm trên thiết bị khác có thể chưa hiện. Kiểm tra mạng rồi tải lại trang.
-        </div>
-      ) : null}
+      <ReadingSyncStatus api={api} className="mb-lg" />
 
       <div className="mb-lg grid grid-cols-2 gap-md lg:grid-cols-4">
         <StatTile label="Hôm nay" value={stats.todayCount} suffix="bài" accent />
@@ -462,10 +460,8 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
   }, [submitted]);
 
   const scorable = useMemo(() => passage?.questions.filter((q) => q.answer) ?? [], [passage]);
-  const correctCount = useMemo(
-    () => scorable.filter((q) => isAnswerCorrect(answers[q.id] ?? "", q.answer)).length,
-    [scorable, answers],
-  );
+  const grades = useMemo(() => gradeQuestions(passage?.questions ?? [], answers), [passage, answers]);
+  const correctCount = useMemo(() => scorable.filter((q) => grades.get(q.id)).length, [scorable, grades]);
 
   if (!book || !passage) {
     return <EmptyState title="Không tìm thấy bài đọc" text="Bài đọc này có thể đã bị xoá." action={<Button onClick={() => navigate("/reading")}>Về thư viện</Button>} />;
@@ -557,6 +553,7 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
             <QuestionBlock
               key={question.id}
               question={question}
+              isCorrect={grades.get(question.id) ?? false}
               // Rubric chỉ in MỘT lần cho cả nhóm câu cùng dạng, đúng như đề
               // thật in "Questions 1-5" rồi mới tới hướng dẫn.
               showInstruction={Boolean(question.instruction) && question.instruction !== passage.questions[index - 1]?.instruction}
@@ -594,6 +591,7 @@ export const CHOICE_SETS: Partial<Record<ReadingQuestion["type"], string[]>> = {
 
 function QuestionBlock({
   question,
+  isCorrect,
   value,
   submitted,
   flagged,
@@ -602,6 +600,7 @@ function QuestionBlock({
   onToggleFlag,
 }: {
   question: ReadingQuestion;
+  isCorrect: boolean;
   value: string;
   submitted: boolean;
   flagged: boolean;
@@ -609,7 +608,7 @@ function QuestionBlock({
   onChange: (value: string) => void;
   onToggleFlag: () => void;
 }) {
-  const correct = submitted && question.answer ? isAnswerCorrect(value, question.answer) : false;
+  const correct = submitted && question.answer ? isCorrect : false;
   const choices = CHOICE_SETS[question.type] ?? (question.options?.length ? question.options.map((option) => option.split(" ")[0]) : null);
 
   return (

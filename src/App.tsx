@@ -4,6 +4,7 @@ import { AppLayout } from "./components/ui";
 import { useAppData } from "./hooks/useAppData";
 import { LifeManagementSyncApi, useLifeManagementSync } from "./hooks/useLifeManagementSync";
 import { useReadingData } from "./hooks/useReadingData";
+import { useVersionReload } from "./hooks/useVersionReload";
 import { DemoPage } from "./pages/DemoPage";
 import { ListeningTestPage } from "./pages/ListeningTestPage";
 import { ReadingLibraryPage, ReadingTestPage } from "./pages/ReadingPages";
@@ -35,6 +36,7 @@ export default function App() {
   // chế độ, làm xong một bài đọc — đều được đẩy sang Life Management, kể cả khi
   // người dùng không bao giờ mở trang Settings.
   const lmSync = useLifeManagementSync(api, reading);
+  useVersionReload();
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 767px)");

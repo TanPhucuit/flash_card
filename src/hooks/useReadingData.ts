@@ -69,26 +69,51 @@ export function useReadingData() {
   // reading_attempts). localStorage chỉ còn là bản đệm của máy này: khi mở app
   // thì gộp lịch sử trên cloud vào, rồi đẩy lên những bài máy này có mà cloud
   // chưa có (bài làm lúc mất mạng, hoặc từ trước khi có đồng bộ).
+  //
+  // Đồng bộ KHÔNG chỉ một lần lúc mở trang: trình duyệt điện thoại giữ tab sống
+  // hàng ngày mà không tải lại, nên bài làm trên máy tính sau thời điểm đó sẽ
+  // không bao giờ hiện trên điện thoại. Vì vậy đồng bộ lại mỗi khi quay lại tab,
+  // định kỳ khi tab đang mở, và khi người dùng bấm "Đồng bộ".
   const [cloudState, setCloudState] = useState<"syncing" | "idle" | "error">("syncing");
-  useEffect(() => {
-    const controller = new AbortController();
-    loadReadingAttempts(controller.signal)
-      .then((remote) => {
-        const remoteIds = new Set(remote.map((attempt) => attempt.id));
-        const localOnly = dataRef.current.attempts.filter((attempt) => !remoteIds.has(attempt.id));
-        if (remote.some((attempt) => !dataRef.current.attempts.some((local) => local.id === attempt.id))) {
-          setData((current) => ({ ...current, attempts: mergeAttempts(current.attempts, remote) }));
-        }
-        return pushReadingAttempts(localOnly);
-      })
-      .then(() => setCloudState("idle"))
-      .catch((error) => {
-        if (controller.signal.aborted) return;
-        console.warn("Không đồng bộ được lịch sử Reading với Google Sheet.", error);
-        setCloudState("error");
-      });
-    return () => controller.abort();
+  const [lastSyncedAt, setLastSyncedAt] = useState<number | null>(null);
+  const syncing = useRef(false);
+  const syncNow = useCallback(async () => {
+    if (syncing.current) return;
+    syncing.current = true;
+    setCloudState("syncing");
+    try {
+      const remote = await loadReadingAttempts();
+      const remoteIds = new Set(remote.map((attempt) => attempt.id));
+      const localIds = new Set(dataRef.current.attempts.map((attempt) => attempt.id));
+      const localOnly = dataRef.current.attempts.filter((attempt) => !remoteIds.has(attempt.id));
+      if (remote.some((attempt) => !localIds.has(attempt.id))) {
+        setData((current) => ({ ...current, attempts: mergeAttempts(current.attempts, remote) }));
+      }
+      await pushReadingAttempts(localOnly);
+      setCloudState("idle");
+      setLastSyncedAt(Date.now());
+    } catch (error) {
+      console.warn("Không đồng bộ được lịch sử Reading với Google Sheet.", error);
+      setCloudState("error");
+    } finally {
+      syncing.current = false;
+    }
   }, [setData]);
+
+  useEffect(() => {
+    void syncNow();
+    const onVisible = () => { if (document.visibilityState === "visible") void syncNow(); };
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("focus", onVisible);
+    window.addEventListener("online", onVisible);
+    const timer = window.setInterval(onVisible, 60_000);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("focus", onVisible);
+      window.removeEventListener("online", onVisible);
+      window.clearInterval(timer);
+    };
+  }, [syncNow]);
 
   // Nạp thư viện dựng sẵn mỗi khi mở app — rẻ, vì nó chỉ là một GET tới file
   // tĩnh cùng gốc (trình duyệt tự cache), và không còn cần cờ "đã nạp chưa"
@@ -173,7 +198,7 @@ export function useReadingData() {
         setData((current) => ({ ...current, attempts: [attempt, ...current.attempts] }));
         // Lỗi mạng ở đây không mất bài: lần mở app sau sẽ đẩy lại mọi bài cloud chưa có.
         pushReadingAttempts([attempt])
-          .then(() => setCloudState("idle"))
+          .then(() => { setCloudState("idle"); setLastSyncedAt(Date.now()); })
           .catch((error) => {
             console.warn("Chưa đẩy được bài làm lên Google Sheet, sẽ thử lại lần mở sau.", error);
             setCloudState("error");
@@ -224,7 +249,7 @@ export function useReadingData() {
     };
   }, [data.attempts]);
 
-  return { data: { ...data, books }, stats, syncError, cloudState, ...api };
+  return { data: { ...data, books }, stats, syncError, cloudState, lastSyncedAt, syncNow, ...api };
 }
 
 export type ReadingApi = ReturnType<typeof useReadingData>;

@@ -1,10 +1,12 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
 import { MobileNav, MobileTab } from "../components/MobileNav";
 import { Button, Icon, Input, ProgressBar } from "../components/ui";
 import { ReadingApi } from "../hooks/useReadingData";
 import { ReadingAttempt, ReadingQuestion } from "../types/reading";
 import { isAnswerCorrect } from "../utils/readingPdf";
+import { gradeQuestions } from "../utils/readingGrade";
 import { BUILTIN_LIBRARY_ID, toDateKey } from "../utils/readingStorage";
 import { CHOICE_SETS, bandFor, formatClock, uid } from "./ReadingPages";
 
@@ -99,11 +101,7 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
         {api.syncError ? (
           <div className="mb-md rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
         ) : null}
-        {api.cloudState === "error" ? (
-          <div className="mb-md rounded-xl bg-amber-100 p-md text-sm font-semibold text-amber-900 dark:bg-amber-500/20 dark:text-amber-100">
-            Chưa đồng bộ được lịch sử làm bài với máy chủ — kết quả trên thiết bị khác có thể chưa hiện. Kiểm tra mạng rồi tải lại trang.
-          </div>
-        ) : null}
+        <ReadingSyncStatus api={api} className="mb-md" />
 
         {!books.length ? (
           <div className="flex flex-col items-center gap-sm py-xl text-center text-on-surface-variant">
@@ -245,10 +243,8 @@ export function MobileReadingTestPage({ api }: { api: ReadingApi }) {
       return last;
     });
   }, [passage]);
-  const correctCount = useMemo(
-    () => scorable.filter((q) => isAnswerCorrect(answers[q.id] ?? "", q.answer)).length,
-    [scorable, answers],
-  );
+  const grades = useMemo(() => gradeQuestions(passage?.questions ?? [], answers), [passage, answers]);
+  const correctCount = useMemo(() => scorable.filter((q) => grades.get(q.id)).length, [scorable, grades]);
 
   if (!book || !passage) {
     // Thư viện dựng sẵn được tải bất đồng bộ — mở thẳng link bài đọc (hoặc tải
@@ -359,6 +355,7 @@ export function MobileReadingTestPage({ api }: { api: ReadingApi }) {
             <MobileQuestionBlock
               key={question.id}
               question={question}
+              isCorrect={grades.get(question.id) ?? false}
               showInstruction={Boolean(question.instruction) && question.instruction !== passage.questions[index - 1]?.instruction}
               labels={groupLabels[index]}
               value={answers[question.id] ?? ""}
@@ -468,6 +465,7 @@ function InstructionText({ text }: { text: string }) {
 
 function MobileQuestionBlock({
   question,
+  isCorrect,
   labels,
   value,
   submitted,
@@ -477,6 +475,7 @@ function MobileQuestionBlock({
   onToggleFlag,
 }: {
   question: ReadingQuestion;
+  isCorrect: boolean;
   value: string;
   submitted: boolean;
   flagged: boolean;
@@ -485,7 +484,7 @@ function MobileQuestionBlock({
   onChange: (value: string) => void;
   onToggleFlag: () => void;
 }) {
-  const correct = submitted && question.answer ? isAnswerCorrect(value, question.answer) : false;
+  const correct = submitted && question.answer ? isCorrect : false;
   const chosenLabel = value ? labels?.[value] : undefined;
   const fixedChoices = CHOICE_SETS[question.type];
   // Phương án dài (trắc nghiệm A/B/C/D có nội dung) thì mỗi phương án là một

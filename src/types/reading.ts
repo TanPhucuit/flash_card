@@ -36,6 +36,12 @@ export interface ReadingQuestion {
    * học cần đọc kỹ.
    */
   explanation?: string;
+  /**
+   * Dạng "Choose TWO letters": hai câu cùng một nhóm dùng chung giá trị này.
+   * Đáp án của mỗi câu là "B/D" — hai chữ cái đúng, trả lời theo thứ tự nào
+   * cũng được, nhưng không được dùng một chữ cái cho cả hai câu.
+   */
+  pair?: string;
 }
 
 export interface ReadingPassage {
