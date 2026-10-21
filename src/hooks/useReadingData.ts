@@ -76,6 +76,10 @@ export function useReadingData() {
   // định kỳ khi tab đang mở, và khi người dùng bấm "Đồng bộ".
   const [cloudState, setCloudState] = useState<"syncing" | "idle" | "error">("syncing");
   const [lastSyncedAt, setLastSyncedAt] = useState<number | null>(null);
+  // Số liệu chẩn đoán hiện ngay trên dòng trạng thái: máy này có bao nhiêu
+  // lượt, máy chủ có bao nhiêu, lỗi gần nhất là gì. Không có nó thì khi hai
+  // thiết bị lệch nhau không ai biết lệch ở bước nào.
+  const [cloudInfo, setCloudInfo] = useState<{ local: number; remote: number; pushed: number; error: string }>({ local: 0, remote: 0, pushed: 0, error: "" });
   const syncing = useRef(false);
   const syncNow = useCallback(async () => {
     if (syncing.current) return;
@@ -89,11 +93,17 @@ export function useReadingData() {
       if (remote.some((attempt) => !localIds.has(attempt.id))) {
         setData((current) => ({ ...current, attempts: mergeAttempts(current.attempts, remote) }));
       }
-      await pushReadingAttempts(localOnly);
+      // Đẩy theo từng đợt nhỏ để một lịch sử dài không vượt giới hạn kích thước request.
+      for (let i = 0; i < localOnly.length; i += 50) {
+        await pushReadingAttempts(localOnly.slice(i, i + 50));
+      }
+      const merged = mergeAttempts(dataRef.current.attempts, remote);
+      setCloudInfo({ local: merged.length, remote: remote.length + localOnly.length, pushed: localOnly.length, error: "" });
       setCloudState("idle");
       setLastSyncedAt(Date.now());
     } catch (error) {
       console.warn("Không đồng bộ được lịch sử Reading với Google Sheet.", error);
+      setCloudInfo((current) => ({ ...current, local: dataRef.current.attempts.length, error: error instanceof Error ? error.message : String(error) }));
       setCloudState("error");
     } finally {
       syncing.current = false;
@@ -249,7 +259,7 @@ export function useReadingData() {
     };
   }, [data.attempts]);
 
-  return { data: { ...data, books }, stats, syncError, cloudState, lastSyncedAt, syncNow, ...api };
+  return { data: { ...data, books }, stats, syncError, cloudState, cloudInfo, lastSyncedAt, syncNow, ...api };
 }
 
 export type ReadingApi = ReturnType<typeof useReadingData>;
