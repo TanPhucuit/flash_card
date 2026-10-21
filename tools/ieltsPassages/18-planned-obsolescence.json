@@ -1,0 +1,121 @@
+{
+  "title": "Built Not to Last?",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử công nghiệp và các quy định về quyền sửa chữa đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In a fire station in the Californian town of Livermore, a light bulb has been burning almost continuously since 1901. Hand-blown and fitted with a carbon filament, it has outlasted the building it was first installed in and has become a minor tourist attraction, with its own website and a webcam that allows visitors to watch it glow. For many people, the bulb is more than a curiosity. It seems to prove something that consumers have long suspected: that manufacturers are capable of making products that last for decades, but choose not to."
+    },
+    {
+      "letter": "B",
+      "text": "There is at least one well-documented case in which manufacturers deliberately shortened the life of their products. In 1924, the leading producers of light bulbs in Europe and the United States formed an agreement, later known as the Phoebus cartel, to limit the life of standard bulbs to around one thousand hours, at a time when many lasted considerably longer. Member companies were required to submit samples for testing, and those whose bulbs lasted too long were fined. The cartel collapsed in the 1930s, but it remains the most frequently cited example of what is now called planned obsolescence."
+    },
+    {
+      "letter": "C",
+      "text": "The phrase itself became popular during the Great Depression. In 1932, an American property dealer named Bernard London published a pamphlet arguing that the government should impose legal limits on the life of manufactured goods, forcing people to replace them and thereby creating employment. His proposal was never adopted, but the idea of encouraging people to replace goods more frequently soon found a more subtle form. In the 1950s, the industrial designer Brooks Stevens described the aim as instilling in the buyer the desire to own something a little newer and a little better sooner than was necessary."
+    },
+    {
+      "letter": "D",
+      "text": "Stevens was describing what is sometimes called psychological or perceived obsolescence. Rather than breaking, products simply come to seem out of date. The American car industry was a pioneer of this approach. In the 1920s, General Motors began introducing a new style of car every year, with changes to the shape, colour and decoration that had little to do with how well the vehicle performed. Fashion and consumer electronics have followed the same pattern, encouraging people to replace possessions that still work perfectly well."
+    },
+    {
+      "letter": "E",
+      "text": "Not every short-lived product is the result of a conspiracy, however. Making goods more durable usually makes them more expensive, and many consumers prefer a cheaper item that lasts a few years to a costly one that lasts a lifetime. The Livermore bulb, for instance, is extremely dim by modern standards; a bulb designed to last for a century would be far less efficient than one designed to produce bright light. Engineers constantly balance durability against price, performance and weight, and a product that fails relatively early may simply reflect those choices."
+    },
+    {
+      "letter": "F",
+      "text": "In recent years, attention has shifted from deliberate sabotage to the difficulty of repairing modern devices. Many smartphones and laptops are glued shut, use unusual screws or contain batteries that cannot easily be replaced. Spare parts and repair manuals may be available only to authorised dealers. In 2017, one major smartphone manufacturer admitted that software updates had slowed down older phones whose batteries had deteriorated; the company said this was intended to prevent unexpected shutdowns, but it was later fined in France and agreed to a large settlement in the United States."
+    },
+    {
+      "letter": "G",
+      "text": "Governments have begun to respond. In 2015 France made it an offence to shorten the life of a product deliberately, and in 2021 it began requiring certain electronic goods to display a score showing how easy they are to repair. The European Union has since adopted rules requiring manufacturers to make spare parts available for a number of years and to offer repairs at a reasonable price. Supporters of these measures argue that they will save consumers money and reduce the huge quantities of electronic waste produced each year."
+    },
+    {
+      "letter": "H",
+      "text": "Whether such laws will change the habits of consumers remains uncertain. A repair is only attractive if it is cheaper and more convenient than buying a new product, and many people enjoy owning the latest model. The debate about planned obsolescence, therefore, is not only about the behaviour of manufacturers. It also raises questions about what consumers value, and about whether a society that depends on constant consumption can find ways to make its possessions last longer."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "an example of products being redesigned for reasons of appearance rather than function",
+          "a": "D",
+          "e": "Đoạn D: General Motors ra mẫu xe mới mỗi năm với thay đổi về hình dáng, màu sắc 'that had little to do with how well the vehicle performed' → D."
+        },
+        {
+          "q": "a proposal intended to reduce unemployment",
+          "a": "C",
+          "e": "Đoạn C: Bernard London đề xuất giới hạn tuổi thọ hàng hóa bằng luật để buộc thay mới 'and thereby creating employment' → C."
+        },
+        {
+          "q": "a reason why a very long-lasting product might be less useful",
+          "a": "E",
+          "e": "Đoạn E: bóng đèn Livermore rất mờ; bóng đèn bền cả thế kỷ sẽ kém hiệu quả hơn bóng đèn sáng → E."
+        },
+        {
+          "q": "a description of penalties imposed on companies whose products were too durable",
+          "a": "B",
+          "e": "Đoạn B: thành viên cartel Phoebus có bóng đèn bền quá lâu 'were fined' → B."
+        },
+        {
+          "q": "a law requiring information about how easily products can be fixed",
+          "a": "G",
+          "e": "Đoạn G: từ 2021 Pháp yêu cầu một số đồ điện tử hiển thị điểm cho biết dễ sửa đến mức nào → G."
+        }
+      ]
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The Livermore bulb has been moved from its original location.",
+          "a": "TRUE",
+          "e": "Đoạn A: bóng đèn 'has outlasted the building it was first installed in' – nó không còn ở tòa nhà ban đầu, tức đã được chuyển đi → TRUE."
+        },
+        {
+          "q": "Bernard London's proposal was adopted by the US government for a short period.",
+          "a": "FALSE",
+          "e": "Đoạn C: 'His proposal was never adopted' → FALSE."
+        },
+        {
+          "q": "General Motors was the first car manufacturer to sell cars on credit.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn D chỉ nói GM ra kiểu xe mới mỗi năm; bài không nhắc chuyện bán xe trả góp → NOT GIVEN."
+        },
+        {
+          "q": "The smartphone manufacturer said its software updates were designed to stop phones from suddenly switching off.",
+          "a": "TRUE",
+          "e": "Đoạn F: công ty nói việc làm chậm máy 'was intended to prevent unexpected shutdowns' → TRUE."
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "limit": "NO MORE THAN TWO WORDS",
+      "items": [
+        {
+          "q": "What material was used for the filament of the Livermore bulb?",
+          "a": "carbon",
+          "e": "Đoạn A: bóng đèn 'fitted with a carbon filament' → carbon."
+        },
+        {
+          "q": "What allows visitors to watch it glow?",
+          "a": "a webcam/webcam",
+          "e": "Đoạn A: bóng đèn có website và 'a webcam that allows visitors to watch it glow' → webcam."
+        },
+        {
+          "q": "What term describes products that seem out of date although they still work?",
+          "a": "perceived obsolescence",
+          "e": "Đoạn D: hiện tượng 'psychological or perceived obsolescence' – sản phẩm chưa hỏng nhưng có vẻ lỗi thời. Đáp án lấy đúng hai từ liền nhau trong bài: perceived obsolescence."
+        },
+        {
+          "q": "Supporters say the new rules will save consumers money and reduce what?",
+          "a": "electronic waste",
+          "e": "Đoạn G: các biện pháp sẽ tiết kiệm tiền cho người tiêu dùng 'and reduce the huge quantities of electronic waste' → electronic waste."
+        }
+      ]
+    }
+  ]
+}

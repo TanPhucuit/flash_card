@@ -1,0 +1,128 @@
+{
+  "title": "The Invention of Nothing",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử toán học.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Of all the numbers we use, zero may seem the least interesting. It represents nothing, after all, and young children learn to write it without difficulty. Yet zero was one of the hardest ideas in mathematics to develop, and for thousands of years many sophisticated civilisations managed without it. Its gradual acceptance, spread over more than a millennium and across several continents, transformed arithmetic, made modern science possible and, eventually, laid the foundations for the digital computer. The idea of treating nothing as a quantity also troubled many thinkers, some of whom regarded it with deep suspicion."
+    },
+    {
+      "letter": "B",
+      "text": "The first need for something like zero arose from the way numbers are written. In a positional system, such as the one we use today, the value of a digit depends on where it stands: the 2 in 205 means two hundred, while in 25 it means twenty. Such a system requires some way of marking an empty position, otherwise 205 and 25 would look the same. Around three hundred years before the common era, scribes in ancient Babylon began to use a pair of small slanted marks to show that a position was empty. This was a placeholder, however, not a number: the Babylonians never wrote it on its own or used it in calculations."
+    },
+    {
+      "letter": "C",
+      "text": "On the other side of the world, the Maya of Central America independently developed a symbol for zero, often drawn as a shell. They used it in their elaborate calendar, which counted the days that had passed since a starting point thousands of years earlier, and their positional number system allowed them to record very large quantities. Because the Maya had no contact with Asia or Europe, their achievement had no influence on the development of mathematics elsewhere, but it shows that the concept arose more than once in human history. Maya inscriptions record dates spanning many centuries."
+    },
+    {
+      "letter": "D",
+      "text": "The decisive step was taken in India. Indian mathematicians had used a dot to mark an empty position for some time, and in the seventh century the astronomer Brahmagupta went further, treating zero as a number in its own right. In a book written in 628, he set out rules for calculating with it: adding zero to a number leaves the number unchanged, and subtracting a number from itself produces zero. He struggled with division by zero, a problem that troubled mathematicians for centuries afterwards, but his work marked the moment when ‘nothing’ became something that could be counted and calculated. His treatment of negative numbers, which he described in terms of debts and fortunes, was equally influential."
+    },
+    {
+      "letter": "E",
+      "text": "Indian numerals, including zero, spread westwards through the Islamic world. In the ninth century, the Persian scholar al-Khwarizmi, working in Baghdad, wrote a book explaining how to calculate with the Indian system. When his work was later translated into Latin, his name was transformed into ‘algorismus’, from which comes the modern word ‘algorithm’. The Sanskrit word for zero, meaning ‘empty’, was translated into Arabic as ‘sifr’, which eventually gave English both ‘zero’ and ‘cipher’."
+    },
+    {
+      "letter": "F",
+      "text": "Europe was slow to adopt the new numbers. In 1202, the Italian mathematician Leonardo of Pisa, known today as Fibonacci, published a book introducing the system to European readers and demonstrating its usefulness for merchants. Calculations that were laborious with Roman numerals became far simpler. Yet resistance was considerable. In 1299, the city of Florence banned the use of the new numerals in official financial records, partly because they were thought to be easier to alter fraudulently: a zero could be changed into a six or a nine with a single stroke of a pen. Old habits were slow to change."
+    },
+    {
+      "letter": "G",
+      "text": "Over the following centuries, the advantages of the system proved overwhelming, and by the sixteenth century it was used across most of Europe. Zero went on to play a central role in algebra, in the development of calculus and in the coordinate systems that allow equations to be represented as graphs. Today it lies at the heart of digital technology, in which every piece of information is ultimately stored as a pattern of ones and zeros. The symbol that the Babylonians used merely to fill a gap has become one of the most important ideas humanity has ever had."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "features",
+      "listTitle": "People and Groups",
+      "singular": "person or group",
+      "people": [
+        "Babylonian scribes",
+        "the Maya",
+        "Brahmagupta",
+        "al-Khwarizmi",
+        "Fibonacci"
+      ],
+      "items": [
+        {
+          "q": "used a symbol for zero to keep track of time",
+          "a": 1,
+          "e": "Đoạn C: người Maya dùng ký hiệu số không trong lịch, đếm số ngày từ một mốc khởi đầu → the Maya."
+        },
+        {
+          "q": "explained how the new numbers could help people in business",
+          "a": 4,
+          "e": "Đoạn F: Fibonacci giới thiệu hệ thống và 'demonstrating its usefulness for merchants' → Fibonacci."
+        },
+        {
+          "q": "marked empty positions but did not calculate with the mark",
+          "a": 0,
+          "e": "Đoạn B: người chép thuê Babylon dùng hai dấu nghiêng làm chỗ giữ vị trí, 'never wrote it on its own or used it in calculations' → Babylonian scribes."
+        },
+        {
+          "q": "set out rules for calculating with zero",
+          "a": 2,
+          "e": "Đoạn D: Brahmagupta 'set out rules for calculating with it' → Brahmagupta."
+        },
+        {
+          "q": "whose name became the origin of a modern technical term",
+          "a": 3,
+          "e": "Đoạn E: tên al-Khwarizmi thành 'algorismus', gốc của từ 'algorithm' → al-Khwarizmi."
+        }
+      ]
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The Maya learned about zero from traders who had visited India.",
+          "a": "FALSE",
+          "e": "Đoạn C: người Maya phát triển 'independently' và 'had no contact with Asia or Europe' → FALSE."
+        },
+        {
+          "q": "Brahmagupta found a satisfactory way of dividing by zero.",
+          "a": "FALSE",
+          "e": "Đoạn D: 'He struggled with division by zero, a problem that troubled mathematicians for centuries afterwards' → FALSE."
+        },
+        {
+          "q": "Al-Khwarizmi's book was translated into Latin during his lifetime.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn E chỉ nói tác phẩm 'was later translated into Latin', không nói có phải khi ông còn sống hay không → NOT GIVEN."
+        },
+        {
+          "q": "Florence restricted the new numerals partly because of fears about fraud.",
+          "a": "TRUE",
+          "e": "Đoạn F: năm 1299 Florence cấm dùng chữ số mới trong sổ sách tài chính chính thức, một phần vì chúng dễ bị sửa gian lận → TRUE."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "summary",
+      "limit": "ONE WORD ONLY",
+      "title": "Why zero matters",
+      "items": [
+        {
+          "q": "In a ______ system, the place a digit occupies determines its value.",
+          "a": "positional",
+          "e": "Đoạn B: 'In a positional system... the value of a digit depends on where it stands' → positional."
+        },
+        {
+          "q": "Before Brahmagupta, Indian mathematicians had marked an empty position with a ______.",
+          "a": "dot",
+          "e": "Đoạn D: các nhà toán học Ấn Độ đã 'used a dot to mark an empty position' → dot."
+        },
+        {
+          "q": "The Sanskrit word for zero originally meant ‘______’.",
+          "a": "empty",
+          "e": "Đoạn E: 'The Sanskrit word for zero, meaning ‘empty’' → empty."
+        },
+        {
+          "q": "In digital technology, information is ultimately stored as a ______ of ones and zeros.",
+          "a": "pattern",
+          "e": "Đoạn G: thông tin được lưu 'as a pattern of ones and zeros' → pattern."
+        }
+      ]
+    }
+  ]
+}

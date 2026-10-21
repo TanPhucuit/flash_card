@@ -1,0 +1,125 @@
+{
+  "title": "How Sea Turtles Find Their Way",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu về định hướng của rùa biển đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "On summer nights along the beaches of Florida, tiny loggerhead turtles dig their way out of nests buried in the sand and scramble towards the sea. For those that survive the dash across the beach and the first dangerous hours in the water, an extraordinary journey lies ahead. Young loggerheads from Florida swim out into the Atlantic Ocean and spend years drifting and feeding in the vast circular current system that flows around the North Atlantic. Many years later, the females return to nest on the same stretch of coast where they themselves hatched. How they manage to do this has puzzled scientists for decades."
+    },
+    {
+      "letter": "B",
+      "text": "For much of the twentieth century, almost nothing was known about where young turtles went after leaving the beach. The American biologist Archie Carr, a pioneer of sea turtle research, referred to this mysterious period in their lives as ‘the lost years’. Carr and his colleagues attached metal tags to thousands of nesting females in order to track their movements, and these studies confirmed that females return repeatedly to the same nesting areas. But tags revealed only where a turtle had been caught, not how it had travelled, and the young turtles were too small to tag at all."
+    },
+    {
+      "letter": "C",
+      "text": "The first stage of the journey is now reasonably well understood. Hatchlings emerging from the nest head towards the brightest horizon, which on a natural beach is usually the open sky over the sea rather than the darker vegetation inland. Once in the water, they swim directly into the waves, which near the shore generally travel towards the beach, so that by heading into them the turtles move out to sea. Further offshore, where waves are a less reliable guide, the turtles appear to switch to a different and more remarkable sense."
+    },
+    {
+      "letter": "D",
+      "text": "That sense is the ability to detect the earth's magnetic field. The field varies from place to place in both its strength and the angle at which its lines meet the earth's surface, so that different locations have slightly different magnetic signatures. In a series of experiments, the biologist Kenneth Lohmann and his colleagues placed young turtles in a tank of water surrounded by coils of wire that could reproduce the magnetic conditions found at different points in the Atlantic. The turtles swam in directions that, in the real ocean, would have kept them safely within the current system rather than allowing them to drift into colder, more dangerous waters."
+    },
+    {
+      "letter": "E",
+      "text": "These results suggested that turtles possess a kind of magnetic map that allows them to work out where they are, not merely a compass that tells them which way is north. Further evidence came from a study of nesting sites. The earth's magnetic field changes slowly over time, so the magnetic signature of a particular beach gradually shifts along the coast. In a study published in 2015, J. Roger Brothers and Lohmann found that loggerhead nesting sites in Florida had moved in ways that matched these changes, which suggests that females remember the magnetic signature of the beach where they hatched and use it to find their way back."
+    },
+    {
+      "letter": "F",
+      "text": "Magnetic navigation is probably not the whole story. As turtles approach the coast, they may use other cues, such as the smell of particular beaches or the shape of the shoreline, to locate their nesting sites precisely. Scientists also do not yet understand exactly how turtles sense magnetic fields; several possible mechanisms have been proposed, but none has been confirmed. What is clear is that their ability to navigate across thousands of kilometres of open ocean is among the most impressive achievements in the animal world."
+    },
+    {
+      "letter": "G",
+      "text": "This research has practical importance, because all species of sea turtle face serious threats. Artificial lighting near beaches draws hatchlings away from the sea, and many conservation groups now persuade coastal towns to switch off or shield lights during the nesting season. Turtles are also caught accidentally in fishing nets and harmed by plastic waste. Understanding how turtles navigate may help to identify the routes and feeding areas that most need protection, and some researchers have even raised concerns that strong artificial magnetic fields, such as those produced by undersea cables, could interfere with their sense of direction. On some beaches, volunteers now patrol the sand during the nesting season."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Female loggerheads usually nest on beaches close to where they hatched.",
+          "a": "TRUE",
+          "e": "Đoạn A: rùa cái quay về đẻ 'on the same stretch of coast where they themselves hatched' → TRUE."
+        },
+        {
+          "q": "Carr's tags made it possible to follow the exact routes taken by turtles.",
+          "a": "FALSE",
+          "e": "Đoạn B: thẻ chỉ cho biết nơi rùa bị bắt, 'not how it had travelled' → FALSE."
+        },
+        {
+          "q": "Near the shore, hatchlings swim towards the waves in order to reach deeper water.",
+          "a": "TRUE",
+          "e": "Đoạn C: sóng gần bờ thường hướng vào bãi, nên bơi ngược sóng giúp rùa con ra khơi → TRUE."
+        },
+        {
+          "q": "The magnetic field at a given location never changes.",
+          "a": "FALSE",
+          "e": "Đoạn E: 'The earth's magnetic field changes slowly over time', nên dấu hiệu từ trường của một bãi biển dịch chuyển dần → FALSE."
+        },
+        {
+          "q": "Undersea cables have been proven to cause turtles to lose their way.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn G chỉ nói một số nhà nghiên cứu 'raised concerns' rằng từ trường của cáp ngầm có thể gây nhiễu; bài không nói điều này đã được chứng minh → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "Researchers",
+      "singular": "researcher",
+      "people": [
+        "Archie Carr",
+        "Kenneth Lohmann",
+        "J. Roger Brothers and Kenneth Lohmann"
+      ],
+      "items": [
+        {
+          "q": "linked changes in nesting locations with gradual changes in the earth's magnetic field",
+          "a": 2,
+          "e": "Đoạn E: nghiên cứu năm 2015 của Brothers và Lohmann cho thấy vị trí làm tổ dịch chuyển khớp với thay đổi của từ trường → J. Roger Brothers and Kenneth Lohmann."
+        },
+        {
+          "q": "gave a name to a period of turtles' lives about which little was known",
+          "a": 0,
+          "e": "Đoạn B: Archie Carr gọi giai đoạn bí ẩn này là 'the lost years' → Archie Carr."
+        },
+        {
+          "q": "simulated the magnetic conditions of different places in the ocean",
+          "a": 1,
+          "e": "Đoạn D: Lohmann dùng cuộn dây quanh bể nước để tái tạo điều kiện từ trường ở các điểm khác nhau của Đại Tây Dương → Kenneth Lohmann."
+        },
+        {
+          "q": "confirmed that adult females come back to the same nesting areas",
+          "a": 0,
+          "e": "Đoạn B: Carr gắn thẻ hàng nghìn rùa cái, và các nghiên cứu xác nhận chúng quay lại cùng khu làm tổ → Archie Carr."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "sentences",
+      "limit": "ONE WORD ONLY",
+      "items": [
+        {
+          "q": "On a natural beach, hatchlings head towards the brightest ______.",
+          "a": "horizon",
+          "e": "Đoạn C: rùa con hướng về 'the brightest horizon' → horizon."
+        },
+        {
+          "q": "Young turtles were placed in a tank of water surrounded by ______ of wire.",
+          "a": "coils",
+          "e": "Đoạn D: bể nước 'surrounded by coils of wire' → coils."
+        },
+        {
+          "q": "The experiments suggested that turtles have a magnetic map rather than simply a ______.",
+          "a": "compass",
+          "e": "Đoạn E: rùa có 'a kind of magnetic map', 'not merely a compass' → compass."
+        },
+        {
+          "q": "Close to the coast, turtles may also use the ______ of particular beaches to find their nesting site.",
+          "a": "smell",
+          "e": "Đoạn F: gần bờ, rùa có thể dùng tín hiệu khác 'such as the smell of particular beaches' → smell."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "title": "The Return of the Beaver",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu sinh thái học và các dự án tái thả hải ly ở Anh.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Few animals change their surroundings as dramatically as the beaver. Using only their teeth, beavers fell trees, build dams across streams and create ponds and wetlands where previously there was only a narrow channel of running water. For this reason, ecologists describe them as ecosystem engineers. In Britain, the Eurasian beaver was hunted to extinction several centuries ago for its fur, its meat and a substance from its glands that was used in medicine and perfume. Now, after an absence of around four hundred years, beavers are returning to British rivers, and their arrival is provoking both enthusiasm and concern. Its close relative, the North American beaver, is far more numerous and is a national symbol of Canada."
+    },
+    {
+      "letter": "B",
+      "text": "A beaver's teeth are remarkable tools. The front teeth never stop growing and are coated on the front with a hard, orange-coloured enamel that contains iron, while the back of each tooth is softer. As the animal gnaws, the softer material wears away more quickly, keeping the teeth sharp like a chisel. A single beaver can cut through a small tree in a matter of minutes. The branches provide food, since beavers eat bark, leaves and other plants, as well as material for building."
+    },
+    {
+      "letter": "C",
+      "text": "Beavers build dams to raise the level of water around their homes, which helps protect them from predators. Many families live in a lodge, a dome-shaped mound of sticks and mud built in or beside the water. The entrances are underwater, so that predators on land cannot easily get in, while inside, above the water level, there is a dry chamber where the beavers rest and raise their young. A small gap at the top of the lodge, where the sticks are not packed tightly with mud, allows fresh air to enter. In autumn, beavers store branches on the bottom of the pond close to the lodge, so that they can feed during winter when the surface is frozen."
+    },
+    {
+      "letter": "D",
+      "text": "The ponds and wetlands that beavers create can bring substantial benefits. Researchers studying a population living in an enclosure in the south-west of England found that the series of dams the animals built reduced the peak flow of water downstream during heavy rain, lowering the risk of flooding in nearby towns. The dams also trapped soil washed from surrounding farmland, along with some of the fertilisers and other pollutants carried with it, so that the water flowing out was cleaner than the water flowing in. The wetlands became home to many more species of plants, insects and amphibians than before."
+    },
+    {
+      "letter": "E",
+      "text": "The return of the beaver to England began unofficially. In 2008, a small group of beavers was discovered living wild on a river in Devon. Nobody knew exactly where they had come from, and the government initially proposed removing them. After local protests, it agreed instead to a five-year trial in which the animals were monitored closely. When the trial ended in 2020, the government allowed the beavers to remain permanently, the first time that an extinct native mammal had been officially accepted back into the wild in England."
+    },
+    {
+      "letter": "F",
+      "text": "Not everyone has welcomed them. Farmers have complained that beaver dams can flood valuable fields, block drainage ditches and damage crops, and that the animals sometimes fell trees in orchards and gardens. Landowners worry about who will pay for the damage. Supporters argue that most problems can be managed with relatively simple measures, such as protecting particular trees with wire mesh or installing pipes through dams so that water levels remain within acceptable limits, and that dams can be removed where necessary."
+    },
+    {
+      "letter": "G",
+      "text": "The debate reflects a broader question about how much space people are willing to give to wildlife in a crowded country. Beavers cannot be confined to nature reserves, since they move along river systems in search of new territory, and they will inevitably come into contact with farmland and homes. Their supporters argue that the benefits they bring, from cleaner water to reduced flooding, far outweigh the costs, provided that farmers receive advice and compensation. Whether that argument persuades the people who live alongside them is likely to determine how far the beaver's return can go. Similar arguments have taken place in Scotland, where beavers have had legal protection since 2019."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Beavers were hunted in Britain partly for a substance used to make perfume.",
+          "a": "TRUE",
+          "e": "Đoạn A: hải ly bị săn vì lông, thịt và 'a substance from its glands that was used in medicine and perfume' → TRUE."
+        },
+        {
+          "q": "The whole of a beaver's tooth is covered with hard enamel.",
+          "a": "FALSE",
+          "e": "Đoạn B: men cứng màu cam chỉ phủ mặt trước; 'the back of each tooth is softer' → FALSE."
+        },
+        {
+          "q": "A beaver is able to cut through a small tree in a few minutes.",
+          "a": "TRUE",
+          "e": "Đoạn B: 'A single beaver can cut through a small tree in a matter of minutes' – một con hải ly có thể cắn đứt cây nhỏ trong vài phút → TRUE."
+        },
+        {
+          "q": "Scientists have identified where the Devon beavers originally came from.",
+          "a": "FALSE",
+          "e": "Đoạn E: 'Nobody knew exactly where they had come from' → FALSE."
+        },
+        {
+          "q": "The Devon trial was paid for by local farmers.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn E nói có một cuộc thử nghiệm năm năm và hải ly được theo dõi chặt, nhưng không nói ai chi trả → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "diagram",
+      "limit": "ONE WORD ONLY",
+      "title": "A beaver lodge",
+      "diagram": "            (C) gap at the top lets in fresh ______\n              ╱‾‾‾‾‾‾‾‾‾╲\n            ╱  dry (B)    ╲      ← dome of sticks and mud\n   ~~~~~~~~╱~~~~~~~~~~~~~~~~╲~~~~~~~~ water level\n          │  (A) ______ are │\n          │  underwater     │     (D) winter store of ______ on the pond bottom",
+      "items": [
+        {
+          "q": "(A) The ______ to the lodge are below the water.",
+          "a": "entrances",
+          "e": "Đoạn C: 'The entrances are underwater' → entrances."
+        },
+        {
+          "q": "(B) Above the water level there is a dry ______ for resting and raising young.",
+          "a": "chamber",
+          "e": "Đoạn C: 'there is a dry chamber where the beavers rest and raise their young' → chamber."
+        },
+        {
+          "q": "(C) A small gap at the top lets fresh ______ in.",
+          "a": "air",
+          "e": "Đoạn C: khe hở trên đỉnh tổ 'allows fresh air to enter' → air."
+        },
+        {
+          "q": "(D) In autumn, ______ are stored on the pond bottom for winter food.",
+          "a": "branches",
+          "e": "Đoạn C: vào mùa thu, hải ly 'store branches on the bottom of the pond close to the lodge' → branches."
+        }
+      ]
+    },
+    {
+      "kind": "mcq2",
+      "items": [
+        {
+          "q": "Which TWO benefits of beaver dams were found by researchers in south-west England?",
+          "options": [
+            "Less water flowed downstream at times of heavy rain.",
+            "Water leaving the area contained fewer pollutants.",
+            "Farmers were able to grow more crops.",
+            "Fish populations increased in nearby rivers.",
+            "Trees grew faster along the riverbanks."
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn D: các đập làm giảm 'the peak flow of water downstream during heavy rain' và giữ lại đất cùng phân bón, chất ô nhiễm, nên nước chảy ra 'was cleaner'. Bài không nói tăng sản lượng cây trồng, cá hay cây lớn nhanh."
+        },
+        {
+          "q": "Which TWO ways of reducing conflict with farmers are mentioned?",
+          "options": [
+            "fitting pipes through dams to control water levels",
+            "wrapping wire mesh around particular trees",
+            "moving all beavers to nature reserves",
+            "paying farmers to leave their land",
+            "building fences along every river"
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn F: biện pháp đơn giản như 'protecting particular trees with wire mesh' và 'installing pipes through dams so that water levels remain within acceptable limits'. Đoạn G nói hải ly không thể bị giam trong khu bảo tồn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "title": "Learning from Nature's Designs",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu về khoa học vật liệu, kỹ thuật và kiến trúc phỏng sinh học.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "After almost four billion years of evolution, living things have found solutions to an enormous range of practical problems: how to stay clean, how to move efficiently through air and water, how to keep cool in a hot climate and how to build strong structures from very little material. Increasingly, engineers and designers are turning to these solutions for inspiration. The practice, known as biomimicry, was popularised in the late 1990s by the American writer Janine Benyus, who argued that nature should be seen not as a store of raw materials but as a source of knowledge. The idea itself is far older: inventors have studied birds for clues about flight for centuries."
+    },
+    {
+      "letter": "B",
+      "text": "One of the best-known examples began with a walk in the Swiss countryside in 1941. When the engineer George de Mestral returned home, he noticed that his clothes and his dog's fur were covered with the seed heads of burdock plants. Examining them under a microscope, he saw that each was covered with tiny hooks that caught on anything with loops, such as fabric or hair. It took him years of experiment to reproduce the effect with nylon, but the result, a fastener made from two strips, one of hooks and one of loops, was eventually patented and is now used on everything from shoes to spacecraft."
+    },
+    {
+      "letter": "C",
+      "text": "Some of the most valuable lessons concern surfaces. In the 1970s, the German botanist Wilhelm Barthlott discovered why the leaves of the lotus plant remain clean even in muddy water. Their surfaces are covered with microscopic bumps coated in wax, so that water droplets cannot spread out but instead roll off, collecting dirt as they go. This ‘lotus effect’ has since been copied in self-cleaning paints, glass and fabrics. Researchers have also studied the feet of geckos, which can climb smooth walls thanks to millions of tiny hairs, in the hope of developing adhesives that grip strongly but can be removed without leaving a mark."
+    },
+    {
+      "letter": "D",
+      "text": "Nature has also helped engineers to reduce noise and energy use. In the 1990s, Japan's high-speed trains created a loud boom whenever they emerged from tunnels, because the train pushed a wall of compressed air ahead of it. An engineer named Eiji Nakatsu, who was also a keen birdwatcher, noticed that the kingfisher dives from the air into water with barely a splash. When the front of a new train was redesigned to resemble the bird's long, narrow beak, the noise problem was largely solved, and the train used less electricity while travelling faster."
+    },
+    {
+      "letter": "E",
+      "text": "Buildings offer another field for imitation. In the Zimbabwean capital, Harare, the architect Mick Pearce designed an office and shopping complex that opened in 1996 without conventional air conditioning. Instead, he drew on the way some termite mounds are thought to regulate their internal temperature, using a system of chimneys and vents through which air circulates naturally, drawing cool air in at night and expelling warm air during the day. The building is reported to use only a small fraction of the energy consumed by comparable buildings of the same size."
+    },
+    {
+      "letter": "F",
+      "text": "Not every imitation of nature works as intended. In 2008, swimsuits inspired partly by the texture of shark skin attracted enormous attention when swimmers wearing them broke dozens of world records. Later research suggested that the suits' success owed more to the way they compressed swimmers' bodies and trapped air than to any shark-like quality, and the governing body of the sport banned the most advanced versions in 2010. The episode illustrates a common difficulty: it is easy to be inspired by a natural model, but much harder to understand exactly how it works. So many records fell in such a short period that some commentators described the suits as a form of technological doping."
+    },
+    {
+      "letter": "G",
+      "text": "Supporters of biomimicry argue that it can do more than produce clever products. Because natural systems tend to work at ordinary temperatures, use locally available materials and generate no lasting waste, they believe that imitating nature could help to make manufacturing far more sustainable. Critics caution that a product inspired by nature is not automatically environmentally friendly; a self-cleaning coating may still contain harmful chemicals. Nevertheless, as engineers face increasingly urgent pressure to save energy and materials, the four-billion-year research programme of evolution seems likely to remain a valuable source of ideas."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "an example of a product that achieved success for reasons other than those first assumed",
+          "a": "F",
+          "e": "Đoạn F: đồ bơi lấy cảm hứng từ da cá mập phá nhiều kỷ lục, nhưng thành công chủ yếu do ép cơ thể và giữ không khí, không phải đặc tính giống da cá mập → F."
+        },
+        {
+          "q": "a description of how an inventor used a scientific instrument to examine plant material",
+          "a": "B",
+          "e": "Đoạn B: de Mestral 'Examining them under a microscope' – soi quả ngưu bàng dưới kính hiển vi → B."
+        },
+        {
+          "q": "a warning that copying nature does not guarantee a product will be harmless",
+          "a": "G",
+          "e": "Đoạn G: 'a product inspired by nature is not automatically environmentally friendly; a self-cleaning coating may still contain harmful chemicals' → G."
+        },
+        {
+          "q": "a reference to a building that cools itself without standard equipment",
+          "a": "E",
+          "e": "Đoạn E: tòa nhà ở Harare hoạt động 'without conventional air conditioning', dùng hệ thống ống khói và lỗ thông gió → E."
+        },
+        {
+          "q": "an explanation of why water does not stay on certain leaves",
+          "a": "C",
+          "e": "Đoạn C: lá sen có các nốt sần vi mô phủ sáp nên giọt nước không lan ra mà lăn đi → C."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "People",
+      "people": [
+        "Janine Benyus",
+        "George de Mestral",
+        "Wilhelm Barthlott",
+        "Eiji Nakatsu",
+        "Mick Pearce"
+      ],
+      "items": [
+        {
+          "q": "solved an engineering problem after watching a bird's behaviour",
+          "a": 3,
+          "e": "Đoạn D: Eiji Nakatsu, người thích ngắm chim, thấy chim bói cá lao xuống nước hầu như không bắn nước, và mũi tàu được thiết kế lại theo mỏ chim → Eiji Nakatsu."
+        },
+        {
+          "q": "spent a long time turning an observation into a working product",
+          "a": 1,
+          "e": "Đoạn B: de Mestral 'took him years of experiment to reproduce the effect with nylon' → George de Mestral."
+        },
+        {
+          "q": "encouraged people to regard the natural world as a source of knowledge",
+          "a": 0,
+          "e": "Đoạn A: Janine Benyus cho rằng tự nhiên nên được xem 'not as a store of raw materials but as a source of knowledge' → Janine Benyus."
+        },
+        {
+          "q": "based a design on the possible behaviour of insect structures",
+          "a": 4,
+          "e": "Đoạn E: Mick Pearce dựa vào cách một số tổ mối 'are thought to regulate their internal temperature' → Mick Pearce."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "Nature-inspired solutions",
+      "words": [
+        "hooks",
+        "wax",
+        "hairs",
+        "tunnels",
+        "chimneys",
+        "scales",
+        "feathers",
+        "loops",
+        "magnets"
+      ],
+      "items": [
+        {
+          "q": "Burdock seed heads stick to fabric and fur because of tiny ______.",
+          "a": 0,
+          "e": "Đoạn B: mỗi quả ngưu bàng 'covered with tiny hooks that caught on anything with loops' → hooks. 'loops' là phần vải/lông mà móc bám vào – bẫy."
+        },
+        {
+          "q": "The leaf surfaces are covered with microscopic bumps coated in ______.",
+          "a": 1,
+          "e": "Đoạn C: bề mặt lá 'covered with microscopic bumps coated in wax' → wax."
+        },
+        {
+          "q": "Geckos can climb smooth surfaces because their feet have millions of tiny ______.",
+          "a": 2,
+          "e": "Đoạn C: thạch sùng leo tường nhẵn 'thanks to millions of tiny hairs' → hairs."
+        },
+        {
+          "q": "The Harare building is ventilated by air moving naturally through ______ and vents.",
+          "a": 4,
+          "e": "Đoạn E: 'a system of chimneys and vents through which air circulates naturally' → chimneys."
+        }
+      ]
+    }
+  ]
+}

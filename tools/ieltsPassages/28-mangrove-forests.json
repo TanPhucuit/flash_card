@@ -1,0 +1,133 @@
+{
+  "title": "Forests Between Land and Sea",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu sinh thái học về rừng ngập mặn.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Along tropical and subtropical coastlines, where rivers meet the sea, grow some of the most unusual forests on earth. Mangroves are trees and shrubs that live in the zone between high and low tide, their roots submerged in salt water twice a day and their trunks rising from soft, airless mud. Few other trees could survive such conditions for more than a few days. Mangroves not only survive but flourish, forming dense forests that are found along the coasts of more than a hundred countries and that provide benefits extending far beyond the shoreline. The word is used both for the individual trees and for the forests that they form."
+    },
+    {
+      "letter": "B",
+      "text": "The first challenge is salt. Sea water contains enough salt to kill most land plants by drawing water out of their tissues. Different mangrove species have evolved different solutions. Some filter out almost all of the salt at their roots, allowing only fresh water to pass into the plant. Others absorb salt but get rid of it through special glands on their leaves, which can sometimes be seen covered in tiny salt crystals. A third group stores salt in older leaves, which are then shed, carrying the salt away with them."
+    },
+    {
+      "letter": "C",
+      "text": "The second challenge is a lack of oxygen. The waterlogged mud in which mangroves grow contains very little air, and roots, like other living tissues, need oxygen to function. Some species solve this problem with prop roots, which arch outwards from the trunk above the water, supporting the tree and taking in air through small pores in their surface. Others send up hundreds of pencil-like roots called pneumatophores, which stick vertically out of the mud around the tree and act as snorkels, allowing air to reach the roots buried below."
+    },
+    {
+      "letter": "D",
+      "text": "Reproduction presents a further difficulty, since a seed that falls into the sea may be carried away or drowned before it can take root. Many mangroves have overcome this by a remarkable strategy: their seeds begin to germinate while still attached to the parent tree. Each develops into a long, spear-shaped seedling, sometimes called a propagule, before dropping into the water. Propagules can float for weeks or even months, travelling long distances on ocean currents, and quickly put down roots when they reach a suitable muddy shore."
+    },
+    {
+      "letter": "E",
+      "text": "These forests are of enormous value to people. The tangle of roots slows the movement of water, reducing the height of waves and protecting coastal communities from storms and erosion. Sheltered waters among the roots serve as nurseries for many species of fish and shellfish, including some that are later caught far out at sea, so the health of mangroves directly affects the livelihoods of fishing communities. Mangroves also trap sediment carried by rivers, helping coastlines to build up rather than wash away."
+    },
+    {
+      "letter": "F",
+      "text": "In recent years, scientists have drawn attention to another benefit: mangroves are exceptionally effective at storing carbon. Because their roots grow in waterlogged mud where dead plant material decays very slowly, carbon can accumulate in the soil for thousands of years. Studies suggest that a hectare of mangrove forest may store several times as much carbon as a hectare of tropical rainforest, most of it below ground. When mangroves are cleared, much of this stored carbon is released into the atmosphere as carbon dioxide."
+    },
+    {
+      "letter": "G",
+      "text": "Despite their value, mangroves have been destroyed on a large scale. Over the past half-century, a significant proportion of the world's mangrove forests has been lost, cleared for coastal development, agriculture and, above all, ponds for farming shrimp. Many such ponds are abandoned after a few years, once disease or pollution makes them unproductive, leaving behind damaged land that is difficult to restore. Replanting projects have had mixed results, partly because seedlings are often planted in places where the conditions of water and soil do not suit them."
+    },
+    {
+      "letter": "H",
+      "text": "Experts now emphasise that successful restoration depends on understanding why mangroves disappeared from a particular place in the first place, and on restoring the natural flow of water that allows them to grow. Where this is done, mangroves can recover surprisingly quickly, often re-establishing themselves from seeds carried in by the tide. Protecting the forests that remain, however, is far cheaper and more effective than trying to replace them once they have gone."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Mangroves can be found on the coasts of over one hundred countries.",
+          "a": "TRUE",
+          "e": "Đoạn A: rừng ngập mặn có ở bờ biển 'more than a hundred countries' → TRUE."
+        },
+        {
+          "q": "All mangrove species remove salt using glands on their leaves.",
+          "a": "FALSE",
+          "e": "Đoạn B: các loài khác nhau có cách khác nhau – lọc muối ở rễ, thải qua tuyến trên lá, hoặc tích trong lá già. Không phải tất cả dùng tuyến lá → FALSE."
+        },
+        {
+          "q": "Prop roots are the most common type of root among mangroves.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C mô tả rễ chống và rễ thở, nhưng không nói loại nào phổ biến nhất → NOT GIVEN."
+        },
+        {
+          "q": "Some fish caught in the open sea spend part of their lives among mangrove roots.",
+          "a": "TRUE",
+          "e": "Đoạn E: vùng nước giữa rễ là nơi ương nuôi cá, kể cả loài 'later caught far out at sea' → TRUE."
+        },
+        {
+          "q": "Most of the carbon stored by mangroves is held in their leaves and branches.",
+          "a": "FALSE",
+          "e": "Đoạn F: phần lớn carbon nằm 'below ground' – trong đất, không phải lá và cành → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "diagram",
+      "limit": "ONE WORD ONLY",
+      "title": "Adaptations of a mangrove tree",
+      "diagram": "      ✿ leaves: some species push salt out through (A)\n          \\ | /\n   ───── trunk ─────      ↓ seedling drops into the water: a (B)\n      /‿‿\\  /‿‿\\        arching roots above the water: (C) roots\n   ~~~~~~~~ tide ~~~~~~~~\n   ▒▒  |  |  |  ▒▒   vertical roots sticking out of the mud: (D)",
+      "items": [
+        {
+          "q": "(A) Salt is removed through special ______ on the leaves.",
+          "a": "glands",
+          "e": "Đoạn B: một số loài thải muối 'through special glands on their leaves' → glands."
+        },
+        {
+          "q": "(B) The spear-shaped seedling that falls into the sea is called a ______.",
+          "a": "propagule",
+          "e": "Đoạn D: cây con hình mũi giáo 'sometimes called a propagule' → propagule."
+        },
+        {
+          "q": "(C) ______ roots arch outwards from the trunk and take in air through small pores.",
+          "a": "prop",
+          "e": "Đoạn C: 'prop roots, which arch outwards from the trunk above the water... taking in air through small pores' → prop."
+        },
+        {
+          "q": "(D) Pencil-like roots that act as snorkels are known as ______.",
+          "a": "pneumatophores",
+          "e": "Đoạn C: rễ như bút chì 'called pneumatophores... act as snorkels' → pneumatophores."
+        }
+      ]
+    },
+    {
+      "kind": "endings",
+      "endings": [
+        "because the seedlings were planted in unsuitable conditions.",
+        "because dead plant material decays slowly in waterlogged mud.",
+        "once disease or pollution makes them unproductive.",
+        "because they float far out to sea before rooting.",
+        "because mangroves have been protected by law.",
+        "by slowing the movement of water.",
+        "because rivers carry too little sediment."
+      ],
+      "items": [
+        {
+          "q": "Mangrove roots help to protect coasts from storms",
+          "a": 5,
+          "e": "Đoạn E: rễ chằng chịt 'slows the movement of water, reducing the height of waves' → bằng cách làm chậm dòng nước."
+        },
+        {
+          "q": "Carbon can build up in mangrove soils over thousands of years",
+          "a": 1,
+          "e": "Đoạn F: rễ mọc trong bùn ngập nước 'where dead plant material decays very slowly' → vì xác thực vật phân hủy chậm trong bùn ngập nước."
+        },
+        {
+          "q": "Many shrimp ponds are abandoned after a few years",
+          "a": 2,
+          "e": "Đoạn G: ao bị bỏ hoang 'once disease or pollution makes them unproductive' → khi dịch bệnh hoặc ô nhiễm khiến ao không còn năng suất."
+        },
+        {
+          "q": "Some replanting projects have been unsuccessful",
+          "a": 0,
+          "e": "Đoạn G: một phần do cây con 'are often planted in places where the conditions of water and soil do not suit them' → trồng ở nơi điều kiện không phù hợp."
+        }
+      ]
+    }
+  ]
+}

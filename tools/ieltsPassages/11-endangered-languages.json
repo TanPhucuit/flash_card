@@ -1,0 +1,129 @@
+{
+  "title": "Saving the World's Languages",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu ngôn ngữ học và các chương trình phục hồi ngôn ngữ đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Linguists estimate that around seven thousand languages are spoken in the world today, but this impressive figure conceals a striking imbalance. More than half of the world's population speaks one of just two dozen major languages, such as Mandarin, Spanish, English and Hindi, while thousands of others are spoken by small communities, some numbering only a few hundred people. Roughly forty per cent of all languages are now considered endangered. In 1992, the linguist Michael Krauss warned that, unless action was taken, as many as ninety per cent of the world's languages could be lost or no longer learned by children by the end of the twenty-first century. The distribution is also geographically uneven: Papua New Guinea alone is home to more than eight hundred languages."
+    },
+    {
+      "letter": "B",
+      "text": "Languages rarely disappear because their speakers die out. Much more commonly, a community gradually shifts to a language that offers greater economic and social opportunities. Parents who have experienced discrimination, or who believe that their children will find better jobs in the national language, may stop speaking their own language at home. Schools, broadcasting and migration to cities all accelerate the process. The critical moment comes when a language is no longer passed from one generation to the next. A language may still have thousands of elderly speakers, yet if children are not learning it, its future is in serious doubt."
+    },
+    {
+      "letter": "C",
+      "text": "To track the situation, UNESCO publishes an atlas that classifies languages according to how threatened they are. A language described as vulnerable is spoken by most children, but only in certain settings, such as the home. One that is definitely endangered is no longer learned by children as a mother tongue, while a severely endangered language is spoken mainly by grandparents and older generations. At the extreme end of the scale, a critically endangered language has only a few speakers left, usually elderly people who use it partially and infrequently. The atlas is intended not simply as a record of decline but as a tool to encourage action."
+    },
+    {
+      "letter": "D",
+      "text": "Why should the loss of a language concern anyone other than its speakers? One answer is that each language represents a unique way of organising knowledge. Communities that have lived in the same environment for centuries often have detailed vocabularies for local plants, animals and weather patterns, some of which are unknown to science. When the language disappears, much of this knowledge may disappear with it. Linguists add that every language reveals something about the range of possible human grammars, so that the loss of any single one narrows our understanding of how language itself works."
+    },
+    {
+      "letter": "E",
+      "text": "There are encouraging examples of decline being reversed. The most remarkable is Hebrew, which for centuries was used mainly for religious and scholarly purposes before being revived as an everyday spoken language in the late nineteenth and early twentieth centuries. Today it has millions of native speakers. In Wales, a combination of legislation, Welsh-language television and bilingual education has helped to stabilise the number of speakers after a long period of decline, and the language is now visible on road signs and official documents throughout the country."
+    },
+    {
+      "letter": "F",
+      "text": "Some of the most influential methods were developed by indigenous communities themselves. In New Zealand during the early 1980s, Māori groups established ‘language nests’, preschools in which young children were looked after entirely in the Māori language by fluent older speakers. The model proved so successful that it was adopted in Hawaii a few years later and has since inspired similar programmes elsewhere. Its strength lies in recreating the natural conditions in which children have always acquired languages: daily, informal contact with adults who speak to them in that language."
+    },
+    {
+      "letter": "G",
+      "text": "Technology offers new tools as well. Recordings, online dictionaries and smartphone applications can help to document languages and make learning materials widely available, even to members of a community who have moved far from their homeland. Yet specialists caution against assuming that technology alone can save a language. A recording preserves a language much as a museum preserves an extinct animal; it does not keep it alive. Ultimately, the survival of a language depends on whether people choose to use it in their daily lives and, above all, whether they speak it to their children. Several communities now run online courses in their own languages, allowing younger members scattered across different countries to practise with fluent speakers."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Most of the world's languages are spoken by fewer than a few hundred people.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn A: hàng nghìn ngôn ngữ được nói bởi các cộng đồng nhỏ, 'some numbering only a few hundred people' – chỉ một số có vài trăm người. Bài không nói phần lớn ngôn ngữ có dưới vài trăm người nói → NOT GIVEN."
+        },
+        {
+          "q": "The usual reason a language disappears is that its speakers adopt another language.",
+          "a": "TRUE",
+          "e": "Đoạn B: ngôn ngữ hiếm khi mất vì người nói chết hết; 'Much more commonly, a community gradually shifts to a language that offers greater economic and social opportunities' → TRUE."
+        },
+        {
+          "q": "A language with many elderly speakers is safe as long as it is used in official settings.",
+          "a": "FALSE",
+          "e": "Đoạn B: ngôn ngữ dù còn hàng nghìn người già nói, nếu trẻ em không học thì 'its future is in serious doubt'. Điều quyết định là truyền cho thế hệ sau, không phải số người già → FALSE."
+        },
+        {
+          "q": "UNESCO's atlas is designed partly to motivate efforts to protect languages.",
+          "a": "TRUE",
+          "e": "Đoạn C, câu cuối: bộ atlas 'is intended not simply as a record of decline but as a tool to encourage action' → TRUE."
+        },
+        {
+          "q": "Welsh is now spoken by more people than at any time in its history.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn E chỉ nói các biện pháp đã giúp 'stabilise the number of speakers after a long period of decline'; bài không so sánh với số người nói trong lịch sử → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "mcq2",
+      "items": [
+        {
+          "q": "Which TWO of the following are mentioned as reasons why parents may stop using their own language at home?",
+          "options": [
+            "They hope their children will have better job prospects.",
+            "They have been treated unfairly because of their language.",
+            "They find the grammar of their language too difficult.",
+            "Their children refuse to speak the language at school.",
+            "Their government has made the language illegal to use."
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn B: cha mẹ 'who have experienced discrimination' (bị đối xử bất công) hoặc 'who believe that their children will find better jobs in the national language' (mong con có việc làm tốt hơn). Bài không nói ngữ pháp khó, trẻ từ chối hay ngôn ngữ bị cấm."
+        },
+        {
+          "q": "Which TWO features of the Māori language nests are described in the passage?",
+          "options": [
+            "Children are cared for only in the Māori language.",
+            "Teachers must hold a university qualification.",
+            "The idea was later taken up in Hawaii.",
+            "Children attend only after they have started school.",
+            "Parents are required to attend lessons with their children."
+          ],
+          "a": [
+            0,
+            2
+          ],
+          "e": "Đoạn F: trẻ được chăm sóc 'entirely in the Māori language', và mô hình 'was adopted in Hawaii a few years later'. Người trông trẻ là người lớn tuổi nói thạo chứ không phải người có bằng đại học; đây là trường mẫu giáo (preschools), không phải sau khi đi học."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "summary",
+      "limit": "ONE WORD ONLY",
+      "title": "Why languages matter and how they survive",
+      "items": [
+        {
+          "q": "Long-established communities often have detailed words for local plants, animals and ______.",
+          "a": "weather",
+          "e": "Đoạn D: các cộng đồng có từ vựng chi tiết 'for local plants, animals and weather patterns' → weather."
+        },
+        {
+          "q": "Linguists argue that each language shows something about the variety of possible human ______.",
+          "a": "grammars",
+          "e": "Đoạn D: mỗi ngôn ngữ cho thấy điều gì đó 'about the range of possible human grammars' → grammars."
+        },
+        {
+          "q": "Hebrew was once used mostly for religious and ______ purposes.",
+          "a": "scholarly",
+          "e": "Đoạn E: tiếng Hebrew từng được dùng 'mainly for religious and scholarly purposes' → scholarly."
+        },
+        {
+          "q": "Specialists compare a recording of a language to the way a ______ preserves an extinct animal.",
+          "a": "museum",
+          "e": "Đoạn G: 'A recording preserves a language much as a museum preserves an extinct animal' → museum."
+        }
+      ]
+    }
+  ]
+}

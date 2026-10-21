@@ -1,0 +1,46 @@
+{
+  "title": "The Disappearing Night",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ các nghiên cứu về ô nhiễm ánh sáng đã công bố.",
+  "sections": [
+    { "letter": "A", "text": "For almost all of human history, people looked up on a clear night and saw thousands of stars and the pale band of the Milky Way stretching across the sky. Today, most people living in cities have never seen it. Researchers who mapped the brightness of the night sky in 2016 estimated that more than a third of humanity, including around four-fifths of North Americans, can no longer see the Milky Way from where they live. Artificial light at night has transformed our environment so gradually that few people notice what has been lost, yet I would argue that it is one of the most widespread and least discussed forms of pollution." },
+    { "letter": "B", "text": "The problem is growing quickly. Satellite measurements show that the area of the earth's surface that is artificially lit at night has been expanding by around two per cent a year. Satellites, however, underestimate the change, because they cannot detect much of the blue light emitted by modern white lamps. A study that relied instead on observations by tens of thousands of volunteers, who recorded how many stars they could see, concluded that the night sky was becoming brighter by nearly ten per cent each year, a rate at which the number of visible stars would halve in less than a decade." },
+    { "letter": "C", "text": "The consequences for wildlife are serious. Many animals rely on natural light to navigate, find food or time their behaviour. Newly hatched sea turtles, for example, find their way to the ocean by heading towards the brightest horizon, which on an undeveloped beach is the sky above the sea; near towns, lights draw them inland, where they die from exhaustion or are killed by predators and traffic. Migrating birds, which often travel at night, can become disoriented by brightly lit buildings, and very large numbers die each year in collisions with them." },
+    { "letter": "D", "text": "Insects may be affected most of all. Moths and other night-flying insects are drawn to artificial lights, where many circle until they die or are eaten. Because insects pollinate plants and form the base of many food chains, scientists have suggested that light pollution may be one of the factors behind the alarming decline in insect populations reported in many parts of the world. It is unlikely to be the main cause, but unlike some other causes, such as changes in climate, it could be reduced quickly and at relatively little cost." },
+    { "letter": "E", "text": "Humans are not immune either. Our bodies follow a daily rhythm controlled partly by a hormone, melatonin, whose production rises in darkness and helps us to sleep. Exposure to bright light at night, especially blue light, suppresses melatonin and can disturb sleep. Researchers are still investigating how much the background glow of outdoor lighting, as opposed to the screens and lamps inside our homes, contributes to such effects, so firm conclusions about the health risks of light pollution would be premature." },
+    { "letter": "F", "text": "Ironically, a technology that should have helped has in some ways made matters worse. Modern LED lamps use far less electricity than older bulbs, and many cities have replaced their streetlights in order to save energy and money. Yet because LED lighting is so cheap to run, many places now install more lights and leave them on for longer, cancelling out much of the saving. In addition, the cold, bluish-white light produced by many early LED streetlights scatters more widely in the atmosphere than the orange glow of older lamps, increasing the brightness of the sky." },
+    { "letter": "G", "text": "What makes this form of pollution unusual is how easily it could be solved. Unlike chemical pollution, light disappears the moment it is switched off. Lamps can be fitted with shields so that light shines downwards, where it is needed, rather than sideways or up into the sky. Warmer colours can be chosen, and lights can be dimmed or switched off late at night when streets are empty. Some towns have adopted such rules for decades; one city in the American state of Arizona introduced restrictions on outdoor lighting as early as 1958 to protect the view from a nearby observatory." },
+    { "letter": "H", "text": "In my view, governments should treat darkness as a resource worth protecting, in the same way that they protect clean air and water. Good lighting design need not make streets less safe; well-directed light can improve visibility while reducing glare. The night sky has inspired science, art and religion for thousands of years, and it would be a great loss if future generations grew up without ever seeing it." }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        { "q": "Light pollution receives less attention than it deserves.", "a": "YES", "e": "Đoạn A: tác giả cho rằng đây là một trong những dạng ô nhiễm 'least discussed' – ít được bàn đến → YES." },
+        { "q": "Light pollution is probably the main reason for the decline in insect numbers.", "a": "NO", "e": "Đoạn D: 'It is unlikely to be the main cause' → NO." },
+        { "q": "It is already clear that outdoor lighting causes serious health problems in humans.", "a": "NO", "e": "Đoạn E: 'firm conclusions about the health risks of light pollution would be premature' – kết luận chắc chắn còn quá sớm → NO." },
+        { "q": "Street lighting in cities should be switched off completely at night.", "a": "NOT GIVEN", "e": "Đoạn G và H: tác giả đề xuất che chắn, chọn màu ấm, giảm sáng hoặc tắt khi phố vắng, và nói chiếu sáng tốt không làm đường kém an toàn; tác giả không chủ trương tắt hết đèn đường mọi lúc → NOT GIVEN." }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        { "q": "Why do satellite measurements underestimate the growth of light pollution?", "options": ["Satellites pass over cities only during the day.", "They cannot detect much of the light from modern white lamps.", "Cloud cover prevents accurate measurements.", "Volunteers record only the brightest stars."], "a": 1, "e": "Đoạn B: vệ tinh 'cannot detect much of the blue light emitted by modern white lamps' → không đo được phần lớn ánh sáng từ đèn trắng hiện đại." },
+        { "q": "Newly hatched sea turtles near towns die because", "options": ["they are attracted towards lights on land.", "the sea is too bright for them to see.", "lights prevent their eggs from hatching.", "they cannot see the horizon at all."], "a": 0, "e": "Đoạn C: rùa con hướng về đường chân trời sáng nhất; gần thị trấn, đèn kéo chúng vào đất liền, nơi chúng chết vì kiệt sức, bị săn hoặc bị xe cán." },
+        { "q": "What point does the writer make about LED streetlights?", "options": ["They have eliminated light pollution in most cities.", "Their energy savings are often reduced by greater use.", "They cost more to operate than older lamps.", "Their orange light scatters widely in the sky."], "a": 1, "e": "Đoạn F: vì đèn LED rẻ, nhiều nơi lắp nhiều đèn hơn và bật lâu hơn, 'cancelling out much of the saving'. Ánh sáng cam là của đèn CŨ – bẫy." },
+        { "q": "What makes light pollution different from chemical pollution, according to the writer?", "options": ["It affects only wildlife.", "It is more harmful to human health.", "It ends as soon as the source is turned off.", "It is easier to measure accurately."], "a": 2, "e": "Đoạn G: 'Unlike chemical pollution, light disappears the moment it is switched off' → biến mất ngay khi tắt nguồn." }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "Reducing light pollution",
+      "words": ["shields", "warmer", "brighter", "observatory", "melatonin", "empty", "migrating", "glare", "satellite"],
+      "items": [
+        { "q": "Lamps can be fitted with ______ so that light shines down where it is needed.", "a": 0, "e": "Đoạn G: 'Lamps can be fitted with shields so that light shines downwards' → shields." },
+        { "q": "Lights can be dimmed late at night when the streets are ______.", "a": 5, "e": "Đoạn G: đèn có thể giảm sáng hoặc tắt 'late at night when streets are empty' → empty." },
+        { "q": "Choosing ______ colours of light can also help.", "a": 1, "e": "Đoạn G: 'Warmer colours can be chosen' → warmer. 'brighter' là bẫy – ngược với mục tiêu." },
+        { "q": "One Arizona city limited outdoor lighting in 1958 to protect the view from an ______.", "a": 3, "e": "Đoạn G: thành phố ở Arizona hạn chế đèn ngoài trời năm 1958 'to protect the view from a nearby observatory' → observatory." },
+        { "q": "Well-directed light can make streets easier to see while reducing ______.", "a": 7, "e": "Đoạn H: ánh sáng chiếu đúng hướng 'can improve visibility while reducing glare' → glare." }
+      ]
+    }
+  ]
+}

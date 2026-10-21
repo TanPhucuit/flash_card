@@ -1,0 +1,119 @@
+{
+  "title": "Letting Nature Take Over",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ các dự án tái hoang dã và nghiên cứu sinh thái đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "For most of the twentieth century, nature conservation meant protecting what was left: drawing boundaries around nature reserves, managing them carefully and preventing further damage. In recent decades a bolder idea has gained ground. Rewilding aims not simply to preserve surviving habitats but to restore natural processes on a large scale, often by bringing back species that have disappeared and then allowing ecosystems to develop with as little human interference as possible. Its supporters see it as a hopeful response to the loss of wildlife; its critics regard it as romantic, unpredictable and sometimes dangerous."
+    },
+    {
+      "letter": "B",
+      "text": "The most famous example comes from Yellowstone National Park in the United States, where grey wolves, eliminated by hunting in the early twentieth century, were reintroduced in the mid-1990s. Over the following years, scientists reported a series of changes. Elk, the wolves' main prey, became less numerous and appeared to avoid open valleys where they were vulnerable, allowing trees such as willow and aspen to recover along rivers. The story of how a single predator could reshape an entire landscape spread widely and became the defining example of rewilding. Visitors also gained new opportunities to watch wolves in the wild, bringing additional income to towns near the park."
+    },
+    {
+      "letter": "C",
+      "text": "The reality, as is often the case, turned out to be more complicated. Later studies suggested that the recovery of trees was patchy and that other factors, including drought, hunting by humans and the growing number of bears and cougars, had also influenced the elk population. Some ecologists argued that the popular account had exaggerated the wolves' role. None of this means that the reintroduction was a mistake, but it does show the danger of telling simple stories about complex systems, and I believe that rewilding projects should be honest about how uncertain their outcomes are."
+    },
+    {
+      "letter": "D",
+      "text": "In Europe, where very little truly wild land remains, rewilding has often taken a different form. At Knepp, a large estate in southern England, the owners abandoned intensive farming in 2001 after years of financial losses on heavy clay soil. Instead, they allowed hedges and scrub to spread across former fields and introduced free-roaming herds of hardy cattle, ponies, pigs and deer, which graze, trample and root in ways that mimic the animals that once lived wild in the region. Within two decades, the estate had become home to rare species that had almost vanished from Britain, including turtle doves and nightingales. Purple emperor butterflies, rarely seen elsewhere in the country, also became common."
+    },
+    {
+      "letter": "E",
+      "text": "Not every experiment has gone smoothly. In a nature reserve in the Netherlands, large populations of deer, cattle and horses were allowed to grow without the presence of predators. During harsh winters, when food was scarce, thousands of animals starved, and pictures of dying animals caused public outrage. The authorities eventually decided to reduce the herds by shooting some of the animals. The episode raised difficult questions about whether people have a responsibility to intervene when animals suffer in a landscape that humans themselves have created. Supporters had expected the animals to regulate their own numbers, as wild herds might have done in prehistoric times."
+    },
+    {
+      "letter": "F",
+      "text": "Rewilding also raises social questions. Farmers may fear that reintroduced predators will attack their livestock, and people who live in rural areas can feel that decisions are being imposed on them by outsiders who do not depend on the land for a living. These concerns are entirely reasonable, and projects that ignore them are unlikely to last. The most successful schemes have generally involved local communities from the start, offered compensation for any losses and created new sources of income, such as wildlife tourism, to replace those that have been lost. In several countries, the return of large animals has been allowed only after lengthy public consultation."
+    },
+    {
+      "letter": "G",
+      "text": "Despite these difficulties, I remain convinced that rewilding has an important part to play. It cannot replace traditional conservation, and it will not suit every landscape, but in places where farming has become uneconomic or where natural processes have been severely disrupted, allowing nature greater freedom may produce richer and more resilient ecosystems than careful management alone. What matters is that each project is planned carefully, monitored honestly and adapted as evidence accumulates, rather than promoted with promises it cannot keep."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The Yellowstone wolves were solely responsible for the changes in the park's landscape.",
+          "a": "NO",
+          "e": "Đoạn C: các yếu tố khác như hạn hán, săn bắn, gấu và báo sư tử cũng tác động; câu chuyện phổ biến đã phóng đại vai trò của sói → NO."
+        },
+        {
+          "q": "Organisers of rewilding projects should acknowledge that results are hard to predict.",
+          "a": "YES",
+          "e": "Đoạn C: 'I believe that rewilding projects should be honest about how uncertain their outcomes are' → YES."
+        },
+        {
+          "q": "The Knepp estate has become more profitable than it was as a farm.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn D nói chủ đất bỏ canh tác vì thua lỗ nhiều năm, nhưng không nói điền trang nay có lãi hơn hay không → NOT GIVEN."
+        },
+        {
+          "q": "Rural residents' worries about rewilding are justified.",
+          "a": "YES",
+          "e": "Đoạn F: 'These concerns are entirely reasonable' → YES."
+        },
+        {
+          "q": "Rewilding should eventually replace traditional forms of conservation.",
+          "a": "NO",
+          "e": "Đoạn G: 'It cannot replace traditional conservation, and it will not suit every landscape' → NO."
+        }
+      ]
+    },
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "an example of animals dying because they had too little to eat",
+          "a": "E",
+          "e": "Đoạn E: vào mùa đông khắc nghiệt, khi thức ăn khan hiếm, 'thousands of animals starved' → E."
+        },
+        {
+          "q": "a description of methods that have helped projects gain local support",
+          "a": "F",
+          "e": "Đoạn F: dự án thành công thường lôi kéo cộng đồng từ đầu, bồi thường tổn thất và tạo nguồn thu mới như du lịch → F."
+        },
+        {
+          "q": "a reason why a landowner changed the way land was used",
+          "a": "D",
+          "e": "Đoạn D: chủ Knepp bỏ canh tác thâm canh 'after years of financial losses on heavy clay soil' → D."
+        },
+        {
+          "q": "a contrast between an older approach to conservation and a newer one",
+          "a": "A",
+          "e": "Đoạn A: bảo tồn kiểu cũ là bảo vệ phần còn lại; tái hoang dã muốn khôi phục quá trình tự nhiên quy mô lớn → A."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "summary",
+      "limit": "ONE WORD ONLY",
+      "title": "Wolves in Yellowstone",
+      "items": [
+        {
+          "q": "Grey wolves, eliminated by ______ in the early twentieth century, were brought back in the 1990s.",
+          "a": "hunting",
+          "e": "Đoạn B: sói xám 'eliminated by hunting in the early twentieth century' → hunting."
+        },
+        {
+          "q": "After the wolves returned, elk appeared to avoid open ______ where they could easily be attacked.",
+          "a": "valleys",
+          "e": "Đoạn B: nai sừng tấm 'appeared to avoid open valleys where they were vulnerable' → valleys."
+        },
+        {
+          "q": "Trees such as willow and aspen were reportedly able to grow again along ______.",
+          "a": "rivers",
+          "e": "Đoạn B: cây liễu và dương lá rung 'recover along rivers' → rivers."
+        },
+        {
+          "q": "Later research found that tree recovery was ______ rather than widespread.",
+          "a": "patchy",
+          "e": "Đoạn C: các nghiên cứu sau cho thấy cây phục hồi 'was patchy' – lác đác, không đồng đều → patchy."
+        }
+      ]
+    }
+  ]
+}

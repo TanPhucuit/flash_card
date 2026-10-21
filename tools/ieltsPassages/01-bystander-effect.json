@@ -1,0 +1,136 @@
+{
+  "title": "The Bystander Effect Reconsidered",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu tâm lý học xã hội đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In March 1964, a young woman named Kitty Genovese was attacked and killed outside her apartment building in Queens, New York. Two weeks later, The New York Times published a front-page story claiming that thirty-eight respectable, law-abiding citizens had watched the attack from their windows and that not one of them had called the police. The article caused a national sensation, and its central image of a crowd of indifferent spectators became one of the most widely repeated stories in the history of psychology. The editor responsible for the coverage, A. M. Rosenthal, later expanded it into a short book, arguing that the case revealed something disturbing about the coldness of modern urban life."
+    },
+    {
+      "letter": "B",
+      "text": "Among those who read the story were two young social psychologists, John Darley and Bibb Latané. They doubted that the witnesses were simply callous and suspected instead that the presence of so many other people had somehow inhibited each individual. To test the idea, they designed a series of laboratory experiments. In one, students talking over an intercom heard another participant apparently suffer a seizure. When students believed they were the only person who could hear, 85 per cent went for help before the seizure ended; when they believed four others were also listening, only 31 per cent did so. In a second study, rooms gradually filled with smoke, and participants sitting with two calm strangers were far less likely to report it than those sitting alone."
+    },
+    {
+      "letter": "C",
+      "text": "Darley and Latané proposed several mechanisms to explain these results. The first, which they called diffusion of responsibility, holds that the obligation to act is shared out among everyone present, so that each person feels only a fraction of it. The second, pluralistic ignorance, arises because people in an ambiguous situation look to others for clues about how to behave; if everyone remains outwardly calm, each concludes that nothing serious is happening. A third factor, sometimes described as evaluation apprehension, is the fear of looking foolish in public by overreacting to an event that turns out to be harmless. Together these processes seemed to explain how a large audience could produce no help at all."
+    },
+    {
+      "letter": "D",
+      "text": "For decades the Genovese case was presented in textbooks as the perfect real-world illustration of the effect. Yet when researchers returned to the original police files, the story began to fall apart. In 2007, Rachel Manning and two colleagues published a paper showing that there was no evidence of thirty-eight eyewitnesses. Most residents had heard only fragments of noise, few could see the attack clearly, and at least two people did contact the police. One neighbour went outside and held the victim as she was dying. The authors suggested that the tale had survived because it worked so well as a modern parable, not because it was accurate."
+    },
+    {
+      "letter": "E",
+      "text": "More recent work has also questioned how well the laboratory findings describe everyday emergencies. In a study published in 2019, a team led by Richard Philpot analysed more than two hundred violent disputes recorded by security cameras in Amsterdam, Lancaster and Cape Town. In nine out of ten incidents, at least one bystander intervened, typically by gesturing to calm the aggressor or physically pulling people apart. Crucially, the likelihood that the victim received help rose rather than fell as the number of onlookers increased. Although any single person may be less willing to act in a crowd, a larger crowd contains more potential helpers."
+    },
+    {
+      "letter": "F",
+      "text": "Psychologists have also identified the conditions under which strangers are most likely to step in. Help is more common when an emergency is unmistakable, when bystanders feel competent to deal with it, and when they share some kind of group identity with the victim. In one well-known experiment, Mark Levine invited football supporters of Manchester United to walk between two buildings, where they encountered a runner who had apparently fallen and hurt himself. Participants were far more likely to stop if the injured man wore a Manchester United shirt than if he wore the shirt of a rival club or a plain top."
+    },
+    {
+      "letter": "G",
+      "text": "These findings have practical consequences. First-aid instructors now teach that anyone needing assistance in a crowded place should single out one individual rather than calling for help in general terms, for example by pointing and saying, ‘You in the blue coat, phone for an ambulance.’ This simple instruction removes the ambiguity that fuels pluralistic ignorance and places responsibility on a single person. The broader lesson, many researchers now argue, is a reassuring one: the bystander effect is real, but people are considerably more willing to help one another than the legend of the thirty-eight witnesses once suggested."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The New York Times reported the Genovese case on the day after the attack.",
+          "a": "FALSE",
+          "e": "Đoạn A: bài báo xuất hiện 'Two weeks later' – hai tuần sau vụ tấn công, không phải ngày hôm sau. Thông tin trái ngược → FALSE."
+        },
+        {
+          "q": "In the intercom study, students who thought they were alone were more likely to seek help than those in a group.",
+          "a": "TRUE",
+          "e": "Đoạn B: khi nghĩ chỉ có mình nghe thấy, 85% đi tìm trợ giúp; khi nghĩ có bốn người khác cùng nghe, chỉ 31%. Khớp với câu → TRUE."
+        },
+        {
+          "q": "Darley and Latané were the first researchers to use smoke in a psychological experiment.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn B có mô tả thí nghiệm khói, nhưng bài không hề nói đây có phải lần đầu tiên khói được dùng trong thí nghiệm tâm lý hay không → NOT GIVEN."
+        },
+        {
+          "q": "Police records show that several neighbours made contact with the authorities during the Genovese attack.",
+          "a": "TRUE",
+          "e": "Đoạn D: hồ sơ cảnh sát cho thấy 'at least two people did contact the police'. 'Several' (một vài người) phù hợp với 'ít nhất hai người' liên lạc với cảnh sát → TRUE."
+        },
+        {
+          "q": "The CCTV study found that victims were less likely to receive help as crowds grew larger.",
+          "a": "FALSE",
+          "e": "Đoạn E: khả năng nạn nhân được giúp 'rose rather than fell as the number of onlookers increased' – tăng chứ không giảm khi đám đông lớn hơn → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "People",
+      "people": [
+        "A. M. Rosenthal",
+        "Darley and Latané",
+        "Rachel Manning and colleagues",
+        "Richard Philpot and colleagues",
+        "Mark Levine"
+      ],
+      "items": [
+        {
+          "q": "showed that a sense of belonging to the same group can make people more willing to help",
+          "a": 4,
+          "e": "Đoạn F: thí nghiệm của Mark Levine với cổ động viên Manchester United – họ giúp người mặc áo cùng đội nhiều hơn hẳn. Đây là 'shared group identity' → Mark Levine."
+        },
+        {
+          "q": "used the case of a murder to make a general point about city life",
+          "a": 0,
+          "e": "Đoạn A: biên tập viên A. M. Rosenthal viết thành sách, cho rằng vụ án cho thấy 'the coldness of modern urban life' – dùng vụ án để nói chung về đời sống đô thị → A. M. Rosenthal."
+        },
+        {
+          "q": "argued that a famous account had persisted because of its value as a moral story",
+          "a": 2,
+          "e": "Đoạn D: nhóm của Rachel Manning kết luận câu chuyện tồn tại 'because it worked so well as a modern parable, not because it was accurate' – vì giá trị như một câu chuyện ngụ ngôn → Rachel Manning and colleagues."
+        },
+        {
+          "q": "studied real conflicts rather than situations created by researchers",
+          "a": 3,
+          "e": "Đoạn E: nhóm Richard Philpot phân tích hơn 200 vụ xô xát thật do camera an ninh ghi lại, khác với thí nghiệm dàn dựng trong phòng lab → Richard Philpot and colleagues."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "Why crowds may fail to act",
+      "words": [
+        "responsibility",
+        "reassurance",
+        "embarrassment",
+        "ambiguous",
+        "dangerous",
+        "fraction",
+        "majority",
+        "calm",
+        "training"
+      ],
+      "items": [
+        {
+          "q": "According to the idea of diffusion of responsibility, each person present feels only a ______ of the obligation to act.",
+          "a": 5,
+          "e": "Đoạn C: 'each person feels only a fraction of it' – mỗi người chỉ cảm thấy một phần nhỏ trách nhiệm → fraction."
+        },
+        {
+          "q": "Pluralistic ignorance arises because people in an ______ situation look to others for clues.",
+          "a": 3,
+          "e": "Đoạn C: 'people in an ambiguous situation look to others for clues' – tình huống mơ hồ → ambiguous."
+        },
+        {
+          "q": "If everyone else appears ______, each person decides that nothing serious is happening.",
+          "a": 7,
+          "e": "Đoạn C: 'if everyone remains outwardly calm, each concludes that nothing serious is happening' → calm."
+        },
+        {
+          "q": "Evaluation apprehension refers to a fear of ______ if a person overreacts to a harmless event.",
+          "a": 2,
+          "e": "Đoạn C: 'the fear of looking foolish in public by overreacting' – sợ bị bẽ mặt, xấu hổ trước đám đông. Trong danh sách, từ diễn đạt ý 'looking foolish' là embarrassment."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "title": "The Toad That Conquered Australia",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu sinh thái học về loài xâm lấn tại Úc.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In June 1935, a small consignment of toads arrived in the Australian state of Queensland from Hawaii. There were just over a hundred of them, and they had been brought for a clear purpose: to eat the beetles that were damaging the region's valuable sugar cane crops. Within a few months, the toads had bred, and thousands of their offspring were released into cane fields along the coast. It was one of the most confident experiments in biological control ever attempted, and it went badly wrong. Today, the descendants of those original toads number in the hundreds of millions and occupy an area larger than many countries. The beetle larvae were causing heavy losses to farmers, and few effective chemical treatments were available at the time."
+    },
+    {
+      "letter": "B",
+      "text": "The cane toad turned out to be almost useless for the task it had been brought to perform. The adult beetles lived high on the stems of the cane plants, where the toads could not reach them, and their young lived underground, feeding on the roots. The toads, meanwhile, ate almost anything else they could catch, including native insects, frogs and small animals. Some scientists had warned against the introduction even before it took place, but their objections were overruled by agricultural officials eager to find a solution to the beetle problem."
+    },
+    {
+      "letter": "C",
+      "text": "Several characteristics have made the cane toad an exceptionally successful invader. A single female can lay tens of thousands of eggs at a time, far more than most native frogs. The toads tolerate a wide range of conditions, from tropical wetlands to dry grasslands, and in Australia they have no natural predators adapted to deal with them. Most importantly, they are poisonous at every stage of life. Glands on the adult toad's shoulders produce a powerful toxin, and animals that try to eat one often die within minutes. They will also breed in almost any still or slow-moving water, from farm dams to garden ponds."
+    },
+    {
+      "letter": "D",
+      "text": "The toads have spread across northern Australia at an accelerating pace. In the early years, the invasion front advanced by around ten kilometres a year; by the beginning of this century it was moving more than five times as fast. Researchers led by the biologist Rick Shine discovered that toads at the leading edge of the invasion had longer legs than those in long-established populations and travelled further each night. Because the fastest toads reached new territory first and bred with one another, each generation at the front was faster than the last, a striking example of evolution occurring within a few decades."
+    },
+    {
+      "letter": "E",
+      "text": "The impact on native wildlife has been severe in some areas. Large lizards called goannas, freshwater crocodiles, some snakes and a cat-sized marsupial known as the northern quoll have suffered dramatic declines where toads have arrived, because they attack the toads as they would any other prey and are killed by the poison. In some places, populations of these predators fell by more than ninety per cent within a few years. Other species, however, have been less affected than expected, and some birds have learned to turn toads over and eat only the parts that are not toxic. Pet dogs that bite toads are also frequently poisoned."
+    },
+    {
+      "letter": "F",
+      "text": "Eliminating the toads from Australia is now considered impossible, so scientists have looked for ways to reduce the damage. One promising approach takes advantage of the fact that animals can learn to avoid food that makes them ill. Researchers fed young quolls small pieces of toad meat treated with a chemical that caused nausea but was not dangerous. Quolls that had been trained in this way were far less likely to attack live toads after being released, and they survived much longer than untrained animals."
+    },
+    {
+      "letter": "G",
+      "text": "Communities have also become involved. In many towns, volunteers organise evening events at which they collect toads from gardens and parks, and researchers have developed traps that attract adult toads using recorded calls or attract tadpoles using chemicals released by toad eggs. Such efforts cannot stop the invasion, but they can protect particular areas, such as islands or wildlife reserves, where vulnerable native species survive. The story of the cane toad has become a lasting warning about the risks of introducing species to new environments without understanding the consequences."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "A solution that failed to work",
+          "para": "B"
+        },
+        {
+          "text": "Qualities that helped the toad succeed",
+          "para": "C"
+        },
+        {
+          "text": "Evolution at the invasion front",
+          "para": "D"
+        },
+        {
+          "text": "Uneven effects on native animals",
+          "para": "E"
+        },
+        {
+          "text": "Teaching predators to avoid danger",
+          "para": "F"
+        },
+        {
+          "text": "Local action and a wider lesson",
+          "para": "G"
+        },
+        {
+          "text": "Plans to eliminate toads across Australia",
+          "para": null
+        },
+        {
+          "text": "The economic value of the sugar industry",
+          "para": null
+        },
+        {
+          "text": "How toads were transported from Hawaii",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: cóc không ăn được bọ cánh cứng (bọ sống cao trên thân mía, ấu trùng dưới đất) mà lại ăn mọi thứ khác → giải pháp không hiệu quả: {h}.",
+        "C": "Đoạn C: đẻ hàng chục nghìn trứng, chịu được nhiều môi trường, không có thiên địch, có độc ở mọi giai đoạn → những đặc điểm giúp cóc thành công: {h}.",
+        "D": "Đoạn D: cóc ở tuyến đầu có chân dài hơn, mỗi thế hệ nhanh hơn – tiến hóa trong vài thập kỷ → tiến hóa ở tuyến đầu cuộc xâm lấn: {h}.",
+        "E": "Đoạn E: goanna, cá sấu, rắn, quoll suy giảm mạnh, nhưng một số loài ít bị ảnh hưởng, có loài chim học cách ăn phần không độc → tác động không đồng đều: {h}.",
+        "F": "Đoạn F: cho quoll ăn thịt cóc có hóa chất gây buồn nôn để chúng học cách tránh cóc → dạy thú săn mồi tránh nguy hiểm: {h}. Bài nói tiêu diệt hết cóc là 'impossible', nên không phải {i:6}.",
+        "G": "Đoạn G: tình nguyện viên bắt cóc, bẫy cóc, và câu chuyện trở thành lời cảnh báo lâu dài → hành động địa phương và bài học rộng hơn: {h}."
+      }
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Some scientists opposed bringing cane toads to Australia before they were released.",
+          "a": "TRUE",
+          "e": "Đoạn B: 'Some scientists had warned against the introduction even before it took place' → TRUE."
+        },
+        {
+          "q": "Cane toads are poisonous only when they are fully grown.",
+          "a": "FALSE",
+          "e": "Đoạn C: 'they are poisonous at every stage of life' → có độc ở mọi giai đoạn → FALSE."
+        },
+        {
+          "q": "The toads now spread more slowly than they did in the 1930s.",
+          "a": "FALSE",
+          "e": "Đoạn D: ban đầu khoảng 10 km/năm, đến đầu thế kỷ này nhanh hơn năm lần → nhanh hơn chứ không chậm hơn → FALSE."
+        },
+        {
+          "q": "Trained quolls passed their fear of toads on to their young.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn F nói quoll được huấn luyện ít tấn công cóc và sống lâu hơn, nhưng không nói chúng có truyền nỗi sợ cho con hay không → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "notes",
+      "limit": "ONE WORD ONLY",
+      "title": "Controlling cane toads",
+      "items": [
+        {
+          "q": "Quolls fed toad meat treated with a chemical that caused ______ learned to avoid toads",
+          "a": "nausea",
+          "e": "Đoạn F: thịt cóc được xử lý 'with a chemical that caused nausea but was not dangerous' → nausea."
+        },
+        {
+          "q": "Traps that attract adult toads using recorded ______",
+          "a": "calls",
+          "e": "Đoạn G: bẫy thu hút cóc trưởng thành 'using recorded calls' → calls."
+        },
+        {
+          "q": "Efforts can protect places such as ______ and wildlife reserves",
+          "a": "islands",
+          "e": "Đoạn G: nỗ lực có thể bảo vệ những khu vực 'such as islands or wildlife reserves' → islands."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "title": "From Bitter Drink to Chocolate Bar",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử thực phẩm và ngành ca cao.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Chocolate is one of the world's favourite foods, eaten in enormous quantities as bars, sweets and drinks. For most of its history, however, it looked and tasted nothing like the sweet, smooth product we know today. The cacao tree, from which chocolate is made, originated in the tropical forests of South America, and its seeds were first used thousands of years ago by peoples living in what is now Mexico and Central America. The transformation of those bitter seeds into a mass-produced treat took place only in the nineteenth century, through a series of inventions in Europe. Its scientific name, Theobroma, comes from Greek words meaning ‘food of the gods’."
+    },
+    {
+      "letter": "B",
+      "text": "The Maya and later the Aztecs prepared cacao as a frothy drink, often flavoured with chilli peppers, vanilla or flowers and served without sugar. It was a drink of great prestige, associated with religious ceremonies, feasts and the nobility, and cacao seeds were so valuable that the Aztecs used them as a form of money. Records from the period list prices in cacao beans, and archaeologists have even found counterfeit beans, made by filling empty shells with mud, which suggests how valuable genuine ones were."
+    },
+    {
+      "letter": "C",
+      "text": "Spanish explorers encountered chocolate in the early sixteenth century, and at first many found the bitter drink unpleasant. Once it had been sweetened with sugar and flavoured with spices such as cinnamon, however, it became fashionable among the Spanish nobility, and during the seventeenth century the habit spread to France, Italy and England. Chocolate remained expensive, largely because cacao had to be shipped across the Atlantic, and in London fashionable chocolate houses became meeting places for the wealthy, much as coffee houses were. Some doctors of the period even recommended it as a medicine."
+    },
+    {
+      "letter": "D",
+      "text": "Before cacao can become chocolate, it must go through a lengthy process, much of which still takes place on the farms where it is grown. The large pods are cut from the trees and split open, and the seeds, surrounded by a sweet white pulp, are piled together and left to ferment for several days. Fermentation is essential, since it develops the chemicals that later produce the characteristic flavour of chocolate. The beans are then dried, usually in the sun, before being sold and shipped to factories, where they are roasted, cracked open and separated from their shells. The remaining pieces, called nibs, are ground into a thick paste."
+    },
+    {
+      "letter": "E",
+      "text": "The modern chocolate industry was born when manufacturers learned how to change that paste. In 1828, the Dutch chemist Coenraad van Houten patented a press that squeezed out much of the fat, known as cocoa butter, leaving a solid that could be ground into a fine powder. Cocoa powder mixed more easily with water and was cheaper to make. Equally important, the fat that had been removed could be added back to ground cacao in larger quantities, and in 1847 a company in Bristol, England, used this technique to produce what is often considered the first solid chocolate bar intended for eating. Other manufacturers soon followed."
+    },
+    {
+      "letter": "F",
+      "text": "Switzerland contributed two further breakthroughs. In 1875, after years of experiments, Daniel Peter succeeded in making milk chocolate by combining chocolate with condensed milk, which contained less water than fresh milk and so did not spoil the mixture. A few years later, Rodolphe Lindt invented a machine that stirred and heated chocolate continuously for many hours, a process known as conching, which made it far smoother and more pleasant to eat. By the end of the century, chocolate had become affordable for ordinary people in Europe and North America."
+    },
+    {
+      "letter": "G",
+      "text": "Today the industry is global, but its foundations remain fragile. Most of the world's cacao is grown not in the Americas but in West Africa, much of it by smallholder farmers who earn very little from their crop. Prices are volatile, the trees are vulnerable to disease and changing weather, and investigations have repeatedly found children working on cacao farms in dangerous conditions. Several large companies have promised to improve conditions and pay farmers more, but campaigners argue that progress has been slow, and that consumers rarely consider the long journey their chocolate has made. Two countries, Côte d'Ivoire and Ghana, together produce more than half of the world's supply."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "evidence that people tried to make fake versions of a valuable item",
+          "a": "B",
+          "e": "Đoạn B: các nhà khảo cổ tìm thấy hạt ca cao giả làm bằng cách nhồi bùn vào vỏ rỗng → B."
+        },
+        {
+          "q": "concerns about the people who produce the raw material today",
+          "a": "G",
+          "e": "Đoạn G: nông dân nhỏ thu nhập thấp, trẻ em làm việc trong điều kiện nguy hiểm, tiến bộ chậm → G."
+        },
+        {
+          "q": "a reason why chocolate was expensive in Europe",
+          "a": "C",
+          "e": "Đoạn C: sô-cô-la vẫn đắt 'largely because cacao had to be shipped across the Atlantic' → C."
+        },
+        {
+          "q": "a description of an invention that separated fat from the rest of the cacao",
+          "a": "E",
+          "e": "Đoạn E: máy ép của van Houten năm 1828 ép bớt phần lớn chất béo (bơ ca cao) → E."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "flow-chart",
+      "limit": "ONE WORD ONLY",
+      "title": "From cacao pod to chocolate paste",
+      "items": [
+        {
+          "q": "Pods are cut from the tree and split; seeds are surrounded by a sweet white ______ ↓",
+          "a": "pulp",
+          "e": "Đoạn D: hạt 'surrounded by a sweet white pulp' → pulp."
+        },
+        {
+          "q": "Seeds are piled together and left to ______ for several days, which develops flavour ↓",
+          "a": "ferment",
+          "e": "Đoạn D: hạt được ủ thành đống 'left to ferment for several days', bước này tạo hương vị → ferment."
+        },
+        {
+          "q": "Beans are dried, usually in the ______ ↓",
+          "a": "sun",
+          "e": "Đoạn D: 'The beans are then dried, usually in the sun' → sun."
+        },
+        {
+          "q": "At the factory, beans are ______, cracked and separated from their shells ↓",
+          "a": "roasted",
+          "e": "Đoạn D: ở nhà máy, hạt 'are roasted, cracked open and separated from their shells' → roasted."
+        },
+        {
+          "q": "The pieces left, known as ______, are ground into a thick paste",
+          "a": "nibs",
+          "e": "Đoạn D: những mảnh còn lại 'called nibs, are ground into a thick paste' → nibs."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "How did the Maya and Aztecs usually consume cacao?",
+          "options": [
+            "as a sweet solid food eaten at festivals",
+            "as an unsweetened, frothy drink",
+            "as a medicine mixed with sugar",
+            "as a powder sprinkled on bread"
+          ],
+          "a": 1,
+          "e": "Đoạn B: họ chế cacao thành 'a frothy drink... served without sugar' → đồ uống có bọt, không đường."
+        },
+        {
+          "q": "Why did many Spanish explorers dislike chocolate at first?",
+          "options": [
+            "It was too expensive to buy.",
+            "It tasted bitter.",
+            "It was served too cold.",
+            "It contained too much sugar."
+          ],
+          "a": 1,
+          "e": "Đoạn C: ban đầu nhiều người 'found the bitter drink unpleasant' → vị đắng. Đường là thứ người châu Âu thêm VÀO sau đó."
+        },
+        {
+          "q": "Why was condensed milk important to Daniel Peter?",
+          "options": [
+            "It made chocolate cheaper to transport.",
+            "It contained less water than fresh milk.",
+            "It allowed chocolate to melt more easily.",
+            "It had a stronger flavour than fresh milk."
+          ],
+          "a": 1,
+          "e": "Đoạn F: sữa đặc 'contained less water than fresh milk and so did not spoil the mixture' → ít nước hơn sữa tươi."
+        },
+        {
+          "q": "What does conching do to chocolate?",
+          "options": [
+            "It removes the cocoa butter.",
+            "It makes the texture much smoother.",
+            "It adds milk to the mixture.",
+            "It keeps chocolate fresh for longer."
+          ],
+          "a": 1,
+          "e": "Đoạn F: máy của Lindt khuấy và làm nóng liên tục nhiều giờ, gọi là conching, 'made it far smoother' → mịn hơn nhiều."
+        }
+      ]
+    }
+  ]
+}

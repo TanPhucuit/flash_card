@@ -1,0 +1,153 @@
+{
+  "title": "Stronger Than Steel",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu khoa học vật liệu về tơ nhện đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Few natural materials have attracted as much scientific attention as the silk of spiders. Weight for weight, the strongest spider silk is stronger than steel, and it can absorb far more energy before breaking than the synthetic fibres used in bulletproof vests. It is also remarkably elastic, stretching considerably without snapping, and it is light, biodegradable and well tolerated by the human body. Engineers have long dreamed of producing it in large quantities for uses ranging from surgical stitches to lightweight cables, but the dream has proved extraordinarily difficult to achieve."
+    },
+    {
+      "letter": "B",
+      "text": "Spiders do not produce a single kind of silk. A typical orb-weaving spider, which builds the familiar circular web, has several different glands, each producing silk with particular properties. Dragline silk, which forms the frame and spokes of the web and serves as a safety line when the spider drops from a height, is especially strong. The spiral that catches insects is made from a much stretchier silk coated with sticky droplets, while other glands produce silk for wrapping prey or protecting eggs. Each type is suited to a different job, and a single web may combine several of them. Some species can produce as many as seven different kinds."
+    },
+    {
+      "letter": "C",
+      "text": "The process by which spiders turn liquid into solid fibre is as impressive as the silk itself. Inside the spider's glands, the silk proteins are stored as a thick, concentrated liquid. As this liquid flows along a narrow tube towards the spinnerets, the openings at the rear of the spider's body, water is gradually removed and the chemical conditions change, becoming more acidic. Finally, as the spider pulls the silk out, using its legs or the weight of its own body, the proteins line up in long chains and lock together into a solid thread. The whole process takes place at ordinary temperatures and uses only water as a solvent."
+    },
+    {
+      "letter": "D",
+      "text": "Why not simply farm spiders, as silkworms have been farmed for thousands of years? The difficulty is that most spiders are territorial and, when kept together in large numbers, tend to eat one another. A rare demonstration of what is possible came in 2012, when a cape woven from the golden silk of more than a million spiders went on display at a museum in London. The spiders had been collected in Madagascar, carefully harnessed so that their silk could be drawn out, and then released. The project took years and showed clearly that natural spider silk could never be produced cheaply on an industrial scale."
+    },
+    {
+      "letter": "E",
+      "text": "Scientists have therefore turned to genetic engineering. By identifying the genes that spiders use to make silk proteins, researchers have been able to insert them into other organisms, including bacteria, yeast, plants and silkworms, which then produce the proteins. One of the most publicised experiments, at the start of this century, involved goats that had been modified to produce silk proteins in their milk. The proteins could then be extracted and purified, but turning them into a fibre with the properties of natural silk proved much harder than producing the proteins themselves. Silkworms, which already spin large quantities of silk, have been a particular focus of this research."
+    },
+    {
+      "letter": "F",
+      "text": "The central problem lies in spinning. The extraordinary strength of spider silk depends not only on its chemical composition but on the precise way the proteins are arranged as the fibre forms, and reproducing the conditions inside a spider's narrow ducts has proved extremely difficult. Early artificial fibres were often weaker and more brittle than the natural material. In recent years, however, researchers have made progress by designing spinning devices that imitate the gradual changes in acidity and water content that occur inside the spider."
+    },
+    {
+      "letter": "G",
+      "text": "Several companies now produce materials based on spider silk proteins, and a number of products have reached the market, including clothing and cosmetics. Medical applications appear especially promising, because the material is strong, flexible and unlikely to be rejected by the body, which makes it attractive for stitches, artificial ligaments and scaffolds on which new tissue can grow. Large-scale industrial uses, such as cables or protective clothing, remain further away. After decades of effort, the humble spider still produces, effortlessly and in its own body, a material that human technology can only partly imitate."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The strongest spider silk can absorb more energy than the fibres used in bulletproof vests.",
+          "a": "TRUE",
+          "e": "Đoạn A: tơ nhện mạnh nhất 'can absorb far more energy before breaking than the synthetic fibres used in bulletproof vests' → TRUE."
+        },
+        {
+          "q": "The sticky spiral of a web is made from dragline silk.",
+          "a": "FALSE",
+          "e": "Đoạn B: tơ kéo (dragline) làm khung và nan hoa; vòng xoắn bắt mồi làm từ 'a much stretchier silk coated with sticky droplets' – loại tơ khác → FALSE."
+        },
+        {
+          "q": "Silk production takes place at high temperatures and uses only water as a solvent.",
+          "a": "FALSE",
+          "e": "Đoạn C: quá trình 'takes place at ordinary temperatures and uses only water as a solvent'. Vế dùng nước làm dung môi đúng, nhưng vế 'high temperatures' sai (nhiệt độ bình thường) → FALSE."
+        },
+        {
+          "q": "The spiders whose silk was used for the cape were collected from the wild and later set free.",
+          "a": "TRUE",
+          "e": "Đoạn D: nhện 'had been collected in Madagascar, carefully harnessed so that their silk could be drawn out, and then released' – bắt ngoài tự nhiên rồi thả ra → TRUE."
+        },
+        {
+          "q": "Clothing made from spider silk proteins is more expensive than clothing made from silkworm silk.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn G nói đã có quần áo làm từ protein tơ nhện trên thị trường, nhưng không so sánh giá với lụa tằm → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "form": "flow-chart",
+      "title": "How a spider produces silk",
+      "words": [
+        "liquid",
+        "acidic",
+        "pulls",
+        "spinnerets",
+        "heats",
+        "solid",
+        "salty",
+        "powder",
+        "pushes"
+      ],
+      "items": [
+        {
+          "q": "Silk proteins are stored in the glands as a thick ______ ↓",
+          "a": 0,
+          "e": "Đoạn C: protein tơ được trữ 'as a thick, concentrated liquid' → liquid. 'powder' là bẫy."
+        },
+        {
+          "q": "In the narrow tube, water is removed and conditions become more ______ ↓",
+          "a": 1,
+          "e": "Đoạn C: nước bị loại bỏ dần và điều kiện hóa học thay đổi, 'becoming more acidic' → acidic."
+        },
+        {
+          "q": "The silk leaves the body through openings called ______ ↓",
+          "a": 3,
+          "e": "Đoạn C: ống dẫn về phía 'the spinnerets, the openings at the rear of the spider's body' → spinnerets."
+        },
+        {
+          "q": "The spider ______ the silk out, and the proteins line up to form a solid thread",
+          "a": 2,
+          "e": "Đoạn C: 'as the spider pulls the silk out... the proteins line up' → pulls. 'pushes' là bẫy ngược nghĩa."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "Why is it difficult to farm spiders?",
+          "options": [
+            "They produce too little silk to be useful.",
+            "They attack and eat each other when crowded together.",
+            "They cannot survive outside tropical regions.",
+            "Their silk changes when they are kept in captivity."
+          ],
+          "a": 1,
+          "e": "Đoạn D: phần lớn nhện có tính lãnh thổ và 'when kept together in large numbers, tend to eat one another'."
+        },
+        {
+          "q": "What did the goat experiment show?",
+          "options": [
+            "Goats could produce stronger silk than spiders.",
+            "Silk proteins were easier to make than proper fibres.",
+            "The milk of modified goats was unsafe to drink.",
+            "Genetic engineering could not produce silk proteins."
+          ],
+          "a": 1,
+          "e": "Đoạn E: protein có thể được tách và tinh chế, nhưng biến chúng thành sợi có tính chất như tơ tự nhiên 'proved much harder than producing the proteins themselves'."
+        },
+        {
+          "q": "According to paragraph F, early artificial fibres were",
+          "options": [
+            "stronger but less elastic than natural silk.",
+            "weaker and more easily broken than natural silk.",
+            "identical to natural silk in their structure.",
+            "too expensive to produce in a laboratory."
+          ],
+          "a": 1,
+          "e": "Đoạn F: 'Early artificial fibres were often weaker and more brittle than the natural material' → yếu hơn và dễ gãy hơn."
+        },
+        {
+          "q": "Why is spider silk attractive for medical uses?",
+          "options": [
+            "It dissolves completely within a few days.",
+            "It is strong and the body usually accepts it.",
+            "It can be produced cheaply from goats' milk.",
+            "It kills bacteria that cause infections."
+          ],
+          "a": 1,
+          "e": "Đoạn G: vật liệu 'strong, flexible and unlikely to be rejected by the body' → bền và cơ thể thường chấp nhận."
+        }
+      ]
+    }
+  ]
+}

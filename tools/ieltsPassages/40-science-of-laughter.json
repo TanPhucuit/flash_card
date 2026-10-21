@@ -1,0 +1,142 @@
+{
+  "title": "Why We Laugh",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu tâm lý học và khoa học thần kinh về tiếng cười đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Laughter is one of the most familiar of human behaviours, yet it has received surprisingly little scientific attention compared with emotions such as fear or anger. Most people assume that we laugh mainly because something is funny, and that laughter is therefore closely connected with jokes and humour. Over the past few decades, however, research by psychologists, neuroscientists and animal behaviourists has suggested a rather different picture, in which laughter is less about comedy than about relationships with other people. Babies begin to laugh at around three or four months of age, long before they can speak or understand a joke."
+    },
+    {
+      "letter": "B",
+      "text": "Some of the most influential evidence came from the American psychologist Robert Provine, who spent years listening to people laughing in everyday settings such as shopping centres and university campuses. Provine and his students recorded more than a thousand episodes of natural laughter, noting what had been said immediately beforehand. To their surprise, only a small minority of laughs followed anything resembling a joke. Most came after ordinary remarks, such as greetings or comments about mutual friends. Provine also found that speakers laughed considerably more than their listeners, which suggested that laughter was being used to signal friendliness rather than simply in response to something amusing."
+    },
+    {
+      "letter": "C",
+      "text": "Laughter is also overwhelmingly social. Provine estimated that people are around thirty times more likely to laugh when they are with others than when they are alone, and much solitary laughter occurs in response to television or other media, which create a kind of artificial company. Laughter is also highly contagious, which is why television comedies have long used recorded laughter. Hearing someone else laugh activates regions of the brain involved in preparing facial movements, so that we are primed to join in, often before we know what the joke was. In an extreme case in 1962, an outbreak of laughter spread among pupils at schools in what is now Tanzania and lasted for months, forcing several schools to close."
+    },
+    {
+      "letter": "D",
+      "text": "Humans are not the only animals that laugh. Chimpanzees, gorillas and other great apes make breathy, panting sounds when they play or are tickled, and an analysis of these sounds by Marina Davila-Ross and her colleagues found that they become more similar to human laughter in species more closely related to us. The researchers concluded that laughter probably evolved from a play signal used by the common ancestors of humans and apes millions of years ago. Even rats appear to have a form of laughter: the neuroscientist Jaak Panksepp discovered that rats produce high-pitched chirps, too high for humans to hear, when they are tickled, and that they actively seek out the hand that tickles them."
+    },
+    {
+      "letter": "E",
+      "text": "The neuroscientist Sophie Scott has studied how people perceive different kinds of laughter. Her research shows that listeners can usually tell the difference between spontaneous laughter, which is triggered involuntarily, and deliberate laughter produced to be polite or to show agreement. The two kinds sound different and are processed by different networks in the brain. Interestingly, people who are closely acquainted tend to laugh together more spontaneously, and Scott has suggested that shared laughter may help couples and friends to manage tension and recover from disagreements."
+    },
+    {
+      "letter": "F",
+      "text": "Laughter may also bind groups together through its effects on the body. In a series of experiments led by the evolutionary psychologist Robin Dunbar, participants who watched comedy videos in a group were able to tolerate more pain afterwards than those who watched documentaries. Dunbar argued that laughing triggers the release of endorphins, natural chemicals that reduce pain and create a sense of wellbeing, and that this response may have helped early humans to form social bonds within larger groups than other primates could manage."
+    },
+    {
+      "letter": "G",
+      "text": "Popular claims about the health benefits of laughter should be treated with some caution. Laughter can reduce stress and raise people's mood, and it certainly does no harm, but some of the more ambitious claims, for example that it strengthens the immune system or significantly extends life, are not well supported by evidence. What does seem clear is that laughter is an ancient and powerful social signal, and that understanding it helps to explain why spending time with others feels so important to us. Laughter clubs and laughter yoga classes have nevertheless become popular in many countries."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "Laughter in daily conversation",
+          "para": "B"
+        },
+        {
+          "text": "The influence of other people",
+          "para": "C"
+        },
+        {
+          "text": "Evolutionary roots of laughter",
+          "para": "D"
+        },
+        {
+          "text": "Two kinds of laughter",
+          "para": "E"
+        },
+        {
+          "text": "A chemical basis for social bonding",
+          "para": "F"
+        },
+        {
+          "text": "Doubtful medical claims",
+          "para": "G"
+        },
+        {
+          "text": "Why some jokes are funnier than others",
+          "para": null
+        },
+        {
+          "text": "Cultural differences in humour",
+          "para": null
+        },
+        {
+          "text": "Training animals to laugh on command",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: Provine ghi lại hơn một nghìn lần cười tự nhiên và thấy phần lớn đến sau những câu nói bình thường, không phải chuyện cười → tiếng cười trong hội thoại hằng ngày: {h}. Đoạn không bàn vì sao chuyện cười này buồn cười hơn chuyện cười khác, nên không phải {i:6}.",
+        "C": "Đoạn C: khả năng cười khi có người khác cao gấp khoảng 30 lần, và tiếng cười dễ lây → ảnh hưởng của người khác: {h}.",
+        "D": "Đoạn D: vượn lớn và chuột cũng 'cười'; tiếng cười có lẽ tiến hóa từ tín hiệu chơi đùa của tổ tiên chung → nguồn gốc tiến hóa của tiếng cười: {h}.",
+        "E": "Đoạn E: Sophie Scott phân biệt cười tự phát và cười chủ ý → hai loại tiếng cười: {h}.",
+        "F": "Đoạn F: cười giải phóng endorphin, giúp chịu đau và gắn kết nhóm → cơ sở hóa học của gắn kết xã hội: {h}.",
+        "G": "Đoạn G: các tuyên bố về lợi ích sức khỏe như tăng miễn dịch, kéo dài tuổi thọ chưa có bằng chứng tốt → các tuyên bố y học đáng ngờ: {h}."
+      }
+    },
+    {
+      "kind": "features",
+      "listTitle": "Researchers",
+      "singular": "researcher",
+      "people": [
+        "Robert Provine",
+        "Marina Davila-Ross",
+        "Jaak Panksepp",
+        "Sophie Scott",
+        "Robin Dunbar"
+      ],
+      "items": [
+        {
+          "q": "found that animals sought out further contact after being tickled",
+          "a": 2,
+          "e": "Đoạn D: Jaak Panksepp phát hiện chuột phát tiếng chíp khi bị cù và 'actively seek out the hand that tickles them' → Jaak Panksepp."
+        },
+        {
+          "q": "showed that people who laughed together could cope better with discomfort",
+          "a": 4,
+          "e": "Đoạn F: trong thí nghiệm của Robin Dunbar, người xem hài theo nhóm chịu đau tốt hơn sau đó → Robin Dunbar."
+        },
+        {
+          "q": "observed that people speaking laughed considerably more than their listeners",
+          "a": 0,
+          "e": "Đoạn B: Provine thấy 'speakers laughed considerably more than their listeners' → Robert Provine."
+        },
+        {
+          "q": "suggested that laughing together may help people resolve conflicts",
+          "a": 3,
+          "e": "Đoạn E: Sophie Scott cho rằng cười cùng nhau có thể giúp các cặp đôi và bạn bè 'manage tension and recover from disagreements' → Sophie Scott."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "notes",
+      "limit": "ONE WORD ONLY",
+      "title": "Facts about laughter",
+      "items": [
+        {
+          "q": "Television comedies use recorded laughter because laughter is ______",
+          "a": "contagious",
+          "e": "Đoạn C: 'Laughter is also highly contagious, which is why television comedies have long used recorded laughter' → contagious."
+        },
+        {
+          "q": "Rats produce high-pitched ______, too high for humans to hear",
+          "a": "chirps",
+          "e": "Đoạn D: chuột phát ra 'high-pitched chirps' khi bị cù → chirps."
+        },
+        {
+          "q": "Laughing may release ______, which reduce pain",
+          "a": "endorphins",
+          "e": "Đoạn F: cười kích hoạt giải phóng 'endorphins, natural chemicals that reduce pain' → endorphins."
+        }
+      ]
+    }
+  ]
+}

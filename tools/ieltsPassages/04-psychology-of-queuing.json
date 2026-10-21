@@ -1,0 +1,117 @@
+{
+  "title": "The Psychology of Waiting in Line",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu về vận trù học và tâm lý dịch vụ đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Waiting in line is one of the most universal and least loved experiences of modern life. We queue at supermarket checkouts, at airport security, on the telephone and, increasingly, in virtual lines on websites selling concert tickets. Richard Larson, a professor at the Massachusetts Institute of Technology who has spent much of his career studying queues, once estimated that Americans collectively spend tens of billions of hours a year waiting in line. Mathematicians have long modelled how queues form and how quickly they can be cleared, but businesses have gradually realised that the length of a wait is only part of the problem. What matters just as much is how that wait feels."
+    },
+    {
+      "letter": "B",
+      "text": "A memorable illustration comes from an airport in Houston, Texas. Passengers there had begun complaining in large numbers about how long they had to stand at the baggage carousel. The airport responded in the obvious way, hiring extra baggage handlers and reducing the average wait to around eight minutes, which was well within industry standards. The complaints, however, continued. On closer investigation, managers discovered that passengers took only about a minute to walk from the arrival gate to the carousel and then spent the remaining time standing idle. The solution was to park arriving aircraft further from the main terminal, so that passengers had to walk roughly six times as far. Complaints fell almost to zero."
+    },
+    {
+      "letter": "C",
+      "text": "The Houston story illustrates one of the principles set out in 1985 by David Maister in an influential paper on the psychology of waiting. Maister argued that occupied time feels shorter than unoccupied time, which explains why restaurants hand out menus to customers waiting for a table and why theme parks entertain visitors standing in line. He also observed that waits feel longer when people are anxious, when the length of the wait is uncertain and when no explanation is given for a delay. A passenger told that a train will arrive in twelve minutes is generally calmer than one left standing on a platform with no information at all."
+    },
+    {
+      "letter": "D",
+      "text": "Many organisations have found inexpensive ways of applying these ideas. Hotels have reduced complaints about slow lifts by installing mirrors beside them, giving guests something to look at while they wait. Telephone help lines play music and offer regular updates on a caller's position in the queue. Some theme parks deliberately display waiting times that are slightly longer than the actual figure, so that visitors who reach the front sooner than expected feel they have gained something. Such techniques do nothing to shorten the wait itself, yet they can make customers noticeably more satisfied with the same service."
+    },
+    {
+      "letter": "E",
+      "text": "Fairness is perhaps the most powerful factor of all. Larson has argued that what customers resent most is not delay in itself but the sense that someone else has been treated better. Few things are more irritating than choosing one of several checkout lines and watching a neighbouring line move faster. For this reason, many banks and post offices have abandoned separate lines in favour of a single snake-like queue that feeds several counters. Research suggests that the average wait is roughly the same in either system, but customers in a single queue are reassured by the knowledge that they will be served strictly in order of arrival."
+    },
+    {
+      "letter": "F",
+      "text": "Attitudes to queuing also vary between cultures. In some countries a disorderly crowd at a ticket window is accepted as normal, while in others jumping the queue is regarded as a serious breach of social rules and may provoke open anger. Britain is frequently described as a nation of orderly queuers, and historians have linked the habit to the rationing of food during the Second World War, when standing patiently in line became a public duty. Whether or not this explanation is correct, it shows how a queue can function as a small social system with its own unwritten code of behaviour."
+    },
+    {
+      "letter": "G",
+      "text": "Technology is now changing the experience once again. Many restaurants send customers a text message when their table is ready, allowing them to wait elsewhere, and some theme parks sell timed tickets that reduce the need to stand in line at all. Online systems can give customers a precise estimate of their waiting time, removing much of the uncertainty that Maister identified as a source of stress. These innovations may eventually make the traditional queue less common, but the lesson of decades of research is likely to remain relevant: people judge a wait less by the minutes it takes than by how fairly and how pleasantly those minutes are spent."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "an example of a change that made a journey longer but reduced dissatisfaction",
+          "a": "B",
+          "e": "Đoạn B: sân bay Houston cho máy bay đỗ xa hơn để hành khách phải đi bộ xa gấp khoảng sáu lần, và lời phàn nàn gần như biến mất → B."
+        },
+        {
+          "q": "a possible historical explanation for a national habit",
+          "a": "F",
+          "e": "Đoạn F: thói quen xếp hàng trật tự của người Anh được liên hệ với chế độ phân phối lương thực thời Thế chiến II → F."
+        },
+        {
+          "q": "a reason why some organisations replaced several queues with one",
+          "a": "E",
+          "e": "Đoạn E: ngân hàng, bưu điện bỏ nhiều hàng riêng, chuyển sang một hàng ngoằn ngoèo vì khách được trấn an rằng họ được phục vụ đúng thứ tự → công bằng → E."
+        },
+        {
+          "q": "a description of how businesses may give customers a misleading figure",
+          "a": "D",
+          "e": "Đoạn D: một số công viên giải trí cố tình hiển thị thời gian chờ dài hơn thực tế một chút – đưa con số không chính xác → D."
+        },
+        {
+          "q": "an estimate of the total time a nation spends waiting",
+          "a": "A",
+          "e": "Đoạn A: Richard Larson ước tính người Mỹ tổng cộng mất hàng chục tỷ giờ mỗi năm để xếp hàng → A."
+        }
+      ]
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The Houston airport initially tried to solve the problem by employing more staff.",
+          "a": "TRUE",
+          "e": "Đoạn B: sân bay phản ứng 'hiring extra baggage handlers' – thuê thêm nhân viên bốc xếp hành lý → TRUE."
+        },
+        {
+          "q": "After the first changes at Houston, the average wait for baggage was longer than the industry standard.",
+          "a": "FALSE",
+          "e": "Đoạn B: thời gian chờ giảm còn khoảng tám phút, 'well within industry standards' – nằm trong chuẩn ngành, không dài hơn → FALSE."
+        },
+        {
+          "q": "Maister's paper was based mainly on research carried out in restaurants.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C nhắc nhà hàng như một ví dụ minh họa nguyên tắc của Maister, nhưng không nói bài báo của ông dựa chủ yếu vào nghiên cứu ở nhà hàng → NOT GIVEN."
+        },
+        {
+          "q": "A single queue serving several counters greatly reduces the average waiting time.",
+          "a": "FALSE",
+          "e": "Đoạn E: 'the average wait is roughly the same in either system' – thời gian chờ trung bình gần như như nhau, chỉ có cảm giác công bằng khác → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "limit": "NO MORE THAN TWO WORDS",
+      "items": [
+        {
+          "q": "What did some hotels place next to their lifts to reduce complaints?",
+          "a": "mirrors",
+          "e": "Đoạn D: 'Hotels have reduced complaints about slow lifts by installing mirrors beside them' → mirrors."
+        },
+        {
+          "q": "What do telephone help lines play while giving regular updates on a caller's position?",
+          "a": "music",
+          "e": "Đoạn D: 'Telephone help lines play music and offer regular updates' → music."
+        },
+        {
+          "q": "What type of tickets do some theme parks sell to reduce queuing?",
+          "a": "timed tickets/timed",
+          "e": "Đoạn G: 'some theme parks sell timed tickets that reduce the need to stand in line' → timed tickets."
+        },
+        {
+          "q": "According to Maister, what kind of time feels shorter than unoccupied time?",
+          "a": "occupied time/occupied",
+          "e": "Đoạn C: Maister cho rằng 'occupied time feels shorter than unoccupied time' → occupied time (thời gian có việc để làm)."
+        }
+      ]
+    }
+  ]
+}

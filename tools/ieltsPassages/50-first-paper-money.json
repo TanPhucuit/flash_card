@@ -1,0 +1,128 @@
+{
+  "title": "The Birth of Paper Money",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử kinh tế và tiền tệ.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Most of the money in our pockets has almost no value as a physical object. A banknote is simply a piece of printed paper or plastic, worth a few cents to produce, yet people accept it in exchange for goods and services worth many times that amount. The idea that a piece of paper could stand in for valuable metal was a revolutionary one, and it emerged first not in Europe but in China, more than a thousand years ago. It is so familiar today that few people stop to consider how strange it really is."
+    },
+    {
+      "letter": "B",
+      "text": "The origins lie in practical necessity. In the province of Sichuan, in south-western China, the main currency during the tenth and eleventh centuries consisted of coins made of iron rather than copper. Iron coins had little value individually, so even modest purchases required large quantities of them, and carrying enough money to buy expensive goods was extremely difficult. Merchants began leaving their coins with trusted dealers in exchange for written receipts, which could then be passed from person to person as payment. In effect, the receipts were circulating in place of the coins themselves. A string of a thousand iron coins could weigh several kilograms, making large transactions especially awkward."
+    },
+    {
+      "letter": "C",
+      "text": "At first, these receipts were issued by private merchants, but problems soon arose. Some issuers printed more receipts than they could honour, and when holders demanded their coins, the dealers could not pay. In 1023, the government of the Song dynasty took control of the system, establishing an official office to issue the notes. This is often regarded as the beginning of government-issued paper money. To prevent forgery, the notes were printed with elaborate designs in several colours, and severe penalties were announced for anyone caught copying them. Each note was valid only for a fixed period, after which it had to be exchanged for a new one."
+    },
+    {
+      "letter": "D",
+      "text": "Paper money reached its greatest extent under the Mongol rulers of China in the thirteenth century. Kublai Khan made paper currency the main form of money throughout his empire and required merchants to accept it. The Venetian traveller Marco Polo, who visited China during this period, described the system with astonishment, explaining to European readers how notes made from the bark of the mulberry tree were accepted everywhere as if they were gold or silver. Many of his readers found the account hard to believe."
+    },
+    {
+      "letter": "E",
+      "text": "The system, however, contained a dangerous temptation. Because paper money cost so little to produce, governments facing heavy expenses, especially for wars, were inclined to print more of it. As the quantity of notes grew far faster than the quantity of goods available, prices rose and the notes lost their value. Inflation of this kind contributed to the economic difficulties of the later Mongol period, and the Ming dynasty, which followed, eventually abandoned paper money in favour of silver during the fifteenth century. Similar episodes of runaway inflation have occurred many times since, in countries all over the world."
+    },
+    {
+      "letter": "F",
+      "text": "Europe came to paper money much later. In the 1660s, a bank in Stockholm, the capital of Sweden, began issuing notes. Sweden's currency at that time included enormous copper plates, some weighing several kilograms, which were very inconvenient to carry, and the bank's notes offered an attractive alternative. Unfortunately, the bank repeated the mistake made in China centuries earlier: it issued far more notes than it could support with its reserves, and within a few years it collapsed. Its founder, Johan Palmstruch, was held responsible and was sentenced to death, although the sentence was later reduced."
+    },
+    {
+      "letter": "G",
+      "text": "Over the following centuries, banknotes became normal across Europe and the rest of the world, usually backed by a promise that they could be exchanged for gold or silver. During the twentieth century, that link was gradually broken, and today most currencies have value simply because governments declare them legal and people trust that others will accept them. As payments increasingly move to cards and mobile phones, paper money itself may become less common, but the central idea that emerged in Sichuan a thousand years ago remains the basis of modern economies: money is ultimately a matter of trust. Some countries, including Sweden, are already moving rapidly towards a largely cashless economy."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "a description of steps taken to stop people from making false notes",
+          "a": "C",
+          "e": "Đoạn C: tiền giấy được in hoa văn phức tạp nhiều màu và có hình phạt nặng cho kẻ làm giả → C."
+        },
+        {
+          "q": "an account of how a visitor's description was received with disbelief",
+          "a": "D",
+          "e": "Đoạn D: Marco Polo mô tả hệ thống tiền giấy, và 'Many of his readers found the account hard to believe' → D."
+        },
+        {
+          "q": "an explanation of why carrying money was a problem in one region",
+          "a": "B",
+          "e": "Đoạn B: đồng tiền sắt ở Tứ Xuyên có giá trị thấp, mua hàng đắt cần rất nhiều tiền, nên rất khó mang theo → B."
+        },
+        {
+          "q": "a reference to the punishment of the person in charge of a failed bank",
+          "a": "F",
+          "e": "Đoạn F: người sáng lập Johan Palmstruch bị quy trách nhiệm và bị kết án tử hình, sau đó được giảm án → F."
+        },
+        {
+          "q": "the idea that modern money depends on confidence rather than metal",
+          "a": "G",
+          "e": "Đoạn G: tiền ngày nay có giá trị vì chính phủ công nhận và mọi người tin người khác sẽ chấp nhận; 'money is ultimately a matter of trust' → G."
+        }
+      ]
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The earliest paper receipts in Sichuan were issued by the government.",
+          "a": "FALSE",
+          "e": "Đoạn C: ban đầu biên nhận do 'private merchants' phát hành; đến năm 1023 nhà nước mới nắm quyền → FALSE."
+        },
+        {
+          "q": "Under Kublai Khan, paper currency became the main form of money.",
+          "a": "TRUE",
+          "e": "Đoạn D: Hốt Tất Liệt 'made paper currency the main form of money throughout his empire' và buộc thương nhân chấp nhận nó → TRUE."
+        },
+        {
+          "q": "Marco Polo brought samples of Chinese paper money back to Venice.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn D chỉ nói Marco Polo mô tả hệ thống tiền giấy; bài không nói ông mang mẫu tiền về Venice → NOT GIVEN."
+        },
+        {
+          "q": "The Ming dynasty continued to rely mainly on paper money.",
+          "a": "FALSE",
+          "e": "Đoạn E: nhà Minh 'eventually abandoned paper money in favour of silver' → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "Why paper money often failed",
+      "words": [
+        "cheaply",
+        "inflation",
+        "reserves",
+        "wars",
+        "copper",
+        "gold",
+        "trust",
+        "harvests",
+        "slowly"
+      ],
+      "items": [
+        {
+          "q": "Because notes could be produced so ______, governments were tempted to print more.",
+          "a": 0,
+          "e": "Đoạn E: tiền giấy 'cost so little to produce' – sản xuất rất rẻ → cheaply."
+        },
+        {
+          "q": "Heavy spending, especially on ______, encouraged rulers to issue extra notes.",
+          "a": 3,
+          "e": "Đoạn E: chính quyền chịu chi phí lớn, 'especially for wars', có xu hướng in thêm tiền → wars."
+        },
+        {
+          "q": "When notes multiplied faster than goods, the result was ______.",
+          "a": 1,
+          "e": "Đoạn E: giá tăng, tiền mất giá – 'Inflation of this kind' → inflation."
+        },
+        {
+          "q": "Like China centuries earlier, the Stockholm bank issued more notes than it could support with its ______.",
+          "a": 2,
+          "e": "Đoạn F: ngân hàng phát hành nhiều tiền hơn mức 'it could support with its reserves' → reserves."
+        }
+      ]
+    }
+  ]
+}

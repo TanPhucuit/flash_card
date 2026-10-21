@@ -1,0 +1,128 @@
+{
+  "title": "Is a Four-Day Week the Future?",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ các thử nghiệm tuần làm việc bốn ngày đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In 1930, the economist John Maynard Keynes predicted that by the early twenty-first century technological progress would allow people to work as little as fifteen hours a week. For several decades after his essay appeared, the trend seemed to be moving in his direction. Working hours in industrialised countries fell steadily, and the American car manufacturer Henry Ford had already shown in 1926 that a five-day, forty-hour week could be good for business, partly because workers with more free time were more likely to buy the products that factories made. Since the 1980s, however, the decline in working hours has largely stalled in many countries, and the standard five-day week has remained remarkably stable."
+    },
+    {
+      "letter": "B",
+      "text": "That stability is now being challenged. Between 2015 and 2019, the city council of Reykjavík and the national government of Iceland ran trials in which more than two thousand public employees reduced their weekly hours from forty to thirty-five or thirty-six, without any reduction in pay. Researchers reported that productivity and the quality of services were maintained or improved in most workplaces, while employees described lower levels of stress. Following the trials, trade unions negotiated agreements that gave a large majority of Iceland's workforce the right to shorter hours. Several other countries have since launched their own experiments."
+    },
+    {
+      "letter": "C",
+      "text": "The largest trial so far took place in Britain in the second half of 2022. Sixty-one companies, employing around 2,900 people, agreed to give staff a paid day off each week, or an equivalent reduction in hours, for six months, provided that output was maintained. The organisations involved ranged from small marketing firms to a fish-and-chip restaurant. The trial was analysed by researchers including Juliet Schor, a sociologist at Boston College, who had spent much of her career studying the causes and consequences of overwork. At the end of the six months, fifty-six of the companies chose to continue with the shorter week, and eighteen made the change permanent."
+    },
+    {
+      "letter": "D",
+      "text": "The results were striking. Company revenues remained broadly stable over the trial period, and many employers reported that staff had become more focused, cutting unnecessary meetings and reorganising their work more efficiently. Employees reported less burnout and better sleep, the number of sick days fell considerably, and fewer people left their jobs than in the equivalent period of the previous year. In Japan, Microsoft had reported similar gains from a shorter trial in 2019, claiming that sales per employee rose by around forty per cent during a month in which offices closed every Friday."
+    },
+    {
+      "letter": "E",
+      "text": "These findings are encouraging, but I think it would be unwise to conclude that every organisation should immediately adopt a four-day week. The companies that took part in the British trial volunteered to do so, and firms that expect a policy to succeed are naturally more likely to try it. Many were small, office-based businesses in which output is relatively easy to reorganise. It is far from clear that the same approach would work in a hospital, a school or a supermarket, where staff must be present to provide a service and where reducing hours may simply mean employing more people."
+    },
+    {
+      "letter": "F",
+      "text": "The form a shorter week takes also matters. Some employers have introduced what is known as a compressed week, in which staff work their usual hours over four longer days. This arrangement may suit some people, but it is a different proposition from genuinely reducing working time, and long days can lead to the very fatigue that a shorter week is supposed to prevent. In my view, the most persuasive results have come from trials in which total hours were actually reduced and in which employees themselves were involved in redesigning how work was done."
+    },
+    {
+      "letter": "G",
+      "text": "Keynes was wrong about the speed of change, but he may not have been wrong about its direction. The evidence so far suggests that a great deal of time at work is spent on tasks that add little value, and that many organisations could produce as much in four days as in five if they were willing to rethink their habits. Rather than a universal rule imposed by governments, the four-day week is perhaps best seen as an opportunity that employers in suitable sectors should be encouraged to test carefully for themselves."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The fall in working hours that Keynes expected has continued at a steady pace since the 1980s.",
+          "a": "NO",
+          "e": "Đoạn A: 'Since the 1980s, however, the decline in working hours has largely stalled' – đã chững lại chứ không tiếp tục đều đặn → NO."
+        },
+        {
+          "q": "The voluntary nature of the British trial makes its results less certain.",
+          "a": "YES",
+          "e": "Đoạn E: các công ty tự nguyện tham gia, và công ty kỳ vọng thành công thì dễ thử hơn → tác giả cho rằng không nên vội kết luận → YES."
+        },
+        {
+          "q": "Small companies gain more from a four-day week than large organisations.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn E chỉ nói nhiều công ty tham gia là doanh nghiệp nhỏ làm văn phòng, dễ sắp xếp lại công việc; tác giả không so sánh lợi ích mà công ty nhỏ và tổ chức lớn nhận được → NOT GIVEN."
+        },
+        {
+          "q": "Long days in a compressed week can lead to the very fatigue that shorter hours are meant to prevent.",
+          "a": "YES",
+          "e": "Đoạn F: 'long days can lead to the very fatigue that a shorter week is supposed to prevent' – tác giả khẳng định đúng ý này → YES."
+        },
+        {
+          "q": "Governments should make the four-day week compulsory for all large employers.",
+          "a": "NO",
+          "e": "Đoạn G: 'Rather than a universal rule imposed by governments', tuần bốn ngày là cơ hội để doanh nghiệp phù hợp tự thử → NO."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "People and Organisations",
+      "singular": "person or organisation",
+      "people": [
+        "John Maynard Keynes",
+        "Henry Ford",
+        "Reykjavík city council",
+        "Juliet Schor",
+        "Microsoft Japan"
+      ],
+      "items": [
+        {
+          "q": "believed that shorter hours could increase demand for goods",
+          "a": 1,
+          "e": "Đoạn A: Henry Ford cho thấy tuần 5 ngày tốt cho kinh doanh, một phần vì công nhân có nhiều thời gian rảnh 'were more likely to buy the products' → Henry Ford."
+        },
+        {
+          "q": "reported that sales per employee rose by about forty per cent",
+          "a": 4,
+          "e": "Đoạn D: Microsoft tại Nhật Bản cho biết doanh số trên mỗi nhân viên tăng khoảng 40% → Microsoft Japan."
+        },
+        {
+          "q": "had studied excessive working hours for many years",
+          "a": 3,
+          "e": "Đoạn C: Juliet Schor 'had spent much of her career studying the causes and consequences of overwork' → Juliet Schor."
+        },
+        {
+          "q": "made a prediction that has not come true",
+          "a": 0,
+          "e": "Đoạn A và G: Keynes dự đoán đầu thế kỷ 21 chỉ làm 15 giờ/tuần; đoạn G nói 'Keynes was wrong about the speed of change' → John Maynard Keynes."
+        },
+        {
+          "q": "reduced hours for public employees without lowering their pay",
+          "a": 2,
+          "e": "Đoạn B: hội đồng thành phố Reykjavík (cùng chính phủ Iceland) giảm giờ làm của nhân viên công từ 40 xuống 35–36 giờ 'without any reduction in pay' → Reykjavík city council."
+        }
+      ]
+    },
+    {
+      "kind": "mcq3",
+      "items": [
+        {
+          "q": "Which THREE outcomes of the 2022 British trial are mentioned in the passage?",
+          "options": [
+            "Employees took fewer days off because of illness.",
+            "Company revenues rose by around forty per cent.",
+            "Fewer employees left their jobs.",
+            "Most companies reduced their staff's salaries.",
+            "Employees said they were sleeping better.",
+            "Customers complained about slower service.",
+            "All sixty-one companies kept the shorter week."
+          ],
+          "a": [
+            0,
+            2,
+            4
+          ],
+          "e": "Đoạn D: số ngày nghỉ ốm giảm đáng kể ('sick days fell considerably'), ít người nghỉ việc hơn ('fewer people left their jobs'), và nhân viên ngủ ngon hơn ('better sleep'). Bẫy: tăng 40% là số liệu của Microsoft Nhật Bản, không phải doanh thu thử nghiệm ở Anh; chỉ 56/61 công ty tiếp tục, không phải tất cả; lương không bị cắt."
+        }
+      ]
+    }
+  ]
+}

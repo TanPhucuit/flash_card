@@ -1,0 +1,144 @@
+{
+  "title": "When Crowds Are Wise",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ các nghiên cứu về ra quyết định tập thể đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In the autumn of 1906, the scientist Francis Galton visited a livestock fair in the English city of Plymouth, where visitors were paying a small fee to guess the weight of an ox once it had been slaughtered and prepared. Galton, who held a rather low opinion of the intelligence of ordinary people, collected around eight hundred of the tickets afterwards, expecting to show how wildly inaccurate their guesses were. Instead he made a discovery that surprised him. Although individual estimates varied enormously, the middle value of all the guesses was within one per cent of the true weight, closer than the estimates of most of the cattle experts present."
+    },
+    {
+      "letter": "B",
+      "text": "Galton's observation has since been repeated in countless forms. Ask a large group of people to estimate the number of sweets in a glass jar and the average answer will often be remarkably close to the correct figure, even though few individuals come near it. On a well-known television quiz programme, contestants who were stuck on a question could ask the studio audience to vote on the answer; the most popular choice was correct around nine times out of ten, a far better record than that of the friends contestants could telephone for advice. The principle at work is simple: individual errors, if they are random, tend to cancel each other out."
+    },
+    {
+      "letter": "C",
+      "text": "The idea reached a wide audience in 2004, when the journalist James Surowiecki published a book on the subject. Surowiecki argued that a crowd is likely to be wise only under certain conditions. Its members must hold a diversity of opinions, each based on some private information; they must make their judgements independently rather than copying one another; and there must be some mechanism for combining their views into a single answer. In my view, it is the second of these conditions that is most often overlooked, and it explains why groups of intelligent people so frequently reach foolish decisions."
+    },
+    {
+      "letter": "D",
+      "text": "Consider what happens when people can see one another's opinions. In an experiment carried out at a Swiss university in 2011, participants were asked factual questions, such as the population density of Switzerland, and were rewarded for accurate answers. Some were told nothing about the answers of others; some saw the average of the group's previous estimates. Exposure to other people's views made the estimates more similar, but not more accurate. Worse, it made participants more confident in their answers. The diversity that gives a crowd its power had been eroded, yet the members felt better informed than ever."
+    },
+    {
+      "letter": "E",
+      "text": "Financial markets offer a dramatic illustration of the same problem. When investors make independent judgements about the value of a company, prices may reflect the available information reasonably well. When they begin to watch and follow each other, however, the result can be a bubble, in which prices rise far beyond any sensible estimate of value simply because everyone expects them to keep rising. The collapse that inevitably follows is a reminder that a crowd can be extraordinarily foolish when its members stop thinking for themselves."
+    },
+    {
+      "letter": "F",
+      "text": "Some organisations have tried to harness collective intelligence deliberately. So-called prediction markets allow participants to buy and sell contracts whose value depends on a future event, such as the result of an election, so that the price of a contract reflects the group's estimate of how likely that event is. Several technology companies have run internal markets in which employees bet on whether projects will be completed on time. These markets have sometimes proved more accurate than official forecasts, perhaps because employees with useful knowledge can contribute it anonymously, without having to contradict their managers in public."
+    },
+    {
+      "letter": "G",
+      "text": "It would be wrong, however, to conclude that crowds always outperform experts. For questions that require specialised knowledge, such as diagnosing a rare disease, the average opinion of a thousand untrained people is of little value. A crowd's judgement is only as good as the information its members possess, and averaging cannot create knowledge that nobody has. The most promising approaches, I believe, combine the two, for example by asking a number of experts to make independent estimates and then aggregating them, rather than allowing the most senior or most confident voice to dominate."
+    },
+    {
+      "letter": "H",
+      "text": "Galton himself drew a characteristically cautious conclusion from the Plymouth fair, suggesting that the result was more creditable to the trustworthiness of democratic judgement than might have been expected. More than a century later, that verdict still seems reasonable. Groups can be wise, but only when they are diverse, independent and properly organised. The challenge for any institution is not simply to consult more people, but to create the conditions in which their separate pieces of knowledge can be combined without being distorted along the way."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "an explanation of how errors made by individuals can be neutralised",
+          "a": "B",
+          "e": "Đoạn B, câu cuối: 'individual errors, if they are random, tend to cancel each other out' – sai số cá nhân triệt tiêu lẫn nhau → B."
+        },
+        {
+          "q": "an example of people sharing knowledge without needing to challenge their superiors openly",
+          "a": "F",
+          "e": "Đoạn F: nhân viên có thể đóng góp thông tin 'anonymously, without having to contradict their managers in public' → F."
+        },
+        {
+          "q": "the original expectation of a researcher before he examined some data",
+          "a": "A",
+          "e": "Đoạn A: Galton thu thập phiếu 'expecting to show how wildly inaccurate their guesses were' – kỳ vọng ban đầu của ông → A."
+        },
+        {
+          "q": "a situation in which a group's increased confidence was not justified",
+          "a": "D",
+          "e": "Đoạn D: thấy ý kiến người khác làm ước tính giống nhau hơn nhưng không chính xác hơn, lại khiến người tham gia tự tin hơn → sự tự tin không có cơ sở → D."
+        }
+      ]
+    },
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The need for people to judge independently is the condition most frequently ignored.",
+          "a": "YES",
+          "e": "Đoạn C: 'In my view, it is the second of these conditions that is most often overlooked' – điều kiện thứ hai chính là đưa ra phán đoán độc lập → YES."
+        },
+        {
+          "q": "Financial bubbles are caused mainly by a lack of available information.",
+          "a": "NO",
+          "e": "Đoạn E: bong bóng xảy ra khi nhà đầu tư 'begin to watch and follow each other', không phải do thiếu thông tin → trái ý tác giả → NO."
+        },
+        {
+          "q": "Prediction markets are likely to replace official forecasts in most companies.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn F chỉ nói thị trường dự đoán đôi khi chính xác hơn dự báo chính thức; tác giả không nói chúng sẽ thay thế dự báo chính thức ở hầu hết công ty → NOT GIVEN."
+        },
+        {
+          "q": "Averaging the views of many non-specialists can make up for a lack of expert knowledge.",
+          "a": "NO",
+          "e": "Đoạn G: 'averaging cannot create knowledge that nobody has' – với câu hỏi cần chuyên môn, ý kiến trung bình của người không chuyên ít giá trị → NO."
+        },
+        {
+          "q": "Organisations should prevent the most confident individuals from dominating group estimates.",
+          "a": "YES",
+          "e": "Đoạn G: tác giả ủng hộ gộp ước tính độc lập của chuyên gia 'rather than allowing the most senior or most confident voice to dominate' → YES."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "What does the writer say about the guesses collected by Galton?",
+          "options": [
+            "Most individuals guessed the weight correctly.",
+            "The cattle experts were more accurate than the crowd.",
+            "The middle value was very close to the true weight.",
+            "Galton had to pay visitors to take part."
+          ],
+          "a": 2,
+          "e": "Đoạn A: 'the middle value of all the guesses was within one per cent of the true weight', chính xác hơn hầu hết chuyên gia gia súc. Khách tham gia trả phí chứ không được trả tiền."
+        },
+        {
+          "q": "The example of contestants who could ask the studio audience to vote shows that",
+          "options": [
+            "audiences enjoy taking part in programmes.",
+            "a large group answered more accurately than individual friends.",
+            "contestants rarely needed any help.",
+            "telephone advice was correct nine times out of ten."
+          ],
+          "a": 1,
+          "e": "Đoạn B: khán giả trường quay đúng khoảng chín trên mười lần, 'a far better record than that of the friends contestants could telephone' → nhóm lớn chính xác hơn bạn bè từng người."
+        },
+        {
+          "q": "In the 2011 experiment carried out at a Swiss university, seeing other people's estimates",
+          "options": [
+            "made participants' answers more accurate.",
+            "reduced participants' confidence.",
+            "made the answers more varied.",
+            "made the answers more alike without improving them."
+          ],
+          "a": 3,
+          "e": "Đoạn D: 'Exposure to other people's views made the estimates more similar, but not more accurate' → giống nhau hơn mà không cải thiện độ chính xác."
+        },
+        {
+          "q": "What is the main purpose of the final paragraph?",
+          "options": [
+            "to suggest that Galton's conclusion is still valid with conditions",
+            "to criticise Galton's attitude towards ordinary people",
+            "to recommend that institutions consult more people",
+            "to describe a new experiment at Plymouth"
+          ],
+          "a": 0,
+          "e": "Đoạn H: kết luận của Galton 'still seems reasonable', nhưng nhóm chỉ khôn ngoan khi đa dạng, độc lập và được tổ chức tốt. Tác giả nói rõ thách thức 'is not simply to consult more people'."
+        }
+      ]
+    }
+  ]
+}

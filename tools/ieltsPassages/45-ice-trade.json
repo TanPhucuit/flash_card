@@ -1,0 +1,138 @@
+{
+  "title": "The Frozen Water Trade",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử thương mại thế kỷ 19.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In the early nineteenth century, the idea that anyone would pay for frozen water seemed absurd to most people. Ice formed naturally on the ponds and lakes of New England every winter and melted away every spring, and nobody imagined that it could be harvested, stored and sold in the tropics. Yet within a few decades, ice from Massachusetts was being shipped to the Caribbean, South America, India and China, and the ice trade had become a major industry employing thousands of people. Its story is a remarkable example of how persistence and practical invention can create a market where none existed before. His achievement eventually earned Tudor the nickname ‘the Ice King’."
+    },
+    {
+      "letter": "B",
+      "text": "The man most responsible was Frederic Tudor, the son of a wealthy Boston family. In 1806 he sent a ship loaded with ice to the Caribbean island of Martinique, believing that people in hot climates would be eager to buy it. The venture was a failure. Much of the cargo melted before it could be sold, local people did not know what to do with ice, and there were no proper buildings in which to store it. Tudor lost a great deal of money, and over the following years his debts grew so large that he was imprisoned more than once. He nevertheless refused to give up."
+    },
+    {
+      "letter": "C",
+      "text": "Tudor's eventual success depended on solving the problem of melting. Through years of trial and error, he found that sawdust, a waste product available almost free from timber mills, was an excellent insulator. Ice packed in sawdust in the hold of a ship, or stored in thick-walled buildings known as ice houses, could last for months. He also built ice houses at his overseas markets and set about creating demand, offering free ice to bar owners so that they could serve cold drinks and encouraging hospitals and wealthy households to use it for preserving food."
+    },
+    {
+      "letter": "D",
+      "text": "Another key innovation came from one of Tudor's suppliers, Nathaniel Wyeth, who in the 1820s invented a horse-drawn device for cutting ice. Instead of being hacked out in irregular lumps, ice could now be cut into large blocks of uniform size. Uniform blocks could be packed tightly together with little space between them, which reduced melting, and they could be loaded and unloaded far more quickly. Harvesting became a highly organised activity, carried out by large teams of workers on frozen lakes during the coldest weeks of winter. A single large lake could yield many thousands of tonnes of ice in one winter."
+    },
+    {
+      "letter": "E",
+      "text": "The most astonishing achievement of the trade was the shipment of ice to India. In 1833, a ship carrying around 180 tonnes of ice left Boston for Calcutta, a voyage of some four months that crossed the equator twice. Remarkably, about two-thirds of the cargo survived the journey. The ice was a sensation among the British residents of the city, and for decades afterwards regular shipments from New England supplied ice to India, where it was valued not only for cooling drinks but also for treating patients suffering from fever."
+    },
+    {
+      "letter": "F",
+      "text": "At home, the trade transformed the American diet. Ice allowed fresh meat, fish, milk and vegetables to be stored for longer and transported over greater distances, and by the middle of the century many ordinary households had an icebox, a wooden cabinet lined with metal in which a block of ice kept food cool. The meat-packing industry in particular depended on ice to send products from the Midwest to cities on the east coast in refrigerated railway wagons. Ice also made cold drinks and ice cream available in summer, luxuries that had once been enjoyed only by the very rich."
+    },
+    {
+      "letter": "G",
+      "text": "The trade eventually fell victim to the very demand it had created. Natural ice depended on the weather, and in unusually warm winters the harvest failed, causing shortages and sharp rises in prices. As cities grew, concern also increased about pollution in the lakes from which ice was cut. Meanwhile, engineers were developing machines that could manufacture ice artificially and, later, refrigerators that kept food cool without ice at all. By the early twentieth century, the frozen water trade was in rapid decline, but the habits of refrigeration it had established were permanent."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Tudor's first shipment of ice made a large profit.",
+          "a": "FALSE",
+          "e": "Đoạn B: chuyến hàng năm 1806 'was a failure', phần lớn băng tan và Tudor mất rất nhiều tiền → FALSE."
+        },
+        {
+          "q": "Sawdust was cheap because timber mills regarded it as waste.",
+          "a": "TRUE",
+          "e": "Đoạn C: mùn cưa là 'a waste product available almost free from timber mills' → TRUE."
+        },
+        {
+          "q": "Wyeth's cutting device was later adopted in Europe.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn D mô tả thiết bị cắt băng của Wyeth và lợi ích của nó, nhưng không nói có được dùng ở châu Âu hay không → NOT GIVEN."
+        },
+        {
+          "q": "Most of the ice sent to Calcutta in 1833 melted before arrival.",
+          "a": "FALSE",
+          "e": "Đoạn E: khoảng hai phần ba lượng hàng còn nguyên khi tới nơi; phần tan chỉ khoảng một phần ba → FALSE."
+        },
+        {
+          "q": "In India, ice was used for medical as well as domestic purposes.",
+          "a": "TRUE",
+          "e": "Đoạn E: băng được quý không chỉ để làm mát đồ uống 'but also for treating patients suffering from fever' → TRUE."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "form": "flow-chart",
+      "title": "How natural ice reached distant customers",
+      "words": [
+        "blocks",
+        "sawdust",
+        "ice houses",
+        "horses",
+        "salt",
+        "lumps",
+        "drinks",
+        "factories",
+        "fever"
+      ],
+      "items": [
+        {
+          "q": "In winter, ice on frozen lakes was cut into uniform ______ ↓",
+          "a": 0,
+          "e": "Đoạn D: băng được cắt 'into large blocks of uniform size' → blocks. 'lumps' là cách làm cũ (khối không đều) – bẫy."
+        },
+        {
+          "q": "Ice packed in ______ in the hold of a ship lasted for months ↓",
+          "a": 1,
+          "e": "Đoạn C: băng 'packed in sawdust' trong khoang tàu có thể giữ hàng tháng → sawdust."
+        },
+        {
+          "q": "On arrival, it was kept in thick-walled ______ ↓",
+          "a": 2,
+          "e": "Đoạn C: Tudor xây 'ice houses at his overseas markets' – nhà tường dày để trữ băng → ice houses."
+        },
+        {
+          "q": "Bar owners were given free ice so that they could offer cold ______",
+          "a": 6,
+          "e": "Đoạn C: tặng băng cho chủ quán bar 'so that they could serve cold drinks' → drinks."
+        }
+      ]
+    },
+    {
+      "kind": "endings",
+      "endings": [
+        "because they could be packed tightly and handled quickly.",
+        "kept food cool using a block of ice.",
+        "because warm winters caused harvests to fail.",
+        "because people did not know how to use ice.",
+        "because the ice was too expensive for hospitals.",
+        "was more popular in India than in America.",
+        "because ships could not cross the equator."
+      ],
+      "items": [
+        {
+          "q": "Tudor's sales in Martinique were poor partly",
+          "a": 3,
+          "e": "Đoạn B: một lý do thất bại là 'local people did not know what to do with ice' → vì người dân không biết dùng băng."
+        },
+        {
+          "q": "Blocks of uniform size were an advantage",
+          "a": 0,
+          "e": "Đoạn D: khối đều có thể xếp sát nhau, giảm tan và bốc dỡ nhanh hơn → vì xếp chặt và xử lý nhanh."
+        },
+        {
+          "q": "An icebox was a wooden cabinet lined with metal that",
+          "a": 1,
+          "e": "Đoạn F: icebox là tủ gỗ lót kim loại 'in which a block of ice kept food cool' → giữ lạnh thức ăn bằng một khối băng."
+        },
+        {
+          "q": "Ice sometimes became scarce and expensive",
+          "a": 2,
+          "e": "Đoạn G: 'in unusually warm winters the harvest failed, causing shortages and sharp rises in prices' → vì mùa đông ấm khiến vụ thu hoạch thất bát."
+        }
+      ]
+    }
+  ]
+}

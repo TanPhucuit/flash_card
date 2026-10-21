@@ -1,0 +1,147 @@
+{
+  "title": "The Long Road to Bicycle Sharing",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử giao thông đô thị và các báo cáo về hệ thống xe đạp công cộng.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Today, more than a thousand cities around the world operate bicycle-sharing schemes, allowing residents and visitors to pick up a bicycle in one place and leave it in another for a small fee. The idea seems simple, yet it took several decades of experiments, failures and technological change before it worked reliably. The history of bicycle sharing is a useful reminder that a good idea is not enough on its own; it must also be designed in a way that takes account of how people actually behave."
+    },
+    {
+      "letter": "B",
+      "text": "The first scheme was launched in Amsterdam in 1965 by a group of young activists who wanted to reduce the number of cars in the city centre. They painted a number of ordinary bicycles white and left them unlocked on the streets for anyone to use free of charge. The experiment ended almost immediately. Many of the bicycles were stolen or thrown into canals, and the police removed the rest on the grounds that unlocked bicycles encouraged theft. Although it failed in practice, the White Bicycle Plan became famous as a symbol of an alternative way of organising city transport."
+    },
+    {
+      "letter": "C",
+      "text": "Copenhagen made a more durable attempt in 1995. Its scheme used specially designed bicycles with solid tyres and unusual parts that would be of little use to thieves, and they could be released from city-centre stands by inserting a coin, in the same way that shoppers release supermarket trolleys. The coin was returned when the bicycle was brought back. The system was popular, but because users remained anonymous, there was little to stop people from keeping bicycles for days or abandoning them far from the stands, and many were lost or damaged."
+    },
+    {
+      "letter": "D",
+      "text": "The solution to the problem of anonymity came with information technology. In the late 1990s and 2000s, cities began to introduce schemes in which users registered in advance and released bicycles with an electronic card. Because every journey could be linked to a particular person, users had a strong incentive to return bicycles on time and in good condition. The most influential of these systems opened in Paris in 2007. Operated by an advertising company in return for the right to use public advertising space, it provided around twenty thousand bicycles at stations spread across the city."
+    },
+    {
+      "letter": "E",
+      "text": "The Paris model was copied widely, but station-based systems are expensive to build. Each station requires a site, a payment terminal and a set of docks, and vehicles must constantly move bicycles from stations that have filled up to stations that have run out. In the middle of the 2010s, a new generation of companies, many of them based in China, offered an alternative: dockless bicycles fitted with GPS and electronic locks that could be found and unlocked using a smartphone app and left anywhere at the end of the journey."
+    },
+    {
+      "letter": "F",
+      "text": "Dockless bicycles spread with extraordinary speed, supported by huge sums of investment. Within a couple of years, millions had been placed on the streets of Chinese cities, often far more than anyone needed. Pavements became blocked, and photographs of enormous ‘bicycle graveyards’, where thousands of unwanted bicycles had been piled up by city authorities, circulated around the world. Several of the companies collapsed, leaving customers unable to recover their deposits, and many cities introduced strict limits on the number of bicycles that operators were allowed to provide."
+    },
+    {
+      "letter": "G",
+      "text": "What have bicycle-sharing schemes actually achieved? Research suggests that their benefits are real but sometimes different from what their supporters expected. Many trips made on shared bicycles replace journeys that would otherwise have been made on foot or by public transport, rather than by car, so the reduction in traffic is often modest. On the other hand, the schemes encourage physical activity, help people complete the short distance between a railway station and their final destination, and can make cycling seem normal in cities where it was previously rare."
+    },
+    {
+      "letter": "H",
+      "text": "The latest development is the electric bicycle, which allows riders to travel further and to climb hills without arriving exhausted. Many schemes now offer electric models alongside conventional ones, and they have proved especially popular with older users and commuters. Sixty years after the white bicycles disappeared from the streets of Amsterdam, the idea that inspired them has finally become part of everyday life in cities around the world."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "a reference to people losing money they had paid in advance",
+          "a": "F",
+          "e": "Đoạn F: nhiều công ty sụp đổ, 'leaving customers unable to recover their deposits' – khách mất tiền đặt cọc → F."
+        },
+        {
+          "q": "a description of bicycles designed to be unattractive to thieves",
+          "a": "C",
+          "e": "Đoạn C: xe đạp Copenhagen có lốp đặc và bộ phận đặc biệt 'that would be of little use to thieves' → C."
+        },
+        {
+          "q": "the costs involved in running a system with fixed stations",
+          "a": "E",
+          "e": "Đoạn E: mỗi trạm cần mặt bằng, máy thanh toán, giá đỗ, và xe tải phải liên tục chuyển xe giữa các trạm → E."
+        },
+        {
+          "q": "an explanation of why being able to identify users improved behaviour",
+          "a": "D",
+          "e": "Đoạn D: mỗi chuyến đi gắn với một người cụ thể, nên người dùng có động lực trả xe đúng hạn, nguyên vẹn → D."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "table",
+      "limit": "NO MORE THAN TWO WORDS",
+      "title": "Generations of bicycle sharing",
+      "items": [
+        {
+          "q": "Amsterdam, 1965 – bicycles painted white and left ______ – most stolen or removed by police",
+          "a": "unlocked",
+          "e": "Đoạn B: xe sơn trắng được để 'unlocked on the streets for anyone to use' → unlocked."
+        },
+        {
+          "q": "Copenhagen, 1995 – released from city-centre stands by inserting a ______ – users anonymous, many bicycles lost",
+          "a": "coin",
+          "e": "Đoạn C: xe được mở 'by inserting a coin', như xe đẩy siêu thị → coin."
+        },
+        {
+          "q": "Paris, 2007 – released with an ______ – run by an advertising company",
+          "a": "electronic card",
+          "e": "Đoạn D: người dùng đăng ký trước và mở xe 'with an electronic card' → electronic card."
+        },
+        {
+          "q": "Dockless schemes, mid-2010s – located and unlocked with a ______ – far too many bicycles",
+          "a": "smartphone app",
+          "e": "Đoạn E: xe không trạm có GPS và khóa điện tử, tìm và mở 'using a smartphone app' → smartphone app."
+        },
+        {
+          "q": "Recent schemes – ______ models popular with older users and commuters",
+          "a": "electric",
+          "e": "Đoạn H: nhiều hệ thống có xe đạp điện, 'especially popular with older users and commuters' → electric."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "What does the writer say about the White Bicycle Plan?",
+          "options": [
+            "It operated successfully for several years.",
+            "It became well known despite failing quickly.",
+            "It was organised by the Amsterdam police.",
+            "It required users to pay a small fee."
+          ],
+          "a": 1,
+          "e": "Đoạn B: thí nghiệm kết thúc gần như ngay lập tức nhưng 'became famous as a symbol of an alternative way of organising city transport' → nổi tiếng dù thất bại nhanh."
+        },
+        {
+          "q": "What was the main weakness of the Copenhagen scheme?",
+          "options": [
+            "Its bicycles were too expensive to make.",
+            "Users could not be traced if they misused bicycles.",
+            "There were not enough stands in the city centre.",
+            "The coins were often stolen from the stands."
+          ],
+          "a": 1,
+          "e": "Đoạn C: vì người dùng ẩn danh, không có gì ngăn họ giữ xe nhiều ngày hoặc bỏ xe xa trạm → không truy được người dùng sai."
+        },
+        {
+          "q": "Why did many cities limit the number of dockless bicycles?",
+          "options": [
+            "Operators had placed far more bicycles than were needed.",
+            "The bicycles were more dangerous than older models.",
+            "Residents preferred station-based schemes.",
+            "The GPS systems did not work reliably."
+          ],
+          "a": 0,
+          "e": "Đoạn F: hàng triệu xe được đặt trên phố, 'often far more than anyone needed', vỉa hè bị chắn, nên các thành phố đặt giới hạn."
+        },
+        {
+          "q": "According to research, shared bicycles most often replace",
+          "options": [
+            "private car journeys.",
+            "trips made by taxi.",
+            "walking or travel by public transport.",
+            "journeys on electric scooters."
+          ],
+          "a": 2,
+          "e": "Đoạn G: nhiều chuyến xe đạp chung thay thế những chuyến lẽ ra đi bộ hoặc đi phương tiện công cộng, 'rather than by car'."
+        }
+      ]
+    }
+  ]
+}

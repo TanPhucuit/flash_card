@@ -1,0 +1,131 @@
+{
+  "title": "The World Inside Us",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu y sinh học về hệ vi sinh vật đường ruột đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Each of us carries around a vast population of microscopic organisms. Bacteria, viruses, fungi and other microbes live on our skin, in our mouths and, above all, in our intestines, where tens of trillions of them form what scientists call the gut microbiome. For most of the twentieth century, bacteria were regarded mainly as causes of disease, to be eliminated wherever possible. Today, researchers increasingly see the microbes in our gut as partners, essential to our health, and the study of the microbiome has become one of the fastest-growing fields in biology."
+    },
+    {
+      "letter": "B",
+      "text": "A frequently quoted claim holds that bacterial cells in the human body outnumber human cells by ten to one. This figure, based on rough estimates made in the 1970s, was repeated for decades in textbooks and articles. In 2016, however, a team of researchers including Ron Milo recalculated the numbers using more accurate data on the volume of the colon and the number of red blood cells in the body, and concluded that the ratio is closer to one to one. Even so, the bacteria in our bodies contain far more genes than we do, which greatly expands the range of chemical tasks that the combined human and microbial system can perform."
+    },
+    {
+      "letter": "C",
+      "text": "Those tasks are numerous. Gut bacteria break down dietary fibre that our own enzymes cannot digest, producing substances that nourish the cells lining the colon and help to regulate inflammation. Some bacteria manufacture vitamins, including vitamin K. The microbiome also plays a key role in training the immune system, helping it to distinguish between harmless substances and genuine threats. Experiments with mice raised in completely sterile conditions, without any microbes, have shown that such animals develop abnormal immune systems and are more vulnerable to some infections."
+    },
+    {
+      "letter": "D",
+      "text": "Our microbial communities begin to form at birth. Babies born naturally are first colonised by bacteria from their mothers, while those born by caesarean section initially acquire different microbes, many of them from the skin and the hospital environment. Breast milk contains complex sugars that babies cannot digest but that feed particular beneficial bacteria. Over the first few years of life, the microbiome becomes more diverse and stable, shaped by diet, environment and contact with other people and animals. Courses of antibiotics, especially in early childhood, can disturb this process, sometimes for months."
+    },
+    {
+      "letter": "E",
+      "text": "Some of the most intriguing research has linked the microbiome to body weight. In one experiment, the biologist Jeffrey Gordon and his colleagues took gut bacteria from pairs of human twins in which one twin was obese and the other was not, and transferred them into mice raised without microbes. Mice that received bacteria from the obese twins gained more fat than those that received bacteria from the lean twins, even though both groups ate the same food. The results suggested that gut microbes can influence how much energy is extracted from food and stored in the body."
+    },
+    {
+      "letter": "F",
+      "text": "The way people live also appears to shape their microbes. Studies by Justin and Erica Sonnenburg and others of the Hadza, a community of hunter-gatherers in Tanzania, found that their gut microbiomes are considerably more diverse than those of people in industrialised countries, and that they change with the seasons as the Hadza diet shifts between foods such as meat, berries and honey. Some researchers suspect that modern diets low in fibre, together with widespread use of antibiotics, have reduced the diversity of microbes in the West, with possible consequences for health."
+    },
+    {
+      "letter": "G",
+      "text": "Turning such findings into medical treatments has proved more difficult than early enthusiasm suggested. One clear success is the treatment of a serious and recurrent intestinal infection by transferring gut bacteria from a healthy donor, which has cured large numbers of patients for whom antibiotics had repeatedly failed. Evidence for many other interventions is weaker. Probiotic supplements are widely sold, yet their benefits for healthy people remain uncertain, and a study led by Eran Elinav found that taking probiotics after a course of antibiotics actually delayed the return of patients' original gut bacteria."
+    },
+    {
+      "letter": "H",
+      "text": "Researchers also warn that much of the evidence comes from studies in mice, whose biology differs from ours in important ways, and that it is often difficult to tell whether changes in the microbiome cause disease or are caused by it. The microbiome is unquestionably important, but scientists are only beginning to understand how to influence it safely and effectively."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Scientists once believed that bacteria were mostly harmful.",
+          "a": "TRUE",
+          "e": "Đoạn A: suốt phần lớn thế kỷ 20, vi khuẩn bị coi chủ yếu là nguyên nhân gây bệnh, cần loại bỏ → TRUE."
+        },
+        {
+          "q": "The human body contains about ten times as many bacterial cells as human cells.",
+          "a": "FALSE",
+          "e": "Đoạn B: tính toán lại năm 2016 cho thấy tỷ lệ 'closer to one to one'; con số mười trên một là ước tính cũ không chính xác → FALSE."
+        },
+        {
+          "q": "Bacteria in the gut break down fibre that our own enzymes cannot digest.",
+          "a": "TRUE",
+          "e": "Đoạn C: vi khuẩn phân giải chất xơ 'that our own enzymes cannot digest' → TRUE."
+        },
+        {
+          "q": "Babies born by caesarean section never develop a normal microbiome.",
+          "a": "FALSE",
+          "e": "Đoạn D: trẻ sinh mổ 'initially acquire different microbes' – chỉ ban đầu khác; hệ vi sinh trở nên đa dạng, ổn định dần trong vài năm đầu. Câu nói 'không bao giờ' là quá mức → FALSE."
+        },
+        {
+          "q": "The Hadza eat more fibre than any other community studied.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn F nói hệ vi sinh của người Hadza đa dạng hơn và thay đổi theo mùa, nhưng không so sánh lượng chất xơ họ ăn với mọi cộng đồng khác → NOT GIVEN."
+        },
+        {
+          "q": "Transferring bacteria from a healthy donor has helped patients with a recurring infection.",
+          "a": "TRUE",
+          "e": "Đoạn G: chuyển vi khuẩn đường ruột từ người cho khỏe mạnh đã chữa khỏi nhiều bệnh nhân bị nhiễm trùng đường ruột tái phát → TRUE."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "Researchers",
+      "singular": "researcher",
+      "people": [
+        "Ron Milo and colleagues",
+        "Jeffrey Gordon and colleagues",
+        "Justin and Erica Sonnenburg",
+        "Eran Elinav"
+      ],
+      "items": [
+        {
+          "q": "found that a popular treatment may slow the recovery of a person's own bacteria",
+          "a": 3,
+          "e": "Đoạn G: nghiên cứu của Eran Elinav cho thấy uống men vi sinh sau kháng sinh lại làm chậm sự trở lại của vi khuẩn vốn có → Eran Elinav."
+        },
+        {
+          "q": "corrected a widely repeated figure using better measurements",
+          "a": 0,
+          "e": "Đoạn B: nhóm có Ron Milo tính lại bằng dữ liệu chính xác hơn và sửa con số mười trên một thành gần một trên một → Ron Milo and colleagues."
+        },
+        {
+          "q": "studied how a community's gut bacteria changed throughout the year",
+          "a": 2,
+          "e": "Đoạn F: nghiên cứu về người Hadza thấy hệ vi sinh 'change with the seasons' → Justin and Erica Sonnenburg."
+        },
+        {
+          "q": "showed that microbes from different people could affect weight gain in animals",
+          "a": 1,
+          "e": "Đoạn E: chuột nhận vi khuẩn từ người song sinh béo phì tăng mỡ nhiều hơn → Jeffrey Gordon and colleagues."
+        }
+      ]
+    },
+    {
+      "kind": "mcq3",
+      "items": [
+        {
+          "q": "Which THREE functions of gut bacteria are mentioned in the passage?",
+          "options": [
+            "helping to control inflammation",
+            "producing certain vitamins",
+            "teaching the immune system to recognise threats",
+            "repairing damaged nerve cells",
+            "removing alcohol from the blood",
+            "controlling the growth of bones",
+            "producing red blood cells"
+          ],
+          "a": [
+            0,
+            1,
+            2
+          ],
+          "e": "Đoạn C: vi khuẩn tạo ra chất 'help to regulate inflammation', sản xuất vitamin (vitamin K), và 'training the immune system' để phân biệt chất vô hại với mối đe dọa thật. Các chức năng còn lại không có trong bài (đoạn B nhắc hồng cầu chỉ để tính tỷ lệ tế bào)."
+        }
+      ]
+    }
+  ]
+}

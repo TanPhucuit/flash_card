@@ -1,0 +1,133 @@
+{
+  "title": "How the Supermarket Was Invented",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử ngành bán lẻ.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "For most people in wealthy countries, the weekly visit to the supermarket is such a routine part of life that it is hard to imagine shopping any other way. Yet the supermarket is barely a century old. Until the early twentieth century, buying food was a slow, personal and often time-consuming activity. Customers handed a list to a clerk standing behind a counter, who then fetched each item from shelves the customer could not reach, weighed and wrapped it, and added up the bill. Shopping for a family could take an entire morning. Many basic foods, such as flour, sugar and biscuits, were sold loose from large containers rather than in branded packets."
+    },
+    {
+      "letter": "B",
+      "text": "The first important break with this system came in 1916 in Memphis, Tennessee, when a grocer named Clarence Saunders opened a store called Piggly Wiggly. Saunders allowed customers to walk through the aisles and select goods for themselves, using a basket to carry them to a cashier at the exit. Every product was marked with its price, so no clerk was needed to quote it. The design reduced the number of staff a store required and allowed it to charge lower prices. Saunders patented the layout and later franchised it to other shopkeepers, and within a few years there were hundreds of Piggly Wiggly stores across the United States."
+    },
+    {
+      "letter": "C",
+      "text": "Self-service was only one ingredient of the modern supermarket; size was another. In 1930, a former grocery manager named Michael Cullen opened a store in an old garage in New York, where he combined self-service with a very large range of goods, low prices and space for customers to park their cars. Cullen's idea was to sell enormous quantities at a small profit on each item, and his advertisements promised to save shoppers money at a time when the Great Depression made every cent count. Many historians regard his store as the first true supermarket."
+    },
+    {
+      "letter": "D",
+      "text": "Larger shops created a new problem: customers could buy only as much as they could carry in a basket. In 1937, Sylvan Goldman, the owner of a chain of grocery stores in Oklahoma, solved it by fixing two baskets to a folding frame on wheels. To his surprise, shoppers at first refused to use the new trolley. Men felt that pushing it made them look weak, while women complained that it reminded them of a baby carriage. Goldman eventually hired models to push trolleys around his stores, demonstrating how convenient they were, and the invention soon became universal."
+    },
+    {
+      "letter": "E",
+      "text": "The supermarket spread more slowly outside the United States. In Britain, wartime rationing and shortages delayed its arrival, and self-service stores did not become common until the 1950s. Even then, many customers were suspicious of the new system. Some were embarrassed to be seen carrying their own shopping, which they associated with poverty, and others missed the conversation and advice they had enjoyed with shop assistants. Shopkeepers, meanwhile, feared that allowing customers to handle goods freely would lead to an increase in theft."
+    },
+    {
+      "letter": "F",
+      "text": "Technology continued to transform the industry. On a summer morning in 1974, at a supermarket in the small town of Troy, Ohio, a cashier passed a packet of chewing gum over a scanner, the first time a product with a barcode had been sold in a shop. The system allowed prices to be read automatically and gave retailers detailed information about what was selling and when. Within two decades, barcodes were printed on almost every packaged product, and supermarkets could manage their stock with a precision that would once have been unimaginable. Early scanners were expensive, however, and many retailers were slow to install them until manufacturers had begun printing codes on their packaging."
+    },
+    {
+      "letter": "G",
+      "text": "The rise of the supermarket was not good news for everyone. Small independent grocers, unable to match the prices of large chains, closed in great numbers, and in many countries shopping moved from town centres to large stores on the edge of towns that could be reached only by car. Critics argue that this pattern has weakened local communities and encouraged unhealthy diets based on processed food. Today, the growth of online shopping and home delivery suggests that the supermarket itself may be about to undergo another transformation."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "Letting customers serve themselves",
+          "para": "B"
+        },
+        {
+          "text": "Combining scale with low prices",
+          "para": "C"
+        },
+        {
+          "text": "An invention that shoppers initially rejected",
+          "para": "D"
+        },
+        {
+          "text": "Reasons for a cautious welcome abroad",
+          "para": "E"
+        },
+        {
+          "text": "Some negative effects on towns and diets",
+          "para": "G"
+        },
+        {
+          "text": "The decline of home delivery services",
+          "para": null
+        },
+        {
+          "text": "How supermarkets set their prices",
+          "para": null
+        },
+        {
+          "text": "Training staff in a new kind of shop",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: Piggly Wiggly cho khách tự đi giữa các lối, tự chọn hàng → để khách tự phục vụ: {h}. Đoạn nhắc giá được ghi sẵn nhưng không giải thích cách định giá, nên không phải {i:6}.",
+        "C": "Đoạn C: Michael Cullen kết hợp tự phục vụ với cửa hàng rất lớn, nhiều mặt hàng, giá thấp → kết hợp quy mô với giá rẻ: {h}.",
+        "D": "Đoạn D: xe đẩy của Sylvan Goldman ban đầu bị khách từ chối dùng → phát minh lúc đầu bị người mua từ chối: {h}.",
+        "E": "Đoạn E: ở Anh, khách nghi ngại (xấu hổ khi tự xách đồ, nhớ trò chuyện với nhân viên), chủ cửa hàng sợ trộm → lý do tiếp nhận dè dặt ở nước ngoài: {h}.",
+        "G": "Đoạn G: cửa hàng nhỏ đóng cửa, mua sắm dời ra ngoại ô, chế độ ăn kém lành mạnh → một số tác động tiêu cực tới thị trấn và chế độ ăn: {h}. Đoạn nhắc giao hàng tận nhà đang PHÁT TRIỂN, nên {i:5} sai."
+      }
+    },
+    {
+      "kind": "gap",
+      "form": "table",
+      "limit": "NO MORE THAN TWO WORDS",
+      "title": "Innovations in food retailing",
+      "items": [
+        {
+          "q": "1916, Memphis – Piggly Wiggly: shoppers select goods and pay a ______ at the exit",
+          "a": "cashier",
+          "e": "Đoạn B: khách dùng giỏ mang hàng 'to a cashier at the exit' → cashier."
+        },
+        {
+          "q": "1930, New York – Cullen's store, opened in an old ______, offered parking and low prices",
+          "a": "garage",
+          "e": "Đoạn C: Cullen mở cửa hàng 'in an old garage in New York' → garage."
+        },
+        {
+          "q": "1937, Oklahoma – Goldman fixed two baskets to a folding frame on ______",
+          "a": "wheels",
+          "e": "Đoạn D: Goldman gắn hai giỏ 'to a folding frame on wheels' → wheels."
+        },
+        {
+          "q": "1974, Troy, Ohio – first barcode scanned, on a packet of ______",
+          "a": "chewing gum",
+          "e": "Đoạn F: thu ngân quét 'a packet of chewing gum', lần đầu tiên một sản phẩm có mã vạch được bán → chewing gum."
+        }
+      ]
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Before self-service, customers usually collected goods from the shelves themselves.",
+          "a": "FALSE",
+          "e": "Đoạn A: nhân viên đứng sau quầy lấy từng món 'from shelves the customer could not reach' – khách không tự lấy → FALSE."
+        },
+        {
+          "q": "Clarence Saunders sold the rights to use his store design to other retailers.",
+          "a": "TRUE",
+          "e": "Đoạn B: Saunders đăng ký bằng sáng chế cách bố trí 'and later franchised it to other shopkeepers' – nhượng quyền cho chủ cửa hàng khác → TRUE."
+        },
+        {
+          "q": "Michael Cullen's store was more profitable than Piggly Wiggly.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C nói Cullen bán số lượng lớn với lãi nhỏ mỗi món, nhưng không so sánh lợi nhuận với Piggly Wiggly → NOT GIVEN."
+        },
+        {
+          "q": "Some shoppers felt embarrassed to be seen carrying their own shopping because it suggested poverty.",
+          "a": "TRUE",
+          "e": "Đoạn E: một số người xấu hổ khi bị thấy tự xách đồ, 'which they associated with poverty' → TRUE."
+        }
+      ]
+    }
+  ]
+}

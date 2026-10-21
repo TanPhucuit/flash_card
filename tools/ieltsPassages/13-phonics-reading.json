@@ -1,0 +1,125 @@
+{
+  "title": "Teaching Children to Read",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ chính sách giáo dục và các nghiên cứu về dạy đọc đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Few questions in education have provoked arguments as bitter as the apparently simple matter of how children should be taught to read. For much of the last century, teachers, researchers and politicians in the English-speaking world fought what came to be called the ‘reading wars’. On one side stood supporters of phonics, who believed that children should be taught explicitly how letters and groups of letters correspond to sounds. On the other were advocates of approaches that emphasised meaning, enjoyment and exposure to real books, and who argued that reading would develop naturally, much as speech does, if children were surrounded by stories."
+    },
+    {
+      "letter": "B",
+      "text": "The second view has an obvious appeal. It treats children as active learners, places stories rather than drills at the centre of the classroom, and promises to protect the pleasure of reading. In some versions, children were encouraged to work out unfamiliar words by looking at the pictures, considering what would make sense in the sentence, or recognising the shape of familiar words. Yet I believe this approach rests on a misunderstanding. Speech is something that humans have done for tens of thousands of years and that every child acquires without formal teaching; writing is a recent cultural invention, and very few children work out its code entirely on their own."
+    },
+    {
+      "letter": "C",
+      "text": "The scientific evidence, accumulated over several decades, points strongly in one direction. In 2000, a panel commissioned by the United States Congress reviewed a large body of experimental research and concluded that systematic instruction in phonics produced significant benefits, especially for young children and for those at risk of reading difficulties. Studies of the brain have reached a similar conclusion: skilled readers do not guess words from context but process the letters within them rapidly and automatically, a skill that depends on a secure knowledge of how spelling represents sound."
+    },
+    {
+      "letter": "D",
+      "text": "England offers a large-scale test of these ideas. Following an official review in 2006, schools were expected to teach systematic synthetic phonics, an approach in which children learn the sounds associated with letters and practise blending them together to read words. In 2012 the government introduced a short check for six-year-olds, in which each child reads forty words aloud to a teacher. Some of these are invented ‘alien’ words, included to ensure that children are decoding rather than recognising words they have memorised. The proportion of pupils reaching the expected standard rose from just over half in the first year to more than eighty per cent within seven years. The check has been held almost every year since, with only brief disruption during the pandemic."
+    },
+    {
+      "letter": "E",
+      "text": "Critics have raised reasonable objections. Some teachers complain that the check takes time away from other activities and that the invented words confuse able readers, who may try to turn them into real ones. Others point out that success in decoding does not guarantee that children understand what they read or that they will choose to read for pleasure, which surveys suggest is declining among older children. These concerns deserve to be taken seriously, but they are arguments for teaching more than phonics, not for teaching less of it."
+    },
+    {
+      "letter": "F",
+      "text": "In the United States, the debate was reignited in 2022 by a widely discussed series of radio programmes investigating popular classroom materials. The programmes argued that many schools had continued to teach children to guess words from pictures and context, methods that research had long since discredited, and that the consequences fell most heavily on children from poorer families, who were least likely to receive extra help at home. Since then, a number of states have passed laws requiring schools to base reading instruction on scientific evidence, and some publishers have revised their materials."
+    },
+    {
+      "letter": "G",
+      "text": "None of this means that stories and enjoyment should be pushed aside. Phonics teaches children how to unlock the words on the page, but understanding a text also depends on vocabulary, background knowledge and the habit of reading widely, and these are built through exactly the rich exposure to books that the other side of the reading wars always championed. The sensible conclusion is that phonics is necessary but not sufficient. A child who cannot decode will never become a confident reader; a child who can decode but has never been given a reason to read may not become one either."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "Learning to read is a natural process in the same way as learning to speak.",
+          "a": "NO",
+          "e": "Đoạn B: tác giả cho rằng quan điểm này 'rests on a misunderstanding'; nói là bản năng còn chữ viết là phát minh văn hóa gần đây, rất ít trẻ tự giải được mã của nó → NO."
+        },
+        {
+          "q": "Skilled readers rely mainly on context to identify words.",
+          "a": "NO",
+          "e": "Đoạn C: 'skilled readers do not guess words from context but process the letters within them rapidly and automatically' → trái với câu → NO."
+        },
+        {
+          "q": "The phonics check has been more successful in England than similar tests in other countries.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn D nói tỷ lệ đạt chuẩn ở Anh tăng, nhưng tác giả không so sánh với các bài kiểm tra tương tự ở nước khác → NOT GIVEN."
+        },
+        {
+          "q": "Concerns about reading for pleasure justify reducing the time spent on phonics.",
+          "a": "NO",
+          "e": "Đoạn E: những lo ngại đó 'are arguments for teaching more than phonics, not for teaching less of it' – không biện minh cho việc giảm phonics → NO."
+        },
+        {
+          "q": "Background knowledge plays an important part in understanding a text.",
+          "a": "YES",
+          "e": "Đoạn G: hiểu văn bản 'also depends on vocabulary, background knowledge and the habit of reading widely' → YES."
+        }
+      ]
+    },
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "a reason for including words that do not exist in a reading test",
+          "a": "D",
+          "e": "Đoạn D: các từ 'alien' bịa ra 'included to ensure that children are decoding rather than recognising words they have memorised' → D."
+        },
+        {
+          "q": "a claim that certain teaching methods disadvantaged less wealthy children",
+          "a": "F",
+          "e": "Đoạn F: hậu quả 'fell most heavily on children from poorer families, who were least likely to receive extra help at home' → F."
+        },
+        {
+          "q": "a description of the strategies children were taught for working out unknown words",
+          "a": "B",
+          "e": "Đoạn B: trẻ được khuyến khích đoán từ lạ bằng cách nhìn tranh, xét nghĩa câu hoặc nhận dạng hình dạng từ → B."
+        },
+        {
+          "q": "a reference to a review of research requested by a government body",
+          "a": "C",
+          "e": "Đoạn C: năm 2000, một hội đồng 'commissioned by the United States Congress' xem xét các nghiên cứu → C."
+        }
+      ]
+    },
+    {
+      "kind": "endings",
+      "endings": [
+        "was largely ignored by schools at the time.",
+        "rose substantially within a few years.",
+        "may struggle with the invented words in the check.",
+        "have changed the law on how reading must be taught.",
+        "are less likely to be enjoyed by older children.",
+        "have refused to use any form of phonics.",
+        "found that phonics was particularly helpful for children at risk."
+      ],
+      "items": [
+        {
+          "q": "The panel set up by the United States Congress",
+          "a": 6,
+          "e": "Đoạn C: hội đồng kết luận phonics có lợi đáng kể, 'especially for young children and for those at risk of reading difficulties' → đặc biệt hữu ích cho trẻ có nguy cơ."
+        },
+        {
+          "q": "In England, the proportion of pupils reaching the expected standard",
+          "a": 1,
+          "e": "Đoạn D: tỷ lệ đạt chuẩn 'rose from just over half in the first year to more than eighty per cent within seven years' → tăng đáng kể trong vài năm."
+        },
+        {
+          "q": "According to some teachers, children who already read well",
+          "a": 2,
+          "e": "Đoạn E: các từ bịa 'confuse able readers, who may try to turn them into real ones' → trẻ đọc giỏi có thể lúng túng với từ bịa trong bài kiểm tra."
+        },
+        {
+          "q": "Since 2022, several American states",
+          "a": 3,
+          "e": "Đoạn F: 'a number of states have passed laws requiring schools to base reading instruction on scientific evidence' → đã thay đổi luật về cách dạy đọc."
+        }
+      ]
+    }
+  ]
+}

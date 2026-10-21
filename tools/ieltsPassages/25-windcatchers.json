@@ -1,0 +1,148 @@
+{
+  "title": "Persia's Windcatchers",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu kiến trúc bản địa và nghiên cứu về thông gió tự nhiên.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Approaching the old city of Yazd in central Iran, a traveller sees a skyline unlike any other: dozens of rectangular towers rising above the flat roofs of mud-brick houses. These structures, known in Persian as bâdgir, or windcatchers, were for centuries the main way of keeping buildings cool in one of the hottest and driest regions on earth. They required no fuel and had no moving parts, yet they could make the interior of a house bearable in summer temperatures that regularly exceed forty degrees. Today, as architects search for ways to reduce the energy consumed by air conditioning, these ancient towers are attracting renewed interest."
+    },
+    {
+      "letter": "B",
+      "text": "The basic principle is simple. A windcatcher is a tall tower with openings near the top that face the direction of the prevailing wind. Because wind speeds are higher well above the ground, where buildings and walls cause less obstruction, the tower can capture a steady flow of air even when the streets below are still. The air is pushed down a vertical shaft inside the tower and into the rooms below, creating a draught that cools the occupants. Many towers are divided internally by thin partitions, creating several shafts so that air can enter through one and leave through another."
+    },
+    {
+      "letter": "C",
+      "text": "Windcatchers also work when there is little or no wind. During the day, the sun heats the tower and the air inside it. Warm air is lighter than cool air, so it rises and escapes through the openings at the top, drawing air out of the house beneath. This upward movement, known as the stack effect, pulls in cooler air from courtyards or shaded areas at ground level to replace it. In this way, a windcatcher can act either as an inlet that brings fresh air into the building or as an outlet that removes hot air, depending on the conditions."
+    },
+    {
+      "letter": "D",
+      "text": "The cooling effect could be greatly increased with the help of water. In some houses, air descending from the tower passed over a pool or fountain in a basement room. As some of the water evaporated, it absorbed heat from the air, lowering its temperature before it flowed into the living areas. In others, the tower was connected to a qanat, an underground channel that carried water from distant mountains, and air was drawn along the cool tunnel before rising into the house. Families often moved to these lower, cooler rooms during the hottest hours of the day."
+    },
+    {
+      "letter": "E",
+      "text": "The materials used in traditional buildings contributed as well. Thick walls of mud brick absorb heat slowly during the day and release it slowly at night, so that the inside of a house remains cooler than the outside in the afternoon and warmer during the cold desert night. Windcatchers were also used to cool water stored in large underground reservoirs, which were often surrounded by several towers. In Yazd, the tower in the garden of a former governor's residence rises to more than thirty metres and is often described as one of the tallest in the world."
+    },
+    {
+      "letter": "F",
+      "text": "The design of a windcatcher reflected local conditions. In places where the wind blew consistently from one direction, towers had openings on a single side. Where winds were more variable, builders constructed towers with four or even eight sides, so that air could be caught whichever way it was blowing. The height and size of a tower also indicated the wealth of the family who owned it, and a grand windcatcher was a symbol of social status as much as a practical device."
+    },
+    {
+      "letter": "G",
+      "text": "With the spread of electricity and mechanical air conditioning in the twentieth century, many windcatchers fell into disuse, and some were demolished. Air conditioners were cheap to install and easy to control, and they worked regardless of the weather. However, they also consume large amounts of electricity, much of it generated from fossil fuels, and as more buildings install them, they add to the very heat that they are designed to remove, since each unit releases warm air into the street outside."
+    },
+    {
+      "letter": "H",
+      "text": "Modern architects have begun to adapt the principles of the windcatcher using new materials and technology. Some office buildings and schools in Europe now have rooftop units that capture wind and expel stale air without fans, and several projects in the Middle East have included tall ventilation towers inspired directly by the traditional design. Such systems are rarely powerful enough to replace air conditioning entirely in extreme climates, but they can reduce the need for it considerably, demonstrating that solutions developed centuries ago may still have something to teach us."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Windcatchers in Yazd were powered by small engines at the top of the tower.",
+          "a": "FALSE",
+          "e": "Đoạn A: tháp đón gió 'required no fuel and had no moving parts' – không dùng nhiên liệu, không có bộ phận chuyển động → FALSE."
+        },
+        {
+          "q": "A tower can capture a steady flow of air when there is no breeze at street level.",
+          "a": "TRUE",
+          "e": "Đoạn B: gió trên cao mạnh hơn nên tháp có thể đón luồng khí ổn định 'even when the streets below are still' → TRUE."
+        },
+        {
+          "q": "Windcatchers were first invented in Yazd.",
+          "a": "NOT GIVEN",
+          "e": "Bài nói Yazd có rất nhiều tháp đón gió, nhưng không nói chúng được phát minh lần đầu ở đó → NOT GIVEN."
+        },
+        {
+          "q": "The size of a windcatcher could show how rich its owners were.",
+          "a": "TRUE",
+          "e": "Đoạn F: chiều cao và kích thước tháp 'indicated the wealth of the family who owned it' → TRUE."
+        },
+        {
+          "q": "Modern ventilation towers can fully replace air conditioning in the hottest climates.",
+          "a": "FALSE",
+          "e": "Đoạn H: các hệ thống này 'are rarely powerful enough to replace air conditioning entirely in extreme climates' → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "diagram",
+      "limit": "ONE WORD ONLY",
+      "title": "How a windcatcher cools a house",
+      "diagram": "        ↓ ↓ ↓  wind enters openings that face the prevailing wind\n   ┌──┬──┬──┐\n   │  │  │  │   tall tower — inside: several shafts separated by (A)\n   │  │  │  │\n   └──┴──┴──┘\n   ═══ living rooms ═══   ← hot air leaves at the top by the (B) effect\n   ▒▒ basement: air passes over a (C) and is cooled ▒▒\n   ~~~~ underground water channel = a (D) ~~~~",
+      "items": [
+        {
+          "q": "(A) The shafts inside the tower are separated by thin ______.",
+          "a": "partitions",
+          "e": "Đoạn B: nhiều tháp 'are divided internally by thin partitions, creating several shafts' → partitions."
+        },
+        {
+          "q": "(B) Warm air rising and escaping through the top is known as the ______ effect.",
+          "a": "stack",
+          "e": "Đoạn C: chuyển động đi lên này 'known as the stack effect' → stack."
+        },
+        {
+          "q": "(C) In the basement, air descending from the tower passes over a ______ or fountain.",
+          "a": "pool",
+          "e": "Đoạn D: không khí từ tháp đi xuống 'passed over a pool or fountain in a basement room' → pool."
+        },
+        {
+          "q": "(D) The underground channel bringing water from the mountains is called a ______.",
+          "a": "qanat",
+          "e": "Đoạn D: tháp nối với 'a qanat, an underground channel that carried water from distant mountains' → qanat."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "According to paragraph C, a windcatcher may",
+          "options": [
+            "work only when the wind is strong.",
+            "be used to bring air in or to let it out.",
+            "need to be cooled by water to function at all.",
+            "be heated deliberately with fires at night."
+          ],
+          "a": 1,
+          "e": "Đoạn C: tháp có thể là cửa đưa khí vào 'or as an outlet that removes hot air, depending on the conditions' → vừa đưa khí vào vừa thải khí ra."
+        },
+        {
+          "q": "Why did families spend the hottest part of the day in lower rooms?",
+          "options": [
+            "These rooms were cooler because of the water nearby.",
+            "The upper floors were used for storing food.",
+            "The towers were too noisy for the upper rooms.",
+            "Law required them to stay out of the sun."
+          ],
+          "a": 0,
+          "e": "Đoạn D: không khí đi qua nước bay hơi hoặc qua kênh ngầm mát nên các phòng thấp mát hơn; các gia đình chuyển xuống 'these lower, cooler rooms' vào giờ nóng nhất."
+        },
+        {
+          "q": "Why did some windcatchers have openings on several sides?",
+          "options": [
+            "to make them look more impressive",
+            "to catch winds that changed direction",
+            "to let in more light during the day",
+            "to allow more people to live inside them"
+          ],
+          "a": 1,
+          "e": "Đoạn F: ở nơi gió đổi hướng, tháp có bốn hoặc tám mặt 'so that air could be caught whichever way it was blowing'."
+        },
+        {
+          "q": "What problem with air conditioners does the writer mention?",
+          "options": [
+            "They are difficult to install in old buildings.",
+            "They break down frequently in hot weather.",
+            "They release heat into the surrounding streets.",
+            "They cannot be controlled by individual users."
+          ],
+          "a": 2,
+          "e": "Đoạn G: mỗi máy 'releases warm air into the street outside', góp phần làm nóng chính khu vực nó cần làm mát. Bài nói máy lạnh rẻ, dễ lắp và dễ điều khiển."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "title": "Too Much of a Good Thing?",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ các nghiên cứu kinh tế học hành vi đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Few ideas from behavioural science have travelled as far as the claim that too much choice is bad for us. It has been cited in business schools, advertising agencies and government departments, and it has shaped the design of everything from restaurant menus to pension schemes. The appeal is easy to understand. Most of us have stood in a supermarket aisle facing forty varieties of breakfast cereal and felt a vague sense of fatigue rather than delight. Yet an idea that seems obviously true is precisely the kind that deserves careful scrutiny, and the evidence for choice overload turns out to be considerably more complicated than its popularity suggests."
+    },
+    {
+      "letter": "B",
+      "text": "The story usually begins with an experiment carried out in a Californian grocery store and published in 2000 by Sheena Iyengar and Mark Lepper. On some days shoppers passed a tasting table offering twenty-four varieties of jam; on others, the table displayed just six. The larger display attracted more attention, with 60 per cent of passers-by stopping compared with 40 per cent at the smaller one. However, when it came to buying, the pattern reversed dramatically: about 30 per cent of those who saw the limited selection went on to purchase a jar, against only 3 per cent of those who had been offered the full range."
+    },
+    {
+      "letter": "C",
+      "text": "The finding was taken up enthusiastically, most influentially by the psychologist Barry Schwartz, whose 2004 book argued that an abundance of options leads not only to indecision but also to regret and dissatisfaction. Schwartz drew on an older distinction made by the economist Herbert Simon between people who try to find the best possible option, whom he called maximisers, and those who are content with something that is good enough. Maximisers, Schwartz suggested, are the chief victims of modern abundance: they invest more effort in their decisions and are often less happy with the results."
+    },
+    {
+      "letter": "D",
+      "text": "The jam study deserves its reputation as an elegant piece of research, but it was a single study in a single shop, and science is built on replication. When other researchers tried to reproduce the effect, the results were mixed at best. In 2010, Benjamin Scheibehenne and his colleagues combined the data from fifty experiments on choice overload and found that, on average, the size of the effect was close to zero. In some studies large assortments discouraged people from choosing; in others they made people more likely to choose and more satisfied with what they had chosen. Rather than overturning the original result, this pattern suggested that something about the circumstances of each study determined whether a wider range of options helped or hindered the people making the choice."
+    },
+    {
+      "letter": "E",
+      "text": "This does not mean that the phenomenon is imaginary. A later analysis by Alexander Chernev and his co-authors suggested that the inconsistent results could be explained by identifying when overload is likely to occur. It appears to matter most when the options are difficult to compare, when people do not have clear preferences in advance, and when they are under pressure to make a decision quickly. Someone who already knows exactly which coffee they like is unlikely to be paralysed by a long list, whereas a first-time buyer of a complicated financial product may well be. Chernev's team also found that presentation matters: arranging options into clear categories, or ordering them by a single obvious criterion such as price, can noticeably reduce the sense of being overwhelmed."
+    },
+    {
+      "letter": "F",
+      "text": "That distinction is far from trivial, because some of the most important decisions people face fall squarely into the second category. An analysis of retirement savings plans in the United States found that each additional ten investment funds offered by an employer was associated with a fall of around two percentage points in the proportion of employees who joined the plan at all. Here, the cost of overload is not an unsold jar of jam but a lost opportunity to save for old age, and it is arguably in such cases that well-designed defaults and simplified menus can do the most good."
+    },
+    {
+      "letter": "G",
+      "text": "What, then, should we conclude? It would be a mistake to treat choice as a burden to be minimised wherever possible; people value freedom and variety, and many markets work well precisely because they offer both. Equally, it would be naive to assume that more options always serve consumers better. The real lesson of twenty years of research is that the effects of choice depend on context. Rather than repeating a single memorable anecdote, those who design products and policies would do better to ask who is choosing, how much they already know, and how much is at stake."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "an example of a decision in which having too many options may have serious long-term consequences",
+          "a": "F",
+          "e": "Đoạn F: kế hoạch tiết kiệm hưu trí – thêm 10 quỹ làm tỷ lệ tham gia giảm khoảng 2 điểm phần trăm; hậu quả là mất cơ hội tiết kiệm cho tuổi già → F."
+        },
+        {
+          "q": "a reference to an everyday experience that makes the idea of choice overload seem plausible",
+          "a": "A",
+          "e": "Đoạn A: đứng trước 40 loại ngũ cốc ở siêu thị và thấy mệt mỏi – trải nghiệm thường ngày khiến ý tưởng có vẻ hợp lý → A."
+        },
+        {
+          "q": "the conditions under which large numbers of options are most likely to cause problems",
+          "a": "E",
+          "e": "Đoạn E: quá tải xảy ra khi các lựa chọn khó so sánh, người ta chưa có sở thích rõ, và phải quyết định nhanh → E."
+        },
+        {
+          "q": "a description of two types of decision-maker",
+          "a": "C",
+          "e": "Đoạn C: phân biệt 'maximisers' (tìm phương án tốt nhất) và người hài lòng với phương án 'good enough' → C."
+        }
+      ]
+    },
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The popularity of an idea is a reason to examine the evidence for it closely.",
+          "a": "YES",
+          "e": "Đoạn A: tác giả viết 'an idea that seems obviously true is precisely the kind that deserves careful scrutiny' – ý tưởng càng có vẻ hiển nhiên càng cần xem xét kỹ → YES."
+        },
+        {
+          "q": "The jam experiment was poorly designed.",
+          "a": "NO",
+          "e": "Đoạn D: tác giả nói 'The jam study deserves its reputation as an elegant piece of research' – khen thiết kế tinh tế. Vấn đề chỉ là thiếu lặp lại, không phải thiết kế kém → NO."
+        },
+        {
+          "q": "Barry Schwartz's book has had more influence on businesses than on governments.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C chỉ nói sách của Schwartz có ảnh hưởng lớn; đoạn A nói ý tưởng lan tới doanh nghiệp và chính phủ, nhưng không so sánh ảnh hưởng của cuốn sách lên hai nhóm này → NOT GIVEN."
+        },
+        {
+          "q": "Defaults and simplified menus may be particularly useful for decisions such as retirement saving.",
+          "a": "YES",
+          "e": "Đoạn F: 'it is arguably in such cases that well-designed defaults and simplified menus can do the most good' – tác giả cho rằng chúng hữu ích nhất trong những trường hợp như tiết kiệm hưu trí → YES."
+        },
+        {
+          "q": "Policymakers should aim to reduce the number of choices available to people in most markets.",
+          "a": "NO",
+          "e": "Đoạn G: 'It would be a mistake to treat choice as a burden to be minimised wherever possible' và nhiều thị trường hoạt động tốt chính nhờ có nhiều lựa chọn → tác giả phản đối việc cắt giảm lựa chọn tràn lan → NO."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "In the grocery store experiment, the larger display of jams",
+          "options": [
+            "attracted more shoppers but produced far fewer sales.",
+            "attracted fewer shoppers and produced fewer sales.",
+            "attracted the same number of shoppers but more sales.",
+            "was preferred by shoppers who already knew which jam they liked."
+          ],
+          "a": 0,
+          "e": "Đoạn B: quầy 24 loại thu hút 60% người dừng lại (so với 40%), nhưng chỉ 3% mua (so với khoảng 30%) → thu hút nhiều người hơn nhưng bán được ít hơn hẳn."
+        },
+        {
+          "q": "After combining the data from fifty experiments, Scheibehenne's team found that",
+          "options": [
+            "Choice overload occurred in most of the fifty experiments.",
+            "On average, choice overload had almost no effect.",
+            "Large assortments always reduced satisfaction.",
+            "The original jam study contained errors in its data."
+          ],
+          "a": 1,
+          "e": "Đoạn D: gộp dữ liệu 50 thí nghiệm, 'on average, the size of the effect was close to zero' – trung bình gần như không có tác động. Bài không nói nghiên cứu mứt có lỗi dữ liệu."
+        },
+        {
+          "q": "Someone will probably not be paralysed by a long list of options when",
+          "options": [
+            "they are buying a complicated financial product.",
+            "they must make a decision in a hurry.",
+            "they already have a clear preference.",
+            "the options are difficult to compare."
+          ],
+          "a": 2,
+          "e": "Đoạn E: người đã biết chính xác loại cà phê mình thích 'is unlikely to be paralysed by a long list' – có sở thích rõ ràng thì ít bị quá tải. Ba phương án còn lại đều là điều kiện LÀM TĂNG quá tải."
+        },
+        {
+          "q": "What is the writer's main conclusion?",
+          "options": [
+            "Choice overload has been shown to be a myth.",
+            "Consumers are always better off with more options.",
+            "The effects of choice vary according to the situation.",
+            "Businesses should stop using the jam study in training."
+          ],
+          "a": 2,
+          "e": "Đoạn G: 'The real lesson of twenty years of research is that the effects of choice depend on context' – tác động của lựa chọn phụ thuộc hoàn cảnh. Tác giả bác bỏ cả hai cực 'hoang đường' và 'càng nhiều càng tốt'."
+        }
+      ]
+    }
+  ]
+}

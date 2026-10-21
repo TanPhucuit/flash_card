@@ -1,0 +1,134 @@
+{
+  "title": "The Humble Pencil",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử công nghệ và đồ dùng văn phòng.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Few objects are as ordinary as the pencil. Billions are made every year, and most people have used one since early childhood without giving it a second thought. Yet the pencil is the product of centuries of experiment, accidental discovery and international rivalry. Its story involves a remarkable mineral deposit in the north of England, a war between European powers and a long series of improvements by craftsmen and engineers, many of whose names have been forgotten."
+    },
+    {
+      "letter": "B",
+      "text": "The story begins in the sixteenth century, when a large deposit of an unusual black mineral was discovered at Borrowdale, in the hills of Cumbria. The material was soft enough to leave a dark mark on almost any surface, and local shepherds reportedly used it to mark their sheep. People at the time believed it was a form of lead, which is why we still speak of pencil ‘lead’ today, although the substance was actually graphite, a form of carbon that contains no lead at all. The Borrowdale graphite was unusually pure and solid, so it could be cut into sticks and used directly for writing and drawing. No deposit of comparable purity has ever been found anywhere else in the world."
+    },
+    {
+      "letter": "C",
+      "text": "Because graphite was so soft and dirty to handle, early users wrapped the sticks in string or sheepskin. Later, craftsmen began inserting them into hollowed-out pieces of wood. The mineral also became extremely valuable for another reason: it could be used to line the moulds in which cannonballs were cast. As a result, the mine at Borrowdale was closely guarded, and at times it was opened for only a few weeks each year to prevent prices from falling. Laws were passed making the theft of graphite a serious crime. Smuggling nevertheless continued, and stolen graphite was sold on a thriving black market in nearby towns."
+    },
+    {
+      "letter": "D",
+      "text": "Other countries had no deposit of comparable quality, and when war cut France off from English graphite in the 1790s, the French government asked an inventor named Nicolas-Jacques Conté to find an alternative. His solution, patented in 1795, was to grind impure graphite into a powder, mix it with clay and water, shape the mixture into thin rods and fire them in a kiln. The process had a crucial advantage. By changing the proportion of clay, manufacturers could control the hardness of the finished lead: more clay produced a harder lead and a lighter line, while less clay produced a softer, darker one."
+    },
+    {
+      "letter": "E",
+      "text": "Conté's method remains the basis of pencil manufacturing today. The grades printed on pencils reflect it: ‘H’ stands for hard and ‘B’ for black, so that a 4H pencil makes a faint, precise line suitable for technical drawing, while a 6B is soft enough for shading. The familiar HB pencil lies in the middle of the range. Modern factories make the casing by cutting grooves into thin slabs of wood, laying the leads into the grooves and gluing a second slab on top before the sandwich is cut into individual pencils. Cedar is a popular choice of wood because it is soft enough to sharpen easily without splintering. Some artists keep a dozen grades or more."
+    },
+    {
+      "letter": "F",
+      "text": "In 1858, an American named Hymen Lipman received a patent for a pencil with an eraser attached to one end. Today the eraser is usually held in place by a small metal band called a ferrule, which is squeezed tightly around the wood. Interestingly, many pencils sold in Europe still have no eraser, partly because some teachers believe that children who cannot easily rub out their mistakes will think more carefully before writing. American pencils, by contrast, almost always have one."
+    },
+    {
+      "letter": "G",
+      "text": "The colour of the pencil also has a history. In the 1890s, a European manufacturer introduced high-quality pencils painted yellow, a colour then associated with luxury, and the design became so successful that competitors copied it. In North America, yellow remains by far the most common colour for wooden pencils. Despite the arrival of computers and tablets, the pencil has survived because it is cheap, reliable, needs no power and can be erased, qualities that make it valued by artists, architects and schoolchildren alike. Some modern pencils are even made from recycled newspaper or plastic instead of wood."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "A mistaken name for a valuable mineral",
+          "para": "B"
+        },
+        {
+          "text": "Protecting a resource with military uses",
+          "para": "C"
+        },
+        {
+          "text": "A wartime invention",
+          "para": "D"
+        },
+        {
+          "text": "How a modern pencil is graded and assembled",
+          "para": "E"
+        },
+        {
+          "text": "Different attitudes to correcting mistakes",
+          "para": "F"
+        },
+        {
+          "text": "The decline of the pencil in schools",
+          "para": null
+        },
+        {
+          "text": "Why pencils cannot be used in space",
+          "para": null
+        },
+        {
+          "text": "The search for new graphite mines in Asia",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: khoáng chất ở Borrowdale bị tưởng là chì, nên ngày nay vẫn gọi là 'lead' dù thực ra là than chì (graphite) → tên gọi nhầm cho một khoáng chất giá trị: {h}.",
+        "C": "Đoạn C: than chì dùng lót khuôn đúc đạn đại bác nên mỏ được canh gác chặt, trộm than chì là trọng tội → bảo vệ một tài nguyên có công dụng quân sự: {h}.",
+        "D": "Đoạn D: chiến tranh cắt nguồn than chì Anh, Conté được yêu cầu tìm giải pháp thay thế năm 1795 → một phát minh thời chiến: {h}.",
+        "E": "Đoạn E: thang độ cứng H/B và cách nhà máy ghép hai tấm gỗ có rãnh → cách bút chì hiện đại được phân cấp và lắp ráp: {h}.",
+        "F": "Đoạn F: bút chì châu Âu thường không có tẩy vì một số giáo viên muốn trẻ suy nghĩ kỹ trước khi viết; bút Mỹ hầu như luôn có tẩy → thái độ khác nhau với việc sửa lỗi: {h}. Đoạn G nói bút chì vẫn tồn tại, nên {i:5} sai."
+      }
+    },
+    {
+      "kind": "gap",
+      "form": "diagram",
+      "limit": "ONE WORD ONLY",
+      "title": "Parts of a modern pencil",
+      "diagram": "   ┌──────(A) eraser──────┐\n   │  (B) metal band, the ______  │\n   ├──────────────────────┤\n   │ wooden casing: two slabs of (C) ______ glued together │\n   │      ┃ core: powdered graphite mixed with (D) ______ ┃      │\n   └──────────────────────┘\n              ▼ point",
+      "items": [
+        {
+          "q": "(A) The ______ on the end was first patented in 1858.",
+          "a": "eraser",
+          "e": "Đoạn F: năm 1858 Hymen Lipman được cấp bằng sáng chế cho bút chì 'with an eraser attached to one end' → eraser."
+        },
+        {
+          "q": "(B) The eraser is gripped by a small metal band known as a ______.",
+          "a": "ferrule",
+          "e": "Đoạn F: cục tẩy 'held in place by a small metal band called a ferrule' → ferrule."
+        },
+        {
+          "q": "(C) The casing is often ______, a wood that is soft enough to sharpen easily without splintering.",
+          "a": "cedar",
+          "e": "Đoạn E: 'Cedar is a popular choice of wood because it is soft enough to sharpen easily without splintering' → cedar."
+        },
+        {
+          "q": "(D) The core is made from powdered graphite mixed with ______ and water.",
+          "a": "clay",
+          "e": "Đoạn D: Conté nghiền than chì thành bột rồi 'mix it with clay and water' → clay."
+        }
+      ]
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Pencil ‘lead’ is really a form of carbon that contains no lead.",
+          "a": "TRUE",
+          "e": "Đoạn B: chất này thực ra là than chì, 'a form of carbon that contains no lead at all' → TRUE."
+        },
+        {
+          "q": "The Borrowdale mine was sometimes closed to keep the price of graphite high.",
+          "a": "TRUE",
+          "e": "Đoạn C: mỏ có lúc chỉ mở vài tuần mỗi năm 'to prevent prices from falling' → TRUE."
+        },
+        {
+          "q": "A pencil with more clay in its lead produces a darker line.",
+          "a": "FALSE",
+          "e": "Đoạn D: nhiều đất sét hơn thì ruột cứng hơn và nét nhạt hơn ('a harder lead and a lighter line') → FALSE."
+        },
+        {
+          "q": "Hymen Lipman made a large fortune from his invention.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn F chỉ nói Lipman được cấp bằng sáng chế năm 1858; bài không nhắc ông có giàu lên nhờ phát minh hay không → NOT GIVEN."
+        }
+      ]
+    }
+  ]
+}

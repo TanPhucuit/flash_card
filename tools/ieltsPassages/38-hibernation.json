@@ -1,0 +1,128 @@
+{
+  "title": "The Secrets of Hibernation",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu sinh lý học về ngủ đông đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Winter presents warm-blooded animals with a serious problem. Keeping the body at a constant high temperature requires a great deal of energy, yet in many parts of the world food becomes scarce precisely when the weather turns cold. Some animals respond by migrating to warmer regions; others grow thicker coats or store food. A smaller number adopt a more extreme strategy. They shut down most of their bodily activity and enter a state known as hibernation, in which they may remain for weeks or months, surviving on the fat they accumulated during the previous summer and autumn. Animals that hibernate include certain bats, hedgehogs, marmots and many species of ground squirrel."
+    },
+    {
+      "letter": "B",
+      "text": "Hibernation is far more than a long sleep. In a hibernating ground squirrel, the heart, which normally beats hundreds of times a minute, may slow to just a few beats, and breathing may pause for long periods. Most remarkably, body temperature falls to close to that of the surrounding environment. In some small hibernators, it drops to only a few degrees above freezing, and the Arctic ground squirrel, which lives in Alaska and northern Canada, has been recorded with a body temperature slightly below zero, apparently without its blood freezing. By reducing their metabolism in this way, hibernators can cut their energy use dramatically."
+    },
+    {
+      "letter": "C",
+      "text": "Curiously, few hibernators remain in this state continuously. Every week or two, they warm up to their normal body temperature for a period of several hours before returning to hibernation. These periodic arousals consume a large proportion of the energy an animal uses over the whole winter, and scientists have long puzzled over why they happen. One theory is that animals need to restore some functions of the brain or the immune system that cannot operate at low temperatures; another is that they need to sleep, since hibernation itself does not appear to provide the benefits of normal sleep. During each arousal, the animal shivers intensely to generate heat."
+    },
+    {
+      "letter": "D",
+      "text": "Bears are something of a special case. Their body temperature falls by only a few degrees during the winter, so some scientists prefer to describe their state as a form of winter dormancy rather than true hibernation. Yet bears achieve something remarkable in their own way. For several months they neither eat, drink nor pass waste, and females give birth to cubs and feed them with milk during this period. Even more surprisingly, bears emerge in spring having lost very little muscle strength or bone density, despite months without movement, whereas a human confined to bed for the same length of time would suffer serious weakening."
+    },
+    {
+      "letter": "E",
+      "text": "Hibernation is not limited to cold climates. The fat-tailed dwarf lemur of Madagascar, a small primate, hibernates for up to seven months during the dry season, when food is scarce. Because the tropical temperature remains relatively high, the lemur's body temperature rises and falls with the temperature of its tree hollow, sometimes by more than twenty degrees in a single day. It was the first primate known to hibernate, and its discovery challenged the assumption that hibernation was primarily a response to cold rather than to a lack of food."
+    },
+    {
+      "letter": "F",
+      "text": "Medical researchers have taken a keen interest in hibernation. If doctors could induce a similar state in humans, they might be able to protect patients who have suffered serious injuries or strokes by reducing the demand for oxygen in their tissues until treatment is possible. The ability of bears to avoid muscle and bone loss has attracted attention from researchers studying conditions such as osteoporosis. Space agencies have even considered whether astronauts on very long missions might one day be placed in a hibernation-like state, which would reduce the amount of food, water and space they require."
+    },
+    {
+      "letter": "G",
+      "text": "Such ideas remain speculative. Humans are not natural hibernators, and the biological mechanisms that allow animals to survive extreme cold and inactivity are still only partly understood. Researchers have identified some of the genes and chemical signals involved, and in laboratory experiments they have been able to induce a hibernation-like state in mice, which do not normally hibernate. Whether similar techniques could ever be applied safely to people is a question that may take many years to answer. Many experts remain doubtful that it will ever be possible."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "a comparison between the effects of inactivity on an animal and on a person",
+          "a": "D",
+          "e": "Đoạn D: gấu hầu như không mất cơ và mật độ xương sau nhiều tháng bất động, còn người nằm liệt giường cùng thời gian sẽ suy yếu nghiêm trọng → D."
+        },
+        {
+          "q": "a discovery that changed scientists' view of why hibernation occurs",
+          "a": "E",
+          "e": "Đoạn E: phát hiện loài vượn cáo ngủ đông thách thức giả định rằng ngủ đông chủ yếu là phản ứng với cái lạnh chứ không phải thiếu thức ăn → E."
+        },
+        {
+          "q": "possible explanations for a pattern of behaviour that uses a lot of energy",
+          "a": "C",
+          "e": "Đoạn C: các lần tỉnh dậy định kỳ tiêu tốn nhiều năng lượng, và có các giả thuyết về phục hồi chức năng não, miễn dịch hoặc nhu cầu ngủ → C."
+        },
+        {
+          "q": "a reference to inducing a similar state in an animal that does not usually hibernate",
+          "a": "G",
+          "e": "Đoạn G: trong phòng thí nghiệm, nhà nghiên cứu đã tạo trạng thái giống ngủ đông ở chuột, loài vốn không ngủ đông → G."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "table",
+      "limit": "NO MORE THAN TWO WORDS",
+      "title": "Hibernation in different animals",
+      "items": [
+        {
+          "q": "Ground squirrel – heart slows from hundreds of beats to a few; body temperature falls close to that of the ______",
+          "a": "surrounding environment/environment",
+          "e": "Đoạn B: nhiệt độ cơ thể 'falls to close to that of the surrounding environment' → surrounding environment."
+        },
+        {
+          "q": "Arctic ground squirrel – body temperature recorded slightly below ______",
+          "a": "zero",
+          "e": "Đoạn B: sóc đất Bắc Cực 'has been recorded with a body temperature slightly below zero' → zero."
+        },
+        {
+          "q": "Bear – temperature falls only a few degrees; mothers give birth to cubs and feed them with ______",
+          "a": "milk",
+          "e": "Đoạn D: gấu cái sinh con và nuôi chúng 'with milk during this period' → milk."
+        },
+        {
+          "q": "Fat-tailed dwarf lemur – hibernates during the ______ season",
+          "a": "dry",
+          "e": "Đoạn E: vượn cáo ngủ đông tới bảy tháng 'during the dry season, when food is scarce' → dry."
+        },
+        {
+          "q": "Fat-tailed dwarf lemur – body temperature follows the temperature of its ______",
+          "a": "tree hollow",
+          "e": "Đoạn E: nhiệt độ cơ thể vượn cáo 'rises and falls with the temperature of its tree hollow' → tree hollow."
+        }
+      ]
+    },
+    {
+      "kind": "endings",
+      "endings": [
+        "is considered by some scientists to be different from true hibernation.",
+        "may help doctors protect patients until they can be treated.",
+        "provides all the benefits of normal sleep.",
+        "use up a large share of an animal's winter energy.",
+        "was the first primate known to hibernate.",
+        "requires animals to eat regularly throughout the winter.",
+        "has already been used successfully on astronauts."
+      ],
+      "items": [
+        {
+          "q": "The regular periods when hibernators warm up",
+          "a": 3,
+          "e": "Đoạn C: những lần tỉnh dậy định kỳ 'consume a large proportion of the energy an animal uses over the whole winter' → tiêu tốn phần lớn năng lượng mùa đông."
+        },
+        {
+          "q": "The winter state of bears",
+          "a": 0,
+          "e": "Đoạn D: thân nhiệt gấu chỉ giảm vài độ, nên 'some scientists prefer to describe their state as a form of winter dormancy rather than true hibernation'."
+        },
+        {
+          "q": "The fat-tailed dwarf lemur",
+          "a": 4,
+          "e": "Đoạn E: 'It was the first primate known to hibernate' → là loài linh trưởng đầu tiên được biết là ngủ đông."
+        },
+        {
+          "q": "A hibernation-like state in humans",
+          "a": 1,
+          "e": "Đoạn F: trạng thái này có thể bảo vệ bệnh nhân bị chấn thương nặng hoặc đột quỵ 'until treatment is possible' → giúp bác sĩ bảo vệ bệnh nhân cho tới khi điều trị được. Phương án 'đã dùng thành công cho phi hành gia' là bẫy, bài nói ý tưởng này còn mang tính suy đoán."
+        }
+      ]
+    }
+  ]
+}

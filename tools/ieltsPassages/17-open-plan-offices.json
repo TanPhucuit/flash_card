@@ -1,0 +1,139 @@
+{
+  "title": "The Trouble with Open-Plan Offices",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ lịch sử thiết kế văn phòng và các nghiên cứu về môi trường làm việc đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Walk into almost any modern office and you are likely to find the same arrangement: long rows of desks in a single large space, with few walls, few doors and little privacy. Open-plan layouts have become so common that it is easy to forget they were once a radical idea. Their supporters claim that removing walls encourages communication, breaks down hierarchies and sparks the kind of chance encounters from which new ideas emerge. Their critics argue that they are noisy, distracting and stressful. After more than a century of experiment, the evidence suggests that the critics have rather the stronger case."
+    },
+    {
+      "letter": "B",
+      "text": "Open offices are not a recent invention. In 1906, the American architect Frank Lloyd Wright designed an administration building for a mail-order company in which clerks worked together in a vast, light-filled hall. The arrangement was intended partly to make supervision easier, since managers could observe the whole workforce at once. Throughout the first half of the twentieth century, many large companies adopted similar layouts, often arranging desks in strict rows that resembled a factory floor more than a place for creative thinking."
+    },
+    {
+      "letter": "C",
+      "text": "A more humane version appeared in Germany in the 1950s, when a consulting group founded by the brothers Eberhard and Wolfgang Schnelle developed what they called the ‘office landscape’. Desks were grouped irregularly according to how teams actually worked together, and plants and movable screens were used to create a sense of separate areas within the larger space. The idea spread across Europe and the United States, and for a time it represented the most progressive thinking about how offices should be organised."
+    },
+    {
+      "letter": "D",
+      "text": "In the United States, the designer Robert Propst introduced a flexible system of movable panels and furniture in the 1960s, intending to give office workers more control over their surroundings. Companies soon discovered, however, that the panels could be used to pack employees into small, identical boxes as cheaply as possible. The result was the cubicle, which became a symbol of dull corporate life. Propst himself later expressed deep regret about the way his invention had been used, describing the crowded rows of cubicles that it produced in strongly critical terms."
+    },
+    {
+      "letter": "E",
+      "text": "The current fashion for completely open spaces is often justified by the claim that it increases collaboration. A study published in 2018 by Ethan Bernstein and Stephen Turban of Harvard Business School tested this directly. They gave employees at two companies wearable sensors that recorded face-to-face interactions before and after the companies moved from cubicles to open-plan offices. In both cases, face-to-face interaction fell by around seventy per cent after the move, while the use of email and instant messaging increased. Rather than talking more, employees seemed to withdraw, putting on headphones and communicating electronically to avoid being overheard."
+    },
+    {
+      "letter": "F",
+      "text": "Noise is a particular problem. Psychologists have found that overheard conversation is especially disruptive to tasks such as reading and writing, because the brain cannot help processing speech, even when it is irrelevant. A steady hum of machinery is relatively easy to ignore; a colleague discussing weekend plans a few metres away is not. Many workers in open offices report that they find it difficult to concentrate and that they postpone demanding work until the evening or until they can work from home."
+    },
+    {
+      "letter": "G",
+      "text": "Why, then, do open offices remain so popular with employers? The most honest answer is probably cost. Removing walls allows more people to be accommodated in the same space, and some companies have gone further by abolishing assigned desks altogether, so that employees must find a free place each morning. Such arrangements may make sense for staff who are frequently away from the office, but I suspect that savings on rent, rather than any genuine evidence about productivity, are usually the decisive factor."
+    },
+    {
+      "letter": "H",
+      "text": "None of this means that every employee should have a private office. Different kinds of work require different environments, and teams that genuinely need to cooperate closely can benefit from sharing space. The most sensible approach, in my view, is to offer a variety of settings: quiet rooms for concentrated work, open areas for discussion and small spaces for private conversations. The goal should be to let people choose the right environment for the task in hand, rather than forcing everyone into a single design that suits almost nobody."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The arguments against open-plan offices are more convincing than those in favour.",
+          "a": "YES",
+          "e": "Đoạn A: 'the evidence suggests that the critics have rather the stronger case' → tác giả đồng ý → YES."
+        },
+        {
+          "q": "Early open-plan offices were designed mainly to encourage creative thinking.",
+          "a": "NO",
+          "e": "Đoạn B: thiết kế năm 1906 nhằm một phần 'to make supervision easier', và văn phòng thời đó giống sàn nhà máy hơn là nơi sáng tạo → NO."
+        },
+        {
+          "q": "The office landscape approach was more popular in Europe than in the United States.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C chỉ nói ý tưởng 'spread across Europe and the United States', không so sánh mức phổ biến ở hai nơi → NOT GIVEN."
+        },
+        {
+          "q": "Employers are usually motivated by research showing that open offices increase productivity.",
+          "a": "NO",
+          "e": "Đoạn G: tác giả nghi rằng 'savings on rent, rather than any genuine evidence about productivity, are usually the decisive factor' → NO."
+        },
+        {
+          "q": "The most sensible approach is to offer a variety of settings for different tasks.",
+          "a": "YES",
+          "e": "Đoạn H: cách hợp lý nhất là 'to offer a variety of settings' – phòng yên tĩnh, khu mở để thảo luận, không gian riêng → YES."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "People",
+      "people": [
+        "Frank Lloyd Wright",
+        "Eberhard and Wolfgang Schnelle",
+        "Robert Propst",
+        "Ethan Bernstein and Stephen Turban"
+      ],
+      "items": [
+        {
+          "q": "regretted how a design intended to help workers was later used",
+          "a": 2,
+          "e": "Đoạn D: Propst muốn trao cho nhân viên quyền kiểm soát không gian, nhưng các công ty dùng nó để nhồi người vào ô vuông; ông 'later expressed deep regret' → Robert Propst."
+        },
+        {
+          "q": "measured how often colleagues spoke to each other in person",
+          "a": 3,
+          "e": "Đoạn E: Bernstein và Turban dùng cảm biến đeo người để ghi lại các tương tác trực tiếp → Ethan Bernstein and Stephen Turban."
+        },
+        {
+          "q": "arranged desks according to the way teams worked together",
+          "a": 1,
+          "e": "Đoạn C: trong 'office landscape' của anh em Schnelle, bàn được nhóm 'according to how teams actually worked together' → Eberhard and Wolfgang Schnelle."
+        },
+        {
+          "q": "created a layout that made it easier for managers to watch staff",
+          "a": 0,
+          "e": "Đoạn B: thiết kế năm 1906 của Frank Lloyd Wright giúp giám sát dễ hơn vì quản lý quan sát được cả lực lượng lao động cùng lúc → Frank Lloyd Wright."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "The effects of open-plan offices",
+      "words": [
+        "electronic",
+        "fell",
+        "speech",
+        "machinery",
+        "doubled",
+        "rent",
+        "evening",
+        "silence",
+        "furniture"
+      ],
+      "items": [
+        {
+          "q": "After two companies moved to open-plan offices, face-to-face interaction ______ sharply.",
+          "a": 1,
+          "e": "Đoạn E: tương tác trực tiếp 'fell by around seventy per cent' → fell. Đừng chọn 'doubled' – email và nhắn tin tăng nhưng bài không nói tăng gấp đôi."
+        },
+        {
+          "q": "Employees used more ______ communication so that they would not be overheard.",
+          "a": 0,
+          "e": "Đoạn E: nhân viên 'communicating electronically to avoid being overheard' → electronic."
+        },
+        {
+          "q": "Overheard ______ is particularly disruptive because the brain automatically processes it.",
+          "a": 2,
+          "e": "Đoạn F: 'the brain cannot help processing speech, even when it is irrelevant' → speech."
+        },
+        {
+          "q": "Some workers leave demanding tasks until the ______ or until they can work from home.",
+          "a": 6,
+          "e": "Đoạn F: họ 'postpone demanding work until the evening or until they can work from home' → evening."
+        }
+      ]
+    }
+  ]
+}

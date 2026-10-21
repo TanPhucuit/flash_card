@@ -1,0 +1,126 @@
+{
+  "title": "Why Are So Many Children Short-Sighted?",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ các nghiên cứu nhãn khoa và dịch tễ học đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Short-sightedness, known medically as myopia, used to be a relatively uncommon condition. Today it is spreading at a pace that has alarmed eye specialists around the world. In several cities in East Asia, including Seoul, Shanghai and Taipei, studies have found that between eighty and ninety per cent of young people leaving school are myopic. Rates are rising in Europe and North America as well, though less steeply. One widely cited projection suggests that by 2050 around half of the world's population could be affected. I believe that this trend deserves far more public attention than it currently receives."
+    },
+    {
+      "letter": "B",
+      "text": "Myopia occurs when the eyeball grows too long from front to back, so that light from distant objects is focused in front of the retina rather than on it. As a result, faraway things appear blurred. Glasses or contact lenses can correct the blurring easily, which may explain why the problem is often regarded as a minor inconvenience. Yet severe myopia significantly increases the risk of serious eye diseases later in life, including detachment of the retina and glaucoma, which can lead to permanent loss of sight. A rise in severe myopia today may therefore mean a rise in blindness in the decades ahead. In some people, the eye continues to lengthen well into early adulthood."
+    },
+    {
+      "letter": "C",
+      "text": "Genes undoubtedly play a part, since children with two myopic parents are more likely to become myopic themselves. But genetic change cannot explain an increase that has occurred within two or three generations. Something in the way children now live must be responsible. For many years, the main suspect was close work, especially reading. It seemed natural to assume that children who spent long hours studying would damage their eyesight, and the pressure of intensive education systems in East Asia appeared to fit this explanation."
+    },
+    {
+      "letter": "D",
+      "text": "A different factor has since emerged as more important: time spent outdoors. In an influential study, researchers compared children of Chinese descent living in Sydney with children of similar background in Singapore. Only around three per cent of the Sydney children were myopic, compared with nearly thirty per cent of those in Singapore. The two groups read for similar amounts of time, but the children in Sydney spent many more hours outside each week. Later studies in other countries produced similar results, suggesting that being outdoors protects children's eyes regardless of how much they read."
+    },
+    {
+      "letter": "E",
+      "text": "The leading explanation is light. Even on a cloudy day, light outdoors is many times brighter than typical indoor lighting. Bright light is thought to stimulate the release of dopamine in the retina, a chemical that helps to slow the growth of the eyeball. Children who spend most of their days indoors, at school and at home, may simply not receive enough bright light to keep their eyes growing normally. Close work may still contribute to the problem, but the evidence suggests that it matters less than once believed."
+    },
+    {
+      "letter": "F",
+      "text": "This understanding has already been put into practice. In southern China, a trial added an extra forty-minute outdoor class to the school day in a group of schools, and after three years the proportion of children who had developed myopia was noticeably lower than in schools without the extra class. In Taiwan, where rates of myopia among children had been rising for decades, the authorities encouraged schools to ensure that pupils spent around two hours a day outside, and the long upward trend began to reverse. Researchers are also testing eye drops and special lenses that may slow the progression of myopia in children who already have it. Low doses of atropine, a long-established medicine, are among the treatments being studied."
+    },
+    {
+      "letter": "G",
+      "text": "The solution, in principle, is remarkably simple and cheap. Yet persuading schools and parents to give children more time outside is not easy, particularly in education systems where every hour of the day is devoted to academic work and where parents worry about safety. In my view, outdoor time should be treated not as a distraction from learning but as an essential part of children's health, in the same way that physical exercise and a balanced diet are. The cost of failing to act may be measured, decades from now, in millions of people with serious visual impairment."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The public is not sufficiently aware of the increase in myopia.",
+          "a": "YES",
+          "e": "Đoạn A: 'this trend deserves far more public attention than it currently receives' → YES."
+        },
+        {
+          "q": "Because glasses can correct it, myopia is not a serious health concern.",
+          "a": "NO",
+          "e": "Đoạn B: dù kính sửa được mờ mắt, cận nặng làm tăng nguy cơ bong võng mạc, glôcôm và mù lòa → tác giả phản đối → NO."
+        },
+        {
+          "q": "Genes alone can explain a rise that has occurred within two or three generations.",
+          "a": "NO",
+          "e": "Đoạn C: 'genetic change cannot explain an increase that has occurred within two or three generations' → NO."
+        },
+        {
+          "q": "Reading on screens is more harmful to children's eyes than reading books.",
+          "a": "NOT GIVEN",
+          "e": "Bài bàn về việc nhìn gần nói chung (đọc), không so sánh đọc trên màn hình với đọc sách → NOT GIVEN."
+        },
+        {
+          "q": "Schools should regard time outdoors as part of looking after children's health.",
+          "a": "YES",
+          "e": "Đoạn G: 'outdoor time should be treated not as a distraction from learning but as an essential part of children's health' → YES."
+        }
+      ]
+    },
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "a comparison of children of Chinese descent living in two different cities",
+          "a": "D",
+          "e": "Đoạn D: so sánh trẻ gốc Hoa sống ở Sydney với trẻ cùng gốc ở Singapore → D."
+        },
+        {
+          "q": "a description of how the shape of the eye causes blurred vision",
+          "a": "B",
+          "e": "Đoạn B: nhãn cầu dài quá mức khiến ánh sáng hội tụ trước võng mạc, nên vật ở xa bị mờ → B."
+        },
+        {
+          "q": "a reason why an earlier explanation seemed convincing",
+          "a": "C",
+          "e": "Đoạn C: có vẻ tự nhiên khi cho rằng trẻ học nhiều sẽ hại mắt, và áp lực học hành ở Đông Á dường như khớp với giải thích này → C."
+        },
+        {
+          "q": "obstacles to introducing a simple solution",
+          "a": "G",
+          "e": "Đoạn G: khó thuyết phục trường học và phụ huynh vì mọi giờ đều dành cho học tập và cha mẹ lo an toàn → G."
+        }
+      ]
+    },
+    {
+      "kind": "mcq2",
+      "items": [
+        {
+          "q": "Which TWO statements about bright light are made in the passage?",
+          "options": [
+            "Outdoor light is much brighter than indoor light even when it is cloudy.",
+            "It may help to limit the growth of the eyeball.",
+            "It can damage the retina if children are exposed to it for too long.",
+            "It is the main reason why children dislike playing indoors.",
+            "It reduces the amount of dopamine produced in the eye."
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn E: ánh sáng ngoài trời 'Even on a cloudy day... is many times brighter than typical indoor lighting', và ánh sáng mạnh kích thích dopamine giúp 'slow the growth of the eyeball'. Ánh sáng làm TĂNG chứ không giảm dopamine; bài không nói ánh sáng làm hại võng mạc."
+        },
+        {
+          "q": "Which TWO measures are described as having reduced myopia in children?",
+          "options": [
+            "adding an extra outdoor lesson to the school day",
+            "encouraging pupils to spend about two hours outside each day",
+            "banning homework in primary schools",
+            "providing free glasses to every child",
+            "replacing classroom lighting with brighter lamps"
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn F: thử nghiệm ở miền nam Trung Quốc thêm một tiết học ngoài trời 40 phút, và Đài Loan khuyến khích học sinh ở ngoài trời khoảng hai giờ mỗi ngày. Cả hai đều làm giảm tỷ lệ cận thị. Các phương án còn lại không có trong bài."
+        }
+      ]
+    }
+  ]
+}

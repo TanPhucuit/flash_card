@@ -1,0 +1,151 @@
+{
+  "title": "The Box That Changed the World",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử vận tải và thương mại quốc tế.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "It is easy to overlook the steel shipping container. Millions of these plain metal boxes travel across the oceans every day, carrying everything from clothing and electronics to frozen food, yet few people give them a moment's thought. Economic historians, however, increasingly regard the container as one of the most important inventions of the twentieth century. By making it cheap and reliable to move goods across the world, it helped to create the global supply chains on which modern manufacturing depends, and it transformed the economies of port cities on every continent."
+    },
+    {
+      "letter": "B",
+      "text": "Before the container, cargo was handled in much the same way as it had been for centuries. Goods arrived at the docks in sacks, barrels, crates and bales of every shape and size, and large teams of dockworkers loaded them into the hold of a ship piece by piece. The work was slow, physically exhausting and frequently dangerous. A ship might spend a week or more in port being loaded and unloaded, and theft was common, since goods passed through many hands. Moving cargo between ship and shore often accounted for a large share of the total cost of transporting it. Dockworkers were often hired by the day, and their employment was notoriously insecure."
+    },
+    {
+      "letter": "C",
+      "text": "The man most often credited with changing this was Malcom McLean, an American who had built up a successful trucking company. Frustrated by the hours his drivers spent waiting at ports while their loads were transferred to ships, he reasoned that it would be far more efficient to lift the entire body of a truck onto a vessel. In April 1956 a converted oil tanker called the Ideal X sailed from Newark, New Jersey, to Houston, Texas, carrying fifty-eight metal boxes on its deck. McLean later calculated that the cost of loading had fallen from several dollars per tonne to just a few cents."
+    },
+    {
+      "letter": "D",
+      "text": "The idea did not spread immediately. Different companies built containers in different sizes, with incompatible fittings, so a box designed for one firm's ships could not easily be carried by another's cranes or trucks. Throughout the 1960s, engineers and international organisations negotiated common standards for the dimensions of containers and the corner fittings by which they are lifted and locked together. Once these were agreed, a container could move from a lorry to a train to a ship and back again anywhere in the world without its contents ever being touched. The standard length of twenty feet later gave the industry its basic unit of capacity, still used today to compare the size of ships and ports."
+    },
+    {
+      "letter": "E",
+      "text": "Demand from an unexpected source accelerated the change. During the Vietnam War, the United States military struggled to supply its forces through congested ports, and McLean's company won contracts to carry military cargo in containers. The operation proved so efficient that his ships, rather than return empty across the Pacific, began picking up goods from Japan on the way home. This trade helped to demonstrate the potential of containers for linking Asian factories with Western consumers, a connection that would grow enormously over the following decades."
+    },
+    {
+      "letter": "F",
+      "text": "The social consequences were severe for some communities. Traditional docks in the centres of cities such as London and New York, where narrow quays could not accommodate the huge cranes and storage areas that containers required, went into rapid decline. New ports were built on open land elsewhere, often far from the old waterfront neighbourhoods. Employment on the docks collapsed, since a single crane operator could now do work that had once required dozens of labourers, and whole districts that had depended on port work for generations faced long periods of unemployment."
+    },
+    {
+      "letter": "G",
+      "text": "Today the largest container ships can carry more than twenty thousand standard boxes and are longer than four football pitches. The cost of shipping has fallen so low that it is often cheaper to transport goods halfway around the world than to make them close to where they will be sold. This efficiency has a downside, however. When a single large ship ran aground in the Suez Canal in 2021, blocking it for six days, the disruption to global trade revealed how heavily the world economy had come to depend on a system that most people never notice."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "A slow and costly way of moving cargo",
+          "para": "B"
+        },
+        {
+          "text": "A businessman's solution to a practical problem",
+          "para": "C"
+        },
+        {
+          "text": "The need for agreed measurements",
+          "para": "D"
+        },
+        {
+          "text": "A military contract opens a new trade route",
+          "para": "E"
+        },
+        {
+          "text": "Losers in the new system",
+          "para": "F"
+        },
+        {
+          "text": "The risks of an extremely efficient system",
+          "para": "G"
+        },
+        {
+          "text": "Why containers are made of steel",
+          "para": null
+        },
+        {
+          "text": "Competition between rival shipping companies",
+          "para": null
+        },
+        {
+          "text": "The environmental cost of large ships",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B mô tả cách bốc dỡ hàng trước khi có container: từng kiện một, chậm, nguy hiểm, trộm cắp phổ biến, chiếm phần lớn chi phí → cách vận chuyển chậm và tốn kém: {h}.",
+        "C": "Đoạn C: McLean, chủ công ty vận tải, bực vì tài xế phải chờ ở cảng nên nghĩ ra việc nhấc cả thùng xe lên tàu → giải pháp của một doanh nhân cho vấn đề thực tế: {h}.",
+        "D": "Đoạn D: container khác kích cỡ, khớp nối không tương thích; thập niên 1960 thống nhất tiêu chuẩn kích thước → cần có số đo thống nhất: {h}. Đoạn có nhắc nhiều công ty nhưng không nói về cạnh tranh nên không phải {i:7}.",
+        "E": "Đoạn E: hợp đồng chở hàng quân sự thời chiến tranh Việt Nam, tàu quay về chở hàng từ Nhật → hợp đồng quân sự mở ra tuyến thương mại mới: {h}.",
+        "F": "Đoạn F: các cảng truyền thống ở London, New York suy tàn, việc làm ở bến cảng sụp đổ → những người chịu thiệt trong hệ thống mới: {h}.",
+        "G": "Đoạn G: tàu lớn, chi phí rẻ, nhưng vụ tắc kênh Suez năm 2021 cho thấy kinh tế thế giới phụ thuộc quá nhiều → rủi ro của hệ thống cực kỳ hiệu quả: {h}. Không nói tác hại môi trường nên không phải {i:8}."
+      }
+    },
+    {
+      "kind": "gap",
+      "form": "flow-chart",
+      "limit": "NO MORE THAN TWO WORDS",
+      "title": "Moving goods after standardisation",
+      "items": [
+        {
+          "q": "A container is loaded and carried by ______ to the port ↓",
+          "a": "lorry",
+          "e": "Đoạn D: container có thể đi 'from a lorry to a train to a ship' → bước đầu tiên là xe tải (lorry)."
+        },
+        {
+          "q": "It is lifted by its standard ______ and locked to other boxes on the ship ↓",
+          "a": "corner fittings",
+          "e": "Đoạn D: tiêu chuẩn chung cho 'the corner fittings by which they are lifted and locked together' → corner fittings."
+        },
+        {
+          "q": "At the destination it may continue by ______ or road ↓",
+          "a": "train",
+          "e": "Đoạn D: container có thể chuyển từ xe tải sang tàu hỏa sang tàu biển rồi ngược lại → train."
+        },
+        {
+          "q": "It can travel anywhere in the world without its ______ ever being touched",
+          "a": "contents",
+          "e": "Đoạn D: container di chuyển khắp thế giới 'without its contents ever being touched' → contents."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "What gave McLean the idea for container shipping?",
+          "options": [
+            "He noticed how much cargo was stolen from ships.",
+            "His drivers lost time waiting at ports.",
+            "He wanted to find a use for old oil tankers.",
+            "Dockworkers in New York went on strike."
+          ],
+          "a": 1,
+          "e": "Đoạn C: ông bực vì 'the hours his drivers spent waiting at ports while their loads were transferred to ships'. Chiếc Ideal X là tàu dầu cải tạo nhưng đó không phải nguồn gốc ý tưởng."
+        },
+        {
+          "q": "Why did McLean's ships pick up goods from Japan on the way home?",
+          "options": [
+            "Japan had paid for the military contracts.",
+            "The US government required them to do so.",
+            "It avoided sailing back across the Pacific empty.",
+            "Japanese ports were less congested than American ones."
+          ],
+          "a": 2,
+          "e": "Đoạn E: thay vì quay về trống không qua Thái Bình Dương, các tàu ghé lấy hàng ở Nhật trên đường về."
+        },
+        {
+          "q": "What point does the writer make about the Suez Canal incident?",
+          "options": [
+            "It showed how dependent trade had become on shipping.",
+            "It proved that large ships should be banned.",
+            "It caused shipping costs to rise permanently.",
+            "It was the result of poor port design."
+          ],
+          "a": 0,
+          "e": "Đoạn G: sự gián đoạn 'revealed how heavily the world economy had come to depend on a system that most people never notice' → thương mại phụ thuộc rất nhiều vào vận tải biển."
+        }
+      ]
+    }
+  ]
+}

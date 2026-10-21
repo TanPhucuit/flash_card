@@ -1,0 +1,140 @@
+{
+  "title": "The Garden City Idea",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử quy hoạch đô thị.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "At the end of the nineteenth century, the industrial cities of Britain were crowded, polluted and often unhealthy. Millions of people had moved from the countryside in search of work, and many lived in cramped housing with little light or fresh air. At the same time, rural areas were losing population and struggling economically. It was against this background that a modest office worker named Ebenezer Howard, who earned his living recording speeches in Parliament, published a short book in 1898 proposing a new kind of settlement that would combine the advantages of town and country while avoiding the disadvantages of both."
+    },
+    {
+      "letter": "B",
+      "text": "Howard illustrated his argument with a famous diagram of three magnets. The town, he explained, offered jobs, entertainment and social life, but also high rents, polluted air and a separation from nature. The countryside offered beauty and clean air, but also low wages, isolation and a lack of amusement. A third magnet, which he called town-country, would draw people with the best of both: well-paid work and lively culture set in green surroundings. Howard did not regard this as an impossible dream but as a practical proposal that could be built with private money."
+    },
+    {
+      "letter": "C",
+      "text": "His plan was remarkably detailed. A garden city would be built on land purchased at agricultural prices and owned collectively by the community. It would be limited to around thirty thousand people, with homes, factories, shops and parks arranged in rings around a central garden, and it would be surrounded by a permanent belt of farmland. As the city grew and land values rose, the increase would benefit the whole community rather than private landlords, paying for public services and repaying the original investors. Once a city reached its planned size, new growth would take place in another garden city nearby."
+    },
+    {
+      "letter": "D",
+      "text": "Howard's ideas attracted influential supporters, and in 1903 work began on the first garden city at Letchworth, about fifty kilometres north of London. Its layout was designed by the architects Raymond Unwin and Barry Parker, who favoured cottages built in traditional styles, set back from tree-lined roads and grouped around shared green spaces. A second garden city followed at Welwyn after the First World War. Both towns still exist, and Letchworth continues to be managed by a foundation that reinvests income from its land in local projects. The town was intended to house factory workers as well as wealthier residents, with industry located at a distance from the homes."
+    },
+    {
+      "letter": "E",
+      "text": "Although only two true garden cities were ever completed, the movement's influence spread far beyond them. Garden suburbs, which adopted the leafy appearance of Howard's towns without their economic arrangements, appeared around many cities. In the United States, the planners Clarence Stein and Henry Wright designed a community at Radburn, New Jersey, in 1929, in which houses faced onto gardens and footpaths while cars were kept to separate roads at the back. After the Second World War, Britain's programme of new towns and its policy of protecting green belts around cities both drew directly on Howard's thinking. Similar ideas also shaped new settlements in Germany, Australia and other countries during the early twentieth century."
+    },
+    {
+      "letter": "F",
+      "text": "The American writer Lewis Mumford was among Howard's greatest admirers, declaring that the garden city and the aeroplane were the two great inventions to emerge at the beginning of the twentieth century. Not everyone agreed. In 1961, the journalist and activist Jane Jacobs attacked the garden city tradition in a widely read book, arguing that it was fundamentally hostile to cities. Busy streets, mixed uses and dense neighbourhoods, she claimed, were what made urban life safe and lively, and planners who tried to replace them with tidy, low-density layouts were destroying the very qualities that cities depend on."
+    },
+    {
+      "letter": "G",
+      "text": "Later critics added that low-density suburbs encouraged dependence on the car, since homes, shops and workplaces were often too far apart to reach on foot. Supporters reply that this was not what Howard intended: his garden cities were meant to be compact, self-contained towns served by railways, in which most people could walk to work. In recent years, interest in his ideas has revived, particularly his proposal that rising land values should be captured for the benefit of the community, which some housing experts see as a possible way of paying for new homes and infrastructure."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "Comparing the attractions of different places to live",
+          "para": "B"
+        },
+        {
+          "text": "A detailed plan for ownership and growth",
+          "para": "C"
+        },
+        {
+          "text": "The first settlements are built",
+          "para": "D"
+        },
+        {
+          "text": "A wider legacy at home and abroad",
+          "para": "E"
+        },
+        {
+          "text": "Praise and a powerful attack",
+          "para": "F"
+        },
+        {
+          "text": "A misunderstood vision regains attention",
+          "para": "G"
+        },
+        {
+          "text": "The decline of British industry",
+          "para": null
+        },
+        {
+          "text": "Why Howard abandoned his original plan",
+          "para": null
+        },
+        {
+          "text": "Government funding for the first projects",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: sơ đồ ba nam châm so sánh ưu nhược điểm của thành phố, nông thôn và 'town-country' → so sánh sức hút của các nơi sống khác nhau: {h}.",
+        "C": "Đoạn C: đất do cộng đồng sở hữu, giới hạn dân số, vành đai nông nghiệp, giá trị đất tăng thuộc về cộng đồng, thành phố mới khi đủ quy mô → kế hoạch chi tiết về sở hữu và phát triển: {h}.",
+        "D": "Đoạn D: Letchworth bắt đầu xây năm 1903, tiếp theo là Welwyn → những khu định cư đầu tiên được xây dựng: {h}. Bài nói vốn tư nhân (đoạn B), không phải chính phủ tài trợ, nên không phải {i:8}.",
+        "E": "Đoạn E: ảnh hưởng lan ra ngoại ô vườn, Radburn ở Mỹ, chương trình thị trấn mới và vành đai xanh ở Anh → di sản rộng hơn trong và ngoài nước: {h}.",
+        "F": "Đoạn F: Lewis Mumford ca ngợi, Jane Jacobs công kích dữ dội → lời khen và một cuộc công kích mạnh mẽ: {h}.",
+        "G": "Đoạn G: người ủng hộ cho rằng phê bình về phụ thuộc ô tô đã hiểu sai ý Howard; gần đây ý tưởng của ông được quan tâm trở lại → tầm nhìn bị hiểu sai được chú ý lại: {h}."
+      }
+    },
+    {
+      "kind": "features",
+      "listTitle": "People",
+      "people": [
+        "Ebenezer Howard",
+        "Raymond Unwin and Barry Parker",
+        "Clarence Stein and Henry Wright",
+        "Lewis Mumford",
+        "Jane Jacobs"
+      ],
+      "items": [
+        {
+          "q": "designed a layout that kept motor traffic away from the front of homes",
+          "a": 2,
+          "e": "Đoạn E: ở Radburn, nhà quay ra vườn và lối đi bộ còn xe hơi đi đường riêng phía sau → Clarence Stein and Henry Wright."
+        },
+        {
+          "q": "believed that crowded, varied streets were essential to successful cities",
+          "a": 4,
+          "e": "Đoạn F: Jane Jacobs cho rằng phố đông đúc, đa chức năng, khu dân cư dày đặc là thứ làm đời sống đô thị an toàn và sôi động → Jane Jacobs."
+        },
+        {
+          "q": "ranked the garden city alongside a major technological achievement",
+          "a": 3,
+          "e": "Đoạn F: Lewis Mumford tuyên bố garden city và máy bay là hai phát minh lớn đầu thế kỷ 20 → Lewis Mumford."
+        },
+        {
+          "q": "preferred buildings in an old-fashioned style",
+          "a": 1,
+          "e": "Đoạn D: Unwin và Parker thích 'cottages built in traditional styles' – nhà theo lối truyền thống → Raymond Unwin and Barry Parker."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "sentences",
+      "limit": "ONE WORD ONLY",
+      "items": [
+        {
+          "q": "Before his book appeared, Howard earned his living recording speeches in ______.",
+          "a": "Parliament",
+          "e": "Đoạn A: Howard 'earned his living recording speeches in Parliament' → Parliament."
+        },
+        {
+          "q": "Each garden city would be surrounded by a permanent belt of ______.",
+          "a": "farmland",
+          "e": "Đoạn C: thành phố được bao quanh 'by a permanent belt of farmland' → farmland."
+        },
+        {
+          "q": "Howard intended his towns to be served by ______, so that residents could walk to work.",
+          "a": "railways",
+          "e": "Đoạn G: garden city là thị trấn nhỏ gọn, tự đủ 'served by railways', đa số người có thể đi bộ đi làm → railways."
+        }
+      ]
+    }
+  ]
+}

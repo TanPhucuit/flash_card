@@ -1,0 +1,149 @@
+{
+  "title": "The Cleverness of Crows",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu về nhận thức của loài quạ đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "For much of the twentieth century, the phrase ‘bird brain’ was used as an insult, reflecting a widespread belief that birds were capable of little more than simple, instinctive behaviour. That view has been overturned by research on a family of birds that includes crows, ravens, rooks and jays. Over the past three decades, scientists have shown that some of these birds can make and use tools, solve complex problems, remember individual human faces and plan for the future. In some tasks, their performance rivals that of great apes, the animals usually regarded as the most intelligent after humans."
+    },
+    {
+      "letter": "B",
+      "text": "The most celebrated tool users are the crows of New Caledonia, a group of islands in the south-west Pacific. In 1996, the biologist Gavin Hunt reported that these birds manufacture two distinct kinds of tool. They strip twigs and shape the ends into hooks, and they cut the edges of tough pandanus leaves into stepped or tapered strips. The crows use these implements to extract insect larvae from holes in dead wood. Remarkably, the design of the leaf tools varies from one area to another, which some researchers interpret as evidence that the techniques are passed on and refined over generations, a basic form of culture."
+    },
+    {
+      "letter": "C",
+      "text": "A captive New Caledonian crow named Betty made headlines in 2002. Researchers at the University of Oxford, including Alex Kacelnik, had placed a small bucket of food at the bottom of a tube and offered the crows a straight piece of wire and a hooked one. When her companion flew off with the hooked wire, Betty took the straight piece, bent it into a hook by wedging one end against a surface, and used it to lift the bucket out. At the time, the behaviour appeared to show an astonishing capacity for improvisation. Later studies found that wild crows often bend twigs in similar ways, suggesting that Betty may have been drawing on a natural tendency rather than inventing an entirely new technique."
+    },
+    {
+      "letter": "D",
+      "text": "Other experiments have been inspired by an ancient fable in which a thirsty crow drops pebbles into a jug until the water rises high enough for it to drink. Nathan Emery and his colleagues gave rooks a tube of water with a worm floating out of reach; the birds dropped stones into the tube until they could reach their reward. Later studies with crows found that they preferred to drop heavy objects rather than light ones, and solid objects rather than hollow ones, suggesting that they understood, at least to some extent, which objects would raise the water level most effectively."
+    },
+    {
+      "letter": "E",
+      "text": "Crows also appear to be capable of combining objects to create something new. In 2018, a team including Auguste von Bayern presented New Caledonian crows with food placed in a box, too far away to reach with any of the short sticks available. Several of the birds solved the problem by fitting two or more sticks together to create a longer tool, a feat previously observed only in humans and great apes. Because the crows had never been trained to do this, the researchers argued that the birds were able to imagine the solution before carrying it out."
+    },
+    {
+      "letter": "F",
+      "text": "Some of the most entertaining research concerns the relationship between crows and people. At the University of Washington, the biologist John Marzluff and his students captured and released wild crows while wearing a particular rubber mask. For years afterwards, crows on the campus scolded and dive-bombed anyone wearing that mask, even if the person wearing it had never handled a crow, while ignoring people in other masks. The number of crows reacting to the mask increased over time, indicating that birds which had never been captured had learned from others which face to fear."
+    },
+    {
+      "letter": "G",
+      "text": "How can birds with brains the size of a walnut achieve such feats? Part of the answer is that bird brains are organised very differently from those of mammals. Research published in 2016 found that the neurons in the brains of crows and parrots are packed far more densely than in mammal brains, so that a crow's brain may contain as many neurons as the much larger brain of some monkeys. Size, it seems, is a poor guide to intelligence, and the study of crows has forced scientists to reconsider what it takes to think."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "evidence that birds pass knowledge about danger from one to another",
+          "a": "F",
+          "e": "Đoạn F: số quạ phản ứng với mặt nạ tăng dần, kể cả con chưa từng bị bắt, tức chúng học từ con khác → F."
+        },
+        {
+          "q": "a suggestion that an impressive achievement may have been less original than first thought",
+          "a": "C",
+          "e": "Đoạn C: quạ hoang dã thường uốn cành tương tự, nên Betty có thể dựa vào thiên hướng tự nhiên chứ không sáng tạo hoàn toàn → C."
+        },
+        {
+          "q": "a reason why the size of a brain may be misleading",
+          "a": "G",
+          "e": "Đoạn G: nơ-ron trong não quạ dày đặc hơn nhiều, nên não quạ có thể có số nơ-ron ngang não khỉ lớn hơn → G."
+        },
+        {
+          "q": "a possible example of animal traditions differing between places",
+          "a": "B",
+          "e": "Đoạn B: thiết kế công cụ từ lá thay đổi theo vùng, có thể là bằng chứng kỹ thuật được truyền lại – một dạng văn hóa → B."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "Researchers",
+      "singular": "researcher",
+      "people": [
+        "Gavin Hunt",
+        "Alex Kacelnik",
+        "Nathan Emery",
+        "Auguste von Bayern",
+        "John Marzluff"
+      ],
+      "items": [
+        {
+          "q": "showed that crows could fit two or more sticks together",
+          "a": 3,
+          "e": "Đoạn E: trong nghiên cứu năm 2018 có Auguste von Bayern, quạ ghép hai hay nhiều que thành một công cụ dài hơn → Auguste von Bayern."
+        },
+        {
+          "q": "investigated whether birds would use objects to raise the level of water",
+          "a": 2,
+          "e": "Đoạn D: Nathan Emery cho quạ rook một ống nước có con sâu nổi ngoài tầm với, chúng thả đá cho nước dâng lên → Nathan Emery."
+        },
+        {
+          "q": "described two different types of tool made by wild birds",
+          "a": 0,
+          "e": "Đoạn B: năm 1996 Gavin Hunt báo cáo quạ New Caledonia chế tạo 'two distinct kinds of tool' – móc từ cành và dải từ lá dứa dại → Gavin Hunt."
+        },
+        {
+          "q": "captured wild crows while wearing a particular rubber mask",
+          "a": 4,
+          "e": "Đoạn F: John Marzluff và sinh viên bắt rồi thả quạ hoang dã khi đeo một chiếc mặt nạ cao su nhất định, và nhiều năm sau quạ vẫn tấn công người đeo mặt nạ đó → John Marzluff."
+        },
+        {
+          "q": "was involved in a study in which a bird reshaped a piece of material",
+          "a": 1,
+          "e": "Đoạn C: nhóm Oxford có Alex Kacelnik, nơi quạ Betty uốn sợi dây thẳng thành móc → Alex Kacelnik."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "What does the writer say about the phrase ‘bird brain’?",
+          "options": [
+            "It accurately describes the behaviour of most species of bird.",
+            "It reflected a belief that has since been shown to be wrong.",
+            "It was invented by the scientists who first studied crows.",
+            "It is still used by most researchers who study bird behaviour."
+          ],
+          "a": 1,
+          "e": "Đoạn A: cụm từ phản ánh niềm tin chim chỉ có hành vi bản năng đơn giản, và 'That view has been overturned' bởi nghiên cứu về họ quạ."
+        },
+        {
+          "q": "In the water-tube experiments with crows, the birds",
+          "options": [
+            "chose objects that would make the water rise most.",
+            "refused to use any objects.",
+            "preferred light, hollow objects.",
+            "needed to be trained for several weeks."
+          ],
+          "a": 0,
+          "e": "Đoạn D: quạ thích thả vật nặng và đặc hơn là vật nhẹ và rỗng → chọn vật làm nước dâng hiệu quả nhất. 'light, hollow' là bẫy ngược nghĩa."
+        },
+        {
+          "q": "Why did the researchers believe the crows in the 2018 study could imagine a solution?",
+          "options": [
+            "The crows watched humans solve the problem first.",
+            "The crows had not been taught the behaviour.",
+            "The crows had seen other birds make long tools.",
+            "The sticks had been joined together in advance."
+          ],
+          "a": 1,
+          "e": "Đoạn E: 'Because the crows had never been trained to do this', nhà nghiên cứu cho rằng chúng hình dung được lời giải trước khi thực hiện."
+        },
+        {
+          "q": "What is the main purpose of the final paragraph?",
+          "options": [
+            "to compare crows unfavourably with monkeys",
+            "to explain how small bird brains can support complex behaviour",
+            "to argue that parrots are more intelligent than crows",
+            "to describe how crows' brains grow during their lives"
+          ],
+          "a": 1,
+          "e": "Đoạn G: giải thích vì sao bộ não nhỏ của chim vẫn làm được nhiều việc phức tạp: nơ-ron rất dày đặc, nên kích thước não không phản ánh trí thông minh."
+        }
+      ]
+    }
+  ]
+}

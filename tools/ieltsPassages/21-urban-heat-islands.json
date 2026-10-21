@@ -1,0 +1,47 @@
+{
+  "title": "Cooling the Urban Heat Island",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu khí hậu đô thị và quy hoạch đã công bố.",
+  "sections": [
+    { "letter": "A", "text": "On a still summer evening, the centre of a large city can be several degrees warmer than the surrounding countryside. The phenomenon, known as the urban heat island, was first described in the early nineteenth century by Luke Howard, an amateur meteorologist who kept careful records of temperatures in and around London. Howard noticed that the city was consistently warmer than the nearby fields, particularly at night, and he correctly suspected that the cause lay in the city itself. Two centuries later, as more than half of the world's population lives in urban areas and heatwaves become more frequent, his observation has acquired a new urgency." },
+    { "letter": "B", "text": "Several factors combine to make cities warmer. Dark surfaces such as asphalt roads and roofs absorb a large proportion of the sunlight that falls on them and release the stored heat slowly after sunset. In the countryside, by contrast, plants release water vapour through their leaves, a process that cools the surrounding air in much the same way that sweating cools the human body. Cities have far less vegetation, so this natural cooling is largely lost. Tall buildings also trap heat and reduce the flow of air through streets, while vehicles, factories and air-conditioning units add heat of their own." },
+    { "letter": "C", "text": "The difference is usually greatest at night. During the day, the countryside heats up too, but after sunset open fields lose heat rapidly to the sky. Urban areas, packed with materials that have absorbed heat all day, cool far more slowly. On calm, clear nights the centre of a large city may be as much as ten degrees warmer than its rural surroundings. This matters for health, because the human body relies on cooler night-time temperatures to recover from the stress of a hot day." },
+    { "letter": "D", "text": "The consequences can be deadly. During the European heatwave of 2003, tens of thousands of people died, many of them elderly residents of cities who were unable to escape the heat in their apartments. Researchers have also found that the effects are unevenly distributed. In the United States, neighbourhoods with fewer trees and more paved surfaces, which are often home to poorer residents, can be considerably hotter than wealthier districts in the same city. The urban heat island, in other words, is not only an environmental issue but a question of social fairness." },
+    { "letter": "E", "text": "Fortunately, many of the causes can be addressed. One of the simplest solutions is to make surfaces more reflective. A white or light-coloured roof reflects much more sunlight than a dark one and can be many degrees cooler on a sunny day, reducing the heat that passes into the building below. Several cities have experimented with reflective coatings on roads; in Los Angeles, some streets have been painted with a pale grey coating, and measurements suggested that their surfaces were noticeably cooler than those of untreated streets nearby." },
+    { "letter": "F", "text": "Vegetation offers additional benefits. Trees provide shade and cool the air as they release water, and a street lined with mature trees can be several degrees cooler than a bare one. Green roofs, covered with soil and plants, help to insulate buildings and absorb rainwater that would otherwise run straight into drains. In the Colombian city of Medellín, a programme of planting trees and plants along busy roads and waterways created a network of green corridors, and the city reported that temperatures in these areas fell by around two degrees." },
+    { "letter": "G", "text": "Such measures are not without difficulties. Trees require water, space and years of care before they provide significant shade, and in crowded districts there may be little room to plant them. Reflective surfaces can cause glare and, if poorly placed, may reflect heat onto pedestrians or nearby buildings. Planners therefore increasingly recommend combining several approaches, adapted to local conditions, rather than relying on a single technique. Schools in Paris, for example, have replaced asphalt playgrounds with planted areas and permeable surfaces that stay cooler on hot days." },
+    { "letter": "H", "text": "The heat island will not disappear, since a city by its nature replaces fields and forests with buildings and roads. But the evidence shows that thoughtful design can reduce it significantly. As climate change brings longer and more intense heatwaves, the ability to keep cities cool may become one of the most important tasks facing urban planners in the coming decades." }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        { "q": "Luke Howard was a professional scientist employed to study London's climate.", "a": "FALSE", "e": "Đoạn A: Luke Howard là 'an amateur meteorologist' – nhà khí tượng nghiệp dư, không phải nhà khoa học chuyên nghiệp được thuê → FALSE." },
+        { "q": "Plants cool the air by releasing water vapour, in a way similar to how sweating cools people.", "a": "TRUE", "e": "Đoạn B: thực vật thải hơi nước qua lá, làm mát không khí 'in much the same way that sweating cools the human body' → TRUE." },
+        { "q": "Cities cool more slowly than the countryside after sunset.", "a": "TRUE", "e": "Đoạn C: sau khi mặt trời lặn, đồng ruộng mất nhiệt nhanh; đô thị 'cool far more slowly' → TRUE." },
+        { "q": "Most of those who died in the 2003 heatwave lived in rural areas.", "a": "FALSE", "e": "Đoạn D: nhiều nạn nhân là 'elderly residents of cities' – cư dân đô thị lớn tuổi, không phải nông thôn → FALSE." },
+        { "q": "Reflective coatings on roads in Los Angeles were later removed because of complaints.", "a": "NOT GIVEN", "e": "Đoạn E chỉ nói đường phủ lớp xám nhạt mát hơn; bài không nhắc chuyện lớp phủ bị gỡ bỏ hay bị phàn nàn → NOT GIVEN." }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "table",
+      "limit": "ONE WORD ONLY",
+      "title": "Ways of reducing urban heat",
+      "items": [
+        { "q": "Light-coloured roofs – reflect more ______ than dark ones – can be many degrees cooler", "a": "sunlight", "e": "Đoạn E: mái trắng hoặc sáng màu 'reflects much more sunlight than a dark one' → sunlight." },
+        { "q": "Street trees – give shade and cool the air – need water, space and years of ______", "a": "care", "e": "Đoạn G: cây cần 'water, space and years of care before they provide significant shade' → care." },
+        { "q": "Green roofs – insulate buildings and absorb ______ – reduce water running into drains", "a": "rainwater", "e": "Đoạn F: mái xanh giúp cách nhiệt 'and absorb rainwater that would otherwise run straight into drains' → rainwater." },
+        { "q": "Reflective surfaces – can cause ______ and may reflect heat onto pedestrians", "a": "glare", "e": "Đoạn G: bề mặt phản quang 'can cause glare' và có thể hắt nhiệt vào người đi bộ → glare." }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        { "q": "Why does the writer mention the human body in paragraph C?", "options": ["to explain why older people feel the cold at night", "to show why warm nights in cities are a health risk", "to compare body temperature with air temperature", "to suggest that people adapt quickly to hot weather"], "a": 1, "e": "Đoạn C: cơ thể cần nhiệt độ đêm mát hơn để hồi phục sau ngày nóng, nên đêm nóng ở đô thị ảnh hưởng sức khỏe → cho thấy vì sao đêm ấm là nguy cơ sức khỏe." },
+        { "q": "What does the writer say about poorer neighbourhoods in the United States?", "options": ["They often have more trees than wealthy districts.", "They are frequently hotter than richer areas nearby.", "They received most of the funding for cooling projects.", "They are located mainly in the countryside."], "a": 1, "e": "Đoạn D: khu ít cây, nhiều bề mặt lát, thường là nơi người nghèo sống, 'can be considerably hotter than wealthier districts in the same city'." },
+        { "q": "What happened in Medellín?", "options": ["The city replaced its roads with reflective surfaces.", "Residents were paid to install green roofs.", "Planting along roads and rivers lowered local temperatures.", "Schools removed their playgrounds to plant trees."], "a": 2, "e": "Đoạn F: trồng cây dọc đường và sông suối tạo hành lang xanh, nhiệt độ ở đó giảm khoảng hai độ. Thay sân chơi là chuyện các trường ở Paris – bẫy." },
+        { "q": "What do planners now generally recommend?", "options": ["using several methods suited to each place", "relying mainly on reflective roofs", "banning air-conditioning in city centres", "moving residents from the hottest districts"], "a": 0, "e": "Đoạn G: các nhà quy hoạch khuyến nghị 'combining several approaches, adapted to local conditions, rather than relying on a single technique' → nhiều biện pháp phù hợp từng nơi." }
+      ]
+    }
+  ]
+}

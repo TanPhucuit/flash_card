@@ -1,0 +1,157 @@
+{
+  "title": "Pen Versus Keyboard",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu tâm lý học giáo dục và khoa học thần kinh đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "For most of the twentieth century, learning to write by hand was one of the central tasks of primary education. Children spent hours forming letters, first printing them separately and later joining them in flowing script. Today, the picture is very different. Students take notes on laptops, adults type far more than they write, and many education systems have reduced the time devoted to handwriting. In 2016, Finland stopped requiring schools to teach joined-up writing, preferring to concentrate on typing skills. Such decisions raise an obvious question: does it matter whether we write with a pen or a keyboard?"
+    },
+    {
+      "letter": "B",
+      "text": "The question attracted wide attention in 2014, when the psychologists Pam Mueller and Daniel Oppenheimer published a study with a memorable title, ‘The pen is mightier than the keyboard’. University students watched short lectures and took notes either by hand or on a laptop. When tested afterwards, the two groups performed equally well on factual questions, but those who had written by hand did significantly better on questions that required them to understand and apply concepts. Analysis of the notes suggested a reason. Laptop users wrote more words, but they tended to record what the speaker said almost word for word."
+    },
+    {
+      "letter": "C",
+      "text": "Mueller and Oppenheimer argued that the slowness of handwriting is, paradoxically, an advantage. Because nobody can write as fast as a lecturer speaks, students taking notes by hand are forced to decide what is important and to express it in their own words. This process of selecting and summarising requires them to think about the material, which in turn helps them to remember it. Typists, who can keep up with the speaker, may record a great deal while processing very little. Interestingly, telling laptop users to avoid copying the lecture word for word did not solve the problem; most did so anyway."
+    },
+    {
+      "letter": "D",
+      "text": "Not every researcher has been convinced. When a team led by Kayla Morehead repeated the experiments in 2019, the differences between the groups were smaller and less consistent than in the original study, and the authors concluded that the evidence was not yet strong enough to justify banning laptops from lecture halls. They also pointed out that typed notes have practical benefits: they are easier to read, search and share, and students who review their notes before an examination may gain more from a complete record than from a brief handwritten summary. In their view, how students use their notes after a lecture may matter at least as much as how they produce them in the first place."
+    },
+    {
+      "letter": "E",
+      "text": "A separate line of research has looked inside the brain. The neuroscientist Audrey van der Meer and her colleagues in Norway recorded electrical activity in the brains of students who were writing words by hand or typing them. Handwriting was associated with more widespread connections between different brain regions, including areas involved in movement, vision and memory. The researchers suggested that the precise, varied movements needed to form each letter provide the brain with richer information than the repetitive action of pressing keys, which is almost identical whatever letter is typed."
+    },
+    {
+      "letter": "F",
+      "text": "Studies of young children point in a similar direction. Karin James, a psychologist at Indiana University, taught children who could not yet read to recognise letters in one of three ways: by writing them freehand, by tracing them, or by typing them. When the children were later shown letters while their brains were scanned, those who had practised freehand writing showed stronger activity in regions associated with reading in adults. James argues that the imperfect, variable letters children produce when writing by hand help them to learn what all versions of a letter have in common. Children who had only traced or typed the letters showed much weaker responses, even though they had spent the same amount of time practising."
+    },
+    {
+      "letter": "G",
+      "text": "What should schools conclude? Few researchers would recommend abandoning keyboards, which are essential tools in modern life and which can help pupils with physical difficulties to express their ideas. The evidence suggests rather that handwriting may play a particular role in the early stages of learning to read and in situations where the aim is understanding rather than recording. For older students, the most important factor may not be the tool at all, but whether they are actively thinking about what they write."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "A well-known comparison of note-taking methods",
+          "para": "B"
+        },
+        {
+          "text": "Why writing slowly can help understanding",
+          "para": "C"
+        },
+        {
+          "text": "A repeat study produces less clear results",
+          "para": "D"
+        },
+        {
+          "text": "Differences in brain activity among students",
+          "para": "E"
+        },
+        {
+          "text": "How young learners recognise letters",
+          "para": "F"
+        },
+        {
+          "text": "A balanced conclusion for educators",
+          "para": "G"
+        },
+        {
+          "text": "The decline of handwriting skills among teachers",
+          "para": null
+        },
+        {
+          "text": "The cost of providing laptops in schools",
+          "para": null
+        },
+        {
+          "text": "Students' own preferences for taking notes",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: nghiên cứu năm 2014 của Mueller và Oppenheimer so sánh sinh viên ghi chép tay và ghi bằng laptop → một so sánh nổi tiếng về cách ghi chép: {h}.",
+        "C": "Đoạn C: sự chậm của viết tay buộc người học chọn lọc, tóm tắt bằng lời của mình, nhờ đó hiểu và nhớ tốt hơn → vì sao viết chậm giúp hiểu bài: {h}.",
+        "D": "Đoạn D: nhóm của Kayla Morehead lặp lại thí nghiệm năm 2019, khác biệt nhỏ và không nhất quán → nghiên cứu lặp lại cho kết quả kém rõ ràng: {h}.",
+        "E": "Đoạn E: ghi điện não của sinh viên Na Uy – viết tay tạo nhiều kết nối giữa các vùng não hơn → khác biệt hoạt động não ở sinh viên: {h}.",
+        "F": "Đoạn F: Karin James dạy trẻ chưa biết đọc nhận diện chữ cái bằng ba cách → cách trẻ nhỏ nhận diện chữ cái: {h}.",
+        "G": "Đoạn G: không bỏ bàn phím, nhưng viết tay có vai trò riêng ở giai đoạn đầu học đọc và khi mục tiêu là hiểu → kết luận cân bằng cho nhà giáo dục: {h}."
+      }
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "In Mueller and Oppenheimer's study, students who typed their notes",
+          "options": [
+            "answered factual questions less accurately than the other group.",
+            "tended to copy down the lecture almost word for word.",
+            "wrote fewer words than students who used a pen.",
+            "stopped copying once they were told not to do so."
+          ],
+          "a": 1,
+          "e": "Đoạn B: người dùng laptop 'tended to record what the speaker said almost word for word'. Họ viết NHIỀU từ hơn, câu hỏi dữ kiện thì hai nhóm như nhau, và đoạn C nói dặn đừng chép nguyên văn cũng không có tác dụng."
+        },
+        {
+          "q": "What advantage of typed notes does Morehead's team mention?",
+          "options": [
+            "They make students listen more carefully to lectures.",
+            "They improve students' understanding of difficult concepts.",
+            "They are simpler to search and to share with others.",
+            "They encourage students to summarise in their own words."
+          ],
+          "a": 2,
+          "e": "Đoạn D: ghi chép đánh máy 'are easier to read, search and share' → dễ tìm kiếm và chia sẻ. Các phương án còn lại là ưu điểm được gán cho viết tay."
+        },
+        {
+          "q": "According to van der Meer, typing may provide less information to the brain because",
+          "options": [
+            "the movement is very similar for every letter.",
+            "students type more quickly than they read.",
+            "the screen distracts attention from the words.",
+            "keyboards are designed differently in each country."
+          ],
+          "a": 0,
+          "e": "Đoạn E: thao tác gõ phím 'is almost identical whatever letter is typed', trong khi viết tay đòi hỏi chuyển động đa dạng cho từng chữ."
+        }
+      ]
+    },
+    {
+      "kind": "endings",
+      "endings": [
+        "showed stronger activity in brain areas linked with reading.",
+        "may help them understand what different versions of a letter share.",
+        "was based on a decision to focus on keyboard skills.",
+        "found that laptops should be banned from lecture halls.",
+        "were unable to recognise any of the letters afterwards.",
+        "can be useful for pupils who find writing physically difficult.",
+        "required children to copy the same letter many times."
+      ],
+      "items": [
+        {
+          "q": "Finland stopped requiring schools to teach joined-up writing in 2016, a change that",
+          "a": 2,
+          "e": "Đoạn A: năm 2016 Phần Lan bỏ yêu cầu dạy chữ viết liền, 'preferring to concentrate on typing skills' → quyết định tập trung vào kỹ năng gõ phím."
+        },
+        {
+          "q": "Children who had practised freehand writing",
+          "a": 0,
+          "e": "Đoạn F: trẻ tập viết tay tự do 'showed stronger activity in regions associated with reading in adults' → hoạt động mạnh hơn ở vùng não liên quan đến đọc."
+        },
+        {
+          "q": "According to Karin James, the uneven letters children produce by hand",
+          "a": 1,
+          "e": "Đoạn F: những chữ cái không hoàn hảo trẻ tự viết 'help them to learn what all versions of a letter have in common' → giúp hiểu các dạng của một chữ cái có điểm gì chung."
+        },
+        {
+          "q": "The writer suggests that keyboards",
+          "a": 5,
+          "e": "Đoạn G: bàn phím là công cụ thiết yếu và 'can help pupils with physical difficulties to express their ideas' → hữu ích cho học sinh gặp khó khăn về thể chất khi viết. Phương án 'laptops should be banned' là bẫy – đoạn D nói ngược lại."
+        }
+      ]
+    }
+  ]
+}

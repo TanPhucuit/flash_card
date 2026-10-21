@@ -1,0 +1,135 @@
+{
+  "title": "The Montessori Classroom",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử giáo dục và các nghiên cứu đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Walk into a Montessori classroom and the first thing you may notice is what is missing. There are no rows of desks facing a blackboard, and the teacher is rarely standing at the front addressing the whole class. Instead, children of different ages are scattered around the room, some working alone at small tables, others sitting on mats on the floor, each absorbed in a different activity. To many visitors the scene looks unstructured, yet it is the product of a carefully designed educational philosophy that is now more than a century old and is practised in thousands of schools around the world."
+    },
+    {
+      "letter": "B",
+      "text": "Its founder, Maria Montessori, was born in Italy in 1870 and became one of the first women in her country to qualify as a doctor. Her early medical work brought her into contact with children who had been classified as having severe learning difficulties and who were kept in institutions with almost nothing to occupy them. Montessori noticed that they would pick up crumbs from the floor simply to have something to handle, and she became convinced that their development was being held back by a lack of stimulation rather than by any fixed limitation. When she provided them with specially designed materials, several made remarkable progress."
+    },
+    {
+      "letter": "C",
+      "text": "In 1907 she was invited to run a day-care centre for the children of working families in a poor district of Rome. She called it the Casa dei Bambini, or Children's House, and furnished it with tables and chairs light enough for small children to move and shelves low enough for them to reach. She introduced the materials she had developed earlier and observed carefully how the children used them. To her surprise, children as young as three would repeat a task, such as fitting wooden cylinders into holes of matching sizes, dozens of times with intense concentration, and would often choose work over the toys that were also available."
+    },
+    {
+      "letter": "D",
+      "text": "From these observations grew the principles that still define her method. Classes mix children across an age range of about three years, so that younger pupils learn by watching older ones and older pupils consolidate their knowledge by helping. Many of the materials are self-correcting: a cylinder will only fit into the right hole, so a child can see a mistake without being told. Children are given long, uninterrupted periods in which to choose their own activities, and the teacher's role is to observe and to introduce new materials when a child appears ready, rather than to deliver lessons to the whole group."
+    },
+    {
+      "letter": "E",
+      "text": "The method spread with astonishing speed. An English translation of Montessori's book appeared in 1912 and sold out rapidly, and within a few years there were Montessori schools across Europe and North America. In the United States, however, enthusiasm faded almost as quickly as it had grown. In 1914 William Heard Kilpatrick, an influential professor of education, published a critical study arguing that her ideas were outdated and offered little that was new. His criticism carried considerable weight, and the movement in America declined until the late 1950s, when Nancy McCormick Rambusch helped to revive it."
+    },
+    {
+      "letter": "F",
+      "text": "Whether the method actually produces better results has proved surprisingly difficult to establish. Families who choose Montessori schools may differ in important ways from those who do not, which makes simple comparisons unreliable. One of the most frequently cited studies avoided this problem by taking advantage of a lottery. In the American city of Milwaukee, places at a public Montessori school were allocated randomly among applicants, so the psychologist Angeline Lillard was able to compare children who had won a place with similar children who had applied but lost. The Montessori pupils performed better on tests of early reading and mathematics and showed stronger social skills."
+    },
+    {
+      "letter": "G",
+      "text": "Even so, researchers urge caution. The Milwaukee study was relatively small, and because the name ‘Montessori’ is not legally protected in many countries, schools using it vary enormously in how faithfully they follow the original approach. Some are rigorous in their use of the materials and their training of teachers; others adopt the label while retaining a fairly conventional curriculum. Supporters argue that the best evidence comes from schools that implement the method fully, and that the variation itself helps to explain why the overall research findings have been mixed."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Montessori believed that the children in the institutions were capable of more than people assumed.",
+          "a": "TRUE",
+          "e": "Đoạn B: bà tin rằng sự phát triển của trẻ bị kìm hãm 'by a lack of stimulation rather than by any fixed limitation' – trẻ có khả năng hơn người ta nghĩ → TRUE."
+        },
+        {
+          "q": "The furniture in the Children's House was designed by Montessori herself.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C chỉ nói bà trang bị bàn ghế nhẹ và kệ thấp vừa tầm trẻ, nhưng không nói ai thiết kế đồ nội thất đó → NOT GIVEN."
+        },
+        {
+          "q": "Given a choice, children at the Children's House often preferred working with the materials to playing with toys.",
+          "a": "TRUE",
+          "e": "Đoạn C: trẻ 'would often choose work over the toys that were also available' → TRUE."
+        },
+        {
+          "q": "In a Montessori classroom, the teacher usually decides which activity each child will do.",
+          "a": "FALSE",
+          "e": "Đoạn D: trẻ được dành thời gian dài 'to choose their own activities'; giáo viên chỉ quan sát và giới thiệu vật liệu mới → FALSE."
+        },
+        {
+          "q": "The English translation of Montessori's book was more popular in Britain than in the United States.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn E: bản dịch năm 1912 'sold out rapidly', nhưng bài không so sánh mức phổ biến của nó ở Anh và Mỹ → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "features",
+      "listTitle": "People",
+      "people": [
+        "Maria Montessori",
+        "William Heard Kilpatrick",
+        "Nancy McCormick Rambusch",
+        "Angeline Lillard"
+      ],
+      "items": [
+        {
+          "q": "claimed that the Montessori approach contained few original ideas",
+          "a": 1,
+          "e": "Đoạn E: Kilpatrick cho rằng ý tưởng của bà 'were outdated and offered little that was new' → William Heard Kilpatrick."
+        },
+        {
+          "q": "compared groups of children chosen by chance",
+          "a": 3,
+          "e": "Đoạn F: ở Milwaukee, suất học được phân bổ ngẫu nhiên, nên Angeline Lillard so sánh trẻ trúng suất với trẻ trượt → Angeline Lillard."
+        },
+        {
+          "q": "was responsible for renewed interest in the method in one country",
+          "a": 2,
+          "e": "Đoạn E: phong trào ở Mỹ suy giảm cho tới cuối thập niên 1950, khi Nancy McCormick Rambusch giúp hồi sinh nó → Nancy McCormick Rambusch."
+        },
+        {
+          "q": "noticed that children repeated the same task many times",
+          "a": 0,
+          "e": "Đoạn C: Montessori quan sát trẻ ba tuổi lặp lại việc lắp trụ gỗ 'dozens of times with intense concentration' → Maria Montessori."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "Principles of the Montessori method",
+      "words": [
+        "observe",
+        "competition",
+        "mistakes",
+        "consolidate",
+        "imitate",
+        "uninterrupted",
+        "homework",
+        "lecture",
+        "supervised"
+      ],
+      "items": [
+        {
+          "q": "In mixed-age classes, older children ______ what they know by helping younger ones.",
+          "a": 3,
+          "e": "Đoạn D: 'older pupils consolidate their knowledge by helping' → consolidate."
+        },
+        {
+          "q": "Self-correcting materials allow children to recognise their own ______.",
+          "a": 2,
+          "e": "Đoạn D: vật liệu tự sửa lỗi giúp trẻ 'see a mistake without being told' → mistakes."
+        },
+        {
+          "q": "Children are given long, ______ periods in which to choose their own activities.",
+          "a": 5,
+          "e": "Đoạn D: 'long, uninterrupted periods in which to choose their own activities' → uninterrupted."
+        },
+        {
+          "q": "Rather than giving lessons to the whole class, the teacher's main task is to ______.",
+          "a": 0,
+          "e": "Đoạn D: vai trò của giáo viên là 'to observe and to introduce new materials', không phải giảng cho cả lớp → observe. 'lecture' là bẫy vì đó chính là điều giáo viên KHÔNG làm."
+        }
+      ]
+    }
+  ]
+}

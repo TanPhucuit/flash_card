@@ -1,0 +1,136 @@
+{
+  "title": "When the Plains Blew Away",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử môi trường và nông nghiệp Hoa Kỳ.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "On the afternoon of 14 April 1935, residents of the southern Great Plains of the United States saw a vast black cloud approaching from the north. Within minutes, day turned to night as a wall of dust, hundreds of metres high, swept across towns and farms. People caught outdoors could not see their own hands, and many feared that the world was ending. The storm, remembered as Black Sunday, was the worst of hundreds that struck the region during the 1930s, a decade in which a large area of farmland in parts of five states became known as the Dust Bowl. Families sealed their windows and doors with wet cloths, but fine dust still found its way onto every surface inside their homes."
+    },
+    {
+      "letter": "B",
+      "text": "The disaster had its roots in the decades before. When settlers arrived on the southern plains in the late nineteenth and early twentieth centuries, they found land covered with deep-rooted native grasses that had held the soil in place for thousands of years, despite periodic droughts and strong winds. During the First World War, high prices for wheat and the arrival of tractors encouraged farmers to plough up millions of hectares of this grassland. For a time the strategy seemed to work: rainfall was relatively good, harvests were large and many farmers prospered."
+    },
+    {
+      "letter": "C",
+      "text": "Then, in the early 1930s, the rain stopped. Crops withered, and with the grass gone, nothing protected the exposed, dried-out soil. The strong winds of the plains lifted the fine topsoil into the air and carried it away in enormous clouds. Some storms carried dust hundreds of kilometres; in May 1934, a storm dropped dust on cities on the east coast, and ships far out in the Atlantic Ocean reported dust settling on their decks. On the plains, drifts of soil buried fences and machinery, and fields that had produced wheat became barren."
+    },
+    {
+      "letter": "D",
+      "text": "The human consequences were severe. The drought coincided with the Great Depression, and falling crop prices had already left many farmers deeply in debt. Families struggled with respiratory illnesses caused by breathing dust, which doctors called dust pneumonia. Hundreds of thousands of people eventually left the region, many travelling west to California in search of work as agricultural labourers. Their experiences were recorded in photographs taken for the federal government and in John Steinbeck's novel The Grapes of Wrath, which shaped how later generations understood the period. Many of those who stayed behind depended on government relief to survive."
+    },
+    {
+      "letter": "E",
+      "text": "The federal government responded with a range of programmes. A key figure was Hugh Hammond Bennett, a soil scientist who had been warning for years about the dangers of soil erosion. According to a frequently told story, while Bennett was giving evidence to members of Congress in Washington in the spring of 1935, a dust storm from the plains darkened the sky outside, dramatically confirming his argument. Whether or not the timing was quite so convenient, Congress soon passed legislation creating a permanent agency devoted to soil conservation, with Bennett as its first head."
+    },
+    {
+      "letter": "F",
+      "text": "The new agency promoted farming methods designed to keep soil in place. Farmers were encouraged to plough along the contours of the land rather than in straight lines, so that furrows would catch water instead of channelling it away, and to plant strips of different crops to break the force of the wind. Some land was returned to grass. Between 1935 and 1942, a programme of tree planting created long belts of trees across the plains to act as windbreaks. Because individual farmers could not afford to change their methods alone, the government paid many of them to do so. Many of these windbreaks still stand today."
+    },
+    {
+      "letter": "G",
+      "text": "When the rain returned at the end of the decade, the storms subsided, and conservation methods, along with improved irrigation, helped to prevent a disaster on the same scale when severe droughts struck again in later decades. Historians continue to debate how far the Dust Bowl was caused by drought and how far by human decisions, but most agree that the destruction of native grassland turned a natural drought into an ecological catastrophe. Today, as some agricultural regions face increasing risks of drought, the lessons of the 1930s about the importance of protecting soil remain highly relevant."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "Clearing the grassland during a period of success",
+          "para": "B"
+        },
+        {
+          "text": "Drought exposes a vulnerable landscape",
+          "para": "C"
+        },
+        {
+          "text": "Suffering and departure",
+          "para": "D"
+        },
+        {
+          "text": "A scientist's warnings are taken seriously",
+          "para": "E"
+        },
+        {
+          "text": "New ways of working the land",
+          "para": "F"
+        },
+        {
+          "text": "Long-term lessons from the disaster",
+          "para": "G"
+        },
+        {
+          "text": "The causes of the Great Depression",
+          "para": null
+        },
+        {
+          "text": "How the dust affected ocean life",
+          "para": null
+        },
+        {
+          "text": "Opposition to government programmes",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: giá lúa mì cao và máy kéo khiến nông dân cày xới hàng triệu hecta đồng cỏ; một thời gian mùa màng bội thu → phá đồng cỏ trong giai đoạn thịnh vượng: {h}.",
+        "C": "Đoạn C: mưa ngừng, không còn cỏ giữ đất, gió cuốn lớp đất mặt đi → hạn hán phơi bày một vùng đất dễ tổn thương: {h}. Đoạn có nhắc bụi rơi trên tàu ngoài Đại Tây Dương nhưng không nói đến sinh vật biển, nên không phải {i:7}.",
+        "D": "Đoạn D: nợ nần, bệnh hô hấp do bụi, hàng trăm nghìn người rời vùng → khổ đau và ra đi: {h}.",
+        "E": "Đoạn E: Hugh Hammond Bennett cảnh báo nhiều năm về xói mòn, Quốc hội lập cơ quan bảo tồn đất do ông đứng đầu → lời cảnh báo của một nhà khoa học được coi trọng: {h}.",
+        "F": "Đoạn F: cày theo đường đồng mức, trồng dải xen canh, trồng lại cỏ, đai cây chắn gió → cách canh tác mới: {h}.",
+        "G": "Đoạn G: biện pháp bảo tồn giúp tránh thảm họa tương tự, và bài học về bảo vệ đất vẫn còn nguyên giá trị → bài học lâu dài: {h}."
+      }
+    },
+    {
+      "kind": "mcq3",
+      "items": [
+        {
+          "q": "Which THREE methods of protecting soil are described in the passage?",
+          "options": [
+            "ploughing in curves that follow the shape of the land",
+            "planting strips of different crops",
+            "planting lines of trees to reduce the wind",
+            "covering fields with plastic sheets",
+            "moving farms to the east coast",
+            "burning crop waste after the harvest",
+            "replacing wheat with cotton across the plains"
+          ],
+          "a": [
+            0,
+            1,
+            2
+          ],
+          "e": "Đoạn F: cày 'along the contours of the land' (theo đường đồng mức), trồng 'strips of different crops' và tạo 'long belts of trees across the plains to act as windbreaks'. Các phương án còn lại không có trong bài."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "summary",
+      "limit": "NO MORE THAN TWO WORDS",
+      "title": "The origins of the Dust Bowl",
+      "items": [
+        {
+          "q": "For thousands of years the soil of the plains had been held in place by ______ native grasses.",
+          "a": "deep-rooted",
+          "e": "Đoạn B: đất được giữ bởi 'deep-rooted native grasses' → deep-rooted."
+        },
+        {
+          "q": "During the First World War, high wheat prices and the arrival of ______ led farmers to plough the grassland.",
+          "a": "tractors",
+          "e": "Đoạn B: 'high prices for wheat and the arrival of tractors encouraged farmers to plough' → tractors."
+        },
+        {
+          "q": "Strong winds of the plains lifted the fine ______ into the air.",
+          "a": "topsoil",
+          "e": "Đoạn C: gió 'lifted the fine topsoil into the air' → topsoil."
+        },
+        {
+          "q": "Breathing dust caused an illness that doctors named ______.",
+          "a": "dust pneumonia",
+          "e": "Đoạn D: bệnh hô hấp do hít bụi 'which doctors called dust pneumonia' → dust pneumonia."
+        }
+      ]
+    }
+  ]
+}

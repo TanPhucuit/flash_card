@@ -1,0 +1,126 @@
+{
+  "title": "Small Loans, Big Hopes",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu về tài chính vi mô và các đánh giá tác động đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In 1976, Muhammad Yunus, an economics professor at a university in Bangladesh, visited a village near his campus and met a group of women who made bamboo stools. Because they had no money to buy materials, they borrowed from traders who then insisted on buying the finished stools at a price so low that the women earned almost nothing. Yunus calculated that the total sum the women needed was tiny, the equivalent of less than thirty US dollars between more than forty people. He lent it to them from his own pocket, and they repaid him. From this modest beginning grew a movement that would eventually reach well over a hundred million people around the world."
+    },
+    {
+      "letter": "B",
+      "text": "The central problem Yunus had identified was that poor people, particularly in rural areas, had no access to ordinary banks. Lending small amounts is expensive for a bank, because the cost of assessing and administering a loan is much the same whatever its size. Moreover, poor borrowers usually have no property to offer as security, so banks have no way of recovering their money if a loan is not repaid. As a result, people with no other options turned to moneylenders, who often charged extremely high rates of interest. Moneylenders, by contrast, knew their borrowers personally and could rely on social pressure to recover what they were owed."
+    },
+    {
+      "letter": "C",
+      "text": "The bank that Yunus founded, which became an independent institution in 1983, developed an ingenious solution to the problem of security. Instead of requiring property, it lent to individuals who belonged to small groups, typically of five people. Members of each group did not guarantee one another's debts directly, but further loans to the group depended on everyone keeping up their repayments, so members had a strong incentive to choose reliable partners and to support each other. The bank reported repayment rates of more than ninety per cent, far higher than many conventional lenders achieved in the same regions."
+    },
+    {
+      "letter": "D",
+      "text": "From the start, the great majority of borrowers were women. Supporters of microfinance argued that women were more likely than men to spend additional income on their children's food, health and education, and that access to their own source of money could strengthen their position within the household. In 2006, Yunus and his bank were jointly awarded the Nobel Peace Prize, and by then microfinance institutions had spread across Asia, Latin America and Africa. For a time, the idea was celebrated as one of the most promising ways of ending poverty."
+    },
+    {
+      "letter": "E",
+      "text": "Doubts grew as the industry expanded. Some lenders, attracted by the reliable repayments, began to operate as profit-making businesses charging very high interest. In 2007, a Mexican microlender sold shares to investors and was criticised for charging annual rates that approached one hundred per cent. Three years later, in the Indian state of Andhra Pradesh, rapid growth in lending left many borrowers with loans from several institutions at once. Reports of aggressive debt collection led the state government to introduce strict regulations, and much of the local industry collapsed."
+    },
+    {
+      "letter": "F",
+      "text": "Researchers, meanwhile, set out to measure the effects of microcredit more rigorously. In 2015, a leading economics journal published the results of six randomised studies carried out in countries on four continents, in which some communities were given access to microloans while similar communities were not. The findings were consistent and sobering. Access to credit allowed some people to start or expand small businesses and gave households more flexibility in managing their money, but on average it did not lead to significant increases in income, nor to clear improvements in health or education. Effects also varied between individuals: borrowers who already ran a business tended to benefit more, while many others saw little change."
+    },
+    {
+      "letter": "G",
+      "text": "These results do not mean that microfinance has failed. Poor households often face irregular incomes and sudden expenses, and the ability to borrow, save and insure themselves safely can make their lives considerably less precarious. What the evidence does suggest is that small loans are not, by themselves, a reliable route out of poverty. Many specialists now argue that savings accounts, insurance and simple money-transfer services, increasingly delivered through mobile phones, may be as valuable to poor families as credit, and in some cases more so."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The women Yunus met in 1976 were unable to sell their stools to anyone except the traders who had lent them money.",
+          "a": "TRUE",
+          "e": "Đoạn A: các thương lái cho vay 'then insisted on buying the finished stools at a price so low' – họ buộc phải bán cho chính người cho vay → TRUE."
+        },
+        {
+          "q": "The cost of assessing and administering a loan does not depend much on its size.",
+          "a": "TRUE",
+          "e": "Đoạn B: 'the cost of assessing and administering a loan is much the same whatever its size' – chi phí gần như như nhau bất kể quy mô khoản vay → TRUE."
+        },
+        {
+          "q": "Members of a borrowing group were legally responsible for repaying each other's loans.",
+          "a": "FALSE",
+          "e": "Đoạn C: thành viên nhóm 'did not guarantee one another's debts directly'; chỉ có các khoản vay tiếp theo phụ thuộc vào việc mọi người trả nợ → FALSE."
+        },
+        {
+          "q": "Yunus personally chose the members of the first borrowing groups.",
+          "a": "NOT GIVEN",
+          "e": "Bài nói thành viên có động lực chọn người đáng tin, nhưng không nói Yunus có tự chọn thành viên các nhóm đầu tiên hay không → NOT GIVEN."
+        },
+        {
+          "q": "On average, access to credit led to clear improvements in health or education.",
+          "a": "FALSE",
+          "e": "Đoạn F: trung bình vay vốn không làm thu nhập tăng đáng kể, 'nor to clear improvements in health or education' – không cải thiện rõ về sức khỏe hay giáo dục → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "a reference to a government responding to complaints about how debts were recovered",
+          "a": "E",
+          "e": "Đoạn E: các báo cáo về thu nợ hung hăng khiến chính quyền bang Andhra Pradesh ban hành quy định nghiêm ngặt → E."
+        },
+        {
+          "q": "an explanation of why lenders were unwilling to accept poor people as customers",
+          "a": "B",
+          "e": "Đoạn B: cho vay nhỏ tốn kém và người nghèo không có tài sản thế chấp, nên ngân hàng không thu hồi được nếu không trả → B."
+        },
+        {
+          "q": "a suggestion that services other than lending may be equally important",
+          "a": "G",
+          "e": "Đoạn G: tài khoản tiết kiệm, bảo hiểm và dịch vụ chuyển tiền 'may be as valuable to poor families as credit' → G."
+        },
+        {
+          "q": "reasons given for lending mainly to women",
+          "a": "D",
+          "e": "Đoạn D: phụ nữ có xu hướng chi thu nhập thêm cho con cái và có tiền riêng giúp củng cố vị thế trong gia đình → D."
+        }
+      ]
+    },
+    {
+      "kind": "mcq2",
+      "items": [
+        {
+          "q": "Which TWO problems with the expansion of microfinance are described in the passage?",
+          "options": [
+            "Some lenders charged extremely high rates of interest.",
+            "Borrowers took out loans from several lenders at the same time.",
+            "Most microfinance banks were closed by the Nobel committee.",
+            "Women were excluded from borrowing in many countries.",
+            "Mobile phones made lending too easy to control."
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn E: một số bên cho vay thành doanh nghiệp vì lợi nhuận 'charging very high interest' (một công ty Mexico gần 100%/năm), và ở Andhra Pradesh nhiều người vay 'loans from several institutions at once'. Các phương án còn lại không có trong bài."
+        },
+        {
+          "q": "Which TWO benefits of access to credit did the randomised studies find?",
+          "options": [
+            "Some people were able to start or grow a business.",
+            "Households could manage their money more flexibly.",
+            "Average household income rose significantly.",
+            "Children's health improved in most communities.",
+            "Moneylenders lowered their interest rates."
+          ],
+          "a": [
+            0,
+            1
+          ],
+          "e": "Đoạn F: vay vốn giúp một số người 'start or expand small businesses' và cho hộ gia đình 'more flexibility in managing their money'. Bài nói rõ thu nhập trung bình KHÔNG tăng đáng kể và không cải thiện rõ về sức khỏe."
+        }
+      ]
+    }
+  ]
+}

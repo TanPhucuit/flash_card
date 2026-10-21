@@ -1,0 +1,137 @@
+{
+  "title": "The Hawthorne Experiments",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử quản trị học và các phân tích lại đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Few studies in the history of management have been quoted as often, or understood as poorly, as the experiments conducted at the Hawthorne Works, a vast factory near Chicago that manufactured telephone equipment for the Western Electric Company. Between 1924 and 1932, researchers there carried out a series of investigations into the conditions that made workers more productive. Their findings gave a name to a phenomenon that is still discussed in psychology, medicine and education today: the Hawthorne effect, the idea that people change their behaviour simply because they know they are being observed."
+    },
+    {
+      "letter": "B",
+      "text": "The first studies were concerned with lighting. Electricity companies of the period were keen to show that better illumination improved efficiency, and engineers set out to measure the effect precisely. In one series of tests, the lighting for one group of workers was gradually increased while a control group worked under constant conditions. To the researchers' surprise, output rose in both groups. Even more puzzling, when the lighting for the test group was later reduced to a very low level, productivity continued to climb until the workers complained that they could barely see what they were doing."
+    },
+    {
+      "letter": "C",
+      "text": "Intrigued, the company began a more ambitious study in 1927. Six young women who assembled small electrical components called relays were moved into a separate room, where their output could be recorded precisely. Over the following years, the researchers introduced a long sequence of changes, including shorter working days, rest breaks of different lengths and free refreshments. Almost every change was followed by an increase in output. Strikingly, when the women were returned to their original conditions, without breaks or refreshments, productivity remained higher than it had been at the start."
+    },
+    {
+      "letter": "D",
+      "text": "The researchers, who by then included the Harvard professor Elton Mayo, concluded that the physical changes themselves mattered less than the social situation that the experiment had created. The women worked as a close-knit team, were consulted about the changes and received an unusual amount of attention from senior staff. They felt, in other words, that someone cared about their work. This interpretation was presented in detail in a book published in 1939 by Fritz Roethlisberger and William Dickson, and it became a cornerstone of what is known as the human relations school of management."
+    },
+    {
+      "letter": "E",
+      "text": "A later phase of the research pointed in a less optimistic direction. In a study of fourteen men who wired telephone switching equipment, observers found that the group had developed its own informal rules about how much work was acceptable. Anyone who produced too much was mocked as a ‘rate-buster’, while anyone who produced too little was criticised for letting the others down. Output was kept at a steady level that the men themselves had agreed on, regardless of the financial incentives offered by management. Social pressure, it seemed, could restrict productivity as easily as it could raise it."
+    },
+    {
+      "letter": "F",
+      "text": "Curiously, the term ‘Hawthorne effect’ was not used by the original researchers at all. It was coined in 1958 by the sociologist Henry Landsberger, who used it to describe improvements in performance caused by the attention of researchers rather than by the changes they introduced. The phrase spread rapidly, and it is now routinely mentioned in medical research, where it helps to explain why patients taking part in clinical trials sometimes improve even when they receive no active treatment, simply because they are monitored more closely than usual."
+    },
+    {
+      "letter": "G",
+      "text": "In recent decades, however, the original evidence has been examined more critically. In 1978, two researchers re-analysed the data from the relay room and argued that most of the rise in output could be explained by factors such as stricter supervision and the replacement of two workers who had been producing relatively little. In 2011, the economists Steven Levitt and John List located the original lighting data, long thought to have been lost, and found that the supposed effect was far weaker than generally claimed. Much of the apparent improvement, they suggested, reflected regular patterns in output across the working week."
+    },
+    {
+      "letter": "H",
+      "text": "None of this means that being observed has no influence on behaviour. A systematic review published in 2014 concluded that research participants do sometimes change their behaviour because they are being studied, but that the size and nature of the effect vary greatly from one setting to another. Perhaps the most enduring lesson of Hawthorne is a methodological one: researchers must design their studies carefully enough to separate the effects of what they are testing from the effects of the study itself."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "Unexpected results from experiments with illumination",
+          "para": "B"
+        },
+        {
+          "text": "A small team responds to a series of changes",
+          "para": "C"
+        },
+        {
+          "text": "An explanation based on human relationships",
+          "para": "D"
+        },
+        {
+          "text": "How a group set limits on its own output",
+          "para": "E"
+        },
+        {
+          "text": "The origin and spread of a famous term",
+          "para": "F"
+        },
+        {
+          "text": "Doubts raised by fresh analysis of the data",
+          "para": "G"
+        },
+        {
+          "text": "Why the factory was eventually closed",
+          "para": null
+        },
+        {
+          "text": "The financial benefits of shorter working hours",
+          "para": null
+        },
+        {
+          "text": "A comparison with factories in Europe",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: thí nghiệm ánh sáng cho kết quả khó hiểu – năng suất tăng ở cả nhóm thử lẫn nhóm đối chứng, và vẫn tăng khi ánh sáng bị giảm rất thấp → kết quả bất ngờ từ thí nghiệm chiếu sáng: {h}.",
+        "C": "Đoạn C: sáu phụ nữ lắp rơ-le được chuyển sang phòng riêng; hầu như mỗi thay đổi (giờ làm, giờ nghỉ, đồ ăn nhẹ) đều kéo theo sản lượng tăng → một nhóm nhỏ phản ứng với chuỗi thay đổi: {h}. Đoạn có nhắc giờ làm ngắn hơn nhưng không bàn lợi ích tài chính nên không phải {i:7}.",
+        "D": "Đoạn D: Elton Mayo cho rằng điều quan trọng là tình huống xã hội – làm việc như một đội gắn bó, được hỏi ý kiến, được quan tâm → lời giải thích dựa trên quan hệ con người: {h}.",
+        "E": "Đoạn E: nhóm 14 nam công nhân tự đặt luật ngầm về mức sản lượng chấp nhận được, chế giễu người làm quá nhiều → nhóm tự giới hạn sản lượng: {h}.",
+        "F": "Đoạn F: thuật ngữ 'Hawthorne effect' do Henry Landsberger đặt ra năm 1958 rồi lan sang nghiên cứu y khoa → nguồn gốc và sự lan rộng của một thuật ngữ nổi tiếng: {h}.",
+        "G": "Đoạn G: phân tích lại năm 1978 và việc Levitt & List tìm lại dữ liệu ánh sáng năm 2011 cho thấy hiệu ứng yếu hơn nhiều → nghi ngờ từ việc phân tích lại dữ liệu: {h}."
+      }
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The lighting experiments were partly motivated by the interests of electricity companies.",
+          "a": "TRUE",
+          "e": "Đoạn B: 'Electricity companies of the period were keen to show that better illumination improved efficiency' – các công ty điện muốn chứng minh chiếu sáng tốt giúp tăng hiệu suất → TRUE."
+        },
+        {
+          "q": "In the relay room, productivity fell back to its original level when the women's original conditions were restored.",
+          "a": "FALSE",
+          "e": "Đoạn C: khi trở lại điều kiện ban đầu, 'productivity remained higher than it had been at the start' – vẫn cao hơn lúc đầu → FALSE."
+        },
+        {
+          "q": "The six women in the relay room were paid more than other workers in the factory.",
+          "a": "NOT GIVEN",
+          "e": "Bài nói về giờ làm, giờ nghỉ, đồ ăn nhẹ và sự quan tâm, nhưng không hề nhắc tới việc sáu phụ nữ được trả lương cao hơn người khác → NOT GIVEN."
+        },
+        {
+          "q": "Clinical trials are one area in which the Hawthorne effect is now discussed.",
+          "a": "TRUE",
+          "e": "Đoạn F: thuật ngữ được nhắc thường xuyên trong nghiên cứu y khoa, giúp giải thích vì sao bệnh nhân trong 'clinical trials' đôi khi cải thiện dù không dùng thuốc thật → TRUE."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "notes",
+      "limit": "ONE WORD ONLY",
+      "title": "Later views of the Hawthorne studies",
+      "items": [
+        {
+          "q": "1978 re-analysis: higher output explained by stricter ______ and the replacement of two workers",
+          "a": "supervision",
+          "e": "Đoạn G: sản lượng tăng được giải thích bằng 'stricter supervision and the replacement of two workers' → supervision."
+        },
+        {
+          "q": "2011: Levitt and List found the original lighting data, previously believed to be ______",
+          "a": "lost",
+          "e": "Đoạn G: dữ liệu ánh sáng gốc 'long thought to have been lost' – từng được cho là đã mất → lost."
+        },
+        {
+          "q": "2014 review: the effect exists, but the size and nature of the effect differ from one ______ to another",
+          "a": "setting",
+          "e": "Đoạn H: kích thước và bản chất của hiệu ứng 'vary greatly from one setting to another' → setting."
+        }
+      ]
+    }
+  ]
+}

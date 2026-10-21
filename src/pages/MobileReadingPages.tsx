@@ -1,3 +1,4 @@
+import { InstructionBlocks } from "../components/InstructionBlocks";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
@@ -447,18 +448,21 @@ function parseLabelledList(instruction: string) {
 function InstructionText({ text }: { text: string }) {
   return (
     <div className="mb-sm mt-lg rounded-xl bg-primary-fixed px-md py-sm text-sm font-medium leading-6 text-primary dark:bg-primary/20 dark:text-[#c9c5ff]">
-      {text.split("\n").map((line, index) => {
-        const match = line.match(LABELLED_LINE);
-        if (match && match[1]) {
-          return (
-            <div key={index} className="flex gap-sm border-t border-primary/10 py-xs first:border-t-0">
-              <span className="w-8 shrink-0 font-bold">{match[1]}</span>
-              <span className="text-on-surface dark:text-white/85">{match[2]}</span>
-            </div>
-          );
-        }
-        return line.trim() ? <p key={index}>{line}</p> : <div key={index} className="h-sm" />;
-      })}
+      <InstructionBlocks
+        text={text}
+        renderLine={(line, index) => {
+          const match = line.match(LABELLED_LINE);
+          if (match && match[1]) {
+            return (
+              <div key={index} className="flex gap-sm border-t border-primary/10 py-xs first:border-t-0">
+                <span className="w-8 shrink-0 font-bold">{match[1]}</span>
+                <span className="text-on-surface dark:text-white/85">{match[2]}</span>
+              </div>
+            );
+          }
+          return line.trim() ? <p key={index}>{line}</p> : <div key={index} className="h-sm" />;
+        }}
+      />
     </div>
   );
 }

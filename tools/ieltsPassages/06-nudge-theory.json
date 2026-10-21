@@ -1,0 +1,146 @@
+{
+  "title": "Nudging Citizens",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu kinh tế học hành vi và chính sách công đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Traditional economic theory assumed that people make decisions rationally, weighing costs and benefits carefully and choosing whatever serves their interests best. Governments that wanted to change behaviour therefore relied mainly on two tools: laws, which forbid or require certain actions, and financial incentives, such as taxes and subsidies. Over the last few decades, however, psychologists and behavioural economists have assembled extensive evidence that real people often behave in ways the textbook model cannot explain. We procrastinate, follow the crowd, stick with whatever option is presented as standard and are strongly influenced by the way information is framed. These insights have given rise to a third approach to public policy, commonly known as nudging. Since then, the approach has influenced policy in dozens of countries."
+    },
+    {
+      "letter": "B",
+      "text": "The term was popularised by the economist Richard Thaler and the legal scholar Cass Sunstein in a book published in 2008. A nudge, they explained, is any feature of the environment in which a choice is made that alters people's behaviour in a predictable way without forbidding any options or significantly changing their economic incentives. Placing fruit at eye level in a school canteen, rather than banning chocolate, is a nudge. Thaler and Sunstein described their philosophy as libertarian paternalism: paternalistic because it aims to steer people towards choices that improve their lives, and libertarian because everyone remains free to choose otherwise. Thaler was awarded the Nobel Prize in economics in 2017, partly in recognition of this work."
+    },
+    {
+      "letter": "C",
+      "text": "One of the most powerful nudges is the default, the option that takes effect if a person does nothing. Organ donation provides a well-known example. In countries where citizens must actively register as donors, the proportion who do so is often low, while in neighbouring countries with similar cultures, where everyone is presumed to consent unless they opt out, the proportion can be close to universal. Pensions offer another case. When the United Kingdom began automatically enrolling employees in workplace pension schemes in 2012, leaving them free to withdraw, participation rose sharply, because most people simply accepted the arrangement they had been given."
+    },
+    {
+      "letter": "D",
+      "text": "Governments were quick to take an interest. In 2010 the British government created the Behavioural Insights Team, informally known as the Nudge Unit, to apply these ideas to public services. One of its best-known projects concerned overdue taxes. Letters sent to people who had not paid were rewritten to include a simple statement that most people in their area had already paid on time. This small change, which cost almost nothing, increased the number of people paying promptly and brought in millions of pounds of additional revenue. Within a few years, similar units had been established by governments and international organisations around the world."
+    },
+    {
+      "letter": "E",
+      "text": "Some interventions became famous partly because they are so simple. At Amsterdam's Schiphol airport, the image of a small fly was etched into the men's urinals, giving users something to aim at, and the airport reported a large fall in the amount of cleaning required. Supermarkets have long used similar techniques for commercial purposes, placing high-profit items where shoppers are most likely to see them. Advocates of nudging argue that, since every environment influences choices in some way, it makes sense to design environments deliberately in ways that benefit the people using them, rather than leaving the outcome to chance or to commercial interests."
+    },
+    {
+      "letter": "F",
+      "text": "Critics raise two main objections. The first is ethical: nudges, they argue, work by exploiting weaknesses in human thinking, and governments should persuade citizens through reasoned argument rather than steer them without their full awareness. Supporters reply that most nudges are transparent and that people can easily reject them. The second objection concerns effectiveness. A study published in 2022 by Stefano DellaVigna and Elizabeth Linos compared the results of academic experiments with those of trials actually carried out by nudge units. The average effect in the academic studies was several times larger, suggesting that published research had overstated what nudges could achieve in practice."
+    },
+    {
+      "letter": "G",
+      "text": "A balanced view would accept that nudges are neither a miracle cure nor a dangerous form of manipulation. Many of the problems that governments face, such as climate change or rising obesity, are too large to be solved by redesigning letters or rearranging canteen shelves, and they will continue to require regulation and investment. Yet nudges are cheap and can be tested rapidly, and even modest improvements, multiplied across millions of people, may produce substantial benefits. The most sensible approach, many researchers now conclude, is to treat behavioural insights as one tool among many, to be evaluated carefully rather than adopted on faith."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Traditional economic theory assumed that people generally act in their own best interests.",
+          "a": "TRUE",
+          "e": "Đoạn A: lý thuyết kinh tế truyền thống giả định con người 'choosing whatever serves their interests best' → TRUE."
+        },
+        {
+          "q": "According to Thaler and Sunstein, removing unhealthy options is an example of a nudge.",
+          "a": "FALSE",
+          "e": "Đoạn B: nudge thay đổi hành vi 'without forbidding any options'; đặt trái cây ngang tầm mắt 'rather than banning chocolate' mới là nudge → cấm đoán không phải nudge → FALSE."
+        },
+        {
+          "q": "Thaler received the Nobel Prize solely for his work on nudging.",
+          "a": "FALSE",
+          "e": "Đoạn B: Thaler được Nobel 2017 'partly in recognition of this work' – chỉ một phần nhờ công trình này, không phải duy nhất → FALSE."
+        },
+        {
+          "q": "Automatic enrolment in the UK prevented employees from leaving pension schemes.",
+          "a": "FALSE",
+          "e": "Đoạn C: nhân viên được tự động ghi danh 'leaving them free to withdraw' – vẫn được tự do rút ra → FALSE."
+        },
+        {
+          "q": "The Behavioural Insights Team was the first organisation of its kind in the world.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn D chỉ nói chính phủ Anh lập nhóm này năm 2010 và sau đó nhiều nơi lập đơn vị tương tự; bài không khẳng định đây là tổ chức đầu tiên trên thế giới → NOT GIVEN."
+        },
+        {
+          "q": "The fly image at Schiphol airport was designed by a team of psychologists.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn E mô tả hình con ruồi và kết quả giảm công dọn dẹp, nhưng không nói ai thiết kế nó → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "What change was made to the tax letters sent by the Behavioural Insights Team?",
+          "options": [
+            "They warned people that unpaid tax would lead to larger fines.",
+            "They told people that most of their neighbours had paid.",
+            "They offered a small discount to anyone who paid early.",
+            "They were sent by email instead of being delivered by post."
+          ],
+          "a": 1,
+          "e": "Đoạn D: thư được viết lại để thêm câu 'most people in their area had already paid on time' – phần lớn người trong khu vực đã nộp đúng hạn."
+        },
+        {
+          "q": "When DellaVigna and Linos compared the results of academic experiments with real trials, they found that",
+          "options": [
+            "Nudges worked better in practice than in academic studies.",
+            "Academic studies had exaggerated the effect of nudges.",
+            "Most nudge units had stopped testing their policies.",
+            "Nudges were more effective in Britain than elsewhere."
+          ],
+          "a": 1,
+          "e": "Đoạn F: hiệu quả trung bình trong nghiên cứu học thuật 'several times larger' so với thử nghiệm thực tế → nghiên cứu đã công bố phóng đại hiệu quả của nudge."
+        },
+        {
+          "q": "What is the writer's conclusion about nudges?",
+          "options": [
+            "They should replace regulation in most areas.",
+            "They are too manipulative to be used by governments.",
+            "They are useful but should be assessed carefully.",
+            "They are effective only for health problems."
+          ],
+          "a": 2,
+          "e": "Đoạn G: nên coi nudge là 'one tool among many, to be evaluated carefully rather than adopted on faith' – hữu ích nhưng cần đánh giá cẩn thận; không thể thay thế quy định cho các vấn đề lớn."
+        }
+      ]
+    },
+    {
+      "kind": "wordbank",
+      "title": "The case for and against nudging",
+      "words": [
+        "deliberately",
+        "awareness",
+        "chance",
+        "transparent",
+        "expensive",
+        "argument",
+        "secretly",
+        "weaknesses",
+        "income"
+      ],
+      "items": [
+        {
+          "q": "Supporters argue that, because every environment affects choices, it should be designed ______ to benefit the people who use it.",
+          "a": 0,
+          "e": "Đoạn E: 'it makes sense to design environments deliberately in ways that benefit the people using them' → deliberately."
+        },
+        {
+          "q": "The alternative, they say, is to leave the result to ______ or to commercial interests.",
+          "a": 2,
+          "e": "Đoạn E: 'rather than leaving the outcome to chance or to commercial interests' → chance."
+        },
+        {
+          "q": "Critics claim that nudges exploit ______ in the way people think.",
+          "a": 7,
+          "e": "Đoạn F: nudge 'work by exploiting weaknesses in human thinking' → weaknesses."
+        },
+        {
+          "q": "In reply, supporters point out that most nudges are ______ and easy to reject.",
+          "a": 3,
+          "e": "Đoạn F: 'Supporters reply that most nudges are transparent and that people can easily reject them' → transparent."
+        }
+      ]
+    }
+  ]
+}

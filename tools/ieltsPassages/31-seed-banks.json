@@ -1,0 +1,143 @@
+{
+  "title": "A Vault for the World's Crops",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu về ngân hàng hạt giống và đa dạng di truyền cây trồng.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "On a remote Arctic island, about a thousand kilometres from the North Pole, a narrow concrete entrance juts out of a snowy mountainside. Behind it, a tunnel leads more than a hundred metres into the rock, ending in three chambers where the temperature is kept at eighteen degrees below zero. Stacked on shelves inside are boxes containing well over a million packets of seeds, sent from almost every country in the world. The Svalbard Global Seed Vault, which opened in 2008, is often described as a ‘doomsday vault’, but its purpose is more practical than that dramatic name suggests."
+    },
+    {
+      "letter": "B",
+      "text": "Over thousands of years, farmers developed an enormous variety of crops. A single species such as rice or wheat exists in many thousands of local varieties, each adapted to particular soils, climates, pests and diseases. During the twentieth century, much of this diversity began to disappear as farmers around the world switched to a small number of high-yielding modern varieties. The older types might produce less, but they contain genes that could prove vital in the future, for example to help crops survive droughts, resist new diseases or cope with a changing climate. From the 1960s onwards, agricultural scientists warned that this loss of genetic diversity could threaten the world's food supply."
+    },
+    {
+      "letter": "C",
+      "text": "The idea of collecting and preserving seeds is far older than Svalbard. In the 1920s and 1930s, the Russian botanist Nikolai Vavilov led expeditions across five continents, gathering hundreds of thousands of seeds for an institute in Leningrad, now St Petersburg. During the long siege of the city in the Second World War, staff guarded the collection while the population starved; several of them died of hunger rather than eat the seeds in their care. Vavilov himself, who had fallen out of favour with the Soviet authorities, died in prison in 1943."
+    },
+    {
+      "letter": "D",
+      "text": "Today, around seventeen hundred seed banks exist around the world, but many are vulnerable. Some have been damaged by floods, fires or equipment failures, and others by war. Svalbard was designed as a back-up for all of them. Seed banks send duplicate samples of their collections to the vault, where they are stored under what is known as a ‘black box’ arrangement: the depositor keeps ownership of the seeds, and only the depositor can ask for them to be returned. The location was chosen because it is geologically stable, high above sea level and naturally cold, so that the seeds would remain frozen even if the cooling equipment failed."
+    },
+    {
+      "letter": "E",
+      "text": "Preparing seeds for long-term storage is a careful process. After being collected, they are cleaned and checked for disease, and then dried until they contain very little moisture, since water in the seeds would form ice crystals that destroy their cells when frozen. The dried seeds are sealed in airtight foil packets and placed in cold storage. Even under these conditions, seeds slowly lose their ability to germinate, so seed banks periodically test samples by trying to grow them. When the proportion that germinates falls too low, fresh plants are grown in order to produce a new supply of seeds."
+    },
+    {
+      "letter": "F",
+      "text": "The vault proved its value sooner than expected. In 2015, an international agricultural research centre that had been based near Aleppo in Syria became the first organisation to withdraw seeds from Svalbard, after the civil war made it impossible to maintain its collection there. Using the duplicates it had deposited, the centre re-established its collection at new sites in Lebanon and Morocco and grew fresh seeds, some of which it later sent back to the vault to replace those it had taken out. It was the first time that any seeds had left the vault since its opening."
+    },
+    {
+      "letter": "G",
+      "text": "The vault has not been free of problems. In 2017, unusually warm weather caused melting snow and rain to enter the entrance tunnel. No seeds were affected, but the incident attracted worldwide publicity, and the facility was later improved with waterproof walls and new drainage. Some scientists also point out that frozen seeds preserve diversity only as it existed when they were collected; crops grown in farmers' fields continue to adapt to changing conditions, which is why many experts argue that seed banks should complement, rather than replace, the conservation of traditional varieties on farms."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "matchinfo",
+      "items": [
+        {
+          "q": "the reasons why a particular site was selected",
+          "a": "D",
+          "e": "Đoạn D: địa điểm được chọn vì ổn định địa chất, cao hơn mực nước biển và lạnh tự nhiên → D."
+        },
+        {
+          "q": "an example of people who sacrificed their lives to protect a collection",
+          "a": "C",
+          "e": "Đoạn C: trong cuộc vây hãm Leningrad, một số nhân viên chết đói thay vì ăn hạt giống họ trông giữ → C."
+        },
+        {
+          "q": "an explanation of why older crop varieties remain important",
+          "a": "B",
+          "e": "Đoạn B: giống cũ năng suất thấp hơn nhưng chứa gen có thể giúp cây chịu hạn, kháng bệnh mới, thích nghi khí hậu → B."
+        },
+        {
+          "q": "a description of damage that was prevented by improving a building",
+          "a": "G",
+          "e": "Đoạn G: năm 2017 nước tràn vào đường hầm, không hạt nào bị ảnh hưởng, sau đó cơ sở được làm tường chống thấm và hệ thống thoát nước mới → G."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "flow-chart",
+      "limit": "ONE WORD ONLY",
+      "title": "Preparing seeds for long-term storage",
+      "items": [
+        {
+          "q": "After collection, the seeds are cleaned and checked for ______ ↓",
+          "a": "disease",
+          "e": "Đoạn E: hạt 'are cleaned and checked for disease' → disease."
+        },
+        {
+          "q": "They are dried so that ice ______ will not damage their cells ↓",
+          "a": "crystals",
+          "e": "Đoạn E: nước trong hạt sẽ tạo 'ice crystals that destroy their cells when frozen' → crystals."
+        },
+        {
+          "q": "The dried seeds are sealed in airtight ______ packets ↓",
+          "a": "foil",
+          "e": "Đoạn E: hạt khô 'are sealed in airtight foil packets' → foil."
+        },
+        {
+          "q": "Samples are tested from time to time to see whether they will ______ ↓",
+          "a": "germinate",
+          "e": "Đoạn E: hạt dần mất khả năng nảy mầm, nên được thử 'by trying to grow them' để kiểm tra khả năng nảy mầm → germinate."
+        },
+        {
+          "q": "If too few succeed, new ______ are grown to produce fresh seeds",
+          "a": "plants",
+          "e": "Đoạn E: khi tỷ lệ nảy mầm quá thấp, 'fresh plants are grown in order to produce a new supply of seeds' → plants."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "What does the writer suggest about the name ‘doomsday vault’?",
+          "options": [
+            "It accurately describes the vault's main purpose.",
+            "It exaggerates the vault's role.",
+            "It was chosen by the Norwegian government.",
+            "It is no longer used by journalists."
+          ],
+          "a": 1,
+          "e": "Đoạn A: mục đích của kho 'is more practical than that dramatic name suggests' → cái tên phóng đại vai trò của kho."
+        },
+        {
+          "q": "Under the ‘black box’ arrangement,",
+          "options": [
+            "the vault becomes the owner of all seeds deposited.",
+            "any scientist can request samples for research.",
+            "only the organisation that deposited seeds may withdraw them.",
+            "seeds are destroyed after a fixed period."
+          ],
+          "a": 2,
+          "e": "Đoạn D: bên gửi giữ quyền sở hữu 'and only the depositor can ask for them to be returned'."
+        },
+        {
+          "q": "Why did the research centre withdraw seeds in 2015?",
+          "options": [
+            "Its original collection had been destroyed by a flood.",
+            "War prevented it from looking after its collection.",
+            "It wanted to test whether the vault was reliable.",
+            "The Syrian government asked it to return the seeds."
+          ],
+          "a": 1,
+          "e": "Đoạn F: nội chiến khiến trung tâm không thể duy trì bộ sưu tập ở Syria."
+        },
+        {
+          "q": "Some scientists believe seed banks should",
+          "options": [
+            "replace traditional farming methods.",
+            "be supported by conservation on farms.",
+            "store only modern high-yielding varieties.",
+            "be moved to warmer locations."
+          ],
+          "a": 1,
+          "e": "Đoạn G: nhiều chuyên gia cho rằng ngân hàng hạt giống 'should complement, rather than replace, the conservation of traditional varieties on farms' → nên đi kèm với bảo tồn trên đồng ruộng."
+        }
+      ]
+    }
+  ]
+}

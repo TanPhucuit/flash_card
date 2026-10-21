@@ -1,0 +1,131 @@
+{
+  "title": "The Hidden Language of Elephants",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu về giao tiếp của voi đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Elephants live in complex societies. Females and their young stay together in close family groups led by an older female, the matriarch, while adult males often live alone or in loose bachelor groups. Members of a family may become separated by several kilometres as they search for food and water, yet they manage to coordinate their movements, meet up again at particular places and respond to one another's distress. For a long time, it was unclear how they did so. The answer, it turned out, lay largely in sounds that human beings cannot hear. Elephants can live for sixty years or more, and the bonds between members of a family may last for decades."
+    },
+    {
+      "letter": "B",
+      "text": "The discovery was made in 1984 by Katy Payne, an American researcher who had previously studied the songs of humpback whales. While watching elephants at a zoo in the United States, she noticed a faint throbbing sensation in the air, similar to the feeling she remembered from standing near a church organ as its deepest notes were played. Suspecting that the elephants were producing sounds too low for humans to hear, she returned with recording equipment. When the recordings were played back at higher speed, they revealed a rich variety of calls far below the range of human hearing."
+    },
+    {
+      "letter": "C",
+      "text": "Such sounds, known as infrasound, have an important advantage: low-frequency sound waves lose energy much more slowly than high-frequency ones as they travel through the air. Elephants' deep rumbles can therefore carry over distances of several kilometres. Researchers have found that the range is greatest in the early evening and at night, when the air near the ground is cooler and calmer, and some scientists believe that elephants time many of their long-distance calls to take advantage of these conditions. The calls also carry information about the identity, age and emotional state of the caller, so that listeners can recognise relatives from far away."
+    },
+    {
+      "letter": "D",
+      "text": "Elephants may also communicate through the ground. The biologist Caitlin O'Connell-Rodwell noticed that elephants sometimes froze, lifted one foot or pressed their trunks to the ground, as if listening. Her research suggested that the powerful rumbles of elephants produce vibrations that travel through the earth, possibly even further than sound travels through the air, and that elephants detect these vibrations with sensitive nerve endings in their feet and trunks. This could allow them to sense distant calls, or even the movement of other herds, without hearing anything at all."
+    },
+    {
+      "letter": "E",
+      "text": "The vocal abilities of elephants are not limited to rumbles. Researchers in Kenya, including Joyce Poole, have described elephants that imitated sounds they had heard, which is rare among mammals. One young female living near a busy road appeared to reproduce the noise of passing trucks, and a male kept in captivity with Asian elephants imitated the chirping calls of his companions rather than the sounds typical of African elephants. Such imitation suggests that elephants, like humans, parrots and some whales, are capable of learning new sounds rather than relying only on calls they are born with. Scientists regard this kind of vocal learning as a sign of unusually flexible intelligence."
+    },
+    {
+      "letter": "F",
+      "text": "Recent research suggests something even more remarkable. In 2024, a team led by Mickey Pardo analysed hundreds of rumbles recorded from wild African elephants and found that some calls appeared to be addressed to particular individuals. When the researchers played back a call that had originally been directed at a specific elephant, that elephant responded more strongly than to calls directed at others. The scientists concluded that elephants may address one another with something like names, an ability previously known in only a very small number of animals, including humans and dolphins."
+    },
+    {
+      "letter": "G",
+      "text": "Understanding elephant communication has practical value. Wildlife managers use recordings to estimate the number of elephants in dense forests where they are hard to see, and some projects have experimented with playing elephant calls to discourage herds from raiding crops. At the same time, the research raises concerns. Human noise from roads, mining and machinery may interfere with elephants' ability to hear one another over long distances, potentially disrupting family groups that depend on keeping in contact. Researchers have also built up large libraries of recordings to help them interpret what different calls mean."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "A sensation that led to a discovery",
+          "para": "B"
+        },
+        {
+          "text": "Why deep sounds travel so far",
+          "para": "C"
+        },
+        {
+          "text": "Messages through the earth",
+          "para": "D"
+        },
+        {
+          "text": "Learning to copy unfamiliar noises",
+          "para": "E"
+        },
+        {
+          "text": "Calling individuals by name",
+          "para": "F"
+        },
+        {
+          "text": "Applications and threats",
+          "para": "G"
+        },
+        {
+          "text": "How elephants choose a new leader",
+          "para": null
+        },
+        {
+          "text": "Comparing elephant calls with whale songs",
+          "para": null
+        },
+        {
+          "text": "The danger of noise to elephants' hearing",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: Katy Payne cảm thấy một rung động mơ hồ trong không khí, như khi đứng gần đàn organ, rồi phát hiện ra tiếng gọi tần số thấp → cảm giác dẫn tới khám phá: {h}. Bà từng nghiên cứu cá voi, nhưng đoạn này không so sánh tiếng voi với tiếng cá voi, nên không phải {i:7}.",
+        "C": "Đoạn C: sóng âm tần số thấp mất năng lượng chậm hơn nên tiếng rền đi được vài km, xa nhất vào chiều tối và ban đêm → vì sao âm trầm đi xa: {h}.",
+        "D": "Đoạn D: rung động truyền qua mặt đất, voi cảm nhận bằng dây thần kinh ở chân và vòi → thông điệp qua mặt đất: {h}.",
+        "E": "Đoạn E: voi bắt chước tiếng xe tải và tiếng kêu của voi châu Á → học cách bắt chước âm thanh lạ: {h}.",
+        "F": "Đoạn F: nghiên cứu năm 2024 cho thấy voi dùng tiếng gọi nhắm tới từng cá thể, giống như tên gọi → gọi từng cá thể bằng tên: {h}.",
+        "G": "Đoạn G: dùng ghi âm để đếm voi và xua voi khỏi ruộng (ứng dụng), nhưng tiếng ồn của con người có thể cản trở giao tiếp (mối đe dọa) → ứng dụng và mối đe dọa: {h}. Tiếng ồn cản trở việc voi nghe thấy nhau, không phải làm hỏng thính giác, nên {i:8} sai."
+      }
+    },
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "Adult male elephants usually remain with their mothers' family group.",
+          "a": "FALSE",
+          "e": "Đoạn A: con đực trưởng thành 'often live alone or in loose bachelor groups', không ở lại nhóm gia đình → FALSE."
+        },
+        {
+          "q": "Payne thought the animals might be producing sounds too low for humans to hear, and recorded them.",
+          "a": "TRUE",
+          "e": "Đoạn B: bà quay lại với thiết bị ghi âm; khi phát nhanh hơn, bản ghi cho thấy nhiều tiếng gọi dưới ngưỡng nghe của người → TRUE."
+        },
+        {
+          "q": "According to O'Connell-Rodwell, elephants sense vibrations in the ground mainly through their ears.",
+          "a": "FALSE",
+          "e": "Đoạn D: voi cảm nhận rung động 'with sensitive nerve endings in their feet and trunks' – qua chân và vòi, không phải tai. Bài còn nói voi có thể cảm nhận 'without hearing anything at all' → FALSE."
+        },
+        {
+          "q": "Playing elephant calls has completely stopped elephants from damaging crops.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn G chỉ nói một số dự án 'have experimented with' phát tiếng voi để xua voi; bài không nói kết quả có ngăn hoàn toàn hay không → NOT GIVEN."
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "limit": "NO MORE THAN TWO WORDS",
+      "items": [
+        {
+          "q": "Payne had previously studied the songs of which animals?",
+          "a": "humpback whales/humpback whale",
+          "e": "Đoạn B: Payne 'had previously studied the songs of humpback whales' → humpback whales."
+        },
+        {
+          "q": "What musical instrument did the sensation at the zoo remind Payne of?",
+          "a": "church organ/organ",
+          "e": "Đoạn B: cảm giác giống khi đứng gần 'a church organ as its deepest notes were played' → church organ."
+        },
+        {
+          "q": "What vehicles did one young female elephant appear to imitate?",
+          "a": "trucks/passing trucks",
+          "e": "Đoạn E: một con cái trẻ sống gần đường đông xe dường như bắt chước 'the noise of passing trucks' → trucks."
+        }
+      ]
+    }
+  ]
+}

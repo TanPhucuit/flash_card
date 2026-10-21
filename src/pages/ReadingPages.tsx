@@ -1,3 +1,4 @@
+import { InstructionBlocks } from "../components/InstructionBlocks";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
@@ -614,9 +615,9 @@ function QuestionBlock({
   return (
     <>
     {showInstruction ? (
-      <p className="mb-sm mt-lg whitespace-pre-line rounded-xl bg-primary-fixed px-md py-sm text-sm font-medium leading-6 text-primary dark:bg-primary/20 dark:text-[#c9c5ff]">
-        {question.instruction}
-      </p>
+      <div className="mb-sm mt-lg whitespace-pre-line rounded-xl bg-primary-fixed px-md py-sm text-sm font-medium leading-6 text-primary dark:bg-primary/20 dark:text-[#c9c5ff]">
+        <InstructionBlocks text={question.instruction ?? ""} renderLine={(line, key) => <span key={key}>{line}{"\n"}</span>} />
+      </div>
     ) : null}
     <div
       className={`mb-md rounded-xl border p-md transition ${

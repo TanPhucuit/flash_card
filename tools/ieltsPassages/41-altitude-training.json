@@ -1,0 +1,143 @@
+{
+  "title": "Training in Thin Air",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu khoa học thể thao về tập luyện độ cao đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "When the Olympic Games were held in Mexico City in 1968, at an altitude of more than two thousand metres, the results surprised many observers. In events lasting only a few seconds, such as sprints and jumps, athletes performed exceptionally well; the American long jumper Bob Beamon set a world record that stood for more than twenty years. In longer races, however, many favourites struggled badly, and several endurance events were won by athletes from Kenya and Ethiopia who had grown up at high altitude. The Games prompted a wave of scientific interest in how altitude affects the body and whether athletes from lower regions could benefit from training there. One Australian distance runner collapsed after finishing his race and had to be given oxygen."
+    },
+    {
+      "letter": "B",
+      "text": "The explanation lies in the air itself. At high altitude, air pressure is lower, so each breath contains fewer molecules of oxygen. For sprinters and jumpers, the thinner air offers less resistance, which helps them, while their short efforts depend relatively little on oxygen supplied by the lungs. Endurance athletes, by contrast, rely on a continuous supply of oxygen to their muscles, and at altitude their bodies cannot deliver enough of it, so they tire more quickly and must slow down."
+    },
+    {
+      "letter": "C",
+      "text": "Over a period of weeks, however, the body adapts. The kidneys respond to the reduced oxygen by releasing more of a hormone called erythropoietin, usually known as EPO, which stimulates the production of red blood cells. Because red blood cells carry oxygen around the body, an athlete who returns to sea level with a higher concentration of them should, in theory, be able to deliver more oxygen to the muscles and perform better. This is the basic idea behind altitude training, and it is also why artificial EPO has been banned as a performance-enhancing drug."
+    },
+    {
+      "letter": "D",
+      "text": "Living and training at altitude has a significant drawback. Because less oxygen is available, athletes cannot train as hard as they would at sea level, and the loss of training intensity may cancel out the benefits of their increased red blood cells. In the 1990s, the American researchers Benjamin Levine and James Stray-Gundersen tested a solution. They divided a group of runners into three groups: some lived and trained at sea level, some lived and trained at altitude, and a third group lived at about 2,500 metres but travelled down to a lower altitude for their hardest training sessions. Only the third group significantly improved their race times."
+    },
+    {
+      "letter": "E",
+      "text": "The approach, known as ‘live high, train low’, has since been widely adopted. Because not every athlete can relocate to the mountains, some sleep in special tents or rooms in which the oxygen content of the air is reduced to simulate altitude, while training normally during the day. Such devices allow athletes to gain some of the benefits of altitude without leaving home, although scientists disagree about how effective they are, and some sporting authorities have debated whether their use is fair. Their popularity has grown steadily since the 1990s."
+    },
+    {
+      "letter": "F",
+      "text": "Not everyone responds equally. Studies have found that some athletes produce large increases in red blood cells after a period at altitude, while others show little or no change, possibly because of genetic differences. Altitude can also cause problems: poor sleep, headaches, dehydration and reduced appetite are common, and athletes who ascend too quickly may suffer from altitude sickness. Coaches therefore usually recommend gradual adjustment and careful monitoring, and many advise that a stay of at least three weeks is needed for meaningful benefits. Because dry mountain air increases the loss of fluid from the body, athletes are also advised to drink more water than usual."
+    },
+    {
+      "letter": "G",
+      "text": "The success of East African runners is sometimes explained simply by the altitude at which they live, but the reality is more complex. Many Kenyan and Ethiopian champions come from regions where children traditionally run long distances to school, and running has become a major route to wealth and status, creating intense competition from an early age. Training towns such as Iten in Kenya, at around 2,400 metres, now attract athletes from all over the world. Altitude may help, but it is only one ingredient in a combination of factors that includes culture, opportunity and an enormous amount of hard work."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "At the 1968 Olympics, athletes in short events generally performed well.",
+          "a": "TRUE",
+          "e": "Đoạn A: ở các nội dung chỉ kéo dài vài giây như chạy nước rút và nhảy, vận động viên 'performed exceptionally well' → TRUE."
+        },
+        {
+          "q": "Bob Beamon had trained at high altitude before the Games.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn A chỉ nói Beamon lập kỷ lục thế giới ở Mexico City; bài không nói ông có tập luyện ở độ cao trước đó hay không → NOT GIVEN."
+        },
+        {
+          "q": "Thin air makes it harder for sprinters to move quickly.",
+          "a": "FALSE",
+          "e": "Đoạn B: với vận động viên chạy nước rút, không khí loãng 'offers less resistance, which helps them' → giúp chứ không cản → FALSE."
+        },
+        {
+          "q": "EPO is a hormone released by the kidneys.",
+          "a": "TRUE",
+          "e": "Đoạn C: 'The kidneys respond... by releasing more of a hormone called erythropoietin, usually known as EPO' → TRUE."
+        },
+        {
+          "q": "All athletes produce more red blood cells after spending time at altitude.",
+          "a": "FALSE",
+          "e": "Đoạn F: một số người tăng hồng cầu nhiều, 'while others show little or no change' → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "gap",
+      "form": "table",
+      "limit": "NO MORE THAN TWO WORDS",
+      "title": "Approaches to altitude training",
+      "items": [
+        {
+          "q": "Live and train at altitude – body adapts – athletes cannot train as hard, so loss of training ______ may cancel benefits",
+          "a": "intensity",
+          "e": "Đoạn D: 'the loss of training intensity may cancel out the benefits' → intensity."
+        },
+        {
+          "q": "Live high, train low – live at about 2,500 metres – do the hardest ______ at lower altitude",
+          "a": "training sessions/sessions",
+          "e": "Đoạn D: nhóm thứ ba xuống thấp 'for their hardest training sessions' → training sessions."
+        },
+        {
+          "q": "Special tents or rooms – air has reduced ______ – effectiveness disputed by scientists",
+          "a": "oxygen content",
+          "e": "Đoạn E: lều hoặc phòng đặc biệt nơi 'the oxygen content of the air is reduced' → oxygen content."
+        },
+        {
+          "q": "Any approach – common problems include poor sleep, headaches and ______",
+          "a": "dehydration",
+          "e": "Đoạn F: 'poor sleep, headaches, dehydration and reduced appetite are common' → dehydration (đáp án một từ khớp vị trí liệt kê)."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "Why did endurance athletes struggle in Mexico City?",
+          "options": [
+            "The heat made long races exhausting.",
+            "Their muscles could not receive enough oxygen.",
+            "The thin air increased resistance to movement.",
+            "They had not been allowed time to rest."
+          ],
+          "a": 1,
+          "e": "Đoạn B: vận động viên sức bền cần oxy liên tục, và ở độ cao 'their bodies cannot deliver enough of it'. Bài không nói đến nắng nóng; không khí loãng lại GIẢM lực cản."
+        },
+        {
+          "q": "What did Levine and Stray-Gundersen discover?",
+          "options": [
+            "Training at altitude was more useful than living there.",
+            "Living high and training lower produced the best improvement.",
+            "Runners at sea level improved as much as other groups.",
+            "All three groups achieved similar race times."
+          ],
+          "a": 1,
+          "e": "Đoạn D: chỉ nhóm thứ ba, sống ở độ cao và xuống thấp để tập nặng, cải thiện thành tích đáng kể."
+        },
+        {
+          "q": "Why have some sporting authorities discussed altitude tents?",
+          "options": [
+            "They are too expensive for most athletes.",
+            "They may give some athletes an unfair advantage.",
+            "They have caused serious health problems.",
+            "They are banned in most countries."
+          ],
+          "a": 1,
+          "e": "Đoạn E: một số cơ quan thể thao 'have debated whether their use is fair' → lo ngại về tính công bằng."
+        },
+        {
+          "q": "What is the writer's view of the success of East African runners?",
+          "options": [
+            "It is explained mainly by genetic differences.",
+            "It results from several factors, not just altitude.",
+            "It will decline as other countries copy their training.",
+            "It depends chiefly on modern training technology."
+          ],
+          "a": 1,
+          "e": "Đoạn G: độ cao có thể giúp 'but it is only one ingredient in a combination of factors that includes culture, opportunity and an enormous amount of hard work'."
+        }
+      ]
+    }
+  ]
+}

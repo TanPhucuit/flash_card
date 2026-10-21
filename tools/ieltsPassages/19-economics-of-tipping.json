@@ -1,0 +1,153 @@
+{
+  "title": "The Puzzle of Tipping",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading (dạng bài nghị luận); dữ kiện tổng hợp từ lịch sử tập quán tiền boa và các nghiên cứu hành vi người tiêu dùng đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Economists have long been puzzled by tipping. Standard economic theory predicts that people will not pay more than they have to, yet every year customers around the world voluntarily hand over billions in extra payments to waiters, taxi drivers and hairdressers. In the United States alone, restaurant tips are estimated to amount to tens of billions of dollars annually. Even more surprisingly, people tip in places they will never visit again, where the usual explanation, that a generous tip ensures good service next time, cannot apply. Tipping, it seems, is driven less by calculation than by social expectation."
+    },
+    {
+      "letter": "B",
+      "text": "The custom has a curious history. In the United States, tipping became widespread only in the decades after the Civil War, when wealthy Americans returning from Europe brought back the aristocratic habit of giving small sums to servants. At first, many Americans regarded the practice as undemocratic, since it seemed to create a class of people dependent on the generosity of their social superiors. In the early twentieth century several states actually passed laws banning tipping, though all of these had been repealed or abandoned within a couple of decades."
+    },
+    {
+      "letter": "C",
+      "text": "Supporters of tipping argue that it rewards good work and gives customers a way of expressing satisfaction. The research, however, suggests that the link between service and reward is surprisingly weak. The psychologist Michael Lynn, who has studied tipping for several decades, found that the quality of service, as rated by customers themselves, explains only a small fraction of the variation in the size of tips. Far more important are factors that have little to do with competence, such as the size of the bill, the weather and the mood of the customer."
+    },
+    {
+      "letter": "D",
+      "text": "Some of these factors are almost comically trivial. Studies have found that servers who introduce themselves by name, crouch beside the table when taking orders or draw a smiling face on the bill tend to receive larger tips. More troubling are findings that tips can be influenced by a server's appearance, age, gender and ethnic background. If tips reflect the prejudices of customers rather than the quality of work, then a system that is supposed to reward merit may in practice reinforce unfairness, and I find it difficult to see how such a system can be defended."
+    },
+    {
+      "letter": "E",
+      "text": "The consequences for workers are significant because in many places tips are not a bonus but a central part of their income. Under United States federal law, employers may pay staff who receive tips a basic wage of just over two dollars an hour, provided that tips bring their total earnings up to the general minimum wage. This means that a waiter's income can vary dramatically from one evening to the next, depending on the number and generosity of customers, and that the risk of a quiet night falls on the employee rather than on the business."
+    },
+    {
+      "letter": "F",
+      "text": "Not every country shares this approach. In Japan, tipping is generally not expected and may even cause confusion, since good service is regarded as part of the job rather than something to be paid for separately. In much of Europe, a service charge is included in the price or a small tip is optional. Some American restaurants have experimented with abolishing tips and raising menu prices instead. A well-known New York restaurant group adopted this policy in 2015, but reversed it several years later, partly because customers were reluctant to accept higher prices on the menu."
+    },
+    {
+      "letter": "G",
+      "text": "Recent technology has added a new twist. Payment screens in cafés and shops now routinely invite customers to add a tip of fifteen, twenty or twenty-five per cent, even for services such as buying a cup of coffee at a counter, where tipping was traditionally rare. Many consumers report feeling pressured by these prompts, particularly when the screen is turned towards them while the employee watches. The result, some economists argue, is a gradual increase in the number of situations in which a tip is expected."
+    },
+    {
+      "letter": "H",
+      "text": "In my view, the strongest case against tipping is not that it costs customers money, but that it disguises the true price of a service and shifts responsibility for paying workers from employers to the public. A system in which wages are set openly and prices include the full cost of labour would be both fairer to employees and clearer for customers. Old customs are difficult to change, however, and as long as most restaurants continue to rely on tips, individual customers who refuse to pay them will simply be penalising the staff."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "ynng",
+      "items": [
+        {
+          "q": "The desire to receive better service on a future visit fully explains why people tip.",
+          "a": "NO",
+          "e": "Đoạn A: người ta vẫn boa ở nơi không bao giờ quay lại, nơi lời giải thích 'tip để lần sau được phục vụ tốt' 'cannot apply' → tác giả phủ nhận → NO."
+        },
+        {
+          "q": "A system influenced by customers' prejudices is hard to justify.",
+          "a": "YES",
+          "e": "Đoạn D: nếu tiền boa phản ánh định kiến, hệ thống có thể củng cố bất công, 'I find it difficult to see how such a system can be defended' → YES."
+        },
+        {
+          "q": "American laws banning tipping were mostly introduced by trade unions.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn B nói một số bang đã ban hành luật cấm boa, nhưng không nói ai khởi xướng các luật đó → NOT GIVEN."
+        },
+        {
+          "q": "Employers rather than employees should bear the risk of having few customers.",
+          "a": "YES",
+          "e": "Đoạn E chỉ ra rủi ro của buổi tối vắng khách 'falls on the employee rather than on the business'; đoạn H, tác giả muốn trách nhiệm trả lương thuộc về chủ, không phải công chúng → YES."
+        },
+        {
+          "q": "Customers who decide not to tip are making a useful protest against the system.",
+          "a": "NO",
+          "e": "Đoạn H: khách từ chối boa 'will simply be penalising the staff' – chỉ làm hại nhân viên, không phải phản đối hữu ích → NO."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "Why did many Americans originally disapprove of tipping?",
+          "options": [
+            "They believed it encouraged dishonesty among servants.",
+            "They felt it was inconsistent with a society of equals.",
+            "They thought it made restaurant meals too expensive.",
+            "They considered it a foreign tax on travellers."
+          ],
+          "a": 1,
+          "e": "Đoạn B: nhiều người Mỹ coi tập quán này là 'undemocratic', vì tạo ra một tầng lớp phụ thuộc vào lòng hào phóng của người trên → không phù hợp với xã hội bình đẳng."
+        },
+        {
+          "q": "A researcher who has studied tipping for many years concluded that",
+          "options": [
+            "They mainly reflect how good customers think the service was.",
+            "They are larger in restaurants with experienced staff.",
+            "Service quality accounts for only a small part of the differences.",
+            "Customers tip more when the bill is small."
+          ],
+          "a": 2,
+          "e": "Đoạn C: chất lượng phục vụ do chính khách đánh giá 'explains only a small fraction of the variation in the size of tips' → chỉ giải thích một phần nhỏ khác biệt."
+        },
+        {
+          "q": "Why did the New York restaurant group return to tipping?",
+          "options": [
+            "Its staff earned less without tips.",
+            "Customers disliked paying more for the dishes themselves.",
+            "New laws required restaurants to allow tips.",
+            "It wanted to compete with restaurants in Europe."
+          ],
+          "a": 1,
+          "e": "Đoạn F: chính sách bị đảo ngược 'partly because customers were reluctant to accept higher prices on the menu' → khách không thích trả giá món cao hơn."
+        },
+        {
+          "q": "What point is made about payment screens?",
+          "options": [
+            "They have made tipping less common in cafés.",
+            "They allow customers to tip anonymously.",
+            "They are spreading tipping to new situations.",
+            "They have been banned in some countries."
+          ],
+          "a": 2,
+          "e": "Đoạn G: màn hình mời boa cả khi mua cà phê ở quầy – nơi trước đây hiếm khi boa; kết quả là số tình huống cần boa tăng dần → lan sang tình huống mới."
+        }
+      ]
+    },
+    {
+      "kind": "endings",
+      "endings": [
+        "may receive a basic wage of just over two dollars an hour.",
+        "tend to receive larger tips from customers.",
+        "brought the custom back from trips to Europe.",
+        "is not usually expected in Japan.",
+        "were the first to include a service charge.",
+        "receive the same income every evening.",
+        "often refuse to work in restaurants without tips."
+      ],
+      "items": [
+        {
+          "q": "Servers who introduce themselves by name",
+          "a": 1,
+          "e": "Đoạn D: người phục vụ tự giới thiệu tên, ngồi xuống bên bàn hoặc vẽ mặt cười trên hóa đơn 'tend to receive larger tips' → được boa nhiều hơn."
+        },
+        {
+          "q": "Wealthy Americans in the late nineteenth century",
+          "a": 2,
+          "e": "Đoạn B: người Mỹ giàu có từ châu Âu trở về đã 'brought back the aristocratic habit' – mang tập quán này về từ những chuyến đi châu Âu."
+        },
+        {
+          "q": "Under federal law, employees in the United States who receive tips",
+          "a": 0,
+          "e": "Đoạn E: chủ có thể trả nhân viên nhận tip 'a basic wage of just over two dollars an hour' → lương cơ bản hơn hai đô một giờ. 'receive the same income every evening' là bẫy – thu nhập thay đổi mạnh."
+        },
+        {
+          "q": "Leaving extra money for good service",
+          "a": 3,
+          "e": "Đoạn F: ở Nhật, 'tipping is generally not expected' → thường không được mong đợi ở Nhật."
+        }
+      ]
+    }
+  ]
+}

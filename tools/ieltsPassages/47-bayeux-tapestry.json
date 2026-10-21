@@ -1,0 +1,120 @@
+{
+  "title": "The Bayeux Tapestry",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ tư liệu lịch sử trung cổ và nghiên cứu về tấm thảm Bayeux.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "In a museum in the small Norman town of Bayeux hangs one of the most famous works of art of the Middle Ages: a strip of cloth about seventy metres long and half a metre high that tells the story of the Norman conquest of England in 1066. In a series of vivid scenes, it shows the events leading up to the Battle of Hastings and the battle itself, in which William, Duke of Normandy, defeated the English king Harold Godwinson. For historians, it is an extraordinary source of information about the eleventh century; for ordinary visitors, it is a gripping story told almost like a modern comic strip. It has become one of the most widely reproduced images of medieval Europe."
+    },
+    {
+      "letter": "B",
+      "text": "Despite its name, the Bayeux Tapestry is not strictly a tapestry at all. In a true tapestry, the design is woven into the fabric on a loom. The Bayeux work is an embroidery: its images were stitched onto panels of plain linen using wool dyed in a limited range of colours, including shades of red, yellow, green and blue. The panels were then joined together to form a single continuous piece. The work is remarkable not only for its size but for the skill of its needlework, which manages to convey movement, emotion and detail with simple stitches."
+    },
+    {
+      "letter": "C",
+      "text": "Nobody knows exactly who made it or where. Most historians believe that it was commissioned by Odo, Bishop of Bayeux, who was William's half-brother and who appears prominently in several scenes. Because of features of its style and the spelling of some of the Latin words that run above the images, many experts think that it was made in England, possibly by embroiderers in Canterbury, within a few years of the conquest. English needlework was famous throughout Europe at the time, and it is quite possible that the embroiderers themselves were English women working for their new Norman rulers."
+    },
+    {
+      "letter": "D",
+      "text": "The scenes contain a wealth of detail about everyday life. They show ships being built and loaded, horses being transported across the sea, food being cooked and served, and soldiers wearing armour of interlocking metal rings. Hundreds of human figures appear, along with horses, dogs and other animals. Above and below the main story run decorative borders filled with mythical creatures, scenes from well-known fables and images of ordinary activities such as ploughing and hunting. One scene even depicts a comet passing overhead, which observers at the time interpreted as a sign of coming disaster."
+    },
+    {
+      "letter": "E",
+      "text": "Historians must use the work with care, however, because it was made to tell a particular version of events. It presents the Norman claim that Harold had sworn an oath to support William as the next king of England, and that by taking the throne himself he had broken his promise. From this point of view, the invasion was a just punishment. English sources from the period tell a rather different story, and the tapestry is best understood as a piece of political storytelling rather than a neutral record."
+    },
+    {
+      "letter": "F",
+      "text": "One of its most famous images has also become a subject of debate. The scene of Harold's death is usually said to show him being struck in the eye by an arrow, an episode that has become part of popular history. Close examination has suggested, however, that the arrow may have been added or altered during later repairs, and that Harold may instead be the figure shown being cut down by a mounted knight. Because the cloth has been repaired many times over the centuries, it is not always easy to know which details are original."
+    },
+    {
+      "letter": "G",
+      "text": "The tapestry's survival is itself remarkable. For centuries it was kept in Bayeux Cathedral and displayed to the public once a year. During the French Revolution it was nearly cut up to cover military wagons, and it was saved only when a local official intervened. In the Second World War, German officials took a close interest in it and moved it to Paris in 1944. Its final scenes are missing; the story breaks off in the middle of the English retreat, and nobody knows how the original ending looked. Today it is displayed behind glass in carefully controlled light to prevent further damage."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "tfng",
+      "items": [
+        {
+          "q": "The Bayeux work was produced by weaving the design into the fabric.",
+          "a": "FALSE",
+          "e": "Đoạn B: đây không phải thảm dệt; hình được thêu lên vải lanh bằng len ('stitched onto panels of plain linen') → FALSE."
+        },
+        {
+          "q": "The Latin words above the scenes provide clues about where the work was made.",
+          "a": "TRUE",
+          "e": "Đoạn C: dựa vào phong cách và cách viết một số từ Latin phía trên tranh, nhiều chuyên gia cho rằng nó được làm ở Anh → TRUE."
+        },
+        {
+          "q": "Bishop Odo personally supervised the embroiderers.",
+          "a": "NOT GIVEN",
+          "e": "Đoạn C: Odo có lẽ là người đặt làm tác phẩm, nhưng bài không nói ông có trực tiếp giám sát thợ thêu hay không → NOT GIVEN."
+        },
+        {
+          "q": "People in the eleventh century saw the comet as a warning of trouble.",
+          "a": "TRUE",
+          "e": "Đoạn D: sao chổi được người đương thời coi là 'a sign of coming disaster' → TRUE."
+        },
+        {
+          "q": "The tapestry gives a balanced account of the events of 1066.",
+          "a": "FALSE",
+          "e": "Đoạn E: tác phẩm kể một phiên bản riêng (quan điểm Norman), 'political storytelling rather than a neutral record' → FALSE."
+        }
+      ]
+    },
+    {
+      "kind": "mcq3",
+      "items": [
+        {
+          "q": "Which THREE of the following are shown on the tapestry, according to the passage?",
+          "options": [
+            "ships being built",
+            "horses being carried across the sea",
+            "a comet in the sky",
+            "the coronation of William as king",
+            "the building of a castle at Bayeux",
+            "a map of the English coast",
+            "the trial of Harold Godwinson"
+          ],
+          "a": [
+            0,
+            1,
+            2
+          ],
+          "e": "Đoạn D: tranh thể hiện 'ships being built and loaded, horses being transported across the sea' và 'a comet passing overhead'. Lễ đăng quang của William, xây lâu đài, bản đồ, phiên tòa xử Harold không được nhắc tới (phần cuối còn bị mất)."
+        }
+      ]
+    },
+    {
+      "kind": "short",
+      "limit": "NO MORE THAN TWO WORDS",
+      "items": [
+        {
+          "q": "Its images were stitched onto panels of which material?",
+          "a": "linen/plain linen",
+          "e": "Đoạn B: hình được thêu 'onto panels of plain linen' → linen."
+        },
+        {
+          "q": "In which English city may the embroiderers have worked?",
+          "a": "Canterbury",
+          "e": "Đoạn C: có thể là 'embroiderers in Canterbury' → Canterbury."
+        },
+        {
+          "q": "What were soldiers' metal rings used to make?",
+          "a": "armour",
+          "e": "Đoạn D: binh lính mặc 'armour of interlocking metal rings' → armour."
+        },
+        {
+          "q": "According to the Norman version, what had Harold broken by becoming king?",
+          "a": "his promise/oath",
+          "e": "Đoạn E: theo phía Norman, Harold đã thề ủng hộ William, và khi tự lên ngôi 'he had broken his promise' → his promise (hoặc oath)."
+        },
+        {
+          "q": "During the French Revolution, the cloth was nearly cut up to cover what?",
+          "a": "military wagons",
+          "e": "Đoạn G: tấm vải suýt bị cắt 'to cover military wagons' → military wagons."
+        }
+      ]
+    }
+  ]
+}

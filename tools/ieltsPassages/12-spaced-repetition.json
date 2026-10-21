@@ -1,0 +1,151 @@
+{
+  "title": "The Science of Remembering",
+  "sourceNote": "Bài viết gốc theo phong cách IELTS Academic Reading; dữ kiện tổng hợp từ các nghiên cứu tâm lý học nhận thức về trí nhớ đã công bố.",
+  "sections": [
+    {
+      "letter": "A",
+      "text": "Every student knows the experience of studying hard for an examination, performing reasonably well, and then discovering a few weeks later that almost everything has been forgotten. For a long time this was regarded as an unavoidable feature of human memory. Over the past century, however, psychologists have learned a great deal about how forgetting happens and how it can be slowed. Their findings point to techniques that are simple, inexpensive and remarkably effective, yet which are still used far less often than the familiar habit of last-minute revision."
+    },
+    {
+      "letter": "B",
+      "text": "The scientific study of memory is usually traced to the German psychologist Hermann Ebbinghaus, who published his research in 1885. To avoid the influence of meaning and prior knowledge, Ebbinghaus taught himself long lists of nonsense syllables, such as ‘dax’ or ‘bok’, and then tested how many he could recall after different periods of time. The results allowed him to draw what became known as the forgetting curve. Memory declined very steeply in the first hours after learning and then more gradually, so that a large proportion of the material was lost within a day unless it was reviewed."
+    },
+    {
+      "letter": "C",
+      "text": "Ebbinghaus also noticed something more encouraging. When he relearned a list after an interval, it took him less time than it had originally, and the material was then forgotten more slowly. Spreading out learning sessions over time, rather than concentrating them in a single block, produced much better long-term retention. This finding, known as the spacing effect, has since been confirmed in hundreds of experiments with learners of all ages, from young children memorising vocabulary to medical students learning anatomy, and it is one of the most reliable results in the whole of psychology. Its advantage is usually largest when material must be retained for months rather than days."
+    },
+    {
+      "letter": "D",
+      "text": "How long should the gaps between study sessions be? A large study published in 2008 by Nicholas Cepeda and his colleagues suggested that the answer depends on how long the information needs to be remembered. For a test only a week away, reviewing material after a day or two was most effective; for information that had to be retained for a year, intervals of several weeks produced the best results. Gaps that are too short add little, because the material is still fresh, while gaps that are too long mean that much of it has already been lost and must effectively be learned again."
+    },
+    {
+      "letter": "E",
+      "text": "A closely related principle concerns the way material is reviewed. Simply rereading notes is a popular strategy, but research suggests that it is much less effective than attempting to recall information from memory. In a study published in 2006, Henry Roediger and Jeffrey Karpicke asked students to read a short passage and then either read it again or write down as much as they could remember. On a test five minutes later, the students who had reread performed slightly better. After a week, however, those who had practised recalling the passage remembered substantially more. The effort of retrieval appears to strengthen memories in a way that passive review does not."
+    },
+    {
+      "letter": "F",
+      "text": "These ideas have been built into practical tools. In the 1970s, the German writer Sebastian Leitner proposed a system in which flashcards are stored in a series of boxes: cards answered correctly move to a box that is reviewed less often, while cards answered wrongly return to the first box for frequent practice. Computer programs have since automated the process. The Polish researcher Piotr Woźniak developed software that calculates the ideal moment to review each item, just before it is likely to be forgotten, and similar algorithms are now used by millions of language learners. Users of such programs often spend only a few minutes a day reviewing, yet are able to retain thousands of words."
+    },
+    {
+      "letter": "G",
+      "text": "Why, then, do so many learners continue to cram? Part of the answer is that spaced practice and self-testing feel harder than rereading, and people tend to interpret that difficulty as a sign that they are not learning. The psychologist Robert Bjork has described such challenges as ‘desirable difficulties’: conditions that slow down apparent progress during study but lead to stronger learning in the long run. Teaching students to recognise this may be as important as teaching them the techniques themselves."
+    }
+  ],
+  "groups": [
+    {
+      "kind": "headings",
+      "headings": [
+        {
+          "text": "An early researcher measures how quickly memory fades",
+          "para": "B"
+        },
+        {
+          "text": "The benefit of distributing learning over time",
+          "para": "C"
+        },
+        {
+          "text": "Choosing the right interval between reviews",
+          "para": "D"
+        },
+        {
+          "text": "Testing oneself rather than rereading",
+          "para": "E"
+        },
+        {
+          "text": "From boxes of cards to computer software",
+          "para": "F"
+        },
+        {
+          "text": "Why effective methods can feel ineffective",
+          "para": "G"
+        },
+        {
+          "text": "The role of sleep in strengthening memories",
+          "para": null
+        },
+        {
+          "text": "Differences between children's and adults' memory",
+          "para": null
+        },
+        {
+          "text": "How examinations encourage cheating",
+          "para": null
+        }
+      ],
+      "explain": {
+        "B": "Đoạn B: Ebbinghaus tự học danh sách âm tiết vô nghĩa và đo lượng nhớ được theo thời gian, vẽ ra đường cong quên → nhà nghiên cứu đầu tiên đo trí nhớ phai nhanh đến mức nào: {h}.",
+        "C": "Đoạn C: chia nhỏ buổi học theo thời gian giúp nhớ lâu hơn – hiệu ứng giãn cách (spacing effect) → {h}. Đoạn có nhắc trẻ em và sinh viên y khoa nhưng không so sánh trí nhớ trẻ em với người lớn, nên không phải {i:7}.",
+        "D": "Đoạn D: nghiên cứu của Cepeda cho thấy khoảng cách ôn tối ưu phụ thuộc vào thời gian cần nhớ → chọn khoảng cách phù hợp giữa các lần ôn: {h}.",
+        "E": "Đoạn E: Roediger và Karpicke – tự nhớ lại (retrieval) hiệu quả hơn đọc lại sau một tuần → tự kiểm tra thay vì đọc lại: {h}.",
+        "F": "Đoạn F: hệ thống hộp thẻ của Leitner rồi phần mềm của Woźniak → từ hộp thẻ đến phần mềm máy tính: {h}.",
+        "G": "Đoạn G: học giãn cách và tự kiểm tra cảm thấy khó hơn nên người học tưởng mình không tiến bộ – 'desirable difficulties' → vì sao phương pháp hiệu quả lại có cảm giác không hiệu quả: {h}."
+      }
+    },
+    {
+      "kind": "gap",
+      "form": "table",
+      "limit": "ONE WORD ONLY",
+      "title": "Research on memory (Researcher – Method – Finding)",
+      "items": [
+        {
+          "q": "Ebbinghaus – taught himself long lists of ______ syllables – memory fell steeply at first, then more slowly",
+          "a": "nonsense",
+          "e": "Đoạn B: Ebbinghaus học 'long lists of nonsense syllables' → nonsense."
+        },
+        {
+          "q": "Cepeda and colleagues – varied the gaps between reviews – best interval depended on how long information had to be ______",
+          "a": "remembered/retained",
+          "e": "Đoạn D: câu trả lời 'depends on how long the information needs to be remembered'; cũng dùng 'retained for a year' → remembered (hoặc retained)."
+        },
+        {
+          "q": "Roediger and Karpicke – students reread a passage or tried to ______ it – this group did better after a week",
+          "a": "recall",
+          "e": "Đoạn E: sinh viên đọc lại hoặc viết ra những gì nhớ được; nhóm 'practised recalling the passage' nhớ nhiều hơn sau một tuần → recall."
+        },
+        {
+          "q": "Leitner – cards answered wrongly return to the first ______ for frequent practice",
+          "a": "box",
+          "e": "Đoạn F: thẻ trả lời sai 'return to the first box for frequent practice' → box."
+        }
+      ]
+    },
+    {
+      "kind": "mcq",
+      "items": [
+        {
+          "q": "Why did Ebbinghaus use nonsense syllables?",
+          "options": [
+            "They were easier for him to pronounce than real words.",
+            "He wanted to prevent meaning from affecting the results.",
+            "Real words had already been studied by other researchers.",
+            "He was testing how well children learned a new language."
+          ],
+          "a": 1,
+          "e": "Đoạn B: ông dùng âm tiết vô nghĩa 'To avoid the influence of meaning and prior knowledge' – để ý nghĩa và kiến thức sẵn có không ảnh hưởng tới kết quả."
+        },
+        {
+          "q": "According to Cepeda's study, intervals between reviews that are too long are a problem because",
+          "options": [
+            "learners become bored with the material.",
+            "much of the material has to be relearned.",
+            "the material is still too fresh in the memory.",
+            "learners lose confidence in the method."
+          ],
+          "a": 1,
+          "e": "Đoạn D: khoảng cách quá dài khiến phần lớn kiến thức đã mất 'and must effectively be learned again'. 'Still fresh' là vấn đề của khoảng cách QUÁ NGẮN – bẫy."
+        },
+        {
+          "q": "What does the writer suggest in the final paragraph?",
+          "options": [
+            "Cramming is effective for most short tests.",
+            "Students should be told why difficult methods are worthwhile.",
+            "Rereading notes should be banned in schools.",
+            "Learning should always feel easy to be effective."
+          ],
+          "a": 1,
+          "e": "Đoạn G: dạy học sinh nhận ra 'desirable difficulties' 'may be as important as teaching them the techniques themselves' → nên giải thích cho học sinh vì sao phương pháp khó lại đáng làm."
+        }
+      ]
+    }
+  ]
+}
