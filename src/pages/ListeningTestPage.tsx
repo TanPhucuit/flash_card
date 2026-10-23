@@ -1,9 +1,10 @@
 import { FormEvent, useMemo, useState } from "react";
+import { translateToVietnamese } from "../utils/translate";
 import { DataApi } from "../App";
 import { Button, Card, Icon, Input, PageTitle, ProgressBar } from "../components/ui";
 import { useYouTubePlayer } from "../hooks/useYouTubePlayer";
 import { createListeningResult, percent } from "../utils/study";
-import { extractYouTubeVideoId, fetchListeningTranslation, fetchYouTubeTranscript, isListeningAnswerCorrect, SubtitleCue } from "../utils/listening";
+import { extractYouTubeVideoId, fetchYouTubeTranscript, isListeningAnswerCorrect, SubtitleCue } from "../utils/listening";
 
 type Phase = "setup" | "test" | "result";
 type Feedback = { correct: boolean } | null;
@@ -78,7 +79,7 @@ export function ListeningTestPage({ api }: { api: DataApi }) {
     const cueId = currentCue.id;
     setTranslation({ cueId, text: "", loading: true, error: "" });
     try {
-      const text = await fetchListeningTranslation(currentCue.text);
+      const text = await translateToVietnamese(currentCue.text);
       setTranslation({ cueId, text, loading: false, error: "" });
     } catch (error) {
       setTranslation({

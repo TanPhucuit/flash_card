@@ -74,7 +74,7 @@ function AuthenticatedApp({ api, reading, isMobile, lmSync }: { api: DataApi; re
         <Route path="/dashboard" element={<DashboardPage api={api} />} />
         <Route path="/sets" element={<MySetsPage api={api} reading={reading} />} />
         <Route path="/reading" element={<ReadingLibraryPage api={reading} />} />
-        <Route path="/reading/:bookId/:passageId" element={<ReadingTestPage api={reading} />} />
+        <Route path="/reading/:bookId/:passageId" element={<ReadingTestPage api={reading} vocab={api} />} />
         <Route path="/listening-test" element={<ListeningTestPage api={api} />} />
         <Route path="/study/multi/learn" element={<MultiSetLearnPage api={api} />} />
         <Route path="/sets/new" element={<CreateEditSetPage api={api} />} />

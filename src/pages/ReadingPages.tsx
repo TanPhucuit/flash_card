@@ -1,4 +1,6 @@
 import { InstructionBlocks } from "../components/InstructionBlocks";
+import { SelectionTranslator } from "../components/SelectionTranslator";
+import type { DataApi } from "../App";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
@@ -441,7 +443,7 @@ function Dialog({ title, children, onClose }: { title: string; children: React.R
 
 // ------------------------------------------------------------- Test screen --
 
-export function ReadingTestPage({ api }: { api: ReadingApi }) {
+export function ReadingTestPage({ api, vocab }: { api: ReadingApi; vocab?: DataApi }) {
   const { bookId, passageId } = useParams<{ bookId: string; passageId: string }>();
   const navigate = useNavigate();
   const book = api.data.books.find((item) => item.id === bookId);
@@ -453,6 +455,7 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
   const [startedAt] = useState(() => new Date().toISOString());
   const [flagged, setFlagged] = useState<Set<string>>(new Set());
   const savedRef = useRef(false);
+  const articleRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (submitted) return;
@@ -542,11 +545,14 @@ export function ReadingTestPage({ api }: { api: ReadingApi }) {
           scrolls on its own so the text stays put while answering, exactly how
           the computer-delivered IELTS test behaves. */}
       <div className="grid gap-0 lg:h-[calc(100vh-8rem)] lg:grid-cols-2">
-        <article className="overflow-y-auto border-surface-variant px-md py-lg dark:border-white/10 lg:border-r">
+        <article ref={articleRef} className="overflow-y-auto border-surface-variant px-md py-lg dark:border-white/10 lg:border-r">
           <h2 className="mb-md font-headline-md text-xl font-bold">{passage.title}</h2>
           <div className="prose-reading whitespace-pre-wrap text-[15px] leading-7 text-on-surface dark:text-white/85">
             {passage.text}
           </div>
+          {vocab ? (
+            <SelectionTranslator containerRef={articleRef} passageText={passage.text} sets={vocab.data.sets} upsertSet={vocab.upsertSet} />
+          ) : null}
         </article>
 
         <section className="overflow-y-auto px-md py-lg">
