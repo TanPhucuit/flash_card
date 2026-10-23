@@ -115,7 +115,8 @@ export function SelectionTranslator({
     translateToVietnamese(text, controller.signal)
       .then((value) => {
         cache.current.set(text.toLowerCase(), value);
-        setTranslation(value);
+        // Nếu người dùng đã tự gõ nghĩa trong lúc chờ dịch thì giữ nguyên.
+        setTranslation((current) => current || value);
         setStatus("ready");
       })
       .catch(() => {
@@ -126,8 +127,10 @@ export function SelectionTranslator({
 
   if (!selected) return null;
 
+  const meaning = translation.trim();
   const add = () => {
-    const outcome = addToMobileSet(sets, upsertSet, { word: selected.text, meaningVi: translation });
+    if (!meaning || result) return;
+    const outcome = addToMobileSet(sets, upsertSet, { word: selected.text, meaningVi: meaning });
     setResult(
       outcome.status === "added"
         ? { ok: true, message: `Đã thêm vào ${outcome.set.title} (${outcome.set.cards.length}/${MOBILE_SET_LIMIT})` }
@@ -142,8 +145,11 @@ export function SelectionTranslator({
       aria-label="Dịch nhanh"
       className="fixed z-50 w-[320px] rounded-2xl border border-surface-variant bg-white p-md text-left shadow-level-2 dark:border-white/10 dark:bg-[#242728]"
       style={{ left: selected.x, top: selected.y, transform: `translate(-50%, ${selected.below ? "0" : "-100%"})` }}
-      // Giữ nguyên vùng bôi đen khi bấm vào popup.
-      onMouseDown={(event) => event.preventDefault()}
+      // Giữ nguyên vùng bôi đen khi bấm vào popup — trừ ô nhập nghĩa, vốn cần
+      // nhận focus để sửa được.
+      onMouseDown={(event) => {
+        if (!(event.target instanceof HTMLInputElement)) event.preventDefault();
+      }}
     >
       <div className="mb-xs flex items-start justify-between gap-sm">
         <p className="min-w-0 break-words text-base font-bold text-on-surface dark:text-white">{selected.text}</p>
@@ -151,11 +157,26 @@ export function SelectionTranslator({
           <Icon name="close" className="text-[18px]" />
         </button>
       </div>
-      <div className="mb-sm flex items-center gap-xs text-xs font-semibold uppercase tracking-wide text-on-surface-variant dark:text-white/50">
-        <Icon name="translate" className="text-[16px]" /> Tiếng Việt
-      </div>
-      <p className="mb-md min-h-6 text-[15px] leading-6 text-primary dark:text-[#c9c5ff]">
-        {status === "loading" ? <span className="animate-pulse text-on-surface-variant">Đang dịch...</span> : status === "error" ? <span className="text-red-700">Không dịch được. Bôi đen lại để thử lần nữa.</span> : translation}
+      <label className="mb-xs flex items-center gap-xs text-xs font-semibold uppercase tracking-wide text-on-surface-variant dark:text-white/50" htmlFor="selection-meaning">
+        <Icon name="translate" className="text-[16px]" /> Nghĩa tiếng Việt
+        <span className="font-normal normal-case tracking-normal">· có thể sửa trước khi lưu</span>
+      </label>
+      <input
+        id="selection-meaning"
+        value={translation}
+        onChange={(event) => setTranslation(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            add();
+          }
+        }}
+        readOnly={Boolean(result)}
+        placeholder={status === "loading" ? "Đang dịch..." : "Nhập nghĩa tiếng Việt"}
+        className="mb-xs w-full rounded-lg border border-surface-variant bg-white px-sm py-xs text-[15px] leading-6 text-primary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15 read-only:bg-surface-container-low dark:border-white/15 dark:bg-[#202324] dark:text-[#c9c5ff]"
+      />
+      <p className="mb-md min-h-4 text-xs text-on-surface-variant dark:text-white/50">
+        {status === "loading" ? <span className="animate-pulse">Đang dịch tự động...</span> : status === "error" ? <span className="text-red-700">Không dịch tự động được — bạn có thể tự nhập nghĩa.</span> : "Gợi ý từ dịch tự động."}
       </p>
       {result ? (
         <p className={`flex items-center gap-xs rounded-lg px-sm py-xs text-sm font-semibold ${result.ok ? "bg-green-50 text-green-800 dark:bg-green-500/15 dark:text-green-200" : "bg-amber-50 text-amber-800 dark:bg-amber-500/15 dark:text-amber-100"}`}>
@@ -165,7 +186,7 @@ export function SelectionTranslator({
         <button
           type="button"
           onClick={add}
-          disabled={status !== "ready"}
+          disabled={!meaning}
           className="flex w-full items-center justify-center gap-xs rounded-xl bg-primary px-md py-sm text-sm font-semibold text-white transition hover:bg-primary-container active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Icon name="add" className="text-[18px]" /> Thêm vào Mobile Set
