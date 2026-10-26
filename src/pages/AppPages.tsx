@@ -9,7 +9,7 @@ import { downloadJson, parseCardsCsv } from "../utils/csv";
 import { getStorageDiagnostics, STORAGE_BACKUP_KEY, STORAGE_KEY } from "../utils/storage";
 import { getReadingStorageDiagnostics } from "../utils/readingStorage";
 import { ReadingApi } from "../hooks/useReadingData";
-import { loadHighLevelSets, missingHighLevelSets } from "../utils/highLevelSets";
+import { BUNDLED_PACKS, loadPack, missingPackSets } from "../utils/bundledSets";
 import { isStarSet } from "../utils/starSets";
 import { MobileNav, MobileTab } from "../components/MobileNav";
 import { LifeManagementSyncApi } from "../hooks/useLifeManagementSync";
@@ -2505,20 +2505,23 @@ export function SettingsPage({ api, reading, lmSync }: PageProps & { reading: Re
   const storageInfo = getStorageDiagnostics();
   const readingStorageInfo = getReadingStorageDiagnostics();
   const [recoverMessage, setRecoverMessage] = useState("");
-  const [highLevel, setHighLevel] = useState<{ total: number; missing: VocabularySet[]; state: "loading" | "ready" | "error"; message: string }>({ total: 0, missing: [], state: "loading", message: "" });
+  const [packs, setPacks] = useState<Record<string, { total: number; missing: VocabularySet[]; state: "loading" | "ready" | "error"; message: string }>>({});
 
   useEffect(() => {
     const controller = new AbortController();
-    loadHighLevelSets(controller.signal)
-      .then((available) => setHighLevel((current) => ({ ...current, total: available.length, missing: missingHighLevelSets(available, api.data.sets), state: "ready" })))
-      .catch(() => { if (!controller.signal.aborted) setHighLevel((current) => ({ ...current, state: "error" })); });
+    BUNDLED_PACKS.forEach((pack) => {
+      loadPack(pack, controller.signal)
+        .then((file) => setPacks((current) => ({ ...current, [pack.key]: { total: file.sets.length, missing: missingPackSets(file, api.data.sets), state: "ready", message: current[pack.key]?.message ?? "" } })))
+        .catch(() => { if (!controller.signal.aborted) setPacks((current) => ({ ...current, [pack.key]: { total: 0, missing: [], state: "error", message: "" } })); });
+    });
     return () => controller.abort();
   }, [api.data.sets]);
 
-  function importHighLevel() {
-    const toAdd = highLevel.missing;
+  function importPack(key: string, listLabel: string) {
+    const toAdd = packs[key]?.missing ?? [];
     toAdd.forEach((set) => api.upsertSet(set));
-    setHighLevel((current) => ({ ...current, message: `Đã nhập ${toAdd.length} set (${toAdd.reduce((sum, set) => sum + set.cards.length, 0)} từ) vào danh sách High-Level.` }));
+    const words = toAdd.reduce((sum, set) => sum + set.cards.length, 0);
+    setPacks((current) => ({ ...current, [key]: { ...current[key], message: `Đã nhập ${toAdd.length} set (${words} thẻ) vào danh sách ${listLabel}.` } }));
   }
 
   function recoverFromOrigin(origin: string) {
@@ -2608,23 +2611,22 @@ export function SettingsPage({ api, reading, lmSync }: PageProps & { reading: Re
             </div>
           ) : null}
         </Card>
-        <Card className="space-y-md">
-          <h2 className="font-headline-md text-headline-md">Bộ từ vựng High-Level (IELTS Reading)</h2>
-          <p className="text-sm text-on-surface-variant dark:text-white/70">
-            {highLevel.total || 25} set × 20 từ: từ vựng nâng cao, thành ngữ, từ đa nghĩa và nghĩa hiếm hay gặp trong IELTS Reading.
-            Nhập vào đây sẽ nằm trong danh sách <strong>High-Level</strong> và tự đồng bộ giữa các thiết bị như mọi set khác.
-            Bấm nhiều lần cũng không bị trùng.
-          </p>
-          <Button
-            variant="secondary"
-            disabled={highLevel.state !== "ready" || highLevel.missing.length === 0}
-            onClick={importHighLevel}
-          >
-            <Icon name="library_add" />
-            {highLevel.state === "loading" ? "Đang kiểm tra..." : highLevel.state === "error" ? "Không tải được bộ từ" : highLevel.missing.length ? `Nhập ${highLevel.missing.length} set còn thiếu` : "Đã nhập đủ"}
-          </Button>
-          {highLevel.message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary dark:bg-primary/15 dark:text-white">{highLevel.message}</div> : null}
-        </Card>
+        {BUNDLED_PACKS.map((pack) => {
+          const info = packs[pack.key] ?? { total: 0, missing: [], state: "loading" as const, message: "" };
+          return (
+            <Card key={pack.key} className="space-y-md">
+              <h2 className="font-headline-md text-headline-md">{pack.title}</h2>
+              <p className="text-sm text-on-surface-variant dark:text-white/70">
+                {pack.description} Nhập vào đây sẽ nằm trong danh sách <strong>{pack.listLabel}</strong> và tự đồng bộ giữa các thiết bị như mọi set khác. Bấm nhiều lần cũng không bị trùng.
+              </p>
+              <Button variant="secondary" disabled={info.state !== "ready" || info.missing.length === 0} onClick={() => importPack(pack.key, pack.listLabel)}>
+                <Icon name="library_add" />
+                {info.state === "loading" ? "Đang kiểm tra..." : info.state === "error" ? "Không tải được bộ từ" : info.missing.length ? `Nhập ${info.missing.length} set còn thiếu` : "Đã nhập đủ"}
+              </Button>
+              {info.message ? <div className="rounded-xl bg-primary-fixed p-md text-sm font-semibold text-primary dark:bg-primary/15 dark:text-white">{info.message}</div> : null}
+            </Card>
+          );
+        })}
         <Card className="space-y-md">
           <h2 className="font-headline-md text-headline-md">Data</h2>
           <div className="rounded-xl bg-surface-container-low p-md text-sm text-on-surface-variant dark:bg-white/5 dark:text-white/70">
