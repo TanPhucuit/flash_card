@@ -135,6 +135,21 @@ function SetCard({ set, results, onDelete }: { set: VocabularySet; results: Stud
   );
 }
 
+/** Nút đánh dấu "từ khó nhớ" cho giao diện điện thoại — vùng bấm 44px. */
+function MobileStarButton({ starred, onToggle }: { starred: boolean; onToggle: () => void }) {
+  return (
+    <button
+      type="button"
+      aria-pressed={starred}
+      aria-label={starred ? "Đã đánh dấu từ khó nhớ, chạm để bỏ đánh dấu" : "Đánh dấu từ khó nhớ"}
+      onClick={onToggle}
+      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full shadow-level-1 transition active:scale-90 ${starred ? "bg-amber-100 dark:bg-amber-500/20" : "bg-white dark:bg-white/10"}`}
+    >
+      <Icon name="star" filled={starred} className={starred ? "text-amber-500" : "text-on-surface-variant dark:text-white/60"} />
+    </button>
+  );
+}
+
 export function MobileAppPage({ api }: PageProps) {
   const [view, setView] = useState<"add" | "sets" | "study" | "learn" | "learnPicker" | "mixPicker" | "mix">("add");
   const [learnDirection, setLearnDirection] = useState<LearnDirection | null>(null);
@@ -276,6 +291,15 @@ export function MobileAppPage({ api }: PageProps) {
     [mixSelectedSets],
   );
   const activeMixItem = mixQueue[mixIndex];
+
+  // Đọc cờ sao trực tiếp từ dữ liệu hiện tại chứ không từ bản sao thẻ đã chụp lúc
+  // bắt đầu phiên học, nếu không nút sao sẽ không đổi màu sau khi bấm.
+  const isCardStarred = (setId: string | undefined, cardId: string | undefined) =>
+    Boolean(setId && cardId && api.data.sets.find((set) => set.id === setId)?.cards.find((card) => card.id === cardId)?.starred);
+  const toggleCardStar = (setId: string | undefined, cardId: string | undefined) => {
+    if (!setId || !cardId) return;
+    api.updateSet(setId, (current) => updateSetCard(current, cardId, (item) => ({ ...item, starred: !item.starred })));
+  };
   const mixPrompt = activeMixItem?.card.definitionEn || activeMixItem?.card.meaningVi || activeMixItem?.card.exampleEn || "";
   const mixChoices = useMemo(() => {
     if (!activeMixItem) return [];
@@ -565,6 +589,7 @@ export function MobileAppPage({ api }: PageProps) {
               <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
               <div className="text-sm text-on-surface-variant dark:text-white/60">{cardIndex + 1} / {flashcardCards.length}</div>
             </div>
+            <MobileStarButton starred={isCardStarred(selectedSet.id, activeCard.id)} onToggle={() => toggleCardStar(selectedSet.id, activeCard.id)} />
             <button
               type="button"
               aria-label={`Phát âm ${activeCard.word}`}
@@ -702,6 +727,7 @@ export function MobileAppPage({ api }: PageProps) {
               <div className="truncate font-headline-md text-lg font-bold">{selectedSet.title}</div>
               <div className="text-sm text-on-surface-variant dark:text-white/60">Learn · {DIRECTION_META[learnDirection].label}</div>
             </div>
+            {activeLearnCard && !learnComplete ? <MobileStarButton starred={isCardStarred(selectedSet.id, activeLearnCard.id)} onToggle={() => toggleCardStar(selectedSet.id, activeLearnCard.id)} /> : null}
             <span className="flex h-11 min-w-11 items-center justify-center rounded-full bg-emerald-600 px-sm font-bold text-white">{learnCorrect}</span>
           </header>
 
@@ -853,6 +879,7 @@ export function MobileAppPage({ api }: PageProps) {
               <div className="truncate font-headline-md text-lg font-bold">{mixTitleLabel}</div>
               <div className="text-sm text-on-surface-variant dark:text-white/60">Mix · {mixSelectedSets.length} bộ</div>
             </div>
+            {activeMixItem && !mixComplete ? <MobileStarButton starred={isCardStarred(activeMixItem.setId, activeMixItem.card.id)} onToggle={() => toggleCardStar(activeMixItem.setId, activeMixItem.card.id)} /> : null}
             <span className="flex h-11 min-w-11 items-center justify-center rounded-full bg-emerald-600 px-sm font-bold text-white">{mixCorrect}</span>
           </header>
 
