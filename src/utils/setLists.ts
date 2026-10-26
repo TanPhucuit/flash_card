@@ -11,6 +11,7 @@ export const DEFAULT_LISTS: VocabularySetList[] = [
   { id: "15_day_practice", title: "15-Day Practice", createdAt: "1970-01-01T00:00:00.000Z" },
   { id: "cambridge", title: "Cambridge", createdAt: "1970-01-01T00:00:00.000Z" },
   { id: "c1_c2", title: "C1/C2", createdAt: "1970-01-01T00:00:00.000Z" },
+  { id: "high_level", title: "High-Level", createdAt: "1970-01-01T00:00:00.000Z" },
 ];
 
 const FALLBACK_LIST_ID = "mobile_set";
