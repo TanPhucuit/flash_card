@@ -31,9 +31,16 @@ export default async function handler(req, res) {
       valueInputOption: "RAW",
       data: TABS.map((tab) => ({ range: `${tab.name}!A2:${tab.last}`, values: rows[tab.key] })),
     });
-    await sheetsRequest("POST", "/values:batchClear", {
-      ranges: TABS.map((tab) => `${tab.name}!A${rows[tab.key].length + 2}:${tab.last}`),
-    });
+    // Chỉ xoá những dải thực sự nằm trong lưới: dải bắt đầu SAU dòng cuối của
+    // sheet (khi dữ liệu mới lấp đầy đúng bằng lưới) bị Google từ chối 400.
+    const meta = await sheetsRequest("GET", "?fields=sheets.properties(title,gridProperties.rowCount)");
+    const rowCount = new Map((meta.sheets ?? []).map((sheet) => [sheet.properties.title, sheet.properties.gridProperties?.rowCount ?? 0]));
+    const leftovers = TABS.filter((tab) => rows[tab.key].length + 2 <= (rowCount.get(tab.name) ?? 0));
+    if (leftovers.length) {
+      await sheetsRequest("POST", "/values:batchClear", {
+        ranges: leftovers.map((tab) => `${tab.name}!A${rows[tab.key].length + 2}:${tab.last}`),
+      });
+    }
 
     return sendJson(res, 200, { ok: true, sets: setRows.length, cards: cardRows.length, results: resultRows.length, lists: listRows.length });
   } catch (error) {
