@@ -1,4 +1,4 @@
-import { sendJson, sheetsRequest } from "../_googleSheets.js";
+import { ensureTabs, sendJson, sheetsRequest } from "../_googleSheets.js";
 
 // Lịch sử làm bài Reading, dùng chung cho mọi thiết bị. Trước đây nó chỉ nằm
 // trong localStorage của từng trình duyệt, nên điện thoại không thấy những bài
@@ -10,17 +10,7 @@ const TAB = "reading_attempts";
 const HEADERS = ["id", "bookId", "bookTitle", "passageId", "passageTitle", "startedAt", "finishedAt", "durationSec", "answers", "correct", "total", "dateKey"];
 const RANGE = `${TAB}!A2:L`;
 
-async function ensureTab() {
-  const meta = await sheetsRequest("GET", "?includeGridData=false");
-  const exists = (meta.sheets ?? []).some((sheet) => sheet.properties.title === TAB);
-  if (!exists) {
-    await sheetsRequest("POST", ":batchUpdate", { requests: [{ addSheet: { properties: { title: TAB } } }] });
-    await sheetsRequest("POST", "/values:batchUpdate", {
-      valueInputOption: "RAW",
-      data: [{ range: `${TAB}!A1:L1`, values: [HEADERS] }],
-    });
-  }
-}
+const ensureTab = () => ensureTabs([{ title: TAB, lastColumn: "L", headers: HEADERS }]);
 
 function rowToAttempt(row) {
   const [id, bookId, bookTitle, passageId, passageTitle, startedAt, finishedAt, durationSec, answers, correct, total, dateKey] = row;

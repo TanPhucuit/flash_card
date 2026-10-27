@@ -53,50 +53,108 @@ export function useAppData() {
 
   useEffect(() => {
     const controller = new AbortController();
-    setSyncState("loading");
-    loadFromGoogleSheet(controller.signal)
-      .then((cloudData) => {
-        if (hasLocalEditRef.current) {
-          // Người dùng đã sửa dữ liệu (vd. hoàn thành một chế độ Learn) trong
-          // lúc đang chờ tải — dữ liệu cục bộ giờ MỚI hơn bản trên Google
-          // Sheet, nên bỏ qua bản tải về này. scheduleCloudSave từ chính thao
-          // tác sửa đó sẽ tự đẩy dữ liệu mới lên sheet ngay sau.
-          setSyncState("idle");
-          setSyncError("");
-          return;
-        }
-        const synced = syncDerivedData(cloudData);
-        dataRef.current = synced;
-        saveAppData(synced);
-        setReactData(synced);
-        setSyncState("idle");
-        setSyncError((current) => (CLOUD_MESSAGES.includes(current) ? "" : current));
-      })
-      .catch((error) => {
-        if (controller.signal.aborted) return;
-        console.warn("Google Sheet sync load failed. Using browser cache.", error);
-        setSyncState("error");
-        setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : CLOUD_LOAD_FAILED_MESSAGE));
-      });
-    return () => controller.abort();
-  }, []);
+    let retryTimer: number | undefined;
+    const RETRY_DELAYS = [3000, 10000, 30000];
 
-  const scheduleCloudSave = useCallback((next: AppData) => {
-    if (cloudSaveTimer.current) window.clearTimeout(cloudSaveTimer.current);
-    cloudSaveTimer.current = window.setTimeout(() => {
-      setSyncState("saving");
-      saveToGoogleSheet(next)
-        .then(() => {
+    const attemptLoad = (attempt: number) => {
+      setSyncState("loading");
+      loadFromGoogleSheet(controller.signal)
+        .then((cloudData) => {
+          if (hasLocalEditRef.current) {
+            // Người dùng đã sửa dữ liệu (vd. hoàn thành một chế độ Learn) trong
+            // lúc đang chờ tải — dữ liệu cục bộ giờ MỚI hơn bản trên Google
+            // Sheet, nên bỏ qua bản tải về này. scheduleCloudSave từ chính thao
+            // tác sửa đó sẽ tự đẩy dữ liệu mới lên sheet ngay sau.
+            setSyncState("idle");
+            setSyncError("");
+            return;
+          }
+          // Cloud trả về TRỐNG trong khi máy này đang có bộ từ: gần như chắc chắn
+          // là đang đọc đúng lúc một thiết bị khác ghi dở (hoặc sheet bị lỗi),
+          // không phải người dùng thực sự đã xoá hết. Tuyệt đối không ghi đè cache
+          // — coi như tải lỗi để thử lại.
+          if (cloudData.sets.length === 0 && dataRef.current.sets.some((set) => set.cards.length > 0)) {
+            throw new Error("Google Sheet returned empty data while local cache has sets");
+          }
+          const synced = syncDerivedData(cloudData);
+          dataRef.current = synced;
+          saveAppData(synced);
+          setReactData(synced);
           setSyncState("idle");
           setSyncError((current) => (CLOUD_MESSAGES.includes(current) ? "" : current));
         })
         .catch((error) => {
-          console.error("Google Sheet sync save failed.", error);
+          if (controller.signal.aborted) return;
+          console.warn("Google Sheet sync load failed. Using browser cache.", error);
+          if (attempt < RETRY_DELAYS.length) {
+            retryTimer = window.setTimeout(() => attemptLoad(attempt + 1), RETRY_DELAYS[attempt]);
+            return;
+          }
           setSyncState("error");
-          setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : CLOUD_SAVE_FAILED_MESSAGE));
+          setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : CLOUD_LOAD_FAILED_MESSAGE));
         });
-    }, 700);
+    };
+
+    attemptLoad(0);
+    return () => {
+      controller.abort();
+      window.clearTimeout(retryTimer);
+    };
   }, []);
+
+  // Lần lưu cloud gần nhất chưa thành công: dữ liệu chờ đẩy lên. Thử lại với thời
+  // gian chờ tăng dần, và thử lại khi có mạng / quay lại tab — trước đây một lần
+  // lỗi 500 là bỏ luôn cho tới tận thao tác kế tiếp.
+  const pendingSaveRef = useRef<AppData | null>(null);
+  const retryAttemptRef = useRef(0);
+  const retryTimerRef = useRef<number | undefined>(undefined);
+
+  const pushToCloud = useCallback((next: AppData) => {
+    pendingSaveRef.current = next;
+    window.clearTimeout(retryTimerRef.current);
+    setSyncState("saving");
+    saveToGoogleSheet(next)
+      .then(() => {
+        if (pendingSaveRef.current === next) pendingSaveRef.current = null;
+        retryAttemptRef.current = 0;
+        setSyncState("idle");
+        setSyncError((current) => (CLOUD_MESSAGES.includes(current) ? "" : current));
+      })
+      .catch((error) => {
+        console.error("Google Sheet sync save failed.", error);
+        setSyncState("error");
+        setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : CLOUD_SAVE_FAILED_MESSAGE));
+        // Chỉ thử lại bản MỚI NHẤT: nếu giữa chừng người dùng đã sửa tiếp thì
+        // scheduleCloudSave sẽ đẩy bản mới, không cần đẩy lại bản cũ.
+        if (pendingSaveRef.current !== next) return;
+        const delay = Math.min(60000, 3000 * 2 ** retryAttemptRef.current);
+        retryAttemptRef.current += 1;
+        retryTimerRef.current = window.setTimeout(() => {
+          if (pendingSaveRef.current === next) pushToCloud(next);
+        }, delay);
+      });
+  }, []);
+
+  useEffect(() => {
+    const retryNow = () => {
+      if (pendingSaveRef.current && navigator.onLine) pushToCloud(pendingSaveRef.current);
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") retryNow();
+    };
+    window.addEventListener("online", retryNow);
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.removeEventListener("online", retryNow);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [pushToCloud]);
+
+  const scheduleCloudSave = useCallback((next: AppData) => {
+    pendingSaveRef.current = next;
+    if (cloudSaveTimer.current) window.clearTimeout(cloudSaveTimer.current);
+    cloudSaveTimer.current = window.setTimeout(() => pushToCloud(next), 700);
+  }, [pushToCloud]);
 
   const setData = useCallback<Dispatch<SetStateAction<AppData>>>((nextOrUpdater) => {
     hasLocalEditRef.current = true;

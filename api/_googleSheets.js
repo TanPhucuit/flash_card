@@ -38,7 +38,12 @@ function env(name) {
   return value;
 }
 
+// Token Google sống 1 giờ — dùng lại giữa các request trong cùng một instance
+// thay vì ký JWT + gọi oauth2 cho MỖI request (tốn thời gian và hạn mức).
+let cachedToken = { value: "", expiresAt: 0 };
+
 async function getAccessToken() {
+  if (cachedToken.value && Date.now() < cachedToken.expiresAt) return cachedToken.value;
   const now = Math.floor(Date.now() / 1000);
   const header = { alg: "RS256", typ: "JWT" };
   const claim = {
@@ -62,43 +67,83 @@ async function getAccessToken() {
     body,
   });
   if (!response.ok) throw new Error(`Google token failed: ${response.status} ${await response.text()}`);
-  return (await response.json()).access_token;
+  const token = await response.json();
+  cachedToken = { value: token.access_token, expiresAt: Date.now() + Math.max(60, (token.expires_in ?? 3600) - 300) * 1000 };
+  return token.access_token;
 }
 
+const RETRYABLE = new Set([429, 500, 502, 503, 504]);
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Google Sheets hay trả 429 (vượt hạn mức đọc/ghi theo phút) hoặc 5xx thoáng
+// qua. Thử lại vài lần với thời gian chờ tăng dần thay vì trả lỗi 500 ngay cho
+// người dùng; tổng thời gian chờ giữ dưới giới hạn của hàm serverless.
 export async function sheetsRequest(method, suffix, body) {
-  const token = await getAccessToken();
   const spreadsheetId = env("GOOGLE_SHEET_ID");
-  const response = await fetch(`${SHEETS_BASE}/${spreadsheetId}${suffix}`, {
-    method,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  if (!response.ok) throw new Error(`Google Sheets ${method} ${suffix} failed: ${response.status} ${await response.text()}`);
-  const text = await response.text();
-  return text ? JSON.parse(text) : {};
+  const delays = [400, 1200, 2500];
+  for (let attempt = 0; ; attempt += 1) {
+    let response;
+    try {
+      const token = await getAccessToken();
+      response = await fetch(`${SHEETS_BASE}/${spreadsheetId}${suffix}`, {
+        method,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: body ? JSON.stringify(body) : undefined,
+      });
+    } catch (error) {
+      if (attempt >= delays.length) throw error;
+      await sleep(delays[attempt]);
+      continue;
+    }
+    if (response.status === 401) cachedToken = { value: "", expiresAt: 0 };
+    if (!response.ok) {
+      if ((RETRYABLE.has(response.status) || response.status === 401) && attempt < delays.length) {
+        await sleep(delays[attempt]);
+        continue;
+      }
+      throw new Error(`Google Sheets ${method} ${suffix} failed: ${response.status} ${await response.text()}`);
+    }
+    const text = await response.text();
+    return text ? JSON.parse(text) : {};
+  }
+}
+
+// Danh sách tab đã tồn tại, nhớ trong 10 phút: trước đây MỌI request đều đọc
+// metadata (và ensureSchema còn ghi lại hàng tiêu đề) — 2–3 lệnh gọi Google
+// thừa cho mỗi lần tải/lưu.
+const knownTabs = new Set();
+let tabsCheckedAt = 0;
+
+/** Tạo các tab còn thiếu (kèm hàng tiêu đề) — chỉ gọi Google khi chưa kiểm tra gần đây. */
+export async function ensureTabs(tabs) {
+  const fresh = Date.now() - tabsCheckedAt < 10 * 60 * 1000;
+  if (fresh && tabs.every((tab) => knownTabs.has(tab.title))) return;
+  const meta = await sheetsRequest("GET", "?includeGridData=false&fields=sheets.properties.title");
+  for (const sheet of meta.sheets ?? []) knownTabs.add(sheet.properties.title);
+  const missing = tabs.filter((tab) => !knownTabs.has(tab.title));
+  if (missing.length) {
+    await sheetsRequest("POST", ":batchUpdate", {
+      requests: missing.map((tab) => ({ addSheet: { properties: { title: tab.title } } })),
+    });
+    await sheetsRequest("POST", "/values:batchUpdate", {
+      valueInputOption: "RAW",
+      data: missing.map((tab) => ({ range: `${tab.title}!A1:${tab.lastColumn}1`, values: [tab.headers] })),
+    });
+    missing.forEach((tab) => knownTabs.add(tab.title));
+  }
+  tabsCheckedAt = Date.now();
 }
 
 export async function ensureSchema() {
-  const meta = await sheetsRequest("GET", "?includeGridData=false");
-  const titles = Object.fromEntries((meta.sheets ?? []).map((sheet) => [sheet.properties.title, sheet.properties.sheetId]));
-  const missing = ["sets", "cards", "results", "lists"].filter((title) => !(title in titles));
-  if (missing.length) {
-    await sheetsRequest("POST", ":batchUpdate", {
-      requests: missing.map((title) => ({ addSheet: { properties: { title } } })),
-    });
-  }
-  await sheetsRequest("POST", "/values:batchUpdate", {
-    valueInputOption: "RAW",
-    data: [
-      { range: "sets!A1:I1", values: [SET_HEADERS] },
-      { range: "cards!A1:R1", values: [CARD_HEADERS] },
-      { range: "results!A1:J1", values: [RESULT_HEADERS] },
-      { range: "lists!A1:D1", values: [LIST_HEADERS] },
-    ],
-  });
+  await ensureTabs([
+    { title: "sets", lastColumn: "I", headers: SET_HEADERS },
+    { title: "cards", lastColumn: "R", headers: CARD_HEADERS },
+    { title: "results", lastColumn: "J", headers: RESULT_HEADERS },
+    { title: "lists", lastColumn: "D", headers: LIST_HEADERS },
+  ]);
 }
 
 /** Cột lưu map "chế độ -> taskId" dưới dạng JSON, nên phải đọc ra object. */
