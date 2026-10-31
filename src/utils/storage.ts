@@ -56,6 +56,29 @@ export function loadAppData(): AppData {
   return emptyAppData();
 }
 
+const UNSYNCED_KEY = "localEnglishFlashcards:v1:unsynced";
+
+/**
+ * Máy này có thay đổi chưa chắc đã lên Google Sheet (sống sót qua việc tải lại
+ * trang). Chưa có khoá nào (máy vừa chuyển từ bản cũ không ghi cờ này) cũng coi
+ * là "có thể còn" — gộp một lần cho chắc, sau đó khoá được ghi là "0".
+ */
+export function hasUnsyncedChanges(): boolean {
+  try {
+    return localStorage.getItem(UNSYNCED_KEY) !== "0";
+  } catch {
+    return false;
+  }
+}
+
+export function setUnsyncedChanges(value: boolean) {
+  try {
+    localStorage.setItem(UNSYNCED_KEY, value ? "1" : "0");
+  } catch {
+    // Không có localStorage thì cũng không có gì để gộp lại sau khi tải lại.
+  }
+}
+
 export function saveAppData(data: AppData): string {
   const serialized = JSON.stringify(data);
   localStorage.setItem(STORAGE_KEY, serialized);
