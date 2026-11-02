@@ -107,6 +107,9 @@ export function useAppData() {
   const pendingSaveRef = useRef<AppData | null>(null);
   // Reset tiến độ / nhập file: kết quả gửi lên là bản đúng, server đừng hợp thêm.
   const replaceResultsRef = useRef(false);
+  // Chuỗi các lần ghi nhanh kết quả; bản lưu đầy đủ luôn chờ chúng xong để hai
+  // đường ghi không chạy đua và thêm cùng một dòng hai lần.
+  const quickAppendRef = useRef<Promise<unknown>>(Promise.resolve());
   const retryAttemptRef = useRef(0);
   const retryTimerRef = useRef<number | undefined>(undefined);
 
@@ -115,7 +118,8 @@ export function useAppData() {
     setUnsyncedChanges(true);
     window.clearTimeout(retryTimerRef.current);
     setSyncState("saving");
-    saveToGoogleSheet(next, replaceResultsRef.current)
+    quickAppendRef.current
+      .then(() => saveToGoogleSheet(next, replaceResultsRef.current))
       .then(() => {
         if (pendingSaveRef.current === next) {
           pendingSaveRef.current = null;
@@ -258,7 +262,11 @@ export function useAppData() {
     if (next.results.length > current.results.length) {
       const known = new Set(current.results.map((result) => result.id));
       const fresh = next.results.filter((result) => !known.has(result.id));
-      if (fresh.length && fresh.length <= 20) appendResultsToGoogleSheet(fresh).catch((error) => console.warn("Quick result append failed; full save will retry.", error));
+      if (fresh.length && fresh.length <= 20) {
+        quickAppendRef.current = quickAppendRef.current
+          .then(() => appendResultsToGoogleSheet(fresh))
+          .catch((error) => console.warn("Quick result append failed; full save will retry.", error));
+      }
     }
     scheduleCloudSave(next);
   }, [scheduleCloudSave]);

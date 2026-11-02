@@ -231,7 +231,8 @@ export function rowsToAppData(raw) {
     });
   }
 
-  const results = (raw.results ?? []).filter((row) => row[0]).map((row) => {
+  const seenResultIds = new Set();
+  const results = (raw.results ?? []).filter((row) => row[0] && !seenResultIds.has(row[0]) && seenResultIds.add(row[0])).map((row) => {
     if (row[2] === "listening") {
       return {
         id: row[0],

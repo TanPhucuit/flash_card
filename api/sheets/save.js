@@ -19,6 +19,9 @@ export default async function handler(req, res) {
     // trên điện thoại, còn máy tính đang mở bản cũ rồi lưu). Bỏ qua khi client
     // chủ động thay thế (reset tiến độ, nhập file) hoặc khi kết quả thuộc set đã
     // bị xoá.
+    // Loại dòng trùng id (hai đường ghi từng chạy đua và thêm một kết quả hai lần).
+    const seen = new Set();
+    data.results = (data.results ?? []).filter((result) => result?.id && !seen.has(result.id) && seen.add(result.id));
     if (req.headers?.["x-replace-results"] !== "1") {
       const existing = await sheetsRequest("GET", `/values/${encodeURIComponent("results!A2:J")}`);
       const known = rowsToAppData({ results: existing.values ?? [] }).results;
