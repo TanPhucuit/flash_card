@@ -142,6 +142,54 @@ export function useAppData() {
     pushToCloudRef.current = pushToCloud;
   }, [pushToCloud]);
 
+  // Làm mới từ cloud khi quay lại tab / có mạng / định kỳ. Trước đây cloud chỉ
+  // được đọc MỘT LẦN lúc mở app, nên điện thoại để app mở nền nhiều ngày không
+  // bao giờ thấy những gì đã đánh dấu trên máy tính — và còn có thể đẩy bản cũ
+  // đó đè lên cloud ở lần lưu kế tiếp.
+  useEffect(() => {
+    let busy = false;
+    let lastAt = Date.now();
+    const refresh = async () => {
+      // Còn thay đổi chờ lưu: để luồng lưu/thử lại lo trước, đừng đè lên.
+      if (busy || pendingSaveRef.current !== null || !navigator.onLine) return;
+      if (Date.now() - lastAt < 30_000) return;
+      busy = true;
+      try {
+        const before = dataRef.current;
+        const cloud = await loadFromGoogleSheet();
+        lastAt = Date.now();
+        // Người dùng vừa sửa trong lúc đang tải, hoặc cloud trống bất thường.
+        if (dataRef.current !== before || pendingSaveRef.current !== null) return;
+        if (cloud.sets.length === 0 && before.sets.some((set) => set.cards.length > 0)) return;
+        const synced = syncDerivedData(cloud);
+        // Không đổi gì thì thôi: cập nhật state sẽ làm trang đang học dựng lại.
+        if (JSON.stringify(synced) === JSON.stringify(before)) return;
+        dataRef.current = synced;
+        saveAppData(synced);
+        setReactData(synced);
+      } catch (error) {
+        console.warn("Google Sheet refresh failed.", error);
+      } finally {
+        busy = false;
+      }
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") void refresh();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("focus", onVisible);
+    window.addEventListener("online", onVisible);
+    const timer = window.setInterval(() => {
+      if (document.visibilityState === "visible") void refresh();
+    }, 3 * 60_000);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("focus", onVisible);
+      window.removeEventListener("online", onVisible);
+      window.clearInterval(timer);
+    };
+  }, []);
+
   useEffect(() => {
     const retryNow = () => {
       if (pendingSaveRef.current && navigator.onLine) pushToCloud(pendingSaveRef.current);
