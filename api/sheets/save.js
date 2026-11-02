@@ -22,9 +22,12 @@ export default async function handler(req, res) {
     // Loại dòng trùng id (hai đường ghi từng chạy đua và thêm một kết quả hai lần).
     const seen = new Set();
     data.results = (data.results ?? []).filter((result) => result?.id && !seen.has(result.id) && seen.add(result.id));
+    let knownIds = null;
+    const incomingResultIds = new Set((data.results ?? []).map((result) => result.id));
     if (req.headers?.["x-replace-results"] !== "1") {
       const existing = await sheetsRequest("GET", `/values/${encodeURIComponent("results!A2:J")}`);
       const known = rowsToAppData({ results: existing.values ?? [] }).results;
+      knownIds = new Set(known.map((result) => result.id));
       const incomingIds = new Set((data.results ?? []).map((result) => result.id));
       const setIds = new Set((data.sets ?? []).map((set) => set.id));
       const kept = known.filter((result) => !incomingIds.has(result.id) && (result.mode === "listening" || String(result.setId).split(",").some((id) => setIds.has(id))));
@@ -49,6 +52,16 @@ export default async function handler(req, res) {
       valueInputOption: "RAW",
       data: TABS.map((tab) => ({ range: `${tab.name}!A2:${tab.last}`, values: rows[tab.key] })),
     });
+    // Trong lúc ta ghi, một thiết bị khác có thể vừa NỐI THÊM một kết quả (đường
+    // ghi nhanh) vào đúng phần đuôi sắp bị xoá. Đọc lại đuôi: dòng nào ta chưa
+    // từng thấy thì giữ và ghi lại sau khi xoá, đừng để nó biến mất.
+    let lateResultRows = [];
+    if (knownIds) {
+      const tail = await sheetsRequest("GET", `/values/${encodeURIComponent(`results!A${rows.resultRows.length + 2}:J`)}`);
+      const seenLate = new Set();
+      lateResultRows = (tail.values ?? []).filter((row) => row[0] && !knownIds.has(row[0]) && !incomingResultIds.has(row[0]) && !seenLate.has(row[0]) && seenLate.add(row[0]));
+    }
+
     // Chỉ xoá những dải thực sự nằm trong lưới: dải bắt đầu SAU dòng cuối của
     // sheet (khi dữ liệu mới lấp đầy đúng bằng lưới) bị Google từ chối 400.
     const meta = await sheetsRequest("GET", "?fields=sheets.properties(title,gridProperties.rowCount)");
@@ -58,6 +71,9 @@ export default async function handler(req, res) {
       await sheetsRequest("POST", "/values:batchClear", {
         ranges: leftovers.map((tab) => `${tab.name}!A${rows[tab.key].length + 2}:${tab.last}`),
       });
+    }
+    if (lateResultRows.length) {
+      await sheetsRequest("PUT", `/values/${encodeURIComponent(`results!A${rows.resultRows.length + 2}:J`)}?valueInputOption=RAW`, { values: lateResultRows });
     }
 
     return sendJson(res, 200, { ok: true, sets: setRows.length, cards: cardRows.length, results: resultRows.length, lists: listRows.length });
