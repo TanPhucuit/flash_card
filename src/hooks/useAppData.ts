@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useRef, useS
 import { AppData, VocabularySet } from "../types";
 import { hasUnsyncedChanges, loadAppData, saveAppData, setUnsyncedChanges, STORAGE_KEY } from "../utils/storage";
 import { mergeAppData } from "../utils/mergeData";
-import { loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
+import { appendResultsToGoogleSheet, loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
 import { syncStarSets } from "../utils/starSets";
 import { syncSetLists } from "../utils/setLists";
 
@@ -105,6 +105,8 @@ export function useAppData() {
   // gian chờ tăng dần, và thử lại khi có mạng / quay lại tab — trước đây một lần
   // lỗi 500 là bỏ luôn cho tới tận thao tác kế tiếp.
   const pendingSaveRef = useRef<AppData | null>(null);
+  // Reset tiến độ / nhập file: kết quả gửi lên là bản đúng, server đừng hợp thêm.
+  const replaceResultsRef = useRef(false);
   const retryAttemptRef = useRef(0);
   const retryTimerRef = useRef<number | undefined>(undefined);
 
@@ -113,10 +115,11 @@ export function useAppData() {
     setUnsyncedChanges(true);
     window.clearTimeout(retryTimerRef.current);
     setSyncState("saving");
-    saveToGoogleSheet(next)
+    saveToGoogleSheet(next, replaceResultsRef.current)
       .then(() => {
         if (pendingSaveRef.current === next) {
           pendingSaveRef.current = null;
+          replaceResultsRef.current = false;
           setUnsyncedChanges(false);
         }
         retryAttemptRef.current = 0;
@@ -250,6 +253,13 @@ export function useAppData() {
       setSyncError(STORAGE_FAILED_MESSAGE);
     }
     setReactData(next);
+    // Lượt học vừa hoàn thành: ghi NGAY lên cloud theo đường nhanh (nối thêm một
+    // dòng) thay vì chờ bản lưu đầy đủ vài giây, để máy khác tải lại là thấy.
+    if (next.results.length > current.results.length) {
+      const known = new Set(current.results.map((result) => result.id));
+      const fresh = next.results.filter((result) => !known.has(result.id));
+      if (fresh.length && fresh.length <= 20) appendResultsToGoogleSheet(fresh).catch((error) => console.warn("Quick result append failed; full save will retry.", error));
+    }
     scheduleCloudSave(next);
   }, [scheduleCloudSave]);
 
@@ -311,9 +321,11 @@ export function useAppData() {
       }));
     },
     replaceData(next: AppData) {
+      replaceResultsRef.current = true;
       setData(next);
     },
     resetProgress() {
+      replaceResultsRef.current = true;
       setData((current) => ({
         ...current,
         results: [],
@@ -325,6 +337,7 @@ export function useAppData() {
       }));
     },
     clearAll() {
+      replaceResultsRef.current = true;
       setData({ sets: [], results: [], matchBestTimes: {}, lists: [], settings: { theme: "light", voiceURI: "" } });
     },
     setTheme(theme: "light" | "dark") {

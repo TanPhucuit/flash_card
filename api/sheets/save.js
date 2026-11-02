@@ -1,4 +1,4 @@
-import { appDataToRows, ensureSchema, sendJson, sheetsRequest } from "../_googleSheets.js";
+import { appDataToRows, ensureSchema, rowsToAppData, sendJson, sheetsRequest } from "../_googleSheets.js";
 
 // Cột cuối của từng tab — dùng để xoá phần dòng dư phía dưới sau khi ghi.
 const TABS = [
@@ -13,6 +13,21 @@ export default async function handler(req, res) {
   try {
     await ensureSchema();
     const data = req.body && typeof req.body === "object" ? req.body : JSON.parse(req.body || "{}");
+
+    // KẾT QUẢ HỌC chỉ được thêm, không bị một máy giữ bản cũ ghi đè mất: hợp với
+    // những kết quả đang có trên sheet mà bản gửi lên chưa biết (vd. vừa học xong
+    // trên điện thoại, còn máy tính đang mở bản cũ rồi lưu). Bỏ qua khi client
+    // chủ động thay thế (reset tiến độ, nhập file) hoặc khi kết quả thuộc set đã
+    // bị xoá.
+    if (req.headers?.["x-replace-results"] !== "1") {
+      const existing = await sheetsRequest("GET", `/values/${encodeURIComponent("results!A2:J")}`);
+      const known = rowsToAppData({ results: existing.values ?? [] }).results;
+      const incomingIds = new Set((data.results ?? []).map((result) => result.id));
+      const setIds = new Set((data.sets ?? []).map((set) => set.id));
+      const kept = known.filter((result) => !incomingIds.has(result.id) && (result.mode === "listening" || String(result.setId).split(",").some((id) => setIds.has(id))));
+      if (kept.length) data.results = [...(data.results ?? []), ...kept].sort((a, b) => String(b.studiedAt).localeCompare(String(a.studiedAt)));
+    }
+
     const rows = appDataToRows(data);
     const { setRows, cardRows, resultRows, listRows } = rows;
 
