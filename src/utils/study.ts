@@ -54,6 +54,18 @@ export function getCompletedSetModes(set: VocabularySet, results: StudyResult[])
   return done;
 }
 
+/**
+ * Set đã "học xong" theo đúng cách tab "Đã hoàn thành" tính: đã có lượt Learn ở
+ * cả ba hướng (không đòi điểm tuyệt đối, khác isSetFullyMastered).
+ */
+export function isSetLearned(setId: string, results: StudyResult[]): boolean {
+  const done = new Set<LearnDirection>();
+  results.forEach((r) => {
+    if (r.mode === "learn" && "setId" in r && r.setId === setId && r.direction) done.add(r.direction);
+  });
+  return LEARN_DIRECTIONS.every((direction) => done.has(direction));
+}
+
 export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): boolean {
   if (!set.cards.length) return false;
   const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);

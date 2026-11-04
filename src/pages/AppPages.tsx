@@ -14,7 +14,7 @@ import { isStarSet } from "../utils/starSets";
 import { MobileNav, MobileTab } from "../components/MobileNav";
 import { SyncAllCard, SyncIconButton } from "../components/SyncAll";
 import { LifeManagementSyncApi } from "../hooks/useLifeManagementSync";
-import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
+import { createResult, formatDate, isSetLearned, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
 type PageProps = { api: DataApi };
 // Trang danh sách cần thêm cấu hình Life Management, vốn nằm trong dữ liệu
@@ -408,9 +408,14 @@ export function MobileAppPage({ api, reading }: PageProps & { reading: ReadingAp
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function openLibrary(mode: "flashcard" | "learn") {
+  function openLibrary(mode: "flashcard" | "learn", fromSet?: VocabularySet) {
     setLibraryMode(mode);
     setQuery("");
+    // Từ màn Hoàn thành: mở thẳng danh sách đang chứa set vừa học, đúng tab.
+    if (fromSet) {
+      setMobileTab(isStarSet(fromSet) ? "starred" : isSetLearned(fromSet.id, api.data.results) ? "completed" : "learning");
+      setMobileListId(isStarSet(fromSet) ? null : fromSet.listId ?? null);
+    }
     switchView("sets");
   }
 
@@ -740,7 +745,7 @@ export function MobileAppPage({ api, reading }: PageProps & { reading: ReadingAp
               <div className="mt-xl grid w-full gap-sm">
                 <Button type="button" onClick={restartLearn} className="min-h-14 text-lg"><Icon name="refresh" /> Học lại</Button>
                 <Button type="button" variant="secondary" onClick={backToLearnPicker} className="min-h-14"><Icon name="swap_horiz" /> Đổi chế độ</Button>
-                <Button type="button" variant="secondary" onClick={() => openLibrary("learn")} className="min-h-14"><Icon name="library_books" /> Chọn set khác</Button>
+                <Button type="button" variant="secondary" onClick={() => openLibrary("learn", selectedSet ?? undefined)} className="min-h-14"><Icon name="library_books" /> Về set</Button>
               </div>
             </section>
           ) : activeLearnCard ? (
@@ -1139,8 +1144,14 @@ export function DashboardPage({ api }: PageProps) {
  * sao tự dựng, vì bản thân nó cũng chỉ là một cờ trạng thái như hai tab kia.
  */
 export function MySetsPage({ api, reading }: SetsPageProps) {
-  const [activeTab, setActiveTab] = useState<"learning" | "completed" | "starred">("learning");
-  const [selectedListId, setSelectedListId] = useState<string | null>(null);
+  // "Về set" ở màn Hoàn thành chuyển thẳng tới đây qua ?tab=...&list=..., để mở
+  // đúng danh sách chứa set vừa học thay vì phải bấm lại từ đầu.
+  const [initialParams] = useSearchParams();
+  const initialTab = initialParams.get("tab");
+  const [activeTab, setActiveTab] = useState<"learning" | "completed" | "starred">(
+    initialTab === "completed" || initialTab === "starred" ? initialTab : "learning",
+  );
+  const [selectedListId, setSelectedListId] = useState<string | null>(initialParams.get("list"));
   const [query, setQuery] = useState("");
   const [creatingList, setCreatingList] = useState(false);
   const [newListTitle, setNewListTitle] = useState("");
@@ -2067,6 +2078,13 @@ function MultiSummary({ api, setIds, total, correct, onRetry, direction }: PageP
   );
 }
 
+/** Đường dẫn tới danh sách set đang chứa `set`, ở đúng tab (đã hoàn thành / chưa / từ khó nhớ) mà nó đang nằm. */
+function setListPath(set: VocabularySet, results: StudyResult[]) {
+  if (isStarSet(set)) return "/sets?tab=starred";
+  const tab = isSetLearned(set.id, results) ? "completed" : "learning";
+  return `/sets?tab=${tab}${set.listId ? `&list=${encodeURIComponent(set.listId)}` : ""}`;
+}
+
 function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry, onChangeMode, direction }: PageProps & { set: VocabularySet; mode: VocabularyStudyMode; total: number; correct: number; wrongCardIds?: string[]; onRetry?: () => void; onChangeMode?: () => void; direction?: LearnDirection }) {
   const navigate = useNavigate();
   useEffect(() => {
@@ -2081,7 +2099,7 @@ function Summary({ api, set, mode, total, correct, wrongCardIds = [], onRetry, o
       <div className="mt-lg flex flex-wrap justify-center gap-sm">
         <Button onClick={() => onRetry ? onRetry() : navigate(modePath(set.id, mode))}>Làm lại</Button>
         {onChangeMode ? <Button variant="secondary" onClick={onChangeMode}>Đổi chế độ</Button> : null}
-        <Button variant="secondary" onClick={() => navigate(`/sets/${set.id}`)}>Về học phần</Button>
+        <Button variant="secondary" onClick={() => navigate(setListPath(set, api.data.results))}>Về set</Button>
       </div>
     </Card>
   );
