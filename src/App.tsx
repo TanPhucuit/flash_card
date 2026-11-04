@@ -62,7 +62,7 @@ function AuthenticatedApp({ api, reading, isMobile, lmSync }: { api: DataApi; re
       <Routes>
         <Route path="/reading" element={<MobileReadingLibraryPage api={reading} />} />
         <Route path="/reading/:bookId/:passageId" element={<MobileReadingTestPage api={reading} />} />
-        <Route path="*" element={<MobileAppPage api={api} />} />
+        <Route path="*" element={<MobileAppPage api={api} reading={reading} />} />
       </Routes>
     );
   }

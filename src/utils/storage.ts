@@ -79,6 +79,50 @@ export function setUnsyncedChanges(value: boolean) {
   }
 }
 
+const PENDING_KEY = "localEnglishFlashcards:v1:pending";
+
+/**
+ * Những thao tác XOÁ/THAY THẾ chưa đồng bộ lên cloud. Đồng bộ giờ chỉ chạy khi mở
+ * web và khi bấm nút, nên giữa hai lần đó cloud vẫn còn bản cũ: nếu không ghi
+ * nhớ các thao tác này thì lần gộp kế tiếp sẽ làm set đã xoá sống lại, hoặc
+ * "reset tiến độ"/nhập file bị cloud ghi đè ngược.
+ */
+export interface PendingChanges {
+  sets: string[];
+  lists: string[];
+  /** Reset/nhập file/xoá hết: bản trên máy là bản đúng, đẩy lên thay thế hẳn. */
+  replace: boolean;
+}
+
+export function loadPendingChanges(): PendingChanges {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(PENDING_KEY) ?? "null");
+    return {
+      sets: Array.isArray(parsed?.sets) ? parsed.sets : [],
+      lists: Array.isArray(parsed?.lists) ? parsed.lists : [],
+      replace: parsed?.replace === true,
+    };
+  } catch {
+    return { sets: [], lists: [], replace: false };
+  }
+}
+
+export function updatePendingChanges(update: (current: PendingChanges) => PendingChanges) {
+  try {
+    localStorage.setItem(PENDING_KEY, JSON.stringify(update(loadPendingChanges())));
+  } catch {
+    // Không có localStorage thì cũng không còn gì để nhớ qua lần tải lại.
+  }
+}
+
+export function clearPendingChanges() {
+  try {
+    localStorage.removeItem(PENDING_KEY);
+  } catch {
+    // như trên
+  }
+}
+
 export function saveAppData(data: AppData): string {
   const serialized = JSON.stringify(data);
   localStorage.setItem(STORAGE_KEY, serialized);

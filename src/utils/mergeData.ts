@@ -1,4 +1,5 @@
 import { AppData, StudyResult } from "../types";
+import type { PendingChanges } from "./storage";
 
 /**
  * Gộp dữ liệu Google Sheet với dữ liệu trên máy khi máy này còn thay đổi CHƯA
@@ -10,12 +11,18 @@ import { AppData, StudyResult } from "../types";
  *  - kết quả học: hợp theo id (id là UUID nên không trùng nhầm);
  *  - set: hợp theo id; set có ở cả hai bên thì lấy bản mới hơn theo updatedAt,
  *    bằng nhau thì lấy bản trên máy (bản có thay đổi chưa đồng bộ);
- *  - danh sách: hợp theo id; thời gian ghép thẻ tốt nhất: lấy số nhỏ hơn.
+ *  - danh sách: hợp theo id; thời gian ghép thẻ tốt nhất: lấy số nhỏ hơn;
+ *  - set/danh sách người dùng đã XOÁ trên máy này từ lần đồng bộ trước (deleted)
+ *    thì bỏ khỏi bản gộp, nếu không việc hợp sẽ làm chúng sống lại từ cloud.
  */
-export function mergeAppData(cloud: AppData, local: AppData): AppData {
+export function mergeAppData(cloud: AppData, local: AppData, deleted: Pick<PendingChanges, "sets" | "lists"> = { sets: [], lists: [] }): AppData {
+  const deletedSets = new Set(deleted.sets);
+  const deletedLists = new Set(deleted.lists);
   const resultsById = new Map<string, StudyResult>();
   for (const result of [...cloud.results, ...local.results]) resultsById.set(result.id, result);
-  const results = [...resultsById.values()].sort((a, b) => b.studiedAt.localeCompare(a.studiedAt));
+  const results = [...resultsById.values()]
+    .filter((result) => result.mode === "listening" || !("setId" in result) || !String(result.setId).split(",").every((id) => deletedSets.has(id)))
+    .sort((a, b) => b.studiedAt.localeCompare(a.studiedAt));
 
   const sets = new Map(cloud.sets.map((set) => [set.id, set]));
   for (const set of local.sets) {
@@ -31,5 +38,12 @@ export function mergeAppData(cloud: AppData, local: AppData): AppData {
     matchBestTimes[key] = key in matchBestTimes ? Math.min(matchBestTimes[key], time) : time;
   }
 
-  return { ...cloud, sets: [...sets.values()], results, lists: [...lists.values()], matchBestTimes, settings: local.settings };
+  return {
+    ...cloud,
+    sets: [...sets.values()].filter((set) => !deletedSets.has(set.id)),
+    results,
+    lists: [...lists.values()].filter((list) => !deletedLists.has(list.id)),
+    matchBestTimes,
+    settings: local.settings,
+  };
 }

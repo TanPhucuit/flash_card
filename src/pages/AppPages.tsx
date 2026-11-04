@@ -12,6 +12,7 @@ import { ReadingApi } from "../hooks/useReadingData";
 import { BUNDLED_PACKS, loadPack, missingPackSets } from "../utils/bundledSets";
 import { isStarSet } from "../utils/starSets";
 import { MobileNav, MobileTab } from "../components/MobileNav";
+import { SyncAllCard, SyncIconButton } from "../components/SyncAll";
 import { LifeManagementSyncApi } from "../hooks/useLifeManagementSync";
 import { createResult, formatDate, getLearnedWordsByDay, getLearnedWordsByWeek, getMasteryStatusCounts, getSetProgress, levenshtein, percent, shuffle, updateCardStudy, updateSetCard } from "../utils/study";
 
@@ -150,7 +151,7 @@ function MobileStarButton({ starred, onToggle }: { starred: boolean; onToggle: (
   );
 }
 
-export function MobileAppPage({ api }: PageProps) {
+export function MobileAppPage({ api, reading }: PageProps & { reading: ReadingApi }) {
   const [view, setView] = useState<"add" | "sets" | "study" | "learn" | "learnPicker" | "mixPicker" | "mix">("add");
   const [learnDirection, setLearnDirection] = useState<LearnDirection | null>(null);
   const [libraryMode, setLibraryMode] = useState<"flashcard" | "learn">("flashcard");
@@ -959,7 +960,7 @@ export function MobileAppPage({ api }: PageProps) {
               <div className="text-xs font-bold uppercase tracking-widest text-on-surface-variant dark:text-white/50">Local English</div>
               <h1 className="font-headline-md text-2xl font-bold text-primary dark:text-[#c9c5ff]">{view === "add" ? "Thêm từ nhanh" : libraryMode === "learn" ? "Learn" : "Học Flashcard"}</h1>
             </div>
-            <span className={`h-2.5 w-2.5 rounded-full ${api.syncState === "error" ? "bg-red-500" : api.syncState === "idle" ? "bg-emerald-500" : "animate-pulse bg-amber-500"}`} title={`Sync: ${api.syncState}`} />
+            <SyncIconButton api={api} reading={reading} />
           </div>
           {view === "add" ? (
             <div className="mt-xs text-sm text-on-surface-variant dark:text-white/60">
@@ -2589,6 +2590,7 @@ export function SettingsPage({ api, reading, lmSync }: PageProps & { reading: Re
           <label className="block"><span className="font-semibold">Theme</span><Select value={api.data.settings.theme} onChange={(e) => api.setTheme(e.target.value as "light" | "dark")}><option value="light">Light</option><option value="dark">Dark</option></Select></label>
           <label className="block"><span className="font-semibold">Voice</span><Select value={api.data.settings.voiceURI} onChange={(e) => api.setVoice(e.target.value)}><option value="">Auto English voice</option>{voices.map((voice) => <option key={voice.voiceURI} value={voice.voiceURI}>{voice.name} ({voice.lang})</option>)}</Select></label>
         </Card>
+        <SyncAllCard api={api} reading={reading} />
         <Card className="space-y-md">
           <h2 className="font-headline-md text-headline-md">Life Management</h2>
           <p className="text-sm text-on-surface-variant dark:text-white/70">
@@ -2617,7 +2619,7 @@ export function SettingsPage({ api, reading, lmSync }: PageProps & { reading: Re
             <Card key={pack.key} className="space-y-md">
               <h2 className="font-headline-md text-headline-md">{pack.title}</h2>
               <p className="text-sm text-on-surface-variant dark:text-white/70">
-                {pack.description} Nhập vào đây sẽ nằm trong danh sách <strong>{pack.listLabel}</strong> và tự đồng bộ giữa các thiết bị như mọi set khác. Bấm nhiều lần cũng không bị trùng.
+                {pack.description} Nhập vào đây sẽ nằm trong danh sách <strong>{pack.listLabel}</strong> và đồng bộ giữa các thiết bị như mọi set khác (khi bấm "Đồng bộ"). Bấm nhiều lần cũng không bị trùng.
               </p>
               <Button variant="secondary" disabled={info.state !== "ready" || info.missing.length === 0} onClick={() => importPack(pack.key, pack.listLabel)}>
                 <Icon name="library_add" />

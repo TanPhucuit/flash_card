@@ -2,7 +2,6 @@ import { InstructionBlocks } from "../components/InstructionBlocks";
 import { SelectionTranslator } from "../components/SelectionTranslator";
 import type { DataApi } from "../App";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Card, EmptyState, Icon, Input, PageTitle, ProgressBar } from "../components/ui";
 import { ReadingApi } from "../hooks/useReadingData";
@@ -77,7 +76,6 @@ export function ReadingLibraryPage({ api }: { api: ReadingApi }) {
       {api.syncError ? (
         <div className="mb-lg rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
       ) : null}
-      <ReadingSyncStatus api={api} className="mb-lg" />
 
       <div className="mb-lg grid grid-cols-2 gap-md lg:grid-cols-4">
         <StatTile label="Hôm nay" value={stats.todayCount} suffix="bài" accent />

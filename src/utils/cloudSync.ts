@@ -1,4 +1,4 @@
-import { AppData, StudyResult } from "../types";
+import { AppData } from "../types";
 
 export async function loadFromGoogleSheet(signal?: AbortSignal): Promise<AppData> {
   const response = await fetch("/api/sheets/load", {
@@ -9,16 +9,6 @@ export async function loadFromGoogleSheet(signal?: AbortSignal): Promise<AppData
   });
   if (!response.ok) throw new Error(`Cannot load Google Sheet data: ${response.status}`);
   return response.json();
-}
-
-/** Ghi nhanh vài kết quả học vừa xong (nối thêm, ~1 giây) — bản lưu đầy đủ vẫn chạy sau đó. */
-export async function appendResultsToGoogleSheet(results: StudyResult[]): Promise<void> {
-  const response = await fetch("/api/sheets/results", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ results }),
-  });
-  if (!response.ok) throw new Error(`Cannot append results: ${response.status}`);
 }
 
 /** replaceResults: kết quả trong `data` là bản đúng (reset/nhập file), đừng hợp với kết quả đang có trên sheet. */

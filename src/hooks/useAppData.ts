@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AppData, VocabularySet } from "../types";
-import { hasUnsyncedChanges, loadAppData, saveAppData, setUnsyncedChanges, STORAGE_KEY } from "../utils/storage";
+import { clearPendingChanges, hasUnsyncedChanges, loadAppData, loadPendingChanges, saveAppData, setUnsyncedChanges, STORAGE_KEY, updatePendingChanges } from "../utils/storage";
 import { mergeAppData } from "../utils/mergeData";
-import { appendResultsToGoogleSheet, loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
+import { loadFromGoogleSheet, saveToGoogleSheet } from "../utils/cloudSync";
 import { syncStarSets } from "../utils/starSets";
 import { syncSetLists } from "../utils/setLists";
 
@@ -12,8 +12,8 @@ import { syncSetLists } from "../utils/setLists";
 // cả cookie" hoặc đang ở chế độ Duyệt web riêng tư). Gộp làm một thay vì tách
 // theo nội dung lỗi cho khỏi phải đoán đúng loại Error mà trình duyệt ném ra.
 const STORAGE_FAILED_MESSAGE = "Không lưu được vào bộ nhớ máy — localStorage có thể đã đầy, hoặc trình duyệt đang chặn/xoá bộ nhớ lưu trữ. Dữ liệu vẫn dùng được trong phiên này nhưng có thể mất khi tải lại trang; hãy Export JSON để sao lưu. Trên iPad: kiểm tra Cài đặt > Safari > Nâng cao, tắt \"Chặn tất cả cookie\" hoặc thoát khỏi chế độ Duyệt web riêng tư.";
-const CLOUD_LOAD_FAILED_MESSAGE = "Không tải được dữ liệu Google Sheet, đang dùng dữ liệu cache trên trình duyệt.";
-const CLOUD_SAVE_FAILED_MESSAGE = "Không lưu được dữ liệu lên Google Sheet. Dữ liệu vẫn còn trong trình duyệt.";
+const CLOUD_LOAD_FAILED_MESSAGE = "Không tải được dữ liệu Google Sheet, đang dùng dữ liệu trên trình duyệt. Vào Settings bấm \"Đồng bộ\" để thử lại.";
+const CLOUD_SAVE_FAILED_MESSAGE = "Không đồng bộ được dữ liệu lên Google Sheet. Dữ liệu vẫn còn trong trình duyệt — vào Settings bấm \"Đồng bộ\" để thử lại.";
 // Lỗi lưu localStorage (máy NÀY không giữ được dữ liệu) nghiêm trọng hơn và
 // độc lập với lỗi cloud (Google Sheet) — một cái thành công không có nghĩa là
 // cái kia cũng ổn, nên mỗi phía chỉ được tự xoá đúng thông báo của mình, tránh
@@ -36,191 +36,86 @@ export function useAppData() {
   // được dựng lại theo đúng dữ liệu hiện có thay vì tin vào những gì đã lưu.
   const [data, setReactData] = useState<AppData>(() => syncDerivedData(loadAppData()));
   const dataRef = useRef(data);
-  const cloudSaveTimer = useRef<number | undefined>(undefined);
   const [syncState, setSyncState] = useState<"idle" | "loading" | "saving" | "error">("idle");
   const [syncError, setSyncError] = useState("");
-  // Bật lên ngay khi người dùng ghi bất kỳ thay đổi nào (setData), TRƯỚC KHI
-  // lần tải Google Sheet đầu tiên (chạy song song lúc mở app) kịp trả về. Nếu
-  // không có cờ này, một phiên Learn hoàn thành rất nhanh ngay sau khi mở app
-  // — ví dụ trên mạng chậm khiến GET Google Sheet mất vài giây — sẽ bị chính
-  // kết quả CŨ từ Google Sheet ghi đè mất khi lần tải đó trả về sau, xoá sạch
-  // kết quả vừa hoàn thành dù nó đã lưu đúng vào localStorage.
-  const hasLocalEditRef = useRef(false);
+  const [lastSyncedAt, setLastSyncedAt] = useState<number | null>(null);
+  // Còn thay đổi trên máy này chưa lên Google Sheet.
+  const [unsynced, setUnsynced] = useState(() => hasUnsyncedChanges());
 
   useEffect(() => {
     dataRef.current = data;
     document.documentElement.classList.toggle("dark", data.settings.theme === "dark");
   }, [data]);
 
-  const pushToCloudRef = useRef<((next: AppData) => void) | null>(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    let retryTimer: number | undefined;
-    const RETRY_DELAYS = [3000, 10000, 30000];
-
-    const attemptLoad = (attempt: number) => {
-      setSyncState("loading");
-      loadFromGoogleSheet(controller.signal)
-        .then((cloudData) => {
-          // Cloud trả về TRỐNG trong khi máy này đang có bộ từ: gần như chắc chắn
-          // là đang đọc đúng lúc một thiết bị khác ghi dở (hoặc sheet bị lỗi),
-          // không phải người dùng thực sự đã xoá hết. Tuyệt đối không ghi đè cache
-          // — coi như tải lỗi để thử lại.
-          if (cloudData.sets.length === 0 && dataRef.current.sets.some((set) => set.cards.length > 0)) {
-            throw new Error("Google Sheet returned empty data while local cache has sets");
-          }
-          // Máy này có thay đổi chưa lên cloud (lần lưu trước lỗi, hoặc vừa sửa
-          // trong lúc đang chờ tải): GỘP chứ không thay thế, rồi đẩy bản gộp
-          // lên — nếu không, tải lại trang sẽ xoá mất lượt học vừa hoàn thành.
-          const needsMerge = hasLocalEditRef.current || hasUnsyncedChanges();
-          const synced = syncDerivedData(needsMerge ? mergeAppData(cloudData, dataRef.current) : cloudData);
-          dataRef.current = synced;
-          saveAppData(synced);
-          setReactData(synced);
-          if (needsMerge) pushToCloudRef.current?.(synced);
-          setSyncState(needsMerge ? "saving" : "idle");
-          setSyncError((current) => (CLOUD_MESSAGES.includes(current) ? "" : current));
-        })
-        .catch((error) => {
-          if (controller.signal.aborted) return;
-          console.warn("Google Sheet sync load failed. Using browser cache.", error);
-          if (attempt < RETRY_DELAYS.length) {
-            retryTimer = window.setTimeout(() => attemptLoad(attempt + 1), RETRY_DELAYS[attempt]);
-            return;
-          }
-          setSyncState("error");
-          setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : CLOUD_LOAD_FAILED_MESSAGE));
-        });
-    };
-
-    attemptLoad(0);
-    return () => {
-      controller.abort();
-      window.clearTimeout(retryTimer);
-    };
-  }, []);
-
-  // Lần lưu cloud gần nhất chưa thành công: dữ liệu chờ đẩy lên. Thử lại với thời
-  // gian chờ tăng dần, và thử lại khi có mạng / quay lại tab — trước đây một lần
-  // lỗi 500 là bỏ luôn cho tới tận thao tác kế tiếp.
-  const pendingSaveRef = useRef<AppData | null>(null);
-  // Reset tiến độ / nhập file: kết quả gửi lên là bản đúng, server đừng hợp thêm.
-  const replaceResultsRef = useRef(false);
-  // Chuỗi các lần ghi nhanh kết quả; bản lưu đầy đủ luôn chờ chúng xong để hai
-  // đường ghi không chạy đua và thêm cùng một dòng hai lần.
-  const quickAppendRef = useRef<Promise<unknown>>(Promise.resolve());
-  const retryAttemptRef = useRef(0);
-  const retryTimerRef = useRef<number | undefined>(undefined);
-
-  const pushToCloud = useCallback((next: AppData) => {
-    pendingSaveRef.current = next;
-    setUnsyncedChanges(true);
-    window.clearTimeout(retryTimerRef.current);
-    setSyncState("saving");
-    quickAppendRef.current
-      .then(() => saveToGoogleSheet(next, replaceResultsRef.current))
-      .then(() => {
-        if (pendingSaveRef.current === next) {
-          pendingSaveRef.current = null;
-          replaceResultsRef.current = false;
-          setUnsyncedChanges(false);
-        }
-        retryAttemptRef.current = 0;
-        setSyncState("idle");
-        setSyncError((current) => (CLOUD_MESSAGES.includes(current) ? "" : current));
-      })
-      .catch((error) => {
-        console.error("Google Sheet sync save failed.", error);
-        setSyncState("error");
-        setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : CLOUD_SAVE_FAILED_MESSAGE));
-        // Chỉ thử lại bản MỚI NHẤT: nếu giữa chừng người dùng đã sửa tiếp thì
-        // scheduleCloudSave sẽ đẩy bản mới, không cần đẩy lại bản cũ.
-        if (pendingSaveRef.current !== next) return;
-        const delay = Math.min(60000, 3000 * 2 ** retryAttemptRef.current);
-        retryAttemptRef.current += 1;
-        retryTimerRef.current = window.setTimeout(() => {
-          if (pendingSaveRef.current === next) pushToCloud(next);
-        }, delay);
-      });
-  }, []);
-
-  useEffect(() => {
-    pushToCloudRef.current = pushToCloud;
-  }, [pushToCloud]);
-
-  // Làm mới từ cloud khi quay lại tab / có mạng / định kỳ. Trước đây cloud chỉ
-  // được đọc MỘT LẦN lúc mở app, nên điện thoại để app mở nền nhiều ngày không
-  // bao giờ thấy những gì đã đánh dấu trên máy tính — và còn có thể đẩy bản cũ
-  // đó đè lên cloud ở lần lưu kế tiếp.
-  useEffect(() => {
-    let busy = false;
-    let lastAt = Date.now();
-    const refresh = async () => {
-      // Còn thay đổi chờ lưu: để luồng lưu/thử lại lo trước, đừng đè lên.
-      if (busy || pendingSaveRef.current !== null || !navigator.onLine) return;
-      if (Date.now() - lastAt < 30_000) return;
-      busy = true;
-      try {
-        const before = dataRef.current;
-        const cloud = await loadFromGoogleSheet();
-        lastAt = Date.now();
-        // Người dùng vừa sửa trong lúc đang tải, hoặc cloud trống bất thường.
-        if (dataRef.current !== before || pendingSaveRef.current !== null) return;
-        if (cloud.sets.length === 0 && before.sets.some((set) => set.cards.length > 0)) return;
-        const synced = syncDerivedData(cloud);
-        // Không đổi gì thì thôi: cập nhật state sẽ làm trang đang học dựng lại.
-        if (JSON.stringify(synced) === JSON.stringify(before)) return;
-        dataRef.current = synced;
-        saveAppData(synced);
-        setReactData(synced);
-      } catch (error) {
-        console.warn("Google Sheet refresh failed.", error);
-      } finally {
-        busy = false;
+  /**
+   * Đồng bộ TOÀN BỘ dữ liệu từ vựng với Google Sheet. Chỉ chạy ở hai thời điểm:
+   * lúc mở web và khi người dùng bấm nút "Đồng bộ" trong Settings — không còn
+   * lưu sau mỗi thao tác, thử lại nền, hay làm mới định kỳ (mỗi cái là một
+   * request, và dữ liệu ~1,5MB).
+   *
+   *  - Máy không có thay đổi chưa đồng bộ: lấy bản cloud (thấy được những gì
+   *    thiết bị khác vừa làm), không cần ghi gì.
+   *  - Máy có thay đổi: GỘP với cloud rồi đẩy bản gộp lên, để không bên nào mất.
+   *  - Vừa reset/nhập file/xoá hết: bản trên máy là bản đúng, đẩy lên thay thế.
+   */
+  const syncingRef = useRef(false);
+  const syncNow = useCallback(async (): Promise<boolean> => {
+    if (syncingRef.current) return false;
+    syncingRef.current = true;
+    setSyncState("loading");
+    let stage: "load" | "save" = "load";
+    try {
+      const cloud = await loadFromGoogleSheet();
+      const local = dataRef.current;
+      // Cloud trả về TRỐNG trong khi máy này đang có bộ từ: gần như chắc chắn
+      // là đang đọc đúng lúc sheet bị lỗi, không phải người dùng thực sự đã xoá
+      // hết. Tuyệt đối không ghi đè dữ liệu trên máy.
+      if (cloud.sets.length === 0 && local.sets.some((set) => set.cards.length > 0)) {
+        throw new Error("Google Sheet returned empty data while local data has sets");
       }
-    };
-    const onVisible = () => {
-      if (document.visibilityState === "visible") void refresh();
-    };
-    document.addEventListener("visibilitychange", onVisible);
-    window.addEventListener("focus", onVisible);
-    window.addEventListener("online", onVisible);
-    const timer = window.setInterval(() => {
-      if (document.visibilityState === "visible") void refresh();
-    }, 3 * 60_000);
-    return () => {
-      document.removeEventListener("visibilitychange", onVisible);
-      window.removeEventListener("focus", onVisible);
-      window.removeEventListener("online", onVisible);
-      window.clearInterval(timer);
-    };
+      const pending = loadPendingChanges();
+      const dirty = hasUnsyncedChanges();
+      const next = syncDerivedData(pending.replace ? local : dirty ? mergeAppData(cloud, local, pending) : cloud);
+      // Không đổi gì thì không thay state: cập nhật sẽ làm trang đang mở dựng lại.
+      let base = local;
+      if (next !== local && JSON.stringify(next) !== JSON.stringify(local)) {
+        base = next;
+        dataRef.current = next;
+        saveAppData(next);
+        setReactData(next);
+      }
+      if (pending.replace || dirty) {
+        stage = "save";
+        setSyncState("saving");
+        await saveToGoogleSheet(base, pending.replace);
+        // Người dùng sửa tiếp trong lúc đang đẩy lên thì phần sửa đó chưa lên
+        // cloud: giữ nguyên cờ để lần đồng bộ sau gộp nốt.
+        if (dataRef.current === base) {
+          clearPendingChanges();
+          setUnsyncedChanges(false);
+          setUnsynced(false);
+        }
+      }
+      setSyncState("idle");
+      setSyncError((current) => (CLOUD_MESSAGES.includes(current) ? "" : current));
+      setLastSyncedAt(Date.now());
+      return true;
+    } catch (error) {
+      console.error(stage === "load" ? "Google Sheet sync load failed." : "Google Sheet sync save failed.", error);
+      setSyncState("error");
+      setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? current : stage === "load" ? CLOUD_LOAD_FAILED_MESSAGE : CLOUD_SAVE_FAILED_MESSAGE));
+      return false;
+    } finally {
+      syncingRef.current = false;
+    }
   }, []);
 
+  // Mở web = một lần đồng bộ.
   useEffect(() => {
-    const retryNow = () => {
-      if (pendingSaveRef.current && navigator.onLine) pushToCloud(pendingSaveRef.current);
-    };
-    const onVisible = () => {
-      if (document.visibilityState === "visible") retryNow();
-    };
-    window.addEventListener("online", retryNow);
-    document.addEventListener("visibilitychange", onVisible);
-    return () => {
-      window.removeEventListener("online", retryNow);
-      document.removeEventListener("visibilitychange", onVisible);
-    };
-  }, [pushToCloud]);
-
-  const scheduleCloudSave = useCallback((next: AppData) => {
-    pendingSaveRef.current = next;
-    setUnsyncedChanges(true);
-    if (cloudSaveTimer.current) window.clearTimeout(cloudSaveTimer.current);
-    cloudSaveTimer.current = window.setTimeout(() => pushToCloud(next), 700);
-  }, [pushToCloud]);
+    void syncNow();
+  }, [syncNow]);
 
   const setData = useCallback<Dispatch<SetStateAction<AppData>>>((nextOrUpdater) => {
-    hasLocalEditRef.current = true;
     const current = dataRef.current;
     const updated = typeof nextOrUpdater === "function" ? (nextOrUpdater as (current: AppData) => AppData)(current) : nextOrUpdater;
     // Danh sách từ khó nhớ và danh sách (thư mục) chứa set được dựng lại ở
@@ -240,9 +135,7 @@ export function useAppData() {
       if (localStorage.getItem(STORAGE_KEY) !== serialized) {
         throw new Error("localStorage.setItem silently no-op'd or was reverted");
       }
-      // Functional form: đọc trạng thái MỚI NHẤT chứ không phải giá trị đã
-      // đóng gói lúc setData được tạo (setData chỉ được tạo lại khi
-      // scheduleCloudSave đổi, nên syncError đóng gói ở đây gần như luôn cũ).
+      // Functional form: đọc trạng thái MỚI NHẤT chứ không phải giá trị đã đóng gói.
       setSyncError((current) => (LOCAL_STORAGE_MESSAGES.includes(current) ? "" : current));
     } catch (error) {
       // Không alert(): một hộp thoại chặn cả luồng JS sẽ hiện lại ở MỌI thao
@@ -256,20 +149,12 @@ export function useAppData() {
       setSyncState("error");
       setSyncError(STORAGE_FAILED_MESSAGE);
     }
+    // Chỉ đánh dấu "có thay đổi chưa đồng bộ" — KHÔNG gọi mạng. Lên cloud ở lần
+    // mở web kế tiếp hoặc khi bấm "Đồng bộ".
+    setUnsyncedChanges(true);
+    setUnsynced(true);
     setReactData(next);
-    // Lượt học vừa hoàn thành: ghi NGAY lên cloud theo đường nhanh (nối thêm một
-    // dòng) thay vì chờ bản lưu đầy đủ vài giây, để máy khác tải lại là thấy.
-    if (next.results.length > current.results.length) {
-      const known = new Set(current.results.map((result) => result.id));
-      const fresh = next.results.filter((result) => !known.has(result.id));
-      if (fresh.length && fresh.length <= 20) {
-        quickAppendRef.current = quickAppendRef.current
-          .then(() => appendResultsToGoogleSheet(fresh))
-          .catch((error) => console.warn("Quick result append failed; full save will retry.", error));
-      }
-    }
-    scheduleCloudSave(next);
-  }, [scheduleCloudSave]);
+  }, []);
 
   const api = useMemo(() => ({
     upsertSet(set: VocabularySet) {
@@ -279,6 +164,7 @@ export function useAppData() {
       });
     },
     deleteSet(id: string) {
+      updatePendingChanges((pending) => ({ ...pending, sets: [...pending.sets, id] }));
       setData((current) => ({
         ...current,
         sets: current.sets.filter((set) => set.id !== id),
@@ -306,6 +192,7 @@ export function useAppData() {
     // hay biến mất, tránh người dùng lỡ tay xoá cả một mảng nội dung. Trang
     // gọi hàm này nên tự kiểm tra rỗng trước và hỏi xác nhận.
     deleteList(id: string) {
+      updatePendingChanges((pending) => ({ ...pending, lists: [...pending.lists, id] }));
       setData((current) => ({ ...current, lists: current.lists.filter((list) => list.id !== id) }));
     },
     /**
@@ -329,11 +216,11 @@ export function useAppData() {
       }));
     },
     replaceData(next: AppData) {
-      replaceResultsRef.current = true;
+      updatePendingChanges((pending) => ({ ...pending, replace: true }));
       setData(next);
     },
     resetProgress() {
-      replaceResultsRef.current = true;
+      updatePendingChanges((pending) => ({ ...pending, replace: true }));
       setData((current) => ({
         ...current,
         results: [],
@@ -345,7 +232,7 @@ export function useAppData() {
       }));
     },
     clearAll() {
-      replaceResultsRef.current = true;
+      updatePendingChanges((pending) => ({ ...pending, replace: true }));
       setData({ sets: [], results: [], matchBestTimes: {}, lists: [], settings: { theme: "light", voiceURI: "" } });
     },
     setTheme(theme: "light" | "dark") {
@@ -363,5 +250,5 @@ export function useAppData() {
     },
   }), [setData]);
 
-  return { data, setData, syncState, syncError, ...api };
+  return { data, setData, syncState, syncError, syncNow, lastSyncedAt, unsynced, ...api };
 }

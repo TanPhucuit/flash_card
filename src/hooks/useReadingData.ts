@@ -66,14 +66,12 @@ export function useReadingData() {
   }, []);
 
   // Lịch sử làm bài dùng chung giữa các thiết bị (Google Sheet, tab
-  // reading_attempts). localStorage chỉ còn là bản đệm của máy này: khi mở app
-  // thì gộp lịch sử trên cloud vào, rồi đẩy lên những bài máy này có mà cloud
-  // chưa có (bài làm lúc mất mạng, hoặc từ trước khi có đồng bộ).
+  // reading_attempts). localStorage chỉ còn là bản đệm của máy này: đồng bộ gộp
+  // lịch sử trên cloud vào máy, rồi đẩy lên những bài máy này có mà cloud chưa có.
   //
-  // Đồng bộ KHÔNG chỉ một lần lúc mở trang: trình duyệt điện thoại giữ tab sống
-  // hàng ngày mà không tải lại, nên bài làm trên máy tính sau thời điểm đó sẽ
-  // không bao giờ hiện trên điện thoại. Vì vậy đồng bộ lại mỗi khi quay lại tab,
-  // định kỳ khi tab đang mở, và khi người dùng bấm "Đồng bộ".
+  // Chỉ đồng bộ ở hai thời điểm — lúc mở web và khi bấm "Đồng bộ" trong Settings
+  // (cùng nút với dữ liệu từ vựng). Không còn đồng bộ khi quay lại tab, định kỳ,
+  // hay đẩy ngay sau mỗi bài: mỗi cái là một request tới Google Sheet.
   const [cloudState, setCloudState] = useState<"syncing" | "idle" | "error">("syncing");
   const [lastSyncedAt, setLastSyncedAt] = useState<number | null>(null);
   // Số liệu chẩn đoán hiện ngay trên dòng trạng thái: máy này có bao nhiêu
@@ -81,8 +79,8 @@ export function useReadingData() {
   // thiết bị lệch nhau không ai biết lệch ở bước nào.
   const [cloudInfo, setCloudInfo] = useState<{ local: number; remote: number; pushed: number; error: string }>({ local: 0, remote: 0, pushed: 0, error: "" });
   const syncing = useRef(false);
-  const syncNow = useCallback(async () => {
-    if (syncing.current) return;
+  const syncNow = useCallback(async (): Promise<boolean> => {
+    if (syncing.current) return false;
     syncing.current = true;
     setCloudState("syncing");
     try {
@@ -101,10 +99,12 @@ export function useReadingData() {
       setCloudInfo({ local: merged.length, remote: remote.length + localOnly.length, pushed: localOnly.length, error: "" });
       setCloudState("idle");
       setLastSyncedAt(Date.now());
+      return true;
     } catch (error) {
       console.warn("Không đồng bộ được lịch sử Reading với Google Sheet.", error);
       setCloudInfo((current) => ({ ...current, local: dataRef.current.attempts.length, error: error instanceof Error ? error.message : String(error) }));
       setCloudState("error");
+      return false;
     } finally {
       syncing.current = false;
     }
@@ -112,17 +112,6 @@ export function useReadingData() {
 
   useEffect(() => {
     void syncNow();
-    const onVisible = () => { if (document.visibilityState === "visible") void syncNow(); };
-    document.addEventListener("visibilitychange", onVisible);
-    window.addEventListener("focus", onVisible);
-    window.addEventListener("online", onVisible);
-    const timer = window.setInterval(onVisible, 60_000);
-    return () => {
-      document.removeEventListener("visibilitychange", onVisible);
-      window.removeEventListener("focus", onVisible);
-      window.removeEventListener("online", onVisible);
-      window.clearInterval(timer);
-    };
   }, [syncNow]);
 
   // Nạp thư viện dựng sẵn mỗi khi mở app — rẻ, vì nó chỉ là một GET tới file
@@ -205,14 +194,9 @@ export function useReadingData() {
         }));
       },
       recordAttempt(attempt: ReadingAttempt) {
+        // Chỉ lưu trên máy; lên Google Sheet ở lần mở web kế tiếp hoặc khi bấm
+        // "Đồng bộ" (đồng bộ luôn đẩy mọi bài cloud chưa có).
         setData((current) => ({ ...current, attempts: [attempt, ...current.attempts] }));
-        // Lỗi mạng ở đây không mất bài: lần mở app sau sẽ đẩy lại mọi bài cloud chưa có.
-        pushReadingAttempts([attempt])
-          .then(() => { setCloudState("idle"); setLastSyncedAt(Date.now()); })
-          .catch((error) => {
-            console.warn("Chưa đẩy được bài làm lên Google Sheet, sẽ thử lại lần mở sau.", error);
-            setCloudState("error");
-          });
       },
       setLifeManagement(config: LifeManagementConfig) {
         setData((current) => ({ ...current, lifeManagement: config }));

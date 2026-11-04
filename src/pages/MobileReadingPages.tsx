@@ -1,6 +1,5 @@
 import { InstructionBlocks } from "../components/InstructionBlocks";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { ReadingSyncStatus } from "../components/ReadingSyncStatus";
 import { useNavigate, useParams } from "react-router-dom";
 import { MobileNav, MobileTab } from "../components/MobileNav";
 import { Button, Icon, Input, ProgressBar } from "../components/ui";
@@ -102,7 +101,6 @@ export function MobileReadingLibraryPage({ api }: { api: ReadingApi }) {
         {api.syncError ? (
           <div className="mb-md rounded-xl bg-error-container p-md text-sm font-semibold text-red-900">{api.syncError}</div>
         ) : null}
-        <ReadingSyncStatus api={api} className="mb-md" />
 
         {!books.length ? (
           <div className="flex flex-col items-center gap-sm py-xl text-center text-on-surface-variant">
