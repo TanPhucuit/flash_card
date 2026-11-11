@@ -24,6 +24,13 @@ export const BUNDLED_PACKS: BundledPack[] = [
     description: "15 set × 20 thẻ (100 cụm × 3 thẻ): cụm → cách nói đơn giản, và từng từ thành phần → nghĩa tiếng Việt, xáo trộn ngẫu nhiên.",
     listLabel: "Synonym Phrases",
   },
+  {
+    key: "quiz_midterm",
+    file: "/quiz-sets.json",
+    title: "Quiz ôn giữa kỳ (Phát triển ứng dụng di động)",
+    description: "Bộ câu hỏi trắc nghiệm của các nhóm thuyết trình, mỗi nhóm một set. Học bằng Flashcards và một chế độ Learn trắc nghiệm duy nhất (không có Anh-Việt/Việt-Anh).",
+    listLabel: "Quiz giữa kỳ",
+  },
 ];
 
 type PackSet = Pick<VocabularySet, "id" | "title" | "description" | "tags"> & { cards: VocabularyCard[] };

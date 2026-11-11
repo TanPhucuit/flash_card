@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { DataApi, ReadingDataApi } from "../App";
 import { syncAllListsToLifeManagement, syncBooksToLifeManagement } from "../utils/lifeManagementSync";
 import { getCompletedSetModes } from "../utils/study";
+import { isQuizSet } from "../utils/quiz";
 import { isStarSet } from "../utils/starSets";
 
 export type LifeManagementSyncState = "idle" | "syncing" | "error";
@@ -37,7 +38,8 @@ export function useLifeManagementSync(api: DataApi, reading: ReadingDataApi): Li
   const running = useRef(false);
   const lastDone = useRef("");
 
-  const sets = api.data.sets.filter((set) => !isStarSet(set));
+  // Set trắc nghiệm không có bốn node chế độ từ vựng (ENG_ENG/VIET_ENG/ENG_VIET/WRITING) nên không đẩy sang cây task.
+  const sets = api.data.sets.filter((set) => !isStarSet(set) && !isQuizSet(set));
   // Vân tay: đủ để phát hiện mọi thay đổi ảnh hưởng tới cây bên kia, và không
   // đổi khi người dùng chỉ sửa nội dung thẻ.
   const fingerprint = [
@@ -59,7 +61,7 @@ export function useLifeManagementSync(api: DataApi, reading: ReadingDataApi): Li
       const vocab = await syncAllListsToLifeManagement(
         liveConfig,
         liveApi.data.lists,
-        (list) => liveApi.data.sets.filter((set) => !isStarSet(set) && set.listId === list.id),
+        (list) => liveApi.data.sets.filter((set) => !isStarSet(set) && !isQuizSet(set) && set.listId === list.id),
         liveApi.data.results,
       );
       Object.entries(vocab.listTaskIds).forEach(([listId, listTaskId]) => {

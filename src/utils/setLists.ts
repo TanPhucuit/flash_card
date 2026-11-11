@@ -2,7 +2,7 @@ import { AppData, VocabularySet, VocabularySetList } from "../types";
 import { isStarSet } from "./starSets";
 
 /**
- * Bốn danh sách mặc định — dữ liệu cũ (tạo trước khi có khái niệm "danh sách")
+ * Các danh sách mặc định — dữ liệu cũ (tạo trước khi có khái niệm "danh sách")
  * được tự động xếp vào đây theo tên set, để không có set nào biến mất khỏi
  * màn hình sau khi cập nhật.
  */
@@ -13,6 +13,7 @@ export const DEFAULT_LISTS: VocabularySetList[] = [
   { id: "c1_c2", title: "C1/C2", createdAt: "1970-01-01T00:00:00.000Z" },
   { id: "high_level", title: "High-Level", createdAt: "1970-01-01T00:00:00.000Z" },
   { id: "synonym_phrases", title: "Synonym Phrases", createdAt: "1970-01-01T00:00:00.000Z" },
+  { id: "quiz_midterm", title: "Quiz giữa kỳ", createdAt: "1970-01-01T00:00:00.000Z" },
 ];
 
 const FALLBACK_LIST_ID = "mobile_set";

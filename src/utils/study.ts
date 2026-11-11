@@ -1,4 +1,5 @@
 import { CardStatus, LEARN_DIRECTIONS, LearnDirection, ListeningStudyResult, StudyResult, VocabularyCard, VocabularySet, VocabularyStudyMode } from "../types";
+import { isQuizSet, QUIZ_DIRECTION, requiredLearnDirections } from "./quiz";
 
 export function formatDate(value?: string) {
   if (!value) return "Chưa học";
@@ -23,6 +24,15 @@ function isPerfectResult(r: { totalQuestions: number; correctAnswers: number }) 
 export function getSetProgress(set: VocabularySet, results: StudyResult[]): number {
   if (!set.cards.length) return 0;
   const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);
+  if (isQuizSet(set)) {
+    // Set trắc nghiệm chỉ có MỘT chế độ nên không chia được nấc 25%: lấy điểm
+    // cao nhất đã đạt (làm tròn xuống để chỉ đúng tuyệt đối mới ra 100%).
+    return relevant.reduce((best, r) => {
+      if (r.mode !== "learn" || r.direction !== QUIZ_DIRECTION || r.totalQuestions <= 0) return best;
+      const score = isPerfectResult(r) ? 100 : Math.floor((r.correctAnswers / r.totalQuestions) * 100);
+      return Math.max(best, score);
+    }, 0);
+  }
   const learnPerfect = (direction: LearnDirection) => relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && isPerfectResult(r));
   const writePerfect = relevant.some((r) => r.mode === "write" && isPerfectResult(r));
   const completed = LEARN_DIRECTIONS.filter(learnPerfect).length + (writePerfect ? 1 : 0);
@@ -58,17 +68,37 @@ export function getCompletedSetModes(set: VocabularySet, results: StudyResult[])
  * Set đã "học xong" theo đúng cách tab "Đã hoàn thành" tính: đã có lượt Learn ở
  * cả ba hướng (không đòi điểm tuyệt đối, khác isSetFullyMastered).
  */
-export function isSetLearned(setId: string, results: StudyResult[]): boolean {
+export function isSetLearned(setId: string, results: StudyResult[], set?: Pick<VocabularySet, "cards">): boolean {
   const done = new Set<LearnDirection>();
   results.forEach((r) => {
     if (r.mode === "learn" && "setId" in r && r.setId === setId && r.direction) done.add(r.direction);
   });
-  return LEARN_DIRECTIONS.every((direction) => done.has(direction));
+  return (set ? requiredLearnDirections(set) : LEARN_DIRECTIONS).every((direction) => done.has(direction));
+}
+
+/**
+ * Id các set đã "học xong" theo cùng quy tắc của isSetLearned, tính một lần cho
+ * cả danh sách — set trắc nghiệm chỉ đòi chế độ "quiz", set từ vựng đòi đủ ba hướng.
+ */
+export function getLearnedSetIds(sets: VocabularySet[], results: StudyResult[]): Set<string> {
+  const doneBySet = new Map<string, Set<LearnDirection>>();
+  results.forEach((r) => {
+    if (r.mode !== "learn" || !("setId" in r) || !r.direction) return;
+    if (!doneBySet.has(r.setId)) doneBySet.set(r.setId, new Set());
+    doneBySet.get(r.setId)!.add(r.direction);
+  });
+  const learned = new Set<string>();
+  sets.forEach((set) => {
+    const done = doneBySet.get(set.id);
+    if (done && requiredLearnDirections(set).every((direction) => done.has(direction))) learned.add(set.id);
+  });
+  return learned;
 }
 
 export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): boolean {
   if (!set.cards.length) return false;
   const relevant = results.filter((r) => r.mode !== "listening" && "setId" in r && r.setId === set.id);
+  if (isQuizSet(set)) return relevant.some((r) => r.mode === "learn" && r.direction === QUIZ_DIRECTION && isPerfectResult(r));
   const learnPerfect = (direction: LearnDirection) => relevant.some((r) => r.mode === "learn" && "direction" in r && r.direction === direction && isPerfectResult(r));
   const writePerfect = relevant.some((r) => r.mode === "write" && isPerfectResult(r));
   return LEARN_DIRECTIONS.every(learnPerfect) && writePerfect;
@@ -77,6 +107,8 @@ export function isSetFullyMastered(set: VocabularySet, results: StudyResult[]): 
 export function getMasteryStatusCounts(sets: VocabularySet[], results: StudyResult[]): Record<CardStatus, number> {
   const counts: Record<CardStatus, number> = { mastered: 0, review: 0, learning: 0, difficult: 0, new: 0 };
   sets.forEach((set) => {
+    // Câu trắc nghiệm không phải từ vựng nên không tính vào thống kê "từ đã thuộc".
+    if (isQuizSet(set)) return;
     if (isSetFullyMastered(set, results)) {
       counts.mastered += set.cards.length;
     } else {
@@ -114,7 +146,7 @@ export function getLearnedWordsByDay(sets: VocabularySet[], results: StudyResult
     if (r.mode !== "learn" && r.mode !== "write") return;
     if (!("setId" in r)) return;
     const set = setById.get(r.setId);
-    if (!set || !set.cards.length) return;
+    if (!set || !set.cards.length || isQuizSet(set)) return;
     if (r.totalQuestions < set.cards.length) return;
     const studiedDate = new Date(r.studiedAt);
     if (studiedDate.getFullYear() !== year || studiedDate.getMonth() !== monthIndex) return;

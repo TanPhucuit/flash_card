@@ -1,8 +1,11 @@
 export type CardStatus = "new" | "learning" | "review" | "mastered" | "difficult";
 export type VocabularyStudyMode = "flashcards" | "learn" | "write" | "spell" | "test" | "match";
 export type StudyMode = VocabularyStudyMode | "listening";
-export type LearnDirection = "eng-eng" | "viet-eng" | "eng-viet";
-export const LEARN_DIRECTIONS: LearnDirection[] = ["eng-eng", "viet-eng", "eng-viet"];
+// "quiz" là chế độ Learn DUY NHẤT của set trắc nghiệm (xem src/utils/quiz.ts);
+// ba hướng còn lại là của set từ vựng, nên LEARN_DIRECTIONS không chứa "quiz".
+export type LearnDirection = "eng-eng" | "viet-eng" | "eng-viet" | "quiz";
+export type VocabLearnDirection = Exclude<LearnDirection, "quiz">;
+export const LEARN_DIRECTIONS: VocabLearnDirection[] = ["eng-eng", "viet-eng", "eng-viet"];
 
 export interface VocabularyCard {
   id: string;
